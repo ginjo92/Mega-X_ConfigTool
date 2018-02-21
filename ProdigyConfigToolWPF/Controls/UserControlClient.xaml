@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="ProdigyConfigToolWPF.Controls.UserControlClient"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProdigyConfigToolWPF.Controls"
+             xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/ProdigyConfigToolWPF;component/Resources/Datasets.xaml"/>
+    </UserControl.Resources>
+    
+    <Grid x:Name="ClientInfoGrid" DataContext="{StaticResource clientInfoViewSource}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="300,0,100,0">
+            <GroupBox x:Name="infoClient" Header="{x:Static p:Resources.InfoClient}">
+                <Grid DataContext="{StaticResource zoneViewSource}" HorizontalAlignment="Center" Margin="12,-30,-270,0" VerticalAlignment="Center">
+
+                    <TextBox x:Name="ClientName" Margin="0,50,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.ClientName}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="1" Width="500" Height="38" Text="{Binding ClientName, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientAddr1TextBox1" Margin="0,100,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Address1}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="2" Width="500" Height="38" Text="{Binding Address_1, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientAddr2TextBox" Margin="0,150,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Address2}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="3" Width="500" Height="38" Text="{Binding Address_2, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientCityTextBox" Margin="0,200,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.City}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="4" Width="500" Height="38" Text="{Binding City, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientPostalCodeTextBox" Margin="0,250,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.PostalCode}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="5" Width="500" Height="38" Text="{Binding PostalCode, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientPhoneTextBox" Margin="0,300,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Phone}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="6" Width="500" Height="38" Text="{Binding PhoneNumber, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientFaxTextBox" Margin="0,350,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.FaxNumber}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="7" Width="500" Height="38" Text="{Binding FaxNumber, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientEmailTextBox" Margin="0,400,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Email}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="8" Width="500" Height="38" Text="{Binding Email, Mode=TwoWay}" />
+
+                    <TextBox x:Name="ClientWebPageTextBox" Margin="0,450,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
+                                     Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Website}" VerticalAlignment="Top" Grid.Column="0"
+                                     Grid.Row="9" Width="500" Height="38" Text="{Binding WebPage, Mode=TwoWay}" />
+                </Grid>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

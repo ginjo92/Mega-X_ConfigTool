@@ -1,0 +1,166 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--------------------------------------------------------------------------->
+<!--                           INTRODUCTION
+
+ The Code Project article submission template (HTML version)
+
+Using this template will help us post your article sooner. To use, just
+follow the 3 easy steps below:
+
+     1. Fill in the article description details
+     2. Add links to your images and downloads
+     3. Include the main article text
+
+That's all there is to it! All formatting will be done by our submission
+scripts and style sheets.
+
+-->
+<!--------------------------------------------------------------------------->
+<!--                        IGNORE THIS SECTION                            -->
+<html>
+<head>
+    <title>SQLiter Project</title>
+    <style>
+        BODY, P, TD {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+        }
+
+        H2, H3, H4, H5 {
+            color: #ff9900;
+            font-weight: bold;
+        }
+
+        H2 {
+            font-size: 13pt;
+        }
+
+        H3 {
+            font-size: 12pt;
+        }
+
+        H4 {
+            font-size: 10pt;
+            color: black;
+        }
+
+        PRE {
+            BACKGROUND-COLOR: #FBEDBB;
+            FONT-FAMILY: "Courier New", Courier, mono;
+            WHITE-SPACE: pre;
+        }
+
+        CODE {
+            COLOR: #990000;
+            FONT-FAMILY: "Courier New", Courier, mono;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://www.codeproject.com/App_Themes/Std/CodeProject.css">
+</head>
+<body bgcolor="#FFFFFF" color=#000000>
+    <!--------------------------------------------------------------------------->
+    <!-------------------------------     STEP 1      --------------------------->
+    <!--  Fill in the details (CodeProject will reformat this section for you) -->
+
+<pre>
+Title:       SQLiter - Change, Set & Remove Passwords on SQLite Databases
+Author:      lasuax
+Email:       lasuax@gmail.com
+Language:    C#
+Platform:    Windows
+Technology:  Winforms
+Level:       Intermediate
+Description: A small project for encrypting/decrypting SQLite databases. 
+Section      .NET
+SubSection   System.Data.SQLite
+License:     CPOL (I suppose)
+</pre>
+
+    <!-------------------------------     STEP 2      --------------------------->
+    <!--  Include download and sample image information.                       -->
+
+    <ul class=download>
+        <li><a href="Article_demo.zip">Download demo project - XXX Kb </a></li>
+        <li><a href="Article_src.zip">Download source - XXX Kb</a></li>
+    </ul>
+
+    <p><img src="sqliter.png" alt="Sample Image - maximum width is 600 pixels"></p>
+
+
+    <!-------------------------------     STEP 3      --------------------------->
+    <!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+
+    <h2>Introduction</h2>
+
+    <p>
+        Have you ever tried to conn.SetPassword(yourPassword) and see it doesn't work? Well, I did in my project and tried
+        some methods to set a password to my SQLite database. However SetPassword() method doesn't seem to be working as it
+        should. You also must open the database, close it and reopen before calling ChangePassword() method. By this way, you
+        can encrypt your SQLite passwords.
+    </p>
+
+    <h2>Background</h2>
+
+    <p>
+        As it's a pain to open, close, reopen and change the password manually, I wanted to create an application that does these for
+        me. After adding more controls, I wanted to share it with you.
+    </p>
+
+    <h2>Using the code</h2>
+
+    <p>The application itself doesn't contain so much complex data or methods, however I'll explain the main ones. </p>
+
+    <p>
+        TestConnection(string strFileName) method checks whether the application can connect to the database with given information. That's why we need the table name in the beginning.
+        strFileName parameter contains the file name of the database (obviously), and connectionFailed variable is a boolean which checks whether the connection has ever failed since the beginning of the first run. This is because, if you enter an encrypted database without providing a password it will become true and the application will warn you about what has happened.
+
+    </p>
+
+<pre>
+    private void TestConnection(string strFileName)
+        {
+            conn = new SQLiteConnection();
+            if (!connectionFailed && string.IsNullOrEmpty(txtPassword.Text))
+            {
+                conn = new SQLiteConnection(string.Concat("Data Source=", strFileName));
+            }
+            else
+            {
+                conn = new SQLiteConnection(string.Concat("Data Source=", txtPath.Text, ";Password=", txtPassword.Text, ";"));
+            }
+            conn.Open();
+            try
+            {
+                var command = conn.CreateCommand();
+                command.CommandText = string.Format("select * from {0}", txtTableName.Text);
+                command.ExecuteNonQuery();
+                command.ExecuteScalar();
+                if (conn.State == ConnectionState.Open)
+                {
+                    lblStatus.Text = "Connected";
+                    lblStatus.ForeColor = Color.Green;
+                }
+                else
+                {
+                    MessageBox.Show("Couldn't establish a connection with the database. If it's password protected, please specify the password in the password field.", "Errör");
+                    connectionFailed = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Couldn't establish a connection with the database. If it's password protected, please specify the password in the password field.", ex.Message);
+                lblStatus.Text = "Disconnected";
+                lblStatus.ForeColor = Color.Red;
+                connectionFailed = true;
+            }
+        }
+</pre>
+        
+    <h2>History</h2>
+
+    <p>First version. I'm open to new ideas that could be added to the project. </p>
+
+    <!-------------------------------    That's it!   --------------------------->
+</body>
+
+</html>

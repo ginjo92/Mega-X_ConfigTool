@@ -1,0 +1,170 @@
+﻿<Controls:MetroWindow
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:local="clr-namespace:ProdigyConfigToolWPF"
+                      xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+                      xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.FileManager"
+                      mc:Ignorable="d"
+                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/Resources/icon.ico"
+                      Loaded="FileManagerWindow_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="1024" MinHeight="768">
+    <Controls:MetroWindow.Resources>
+        <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+    </Controls:MetroWindow.Resources>
+
+    <!--Title bar Right content-->
+    <!--<Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="TitleBarSettingsButton">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                               Height="20"
+                               Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_settings}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                   VerticalAlignment="Center"
+                   Text="Settings" />
+                </StackPanel>
+            </Button>
+            <Button x:Name="TitleBarHelpButton">
+                <StackPanel Orientation="Horizontal">
+                    <Rectangle Width="20"
+                               Height="20"
+                               Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                        <Rectangle.OpacityMask>
+                            <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_question}" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Margin="4 0 0 0"
+                   VerticalAlignment="Center"
+                   Text="Help" />
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>-->
+    <Grid>
+        <!--FILE MENU-->
+        <DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top">
+            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" Background="#FFCDC9C9" Opacity="0.5">
+                <!--TODO: Add names-->
+                <MenuItem Header="_File" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
+                    <MenuItem Header="_Open" />
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+                <!--TODO: Add names-->
+                <MenuItem Header="_Settings" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+                <!--TODO: Add names-->
+                <MenuItem Header="_About" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <!--TILES Shortcuts-->
+        <DockPanel Margin="0,36,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
+            <!--Utilities menu-->
+            <Controls:Tile x:Name="NewTile"  Width="200" Height="34" Title="{x:Static p:Resources.NewConfigFile}" TitleFontSize="12" HorizontalTitleAlignment="Right" 
+                           VerticalAlignment="Center" Background="LightGray" Click="NewConfigTile_Click" HorizontalAlignment="Left" Foreground="Black" FontWeight="Bold">
+                <Image Source="/images/toptiles/config_new.png" Margin="-60,0,0,0"/>
+            </Controls:Tile>
+            <Controls:Tile x:Name="DeleteTile" Margin="0,0,0,0" Width="200" Height="34" Title="{x:Static p:Resources.DeleteConfigFile}" TitleFontSize="12" HorizontalTitleAlignment="Right" 
+                           VerticalAlignment="Center" Background="LightGray" Click="DeleteConfigTile_Click" HorizontalAlignment="Left" Foreground="Black" FontWeight="Bold">
+                <Image Source="/images/toptiles/config_delete.png" Margin="-60,0,0,0"/>
+
+            </Controls:Tile>
+            <!--<Controls:Tile x:Name="NewConfigTile" Width="80" Height="60" Title="{x:Static p:Resources.NewConfigFile}" TitleFontSize="8" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalTitleAlignment="Center" HorizontalContentAlignment="Center" Margin="10,3" Click="NewConfigTile_Click">
+                <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_folder_ellipsis}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Controls:Tile>
+            <Controls:Tile x:Name="DeleteConfigTile"  Width="80" Height="60" Title="{x:Static p:Resources.DeleteConfigFile}" TitleFontSize="8" HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="#CC11DA3F" HorizontalAlignment="Left" Margin="10,3" Click="DeleteConfigTile_Click" >
+                <Rectangle Width="20"
+                   Height="20"
+                   Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                    <Rectangle.OpacityMask>
+                        <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_delete}" />
+                    </Rectangle.OpacityMask>
+                </Rectangle>
+            </Controls:Tile>-->
+           
+        </DockPanel>
+        <!--CONTENT-->
+        <DockPanel x:Name="BaseFrame" Margin="0,76,0,35" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FFB1BFDA">
+            <ListView  x:Name="DBListBox" Width="300" HorizontalAlignment="Left" Background="WhiteSmoke" BorderThickness="1" BorderBrush="White"  SelectionChanged="ListViewClick" ControlzEx:KeyboardNavigationEx.AlwaysShowFocusVisual="True">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <EventSetter Event="Control.MouseDoubleClick" Handler="ListView_MouseDoubleClick" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Header="{x:Static p:Resources.Description}" Width="150" DisplayMemberBinding="{Binding Name}" />
+                        <GridViewColumn Header="{x:Static p:Resources.LastChanged}" Width="150" DisplayMemberBinding="{Binding LastChanged, StringFormat='{}{0:MM/dd/yyyy H:MM }'}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Background="LightGray">
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.ClientName}"/>
+                    <TextBlock x:Name="ClientName" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Address1}"/>
+                    <TextBlock x:Name="ClientAddr1" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Address2}"/>
+                    <TextBlock x:Name="ClientAddr2" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.City}"/>
+                    <TextBlock x:Name="ClientCity" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.PostalCode}"/>
+                    <TextBlock x:Name="ClientPostalCode" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.District}"/>
+                    <TextBlock x:Name="ClientDistrict" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Phone}"/>
+                    <TextBlock x:Name="ClientPhone" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.FaxNumber}"/>
+                    <TextBlock x:Name="ClientFax" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Email}"/>
+                    <TextBlock x:Name="ClientEmail" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <Grid>
+                    <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Website}"/>
+                    <TextBlock x:Name="ClientWebSite" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Opacity="0.8">
+                    <Image Source="/images/maxalarm.png" Width="200" Margin="10"/>
+                    <Image Source="/images/mega-x.png" Width="120" Margin="10,-10,0,0"/>
+                </StackPanel>
+
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Controls:MetroWindow>
