@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="Mega-X Configurator" Height="300" Width="300" Icon="/Resources/icon.ico"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
-                      ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="640" MinHeight="480" ShowTitleBar="True" IsWindowDraggable="True" 
-                      ShowMaxRestoreButton="False" Loaded="MetroWindow_Loaded" FocusManager.FocusedElement="{Binding ElementName=UserPasswordValue}">
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="640" MinHeight="480" ShowTitleBar="False" IsWindowDraggable="True" 
+                      ShowMaxRestoreButton="False" Loaded="MetroWindow_Loaded" FocusManager.FocusedElement="{Binding ElementName=UserPasswordValue}" WindowStyle="None" AllowsTransparency="True">
     <Controls:MetroWindow.Resources>
         <ObjectDataProvider x:Key="UserLogins_dict"
         MethodName="GetUserLogin" ObjectType="{x:Type local:Dictionaries}"/>
@@ -20,7 +20,7 @@
     <!--Title bar Right content-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <Button x:Name="TitleBarSettingsButton" Click="TitleBarSettingsButton_Click">
+            <!--<Button x:Name="TitleBarSettingsButton" Click="TitleBarSettingsButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Rectangle Width="20"
                                Height="20"
@@ -33,26 +33,21 @@
                    VerticalAlignment="Center"
                    Text="{x:Static p:Resources.ChangePassword}" />
                 </StackPanel>
-            </Button>
+            </Button>-->
             <Button x:Name="TitleBarHelpButton" Click="TitleBarHelpButton_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="20"
-                               Height="20"
-                               Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
-                        <Rectangle.OpacityMask>
-                            <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_question}" />
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="{x:Static p:Resources.Help}" />
+                    <Image Source="/images/topbaricons/help_small.png" Width="20"/>
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
     <Grid>
         <!--FLYOUT-->
+        
         <Border   HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="400" Width="330" Background="#FFF7F7F7" BorderBrush="Black" >
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
             <StackPanel Background="WhiteSmoke">
                 <Controls:Tile x:Name="UserLoginHeader" Width="Auto" Height="100" TitleFontSize="10" 
                                HorizontalTitleAlignment="Center" Background="Black" VerticalAlignment="Top" Margin="0" BorderBrush="Black" 
@@ -130,14 +125,14 @@
                             <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
                                 <RadioButton.Template>
                                     <ControlTemplate>
-                                        <Image Source="/images/portugal.png" />
+                                        <Image x:Name="RadioLocalePT_flag" Source="/images/portugal.png" />
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>
                             <RadioButton x:Name="RadioLocaleEN" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
                                 <RadioButton.Template>
                                     <ControlTemplate>
-                                        <Image Source="/images/united_kingdom.png"/>
+                                        <Image x:Name="RadioLocaleEN_flag" Source="/images/united_kingdom.png"/>
                                     </ControlTemplate>
                                 </RadioButton.Template>
                             </RadioButton>

@@ -1864,7 +1864,7 @@
     <value>Please select what you want to write to Mega-X unit:</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Preferences</value>
   </data>
   <data name="Help_Settings_H1_P2" xml:space="preserve">
     <value>Here you are able to change general application configurations.</value>
@@ -2699,5 +2699,11 @@
   </data>
   <data name="InitialDate" xml:space="preserve">
     <value>Initial Date</value>
+  </data>
+  <data name="MegaX_Version" xml:space="preserve">
+    <value>Mega-X Configurator version: </value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
   </data>
 </root>
