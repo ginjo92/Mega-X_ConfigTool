@@ -12,9 +12,8 @@
         <ObjectDataProvider x:Key="UserLogins_dict"
         MethodName="GetUserLogin" ObjectType="{x:Type local:Dictionaries}"/>
     </Controls:MetroWindow.Resources>
-    <Controls:MetroWindow.Background>
-        <ImageBrush ImageSource="/ProdigyConfigToolWPF;component/images/pcb.jpg"/>
-    </Controls:MetroWindow.Background>
+    
+    
     <!--Title bar Right content-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>

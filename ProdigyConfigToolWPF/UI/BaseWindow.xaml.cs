@@ -52,6 +52,7 @@ namespace ProdigyConfigToolWPF
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
 
+       
 
         byte[] combined_file_data_bytes = new byte[0];
         public uint event_code;
@@ -103,7 +104,7 @@ namespace ProdigyConfigToolWPF
             {
                 InitializeComponent();
                 this.DataContext = this;
-
+                
                 timer = new System.Windows.Forms.Timer();
                 timer.Interval = 2000;
                 timer.Tick += new EventHandler(OnTimedEvent);
@@ -9986,49 +9987,7 @@ namespace ProdigyConfigToolWPF
 
             return return_filter;
         }
-
-        private void OutputsShortcutButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_output_minus).Visibility.Equals(Visibility.Visible))
-                zoneDataGrid.ScrollIntoView(zoneDataGrid.Items[0], zoneDataGrid.Columns[zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_output_minus).DisplayIndex]);
-            else
-                zoneDataGrid.ScrollIntoView(zoneDataGrid.Items[0], zoneDataGrid.Columns[zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_output_plus).DisplayIndex]);
-        }
-
-   
-
-        private void KeypadsShortcutButton_Click(object sender, RoutedEventArgs e)
-        {
-            zoneDataGrid.ScrollIntoView(zoneDataGrid.Items[0], zoneDataGrid.Columns[zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_Keypad_visible).DisplayIndex]);
-        }
-
-        private void ResistorsShortcutButton_Click(object sender, RoutedEventArgs e)
-        {
-            zoneDataGrid.ScrollIntoView(zoneDataGrid.Items[0], zoneDataGrid.Columns[zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_Terminal_circuit_type).DisplayIndex]);
-        }
-
-        private void AreasTimezonesShortcut_Click(object sender, RoutedEventArgs e)
-        {
-            if (areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_arm_start_minus).Visibility.Equals(Visibility.Visible))
-                areaDataGrid.ScrollIntoView(areaDataGrid.Items[0], areaDataGrid.Columns[areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_arm_start_minus).DisplayIndex]);
-            else
-                areaDataGrid.ScrollIntoView(areaDataGrid.Items[0], areaDataGrid.Columns[areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_arm_start_plus).DisplayIndex]);
-        }
-
-        private void AreasOutputsShortcutButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_output_minus).Visibility.Equals(Visibility.Visible))
-                areaDataGrid.ScrollIntoView(areaDataGrid.Items[0], areaDataGrid.Columns[areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_output_minus).DisplayIndex]);
-            else
-                areaDataGrid.ScrollIntoView(areaDataGrid.Items[0], areaDataGrid.Columns[areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_output_plus).DisplayIndex]);
-
-        }
-
-        private void AreasGeneralShortcutButton_Click(object sender, RoutedEventArgs e)
-        {
-            areaDataGrid.ScrollIntoView(areaDataGrid.Items[0], areaDataGrid.Columns[areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Active).DisplayIndex]);
-        }
-
+        
         private void RestoreDefaultMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var messageBox = MessageBox.Show(Properties.Resources.QuestionRestoreDefaultsExtended, "", MessageBoxButton.YesNo);
@@ -10775,9 +10734,7 @@ namespace ProdigyConfigToolWPF
             ComboBox a = (ComboBox)sender;
             a.ItemsSource = Dictionaries.GetAudioMessages();
         }
-
-
-
+        
         void wavePlayer_PlaybackStopped(object sender, StoppedEventArgs e)
         {
             set_button_UI_for_costumized_audio();
@@ -11334,11 +11291,6 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-
-
-
-        #endregion
-
         private void AudioCustomizedDataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             set_button_UI_for_costumized_audio();
@@ -11372,6 +11324,96 @@ namespace ProdigyConfigToolWPF
 
         }
 
+        private void AudioConfigDataGrid_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
+
+            try
+            {
+                //AUDIO tracks 
+                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
+                {
+                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+                    AudioConfigDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
+                }
+                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
+                {
+                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+                    AudioConfigDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+            }
+        }
+
+        private void AudioConfigDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                int row = AudioConfigDataGrid.SelectedIndex;
+                int column = AudioConfigDataGrid.CurrentColumn.DisplayIndex;
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource audioConfigViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    audioConfigViewSource.View.MoveCurrentToPosition(AudioConfigDataGrid.SelectedIndex);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("TENTE SELECIONAR NOVAMENTE A COLUNA" + Environment.NewLine + ex.Message);
+            }
+
+        }
+
+        private async void AudioSystemConfigurationUpload_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (this.serialPort.IsOpen)
+                {
+                    DataChoose data_choose = new DataChoose(this, true, "audio_system_configuration");
+                    data_choose.Show();
+                    this.IsEnabled = false;
+                }
+                else
+                {
+                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void AudioSystemConfigurationDownload_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (this.serialPort.IsOpen)
+                {
+                    DataChoose data_choose = new DataChoose(this, false, "audio_system_configuration");
+                    data_choose.Show();
+                    this.IsEnabled = false;
+                }
+                else
+                {
+                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        
+        #endregion
+        
+        #region STATUS
         private void StatusPartitionsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Status_Partitions.Visibility.Equals(Visibility.Visible))
@@ -11701,6 +11743,7 @@ namespace ProdigyConfigToolWPF
 
             RealTimeActionsWindow.Show();
         }
+        #endregion
 
         private async void OutputsCleanTile_Click(object sender, RoutedEventArgs e)
         {
@@ -12301,94 +12344,7 @@ namespace ProdigyConfigToolWPF
 
 
         #endregion
-
-        private void AudioConfigDataGrid_Click(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    AudioConfigDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    AudioConfigDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private void AudioConfigDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                int row = AudioConfigDataGrid.SelectedIndex;
-                int column = AudioConfigDataGrid.CurrentColumn.DisplayIndex;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainZonePVTTab;
-                    System.Windows.Data.CollectionViewSource audioConfigViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
-                    audioConfigViewSource.View.MoveCurrentToPosition(AudioConfigDataGrid.SelectedIndex);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("TENTE SELECIONAR NOVAMENTE A COLUNA" + Environment.NewLine + ex.Message);
-            }
-
-        }
-
-        private async void AudioSystemConfigurationUpload_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (this.serialPort.IsOpen)
-                {
-                    DataChoose data_choose = new DataChoose(this, true, "audio_system_configuration");
-                    data_choose.Show();
-                    this.IsEnabled = false;
-                }
-                else
-                {
-                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private async void AudioSystemConfigurationDownload_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (this.serialPort.IsOpen)
-                {
-                    DataChoose data_choose = new DataChoose(this, false, "audio_system_configuration");
-                    data_choose.Show();
-                    this.IsEnabled = false;
-                }
-                else
-                {
-                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+        
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -14763,11 +14719,8 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #endregion
-
-        private void MainPhones_button_back_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+               
+              
 
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {

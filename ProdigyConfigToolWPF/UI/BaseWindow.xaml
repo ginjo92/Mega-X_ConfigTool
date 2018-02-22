@@ -104,38 +104,8 @@
         <CommandBinding Command="Close" Executed="CloseCommand_Executed"></CommandBinding>
     </Window.CommandBindings>
 
-    <!--Title bar Right content-->
-    <Controls:MetroWindow.RightWindowCommands>
-        <Controls:WindowCommands>
-            <Label x:Name="ConfigFileName" Foreground="White" FontSize="12"/>
-            <Button x:Name="TitleBarSettingsButton" Click="TitleBarSettingsButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/toprightbar/language.png" Width="22"/>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="{x:Static p:Resources.Language}" FontWeight="Bold" FontSize="12" />
-                </StackPanel>
-            </Button>
-            <Button x:Name="TitleBarHelpButton" Click="TitleBarHelpButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/toprightbar/help.png" Width="22"/>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="{x:Static p:Resources.Help}" FontWeight="Bold" FontSize="12" />
-                </StackPanel>
-            </Button>
-            <Button x:Name="TitleBarLogoutButton" Click="TitleBarLogoutButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/images/toprightbar/logout.png" Width="22"/>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="{x:Static p:Resources.Logout}" FontWeight="Bold" FontSize="12" />
-                </StackPanel>
-            </Button>
-        </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
-    
     <Grid>
+       
         <!--FILE MENU-->
         <DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top" Background="Black">
             <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" >
@@ -175,6 +145,39 @@
                     </MenuItem>
                 </MenuItem>
             </Menu>
+        </DockPanel>
+        <!--TOP RIGHT TILES-->
+        <DockPanel x:Name="TOP_RIGHT_TILES" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
+                <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
+                <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarSettingsButton_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/images/toprightbar/preferences.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{x:Static p:Resources.Settings}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                    </StackPanel>
+                </Controls:Tile>
+                <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <Controls:Tile x:Name="HelpTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarHelpButton_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/images/toprightbar/help2.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{x:Static p:Resources.Help}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                    </StackPanel>
+                </Controls:Tile>
+                <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <Controls:Tile x:Name="LogoutTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarLogoutButton_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="/images/toprightbar/logout.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{x:Static p:Resources.Logout}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                    </StackPanel>
+                </Controls:Tile>
+            </StackPanel>   
         </DockPanel>
         <!--TILES-->
         <DockPanel x:Name="TOP_TILES" Margin="0,36,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
@@ -18816,6 +18819,43 @@
                 </Grid>
             </DockPanel>
         </Controls:Flyout>
+       
+        <!--POPUP Language--><!--
+        <Popup x:Name="PopUpLanguage" Opacity="0.8"  Margin="0,0,0,0" IsOpen="True" Width="120" Height="50" HorizontalAlignment="Right" VerticalAlignment="Top" Placement="MousePoint" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Background="Gray" Width="150">
+                <StackPanel Orientation="Horizontal"  Margin="25,0,0,0">
+                <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderThickness="1" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
+                    <RadioButton.Template>
+                        <ControlTemplate>
+                            <Image x:Name="RadioLocalePT_Image" Source="/images/portugal.png"/>
+                        </ControlTemplate>
+                    </RadioButton.Template>
+                </RadioButton>
+                <RadioButton x:Name="RadioLocalePT_Disabled" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click" Visibility="Collapsed">
+                    <RadioButton.Template>
+                        <ControlTemplate>
+                            <Image Source="/images/portugal_off.png" Opacity="0.5"/>
+                        </ControlTemplate>
+                    </RadioButton.Template>
+                </RadioButton>
+                <RadioButton x:Name="RadioLocaleEN" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
+                    <RadioButton.Template>
+                        <ControlTemplate>
+                            <Image Source="/images/united_kingdom.png"/>
+                        </ControlTemplate>
+                    </RadioButton.Template>
+                </RadioButton>
+                <RadioButton x:Name="RadioLocaleEN_Disabled" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click" Visibility="Collapsed">
+                    <RadioButton.Template>
+                        <ControlTemplate>
+                            <Image Source="/images/united_kingdom_off.png" Opacity="0.5"/>
+                        </ControlTemplate>
+                    </RadioButton.Template>
+                </RadioButton>
+                </StackPanel>
+            </StackPanel>
+        </Popup>-->
+
         <!--FLYOUT-->
         <Controls:Flyout x:Name="FlyCom" 
                          HorizontalContentAlignment="Right" Background="#FF6E6A6A" 
