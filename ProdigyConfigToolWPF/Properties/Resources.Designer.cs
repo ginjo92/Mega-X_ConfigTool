@@ -124,6 +124,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Access to program mode.
         /// </summary>
         public static string AccessProgramMode {
@@ -3454,6 +3463,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mega-X Configurator version: .
+        /// </summary>
+        public static string MegaX_Version {
+            get {
+                return ResourceManager.GetString("MegaX_Version", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
         public static string Menu_item_Exit {
@@ -4966,7 +4984,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings.
+        ///   Looks up a localized string similar to Preferences.
         /// </summary>
         public static string Settings {
             get {

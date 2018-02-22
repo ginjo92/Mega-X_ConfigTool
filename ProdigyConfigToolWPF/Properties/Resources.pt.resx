@@ -1140,6 +1140,10 @@
   <data name="Monday" xml:space="preserve">
     <value>Segunda</value>
   </data>
+  <data name="MegaX_Version" xml:space="preserve">
+    <value>Versão do Mega-X Configurator: </value>
+  </data>
+
   <data name="Output_beeps_configuration_minus" xml:space="preserve">
     <value>Número de beeps (-)</value>
   </data>
@@ -1864,7 +1868,7 @@
     <value>Por favor selecione aquilo que pretende escrever para a central:</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Configurações</value>
+    <value>Preferências</value>
   </data>
   <data name="Help_Settings_H1_P2" xml:space="preserve">
     <value>Aqui pode alterar as configurações gerais da aplicação.</value>
@@ -2705,5 +2709,8 @@
   </data>
   <data name="InitialDate" xml:space="preserve">
     <value>Data Inicial</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Sobre</value>
   </data>
 </root>

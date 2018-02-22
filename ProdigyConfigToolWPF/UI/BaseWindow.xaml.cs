@@ -244,6 +244,7 @@ namespace ProdigyConfigToolWPF
                 User_Code_Column.Visibility = Visibility.Collapsed;
                 User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
+           
 
             //Force 'Home' tree view item to be selected on loaded
             TreeViewItem treeview_home = (TreeViewItem)MainTreeView.ItemContainerGenerator.Items[0];
@@ -9141,6 +9142,59 @@ namespace ProdigyConfigToolWPF
         {
             this.Close();
         }
+
+        private void NewFile_Click(object sender, RoutedEventArgs e)
+        {
+            FileManager file_manager = new FileManager(AppLocale, AppRole, this);
+            var CreateNewFileWindow = new CreateNewFile(file_manager.DBListBox.Items, AppLocale, AppRole, this);
+            file_manager.Close();
+            CreateNewFileWindow.ShowDialog();
+        }
+        private void OpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            var prodigy_configtool_window = new FileManager(AppLocale, AppRole, this);
+            prodigy_configtool_window.WindowState = WindowState.Normal;
+            prodigy_configtool_window.ShowDialog();
+        }
+        private async void SaveFile_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (databaseDataSet.HasChanges())
+            {
+                var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
+                await Task.Run(() =>
+                {
+                    Save_Database_data();
+                    controller.CloseAsync();
+                });
+            }
+        }
+        private void SaveAsFile_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog dlg = new SaveFileDialog();
+            dlg.FileName = "ProdigyConfig"; // Default file name
+            dlg.DefaultExt = ".prgy"; // Default file extension
+            dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
+            dlg.Filter = "Mega-X Configurator files (.prgy)|*.prgy"; // Filter files by extension
+
+            // Show save file dialog box
+            Nullable<bool> result = dlg.ShowDialog();
+
+            // Process save file dialog box results
+            if (result == true)
+            {
+                //System.IO.File.Copy(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + AppDbFile,
+                //                    dlg.InitialDirectory + dlg.FileName);
+
+                //Não gravar antigo, mesmo que haja alterações
+                //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
+                //Abrir novo ficheiro de config e fechar o antigo
+            }
+        }
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         public void Save_Database_data()
@@ -13251,7 +13305,6 @@ namespace ProdigyConfigToolWPF
             }
 
         }
-
         private void ZoneShortcuts_AreasKeypadsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Zones_Areas_Away_minus.Visibility == Visibility.Visible)
@@ -13285,7 +13338,6 @@ namespace ProdigyConfigToolWPF
             }
 
         }
-
         private void ZoneShortcuts_TerminalsButton_Click(object sender, RoutedEventArgs e)
         {
             terminal_circuit_typeColumn.Visibility = terminal_circuit_typeColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
@@ -13319,7 +13371,6 @@ namespace ProdigyConfigToolWPF
             }
 
         }
-
         private void ZoneShortcuts_OutputsButton_Click(object sender, RoutedEventArgs e)
         {
             //Zone Alarm
@@ -13375,7 +13426,6 @@ namespace ProdigyConfigToolWPF
                 ZoneShortcuts_OutputsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void ZoneShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
             if (Zone_Audio_minus.Visibility == Visibility.Visible)
@@ -13427,7 +13477,6 @@ namespace ProdigyConfigToolWPF
                 AreasShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void AreasShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
             if (Timezones_Start_Arm_minus.Visibility == Visibility.Visible)
@@ -13452,7 +13501,6 @@ namespace ProdigyConfigToolWPF
                 AreasShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void AreasShortcuts_OutputsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Arm_Away_Outputs_minus.Visibility == Visibility.Visible)
@@ -13527,7 +13575,6 @@ namespace ProdigyConfigToolWPF
                 AreasShortcuts_OutputsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void AreasShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
             if (Area_Audio_minus.Visibility == Visibility.Visible)
@@ -13574,7 +13621,6 @@ namespace ProdigyConfigToolWPF
                 UserShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void UserShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
             
@@ -13595,7 +13641,6 @@ namespace ProdigyConfigToolWPF
                 UserShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void UserShortcuts_PermissionsButton_Click(object sender, RoutedEventArgs e)
         {
             if (User_ArmDisarm_Permissions_minus.Visibility == Visibility.Visible)
@@ -13626,7 +13671,6 @@ namespace ProdigyConfigToolWPF
                 UserShortcuts_PermissionsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void UserShortcuts_ButtonsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Button_A_AreaAway_minus.Visibility == Visibility.Visible)
@@ -13681,7 +13725,6 @@ namespace ProdigyConfigToolWPF
                 UserShortcuts_ButtonsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void UserShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
             if (User_Audio_minus.Visibility == Visibility.Visible)
@@ -13727,7 +13770,6 @@ namespace ProdigyConfigToolWPF
                 KeypadShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void KeypadShortcuts_AreasButton_Click(object sender, RoutedEventArgs e)
         {
             if (Keypad_Areas_minus.Visibility == Visibility.Visible)
@@ -13747,7 +13789,6 @@ namespace ProdigyConfigToolWPF
                 KeypadShortcuts_AreasTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void KeypadShortcuts_BeepsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Keypad_Beeps_minus.Visibility == Visibility.Visible)
@@ -13767,7 +13808,6 @@ namespace ProdigyConfigToolWPF
                 KeypadShortcuts_BeepsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void KeypadShortcuts_ArmDisarmButton_Click(object sender, RoutedEventArgs e)
         {
             if (Keypad_ArmDisarm_Permissions_minus.Visibility == Visibility.Visible)
@@ -13787,7 +13827,6 @@ namespace ProdigyConfigToolWPF
                 KeypadShortcuts_ArmDisarmTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void KeypadShortcuts_FbuttonsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Fbuttons_minus.Visibility == Visibility.Visible)
@@ -13807,7 +13846,6 @@ namespace ProdigyConfigToolWPF
                 KeypadShortcuts_FbuttonsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void KeypadShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
             if (Keypad_Audio_minus.Visibility == Visibility.Visible)
@@ -13866,7 +13904,6 @@ namespace ProdigyConfigToolWPF
                 OutputShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void OutputShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
             if (Output_Timezones_minus.Visibility == Visibility.Visible)
@@ -13910,7 +13947,6 @@ namespace ProdigyConfigToolWPF
                 TimezoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
             }
         }
-
         private void TimezoneShortcuts_ExceptionsButton_Click(object sender, RoutedEventArgs e)
         {
             if (Timezone_Exception_1_minus.Visibility == Visibility.Visible)
@@ -14719,12 +14755,41 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #endregion
-               
-              
-
+             
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
+        {
+            PT_Active.Visibility = Visibility.Visible;
+            EN_Active.Visibility = Visibility.Collapsed;
+        }
+        private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
+        {
+            PT_Active.Visibility = Visibility.Collapsed;
+            EN_Active.Visibility = Visibility.Visible;
+        }
+
+        private void ChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            //Get all needed information from Form
+            var applogin = new AppLogin();
+            string user_login = applogin.UserLoginValue.Text;
+            
+            //sanitize locale
+            string locale = AppLocale;
+
+            var password_change_window = new PasswordChange(locale, user_login, applogin);
+            password_change_window.Show();
+            
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+            e.Handled = true;
         }
     }
 }
