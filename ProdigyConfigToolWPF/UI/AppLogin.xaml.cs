@@ -40,7 +40,32 @@ namespace ProdigyConfigToolWPF
             this.Language = XmlLanguage.GetLanguage(
                         Properties.Settings.Default.DefaultCulture);
 
-            InitializeComponent();
+           
+
+
+            
+
+            switch (Properties.Settings.Default.DefaultCulture)
+            {
+                case "pt-PT":
+                    InitializeComponent();
+                    RadioLocaleEN_Active.Visibility = Visibility.Collapsed;
+                    RadioLocalePT_Active.Visibility = Visibility.Visible;
+                    break;
+
+                case "en-US":
+                    InitializeComponent();
+                    RadioLocaleEN_Active.Visibility = Visibility.Visible;
+                    RadioLocalePT_Active.Visibility = Visibility.Collapsed;
+                    break;
+
+                default:
+                    InitializeComponent();
+                    RadioLocaleEN_Active.Visibility = Visibility.Visible;
+                    RadioLocalePT_Active.Visibility = Visibility.Collapsed;
+                    break;
+            }
+
 
             if (args.Length == 2)
             {
@@ -72,11 +97,14 @@ namespace ProdigyConfigToolWPF
                     }
                 }
 
+
                 if (!loginsuccessfull)
                 {
                     MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
                     this.Close();
                 }
+
+               
             }
         }
 
@@ -139,7 +167,7 @@ namespace ProdigyConfigToolWPF
         {
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("PT-PT");
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("PT-PT");
-
+            
             var oldWindow = Application.Current.MainWindow;
 
             Properties.Settings.Default.DefaultCulture = "pt-PT";
@@ -156,6 +184,7 @@ namespace ProdigyConfigToolWPF
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("EN-US");
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("EN-US");
 
+           
             var oldWindow = Application.Current.MainWindow;
 
 
@@ -176,7 +205,6 @@ namespace ProdigyConfigToolWPF
             {
                 RadioLocaleEN.IsChecked = true;
                 RadioLocalePT.IsChecked = false;
-
                 
 
             }
@@ -201,20 +229,9 @@ namespace ProdigyConfigToolWPF
             else
                 HelpFlyout.IsOpen = true;
         }
+        
+        
 
-        private void TitleBarSettingsButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Get all needed information from Form
-            string user_login = this.UserLoginValue.Text;
-
-            //sanitize locale
-            string locale = sanitize_locale(this);
-
-            var password_change_window = new PasswordChange(locale, user_login, this);
-            password_change_window.Show();
-        }
-
- 
         public void QueriesTableAdapter(string connectionString)
         {
             Properties.Settings.Default["SqliteLoginConnectionString"] = connectionString + ";password = idsancoprodigy2017";

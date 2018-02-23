@@ -215,16 +215,7 @@
                     </Controls:Tile.ContextMenu>
                 </Controls:Tile>
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
-                <Controls:Tile x:Name="RestoreTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
-                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
-                                       Foreground="Gray" Click="RestoreDefaultMenuItem_Click">
-                    <Controls:Tile.Content>
-                        <StackPanel Orientation="Horizontal" Height="Auto">
-                            <Image Source="/images/topbaricons/restore.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock Text="{x:Static p:Resources.Restore_default_configuration}" VerticalAlignment="Center" Margin="5,0,5,0" />
-                        </StackPanel>
-                    </Controls:Tile.Content>
-                </Controls:Tile>
+                
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
                 <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
             </StackPanel>   
@@ -261,6 +252,16 @@
                     <Controls:Tile.ContextMenu>
                         <ContextMenu x:Name="Preferences_ContextMenu" >
                             <StackPanel>
+                                <Controls:Tile x:Name="RestoreTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray" Click="RestoreDefaultMenuItem_Click">
+                                    <Controls:Tile.Content>
+                                        <StackPanel Orientation="Horizontal" Height="Auto">
+                                            <Image Source="/images/topbaricons/restore.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            <TextBlock Text="{x:Static p:Resources.Restore_default_configuration}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                        </StackPanel>
+                                    </Controls:Tile.Content>
+                                </Controls:Tile>
                                 <StackPanel x:Name="Header_Language" Orientation="Horizontal" HorizontalAlignment="Center">
                                     <Image Source="/images/topbaricons/language.png" Width="15"/>
                                     <Label Content="{x:Static p:Resources.Language}" FontWeight="Bold" FontSize="10" HorizontalAlignment="Center"/>

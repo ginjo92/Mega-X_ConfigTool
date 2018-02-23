@@ -1465,6 +1465,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current Password.
+        /// </summary>
+        public static string CurrentPassword {
+            get {
+                return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select what you want to read from Mega-X unit:.
         /// </summary>
         public static string DataChooseDialogRead {
@@ -5970,6 +5979,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string User_data_inicial {
             get {
                 return ResourceManager.GetString("User_data_inicial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string User_name {
+            get {
+                return ResourceManager.GetString("User_name", resourceCulture);
             }
         }
         

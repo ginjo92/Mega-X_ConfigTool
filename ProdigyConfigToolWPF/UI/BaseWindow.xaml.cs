@@ -112,6 +112,7 @@ namespace ProdigyConfigToolWPF
                 timer.Enabled = true;
                 timer.Start();
 
+
                 ConfigFileName.Content = AppDbFile;
             }
             catch (Exception ex)
@@ -119,16 +120,25 @@ namespace ProdigyConfigToolWPF
                 MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
             }
 
-            if (Thread.CurrentThread.CurrentCulture.Name.Equals("en-US"))
+
+            switch (Properties.Settings.Default.DefaultCulture)
             {
-                EN_Active.Visibility = Visibility.Visible;
-                PT_Active.Visibility = Visibility.Collapsed;
+                case "pt-PT":
+                    EN_Active.Visibility = Visibility.Collapsed;
+                    PT_Active.Visibility = Visibility.Visible;
+                    break;
+
+                case "en-US":
+                    EN_Active.Visibility = Visibility.Visible;
+                    PT_Active.Visibility = Visibility.Collapsed;
+                    break;
+
+                default:
+                    EN_Active.Visibility = Visibility.Visible;
+                    PT_Active.Visibility = Visibility.Collapsed;
+                    break;
             }
-            else if (Thread.CurrentThread.CurrentCulture.Name.Equals("pt-PT"))
-            {
-                EN_Active.Visibility = Visibility.Collapsed;
-                PT_Active.Visibility = Visibility.Visible;
-            }
+
         }
 
         void OnTimedEvent(object source, EventArgs e)
@@ -9498,9 +9508,26 @@ namespace ProdigyConfigToolWPF
                 default_restore_is_set = false;
             }
         }
-       
+
+        private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
+        {
+            Preferences_ContextMenu.IsOpen = false;
+            Close();
+            MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null);
+            window1.Show();
+        }
+
+        private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
+        {
+            Preferences_ContextMenu.IsOpen = false;
+            Close();
+            MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null);
+            window1.Show();
+        }
+
         public void BaseWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+
             if (databaseDataSet.HasChanges())
             {
                 var messageBox = MessageBox.Show(Properties.Resources.QuestionSaveChangesExtended + "\n" + "\n" + Properties.Resources.InfoDataWillBeLost, Properties.Resources.QuestionSaveChanges, MessageBoxButton.YesNoCancel);
@@ -9514,6 +9541,12 @@ namespace ProdigyConfigToolWPF
 
                 }
             }
+
+            //if (!databaseDataSet.HasChanges())
+            //{
+            //    Close();
+            //}
+           
 
             if (serialPort.IsOpen)
                 serialPort.Close();
@@ -9704,11 +9737,11 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        private void TitleBarSettingsButton_Click(object sender, RoutedEventArgs e)
-        {
-            Settings settings = new Settings(this);
-            settings.Show();
-        }
+        //private void TitleBarSettingsButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Settings settings = new Settings(this);
+        //    settings.Show();
+        //}
 
         private async void Reab_Events_Button_click(object sender, RoutedEventArgs e)
         {
@@ -14773,31 +14806,7 @@ namespace ProdigyConfigToolWPF
 
         }
 
-        private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
-        {
-            PT_Active.Visibility = Visibility.Visible;
-            EN_Active.Visibility = Visibility.Collapsed;
-            SettingsTile.ContextMenu.IsOpen = false;
-            
-            Close();
-            MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null);
-            window1.Show();
-
-            Close();
-        }
-
-        private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
-        {
-            PT_Active.Visibility = Visibility.Collapsed;
-            EN_Active.Visibility = Visibility.Visible;
-            SettingsTile.ContextMenu.IsOpen = false;
-            
-            Close();
-            MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null);
-            window1.Show();
-
-            Close();
-        }
+       
 
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
@@ -14808,7 +14817,7 @@ namespace ProdigyConfigToolWPF
             //sanitize locale
             string locale = AppLocale;
 
-            var password_change_window = new PasswordChange(locale, user_login, applogin);
+            var password_change_window = new PasswordChange(locale, user_login, this);
             password_change_window.Show();
             
         }

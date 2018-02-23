@@ -24,9 +24,9 @@ namespace ProdigyConfigToolWPF
     public partial class PasswordChange : MetroWindow
     {
         private string UserName;
-        private AppLogin PageParent;
+        private MainWindow PageParent;
         private Boolean loginsuccessfull;
-        public PasswordChange(string locale, string user, AppLogin parent)
+        public PasswordChange(string locale, string user, MainWindow parent)
         {
             PageParent = parent;
             UserName = user;
@@ -91,6 +91,14 @@ namespace ProdigyConfigToolWPF
                 MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
                 this.Close();
             }
+            else
+            {
+
+                this.Close();    
+                PageParent.Close();
+                AppLogin window1 = new AppLogin();
+                window1.Show();
+            }
         }
 
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
@@ -104,6 +112,11 @@ namespace ProdigyConfigToolWPF
         public void QueriesTableAdapter(string connectionString)
         {
             Properties.Settings.Default["defaultConnectionString"] = connectionString + ";password = idsancoprodigy2017";
+        }
+
+        private void UserRepeatNewPasswordValue_KeyDown(object sender, KeyEventArgs e)
+        {
+
         }
     }
 }

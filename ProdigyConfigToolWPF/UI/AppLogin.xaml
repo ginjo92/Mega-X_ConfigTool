@@ -121,23 +121,40 @@
                     </StackPanel.Resources>
 
                     <ItemsControl>
-                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
-                                <RadioButton.Template>
-                                    <ControlTemplate>
-                                        <Image x:Name="RadioLocalePT_flag" Source="/images/portugal.png" />
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <RadioButton x:Name="RadioLocaleEN" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
-                                <RadioButton.Template>
-                                    <ControlTemplate>
-                                        <Image x:Name="RadioLocaleEN_flag" Source="/images/united_kingdom.png"/>
-                                    </ControlTemplate>
-                                </RadioButton.Template>
-                            </RadioButton>
-                            <!--<RadioButton x:Name="RadioLocalePT" Content="/ProdigyConfigToolWPF;component/images/portugal.png" Style="{StaticResource Flag}" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click"/>
-                            <RadioButton x:Name="RadioLocaleEN" Content="/ProdigyConfigToolWPF;component/images/united_kingdom.png" Style="{StaticResource Flag}" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click"/>-->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel x:Name="RadioLocalePT_Active" Orientation="Horizontal">
+                                <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image x:Name="RadioLocalePT_flag" Source="/images/portugal.png" />
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                                <RadioButton x:Name="RadioLocaleEN_off" IsChecked="True" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocaleEN_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image Source="/images/united_kingdom_off.png" Opacity="0.5"/>
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                            </StackPanel>
+                            <StackPanel x:Name="RadioLocaleEN_Active" Orientation="Horizontal">
+                                <RadioButton x:Name="RadioLocalePT_off" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Click="RadioLocalePT_Click">
+                                        <RadioButton.Template>
+                                            <ControlTemplate>
+                                                <Image Source="/images/portugal_off.png" Opacity="0.5"/>
+                                            </ControlTemplate>
+                                        </RadioButton.Template>
+                                    </RadioButton>
+                                <RadioButton x:Name="RadioLocaleEN" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image x:Name="RadioLocaleEN_flag" Source="/images/united_kingdom.png"/>
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                                
+                            </StackPanel>
                         </StackPanel>
                     </ItemsControl>
                 </StackPanel>
