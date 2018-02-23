@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="ProdigyConfigToolWPF.RealTimeActions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+        xmlns:local="clr-namespace:ProdigyConfigToolWPF"
+        mc:Ignorable="d"
+        Title="RealTimeActions" Height="200" Width="200"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" Topmost="True" WindowState="Normal" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible"  ShowTitleBar="False" IsWindowDraggable="True" ShowMaxRestoreButton="false" ResizeMode="NoResize" IsMinButtonEnabled="True" IsMaxRestoreButtonEnabled="False" IsCloseButtonEnabled="True" BorderBrush="Black">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="RealTimeActionsLabelDescription" Grid.Row="0" Content="Description" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"></Label>
+        <Button x:Name="RealTimeActionsButtonArmAway" Grid.Row="1" VerticalAlignment="Center" Content="{x:Static p:Resources.ArmAway}" Click="SendAction" Tag="1" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonArmStay" Grid.Row="2" VerticalAlignment="Center" Content="{x:Static p:Resources.ArmStay}" Click="SendAction" Tag="2" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonDisarm" Grid.Row="3" VerticalAlignment="Center" Content="{x:Static p:Resources.DisarmAway}" Click="SendAction" Tag="0" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonBypassOn" Grid.Row="4" VerticalAlignment="Center" Content="{x:Static p:Resources.BypassOn}" Click="SendAction" Tag="1" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonBypassOff" Grid.Row="5" VerticalAlignment="Center" Content="{x:Static p:Resources.BypassOff}" Click="SendAction" Tag="0" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonOutputOn" Grid.Row="6" VerticalAlignment="Center" Content="{x:Static p:Resources.OutputOn}" Click="SendAction" Tag="1" Visibility="Collapsed"/>
+        <Button x:Name="RealTimeActionsButtonOutputOff" Grid.Row="7" VerticalAlignment="Center" Content="{x:Static p:Resources.OutputOff}" Click="SendAction" Tag="0" Visibility="Collapsed"/>
+    </Grid>
+</Controls:MetroWindow>
