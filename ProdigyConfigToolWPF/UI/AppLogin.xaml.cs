@@ -39,12 +39,7 @@ namespace ProdigyConfigToolWPF
 
             this.Language = XmlLanguage.GetLanguage(
                         Properties.Settings.Default.DefaultCulture);
-
-           
-
-
             
-
             switch (Properties.Settings.Default.DefaultCulture)
             {
                 case "pt-PT":

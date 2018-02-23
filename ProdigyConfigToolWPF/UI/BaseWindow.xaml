@@ -107,44 +107,7 @@
     <Grid>
         <!--FILE MENU-->
         <DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top" Background="Black">
-            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" >
-                <!--TODO: Add names-->
-               
-                <!--<MenuItem Header="{x:Static p:Resources.File}" Foreground="Black" Margin="2" Checked="MenuItem_Checked" SubmenuOpened="MenuItem_SubmenuOpened">
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_New}" Command="ApplicationCommands.New" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/topbaricons/new_file.png" Height="22" Width="22" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Open}" Command="ApplicationCommands.Open" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/topbaricons/open_file.png" Height="22" Width="22" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Save}" x:Name="MenuItemSave" Command="ApplicationCommands.Save" IsEnabled="False" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/topbaricons/save.png" Height="22" Width="22" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Command="ApplicationCommands.SaveAs" Visibility="Visible" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/topbaricons/save_as.png" Height="22" Width="22" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Exit}" Command="ApplicationCommands.Close">
-                        <MenuItem.Icon>
-                            <Image Source="/images/topbaricons/off.png" Height="22" Width="22" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.Tools}" Foreground="Black" Margin="2" Checked="MenuItem_Checked" SubmenuOpened="MenuItem_SubmenuOpened">
-                    <MenuItem Header="{x:Static p:Resources.Restore_default_configuration}" Click="RestoreDefaultMenuItem_Click" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/restore.png" Height="20" Width="20" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>-->
-            </Menu>
+            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto"/>
         </DockPanel>
         
         <!--TOP TILES-->
@@ -215,14 +178,6 @@
                     </Controls:Tile.ContextMenu>
                 </Controls:Tile>
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
-                
-                <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
-                <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
-            </StackPanel>   
-        </DockPanel>
-
-        <DockPanel x:Name="TopBarRight" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
                 <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
                                                VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
                                                Foreground="Gray">
@@ -253,8 +208,8 @@
                         <ContextMenu x:Name="Preferences_ContextMenu" >
                             <StackPanel>
                                 <Controls:Tile x:Name="RestoreTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
-                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
-                                       Foreground="Gray" Click="RestoreDefaultMenuItem_Click">
+                                           VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
+                                           Foreground="Gray" Click="RestoreDefaultMenuItem_Click">
                                     <Controls:Tile.Content>
                                         <StackPanel Orientation="Horizontal" Height="Auto">
                                             <Image Source="/images/topbaricons/restore.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -269,7 +224,7 @@
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="Auto" IsEnabled="True">
                                     <StackPanel x:Name="PT_Active" Orientation="Horizontal" HorizontalAlignment="Center" Margin="25,10" Visibility="Visible">
                                         <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderThickness="1" BorderBrush="Green" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,0,10,0" 
-                                                     Click="RadioLocalePT_Click">
+                                                         Click="RadioLocalePT_Click">
                                             <RadioButton.Template>
                                                 <ControlTemplate>
                                                     <Image x:Name="RadioLocalePT_Image" Source="/images/portugal.png"/>
@@ -324,6 +279,13 @@
 
 
                 </Controls:Tile>
+             
+            </StackPanel>   
+        </DockPanel>
+
+        <DockPanel x:Name="TopBarRight" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
+                <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
                 <Controls:Tile x:Name="HelpTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
                                                VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarHelpButton_Click" HorizontalTitleAlignment="Right"
