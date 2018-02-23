@@ -11323,6 +11323,20 @@ namespace ProdigyConfigToolWPF
             set_button_UI_for_costumized_audio();
         }
 
+        private void ChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            //Get all needed information from Form
+            var applogin = new AppLogin();
+            string user_login = applogin.UserLoginValue.Text;
+
+            //sanitize locale
+            string locale = AppLocale;
+
+            var password_change_window = new PasswordChange(locale, user_login, this);
+            password_change_window.Show();
+
+        }
+
         private void set_button_UI_for_costumized_audio()
         {
             try

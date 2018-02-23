@@ -107,65 +107,178 @@
     <Grid>
         <!--FILE MENU-->
         <DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top" Background="Black">
-            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" >
-                <!--TODO: Add names-->
-                <MenuItem Header="{x:Static p:Resources.File}" Foreground="Black" Margin="2" Checked="MenuItem_Checked" SubmenuOpened="MenuItem_SubmenuOpened">
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_New}" Command="ApplicationCommands.New" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/new.png" Height="25" Width="25" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Open}" Command="ApplicationCommands.Open" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/open.png" Height="25" Width="25" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Save}" x:Name="MenuItemSave" Command="ApplicationCommands.Save" IsEnabled="False" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/save.png" Height="25" Width="25" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Command="ApplicationCommands.SaveAs" Visibility="Visible" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/save_as.png" Height="25" Width="25" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="{x:Static p:Resources.Menu_item_Exit}" Command="ApplicationCommands.Close">
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/on-off.png" Height="20" Width="20" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-                <MenuItem Header="{x:Static p:Resources.Tools}" Foreground="Black" Margin="2" Checked="MenuItem_Checked" SubmenuOpened="MenuItem_SubmenuOpened">
-                    <MenuItem Header="{x:Static p:Resources.Restore_default_configuration}" Click="RestoreDefaultMenuItem_Click" >
-                        <MenuItem.Icon>
-                            <Image Source="/images/filemenu/restore.png" Height="20" Width="20" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
-        <!--TOP RIGHT TILES-->
-        <DockPanel x:Name="TOP_RIGHT_TILES" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
-                <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
-            </StackPanel>   
+            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" />
         </DockPanel>
 
-        <DockPanel x:Name="TopBarRight" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
+        <!--TOP TILES-->
+        <DockPanel x:Name="TopBarLeft" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Left" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
-                <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
-                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarSettingsButton_Click" HorizontalTitleAlignment="Right"
+                <Controls:Tile x:Name="FileTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
                                        Foreground="Gray">
-                    <StackPanel Orientation="Horizontal" >
-                        <Image Source="/images/toprightbar/preferences.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{x:Static p:Resources.Settings}" VerticalAlignment="Center" Margin="5,0,5,0" />
-                    </StackPanel>
-                </Controls:Tile>
-             
-            </StackPanel>   
-        </DockPanel>
+                    <Controls:Tile.Content>
+                        <StackPanel Orientation="Horizontal" Height="Auto">
+                            <Image Source="/images/topbaricons/files.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Text="{x:Static p:Resources.File}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                        </StackPanel>
+                    </Controls:Tile.Content>
+                    <Controls:Tile.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="Click">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="ContextMenu.IsOpen" FillBehavior="HoldEnd">
+                                                    <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                                                </BooleanAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Controls:Tile.Style>
+                    <Controls:Tile.ContextMenu>
+                        <ContextMenu x:Name="File_ContextMenu" >
+                            <MenuItem Header="{x:Static p:Resources.Menu_item_New}" Command="ApplicationCommands.New">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/new_file.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{x:Static p:Resources.Menu_item_Open}" Command="ApplicationCommands.Open">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/open_file.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{x:Static p:Resources.Menu_item_Save}" x:Name="MenuItemSave" Command="ApplicationCommands.Save">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/save.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Command="ApplicationCommands.SaveAs" Visibility="Visible" >
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/save_as.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{x:Static p:Resources.Menu_item_Exit}" Command="ApplicationCommands.Close">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/off.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
 
+                            <ContextMenu.CommandBindings>
+                                <CommandBinding Command="ApplicationCommands.Open" Executed="OpenCommand_Executed" />
+                                <CommandBinding Command="ApplicationCommands.New" Executed="NewCommand_Executed"/>
+                                <CommandBinding Command="ApplicationCommands.Save" Executed="SaveCommand_Executed"/>
+                                <CommandBinding Command="ApplicationCommands.SaveAs" Executed="SaveAsCommand_Executed"/>
+                                <CommandBinding Command="ApplicationCommands.Close" Executed="CloseCommand_Executed"/>
+                            </ContextMenu.CommandBindings>
+                        </ContextMenu>
+                    </Controls:Tile.ContextMenu>
+                </Controls:Tile>
+                <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
+                <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                               VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
+                                               Foreground="Gray">
+                    <Controls:Tile.Content>
+                        <StackPanel Orientation="Horizontal" Height="Auto">
+                            <Image Source="/images/topbaricons/preferences.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock Text="{x:Static p:Resources.Settings}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                        </StackPanel>
+                    </Controls:Tile.Content>
+                    <Controls:Tile.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="Click">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="ContextMenu.IsOpen">
+                                                    <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                                                </BooleanAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Controls:Tile.Style>
+                    <Controls:Tile.ContextMenu>
+                        <ContextMenu x:Name="Preferences_ContextMenu" >
+                            <StackPanel>
+                                <Controls:Tile x:Name="RestoreTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray" Click="RestoreDefaultMenuItem_Click">
+                                    <Controls:Tile.Content>
+                                        <StackPanel Orientation="Horizontal" Height="Auto">
+                                            <Image Source="/images/topbaricons/restore.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            <TextBlock Text="{x:Static p:Resources.Restore_default_configuration}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                                        </StackPanel>
+                                    </Controls:Tile.Content>
+                                </Controls:Tile>
+                                <StackPanel x:Name="Header_Language" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Image Source="/images/topbaricons/language.png" Width="15"/>
+                                    <Label Content="{x:Static p:Resources.Language}" FontWeight="Bold" FontSize="10" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="Auto" IsEnabled="True">
+                                    <StackPanel x:Name="PT_Active" Orientation="Horizontal" HorizontalAlignment="Center" Margin="25,10" Visibility="Visible">
+                                        <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderThickness="1" BorderBrush="Green" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,0,10,0" 
+                                                     Click="RadioLocalePT_Click">
+                                            <RadioButton.Template>
+                                                <ControlTemplate>
+                                                    <Image x:Name="RadioLocalePT_Image" Source="/images/portugal.png"/>
+                                                </ControlTemplate>
+                                            </RadioButton.Template>
+                                        </RadioButton>
+                                        <Image x:Name="SwitchLeft" Source="/images/switch_left.png" Width="25"/>
+                                        <RadioButton x:Name="RadioLocaleEN_Disabled" Width="30" Height="30" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click" Visibility="Visible">
+                                            <RadioButton.Template>
+                                                <ControlTemplate>
+                                                    <Image Source="/images/united_kingdom_off.png" Opacity="0.5"/>
+                                                </ControlTemplate>
+                                            </RadioButton.Template>
+                                        </RadioButton>
+                                    </StackPanel>
+                                    <StackPanel x:Name="EN_Active" Orientation="Horizontal" HorizontalAlignment="Center" Margin="25,10" Visibility="Collapsed">
+                                        <RadioButton x:Name="RadioLocalePT_disabled" IsChecked="True" BorderThickness="1" BorderBrush="Green" Width="30" Height="30" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
+                                            <RadioButton.Template>
+                                                <ControlTemplate>
+                                                    <Image x:Name="RadioLocalePT_Image" Source="/images/portugal_off.png" Opacity="0.5"/>
+                                                </ControlTemplate>
+                                            </RadioButton.Template>
+                                        </RadioButton>
+                                        <Image x:Name="SwitchRight" Source="/images/switch_right.png" Width="25"/>
+                                        <RadioButton x:Name="RadioLocaleEN" Width="30" Height="30" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click" Visibility="Visible">
+                                            <RadioButton.Template>
+                                                <ControlTemplate>
+                                                    <Image Source="/images/united_kingdom.png" />
+                                                </ControlTemplate>
+                                            </RadioButton.Template>
+                                        </RadioButton>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Separator />
+                                <StackPanel x:Name="Header_About" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Image Source="/images/topbaricons/about.png" Width="15"/>
+                                    <Label Content="{x:Static p:Resources.About}" FontWeight="Bold" FontSize="10" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" IsEnabled="False" HorizontalAlignment="Center" >
+                                    <StackPanel Width="100">
+                                        <Image Source="/images/maxalarm.png" Width="Auto"/>
+                                        <Image Source="/images/mega-x.png" Width="Auto" Margin="10,0"/>
+                                    </StackPanel>
+                                    <StackPanel HorizontalAlignment="Left" Margin="10,0">
+                                        <Label x:Name="SoftwareVersionDescription" Content="{x:Static p:Resources.MegaX_Version}" FontWeight="Bold" FontSize="10" />
+                                        <Label x:Name="SoftwareVersion2" Content="VDev" FontSize="10" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </ContextMenu>
+                    </Controls:Tile.ContextMenu>
+                </Controls:Tile>
+            </StackPanel>
+        </DockPanel>
         <DockPanel x:Name="TopBarRight" Margin="0,0,0,0" Background="White" VerticalAlignment="Top" HorizontalAlignment="Right" Height="40" Width="Auto" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="40" HorizontalAlignment="Right">
                 <Label x:Name="ConfigFileName" Foreground="Gray" FontSize="12" VerticalAlignment="Center" Margin="0,0,0,4"/>
@@ -179,13 +292,48 @@
                     </StackPanel>
                 </Controls:Tile>
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
-                <Controls:Tile x:Name="LogoutTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
-                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" Click="TitleBarLogoutButton_Click" HorizontalTitleAlignment="Right"
-                                       Foreground="Gray">
-                    <StackPanel Orientation="Horizontal" >
-                        <Image Source="/images/toprightbar/logout.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{x:Static p:Resources.Logout}" VerticalAlignment="Center" Margin="5,0,5,0" />
-                    </StackPanel>
+                <Controls:Tile x:Name="UserTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
+                                               VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
+                                               Foreground="Black">
+                    <Controls:Tile.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="TopBar_User_Image" Source="/images/topbaricons/user_admin.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="TopBar_User_Name" Text="Admin" VerticalAlignment="Center" Margin="5,0,5,0" />
+                        </StackPanel>
+                    </Controls:Tile.Content>
+                    <Controls:Tile.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="Click">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="ContextMenu.IsOpen" FillBehavior="HoldEnd">
+                                                    <DiscreteBooleanKeyFrame KeyTime="0:0:0" Value="True"/>
+                                                </BooleanAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Controls:Tile.Style>
+                    <Controls:Tile.ContextMenu>
+                        <ContextMenu x:Name="User_ContextMenu" >
+                            <MenuItem Header="{x:Static p:Resources.ChangePassword}" Click="ChangePassword_Click" IsEnabled="true">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/password.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="{x:Static p:Resources.Logout}" Click="TitleBarLogoutButton_Click" IsEnabled="true">
+                                <MenuItem.Icon>
+                                    <Image Source="/images/topbaricons/logout.png" Height="22" Width="22" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+
+                        </ContextMenu>
+                    </Controls:Tile.ContextMenu>
+
                 </Controls:Tile>
             </StackPanel>
         </DockPanel>
