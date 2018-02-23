@@ -14800,32 +14800,12 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #endregion
-             
+               
+              
+
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
-        }
-
-       
-
-        private void ChangePassword_Click(object sender, RoutedEventArgs e)
-        {
-            //Get all needed information from Form
-            var applogin = new AppLogin();
-            string user_login = applogin.UserLoginValue.Text;
-            
-            //sanitize locale
-            string locale = AppLocale;
-
-            var password_change_window = new PasswordChange(locale, user_login, this);
-            password_change_window.Show();
-            
-        }
-
-        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-            e.CanExecute = true;
-            e.Handled = true;
         }
 
         
