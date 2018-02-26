@@ -20,12 +20,15 @@ namespace ProdigyConfigToolWPF
 
             if (action_type)
             {
-                ButtonReadWrite.Content = Properties.Resources.Upload;
+                ButtonRead.Visibility = Visibility.Collapsed;
+                ButtonWrite.Visibility = Visibility.Visible;
                 DataChooseDialog.Text = Properties.Resources.DataChooseDialogWrite;
+                
             }
             else
             {
-                ButtonReadWrite.Content = Properties.Resources.Download;
+                ButtonRead.Visibility = Visibility.Visible;
+                ButtonWrite.Visibility = Visibility.Collapsed;
                 DataChooseDialog.Text = Properties.Resources.DataChooseDialogRead;
             }
 

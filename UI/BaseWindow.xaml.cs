@@ -11323,6 +11323,20 @@ namespace ProdigyConfigToolWPF
             set_button_UI_for_costumized_audio();
         }
 
+        private void ChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            //Get all needed information from Form
+            var applogin = new AppLogin();
+            string user_login = applogin.UserLoginValue.Text;
+
+            //sanitize locale
+            string locale = AppLocale;
+
+            var password_change_window = new PasswordChange(locale, user_login, this);
+            password_change_window.Show();
+
+        }
+
         private void set_button_UI_for_costumized_audio()
         {
             try
@@ -11662,24 +11676,24 @@ namespace ProdigyConfigToolWPF
             if ((dialer & Constants.MASK_PSTN_LINE_PRESENT) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Connected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Disconnected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightGray));
             }
 
 
             if ((dialer & Constants.MASK_PSTN_CALL_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightGray));
             }
 
             #endregion
@@ -11700,12 +11714,12 @@ namespace ProdigyConfigToolWPF
             if ((partition & Constants.MASK_PARTITION_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Red));
+                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
 
 
@@ -11713,19 +11727,19 @@ namespace ProdigyConfigToolWPF
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Away));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
             else if ((partition & Constants.MASK_PARTITION_ARMED_STAY) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Stay));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.No));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Blue));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSteelBlue));
             }
 
         }
@@ -11738,35 +11752,35 @@ namespace ProdigyConfigToolWPF
                 if ((zone & Constants.MASK_ZONA_ALARM) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Alarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                     this.Dispatcher.Invoke((Action)(() => zone_object.Foreground = Brushes.White));
                 }
                 else if ((zone & Constants.MASK_ZONA_OPEN) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Open));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Blue));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSteelBlue));
                 }
                 else if ((zone & Constants.MASK_ZONA_TAMPER) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.TamperAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                 }
                 else if ((zone & Constants.MASK_ZONA_MASK) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.MaskAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                 }
                 else
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Ok));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSeaGreen));
                 }
 
 
                 if ((zone & Constants.MASK_ZONA_BYPASS) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip += "\r\n " + Properties.Resources.Bypass + Properties.Resources.Yes));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Yellow));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Khaki));
                 }
                 else
                 {
@@ -11786,19 +11800,19 @@ namespace ProdigyConfigToolWPF
             if ((output & Constants.MASK_OUTPUT_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Red));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightGray));
             }
 
 
             if ((output & Constants.MASK_OUTPUT_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip += "\r\n " + Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
@@ -11812,12 +11826,12 @@ namespace ProdigyConfigToolWPF
             if ((timezone & Constants.TIMEZONE_IN_PERIOD) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightGray));
             }
 
         }

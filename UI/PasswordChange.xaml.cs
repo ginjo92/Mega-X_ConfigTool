@@ -89,11 +89,10 @@ namespace ProdigyConfigToolWPF
             if (!loginsuccessfull)
             {
                 MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                this.Close();
+                
             }
             else
             {
-
                 this.Close();    
                 PageParent.Close();
                 AppLogin window1 = new AppLogin();
@@ -116,7 +115,53 @@ namespace ProdigyConfigToolWPF
 
         private void UserRepeatNewPasswordValue_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.Key == Key.Enter)
+            {
+                string user_login = this.UserLoginValue.Text;
+                string user_password = this.UserPasswordValue.Password;
+                string new_user_password = this.UserNewPasswordValue.Password;
+                string confirm_new_user_password = this.UserRepeatNewPasswordValue.Password;
 
+                SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
+                UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
+                user_login_table_adapter.Fill(login_dataset.UserLogin);
+
+                foreach (DataRow dr in login_dataset.UserLogin.Rows)
+                {
+                    if (dr["UserName"].ToString() == user_login)
+                    {
+                        if (dr["Password"].ToString() == user_password)
+                        {
+                            loginsuccessfull = true;
+
+                            if (new_user_password.Equals(confirm_new_user_password))
+                            {
+                                dr["Password"] = new_user_password;
+                                user_login_table_adapter.Update(dr);
+                                MessageBox.Show(Properties.Resources.PasswordChanged, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show(Properties.Resources.NewPasswordConfirmationNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                            }
+                        }
+                    }
+                }
+
+                if (!loginsuccessfull)
+                {
+                    MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                    this.Close();
+                }
+                else
+                {
+                    this.Close();
+                    PageParent.Close();
+                    AppLogin window1 = new AppLogin();
+                    window1.Show();
+                }
+            }
         }
     }
 }
