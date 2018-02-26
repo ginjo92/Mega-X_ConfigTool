@@ -9737,12 +9737,6 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        //private void TitleBarSettingsButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Settings settings = new Settings(this);
-        //    settings.Show();
-        //}
-
         private async void Reab_Events_Button_click(object sender, RoutedEventArgs e)
         {
             if (this.serialPort.IsOpen)
@@ -14042,20 +14036,78 @@ namespace ProdigyConfigToolWPF
         }
 
         //PHONES
-        private void PhoneShortcuts_ReportsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PhoneShortcuts_TestsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void PhoneShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
+            Phones_ActiveColumn.Visibility = Phones_ActiveColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            prefix_column.Visibility = prefix_column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            phone_numberColumn.Visibility = phone_numberColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            ComAttempts_Column.Visibility = ComAttempts_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
+            if (Phones_Area_minus.Visibility == Visibility.Visible)
+                Phones_Area_minus.Visibility = Visibility.Hidden;
+            else
+                Phones_Area_plus.Visibility = Phones_Area_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            if (Phone_KissOff_minus.Visibility == Visibility.Visible)
+                Phone_KissOff_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_KissOff_plus.Visibility = Phone_KissOff_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_SettingsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_SettingsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
         }
+        private void PhoneShortcuts_ReportsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Phone_Reports_minus.Visibility == Visibility.Visible)
+                Phone_Reports_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_Reports_plus.Visibility = Phone_Reports_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_ReportsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_ReportsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_ReportsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void PhoneShortcuts_TestsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestCalls.Visibility = Phone_TestCalls.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Phone_VoiceCallType.Visibility = Phone_VoiceCallType.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            if (Phone_TestConfig_minus.Visibility == Visibility.Visible)
+                Phone_TestConfig_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_TestConfig_plus.Visibility = Phone_TestConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_TestsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_TestsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_TestsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        
         
         #endregion
 
@@ -14810,18 +14862,58 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #region Phones
+        private void Phones_Area_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phones_Area_minus.Visibility = Visibility.Hidden;
+            Phones_Area_plus.Visibility = Visibility.Visible;
+        }
+        private void Phones_Area_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phones_Area_minus.Visibility = Visibility.Visible;
+            Phones_Area_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_KissOff_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_KissOff_minus.Visibility = Visibility.Hidden;
+            Phone_KissOff_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_KissOff_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_KissOff_minus.Visibility = Visibility.Visible;
+            Phone_KissOff_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_Reports_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_Reports_minus.Visibility = Visibility.Hidden;
+            Phone_Reports_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_Reports_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_Reports_minus.Visibility = Visibility.Visible;
+            Phone_Reports_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_TestConfig_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestConfig_minus.Visibility = Visibility.Hidden;
+            Phone_TestConfig_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_TestConfig_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestConfig_minus.Visibility = Visibility.Visible;
+            Phone_TestConfig_plus.Visibility = Visibility.Hidden;
+        }
 
         #endregion
 
         #endregion
-               
-              
 
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
-
         
     }
 }
