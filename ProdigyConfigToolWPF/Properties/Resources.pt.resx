@@ -2710,4 +2710,13 @@
   <data name="InitialDate" xml:space="preserve">
     <value>Data Inicial</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="User_name" xml:space="preserve">
+    <value>Nome do utilizador</value>
+  </data>
 </root>

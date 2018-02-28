@@ -1293,6 +1293,7 @@
     <None Include="defaultDataSet.xss">
       <DependentUpon>defaultDataSet.xsd</DependentUpon>
     </None>
+    <None Include="images\wizard\call copy.psd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -1360,14 +1361,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\board.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\keypad1.png" />
-    <Resource Include="images\keypad2.png" />
-    <Resource Include="images\keypad3.png" />
-    <Resource Include="images\keypad4.png" />
-    <Resource Include="images\keypad5.png" />
-    <Resource Include="images\keypad6.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\old\" />
@@ -1562,10 +1555,6 @@
     <Resource Include="images\terminals\Circuit_R1R3.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\keypad7.png" />
-    <Resource Include="images\keypad8.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\lock_admin.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1697,6 +1686,57 @@
     <Resource Include="images\topbaricons\save_as.png" />
     <Resource Include="images\topbaricons\user_admin.png" />
     <Resource Include="images\topbaricons\user_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\switch_left.png" />
+    <Resource Include="images\switch_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\new\events2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\new\keypad2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\wizard\areas1.png" />
+    <Resource Include="images\wizard\areas2.png" />
+    <Resource Include="images\wizard\areas3.png" />
+    <Resource Include="images\wizard\areas4.png" />
+    <Resource Include="images\wizard\areas5.png" />
+    <Resource Include="images\wizard\areas6.png" />
+    <Resource Include="images\wizard\areas7.png" />
+    <Resource Include="images\wizard\areas8.png" />
+    <Resource Include="images\wizard\keypad1.png" />
+    <Resource Include="images\wizard\keypad2.png" />
+    <Resource Include="images\wizard\keypad3.png" />
+    <Resource Include="images\wizard\keypad4.png" />
+    <Resource Include="images\wizard\keypad5.png" />
+    <Resource Include="images\wizard\keypad6.png" />
+    <Resource Include="images\wizard\keypad7.png" />
+    <Resource Include="images\wizard\keypad8.png" />
+    <Resource Include="images\wizard\phone1.png" />
+    <Resource Include="images\wizard\phone10.png" />
+    <Resource Include="images\wizard\phone11.png" />
+    <Resource Include="images\wizard\phone12.png" />
+    <Resource Include="images\wizard\phone13.png" />
+    <Resource Include="images\wizard\phone14.png" />
+    <Resource Include="images\wizard\phone15.png" />
+    <Resource Include="images\wizard\phone16.png" />
+    <Resource Include="images\wizard\phone2.png" />
+    <Resource Include="images\wizard\phone3.png" />
+    <Resource Include="images\wizard\phone4.png" />
+    <Resource Include="images\wizard\phone5.png" />
+    <Resource Include="images\wizard\phone6.png" />
+    <Resource Include="images\wizard\phone7.png" />
+    <Resource Include="images\wizard\phone8.png" />
+    <Resource Include="images\wizard\phone9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\pvtshortcuts\alarms.png" />
+    <Resource Include="images\pvtshortcuts\armdisarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\shortcuts\alarms.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />

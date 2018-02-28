@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
         xmlns:local="clr-namespace:ProdigyConfigToolWPF"
         mc:Ignorable="d"
-        Title="" Height="300" Width="300"
+        Title="" Height="300" Width="200"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" Topmost="True" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="600" MinHeight="200" ShowTitleBar="True" IsWindowDraggable="False" ShowMaxRestoreButton="False" FocusManager.FocusedElement="{Binding ElementName=UserPasswordValue}" ResizeMode="NoResize" IsMinButtonEnabled="False" IsMaxRestoreButtonEnabled="False" IsCloseButtonEnabled="False" BorderBrush="Black">
     <Controls:MetroWindow.Resources>
         <ObjectDataProvider x:Key="UserLogins_dict"
@@ -14,31 +14,26 @@
     </Controls:MetroWindow.Resources>
     <Grid>
         <!--FLYOUT-->
-        <Border Margin="0" Background="#FFFFFCFC" BorderBrush="Black" >
+        <Border Margin="0" Background="White" BorderBrush="Black" >
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock x:Name="DataChooseDialog" FontSize="18" Height="38" FontWeight="Bold" TextAlignment="Center"></TextBlock>
-
-                <Grid HorizontalAlignment="Left" Background="#FFDCDADA" Margin="160,0,0,0">
+                <TextBlock x:Name="DataChooseDialog" FontSize="15" FontWeight="Bold" TextAlignment="Center" Foreground="Black"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0,20">
+                
+                <Grid HorizontalAlignment="Left" Background="WhiteSmoke" Margin="40,10,0,0" Height="160">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150" />
+
                     </Grid.ColumnDefinitions>
                     <CheckBox x:Name="CheckBoxAreas" Grid.Row="0" Grid.Column="0" Margin="10,10" IsChecked="True">
                         <StackPanel>
@@ -87,19 +82,38 @@
                     </CheckBox>
                     <CheckBox x:Name="CheckBoxAudioSystemConfiguration" Grid.Row="3" Grid.Column="0" Margin="10,10" IsChecked="True">
                         <StackPanel>
-                            <TextBlock Text="{x:Static p:Resources.Audio_system_configurations}"/>
+                            <TextBlock Text="{x:Static p:Resources.Audio}"/>
                         </StackPanel>
                     </CheckBox>
-
-                    <Button x:Name="ButtonChooseAll" Grid.Row="0" Grid.Column="7" Margin="50,18,-109,40" Content="{x:Static p:Resources.Select_Everything}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#7F9BACD1" Grid.RowSpan="2" Click="ButtonChooseAll_Click"/>
-                    <Button x:Name="ButtonChooseNothing" Grid.Row="1" Grid.Column="7" Margin="50,45,-109,13" Content="{x:Static p:Resources.Select_Nothing}" Background="#7FAEAC85" Grid.RowSpan="2" Click="ButtonChooseNothing_Click"/>
                 </Grid>
-
+                <StackPanel x:Name="ButtonsAllNone" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20,10" >
+                    <Controls:Tile x:Name="ButtonChooseAll" Width="50" Height="30" Title="{x:Static p:Resources.Select_Everything}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="LightBlue" HorizontalTitleAlignment="Center" Foreground="Black" 
+                                       Click="ButtonChooseAll_Click"/>
+                    <Controls:Tile x:Name="ButtonChooseNothing" Width="50" Height="30" Title="{x:Static p:Resources.Select_Nothing}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="LightSalmon" Click="ButtonChooseNothing_Click" HorizontalTitleAlignment="Center"
+                                       Foreground="Black" />
+                </StackPanel>
+                </StackPanel>
+                <DockPanel x:Name="Buttons" Height="60" Width="260" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-5">
+                    <Controls:Tile x:Name="ButtonWrite" Width="120" Height="30" Title="{x:Static p:Resources.Upload}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalTitleAlignment="Right" Foreground="Black" 
+                                       Click="ButtonReadOrWrite_Click" Margin="0,0,0,0" BorderThickness="1" BorderBrush="Gray" Visibility="Collapsed">
+                        <Image Source="/images/toptiles/upload.png" />
+                    </Controls:Tile>
+                    <Controls:Tile x:Name="ButtonRead" Width="120" Height="30" Title="{x:Static p:Resources.Download}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalTitleAlignment="Right" Foreground="Black" 
+                                       Click="ButtonReadOrWrite_Click" Margin="0,0,0,0" BorderThickness="1" BorderBrush="Gray" Visibility="Collapsed">
+                        <Image Source="/images/toptiles/download.png" />
+                    </Controls:Tile>
+                    <Controls:Tile x:Name="ButtonCancel" Width="120" Height="30" Title="{x:Static p:Resources.Button_cancel}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="#FFC94C46" Click="ButtonCancel_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Black" Margin="10,0,0,0">
+                        <Image Source="/images/login/login_cancel.png" Margin="0,0,0,0"/>
+                    </Controls:Tile>
+                </DockPanel>
                 <!--BUTTONS-->
-                <Grid HorizontalAlignment="Center" Margin="20,15,20,0" Width="200" Height="40" VerticalAlignment="Bottom">
-                    <Button IsDefault="True" x:Name="ButtonReadWrite" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="5,5,0,0" Height="30" HorizontalContentAlignment="Center" Content="{x:Static p:Resources.Upload}" Background="#CC3DA254" Click="ButtonReadOrWrite_Click"></Button>
-                    <Button IsCancel="True" x:Name="ButtonCancel" HorizontalAlignment="Right" VerticalAlignment="Top" Width="85" Margin="0,5,5,0" Height="30" HorizontalContentAlignment="Center" Content="{x:Static p:Resources.Close}" Background="#FFC94C46" Click="ButtonCancel_Click"></Button>
-                </Grid>
+               
             </StackPanel>
         </Border>
     </Grid>

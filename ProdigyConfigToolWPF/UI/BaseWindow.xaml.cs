@@ -9737,12 +9737,6 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        //private void TitleBarSettingsButton_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Settings settings = new Settings(this);
-        //    settings.Show();
-        //}
-
         private async void Reab_Events_Button_click(object sender, RoutedEventArgs e)
         {
             if (this.serialPort.IsOpen)
@@ -11676,24 +11670,24 @@ namespace ProdigyConfigToolWPF
             if ((dialer & Constants.MASK_PSTN_LINE_PRESENT) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Connected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Disconnected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightGray));
             }
 
 
             if ((dialer & Constants.MASK_PSTN_CALL_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightGray));
             }
 
             #endregion
@@ -11714,12 +11708,12 @@ namespace ProdigyConfigToolWPF
             if ((partition & Constants.MASK_PARTITION_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Red));
+                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
 
 
@@ -11727,19 +11721,19 @@ namespace ProdigyConfigToolWPF
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Away));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
             else if ((partition & Constants.MASK_PARTITION_ARMED_STAY) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Stay));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.No));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.Blue));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSteelBlue));
             }
 
         }
@@ -11752,35 +11746,35 @@ namespace ProdigyConfigToolWPF
                 if ((zone & Constants.MASK_ZONA_ALARM) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Alarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                     this.Dispatcher.Invoke((Action)(() => zone_object.Foreground = Brushes.White));
                 }
                 else if ((zone & Constants.MASK_ZONA_OPEN) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Open));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Blue));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSteelBlue));
                 }
                 else if ((zone & Constants.MASK_ZONA_TAMPER) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.TamperAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                 }
                 else if ((zone & Constants.MASK_ZONA_MASK) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.MaskAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Red));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
                 }
                 else
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Ok));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Green));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSeaGreen));
                 }
 
 
                 if ((zone & Constants.MASK_ZONA_BYPASS) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip += "\r\n " + Properties.Resources.Bypass + Properties.Resources.Yes));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Yellow));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Khaki));
                 }
                 else
                 {
@@ -11800,19 +11794,19 @@ namespace ProdigyConfigToolWPF
             if ((output & Constants.MASK_OUTPUT_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Red));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightGray));
             }
 
 
             if ((output & Constants.MASK_OUTPUT_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip += "\r\n " + Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
@@ -11826,12 +11820,12 @@ namespace ProdigyConfigToolWPF
             if ((timezone & Constants.TIMEZONE_IN_PERIOD) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.Green));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.Gray));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightGray));
             }
 
         }
@@ -14042,20 +14036,78 @@ namespace ProdigyConfigToolWPF
         }
 
         //PHONES
-        private void PhoneShortcuts_ReportsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void PhoneShortcuts_TestsButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void PhoneShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
+            Phones_ActiveColumn.Visibility = Phones_ActiveColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            prefix_column.Visibility = prefix_column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            phone_numberColumn.Visibility = phone_numberColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            ComAttempts_Column.Visibility = ComAttempts_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
+            if (Phones_Area_minus.Visibility == Visibility.Visible)
+                Phones_Area_minus.Visibility = Visibility.Hidden;
+            else
+                Phones_Area_plus.Visibility = Phones_Area_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            if (Phone_KissOff_minus.Visibility == Visibility.Visible)
+                Phone_KissOff_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_KissOff_plus.Visibility = Phone_KissOff_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_SettingsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_SettingsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
         }
+        private void PhoneShortcuts_ReportsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Phone_Reports_minus.Visibility == Visibility.Visible)
+                Phone_Reports_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_Reports_plus.Visibility = Phone_Reports_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_ReportsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_ReportsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_ReportsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
+        }
+        private void PhoneShortcuts_TestsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestCalls.Visibility = Phone_TestCalls.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Phone_VoiceCallType.Visibility = Phone_VoiceCallType.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            if (Phone_TestConfig_minus.Visibility == Visibility.Visible)
+                Phone_TestConfig_minus.Visibility = Visibility.Hidden;
+            else
+                Phone_TestConfig_plus.Visibility = Phone_TestConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+
+            //Disable button
+            if (PhoneShortcuts_TestsTile.Visibility == Visibility.Visible)
+            {
+                PhoneShortcuts_TestsTile.Visibility = Visibility.Collapsed;
+                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PhoneShortcuts_TestsTile.Visibility = Visibility.Visible;
+                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        
         
         #endregion
 
@@ -14810,18 +14862,58 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #region Phones
+        private void Phones_Area_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phones_Area_minus.Visibility = Visibility.Hidden;
+            Phones_Area_plus.Visibility = Visibility.Visible;
+        }
+        private void Phones_Area_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phones_Area_minus.Visibility = Visibility.Visible;
+            Phones_Area_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_KissOff_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_KissOff_minus.Visibility = Visibility.Hidden;
+            Phone_KissOff_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_KissOff_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_KissOff_minus.Visibility = Visibility.Visible;
+            Phone_KissOff_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_Reports_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_Reports_minus.Visibility = Visibility.Hidden;
+            Phone_Reports_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_Reports_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_Reports_minus.Visibility = Visibility.Visible;
+            Phone_Reports_plus.Visibility = Visibility.Hidden;
+        }
+
+        private void Phone_TestConfig_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestConfig_minus.Visibility = Visibility.Hidden;
+            Phone_TestConfig_plus.Visibility = Visibility.Visible;
+        }
+        private void Phone_TestConfig_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Phone_TestConfig_minus.Visibility = Visibility.Visible;
+            Phone_TestConfig_plus.Visibility = Visibility.Hidden;
+        }
 
         #endregion
 
         #endregion
-               
-              
 
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
-
         
     }
 }

@@ -20,20 +20,6 @@
     <!--Title bar Right content-->
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <!--<Button x:Name="TitleBarSettingsButton" Click="TitleBarSettingsButton_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="20"
-                               Height="20"
-                               Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
-                        <Rectangle.OpacityMask>
-                            <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_key}" />
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
-                    <TextBlock Margin="4 0 0 0"
-                   VerticalAlignment="Center"
-                   Text="{x:Static p:Resources.ChangePassword}" />
-                </StackPanel>
-            </Button>-->
             <Button x:Name="TitleBarHelpButton" Click="TitleBarHelpButton_Click">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/images/topbaricons/help_small.png" Width="20"/>
@@ -85,13 +71,6 @@
                                        Foreground="Black">
                         <Image Source="/images/login/login_cancel.png" Margin="30,0,0,0"/>
                     </Controls:Tile>
-
-                    <!--<Button IsDefault="True" x:Name="ButtonLogin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" 
-                            Margin="5,25,0,0" Height="30" HorizontalContentAlignment="Center" Content="{x:Static p:Resources.LoginOk}" 
-                            Background="#CC3DA254" Click="ButtonLogin_Click"></Button>
-                    <Button IsCancel="True" x:Name="ButtonCancel" HorizontalAlignment="Right" VerticalAlignment="Top" Width="85" 
-                            Margin="0,25,5,0" Height="30" HorizontalContentAlignment="Center" Content="{x:Static p:Resources.Close}" 
-                            Background="#FFC94C46" Click="ButtonCancel_Click"></Button>-->
                 </Grid>
                 <!--Language-->
                 <StackPanel Grid.Row="0" Grid.Column="0">
@@ -163,7 +142,7 @@
         <!--HELP FLYOUT-->
         <Controls:Flyout x:Name="HelpFlyout" 
                          HorizontalContentAlignment="Right" Background="#FF6E6A6A" 
-                         Opacity="1" 
+                         Opacity="0.85" 
                          Header="{x:Static p:Resources.Help}" 
                          Margin="0" 
                          Position="Right" 
@@ -171,10 +150,10 @@
             <StackPanel>
                 <RichTextBox Background="#FFBBB7B7" Margin="5,20,5,0" IsReadOnly="True" >
                     <FlowDocument>
-                        <Paragraph FontSize="18">
+                        <Paragraph FontSize="12">
                             <Run Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold"/>
                         </Paragraph>
-                        <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="15" Foreground="#FF8D3939">
+                        <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="10" Foreground="#FF8D3939">
                             <Run Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
                         </Paragraph>
                     </FlowDocument>
