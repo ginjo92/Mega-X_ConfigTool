@@ -133,7 +133,7 @@
     <value>Partição 4</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Idioma:</value>
   </data>
   <data name="Area_5" xml:space="preserve">
     <value>Partição 5</value>
@@ -1143,7 +1143,6 @@
   <data name="MegaX_Version" xml:space="preserve">
     <value>Versão do Mega-X Configurator: </value>
   </data>
-
   <data name="Output_beeps_configuration_minus" xml:space="preserve">
     <value>Número de beeps (-)</value>
   </data>
@@ -1873,9 +1872,6 @@
   <data name="Help_Settings_H1_P2" xml:space="preserve">
     <value>Aqui pode alterar as configurações gerais da aplicação.</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma:</value>
-  </data>
   <data name="Events" xml:space="preserve">
     <value>Eventos</value>
   </data>
@@ -1895,7 +1891,7 @@
     <value>Falha de alimentação restaurada</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_ARMED_STAY" xml:space="preserve">
-    <value>Desarmado - parcial</value>
+    <value>Armado - parcial</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_AUTO_ARM_FAILED" xml:space="preserve">
     <value>Falha de armar automático</value>
@@ -2718,5 +2714,17 @@
   </data>
   <data name="User_name" xml:space="preserve">
     <value>Nome do utilizador</value>
+  </data>
+  <data name="EventsIn" xml:space="preserve">
+    <value>Eventos em</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Apagar filtros</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Até</value>
   </data>
 </root>

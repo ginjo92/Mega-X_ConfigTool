@@ -19,7 +19,7 @@ namespace ProdigyConfigToolWPF.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -1303,6 +1303,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear Filters.
+        /// </summary>
+        public static string ClearFilters {
+            get {
+                return ResourceManager.GetString("ClearFilters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Click.
         /// </summary>
         public static string ClickHeaderToConfigure {
@@ -1753,7 +1762,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disarm stay.
+        ///   Looks up a localized string similar to Arm stay.
         /// </summary>
         public static string EventMessage_End_KP_EVT_CODE_ARMED_STAY {
             get {
@@ -2248,6 +2257,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Events in.
+        /// </summary>
+        public static string EventsIn {
+            get {
+                return ResourceManager.GetString("EventsIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exception 1 (-).
         /// </summary>
         public static string Exception_1_minus {
@@ -2532,6 +2550,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Friday {
             get {
                 return ResourceManager.GetString("Friday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
             }
         }
         
@@ -5547,6 +5574,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Timezones_plus {
             get {
                 return ResourceManager.GetString("Timezones_plus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
         

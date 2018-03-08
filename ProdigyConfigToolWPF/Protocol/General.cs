@@ -92,7 +92,7 @@ namespace ProdigyConfigToolWPF.Protocol
             uint i = 0;
             trama_a_enviar[i++]= Constants.UPDATE_DATE_HOUR_CODE;
             int ano_int = DateTime.Now.Year;//ascii2int(ano_array, ano_array.Length);
-            trama_a_enviar[i++] = (byte)(ano_int - 2000);
+            trama_a_enviar[i++] = (byte)(ano_int);
             int mes_int = DateTime.Now.Month;//ascii2int(mes_array, mes_array.Length);
             trama_a_enviar[i++] = (byte)(mes_int);
             int dia_int = DateTime.Now.Day;//ascii2int(dia_array, dia_array.Length);
@@ -146,8 +146,7 @@ namespace ProdigyConfigToolWPF.Protocol
             current_form.send_serial_port_data(tx_buffer, 0, i);
 
             string StringByte = BitConverter.ToString(tx_buffer);
-            Console.Write("GINJO TX: ");
-            Console.Write(StringByte);
+            System.Diagnostics.Debug.WriteLine("DATA TX: " + StringByte);
 
             return 0;
         }

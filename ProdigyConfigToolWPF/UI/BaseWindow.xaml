@@ -8,12 +8,14 @@
                       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
                       xmlns:Behaviors="clr-namespace:ProdigyConfigToolWPF.Controls"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      xmlns:sys="clr-namespace:System;assembly=mscorlib"
                       mc:Ignorable="d"
                       xmlns:controls="clr-namespace:ProdigyConfigToolWPF.Controls"
                       xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
-                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/Resources/icon.ico"
+                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/images/icon.ico"
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Maximized" Loaded="BaseWindow_Loaded" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="1024" MinHeight="768" Closing="BaseWindow_Closing" Background="WhiteSmoke">
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Maximized" Loaded="BaseWindow_Loaded" WindowStartupLocation="CenterScreen" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="1024" MinHeight="768" Closing="BaseWindow_Closing" Background="WhiteSmoke" >
 
     <Controls:MetroWindow.Resources>
 
@@ -533,7 +535,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="ZoneShortcuts_SettingsTile" Grid.Column="0" Grid.Row="0" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="ZoneShortcuts_GeneralSettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -4018,7 +4020,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="AreasShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="AreasShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -6680,7 +6682,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="UserShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="UserShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -9921,7 +9923,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="KeypadShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="KeypadShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -11315,7 +11317,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="OutputShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="OutputShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -12178,7 +12180,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="TimezoneShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="TimezoneShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -13048,7 +13050,7 @@
                         </Controls:Tile>
                         <!--SHORTCUTS-->
                         <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
-                            <Image Source="/images/buttons/filters.png" Width="15" Opacity="0.5" Margin="0,0,5,0"/>
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
                             <!--GENERAL SETTINGS-->
                             <Controls:Tile x:Name="PhoneShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="#BDBDBD" Click="PhoneShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -14480,13 +14482,13 @@
                 </TabItem>
                 <!--EVENTS-->
                 <TabItem x:Name="EventsTab" Header="{x:Static p:Resources.Events}" Visibility="Hidden">
-                    <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
-                        <Grid x:Name="EventsHeader" Grid.Column="0" Grid.Row="0" Margin="20,10,0,10" VerticalAlignment="Center">
+                    <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-80,0,0">
+                        <Grid x:Name="EventsHeader" Grid.Column="0" Grid.Row="0" Margin="20,0,0,10" VerticalAlignment="Center">
                             <Image Source="/images/new/events2.png" Width="45" Height="45" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
                             <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                    Text="{x:Static p:Resources.Events}"/>
                         </Grid>
-                        <Grid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Margin="0,10,0,20" VerticalAlignment="Top">
+                        <Grid Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Margin="-10,10,0,20" VerticalAlignment="Top">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
@@ -14504,65 +14506,221 @@
                                 <RowDefinition Height="Auto"/>
 
                             </Grid.RowDefinitions>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock VerticalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="{DynamicResource BlackBrush}" Text="{x:Static p:Resources.Filters}"/>
-
-                                <Controls:Tile x:Name="ButtonFilterArmDisarm" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Arm_disarm}" TitleFontSize="9" 
-                                           VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterArmDisarm_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
-                                           Margin="10,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
-                                    <Image Source="/images/pvtshortcuts/armdisarm.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                            
+                            <StackPanel>
+                                <Controls:Tile x:Name="Reab_Events_Button" Width="350" Height="28" Title="{x:Static p:Resources.Read_Events}" TitleFontSize="9" 
+                                           VerticalAlignment="Center" Background="Gray" Click="Reab_Events_Button_click" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" 
+                                           VerticalContentAlignment="Center" Margin="0,0,0,20"  Foreground="White" BorderThickness="1" BorderBrush="LightGray">
                                 </Controls:Tile>
-                                <Controls:Tile x:Name="ButtonFilterAlarms" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Alarms}" TitleFontSize="9" 
-                                           VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterAlarms_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
-                                           Margin="10,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
-                                    <Image Source="/images/pvtshortcuts/alarms.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <TextBlock VerticalAlignment="Center" FontSize="7" Foreground="Gray" Text="{x:Static p:Resources.Filters}" Margin="3,0,0,0"/>
+                                    <TextBlock Text="{x:Static p:Resources.Areas}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="291,0,0,0"/>
+                                    <TextBlock x:Name="EventDateFrom" Text="{x:Static p:Resources.From}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="74,0,0,0"/>
+                                    <TextBlock x:Name="EventDateTo" Text="{x:Static p:Resources.To}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="74,0,0,0" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    
+                                    <Controls:Tile x:Name="ButtonFilterArmDisarm" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Arm_disarm}" TitleFontSize="9" 
+                                               VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterArmDisarm_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                               Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                        <Image Source="/images/pvtshortcuts/armdisarm.png" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                                    </Controls:Tile>
+                                    <Controls:Tile x:Name="ButtonFilterAlarms" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Alarms}" TitleFontSize="9" 
+                                               VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterAlarms_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                               Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                        <Image Source="/images/pvtshortcuts/alarms.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                                    </Controls:Tile>
+                                    <Controls:Tile x:Name="ButtonFilterFaults" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Faults}" TitleFontSize="9" 
+                                           VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterFaults_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                           Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                        <Image Source="/images/pvtshortcuts/faults.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
+                                    </Controls:Tile>
+                                    <ComboBox x:Name="PartitionComboBox" Margin="3,-20,0,0" Width="100" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                              ItemsSource="{Binding Source={StaticResource AreasNumber_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                                              DisplayMemberPath="Value" Visibility="Visible" SelectionChanged="PartitionComboBox_SelectionChanged"/>
+                                    <DatePicker x:Name="Event_DateFrom" Width="120" Height="28" Margin="3,-20,0,0"/>
+                                    <DatePicker x:Name="Event_DateTo" Width="120" Height="28" Margin="3,-20,0,0" SelectedDate="{x:Static sys:DateTime.Now}"/>
+                                    <Controls:Tile x:Name="SelectRangeDate" Width="70" Height="28" Title="Date Filter" TitleFontSize="9" 
+                                           VerticalAlignment="Center" Background="WhiteSmoke" Click="SelectRangeDate_Click" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" 
+                                           VerticalContentAlignment="Center" Margin="3,0,0,20"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    </Controls:Tile>
+                                    <!--<ComboBox x:Name="EventTimeComboBox" Margin="3,-20,0,0" Width="100" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                              ItemsSource="{Binding Source={StaticResource EventsTime_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                                              DisplayMemberPath="Value" Visibility="Visible" SelectionChanged="EventTimeComboBox_SelectionChanged"/>-->
+                                    
+                                </StackPanel>
+                                <Controls:Tile x:Name="ClearFilters" Width="100" Height="28" Title="{x:Static p:Resources.ClearFilters}" TitleFontSize="9" 
+                                           VerticalAlignment="Center" Background="Gray" Click="ClearFilters_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Center" 
+                                           VerticalContentAlignment="Center" Margin="3,0,0,0"  Foreground="White" BorderThickness="1" BorderBrush="LightGray">
                                 </Controls:Tile>
-                                <Controls:Tile x:Name="ButtonFilterFaults" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Faults}" TitleFontSize="9" 
-                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterFaults_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
-                                       Margin="10,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
-                                    <Image Source="/images/pvtshortcuts/faults.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
-                                </Controls:Tile>
-
                             </StackPanel>
-
-                            <TextBlock Text="Partition" Grid.Column="4" Grid.Row="0"  Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"/>
-                            <ComboBox x:Name="PartitionComboBox"  Text="Partition" Grid.Column="5" Grid.Row="0"  Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource AreasNumber_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0"  DisplayMemberPath="Value" Visibility="Visible" ></ComboBox>
-                            <TextBlock Text="Events in" Grid.Column="6" Grid.Row="0"  Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible"/>
-                            <ComboBox x:Name="EventTimeComboBox"  Text="Partition" Grid.Column="7" Grid.Row="0"  Margin="20,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" ItemsSource="{Binding Source={StaticResource EventsTime_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="0"  DisplayMemberPath="Value" Visibility="Visible" ></ComboBox>
                         </Grid>
-
-                        <Rectangle Width="200" Height="10" Fill="Transparent"></Rectangle>
-
-                        <Button Content="{x:Static p:Resources.Read_Events}" Click="Reab_Events_Button_click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,0,0,0" Width="589" HorizontalAlignment="Center" Style="{DynamicResource SquareButtonStyle}"/>
-
-                        <Rectangle Width="200" Height="20" Fill="Transparent"></Rectangle>
-
-                        <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
-
+                        <Grid VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="400" />
                             </Grid.RowDefinitions>
-
-                            <DataGrid x:Name="eventDataGrid" ColumnHeaderHeight="75" Grid.Column="0" Grid.Row="0" IsReadOnly="true" CanUserAddRows="false" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource eventViewSource}, UpdateSourceTrigger=PropertyChanged}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Left" EnableColumnVirtualization="True" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible">
+                            <DataGrid x:Name="eventDataGrid" ColumnHeaderHeight="75" IsReadOnly="true" CanUserAddRows="false" AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto"
+                                      ItemsSource="{Binding Source={StaticResource eventViewSource}, UpdateSourceTrigger=PropertyChanged}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" 
+                                      HorizontalAlignment="Left" EnableColumnVirtualization="True" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Background="WhiteSmoke">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn x:Name="idColumn7" Binding="{Binding EventId}" Header="{x:Static p:Resources.Zone_Id}" Width="SizeToCells" MinWidth="40"/>
-                                    <DataGridTextColumn x:Name="eventtypedescriptionColumn" Binding="{Binding EventTypeDescription}" Header="{x:Static p:Resources.Event_Description}" Width="SizeToCells" MinWidth="50" CanUserReorder="False"/>
-                                    <DataGridTextColumn x:Name="craAccountNumberColumn" Binding="{Binding CraAccountNumber}" Header="{x:Static p:Resources.CRAClientNumber}" Width="SizeToCells" MinWidth="175"/>
-                                    <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="{x:Static p:Resources.Event_Type}" Visibility="Collapsed" Width="SizeToCells" />
-                                    <DataGridTextColumn x:Name="areaColumn" Binding="{Binding Area}" Header="{x:Static p:Resources.Area}" Width="SizeToCells" MinWidth="70"/>
-                                    <DataGridTextColumn x:Name="userColumn" Binding="{Binding User}" Header="{x:Static p:Resources.User}" Width="SizeToCells" MinWidth="70"/>
-                                    <DataGridTextColumn x:Name="zoneColumn" Binding="{Binding Zone}" Header="{x:Static p:Resources.Zone}" Width="SizeToCells" MinWidth="70"/>
-
-                                    <!--add new event-->
-                                    <DataGridTextColumn x:Name="KeypadAckColumn" Binding="{Binding Keypad_ack}" Header="TESTE" Width="SizeToCells" MinWidth="70"/>
-
-                                    <DataGridTextColumn x:Name="dateTimeColumn" Binding="{Binding DateTime}" Header="{x:Static p:Resources.Event_date_hour}" Width="SizeToCells" MinWidth="100"/>
+                                    <DataGridTextColumn x:Name="Events_ID" Binding="{Binding EventId}" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="30"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="eventdescriptionColumn" Binding="{Binding EventTypeDescription}" Header="{x:Static p:Resources.Event_Description}" Width="150" MinWidth="150" MaxWidth="300">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="150"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Event_Description}" Width="300" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="craAccountNumberColumn" Binding="{Binding CraAccountNumber}" Header="{x:Static p:Resources.CRAClientNumber}" Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.CRAClientNumber}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="{x:Static p:Resources.Event_Type}"  Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Event_Type}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="areaColumn" Binding="{Binding Area}" Header="{x:Static p:Resources.Area}" Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Area}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="userColumn" Binding="{Binding User}" Header="{x:Static p:Resources.User}" Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.User}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="zoneColumn" Binding="{Binding Zone}" Header="{x:Static p:Resources.Zone}" Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Zone}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="KeypadAckColumn" Binding="{Binding Keypad_ack}" Header="TESTE" Width="70" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="70"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Tests}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn x:Name="dateTimeColumn" Binding="{Binding DateTime}" Header="{x:Static p:Resources.Event_date_hour}" Width="150" CanUserResize="False">
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Width" Value="150"/>
+                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="White" />
+                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                        <DataGridTextColumn.HeaderTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{x:Static p:Resources.Event_date_hour}" Width="150" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTextColumn.HeaderTemplate>
+                                    </DataGridTextColumn>
                                 </DataGrid.Columns>
 
                             </DataGrid>
 
                         </Grid>
-
                     </StackPanel>
                 </TabItem>
                 <!--AUDIO MESSAGES-->

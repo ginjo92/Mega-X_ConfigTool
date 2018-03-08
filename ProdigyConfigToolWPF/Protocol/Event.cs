@@ -297,8 +297,15 @@ namespace ProdigyConfigToolWPF.Protocol
             byte_array[i++] = (byte)((events_address) & 0xff);
             byte_array[i++] = size;
 
+            string ReadEvent = BitConverter.ToString(byte_array);
+            System.Diagnostics.Debug.WriteLine("Reading event: " + ReadEvent);
+
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow); // TODO: Check if cp_id is neededs
+
+            //string StringByte = BitConverter.ToString(byte_array);
+            //System.Diagnostics.Debug.WriteLine("EVENT: ");
+            //System.Diagnostics.Debug.WriteLine(byte_array);
         }
     }
 }
