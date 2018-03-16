@@ -47,6 +47,8 @@ namespace ProdigyConfigToolWPF
         private bool EventFilterFaults = false;
         private bool EventFilterAreas = false;
 
+       
+
         public SerialPort serialPort = new SerialPort();
         public byte[] cp_id = { 0x0, 00 };
         public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00 };
@@ -69,9 +71,7 @@ namespace ProdigyConfigToolWPF
         public System.Windows.Threading.DispatcherTimer serial_port_connection_timer = new System.Windows.Threading.DispatcherTimer();
 
         FileStream audio_stream;
-
-
-
+        
         private bool default_restore_is_set = false;
 
         ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
@@ -91,9 +91,7 @@ namespace ProdigyConfigToolWPF
             WizardDialerSetup = DialerConfig;
             WizardPartitionsSetup = PartitionsConfig;
             WizardPhonesSetup = PhonesConfig;
-
             
-
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
@@ -660,6 +658,7 @@ namespace ProdigyConfigToolWPF
 
         internal async void SendDataToProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
+            Protocol.Event events = new Protocol.Event();
             Protocol.Zones zones = new Protocol.Zones();
             Protocol.Areas areas = new Protocol.Areas();
             Protocol.Users users = new Protocol.Users();
@@ -5914,7 +5913,7 @@ namespace ProdigyConfigToolWPF
             else if (addr >= Constants.KP_EVENTS_INIC_ADDR && addr < Constants.KP_EVENTS_FINAL_ADDR) //TODO: Change to areas and improve this process
             {
                 #region EVENTS
-
+                int event_to_read = ((addr - 0x82800) / 256);
                 Event system_event = new Event();
 
                 byte[] cra_account_number = (byte[])system_event.attributes["cra_account_number"]["value"];
@@ -6020,8 +6019,8 @@ namespace ProdigyConfigToolWPF
                 {
                     event_keypad_ack[j] = buf[i];
                 }
-                
 
+                
                 uint event_id = ((uint)id[3] << 24) + ((uint)id[2] << 16) + ((uint)id[1] << 8) + (uint)id[0];
                 int session = (event_session[1] << 8) + event_session[0];
 
@@ -6049,6 +6048,7 @@ namespace ProdigyConfigToolWPF
                 int day = event_day[0];
                 int year = event_year[0] + 1792;
 
+                
 
                 try
                 {
@@ -6079,7 +6079,7 @@ namespace ProdigyConfigToolWPF
 
                     //Keypad_ack
                     //add new event
-                    new_event["Keypad_ack"] = Convert.ToInt64(event_keypad_ack[0]);
+                    new_event["Keypad_ack"] = event_keypad_ack[0];
 
                     //DateTime
                     DateTime event_date_time = new DateTime();
@@ -6090,18 +6090,16 @@ namespace ProdigyConfigToolWPF
                     event_date_time = event_date_time.AddMonths(month - event_date_time.Month);
                     event_date_time = event_date_time.AddYears(year - event_date_time.Year);
                     new_event["DateTime"] = event_date_time.ToString();
-                    databaseDataSet.Event.Rows.Add(new_event);
-                    
-                    EventTableAdapter databaseDataSetPhoneTableAdapter = new EventTableAdapter();
-                   
 
+                    databaseDataSet.Event.Rows.Add(new_event);
+
+                    
 
                     if (addr == (Constants.KP_EVENTS_FINAL_ADDR - Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH))
                         AddEventItemToDatagrid();
 
-                    databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Event);
-
-                    System.Diagnostics.Debug.WriteLine("EVENT ID: " + event_id + "   Time: " + event_date_time.ToString());
+                    //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                    //databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
                 }
                 catch (Exception ex)
                 {
@@ -7788,14 +7786,11 @@ namespace ProdigyConfigToolWPF
 
         void AddEventItemToDatagrid()
         {
-            //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-            //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-            //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
+            //this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
             //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
             //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
             //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
             //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-            //eventViewSource.View.MoveCurrentToFirst();
 
             EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
             databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
@@ -8019,8 +8014,7 @@ namespace ProdigyConfigToolWPF
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
             }
         }
-
-
+        
         public byte GetHexFromAscii(byte origin)
         {
             if (origin >= '0' && origin <= '9')
@@ -9767,8 +9761,8 @@ namespace ProdigyConfigToolWPF
             {
                 //Clear all existing events 
                 databaseDataSet.Event.Clear();
-                EventTableAdapter databaseDataSetPhoneTableAdapter = new EventTableAdapter();
-                databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Event);
+                EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
 
                 Event events = new Event();
 
@@ -9780,10 +9774,10 @@ namespace ProdigyConfigToolWPF
                 {
                     controller.SetMessage(Properties.Resources.ReadingEvents);
 
-                    for (uint i = 0; i < 150; i++) //(Constants.KP_MAX_EVENTS) -> Number of events to read
+                    for (uint i = 0; i < 500; i++) //(Constants.KP_MAX_EVENTS) -> Number of events to read
                     {
                         this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)i)));
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(150.0 + 1.0)))));
+                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(500.0 + 1.0)))));
                         System.Threading.Thread.Sleep(20);
                     }
                     
@@ -9793,6 +9787,7 @@ namespace ProdigyConfigToolWPF
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
                 eventDataGrid.Items.Refresh();
                 eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending));
+                eventDataGrid.Visibility = Visibility.Visible;
 
             }
             else
@@ -15005,18 +15000,7 @@ namespace ProdigyConfigToolWPF
             }
             
         }
-
-        //private void EventTimeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    int id = EventTimeComboBox.SelectedIndex;
-        //    string clearfilter = string.Empty;
-        //    DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
-        //    DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
-
-
-        //}
-
-       
+  
         private void ClearFilters_Click(object sender, RoutedEventArgs e)
         {
             string clearfilter = string.Empty;
@@ -15044,11 +15028,35 @@ namespace ProdigyConfigToolWPF
             string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
                                      + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
             
-
             databaseDataSet.Event.DefaultView.RowFilter = filter_date;
 
             System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
         }
 
+        private void CheckAllEvents_Click(object sender, RoutedEventArgs e)
+        {
+            General protocol = new General();
+            Event events = new Event();
+
+
+            string columnName = databaseDataSet.Event.Keypad_ackColumn.ColumnName;
+
+            foreach (DataRow row in databaseDataSet.Event.Rows)
+            {
+                row[columnName] = 1;
+            }
+
+            int event_cnt = eventDataGrid.Items.Count;
+
+            //for (int i = 1; i < event_cnt; i++) //Constants.KP_MAX_ZONES
+            //{
+            //    events.Write(this, (uint)i);
+                
+            //}
+            //eventDataGrid.Items.Clear();
+            //eventDataGrid.DataContext = databaseDataSet.Tables["Event"];
+            eventDataGrid.Items.Refresh();
+
+        }
     }
 }

@@ -2727,4 +2727,10 @@
   <data name="To" xml:space="preserve">
     <value>Até</value>
   </data>
+  <data name="Keypad_Ack" xml:space="preserve">
+    <value>Reconhecimento do teclado</value>
+  </data>
+  <data name="CheckAllEvents" xml:space="preserve">
+    <value>Marcar todos os eventos</value>
+  </data>
 </root>

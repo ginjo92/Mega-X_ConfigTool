@@ -196,7 +196,7 @@ namespace ProdigyConfigToolWPF.Protocol
                     { "address", 124 }
                 }
             },
-        };
+        }; 
 
         public void read(MainWindow mainForm, uint keypad_number)
         {
@@ -220,6 +220,7 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
             keypad_number = keypad_number - 1;
+
             string description = ((string)mainWindow.databaseDataSet.Keypad.Rows[(int)(keypad_number)]["Description"]).ToUpper();
 
             #region Partition id

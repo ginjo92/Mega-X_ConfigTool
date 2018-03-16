@@ -1258,6 +1258,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check All Events.
+        /// </summary>
+        public static string CheckAllEvents {
+            get {
+                return ResourceManager.GetString("CheckAllEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Circuit.
         /// </summary>
         public static string Circuit {
@@ -3000,6 +3009,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string keypad_8 {
             get {
                 return ResourceManager.GetString("keypad_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keypad Acknowledgement.
+        /// </summary>
+        public static string Keypad_Ack {
+            get {
+                return ResourceManager.GetString("Keypad_Ack", resourceCulture);
             }
         }
         

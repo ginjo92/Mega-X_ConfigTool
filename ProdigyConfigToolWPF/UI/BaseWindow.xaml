@@ -14508,18 +14508,27 @@
                             </Grid.RowDefinitions>
                             
                             <StackPanel>
-                                <Controls:Tile x:Name="Reab_Events_Button" Width="350" Height="28" Title="{x:Static p:Resources.Read_Events}" TitleFontSize="9" 
-                                           VerticalAlignment="Center" Background="Gray" Click="Reab_Events_Button_click" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" 
-                                           VerticalContentAlignment="Center" Margin="0,0,0,20"  Foreground="White" BorderThickness="1" BorderBrush="LightGray">
-                                </Controls:Tile>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                                    <Controls:Tile x:Name="Reab_Events_Button" Width="350" Height="28" Title="{x:Static p:Resources.Read_Events}" TitleFontSize="9" 
+                                               VerticalAlignment="Center" Background="LightGray" Click="Reab_Events_Button_click" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" 
+                                               VerticalContentAlignment="Center" Margin="0,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="Gray">
+                                    </Controls:Tile>
+                                    <Controls:Tile x:Name="ClearFilters" Width="100" Height="28" Title="{x:Static p:Resources.ClearFilters}" TitleFontSize="9" 
+                                               VerticalAlignment="Center" Background="WhiteSmoke" Click="ClearFilters_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Center" 
+                                               VerticalContentAlignment="Center" Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    </Controls:Tile>
+                                    <Controls:Tile x:Name="CheckAllEvents" Width="100" Height="28" Title="{x:Static p:Resources.CheckAllEvents}" TitleFontSize="9" 
+                                               VerticalAlignment="Center" Background="WhiteSmoke" Click="CheckAllEvents_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Center" 
+                                               VerticalContentAlignment="Center" Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    </Controls:Tile>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
                                     <TextBlock VerticalAlignment="Center" FontSize="7" Foreground="Gray" Text="{x:Static p:Resources.Filters}" Margin="3,0,0,0"/>
                                     <TextBlock Text="{x:Static p:Resources.Areas}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="291,0,0,0"/>
-                                    <TextBlock x:Name="EventDateFrom" Text="{x:Static p:Resources.From}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="74,0,0,0"/>
-                                    <TextBlock x:Name="EventDateTo" Text="{x:Static p:Resources.To}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="74,0,0,0" />
+                                    <TextBlock x:Name="EventDateFrom" Text="{x:Static p:Resources.From}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="54,0,0,0"/>
+                                    <TextBlock x:Name="EventDateTo" Text="{x:Static p:Resources.To}" FontSize="7" Foreground="Gray" VerticalAlignment="Center" Margin="87,0,0,0" />
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                    
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,-20">
                                     <Controls:Tile x:Name="ButtonFilterArmDisarm" Width="100" Height="28" Title="{x:Static p:Resources.Filter_Arm_disarm}" TitleFontSize="9" 
                                                VerticalAlignment="Top" Background="WhiteSmoke" Click="ButtonFilterArmDisarm_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                                Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
@@ -14535,36 +14544,28 @@
                                            Margin="3,0,0,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
                                         <Image Source="/images/pvtshortcuts/faults.png"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0"/>
                                     </Controls:Tile>
-                                    <ComboBox x:Name="PartitionComboBox" Margin="3,-20,0,0" Width="100" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                    <ComboBox x:Name="PartitionComboBox" Margin="3,-20,0,0" Width="80" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" 
                                               ItemsSource="{Binding Source={StaticResource AreasNumber_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
                                               DisplayMemberPath="Value" Visibility="Visible" SelectionChanged="PartitionComboBox_SelectionChanged"/>
-                                    <DatePicker x:Name="Event_DateFrom" Width="120" Height="28" Margin="3,-20,0,0"/>
-                                    <DatePicker x:Name="Event_DateTo" Width="120" Height="28" Margin="3,-20,0,0" SelectedDate="{x:Static sys:DateTime.Now}"/>
+                                    <DatePicker x:Name="Event_DateFrom" Width="100" Height="28" Margin="3,-20,0,0" FontSize="10"/>
+                                    <DatePicker x:Name="Event_DateTo" Width="100" Height="28" Margin="3,-20,0,0" FontSize="10" SelectedDate="{x:Static sys:DateTime.Now}"/>
                                     <Controls:Tile x:Name="SelectRangeDate" Width="70" Height="28" Title="Date Filter" TitleFontSize="9" 
                                            VerticalAlignment="Center" Background="WhiteSmoke" Click="SelectRangeDate_Click" HorizontalAlignment="Center" HorizontalTitleAlignment="Center" 
                                            VerticalContentAlignment="Center" Margin="3,0,0,20"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
                                     </Controls:Tile>
-                                    <!--<ComboBox x:Name="EventTimeComboBox" Margin="3,-20,0,0" Width="100" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                                              ItemsSource="{Binding Source={StaticResource EventsTime_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
-                                              DisplayMemberPath="Value" Visibility="Visible" SelectionChanged="EventTimeComboBox_SelectionChanged"/>-->
-                                    
                                 </StackPanel>
-                                <Controls:Tile x:Name="ClearFilters" Width="100" Height="28" Title="{x:Static p:Resources.ClearFilters}" TitleFontSize="9" 
-                                           VerticalAlignment="Center" Background="Gray" Click="ClearFilters_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Center" 
-                                           VerticalContentAlignment="Center" Margin="3,0,0,0"  Foreground="White" BorderThickness="1" BorderBrush="LightGray">
-                                </Controls:Tile>
                             </StackPanel>
                         </Grid>
-                        <Grid VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
+                        <Grid VerticalAlignment="Top" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center" >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="400" />
                             </Grid.RowDefinitions>
                             <DataGrid x:Name="eventDataGrid" ColumnHeaderHeight="75" IsReadOnly="true" CanUserAddRows="false" AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto"
                                       ItemsSource="{Binding Source={StaticResource eventViewSource}, UpdateSourceTrigger=PropertyChanged}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" 
-                                      HorizontalAlignment="Left" EnableColumnVirtualization="True" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Background="WhiteSmoke">
+                                      HorizontalAlignment="Left" EnableColumnVirtualization="True" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Background="WhiteSmoke" Visibility="Collapsed">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn x:Name="Events_ID" Binding="{Binding EventId}" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
-                                        <DataGridTextColumn.HeaderStyle>
+                                    <DataGridTemplateColumn x:Name="Events_ID" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
+                                        <DataGridTemplateColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="30"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14573,17 +14574,22 @@
                                                 <Setter Property="BorderBrush" Value="Gray"/>
                                                 <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                             </Style>
-                                        </DataGridTextColumn.HeaderStyle>
-                                        <DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn.HeaderStyle>
+                                        <DataGridTemplateColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
-                                        </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="eventdescriptionColumn" Binding="{Binding EventTypeDescription}" Header="{x:Static p:Resources.Event_Description}" Width="150" MinWidth="150" MaxWidth="300">
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding EventId}" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn x:Name="eventdescriptionColumn" Binding="{Binding EventTypeDescription}" Header="{x:Static p:Resources.Event_Description}" Width="300" CanUserResize="False">
                                         <DataGridTextColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
-                                                <Setter Property="Width" Value="150"/>
+                                                <Setter Property="Width" Value="300"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
                                                 <Setter Property="HorizontalContentAlignment" Value="Center"/>
                                                 <Setter Property="Background" Value="White" />
@@ -14614,7 +14620,7 @@
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
                                     </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="{x:Static p:Resources.Event_Type}"  Width="70" CanUserResize="False">
+                                    <!--<DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="{x:Static p:Resources.Event_Type}"  Width="70" CanUserResize="False">
                                         <DataGridTextColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="70"/>
@@ -14630,9 +14636,9 @@
                                                 <TextBlock Text="{x:Static p:Resources.Event_Type}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="areaColumn" Binding="{Binding Area}" Header="{x:Static p:Resources.Area}" Width="70" CanUserResize="False">
-                                        <DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>-->
+                                    <DataGridTemplateColumn x:Name="areaColumn" Header="{x:Static p:Resources.Area}" Width="70" CanUserResize="False">
+                                        <DataGridTemplateColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="70"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14641,14 +14647,19 @@
                                                 <Setter Property="BorderBrush" Value="Gray"/>
                                                 <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                             </Style>
-                                        </DataGridTextColumn.HeaderStyle>
-                                        <DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn.HeaderStyle>
+                                        <DataGridTemplateColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{x:Static p:Resources.Area}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
-                                        </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="userColumn" Binding="{Binding User}" Header="{x:Static p:Resources.User}" Width="70" CanUserResize="False">
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Area}" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <!--<DataGridTextColumn x:Name="userColumn" Binding="{Binding User}" Header="{x:Static p:Resources.User}" Width="70" CanUserResize="False">
                                         <DataGridTextColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="70"/>
@@ -14664,9 +14675,9 @@
                                                 <TextBlock Text="{x:Static p:Resources.User}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
                                         </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="zoneColumn" Binding="{Binding Zone}" Header="{x:Static p:Resources.Zone}" Width="70" CanUserResize="False">
-                                        <DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>-->
+                                    <DataGridTemplateColumn x:Name="zoneColumn" Header="{x:Static p:Resources.Zone}" Width="70" CanUserResize="False">
+                                        <DataGridTemplateColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="70"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14675,15 +14686,20 @@
                                                 <Setter Property="BorderBrush" Value="Gray"/>
                                                 <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                             </Style>
-                                        </DataGridTextColumn.HeaderStyle>
-                                        <DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn.HeaderStyle>
+                                        <DataGridTemplateColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{x:Static p:Resources.Zone}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
-                                        </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="KeypadAckColumn" Binding="{Binding Keypad_ack}" Header="TESTE" Width="70" CanUserResize="False">
-                                        <DataGridTextColumn.HeaderStyle>
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding Zone}" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn x:Name="KeypadAckColumn"  Width="70" CanUserResize="False">
+                                        <DataGridTemplateColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="70"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14692,15 +14708,33 @@
                                                 <Setter Property="BorderBrush" Value="Gray"/>
                                                 <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                             </Style>
-                                        </DataGridTextColumn.HeaderStyle>
-                                        <DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn.HeaderStyle>
+                                        <DataGridTemplateColumn.HeaderTemplate>
                                             <DataTemplate>
-                                                <TextBlock Text="{x:Static p:Resources.Tests}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <TextBlock Text="{x:Static p:Resources.Keypad_Ack}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
-                                        </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
-                                    <DataGridTextColumn x:Name="dateTimeColumn" Binding="{Binding DateTime}" Header="{x:Static p:Resources.Event_date_hour}" Width="150" CanUserResize="False">
-                                        <DataGridTextColumn.HeaderStyle>
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="/images/buttons/checked_event.png" Width="20" >
+                                                    <Image.Style>
+                                                        <Style TargetType="{x:Type Image}">
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding Keypad_ack}" Value="1">
+                                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Keypad_ack}" Value="0">
+                                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTemplateColumn x:Name="dateTimeColumn" Header="{x:Static p:Resources.Event_date_hour}" Width="150" CanUserResize="False">
+                                        <DataGridTemplateColumn.HeaderStyle>
                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                 <Setter Property="Width" Value="150"/>
                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14709,13 +14743,18 @@
                                                 <Setter Property="BorderBrush" Value="Gray"/>
                                                 <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                             </Style>
-                                        </DataGridTextColumn.HeaderStyle>
-                                        <DataGridTextColumn.HeaderTemplate>
+                                        </DataGridTemplateColumn.HeaderStyle>
+                                        <DataGridTemplateColumn.HeaderTemplate>
                                             <DataTemplate>
                                                 <TextBlock Text="{x:Static p:Resources.Event_date_hour}" Width="150" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                             </DataTemplate>
-                                        </DataGridTextColumn.HeaderTemplate>
-                                    </DataGridTextColumn>
+                                        </DataGridTemplateColumn.HeaderTemplate>
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{Binding DateTime}" HorizontalAlignment="Center"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
                                 </DataGrid.Columns>
 
                             </DataGrid>
@@ -19930,47 +19969,46 @@
             </StatusBar>
         </DockPanel>
         <!--HELP FLYOUT-->
-        <Controls:Flyout x:Name="HelpFlyout" HorizontalContentAlignment="Right" Background="#FF6E6A6A" Visibility="Hidden"
-                         Opacity="0.9" 
+        <Controls:Flyout x:Name="HelpFlyout" HorizontalContentAlignment="Right" Background="LightGray" Visibility="Hidden" BorderBrush="Gray" BorderThickness="1"
+                         Opacity="0.75" 
                          Header="{x:Static p:Resources.Help}" 
-                         Margin="160,0,0,0" 
+                         Margin="200,0,0,35" 
                          Position="Bottom" 
-                         IsOpen="False" FontWeight="Bold" Height="195" VerticalAlignment="Bottom">
+                         IsOpen="False" FontWeight="Bold" Height="140" VerticalAlignment="Bottom">
             <DockPanel HorizontalAlignment="Left" LastChildFill="True">
-                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" >
-                    <RichTextBox x:Name="HelpRichTextBox_1" Background="#FFBBB7B7" Margin="20,25,0,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="150" >
+                <StackPanel Orientation="Horizontal">
+                    <RichTextBox x:Name="HelpRichTextBox_1" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
                         <FlowDocument x:Name="Help_1">
                             <Paragraph FontSize="18">
-                                <Run  x:Name="Help_1_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold"/>
+                                <Run  x:Name="Help_1_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12"/>
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="15" Foreground="#FF8D3939">
+                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
                                 <Run x:Name="Help_1_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
-
-                    <RichTextBox x:Name="HelpRichTextBox_2" Background="#FFBBB7B7" Margin="245,25,0,0" IsReadOnly="True" Width="205" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed" Height="150">
+                    <RichTextBox x:Name="HelpRichTextBox_2" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
                         <FlowDocument x:Name="Help_2">
                             <Paragraph FontSize="18">
-                                <Run  x:Name="Help_2_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold"/>
+                                <Run  x:Name="Help_2_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12"/>
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="15" Foreground="#FF8D3939">
+                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
                                 <Run x:Name="Help_2_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
-
-                    <RichTextBox x:Name="HelpRichTextBox_3" Background="#FFBBB7B7" Margin="475,25,0,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Visibility="Collapsed" Height="150" >
-                        <FlowDocument x:Name="Help_3" >
+                    <RichTextBox x:Name="HelpRichTextBox_3" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
+                        <FlowDocument x:Name="Help_3">
                             <Paragraph FontSize="18">
-                                <Run  x:Name="Help_3_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold"/>
+                                <Run  x:Name="Help_3_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12"/>
                             </Paragraph>
-                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="15" Foreground="#FF8D3939">
+                            <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
                                 <Run x:Name="Help_3_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
                             </Paragraph>
                         </FlowDocument>
                     </RichTextBox>
-                </Grid>
+
+                </StackPanel>
             </DockPanel>
         </Controls:Flyout>
         <!--FLYOUT-->

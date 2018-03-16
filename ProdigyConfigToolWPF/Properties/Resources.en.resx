@@ -2697,4 +2697,10 @@
   <data name="To" xml:space="preserve">
     <value>To</value>
   </data>
+  <data name="Keypad_Ack" xml:space="preserve">
+    <value>Keypad Acknowledgement</value>
+  </data>
+  <data name="CheckAllEvents" xml:space="preserve">
+    <value>Check All Events</value>
+  </data>
 </root>
