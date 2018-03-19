@@ -113,6 +113,7 @@ namespace ProdigyConfigToolWPF
                 timer.Enabled = true;
                 timer.Start();
 
+               
 
                 ConfigFileName.Content = AppDbFile;
             }
@@ -211,9 +212,8 @@ namespace ProdigyConfigToolWPF
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             serial_port_connection_timer.Stop();
 
-            FWNumberValueLabel.Visibility = Visibility.Collapsed;
-            SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-            HWNumberValueLabel.Visibility = Visibility.Collapsed;
+            PanelLabels.Visibility = Visibility.Collapsed;
+
             await DialogManager.ShowMessageAsync(this, Properties.Resources.UnknownDevice, "");
         }
 
@@ -230,9 +230,7 @@ namespace ProdigyConfigToolWPF
             StatusBarDisconnectedIcon.Visibility = Visibility.Visible;
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             //Serial number, FW Version and HW Version labels
-            FWNumberValueLabel.Visibility = Visibility.Collapsed;
-            SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-            HWNumberValueLabel.Visibility = Visibility.Collapsed;
+            PanelLabels.Visibility = Visibility.Collapsed;
 
             // Serial Port
             string[] com_ports = SerialPort.GetPortNames();
@@ -266,7 +264,7 @@ namespace ProdigyConfigToolWPF
                 User_Code_Column.Visibility = Visibility.Collapsed;
                 User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
-           
+            
 
             //Force 'Home' tree view item to be selected on loaded
             TreeViewItem treeview_home = (TreeViewItem)MainTreeView.ItemContainerGenerator.Items[0];
@@ -821,9 +819,8 @@ namespace ProdigyConfigToolWPF
                         protocol.check_ID(this);
 
                         serial_port_connection_timer.Start();
-                        FWNumberValueLabel.Visibility = Visibility.Visible;
-                        SerialNumberValueLabel.Visibility = Visibility.Visible;
-                        HWNumberValueLabel.Visibility = Visibility.Visible;
+
+                        PanelLabels.Visibility = Visibility.Visible;
 
                         //TextBoxConnectedDisconnected.Text = Properties.Resources.ComConnected;
                         //TextBoxConnectedDisconnected.Foreground = Brushes.Green;
@@ -851,9 +848,7 @@ namespace ProdigyConfigToolWPF
                         StatusBarDisconnectedIcon.Visibility = Visibility.Visible;
                         StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
 
-                        FWNumberValueLabel.Visibility = Visibility.Collapsed;
-                        SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-                        HWNumberValueLabel.Visibility = Visibility.Collapsed;
+                        PanelLabels.Visibility = Visibility.Collapsed;
 
                         await DialogManager.ShowMessageAsync(this, Properties.Resources.Disconnection_Successfull, "");
                     }
@@ -891,8 +886,13 @@ namespace ProdigyConfigToolWPF
         {
             try
             {
-                serialPort.Write(tx_buffer, offset, count);
-                //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
+                if(serialPort.IsOpen)
+                { 
+                    serialPort.Write(tx_buffer, offset, count);
+                    //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
+                }
+                else
+                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
             }
             catch (Exception ex)
             {
@@ -905,10 +905,10 @@ namespace ProdigyConfigToolWPF
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
-                ControlPanelIDLabel.Text = control_panel_id.ToString();
-                BoardSerialNumber.Text = serial_number.ToString();
-                HwVersion.Text = hardware_version;
-                SwVersion.Text = software_version;
+                //ControlPanelIDLabel.Text = control_panel_id.ToString();
+                //BoardSerialNumber.Text = serial_number.ToString();
+                //HwVersion.Text = hardware_version;
+                //SwVersion.Text = software_version;
 
                 //ControlPanelIDLabel.Text = control_panel_id.ToString();
                 SerialNumberValueLabel.Content = serial_number.ToString();
@@ -7806,10 +7806,16 @@ namespace ProdigyConfigToolWPF
             databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
         }
 
-        private void UpdateDateHourTile_Click(object sender, RoutedEventArgs e)
+        private async void UpdateDateHourTile_Click(object sender, RoutedEventArgs e)
         {
-            Protocol.General protocol = new Protocol.General();
-            protocol.update_hour_and_date(this);
+            if (serialPort.IsOpen)
+            {
+                Protocol.General protocol = new Protocol.General();
+                protocol.update_hour_and_date(this);
+
+                await DialogManager.ShowMessageAsync(this, Properties.Resources.DateTimeUpdated, "");
+            }
+            else await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
         }
 
         private void togglelanguage_Click(object sender, RoutedEventArgs e)
@@ -9664,9 +9670,15 @@ namespace ProdigyConfigToolWPF
                 Help_1_P2.Text = Properties.Resources.Help_Area_H1_P2.Replace(@"\r\n", System.Environment.NewLine);
 
                 HelpRichTextBox_2.Visibility = Visibility.Visible;
-
+                
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
+
             }
             else if (MainZonesTab.IsSelected)
             {
@@ -9677,6 +9689,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainKeypadsTab.IsSelected)
             {
@@ -9687,6 +9704,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainOutputsTab.IsSelected)
             {
@@ -9697,6 +9719,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainUsersTab.IsSelected)
             {
@@ -9707,6 +9734,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainTimezonesTab.IsSelected)
             {
@@ -9717,6 +9749,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainPhonesTab.IsSelected)
             {
@@ -9727,6 +9764,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainDialerTab.IsSelected)
             {
@@ -9737,11 +9779,7 @@ namespace ProdigyConfigToolWPF
             {
                 Help_1_P1.Text = Properties.Resources.SystemConfiguration;
                 Help_1_P2.Text = Properties.Resources.Help_GlobalSystem_H1_P2.Replace(@"\r\n", System.Environment.NewLine);
-
-                HelpRichTextBox_2.Visibility = Visibility.Visible;
-
-                Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
-                Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+              
             }
             else if (ClientConfigTab.IsSelected)
             {
@@ -15019,26 +15057,28 @@ namespace ProdigyConfigToolWPF
 
         private void SelectRangeDate_Click(object sender, RoutedEventArgs e)
         {
-            DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
-            DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
+            if(Event_DateFrom.SelectedDate != null || Event_DateTo.SelectedDate != null)
+            { 
+                DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
+                DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
 
-            DateTime datetime_from = new DateTime(date_from.Year, date_from.Month, date_from.Day, 00, 00, 00);
-            DateTime datetime_to = new DateTime(date_to.Year, date_to.Month, date_to.Day, 23, 59, 59);
+                DateTime datetime_from = new DateTime(date_from.Year, date_from.Month, date_from.Day, 00, 00, 00);
+                DateTime datetime_to = new DateTime(date_to.Year, date_to.Month, date_to.Day, 23, 59, 59);
 
-            string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
-                                     + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
+                string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
+                                         + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
             
-            databaseDataSet.Event.DefaultView.RowFilter = filter_date;
+                databaseDataSet.Event.DefaultView.RowFilter = filter_date;
 
-            System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
+                System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
+            }
         }
 
         private void CheckAllEvents_Click(object sender, RoutedEventArgs e)
         {
             General protocol = new General();
             Event events = new Event();
-
-
+            
             string columnName = databaseDataSet.Event.Keypad_ackColumn.ColumnName;
 
             foreach (DataRow row in databaseDataSet.Event.Rows)
@@ -15048,6 +15088,8 @@ namespace ProdigyConfigToolWPF
 
             int event_cnt = eventDataGrid.Items.Count;
 
+            protocol.check_all_events(this);
+
             //for (int i = 1; i < event_cnt; i++) //Constants.KP_MAX_ZONES
             //{
             //    events.Write(this, (uint)i);
@@ -15055,8 +15097,18 @@ namespace ProdigyConfigToolWPF
             //}
             //eventDataGrid.Items.Clear();
             //eventDataGrid.DataContext = databaseDataSet.Tables["Event"];
-            eventDataGrid.Items.Refresh();
 
+            eventDataGrid.Items.Refresh();
+        }
+
+        private void HelpFlyoutImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            HelpFlyout.IsOpen = false;
+        }
+
+        private void FlyComImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FlyCom.IsOpen = false;
         }
     }
 }

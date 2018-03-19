@@ -1051,7 +1051,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm - Away.
+        ///   Looks up a localized string similar to Arm Away.
         /// </summary>
         public static string ArmAway {
             get {
@@ -1096,7 +1096,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm - Stay.
+        ///   Looks up a localized string similar to Arm Stay.
         /// </summary>
         public static string ArmStay {
             get {
@@ -1321,7 +1321,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click.
+        ///   Looks up a localized string similar to Click header to configure.
         /// </summary>
         public static string ClickHeaderToConfigure {
             get {
@@ -1524,6 +1524,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string DateHourChange {
             get {
                 return ResourceManager.GetString("DateHourChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Time updated successfully .
+        /// </summary>
+        public static string DateTimeUpdated {
+            get {
+                return ResourceManager.GetString("DateTimeUpdated", resourceCulture);
             }
         }
         
@@ -2712,6 +2721,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Help_Dialer_H1_P2 {
             get {
                 return ResourceManager.GetString("Help_Dialer_H1_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can use filters to hide/show configuration by categories..
+        /// </summary>
+        public static string Help_Filters_H1_P21 {
+            get {
+                return ResourceManager.GetString("Help_Filters_H1_P21", resourceCulture);
             }
         }
         

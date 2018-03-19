@@ -1105,10 +1105,10 @@
     <value>Arm</value>
   </data>
   <data name="ArmAway" xml:space="preserve">
-    <value>Arm - Away</value>
+    <value>Arm Away</value>
   </data>
   <data name="ArmStay" xml:space="preserve">
-    <value>Arm - Stay</value>
+    <value>Arm Stay</value>
   </data>
   <data name="Delay" xml:space="preserve">
     <value>Delay</value>
@@ -1720,7 +1720,7 @@
     <value>City</value>
   </data>
   <data name="ClickHeaderToConfigure" xml:space="preserve">
-    <value>Click</value>
+    <value>Click header to configure</value>
   </data>
   <data name="ClientInfo" xml:space="preserve">
     <value>Client</value>
@@ -2726,5 +2726,11 @@
   </data>
   <data name="CheckAllEvents" xml:space="preserve">
     <value>Check All Events</value>
+  </data>
+  <data name="Help_Filters_H1_P21" xml:space="preserve">
+    <value>You can use filters to hide/show configuration by categories.</value>
+  </data>
+  <data name="DateTimeUpdated" xml:space="preserve">
+    <value>Date/Time updated successfully </value>
   </data>
 </root>

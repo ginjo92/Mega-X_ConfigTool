@@ -1114,10 +1114,10 @@
     <value>Armar</value>
   </data>
   <data name="ArmAway" xml:space="preserve">
-    <value>Armar - total</value>
+    <value>Armar total</value>
   </data>
   <data name="ArmStay" xml:space="preserve">
-    <value>Armar - parcial</value>
+    <value>Armar parcial</value>
   </data>
   <data name="Delay" xml:space="preserve">
     <value>Atraso</value>
@@ -1360,10 +1360,10 @@
     <value>Partições (+)</value>
   </data>
   <data name="ArmDisarmAway" xml:space="preserve">
-    <value>Armar/desarmar - total</value>
+    <value>Armar/desarmar total</value>
   </data>
   <data name="ArmDisarmStay" xml:space="preserve">
-    <value>Armar/desarmar - parcial</value>
+    <value>Armar/desarmar parcial</value>
   </data>
   <data name="Arm_disarm_permissions_minus" xml:space="preserve">
     <value>Permissões armar/desarmar (-)</value>
@@ -1723,7 +1723,7 @@
     <value>Cidade</value>
   </data>
   <data name="ClickHeaderToConfigure" xml:space="preserve">
-    <value>Clicar</value>
+    <value>Clicar no cabeçalho para configurar</value>
   </data>
   <data name="ClientInfo" xml:space="preserve">
     <value>Cliente</value>
@@ -2732,5 +2732,11 @@
   </data>
   <data name="CheckAllEvents" xml:space="preserve">
     <value>Marcar todos os eventos</value>
+  </data>
+  <data name="Help_Filters_H1_P21" xml:space="preserve">
+    <value>Pode utilizar filtros para mostrar/esconder configurações por categoria</value>
+  </data>
+  <data name="DateTimeUpdated" xml:space="preserve">
+    <value>Data/Hora atualizados com sucesso</value>
   </data>
 </root>

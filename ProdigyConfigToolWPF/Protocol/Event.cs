@@ -310,29 +310,26 @@ namespace ProdigyConfigToolWPF.Protocol
         //    byte[] byte_array = new byte[240];
         //    event_number = event_number - 1;
 
-        //    ulong event_keypad_ack = ulong.Parse(mainWindow.databaseDataSet.Event.Rows[(int)event_number]["Keypad_ack"].ToString()); 
-        //    byte[] event_keypad_ack_bytes = new byte[1];
+        //    //ulong event_keypad_ack = ulong.Parse(mainWindow.databaseDataSet.Event.Rows[(int)event_number]["Keypad_ack"].ToString());
+        //    //byte[] event_keypad_ack_bytes = new byte[1];
 
-        //    if (mainWindow.databaseDataSet.Event.Rows[(int)(event_number)]["Keypad_ack"].Equals(0))
-        //    {
-        //        event_keypad_ack_bytes[0] = 1;
-        //    }
+        //    //if (mainWindow.databaseDataSet.Event.Rows[(int)(event_number)]["Keypad_ack"].Equals(0))
+        //    //{
+        //    //    event_keypad_ack_bytes[0] = 1;
+        //    //}
 
         //    int i = 0;
         //    uint j = 0;
         //    uint events_address = 0x82800 + (256 * (event_number));  //Constants.KP_EVENTS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH * (event_number - 1));
-            
+
 
         //    // Create first 5 bytes of the request
-        //    byte_array[i++] = 0x40;
+        //    byte_array[i++] = 0x91;
         //    byte_array[i++] = (byte)((events_address >> 16) & 0xFF);
         //    byte_array[i++] = (byte)((events_address >> 8) & 0xFF);
         //    byte_array[i++] = (byte)((events_address) & 0xFF);
         //    byte_array[i++] = 240;
         //    int temp = i;
-            
-        //    i = (temp + (int)this.attributes["event_keypad_ack"]["address"]);
-        //    byte_array[i] = event_keypad_ack_bytes[0];
             
         //    byte_array[4] = (byte)(i - temp);
         //    General protocol = new General();
