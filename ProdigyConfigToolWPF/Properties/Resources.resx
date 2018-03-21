@@ -2733,4 +2733,37 @@
   <data name="DateTimeUpdated" xml:space="preserve">
     <value>Date/Time updated successfully </value>
   </data>
+  <data name="SaveWithSuccess" xml:space="preserve">
+    <value>Saved with success</value>
+  </data>
+  <data name="FastTips" xml:space="preserve">
+    <value>Quick tips</value>
+  </data>
+  <data name="HelpTip_ChangePassword_2" xml:space="preserve">
+    <value>The option to change login password is located in top bar. Clicking in “Admin” will show a drop menu where it's possible to change your password and also logout from mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_1" xml:space="preserve">
+    <value>Download/Upload</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_2" xml:space="preserve">
+    <value>It's possible to make Upload/Download to/for mega-X in a faster way. Using top right buttons of each configuration category will make a partial upload or download. </value>
+  </data>
+  <data name="HelpTip_ElementConfig_1" xml:space="preserve">
+    <value>Individual configuration</value>
+  </data>
+  <data name="HelpTip_ElementConfig_2" xml:space="preserve">
+    <value>You can configure a single element by double-clicking on it row on any table on any menu. This will open a new window where you can configure only that element in an easier way. It's also possible to access this window using the menu on left side of the app.</value>
+  </data>
+  <data name="HelpTip_Language_1" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="HelpTip_Language_2" xml:space="preserve">
+    <value>It's possible to change language between english (en-US) and portuguese (pt-PT) in Preferences menu or in login window when starting mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_Wizard_1" xml:space="preserve">
+    <value>New File Wizard</value>
+  </data>
+  <data name="HelpTip_Wizard_2" xml:space="preserve">
+    <value>When creating a new file it's possible to be assisted by a Wizard to make it in a easier and intuitive way. This Wizard will help you start a new configuration project for mega-X.</value>
+  </data>
 </root>

@@ -2739,4 +2739,37 @@
   <data name="DateTimeUpdated" xml:space="preserve">
     <value>Data/Hora atualizados com sucesso</value>
   </data>
+  <data name="SaveWithSuccess" xml:space="preserve">
+    <value>Guardado com sucesso</value>
+  </data>
+  <data name="FastTips" xml:space="preserve">
+    <value>Dicas rápidas</value>
+  </data>
+  <data name="HelpTip_ChangePassword_2" xml:space="preserve">
+    <value>A opção para alterar a password de login está localizada na barra superior. Clicando em “Admin” vai mostrar um menu onde é possível alterar a sua password, bem como terminar sessão do mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_1" xml:space="preserve">
+    <value>Download/Upload</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_2" xml:space="preserve">
+    <value>É possível fazer com que o Upload/Download do/para o mega-X seja mais rápido. Utilizando os botões do canto superior direito em cada uma das categorias de configuração, pode-se fazer o upload ou download parcial.</value>
+  </data>
+  <data name="HelpTip_ElementConfig_1" xml:space="preserve">
+    <value>Configuração individual</value>
+  </data>
+  <data name="HelpTip_ElementConfig_2" xml:space="preserve">
+    <value>Pode configurar um único elemento através de um duplo clique na linha de qualquer coluna de qualquer menu. Isto vai abrir uma nova janela onde é possível configurar apenas esse elemento de uma forma mais fácil. É também possível aceder a essa janela através do menu no lado esquerdo da aplicação.</value>
+  </data>
+  <data name="HelpTip_Language_1" xml:space="preserve">
+    <value>Mudar idioma</value>
+  </data>
+  <data name="HelpTip_Language_2" xml:space="preserve">
+    <value>É possível mudar o idioma entre inglês (en-US) e português (pt-PT) no menu Preferências ou na janela de login ao abrir o mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_Wizard_1" xml:space="preserve">
+    <value>Assistente de Novo Ficheiro</value>
+  </data>
+  <data name="HelpTip_Wizard_2" xml:space="preserve">
+    <value>Quando é criado um novo ficheiro é possível ser ajudado por um Assistente de forma a fazer desta tarefa mais fácil e intuitiva. Este Assistente vai ajudar a dar início a um novo projeto de configuração para o mega-X.</value>
+  </data>
 </root>

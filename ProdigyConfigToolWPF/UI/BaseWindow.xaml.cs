@@ -9203,7 +9203,6 @@ namespace ProdigyConfigToolWPF
         }
         private async void SaveFile_Click(object sender, RoutedEventArgs e)
         {
-
             if (databaseDataSet.HasChanges())
             {
                 var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
@@ -9211,6 +9210,7 @@ namespace ProdigyConfigToolWPF
                 {
                     Save_Database_data();
                     controller.CloseAsync();
+                    this.ShowProgressAsync(Properties.Resources.SaveWithSuccess, "");
                 });
             }
         }
@@ -9570,7 +9570,7 @@ namespace ProdigyConfigToolWPF
             //{
             //    Close();
             //}
-           
+            
 
             if (serialPort.IsOpen)
                 serialPort.Close();
@@ -9646,12 +9646,15 @@ namespace ProdigyConfigToolWPF
 
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateHelpText();
+            Help helpWindow = new Help();
+            helpWindow.Show();
+            
+            //UpdateHelpText();
 
-            if (HelpFlyout.IsOpen)
-                HelpFlyout.IsOpen = false;
-            else
-                HelpFlyout.IsOpen = true;
+            //if (HelpFlyout.IsOpen)
+            //    HelpFlyout.IsOpen = false;
+            //else
+            //    HelpFlyout.IsOpen = true;
         }
 
         private void UpdateHelpText()
