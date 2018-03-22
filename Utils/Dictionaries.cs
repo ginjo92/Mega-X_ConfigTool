@@ -136,7 +136,7 @@ namespace ProdigyConfigToolWPF
         {
             Dictionary<int, string> TamperTypes = new Dictionary<int, string>();
             TamperTypes.Add(0, "NO");
-            TamperTypes.Add(2, "NC");
+            TamperTypes.Add(1, "NC");
             return TamperTypes;
         }
 
@@ -158,7 +158,7 @@ namespace ProdigyConfigToolWPF
         public static Dictionary<short, string> GetPartitions()
         {
             Dictionary<short, string> Partitions = new Dictionary<short, string>();
-            Partitions.Add(0, Properties.Resources.Area_none);
+            Partitions.Add(0, Properties.Resources.All);
             Partitions.Add(1, Properties.Resources.Area_1);
             Partitions.Add(2, Properties.Resources.Area_2);
             Partitions.Add(3, Properties.Resources.Area_3);
@@ -167,13 +167,14 @@ namespace ProdigyConfigToolWPF
             Partitions.Add(6, Properties.Resources.Area_6);
             Partitions.Add(7, Properties.Resources.Area_7);
             Partitions.Add(8, Properties.Resources.Area_8);
+            
             return Partitions;
         }
 
         public static Dictionary<short, string> GetEventsTime()
         {
             Dictionary<short, string> Time = new Dictionary<short, string>();
-            Time.Add(6, Properties.Resources.All);
+            Time.Add(0, Properties.Resources.All);
             Time.Add(1, Properties.Resources.Today);
             Time.Add(2, Properties.Resources.Last7Days);
             Time.Add(3, Properties.Resources.Last14Days);

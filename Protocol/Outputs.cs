@@ -350,7 +350,6 @@ namespace ProdigyConfigToolWPF.Protocol
                 }
             }
 
-
             byte_array[4] = (byte)(i - temp);
             General protocol = new General();
             protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow);

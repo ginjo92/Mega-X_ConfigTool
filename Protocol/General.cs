@@ -109,6 +109,16 @@ namespace ProdigyConfigToolWPF.Protocol
             send_msg((uint)trama_a_enviar.Length, trama_a_enviar, current_form.cp_id, current_form);
         }
 
+        internal void check_all_events(MainWindow current_form)
+        {
+            byte[] trama_a_enviar = new byte[63];
+            
+            uint i = 0;
+            trama_a_enviar[i++] = 0x91;
+           
+            send_msg((uint)trama_a_enviar.Length, trama_a_enviar, current_form.cp_id, current_form);
+        }
+
         public uint send_msg(uint size, byte[] buf, byte[] cp_id, MainWindow current_form)
         {
             int i = 0;
@@ -146,8 +156,7 @@ namespace ProdigyConfigToolWPF.Protocol
             current_form.send_serial_port_data(tx_buffer, 0, i);
 
             string StringByte = BitConverter.ToString(tx_buffer);
-            Console.Write("GINJO TX: ");
-            Console.Write(StringByte);
+            System.Diagnostics.Debug.WriteLine("DATA TX: " + StringByte);
 
             return 0;
         }

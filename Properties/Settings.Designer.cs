@@ -23,17 +23,6 @@ namespace ProdigyConfigToolWPF.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Data" +
-            "base\\Login\\SqliteLogin.prgy")]
-        public string SqliteLoginConnectionString {
-            get {
-                return ((string)(this["SqliteLoginConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("pt-PT")]
@@ -43,6 +32,17 @@ namespace ProdigyConfigToolWPF.Properties {
             }
             set {
                 this["DefaultCulture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Data" +
+            "base\\Login\\SqliteLogin.prgy")]
+        public string SqliteLoginConnectionString {
+            get {
+                return ((string)(this["SqliteLoginConnectionString"]));
             }
         }
         

@@ -1051,7 +1051,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm - Away.
+        ///   Looks up a localized string similar to Arm Away.
         /// </summary>
         public static string ArmAway {
             get {
@@ -1096,7 +1096,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Arm - Stay.
+        ///   Looks up a localized string similar to Arm Stay.
         /// </summary>
         public static string ArmStay {
             get {
@@ -1258,6 +1258,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check All Events.
+        /// </summary>
+        public static string CheckAllEvents {
+            get {
+                return ResourceManager.GetString("CheckAllEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Circuit.
         /// </summary>
         public static string Circuit {
@@ -1303,7 +1312,16 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click.
+        ///   Looks up a localized string similar to Clear Filters.
+        /// </summary>
+        public static string ClearFilters {
+            get {
+                return ResourceManager.GetString("ClearFilters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Click header to configure.
         /// </summary>
         public static string ClickHeaderToConfigure {
             get {
@@ -1506,6 +1524,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string DateHourChange {
             get {
                 return ResourceManager.GetString("DateHourChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date/Time updated successfully .
+        /// </summary>
+        public static string DateTimeUpdated {
+            get {
+                return ResourceManager.GetString("DateTimeUpdated", resourceCulture);
             }
         }
         
@@ -1753,7 +1780,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disarm stay.
+        ///   Looks up a localized string similar to Arm stay.
         /// </summary>
         public static string EventMessage_End_KP_EVT_CODE_ARMED_STAY {
             get {
@@ -2248,6 +2275,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Events in.
+        /// </summary>
+        public static string EventsIn {
+            get {
+                return ResourceManager.GetString("EventsIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Exception 1 (-).
         /// </summary>
         public static string Exception_1_minus {
@@ -2361,6 +2397,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string F_Buttons_config_plus {
             get {
                 return ResourceManager.GetString("F_Buttons_config_plus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick tips.
+        /// </summary>
+        public static string FastTips {
+            get {
+                return ResourceManager.GetString("FastTips", resourceCulture);
             }
         }
         
@@ -2536,6 +2581,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fuse fail.
         /// </summary>
         public static string FuseFail {
@@ -2680,6 +2734,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You can use filters to hide/show configuration by categories..
+        /// </summary>
+        public static string Help_Filters_H1_P21 {
+            get {
+                return ResourceManager.GetString("Help_Filters_H1_P21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Here you can configure system.\r\nAfter configure, you can send it to Mega-X and/or save it to your configuration..
         /// </summary>
         public static string Help_GlobalSystem_H1_P2 {
@@ -2793,6 +2856,87 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Help_Zone_H1_P2 {
             get {
                 return ResourceManager.GetString("Help_Zone_H1_P2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The option to change login password is located in top bar. Clicking in “Admin” will show a drop menu where it&apos;s possible to change your password and also logout from mega-X Configuration Tool..
+        /// </summary>
+        public static string HelpTip_ChangePassword_2 {
+            get {
+                return ResourceManager.GetString("HelpTip_ChangePassword_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download/Upload.
+        /// </summary>
+        public static string HelpTip_DownloadUpload_1 {
+            get {
+                return ResourceManager.GetString("HelpTip_DownloadUpload_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s possible to make Upload/Download to/for mega-X in a faster way. Using top right buttons of each configuration category will make a partial upload or download. .
+        /// </summary>
+        public static string HelpTip_DownloadUpload_2 {
+            get {
+                return ResourceManager.GetString("HelpTip_DownloadUpload_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Individual configuration.
+        /// </summary>
+        public static string HelpTip_ElementConfig_1 {
+            get {
+                return ResourceManager.GetString("HelpTip_ElementConfig_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You can configure a single element by double-clicking on it row on any table on any menu. This will open a new window where you can configure only that element in an easier way. It&apos;s also possible to access this window using the menu on left side of the app..
+        /// </summary>
+        public static string HelpTip_ElementConfig_2 {
+            get {
+                return ResourceManager.GetString("HelpTip_ElementConfig_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Language.
+        /// </summary>
+        public static string HelpTip_Language_1 {
+            get {
+                return ResourceManager.GetString("HelpTip_Language_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to It&apos;s possible to change language between english (en-US) and portuguese (pt-PT) in Preferences menu or in login window when starting mega-X Configuration Tool..
+        /// </summary>
+        public static string HelpTip_Language_2 {
+            get {
+                return ResourceManager.GetString("HelpTip_Language_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New File Wizard.
+        /// </summary>
+        public static string HelpTip_Wizard_1 {
+            get {
+                return ResourceManager.GetString("HelpTip_Wizard_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When creating a new file it&apos;s possible to be assisted by a Wizard to make it in a easier and intuitive way. This Wizard will help you start a new configuration project for mega-X..
+        /// </summary>
+        public static string HelpTip_Wizard_2 {
+            get {
+                return ResourceManager.GetString("HelpTip_Wizard_2", resourceCulture);
             }
         }
         
@@ -2973,6 +3117,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string keypad_8 {
             get {
                 return ResourceManager.GetString("keypad_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keypad Acknowledgement.
+        /// </summary>
+        public static string Keypad_Ack {
+            get {
+                return ResourceManager.GetString("Keypad_Ack", resourceCulture);
             }
         }
         
@@ -4930,6 +5083,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saved with success.
+        /// </summary>
+        public static string SaveWithSuccess {
+            get {
+                return ResourceManager.GetString("SaveWithSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Saving configuration....
         /// </summary>
         public static string Saving {
@@ -5547,6 +5709,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Timezones_plus {
             get {
                 return ResourceManager.GetString("Timezones_plus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
             }
         }
         

@@ -133,7 +133,7 @@
     <value>Partição 4</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Idioma:</value>
   </data>
   <data name="Area_5" xml:space="preserve">
     <value>Partição 5</value>
@@ -1114,10 +1114,10 @@
     <value>Armar</value>
   </data>
   <data name="ArmAway" xml:space="preserve">
-    <value>Armar - total</value>
+    <value>Armar total</value>
   </data>
   <data name="ArmStay" xml:space="preserve">
-    <value>Armar - parcial</value>
+    <value>Armar parcial</value>
   </data>
   <data name="Delay" xml:space="preserve">
     <value>Atraso</value>
@@ -1143,7 +1143,6 @@
   <data name="MegaX_Version" xml:space="preserve">
     <value>Versão do Mega-X Configurator: </value>
   </data>
-
   <data name="Output_beeps_configuration_minus" xml:space="preserve">
     <value>Número de beeps (-)</value>
   </data>
@@ -1361,10 +1360,10 @@
     <value>Partições (+)</value>
   </data>
   <data name="ArmDisarmAway" xml:space="preserve">
-    <value>Armar/desarmar - total</value>
+    <value>Armar/desarmar total</value>
   </data>
   <data name="ArmDisarmStay" xml:space="preserve">
-    <value>Armar/desarmar - parcial</value>
+    <value>Armar/desarmar parcial</value>
   </data>
   <data name="Arm_disarm_permissions_minus" xml:space="preserve">
     <value>Permissões armar/desarmar (-)</value>
@@ -1724,7 +1723,7 @@
     <value>Cidade</value>
   </data>
   <data name="ClickHeaderToConfigure" xml:space="preserve">
-    <value>Clicar</value>
+    <value>Clicar no cabeçalho para configurar</value>
   </data>
   <data name="ClientInfo" xml:space="preserve">
     <value>Cliente</value>
@@ -1873,9 +1872,6 @@
   <data name="Help_Settings_H1_P2" xml:space="preserve">
     <value>Aqui pode alterar as configurações gerais da aplicação.</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma:</value>
-  </data>
   <data name="Events" xml:space="preserve">
     <value>Eventos</value>
   </data>
@@ -1895,7 +1891,7 @@
     <value>Falha de alimentação restaurada</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_ARMED_STAY" xml:space="preserve">
-    <value>Desarmado - parcial</value>
+    <value>Armado - parcial</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_AUTO_ARM_FAILED" xml:space="preserve">
     <value>Falha de armar automático</value>
@@ -2718,5 +2714,62 @@
   </data>
   <data name="User_name" xml:space="preserve">
     <value>Nome do utilizador</value>
+  </data>
+  <data name="EventsIn" xml:space="preserve">
+    <value>Eventos em</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Apagar filtros</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Até</value>
+  </data>
+  <data name="Keypad_Ack" xml:space="preserve">
+    <value>Reconhecimento do teclado</value>
+  </data>
+  <data name="CheckAllEvents" xml:space="preserve">
+    <value>Marcar todos os eventos</value>
+  </data>
+  <data name="Help_Filters_H1_P21" xml:space="preserve">
+    <value>Pode utilizar filtros para mostrar/esconder configurações por categoria</value>
+  </data>
+  <data name="DateTimeUpdated" xml:space="preserve">
+    <value>Data/Hora atualizados com sucesso</value>
+  </data>
+  <data name="SaveWithSuccess" xml:space="preserve">
+    <value>Guardado com sucesso</value>
+  </data>
+  <data name="FastTips" xml:space="preserve">
+    <value>Dicas rápidas</value>
+  </data>
+  <data name="HelpTip_ChangePassword_2" xml:space="preserve">
+    <value>A opção para alterar a password de login está localizada na barra superior. Clicando em “Admin” vai mostrar um menu onde é possível alterar a sua password, bem como terminar sessão do mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_1" xml:space="preserve">
+    <value>Download/Upload</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_2" xml:space="preserve">
+    <value>É possível fazer com que o Upload/Download do/para o mega-X seja mais rápido. Utilizando os botões do canto superior direito em cada uma das categorias de configuração, pode-se fazer o upload ou download parcial.</value>
+  </data>
+  <data name="HelpTip_ElementConfig_1" xml:space="preserve">
+    <value>Configuração individual</value>
+  </data>
+  <data name="HelpTip_ElementConfig_2" xml:space="preserve">
+    <value>Pode configurar um único elemento através de um duplo clique na linha de qualquer coluna de qualquer menu. Isto vai abrir uma nova janela onde é possível configurar apenas esse elemento de uma forma mais fácil. É também possível aceder a essa janela através do menu no lado esquerdo da aplicação.</value>
+  </data>
+  <data name="HelpTip_Language_1" xml:space="preserve">
+    <value>Mudar idioma</value>
+  </data>
+  <data name="HelpTip_Language_2" xml:space="preserve">
+    <value>É possível mudar o idioma entre inglês (en-US) e português (pt-PT) no menu Preferências ou na janela de login ao abrir o mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_Wizard_1" xml:space="preserve">
+    <value>Assistente de Novo Ficheiro</value>
+  </data>
+  <data name="HelpTip_Wizard_2" xml:space="preserve">
+    <value>Quando é criado um novo ficheiro é possível ser ajudado por um Assistente de forma a fazer desta tarefa mais fácil e intuitiva. Este Assistente vai ajudar a dar início a um novo projeto de configuração para o mega-X.</value>
   </data>
 </root>

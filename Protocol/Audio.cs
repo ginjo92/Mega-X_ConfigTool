@@ -26,10 +26,7 @@ namespace ProdigyConfigToolWPF.Protocol
             //byte[] KP_FLASH_FIM_FAIXAS_AUDIO = new byte[6 * 1024 * 1024 - 1];
             //byte[] KP_FLASH_INICIO_AUDIO_SISTEMA = new byte[2 * 1024 * 1024];
 
-
-
-
-
+            
             byte[] byte_array = new byte[256]; // verificar este tamanho
             int i = 0;
             uint j = 0;
@@ -43,14 +40,14 @@ namespace ProdigyConfigToolWPF.Protocol
             int temp = i;
             //TODO: Create a function for this for 
 
-
             //Options
             for (i = temp, j = 0; i < (temp + fragment_data_bytes.Length); i++, j++)
             {
                 byte_array[i] = fragment_data_bytes[j];
             }
 
-            byte_array[4] = (byte)fragment_data_bytes.Length;
+            //byte_array[4] = (byte)fragment_data_bytes.Length;
+            byte_array[4] = (byte)(i - temp);
             General protocol = new General();
             protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow); // TODO: Check if cp_id is needed
         }

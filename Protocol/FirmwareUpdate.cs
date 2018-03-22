@@ -8,7 +8,7 @@ namespace ProdigyConfigToolWPF.Protocol
 {
     class FirmwareUpdate
     {
-        public Dictionary<string, Dictionary<string, object>> attributes =
+       public Dictionary<string, Dictionary<string, object>> attributes =
        new Dictionary<string, Dictionary<string, object>>
        {
             {

@@ -124,7 +124,7 @@
     <value>Zones</value>
   </data>
   <data name="Language" xml:space="preserve">
-    <value>Language</value>
+    <value>Language:</value>
   </data>
   <data name="Zone_24_hour_output_1" xml:space="preserve">
     <value>24 hour alarm output - 1</value>
@@ -1105,10 +1105,10 @@
     <value>Arm</value>
   </data>
   <data name="ArmAway" xml:space="preserve">
-    <value>Arm - Away</value>
+    <value>Arm Away</value>
   </data>
   <data name="ArmStay" xml:space="preserve">
-    <value>Arm - Stay</value>
+    <value>Arm Stay</value>
   </data>
   <data name="Delay" xml:space="preserve">
     <value>Delay</value>
@@ -1720,7 +1720,7 @@
     <value>City</value>
   </data>
   <data name="ClickHeaderToConfigure" xml:space="preserve">
-    <value>Click</value>
+    <value>Click header to configure</value>
   </data>
   <data name="ClientInfo" xml:space="preserve">
     <value>Client</value>
@@ -1869,9 +1869,6 @@
   <data name="Help_Settings_H1_P2" xml:space="preserve">
     <value>Here you are able to change general application configurations.</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Language:</value>
-  </data>
   <data name="Events" xml:space="preserve">
     <value>Events</value>
   </data>
@@ -1924,7 +1921,7 @@
     <value>AC power restored</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_ARMED_STAY" xml:space="preserve">
-    <value>Disarm stay</value>
+    <value>Arm stay</value>
   </data>
   <data name="EventMessage_End_KP_EVT_CODE_AUTO_ARM_FAILED" xml:space="preserve">
     <value>Auto arm fail</value>
@@ -2711,5 +2708,62 @@
   </data>
   <data name="User_name" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="EventsIn" xml:space="preserve">
+    <value>Events in</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Clear Filters</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="Keypad_Ack" xml:space="preserve">
+    <value>Keypad Acknowledgement</value>
+  </data>
+  <data name="CheckAllEvents" xml:space="preserve">
+    <value>Check All Events</value>
+  </data>
+  <data name="Help_Filters_H1_P21" xml:space="preserve">
+    <value>You can use filters to hide/show configuration by categories.</value>
+  </data>
+  <data name="DateTimeUpdated" xml:space="preserve">
+    <value>Date/Time updated successfully </value>
+  </data>
+  <data name="SaveWithSuccess" xml:space="preserve">
+    <value>Saved with success</value>
+  </data>
+  <data name="FastTips" xml:space="preserve">
+    <value>Quick tips</value>
+  </data>
+  <data name="HelpTip_ChangePassword_2" xml:space="preserve">
+    <value>The option to change login password is located in top bar. Clicking in “Admin” will show a drop menu where it's possible to change your password and also logout from mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_1" xml:space="preserve">
+    <value>Download/Upload</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_2" xml:space="preserve">
+    <value>It's possible to make Upload/Download to/for mega-X in a faster way. Using top right buttons of each configuration category will make a partial upload or download. </value>
+  </data>
+  <data name="HelpTip_ElementConfig_1" xml:space="preserve">
+    <value>Individual configuration</value>
+  </data>
+  <data name="HelpTip_ElementConfig_2" xml:space="preserve">
+    <value>You can configure a single element by double-clicking on it row on any table on any menu. This will open a new window where you can configure only that element in an easier way. It's also possible to access this window using the menu on left side of the app.</value>
+  </data>
+  <data name="HelpTip_Language_1" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="HelpTip_Language_2" xml:space="preserve">
+    <value>It's possible to change language between english (en-US) and portuguese (pt-PT) in Preferences menu or in login window when starting mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_Wizard_1" xml:space="preserve">
+    <value>New File Wizard</value>
+  </data>
+  <data name="HelpTip_Wizard_2" xml:space="preserve">
+    <value>When creating a new file it's possible to be assisted by a Wizard to make it in a easier and intuitive way. This Wizard will help you start a new configuration project for mega-X.</value>
   </data>
 </root>

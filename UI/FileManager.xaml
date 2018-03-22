@@ -8,7 +8,7 @@
                       xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.FileManager"
                       mc:Ignorable="d"
-                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/Resources/icon.ico"
+                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/images/icon.ico"
                       Loaded="FileManagerWindow_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="1024" MinHeight="768">
     <Controls:MetroWindow.Resources>
         <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
@@ -159,10 +159,10 @@
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Website}"/>
                     <TextBlock x:Name="ClientWebSite" Margin="126,10,285,10" Background="WhiteSmoke"/>
                 </Grid>
-                <StackPanel Orientation="Horizontal" Opacity="0.8">
+                <!--<StackPanel Orientation="Horizontal" Opacity="0.8">
                     <Image Source="/images/maxalarm.png" Width="200" Margin="10"/>
                     <Image Source="/images/mega-x.png" Width="120" Margin="10,-10,0,0"/>
-                </StackPanel>
+                </StackPanel>-->
 
             </StackPanel>
         </DockPanel>

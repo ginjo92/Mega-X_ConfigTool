@@ -177,10 +177,7 @@ namespace ProdigyConfigToolWPF.Protocol
         // Handle with data
         public void Operations(byte action, MainWindow mainform, int data_size)
         {
-            string StringByte = BitConverter.ToString(data_rx);
-            Console.Write("GINJO");
-            Console.Write(StringByte);
-
+            
             switch (action)
             {
                 case Constants.CHECK_ID:
@@ -205,6 +202,9 @@ namespace ProdigyConfigToolWPF.Protocol
                     byte[] event_code = new byte[2];
                     event_code[0] = data_rx[13];
                     event_code[1] = data_rx[14];
+                    //event_code[0] = data_rx[12];
+                    //event_code[1] = data_rx[14];
+
 
                     uint serial_number = (uint)((data_rx[3] << 24) + (data_rx[4] << 16) + (data_rx[5] << 8) + data_rx[6]);
                     mainform.event_code = (uint)(event_code[0] << 8) + event_code[1];
@@ -212,7 +212,12 @@ namespace ProdigyConfigToolWPF.Protocol
                     string software_version = Encoding.UTF8.GetString(mainform.sw_version);
                     mainform.write_control_panel_id_label(control_panel_id, hardware_version, software_version, serial_number);
 
-                    
+                    //string EventCode = BitConverter.ToString(event_code);
+                    //System.Diagnostics.Debug.WriteLine("EVENT CODE: ");
+                    //System.Diagnostics.Debug.WriteLine(EventCode);
+                    string DataRX = BitConverter.ToString(data_rx);
+                    System.Diagnostics.Debug.WriteLine("DATA RX: " + DataRX);
+
 
                     mainform.serial_port_connection_timer.Stop();
                     

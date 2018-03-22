@@ -45,6 +45,9 @@ namespace ProdigyConfigToolWPF
         private bool EventFilterArmDisarm = false;
         private bool EventFilterAlarms = false;
         private bool EventFilterFaults = false;
+        private bool EventFilterAreas = false;
+
+       
 
         public SerialPort serialPort = new SerialPort();
         public byte[] cp_id = { 0x0, 00 };
@@ -68,9 +71,7 @@ namespace ProdigyConfigToolWPF
         public System.Windows.Threading.DispatcherTimer serial_port_connection_timer = new System.Windows.Threading.DispatcherTimer();
 
         FileStream audio_stream;
-
-
-
+        
         private bool default_restore_is_set = false;
 
         ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
@@ -90,12 +91,14 @@ namespace ProdigyConfigToolWPF
             WizardDialerSetup = DialerConfig;
             WizardPartitionsSetup = PartitionsConfig;
             WizardPhonesSetup = PhonesConfig;
-
+            
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
+
+            
 
             XmlLanguageConverter c = new XmlLanguageConverter();
             XmlLanguage c2 = (XmlLanguage)c.ConvertFrom(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString());
@@ -112,14 +115,15 @@ namespace ProdigyConfigToolWPF
                 timer.Enabled = true;
                 timer.Start();
 
+                SoftwareVersion.Content = version;
+                System.Diagnostics.Debug.WriteLine("Mega-X Configuration Tool v." + version);
 
                 ConfigFileName.Content = AppDbFile;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); //TODO: delete/improve
             }
-
 
             switch (Properties.Settings.Default.DefaultCulture)
             {
@@ -211,9 +215,8 @@ namespace ProdigyConfigToolWPF
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             serial_port_connection_timer.Stop();
 
-            FWNumberValueLabel.Visibility = Visibility.Collapsed;
-            SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-            HWNumberValueLabel.Visibility = Visibility.Collapsed;
+            PanelLabels.Visibility = Visibility.Collapsed;
+
             await DialogManager.ShowMessageAsync(this, Properties.Resources.UnknownDevice, "");
         }
 
@@ -230,9 +233,7 @@ namespace ProdigyConfigToolWPF
             StatusBarDisconnectedIcon.Visibility = Visibility.Visible;
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             //Serial number, FW Version and HW Version labels
-            FWNumberValueLabel.Visibility = Visibility.Collapsed;
-            SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-            HWNumberValueLabel.Visibility = Visibility.Collapsed;
+            PanelLabels.Visibility = Visibility.Collapsed;
 
             // Serial Port
             string[] com_ports = SerialPort.GetPortNames();
@@ -250,7 +251,7 @@ namespace ProdigyConfigToolWPF
             CreateTreeviewItemsfor(TreeviewAreas, Constants.KP_MAX_AREAS, Properties.Resources.Area);
             CreateTreeviewItemsfor(TreeviewKeypads, Constants.KP_MAX_KEYPADS, Properties.Resources.Keypad);
             CreateTreeviewItemsfor(TreeviewOutputs, Constants.KP_MAX_OUTPUTS, Properties.Resources.Output);
-            CreateTreeviewItemsfor(TreeviewUsers, Constants.KP_MAX_USERS - 5, Properties.Resources.User);
+            CreateTreeviewItemsfor(TreeviewUsers, Constants.KP_MAX_USERS - 5, Properties.Resources.User); //Do not show last 5 [reserved] users
             CreateTreeviewItemsfor(TreeviewTimezones, Constants.KP_MAX_TIMEZONES, Properties.Resources.Timezone);
             CreateTreeviewItemsfor(TreeviewPhones, Constants.KP_MAX_PHONES, Properties.Resources.Phone);
             #endregion
@@ -266,7 +267,7 @@ namespace ProdigyConfigToolWPF
                 User_Code_Column.Visibility = Visibility.Collapsed;
                 User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
-           
+            
 
             //Force 'Home' tree view item to be selected on loaded
             TreeViewItem treeview_home = (TreeViewItem)MainTreeView.ItemContainerGenerator.Items[0];
@@ -357,14 +358,14 @@ namespace ProdigyConfigToolWPF
                 databaseDataSet.AudioCustomized.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
 
                 // Load data into the table Event. You can modify this code as needed.
-                EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-                CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
-                ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
-                this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
-                this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-                this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-                eventViewSource.View.MoveCurrentToFirst();
+                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+                //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
+                //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+                //eventViewSource.View.MoveCurrentToFirst();
             }
             catch (Exception ex)
             {
@@ -658,6 +659,7 @@ namespace ProdigyConfigToolWPF
 
         internal async void SendDataToProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
+            Protocol.Event events = new Protocol.Event();
             Protocol.Zones zones = new Protocol.Zones();
             Protocol.Areas areas = new Protocol.Areas();
             Protocol.Users users = new Protocol.Users();
@@ -820,9 +822,8 @@ namespace ProdigyConfigToolWPF
                         protocol.check_ID(this);
 
                         serial_port_connection_timer.Start();
-                        FWNumberValueLabel.Visibility = Visibility.Visible;
-                        SerialNumberValueLabel.Visibility = Visibility.Visible;
-                        HWNumberValueLabel.Visibility = Visibility.Visible;
+
+                        PanelLabels.Visibility = Visibility.Visible;
 
                         //TextBoxConnectedDisconnected.Text = Properties.Resources.ComConnected;
                         //TextBoxConnectedDisconnected.Foreground = Brushes.Green;
@@ -850,9 +851,7 @@ namespace ProdigyConfigToolWPF
                         StatusBarDisconnectedIcon.Visibility = Visibility.Visible;
                         StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
 
-                        FWNumberValueLabel.Visibility = Visibility.Collapsed;
-                        SerialNumberValueLabel.Visibility = Visibility.Collapsed;
-                        HWNumberValueLabel.Visibility = Visibility.Collapsed;
+                        PanelLabels.Visibility = Visibility.Collapsed;
 
                         await DialogManager.ShowMessageAsync(this, Properties.Resources.Disconnection_Successfull, "");
                     }
@@ -890,8 +889,13 @@ namespace ProdigyConfigToolWPF
         {
             try
             {
-                serialPort.Write(tx_buffer, offset, count);
-                //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
+                if(serialPort.IsOpen)
+                { 
+                    serialPort.Write(tx_buffer, offset, count);
+                    //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
+                }
+                else
+                    await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
             }
             catch (Exception ex)
             {
@@ -904,10 +908,10 @@ namespace ProdigyConfigToolWPF
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
-                ControlPanelIDLabel.Text = control_panel_id.ToString();
-                BoardSerialNumber.Text = serial_number.ToString();
-                HwVersion.Text = hardware_version;
-                SwVersion.Text = software_version;
+                //ControlPanelIDLabel.Text = control_panel_id.ToString();
+                //BoardSerialNumber.Text = serial_number.ToString();
+                //HwVersion.Text = hardware_version;
+                //SwVersion.Text = software_version;
 
                 //ControlPanelIDLabel.Text = control_panel_id.ToString();
                 SerialNumberValueLabel.Content = serial_number.ToString();
@@ -5912,7 +5916,7 @@ namespace ProdigyConfigToolWPF
             else if (addr >= Constants.KP_EVENTS_INIC_ADDR && addr < Constants.KP_EVENTS_FINAL_ADDR) //TODO: Change to areas and improve this process
             {
                 #region EVENTS
-
+                int event_to_read = ((addr - 0x82800) / 256);
                 Event system_event = new Event();
 
                 byte[] cra_account_number = (byte[])system_event.attributes["cra_account_number"]["value"];
@@ -6019,6 +6023,7 @@ namespace ProdigyConfigToolWPF
                     event_keypad_ack[j] = buf[i];
                 }
 
+                
                 uint event_id = ((uint)id[3] << 24) + ((uint)id[2] << 16) + ((uint)id[1] << 8) + (uint)id[0];
                 int session = (event_session[1] << 8) + event_session[0];
 
@@ -6044,8 +6049,9 @@ namespace ProdigyConfigToolWPF
                 int seconds = event_seconds[0];
                 int month = event_month[0];
                 int day = event_day[0];
-                int year = (event_year[1] << 8) + event_year[0];
+                int year = event_year[0] + 1792;
 
+                
 
                 try
                 {
@@ -6076,7 +6082,7 @@ namespace ProdigyConfigToolWPF
 
                     //Keypad_ack
                     //add new event
-                    new_event["Keypad_ack"] = Convert.ToInt64(event_keypad_ack[0]);
+                    new_event["Keypad_ack"] = event_keypad_ack[0];
 
                     //DateTime
                     DateTime event_date_time = new DateTime();
@@ -6087,13 +6093,16 @@ namespace ProdigyConfigToolWPF
                     event_date_time = event_date_time.AddMonths(month - event_date_time.Month);
                     event_date_time = event_date_time.AddYears(year - event_date_time.Year);
                     new_event["DateTime"] = event_date_time.ToString();
+
                     databaseDataSet.Event.Rows.Add(new_event);
-                    EventTableAdapter databaseDataSetPhoneTableAdapter = new EventTableAdapter();
-                    databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Event);
+
+                    
 
                     if (addr == (Constants.KP_EVENTS_FINAL_ADDR - Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH))
                         AddEventItemToDatagrid();
 
+                    //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                    //databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
                 }
                 catch (Exception ex)
                 {
@@ -7780,17 +7789,36 @@ namespace ProdigyConfigToolWPF
 
         void AddEventItemToDatagrid()
         {
+            //this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
+            //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+            //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+
+            EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+            databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+
             this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
+            DataTable dtEvent = (DataTable)eventDataGrid.ItemsSource;
             ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
             this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
             this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
             this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+            this.Dispatcher.Invoke((Action)(() => dtEvent.DefaultView.ToTable()));
+
+            databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
         }
 
-        private void UpdateDateHourTile_Click(object sender, RoutedEventArgs e)
+        private async void UpdateDateHourTile_Click(object sender, RoutedEventArgs e)
         {
-            Protocol.General protocol = new Protocol.General();
-            protocol.update_hour_and_date(this);
+            if (serialPort.IsOpen)
+            {
+                Protocol.General protocol = new Protocol.General();
+                protocol.update_hour_and_date(this);
+
+                await DialogManager.ShowMessageAsync(this, Properties.Resources.DateTimeUpdated, "");
+            }
+            else await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
         }
 
         private void togglelanguage_Click(object sender, RoutedEventArgs e)
@@ -7995,8 +8023,7 @@ namespace ProdigyConfigToolWPF
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
             }
         }
-
-
+        
         public byte GetHexFromAscii(byte origin)
         {
             if (origin >= '0' && origin <= '9')
@@ -8019,7 +8046,6 @@ namespace ProdigyConfigToolWPF
             TextboxDebugHEX.Document.Blocks.Clear();
             TextboxDebugASCII.Document.Blocks.Clear();
         }
-
 
         private void GlobalSystemColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
         {
@@ -9180,7 +9206,6 @@ namespace ProdigyConfigToolWPF
         }
         private async void SaveFile_Click(object sender, RoutedEventArgs e)
         {
-
             if (databaseDataSet.HasChanges())
             {
                 var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
@@ -9188,6 +9213,7 @@ namespace ProdigyConfigToolWPF
                 {
                     Save_Database_data();
                     controller.CloseAsync();
+                    this.ShowProgressAsync(Properties.Resources.SaveWithSuccess, "");
                 });
             }
         }
@@ -9464,6 +9490,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.CommandText = "DELETE FROM Event WHERE Id <> 0";
                         sqlCommand.ExecuteNonQuery();
                     }
+                    
                 }
 
                 EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
@@ -9546,7 +9573,7 @@ namespace ProdigyConfigToolWPF
             //{
             //    Close();
             //}
-           
+            
 
             if (serialPort.IsOpen)
                 serialPort.Close();
@@ -9622,12 +9649,15 @@ namespace ProdigyConfigToolWPF
 
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateHelpText();
+            Help helpWindow = new Help();
+            helpWindow.Show();
+            
+            //UpdateHelpText();
 
-            if (HelpFlyout.IsOpen)
-                HelpFlyout.IsOpen = false;
-            else
-                HelpFlyout.IsOpen = true;
+            //if (HelpFlyout.IsOpen)
+            //    HelpFlyout.IsOpen = false;
+            //else
+            //    HelpFlyout.IsOpen = true;
         }
 
         private void UpdateHelpText()
@@ -9646,9 +9676,15 @@ namespace ProdigyConfigToolWPF
                 Help_1_P2.Text = Properties.Resources.Help_Area_H1_P2.Replace(@"\r\n", System.Environment.NewLine);
 
                 HelpRichTextBox_2.Visibility = Visibility.Visible;
-
+                
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
+
             }
             else if (MainZonesTab.IsSelected)
             {
@@ -9659,6 +9695,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainKeypadsTab.IsSelected)
             {
@@ -9669,6 +9710,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainOutputsTab.IsSelected)
             {
@@ -9679,6 +9725,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainUsersTab.IsSelected)
             {
@@ -9689,6 +9740,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainTimezonesTab.IsSelected)
             {
@@ -9699,6 +9755,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainPhonesTab.IsSelected)
             {
@@ -9709,6 +9770,11 @@ namespace ProdigyConfigToolWPF
 
                 Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
                 Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+
+                HelpRichTextBox_3.Visibility = Visibility.Visible;
+
+                Help_3_P1.Text = Properties.Resources.Filters.Replace(@"\r\n", System.Environment.NewLine);
+                Help_3_P2.Text = Properties.Resources.Help_Filters_H1_P21.Replace(@"\r\n", System.Environment.NewLine);
             }
             else if (MainDialerTab.IsSelected)
             {
@@ -9719,11 +9785,7 @@ namespace ProdigyConfigToolWPF
             {
                 Help_1_P1.Text = Properties.Resources.SystemConfiguration;
                 Help_1_P2.Text = Properties.Resources.Help_GlobalSystem_H1_P2.Replace(@"\r\n", System.Environment.NewLine);
-
-                HelpRichTextBox_2.Visibility = Visibility.Visible;
-
-                Help_2_P1.Text = Properties.Resources.ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
-                Help_2_P2.Text = Properties.Resources.Help_ClickHeaderToConfigure.Replace(@"\r\n", System.Environment.NewLine);
+              
             }
             else if (ClientConfigTab.IsSelected)
             {
@@ -9741,33 +9803,36 @@ namespace ProdigyConfigToolWPF
         {
             if (this.serialPort.IsOpen)
             {
-
                 //Clear all existing events 
                 databaseDataSet.Event.Clear();
-                EventTableAdapter databaseDataSetPhoneTableAdapter = new EventTableAdapter();
-                databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Event);
+                EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
 
                 Event events = new Event();
 
                 var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
                 controller.Maximum = 100.0;
                 controller.Minimum = 0.0;
-
+                
                 await Task.Run(() =>
                 {
                     controller.SetMessage(Properties.Resources.ReadingEvents);
-                    for (int i = 1; i < (Constants.KP_MAX_EVENTS + 1); i++)
+
+                    for (uint i = 0; i < 500; i++) //(Constants.KP_MAX_EVENTS) -> Number of events to read
                     {
                         this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)i)));
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_EVENTS + 1.0)))));
+                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(500.0 + 1.0)))));
                         System.Threading.Thread.Sleep(20);
                     }
-
+                    
                     controller.CloseAsync();
 
                 });
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
-                //this.IsEnabled = true;
+                eventDataGrid.Items.Refresh();
+                eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending));
+                eventDataGrid.Visibility = Visibility.Visible;
+
             }
             else
             {
@@ -9796,8 +9861,7 @@ namespace ProdigyConfigToolWPF
                 else
                     databaseDataSet.Event.DefaultView.RowFilter = databaseDataSet.Event.EventIdColumn.ColumnName + " IN(" + events_filter + ")";
 
-                SolidColorBrush solid = new SolidColorBrush(Color.FromRgb(49, 164, 218));
-                ButtonFilterArmDisarm.Background = solid;
+                ButtonFilterArmDisarm.Background = Brushes.WhiteSmoke;
             }
         }
 
@@ -9822,9 +9886,8 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Event.DefaultView.RowFilter = String.Empty;
                 else
                     databaseDataSet.Event.DefaultView.RowFilter = databaseDataSet.Event.EventIdColumn.ColumnName + " IN(" + events_filter + ")";
-
-                SolidColorBrush solid = new SolidColorBrush(Color.FromRgb(49, 164, 218));
-                ButtonFilterAlarms.Background = solid;
+                
+                ButtonFilterAlarms.Background = Brushes.WhiteSmoke; 
             }
         }
 
@@ -9848,9 +9911,8 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Event.DefaultView.RowFilter = String.Empty;
                 else
                     databaseDataSet.Event.DefaultView.RowFilter = databaseDataSet.Event.EventIdColumn.ColumnName + " IN(" + events_filter + ")";
-
-                SolidColorBrush solid = new SolidColorBrush(Color.FromRgb(49, 164, 218));
-                ButtonFilterFaults.Background = solid;
+                
+                ButtonFilterFaults.Background = Brushes.WhiteSmoke;
 
             }
 
@@ -10076,6 +10138,23 @@ namespace ProdigyConfigToolWPF
                     + Constants.KP_EVT_CODE_SWINGER_BYPASS.ToString() + ","
                     + Constants.KP_EVT_CODE_ACCESS.ToString() + ","
                     + Constants.KP_EVT_CODE_ACCESS_POINT_BYPASS.ToString();
+            }
+
+            if (EventFilterAreas.Equals(true))
+            {
+                if (EventFilterAreas.Equals(true))
+                {
+                    return_filter += ",";
+                }
+                return_filter +=
+                     Constants.PARTITION_1.ToString() + ","
+                   + Constants.PARTITION_2.ToString() + ","
+                   + Constants.PARTITION_3.ToString() + ","
+                   + Constants.PARTITION_4.ToString() + ","
+                   + Constants.PARTITION_5.ToString() + ","
+                   + Constants.PARTITION_6.ToString() + ","
+                   + Constants.PARTITION_7.ToString() + ","
+                   + Constants.PARTITION_8.ToString();
             }
 
             return return_filter;
@@ -14909,11 +14988,133 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #endregion
-
+        
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
-        
+
+        private void PartitionComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int id = PartitionComboBox.SelectedIndex;
+            string clearfilter = string.Empty;
+            DataTable dtEvent = new DataTable();
+            dtEvent = databaseDataSet.Event;
+
+            switch (id)
+            {
+                case 0://All Partitions
+                    dtEvent.DefaultView.RowFilter = clearfilter;
+                    break;
+
+                case 1: //partition 1
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "1" + ")";
+                    break;
+
+                case 2://partition 2
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "2" + ")";
+                    break;
+
+                case 3://partition 3
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "3" + ")";
+                    break;
+
+                case 4://partition 4
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "4" + ")";
+                    break;
+
+                case 5://partition 5
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "5" + ")";
+                    break;
+
+                case 6://partition 6
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "6" + ")";
+                    break;
+
+                case 7://partition 7
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "7" + ")";
+                    break;
+
+                case 8://partition 8
+                    dtEvent.DefaultView.RowFilter = databaseDataSet.Event.AreaColumn.ColumnName + " IN(" + "8" + ")";
+                    break;
+
+                default:
+                    break;
+            }
+            
+        }
+  
+        private void ClearFilters_Click(object sender, RoutedEventArgs e)
+        {
+            string clearfilter = string.Empty;
+            databaseDataSet.Event.DefaultView.RowFilter = clearfilter;
+
+            PartitionComboBox.SelectedIndex = 0;
+            //EventTimeComboBox.SelectedIndex = 0;
+
+            EventFilterArmDisarm = false;
+            ButtonFilterArmDisarm.Background = Brushes.WhiteSmoke;
+            EventFilterAlarms = false;
+            ButtonFilterAlarms.Background = Brushes.WhiteSmoke;
+            EventFilterFaults = false;
+            ButtonFilterFaults.Background = Brushes.WhiteSmoke;
+        }
+
+        private void SelectRangeDate_Click(object sender, RoutedEventArgs e)
+        {
+            if(Event_DateFrom.SelectedDate != null || Event_DateTo.SelectedDate != null)
+            { 
+                DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
+                DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
+
+                DateTime datetime_from = new DateTime(date_from.Year, date_from.Month, date_from.Day, 00, 00, 00);
+                DateTime datetime_to = new DateTime(date_to.Year, date_to.Month, date_to.Day, 23, 59, 59);
+
+                string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
+                                         + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
+            
+                databaseDataSet.Event.DefaultView.RowFilter = filter_date;
+
+                System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
+            }
+        }
+
+        private void CheckAllEvents_Click(object sender, RoutedEventArgs e)
+        {
+            General protocol = new General();
+            Event events = new Event();
+            
+            string columnName = databaseDataSet.Event.Keypad_ackColumn.ColumnName;
+
+            foreach (DataRow row in databaseDataSet.Event.Rows)
+            {
+                row[columnName] = 1;
+            }
+
+            int event_cnt = eventDataGrid.Items.Count;
+
+            protocol.check_all_events(this);
+
+            //for (int i = 1; i < event_cnt; i++) //Constants.KP_MAX_ZONES
+            //{
+            //    events.Write(this, (uint)i);
+                
+            //}
+            //eventDataGrid.Items.Clear();
+            //eventDataGrid.DataContext = databaseDataSet.Tables["Event"];
+
+            eventDataGrid.Items.Refresh();
+        }
+
+        private void HelpFlyoutImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            HelpFlyout.IsOpen = false;
+        }
+
+        private void FlyComImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FlyCom.IsOpen = false;
+        }
     }
 }

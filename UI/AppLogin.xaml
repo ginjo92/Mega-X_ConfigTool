@@ -6,7 +6,7 @@
         xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
         xmlns:local="clr-namespace:ProdigyConfigToolWPF"
         mc:Ignorable="d"
-        Title="Mega-X Configurator" Height="300" Width="300" Icon="/Resources/icon.ico"
+        Title="Mega-X Configurator" Height="300" Width="300" Icon="/images/icon.ico"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
                       ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="640" MinHeight="480" ShowTitleBar="False" IsWindowDraggable="True" 
                       ShowMaxRestoreButton="False" Loaded="MetroWindow_Loaded" FocusManager.FocusedElement="{Binding ElementName=UserPasswordValue}" WindowStyle="None" AllowsTransparency="True">
