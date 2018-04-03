@@ -1,0 +1,164 @@
+﻿<Controls:MetroWindow x:Class="ProdigyConfigToolWPF.AppLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+        xmlns:local="clr-namespace:ProdigyConfigToolWPF"
+        mc:Ignorable="d"
+        Title="Mega-X Configurator" Height="300" Width="300" Icon="/images/icon.ico"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="640" MinHeight="480" ShowTitleBar="False" IsWindowDraggable="True" 
+                      ShowMaxRestoreButton="False" Loaded="MetroWindow_Loaded" FocusManager.FocusedElement="{Binding ElementName=UserPasswordValue}" WindowStyle="None" AllowsTransparency="True">
+    <Controls:MetroWindow.Resources>
+        <ObjectDataProvider x:Key="UserLogins_dict"
+        MethodName="GetUserLogin" ObjectType="{x:Type local:Dictionaries}"/>
+    </Controls:MetroWindow.Resources>
+    <Controls:MetroWindow.Background>
+        <ImageBrush ImageSource="/ProdigyConfigToolWPF;component/images/pcb.png" />
+    </Controls:MetroWindow.Background>
+    <!--Title bar Right content-->
+    <Controls:MetroWindow.RightWindowCommands>
+        <Controls:WindowCommands>
+            <Button x:Name="TitleBarHelpButton" Click="TitleBarHelpButton_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/images/topbaricons/help_small.png" Width="20"/>
+                </StackPanel>
+            </Button>
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>
+    <Grid>
+        <!--FLYOUT-->
+        
+        <Border   HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="400" Width="330" Background="#FFF7F7F7" BorderBrush="Black" >
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <StackPanel Background="WhiteSmoke">
+                <Controls:Tile x:Name="UserLoginHeader" Width="Auto" Height="100" TitleFontSize="10" 
+                               HorizontalTitleAlignment="Center" Background="Black" VerticalAlignment="Top" Margin="0" BorderBrush="Black" 
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20" IsEnabled="False">
+                    <Image Source="/images/login/login.png" Height="180"/>
+                </Controls:Tile>
+                <Label Content="{x:Static p:Resources.Login}" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
+                <!--USER NAME-->
+                <Grid   HorizontalAlignment="Left" Margin="20,20,20,0" VerticalAlignment="Top" Background="White" Height="50" Width="330" >
+                    <Controls:Tile x:Name="UserLogin" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="White" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalTitleAlignment="Top" Foreground="#FF705D5D" BorderThickness="1" BorderBrush="Black" IsEnabled="False">
+                        <Image Source="/images/login/username.png" Height="36"/>
+                    </Controls:Tile>
+                    <ComboBox x:Name="UserLoginValue" Grid.Column="1" Background="White"  VerticalAlignment="Center" Width="240" Height="50" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="20" IsEditable="True" HorizontalContentAlignment="Center"  ItemsSource="{Binding Source={StaticResource UserLogins_dict}}" SelectedValuePath="Value" 
+                                DisplayMemberPath="Value" SelectedIndex="0" />
+                </Grid>
+                <!--USER PSWD-->
+                <Grid   HorizontalAlignment="Left" Margin="20,25,20,0" VerticalAlignment="Top" Background="White" Width="330" Height="50" >
+
+                    <Controls:Tile x:Name="UserPassword" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="WhiteSmoke" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalTitleAlignment="Top" Foreground="#FF705D5D" BorderThickness="1" BorderBrush="Black" IsEnabled="False">
+                       
+                        <Image Source="/images/login/password.png" Height="38"/>
+                    </Controls:Tile>
+                    <PasswordBox x:Name="UserPasswordValue" Grid.Column="1" Background="White" VerticalAlignment="Top" Width="240" Height="50" HorizontalAlignment="Left" 
+                                 Margin="50,0,0,0" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyDown="UserPasswordValue_KeyDown"/>
+                </Grid>
+                <!--BUTTONS-->
+                <Grid HorizontalAlignment="Center" Margin="20,20,20,0" VerticalAlignment="Top" Width="200" Height="40">
+                    <Controls:Tile x:Name="LoginOK_Tile" Width="90" Height="30" Title="{x:Static p:Resources.LoginOk}" TitleFontSize="10" Margin="-100,0,0,0"
+                                       VerticalAlignment="Top" Background="#CC3DA254" HorizontalTitleAlignment="Right" Foreground="Black" 
+                                       Click="ButtonLogin_Click">
+                        <Image Source="/images/login/login_ok.png" Margin="30,0,0,0"/>
+                    </Controls:Tile>
+                    <Controls:Tile x:Name="LoginCancel_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Close}" TitleFontSize="10" Margin="100,0,0,0"
+                                       VerticalAlignment="Top" Background="#FFC94C46" Click="ButtonCancel_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Black">
+                        <Image Source="/images/login/login_cancel.png" Margin="30,0,0,0"/>
+                    </Controls:Tile>
+                </Grid>
+                <!--Language-->
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <StackPanel.Resources>
+                        <Style x:Key="Flag" TargetType="RadioButton">
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="False">
+                                    <Setter Property="Opacity" Value="0.5"/>
+                                </Trigger>
+                            </Style.Triggers>
+
+                            <Setter Property="BorderThickness" Value="2"/>
+
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="RadioButton">
+                                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                Background="Transparent"
+                                CornerRadius="20">
+                                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </StackPanel.Resources>
+
+                    <ItemsControl>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel x:Name="RadioLocalePT_Active" Orientation="Horizontal">
+                                <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image x:Name="RadioLocalePT_flag" Source="/images/portugal.png" />
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                                <RadioButton x:Name="RadioLocaleEN_off" IsChecked="True" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocaleEN_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image Source="/images/united_kingdom_off.png" Opacity="0.5"/>
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                            </StackPanel>
+                            <StackPanel x:Name="RadioLocaleEN_Active" Orientation="Horizontal">
+                                <RadioButton x:Name="RadioLocalePT_off" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Click="RadioLocalePT_Click">
+                                        <RadioButton.Template>
+                                            <ControlTemplate>
+                                                <Image Source="/images/portugal_off.png" Opacity="0.5"/>
+                                            </ControlTemplate>
+                                        </RadioButton.Template>
+                                    </RadioButton>
+                                <RadioButton x:Name="RadioLocaleEN" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
+                                    <RadioButton.Template>
+                                        <ControlTemplate>
+                                            <Image x:Name="RadioLocaleEN_flag" Source="/images/united_kingdom.png"/>
+                                        </ControlTemplate>
+                                    </RadioButton.Template>
+                                </RadioButton>
+                                
+                            </StackPanel>
+                        </StackPanel>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+        <!--HELP FLYOUT-->
+        <Controls:Flyout x:Name="HelpFlyout" 
+                         HorizontalContentAlignment="Right" Background="#FF6E6A6A" 
+                         Opacity="0.85" 
+                         Header="{x:Static p:Resources.Help}" 
+                         Margin="0" 
+                         Position="Right" 
+                         IsOpen="False" Width="168" HorizontalAlignment="Right" FontWeight="Bold">
+            <StackPanel>
+                <RichTextBox Background="#FFBBB7B7" Margin="5,20,5,0" IsReadOnly="True" >
+                    <FlowDocument>
+                        <Paragraph FontSize="12">
+                            <Run Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold"/>
+                        </Paragraph>
+                        <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="10" Foreground="#FF8D3939">
+                            <Run Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </StackPanel>
+        </Controls:Flyout>
+    </Grid>
+</Controls:MetroWindow>

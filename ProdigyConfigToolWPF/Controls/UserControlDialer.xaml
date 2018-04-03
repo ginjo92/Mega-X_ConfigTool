@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="ProdigyConfigToolWPF.Controls.UserControlDialer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ProdigyConfigToolWPF.Controls"
+             xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="/ProdigyConfigToolWPF;component/Resources/Datasets.xaml"/>
+    </UserControl.Resources>
+
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--<Controls:Tile  Grid.Column="0" Grid.Row="0" Title="{x:Static p:Resources.Zones}" x:Name="Zones_tile" TitleFontSize="10" Margin="3" Background="red" Height="125" Width="147" Click="ZonesTile_Click">
+                            <Rectangle Fill="White"  Height="60" Width="60">
+                                <Rectangle.OpacityMask>
+                                    <VisualBrush  Stretch="Fill" Visual="{StaticResource appbar_transit_connection}" />
+                                </Rectangle.OpacityMask>
+                            </Rectangle>
+                        </Controls:Tile>-->
+        <TextBlock Grid.Column="1" VerticalAlignment="Center" Text="{x:Static p:Resources.Dialer}" Foreground="White" FontSize="35"/>
+        <!--DOWNLOAD-->
+        <Controls:Tile x:Name="DialerDownloadTile" Grid.Column="1" Grid.Row="0" Width="80" Height="60" Title="{x:Static p:Resources.Download}" TitleFontSize="10" VerticalAlignment="Top" Background="#FFFFCC80" Click="DialerDownloadTile_Click"  HorizontalAlignment="Right" HorizontalTitleAlignment="Center" Margin="3,3,100,4">
+            <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_download}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Controls:Tile>
+        <!--UPLOAD-->
+        <Controls:Tile x:Name="DialerUploadTile" Grid.Column="1" Grid.Row="0" Width="80" Height="60" Title="{x:Static p:Resources.Upload}" TitleFontSize="10" HorizontalTitleAlignment="Center" VerticalAlignment="Top" Click="DialerUploadTile_Click"  Background="#FFEF5350" HorizontalAlignment="Right" Margin="3">
+            <Rectangle Width="20" Height="20" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                    <VisualBrush Stretch="Uniform" Visual="{StaticResource appbar_upload}" />
+                </Rectangle.OpacityMask>
+            </Rectangle>
+        </Controls:Tile>
+        <DataGrid x:Name="dialerDataGrid" Grid.Column="1" Grid.Row="1" ColumnHeaderHeight="75" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource dialerViewSource}}"  RowDetailsVisibilityMode="VisibleWhenSelected" Height="400" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <DataGrid.Columns>
+                <!--<DataGridTemplateColumn x:Name="idColumn6" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="SizeToHeader">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding Id}"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>-->
+                <!--<DataGridTextColumn x:Name="descriptionColumn6" Binding="{Binding Description}" Header="Description" Width="SizeToHeader"/>-->
+                <DataGridTemplateColumn Header="{x:Static p:Resources.Active}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Active, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="ring_counter_Column" Header="{x:Static p:Resources.Ring_counter}" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding RingCounter, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <!--<DataGridCheckBoxColumn x:Name="activeColumn1" Binding="{Binding Active}" Header="Active" Width="SizeToHeader"/>-->
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

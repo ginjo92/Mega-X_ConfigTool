@@ -1,0 +1,2775 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Areas" xml:space="preserve">
+    <value>Partições</value>
+  </data>
+  <data name="Area_1" xml:space="preserve">
+    <value>Partição 1</value>
+  </data>
+  <data name="Area_2" xml:space="preserve">
+    <value>Partição 2</value>
+  </data>
+  <data name="Area_3" xml:space="preserve">
+    <value>Partição 3</value>
+  </data>
+  <data name="Area_4" xml:space="preserve">
+    <value>Partição 4</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Idioma:</value>
+  </data>
+  <data name="Area_5" xml:space="preserve">
+    <value>Partição 5</value>
+  </data>
+  <data name="Area_6" xml:space="preserve">
+    <value>Partição 6</value>
+  </data>
+  <data name="Area_7" xml:space="preserve">
+    <value>Partição 7</value>
+  </data>
+  <data name="Area_8" xml:space="preserve">
+    <value>Partição 8</value>
+  </data>
+  <data name="Zones" xml:space="preserve">
+    <value>Zonas</value>
+  </data>
+  <data name="Zone_1" xml:space="preserve">
+    <value>Zona 1</value>
+  </data>
+  <data name="Zone_10" xml:space="preserve">
+    <value>Zona 10</value>
+  </data>
+  <data name="Zone_11" xml:space="preserve">
+    <value>Zona 11</value>
+  </data>
+  <data name="Zone_12" xml:space="preserve">
+    <value>Zona 12</value>
+  </data>
+  <data name="Zone_13" xml:space="preserve">
+    <value>Zona 13</value>
+  </data>
+  <data name="Zone_14" xml:space="preserve">
+    <value>Zona 14</value>
+  </data>
+  <data name="Zone_15" xml:space="preserve">
+    <value>Zona 15</value>
+  </data>
+  <data name="Zone_16" xml:space="preserve">
+    <value>Zona 16</value>
+  </data>
+  <data name="Zone_17" xml:space="preserve">
+    <value>Zona 17</value>
+  </data>
+  <data name="Zone_18" xml:space="preserve">
+    <value>Zona 18</value>
+  </data>
+  <data name="Zone_19" xml:space="preserve">
+    <value>Zona 19</value>
+  </data>
+  <data name="Zone_2" xml:space="preserve">
+    <value>Zona 2</value>
+  </data>
+  <data name="Zone_20" xml:space="preserve">
+    <value>Zona 20</value>
+  </data>
+  <data name="Zone_21" xml:space="preserve">
+    <value>Zona 21</value>
+  </data>
+  <data name="Zone_22" xml:space="preserve">
+    <value>Zona 22</value>
+  </data>
+  <data name="Zone_23" xml:space="preserve">
+    <value>Zona 23</value>
+  </data>
+  <data name="Zone_24" xml:space="preserve">
+    <value>Zona 24</value>
+  </data>
+  <data name="Zone_25" xml:space="preserve">
+    <value>Zona 25</value>
+  </data>
+  <data name="Zone_26" xml:space="preserve">
+    <value>Zona 26</value>
+  </data>
+  <data name="Zone_27" xml:space="preserve">
+    <value>Zona 27</value>
+  </data>
+  <data name="Zone_28" xml:space="preserve">
+    <value>Zona 28</value>
+  </data>
+  <data name="Zone_29" xml:space="preserve">
+    <value>Zona 29</value>
+  </data>
+  <data name="Zone_3" xml:space="preserve">
+    <value>Zona 3</value>
+  </data>
+  <data name="Zone_30" xml:space="preserve">
+    <value>Zona 30</value>
+  </data>
+  <data name="Zone_31" xml:space="preserve">
+    <value>Zona 31</value>
+  </data>
+  <data name="Zone_32" xml:space="preserve">
+    <value>Zona 32</value>
+  </data>
+  <data name="Zone_4" xml:space="preserve">
+    <value>Zona 4</value>
+  </data>
+  <data name="Zone_5" xml:space="preserve">
+    <value>Zona 5</value>
+  </data>
+  <data name="Zone_6" xml:space="preserve">
+    <value>Zona 6</value>
+  </data>
+  <data name="Zone_7" xml:space="preserve">
+    <value>Zona 7</value>
+  </data>
+  <data name="Zone_8" xml:space="preserve">
+    <value>Zona 8</value>
+  </data>
+  <data name="Zone_9" xml:space="preserve">
+    <value>Zona 9</value>
+  </data>
+  <data name="Zone_24_hour_output_1" xml:space="preserve">
+    <value>Saída para alarme de 24 horas - 1</value>
+  </data>
+  <data name="Zone_24_hour_output_2" xml:space="preserve">
+    <value>Saída para alarme de 24 horas - 2</value>
+  </data>
+  <data name="Zone_24_hour_output_3" xml:space="preserve">
+    <value>Saída para alarme de 24 horas - 3</value>
+  </data>
+  <data name="Zone_Active" xml:space="preserve">
+    <value>Zone ativa</value>
+  </data>
+  <data name="Zone_alarm_output_1" xml:space="preserve">
+    <value>Saída para alarme de zona - 1</value>
+  </data>
+  <data name="Zone_alarm_output_2" xml:space="preserve">
+    <value>Saída para alarme de zona - 2</value>
+  </data>
+  <data name="Zone_alarm_output_3" xml:space="preserve">
+    <value>Saída para alarme de zona - 3</value>
+  </data>
+  <data name="Zone_Always_bypass" xml:space="preserve">
+    <value>Permanente</value>
+  </data>
+  <data name="Zone_Always_report" xml:space="preserve">
+    <value>Reportar sempre</value>
+  </data>
+  <data name="Zone_Anti_mask_output_1" xml:space="preserve">
+    <value>Saída para alarme de máscara - 1</value>
+  </data>
+  <data name="Zone_Anti_mask_output_2" xml:space="preserve">
+    <value>Saída para alarme de máscara - 2</value>
+  </data>
+  <data name="Zone_Anti_mask_output_3" xml:space="preserve">
+    <value>Saída para alarme de máscara - 3</value>
+  </data>
+  <data name="Zone_Area_away_1" xml:space="preserve">
+    <value>Partição total - 1</value>
+  </data>
+  <data name="Zone_Area_away_2" xml:space="preserve">
+    <value>Partição total - 2</value>
+  </data>
+  <data name="Zone_Area_away_3" xml:space="preserve">
+    <value>Partição total - 3</value>
+  </data>
+  <data name="Zone_Area_away_4" xml:space="preserve">
+    <value>Partição total - 4</value>
+  </data>
+  <data name="Zone_Area_away_5" xml:space="preserve">
+    <value>Partição total - 5</value>
+  </data>
+  <data name="Zone_Area_away_6" xml:space="preserve">
+    <value>Partição total - 6</value>
+  </data>
+  <data name="Zone_Area_away_7" xml:space="preserve">
+    <value>Partição total - 7</value>
+  </data>
+  <data name="Zone_Area_away_8" xml:space="preserve">
+    <value>Partição total - 8</value>
+  </data>
+  <data name="Zone_Area_stay_1" xml:space="preserve">
+    <value>Partição parcial - 1</value>
+  </data>
+  <data name="Zone_Area_stay_2" xml:space="preserve">
+    <value>Partição parcial - 2</value>
+  </data>
+  <data name="Zone_Area_stay_3" xml:space="preserve">
+    <value>Partição parcial - 3</value>
+  </data>
+  <data name="Zone_Area_stay_4" xml:space="preserve">
+    <value>Partição parcial - 4</value>
+  </data>
+  <data name="Zone_Area_stay_5" xml:space="preserve">
+    <value>Partição parcial - 5</value>
+  </data>
+  <data name="Zone_Area_stay_6" xml:space="preserve">
+    <value>Partição parcial - 6</value>
+  </data>
+  <data name="Zone_Area_stay_7" xml:space="preserve">
+    <value>Partição parcial - 7</value>
+  </data>
+  <data name="Zone_Area_stay_8" xml:space="preserve">
+    <value>Partição parcial - 8</value>
+  </data>
+  <data name="Zone_Arm_if_not_ready" xml:space="preserve">
+    <value>Armar se não estiver pronto</value>
+  </data>
+  <data name="Zone_Auto_bypass" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="Zone_Chime_alarm_output_1" xml:space="preserve">
+    <value>Saída para Chime - 1</value>
+  </data>
+  <data name="Zone_Chime_alarm_output_2" xml:space="preserve">
+    <value>Saída para Chime - 2</value>
+  </data>
+  <data name="Zone_Chime_alarm_output_3" xml:space="preserve">
+    <value>Saída para Chime - 3</value>
+  </data>
+  <data name="Zone_Chime_arm" xml:space="preserve">
+    <value>Armar</value>
+  </data>
+  <data name="Zone_Chime_disarm" xml:space="preserve">
+    <value>Desarmar</value>
+  </data>
+  <data name="Zone_Description" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Area_Description" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Zone_Entry_time_away" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Zone_entry_times" xml:space="preserve">
+    <value>Tempos de entrada</value>
+  </data>
+  <data name="Zone_Entry_time_output_1" xml:space="preserve">
+    <value>Saída para tempo de entrada - 1</value>
+  </data>
+  <data name="Zone_Entry_time_output_2" xml:space="preserve">
+    <value>Saída para tempo de entrada - 2</value>
+  </data>
+  <data name="Zone_Entry_time_output_3" xml:space="preserve">
+    <value>Saída para tempo de entrada - 3</value>
+  </data>
+  <data name="Zone_Entry_time_stay" xml:space="preserve">
+    <value>Parcial</value>
+  </data>
+  <data name="Zone_Exit_terminator" xml:space="preserve">
+    <value>Terminação de saída</value>
+  </data>
+  <data name="Zone_fire_alarm_output_1" xml:space="preserve">
+    <value>Saída para alarme de incêndio - 1</value>
+  </data>
+  <data name="Zone_fire_alarm_output_2" xml:space="preserve">
+    <value>Saída para alarme de incêndio - 2</value>
+  </data>
+  <data name="Zone_fire_alarm_output_3" xml:space="preserve">
+    <value>Saída para alarme de incêndio - 3</value>
+  </data>
+  <data name="Zone_Handover" xml:space="preserve">
+    <value>Seguidora</value>
+  </data>
+  <data name="Zone_Id" xml:space="preserve">
+    <value>Nº</value>
+  </data>
+  <data name="Zone_Keypad_visible" xml:space="preserve">
+    <value>Omitir nos teclados</value>
+  </data>
+  <data name="Zone_Keyswitch" xml:space="preserve">
+    <value>Zona de chave</value>
+  </data>
+  <data name="Maintenance" xml:space="preserve">
+    <value>Manutenção</value>
+  </data>
+  <data name="Zone_Keyswitch_type" xml:space="preserve">
+    <value>Tipo de chave</value>
+  </data>
+  <data name="ArmConditions" xml:space="preserve">
+    <value>Condições p/Armar</value>
+  </data>
+  <data name="AreasAway" xml:space="preserve">
+    <value>Áreas - Total</value>
+  </data>
+  <data name="AreasStay" xml:space="preserve">
+    <value>Áreas - Parcial</value>
+  </data>
+  <data name="Zone_Manual_bypass" xml:space="preserve">
+    <value>Manual</value>
+  </data>
+  <data name="Zone_R1_Contact_Type" xml:space="preserve">
+    <value>Tipo de contacto</value>
+  </data>
+  <data name="Zone_R1_function" xml:space="preserve">
+    <value>Função</value>
+  </data>
+  <data name="Zone_R1_value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="Zone_R2_Contact_Type" xml:space="preserve">
+    <value>Tipo de contacto de R2</value>
+  </data>
+  <data name="Zone_R2_function" xml:space="preserve">
+    <value>Função de R2</value>
+  </data>
+  <data name="Zone_R2_value" xml:space="preserve">
+    <value>Valor de R2</value>
+  </data>
+  <data name="Zone_R3_Contact_Type" xml:space="preserve">
+    <value>Tipo de contacto de R3</value>
+  </data>
+  <data name="Zone_R3_function" xml:space="preserve">
+    <value>Função de R3</value>
+  </data>
+  <data name="Zone_R3_value" xml:space="preserve">
+    <value>Valor de R3</value>
+  </data>
+  <data name="Zone_Send_report" xml:space="preserve">
+    <value>Enviar relatórios</value>
+  </data>
+  <data name="Zone_Sensor_watch" xml:space="preserve">
+    <value>Inatividade de zona</value>
+  </data>
+  <data name="Zone_Sensor_watch_output_1" xml:space="preserve">
+    <value>Saída para alarme de inatividade de zona - 1</value>
+  </data>
+  <data name="Zone_Sensor_watch_output_2" xml:space="preserve">
+    <value>Saída para alarme de inatividade de zona - 2</value>
+  </data>
+  <data name="Zone_Sensor_watch_output_3" xml:space="preserve">
+    <value>Saída para alarme de inatividade de zona - 3</value>
+  </data>
+  <data name="Zone_Sensor_watch_time" xml:space="preserve">
+    <value>Tempo de inatividade de zona</value>
+  </data>
+  <data name="Zone_Show_keypad_1" xml:space="preserve">
+    <value>Omitir no teclado - 1</value>
+  </data>
+  <data name="Zone_Show_keypad_2" xml:space="preserve">
+    <value>Omitir no teclado - 2</value>
+  </data>
+  <data name="Zone_Show_keypad_3" xml:space="preserve">
+    <value>Omitir no teclado - 3</value>
+  </data>
+  <data name="Zone_Show_keypad_4" xml:space="preserve">
+    <value>Omitir no teclado - 4</value>
+  </data>
+  <data name="Zone_Show_keypad_5" xml:space="preserve">
+    <value>Omitir no teclado - 5</value>
+  </data>
+  <data name="Zone_Show_keypad_6" xml:space="preserve">
+    <value>Omitir no teclado - 6</value>
+  </data>
+  <data name="Zone_Show_keypad_7" xml:space="preserve">
+    <value>Omitir no teclado - 7</value>
+  </data>
+  <data name="Zone_Show_keypad_8" xml:space="preserve">
+    <value>Omitir no teclado - 8</value>
+  </data>
+  <data name="Zone_Silent_zone" xml:space="preserve">
+    <value>Silenciosa</value>
+  </data>
+  <data name="Zone_Soak_test" xml:space="preserve">
+    <value>Em teste soak</value>
+  </data>
+  <data name="Zone_tamper_alarm_output_1" xml:space="preserve">
+    <value>Saída para alarme de tamper - 1</value>
+  </data>
+  <data name="Zone_tamper_alarm_output_2" xml:space="preserve">
+    <value>Saída para alarme de tamper - 2</value>
+  </data>
+  <data name="Zone_tamper_alarm_output_3" xml:space="preserve">
+    <value>Saída para alarme de tamper - 3</value>
+  </data>
+  <data name="Zone_Terminal_circuit_type" xml:space="preserve">
+    <value>Tipo de circuito</value>
+  </data>
+  <data name="Zone_Terminator_count" xml:space="preserve">
+    <value>Contador de terminações de saída</value>
+  </data>
+  <data name="Zone_Trigger_time" xml:space="preserve">
+    <value>Tempo de duplo trigger</value>
+  </data>
+  <data name="Zone_Two_trigger" xml:space="preserve">
+    <value>Duplo trigger</value>
+  </data>
+  <data name="Circuit_function_mask" xml:space="preserve">
+    <value>Máscara</value>
+  </data>
+  <data name="Circuit_function_tamper" xml:space="preserve">
+    <value>Tamper</value>
+  </data>
+  <data name="Circuit_function_zone" xml:space="preserve">
+    <value>Zona</value>
+  </data>
+  <data name="Keyswitch_type_keyswitch" xml:space="preserve">
+    <value>Permanente</value>
+  </data>
+  <data name="Keyswitch_type_toggle" xml:space="preserve">
+    <value>Impulso</value>
+  </data>
+  <data name="Output_number_1" xml:space="preserve">
+    <value>Saída 1</value>
+  </data>
+  <data name="Output_number_10" xml:space="preserve">
+    <value>Saída 10</value>
+  </data>
+  <data name="Output_number_11" xml:space="preserve">
+    <value>Saída 11</value>
+  </data>
+  <data name="Output_number_12" xml:space="preserve">
+    <value>Saída 12</value>
+  </data>
+  <data name="Output_number_13" xml:space="preserve">
+    <value>Saída 13</value>
+  </data>
+  <data name="Output_number_2" xml:space="preserve">
+    <value>Saída 2</value>
+  </data>
+  <data name="Output_number_3" xml:space="preserve">
+    <value>Saída 3</value>
+  </data>
+  <data name="Output_number_4" xml:space="preserve">
+    <value>Saída 4</value>
+  </data>
+  <data name="Output_number_5" xml:space="preserve">
+    <value>Saída 5 (Relé)</value>
+  </data>
+  <data name="Output_number_6" xml:space="preserve">
+    <value>Saída 6</value>
+  </data>
+  <data name="Output_number_7" xml:space="preserve">
+    <value>Saída 7</value>
+  </data>
+  <data name="Output_number_8" xml:space="preserve">
+    <value>Saída 8</value>
+  </data>
+  <data name="Output_number_9" xml:space="preserve">
+    <value>Saída 9</value>
+  </data>
+  <data name="Output_number_none" xml:space="preserve">
+    <value>Nenhuma</value>
+  </data>
+  <data name="User_role_admin_user" xml:space="preserve">
+    <value>Administrador</value>
+  </data>
+  <data name="User_role_installer" xml:space="preserve">
+    <value>Instalador</value>
+  </data>
+  <data name="User_role_manufacturer" xml:space="preserve">
+    <value>Fabricante</value>
+  </data>
+  <data name="User_role_normal_user" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="User_role_no_access" xml:space="preserve">
+    <value>Desativado</value>
+  </data>
+  <data name="Keypad_function_button_alerts" xml:space="preserve">
+    <value>Listagem de alertas</value>
+  </data>
+  <data name="Keypad_function_button_bypass" xml:space="preserve">
+    <value>Configurar omissão</value>
+  </data>
+  <data name="Keypad_function_button_config" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="Keypad_function_button_events" xml:space="preserve">
+    <value>Listagem de eventos</value>
+  </data>
+  <data name="Keypad_function_button_none" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="Keypad_function_button_outputs" xml:space="preserve">
+    <value>Configuração de saídas</value>
+  </data>
+  <data name="Keypad_function_button_quick_arm_away" xml:space="preserve">
+    <value>Armar rápido - total</value>
+  </data>
+  <data name="Keypad_function_button_quick_arm_stay" xml:space="preserve">
+    <value>Armar rápido - parcial</value>
+  </data>
+  <data name="Keypad_function_button_quick_disarm" xml:space="preserve">
+    <value>Desarmar rápido</value>
+  </data>
+  <data name="Keypad_function_button_wheel_options" xml:space="preserve">
+    <value>Configurar botões</value>
+  </data>
+  <data name="Keypad_function_button_zones" xml:space="preserve">
+    <value>Configuração de zonas</value>
+  </data>
+  <data name="Keypad_date_format_day_month" xml:space="preserve">
+    <value>Dia/Mês</value>
+  </data>
+  <data name="Keypad_date_format_month_day" xml:space="preserve">
+    <value>Mês/Dia</value>
+  </data>
+  <data name="Keypad_date_hour_format_12h" xml:space="preserve">
+    <value>Formato 12h</value>
+  </data>
+  <data name="Keypad_date_hour_format_24h" xml:space="preserve">
+    <value>Formato 24h</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Partição </value>
+  </data>
+  <data name="Button_Connect" xml:space="preserve">
+    <value>Ligar</value>
+  </data>
+  <data name="Button_Disconnect" xml:space="preserve">
+    <value>Desligar</value>
+  </data>
+  <data name="Connection_Successful" xml:space="preserve">
+    <value>Ligado com Sucesso</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Mega-X -&gt; PC</value>
+  </data>
+  <data name="Expansor" xml:space="preserve">
+    <value>Expansor </value>
+  </data>
+  <data name="Expansors" xml:space="preserve">
+    <value>Expansores</value>
+  </data>
+  <data name="Keypad" xml:space="preserve">
+    <value>Teclado </value>
+  </data>
+  <data name="Keypads" xml:space="preserve">
+    <value>Teclados</value>
+  </data>
+  <data name="Output" xml:space="preserve">
+    <value>Saída </value>
+  </data>
+  <data name="Outputs" xml:space="preserve">
+    <value>Saídas</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Telefone </value>
+  </data>
+  <data name="Phones" xml:space="preserve">
+    <value>Telefones</value>
+  </data>
+  <data name="Timezone" xml:space="preserve">
+    <value>Horário </value>
+  </data>
+  <data name="Timezones" xml:space="preserve">
+    <value>Horários</value>
+  </data>
+  <data name="UpdateDateTime" xml:space="preserve">
+    <value>Atualizar data e hora</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>PC -&gt; Mega-X</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>Utilizador </value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Utilizadores</value>
+  </data>
+  <data name="Zone" xml:space="preserve">
+    <value>Zona </value>
+  </data>
+  <data name="GlobalSystem_Keswitch_partitions_away_minus" xml:space="preserve">
+    <value>Chave - Partições total (-)</value>
+  </data>
+  <data name="GlobalSystem_Keswitch_partitions_away_plus" xml:space="preserve">
+    <value>Chave - Partições total (+)</value>
+  </data>
+  <data name="GlobalSystem_Keswitch_partitions_stay_minus" xml:space="preserve">
+    <value>Chave - Partições parcial (-)</value>
+  </data>
+  <data name="GlobalSystem_Keswitch_partitions_stay_plus" xml:space="preserve">
+    <value>Chave - Partições parcial (+)</value>
+  </data>
+  <data name="Zone_bypass_keypads_minus" xml:space="preserve">
+    <value>Omitir nos teclados (-)</value>
+  </data>
+  <data name="Zone_bypass_keypads_plus" xml:space="preserve">
+    <value>Omitir nos teclados (+)</value>
+  </data>
+  <data name="Zone_areas_away_minus" xml:space="preserve">
+    <value>Partições - total (-)</value>
+  </data>
+  <data name="Zone_areas_away_plus" xml:space="preserve">
+    <value>Partições - total (+)</value>
+  </data>
+  <data name="Zone_areas_stay_minus" xml:space="preserve">
+    <value>Partições - parcial (-)</value>
+  </data>
+  <data name="Zone_areas_stay_plus" xml:space="preserve">
+    <value>Partições - parcial (+)</value>
+  </data>
+  <data name="Zone_bypass_config_minus" xml:space="preserve">
+    <value>Configurar omissão (-)</value>
+  </data>
+  <data name="Zone_bypass_config_plus" xml:space="preserve">
+    <value>Configurar omissão (+)</value>
+  </data>
+  <data name="Zone_entry_times_minus" xml:space="preserve">
+    <value>Tempos de entrada (-)</value>
+  </data>
+  <data name="Zone_entry_times_plus" xml:space="preserve">
+    <value>Tempos de entrada (+)</value>
+  </data>
+  <data name="Zone_keyswitch_config_minus" xml:space="preserve">
+    <value>Configuração de chave (-)</value>
+  </data>
+  <data name="Zone_keyswitch_config_plus" xml:space="preserve">
+    <value>Configuração de chave (+)</value>
+  </data>
+  <data name="Zone_type_minus" xml:space="preserve">
+    <value>Configuração de tipo de zona (-)</value>
+  </data>
+  <data name="Zone_type_plus" xml:space="preserve">
+    <value>Configuração de tipo de zona (+)</value>
+  </data>
+  <data name="Zone_type" xml:space="preserve">
+    <value>Tipo de Zona</value>
+  </data>
+  <data name="Zone_chime" xml:space="preserve">
+    <value>Chime</value>
+  </data>
+  <data name="Zone_chime_config_minus" xml:space="preserve">
+    <value>Configuração de chime (-)</value>
+  </data>
+  <data name="Zone_chime_config_plus" xml:space="preserve">
+    <value>Configuração de chime (+)</value>
+  </data>
+  <data name="Zone_r1_config_minus" xml:space="preserve">
+    <value>Configurar R1 (-)</value>
+  </data>
+  <data name="Zone_r1_config_plus" xml:space="preserve">
+    <value>Configurar R1 (+)</value>
+  </data>
+  <data name="Zone_r2_config_minus" xml:space="preserve">
+    <value>Configurar R2 (-)</value>
+  </data>
+  <data name="Zone_r2_config_plus" xml:space="preserve">
+    <value>Configurar R2 (+)</value>
+  </data>
+  <data name="Zone_r3_config_minus" xml:space="preserve">
+    <value>Configurar R3 (-)</value>
+  </data>
+  <data name="Zone_r3_config_plus" xml:space="preserve">
+    <value>Configurar R3 (+)</value>
+  </data>
+  <data name="GlobalSystem_call_output_code" xml:space="preserve">
+    <value>Código de saídas (em chamada)</value>
+  </data>
+  <data name="Phone_alway_report" xml:space="preserve">
+    <value>Ignorar confirmação de chamada</value>
+  </data>
+  <data name="Phone_report_active" xml:space="preserve">
+    <value>Reportar - Ativo</value>
+  </data>
+  <data name="Phone_report_away_armdisarm" xml:space="preserve">
+    <value>Reportar armar/desarmar - total</value>
+  </data>
+  <data name="Phone_report_stay_armdisarm" xml:space="preserve">
+    <value>Reportar armar/desarmar - parcial</value>
+  </data>
+  <data name="Phone_voice_call_type" xml:space="preserve">
+    <value>Tipo de chamada</value>
+  </data>
+  <data name="User_check_date" xml:space="preserve">
+    <value>Validar calendário</value>
+  </data>
+  <data name="User_check_timezones" xml:space="preserve">
+    <value>Validar horários</value>
+  </data>
+  <data name="User_button_a_areas_away_minus" xml:space="preserve">
+    <value>Botão A - total (-)</value>
+  </data>
+  <data name="User_button_a_areas_away_plus" xml:space="preserve">
+    <value>Botão A - total (+)</value>
+  </data>
+  <data name="User_button_a_areas_stay_minus" xml:space="preserve">
+    <value>Botão A - parcial (-)</value>
+  </data>
+  <data name="User_button_a_areas_stay_plus" xml:space="preserve">
+    <value>Botão A - parcial (+)</value>
+  </data>
+  <data name="User_button_b_areas_away_minus" xml:space="preserve">
+    <value>Botão B - total (-)</value>
+  </data>
+  <data name="User_button_b_areas_away_plus" xml:space="preserve">
+    <value>Botão B - total(+)</value>
+  </data>
+  <data name="User_button_b_areas_stay_minus" xml:space="preserve">
+    <value>Botão B - parcial (-)</value>
+  </data>
+  <data name="User_button_b_areas_stay_plus" xml:space="preserve">
+    <value>Botão B - parcial (+)</value>
+  </data>
+  <data name="User_button_c_areas_away_minus" xml:space="preserve">
+    <value>Botão C - total (-)</value>
+  </data>
+  <data name="User_button_c_areas_away_plus" xml:space="preserve">
+    <value>Botão C - total (+)</value>
+  </data>
+  <data name="User_button_c_areas_stay_minus" xml:space="preserve">
+    <value>Botão C - parcial (-)</value>
+  </data>
+  <data name="User_button_c_areas_stay_plus" xml:space="preserve">
+    <value>Botão C - parcial (+)</value>
+  </data>
+  <data name="User_button_d_areas_away_minus" xml:space="preserve">
+    <value>Botão D - total (-)</value>
+  </data>
+  <data name="User_button_d_areas_away_plus" xml:space="preserve">
+    <value>Botão D - total (+)</value>
+  </data>
+  <data name="User_button_d_areas_stay_minus" xml:space="preserve">
+    <value>Botão D - parcial (-)</value>
+  </data>
+  <data name="User_button_d_areas_stay_plus" xml:space="preserve">
+    <value>Botão D - parcial (+)</value>
+  </data>
+  <data name="Zone_anti_mask_output_minus" xml:space="preserve">
+    <value>Configuração de saída p/ anti-máscara (-)</value>
+  </data>
+  <data name="Zone_anti_mask_output_plus" xml:space="preserve">
+    <value>Configuração de saída p/ anti-máscara (+)</value>
+  </data>
+  <data name="Zone_chime_output_minus" xml:space="preserve">
+    <value>Configuração de saídas p/ chime  (-)</value>
+  </data>
+  <data name="Zone_chime_output_plus" xml:space="preserve">
+    <value>Configuração de saídas p/ chime (+)</value>
+  </data>
+  <data name="Zone_entry_time_output_minus" xml:space="preserve">
+    <value>Configuração de saída p/ tempo de entrada (-)</value>
+  </data>
+  <data name="Zone_entry_time_output_plus" xml:space="preserve">
+    <value>Configuração de saída p/ tempo de entrada (+)</value>
+  </data>
+  <data name="Zone_output_option_1" xml:space="preserve">
+    <value>Opção 1</value>
+  </data>
+  <data name="Zone_output_option_2" xml:space="preserve">
+    <value>Opção 2</value>
+  </data>
+  <data name="Zone_output_option_3" xml:space="preserve">
+    <value>Opção 3</value>
+  </data>
+  <data name="Zone_sensor_watch_output_minus" xml:space="preserve">
+    <value>Configuração de saídas p/ inatividade de zona (-)</value>
+  </data>
+  <data name="Zone_sensor_watch_output_plus" xml:space="preserve">
+    <value>Configuração de saídas p/ inatividade de zona (+)</value>
+  </data>
+  <data name="Zone_24h_alarm_output_minus" xml:space="preserve">
+    <value>Saídas para alarme 24h (-)</value>
+  </data>
+  <data name="Zone_24h_alarm_output_plus" xml:space="preserve">
+    <value>Saídas para alarme 24h (+)</value>
+  </data>
+  <data name="Zone_fire_alarm_output_minus" xml:space="preserve">
+    <value>Saídas para alarme de incêndio (-)</value>
+  </data>
+  <data name="Zone_fire_alarm_output_plus" xml:space="preserve">
+    <value>Saídas para alarme de incêndio (+)</value>
+  </data>
+  <data name="Zone_tamper_alarm_output_minus" xml:space="preserve">
+    <value>Saídas para alarme de tamper (-)</value>
+  </data>
+  <data name="Zone_tamper_alarm_output_plus" xml:space="preserve">
+    <value>Saídas para alarme de tamper (+)</value>
+  </data>
+  <data name="Zone_zone_alarm_output_minus" xml:space="preserve">
+    <value>Saídas para alarme de zona (-)</value>
+  </data>
+  <data name="Zone_zone_alarm_output_plus" xml:space="preserve">
+    <value>Saídas para alarme de zona (+)</value>
+  </data>
+  <data name="GlobalSystemConfiguration" xml:space="preserve">
+    <value>Configuração global do sistema</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Início</value>
+  </data>
+  <data name="Area_arming_away_output_minus" xml:space="preserve">
+    <value>Saídas a armar - total (-)</value>
+  </data>
+  <data name="Area_arming_away_output_plus" xml:space="preserve">
+    <value>Saídas a armar - total (+)</value>
+  </data>
+  <data name="Area_arming_away_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar total (-)</value>
+  </data>
+  <data name="Area_arming_away_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar total (+)</value>
+  </data>
+  <data name="Area_arming_stay_output_minus" xml:space="preserve">
+    <value>Saídas a armar - parcial (-)</value>
+  </data>
+  <data name="Area_arming_stay_output_plus" xml:space="preserve">
+    <value>Saídas a armar - parcial (+)</value>
+  </data>
+  <data name="Area_arming_stay_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar parcial (-)</value>
+  </data>
+  <data name="Area_arming_stay_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar parcial (+)</value>
+  </data>
+  <data name="Area_arm_away_pulsed_output_1" xml:space="preserve">
+    <value>Armar Total - Saída p/Impulso 1</value>
+  </data>
+  <data name="Area_arm_away_pulsed_output_2" xml:space="preserve">
+    <value>Armar Total - Saída p/Impulso 2</value>
+  </data>
+  <data name="Area_arm_away_pulsed_output_3" xml:space="preserve">
+    <value>Armar Total - Saída p/Impulso 3</value>
+  </data>
+  <data name="Area_arm_stay_pulsed_output_1" xml:space="preserve">
+    <value>Armar Parcial - Saída p/Impulso 1</value>
+  </data>
+  <data name="Area_arm_stay_pulsed_output_2" xml:space="preserve">
+    <value>Armar Parcial - Saída p/Impulso 2</value>
+  </data>
+  <data name="Area_arm_stay_pulsed_output_3" xml:space="preserve">
+    <value>Armar Parcial - Saída p/Impulso 3</value>
+  </data>
+  <data name="Area_arm_stay_output_1" xml:space="preserve">
+    <value>Armar Parcial - Saída 1</value>
+  </data>
+  <data name="Area_arm_stay_output_2" xml:space="preserve">
+    <value>Armar Parcial - Saída 2</value>
+  </data>
+  <data name="Area_arm_stay_output_3" xml:space="preserve">
+    <value>Armar Parcial - Saída 3</value>
+  </data>
+  <data name="Area_arm_away_output_1" xml:space="preserve">
+    <value>Armar Total - Saída 1</value>
+  </data>
+  <data name="Area_arm_away_output_2" xml:space="preserve">
+    <value>Armar Total - Saída 2</value>
+  </data>
+  <data name="Area_arm_away_output_3" xml:space="preserve">
+    <value>Armar Total - Saída 3</value>
+  </data>
+  <data name="Area_arm_away_output_minus" xml:space="preserve">
+    <value>Saídas armar - total (-)</value>
+  </data>
+  <data name="Area_arm_away_output_plus" xml:space="preserve">
+    <value>Saídas armar - total (+)</value>
+  </data>
+  <data name="Area_arm_away_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar total (-)</value>
+  </data>
+  <data name="Area_arm_away_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar total (+)</value>
+  </data>
+  <data name="Area_arm_stay_output_minus" xml:space="preserve">
+    <value>Saídas armar - parcial (-)</value>
+  </data>
+  <data name="Area_arm_stay_output_plus" xml:space="preserve">
+    <value>Saídas armar - parcial (+)</value>
+  </data>
+  <data name="Area_arm_stay_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar parcial (+)</value>
+  </data>
+  <data name="Area_arm_stay_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - armar parcial (-)</value>
+  </data>
+  <data name="Area_away_arm_beeps_output_minus" xml:space="preserve">
+    <value>Saídas a armar beeps - total (-) </value>
+  </data>
+  <data name="Area_away_arm_beeps_output_plus" xml:space="preserve">
+    <value>Saídas a armar beeps - total (+) </value>
+  </data>
+  <data name="Area_code_required" xml:space="preserve">
+    <value>Ativação do código </value>
+  </data>
+  <data name="Area_code_required_minus" xml:space="preserve">
+    <value>Ativar código (-) </value>
+  </data>
+  <data name="Area_code_required_plus" xml:space="preserve">
+    <value>Ativar código (+) </value>
+  </data>
+  <data name="Area_disarm_away_output_1" xml:space="preserve">
+    <value>Desarmar Total - Saída 1</value>
+  </data>
+  <data name="Area_disarm_away_output_2" xml:space="preserve">
+    <value>Desarmar Total - Saída 2</value>
+  </data>
+  <data name="Area_disarm_away_output_3" xml:space="preserve">
+    <value>Desarmar Total - Saída 3</value>
+  </data>
+  <data name="Area_disarm_stay_output_1" xml:space="preserve">
+    <value>Desarmar Parcial - Saída 1</value>
+  </data>
+  <data name="Area_disarm_stay_output_2" xml:space="preserve">
+    <value>Desarmar Parcial - Saída 2</value>
+  </data>
+  <data name="Area_disarm_stay_output_3" xml:space="preserve">
+    <value>Desarmar Parcial - Saída 3</value>
+  </data>
+  <data name="Area_disarm_away_output_minus" xml:space="preserve">
+    <value>Saídas desarmar - total (-)</value>
+  </data>
+  <data name="Area_disarm_away_output_plus" xml:space="preserve">
+    <value>Saídas desarmar - total (+)</value>
+  </data>
+  <data name="Area_disarm_away_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - desarmar total (-)</value>
+  </data>
+  <data name="Area_disarm_away_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - desarmar total (+)</value>
+  </data>
+  <data name="Area_disarm_stay_output_minus" xml:space="preserve">
+    <value>Saídas desarmar - parcial (-)</value>
+  </data>
+  <data name="Area_disarm_stay_output_plus" xml:space="preserve">
+    <value>Saídas desarmar - parcial (+)</value>
+  </data>
+  <data name="Area_disarm_stay_pulsed_output_minus" xml:space="preserve">
+    <value>Saídas p/ impulso - desarmar parcial (-)</value>
+  </data>
+  <data name="Area_disarm_stay_pulsed_output_plus" xml:space="preserve">
+    <value>Saídas p/ impulso - desarmar parcial (+)</value>
+  </data>
+  <data name="Area_exit_times" xml:space="preserve">
+    <value>Tempos de saída</value>
+  </data>
+  <data name="Area_exit_times_minus" xml:space="preserve">
+    <value>Tempos de saída (-)</value>
+  </data>
+  <data name="Area_exit_times_plus" xml:space="preserve">
+    <value>Tempos de saída (+)</value>
+  </data>
+  <data name="Away" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Dialer" xml:space="preserve">
+    <value>Comunicador</value>
+  </data>
+  <data name="Disarm" xml:space="preserve">
+    <value>Desarme</value>
+  </data>
+  <data name="Stay" xml:space="preserve">
+    <value>Parcial</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Ativo</value>
+  </data>
+  <data name="Area_away_disarm_beeps_output_minus" xml:space="preserve">
+    <value>Saídas desarmar beeps - total (-) </value>
+  </data>
+  <data name="Area_away_disarm_beeps_output_plus" xml:space="preserve">
+    <value>Saídas desarmar beeps - total (+) </value>
+  </data>
+  <data name="Area_stay_arm_beeps_output_minus" xml:space="preserve">
+    <value>Saídas armar beeps - parcial (-) </value>
+  </data>
+  <data name="Area_stay_arm_beeps_output_plus" xml:space="preserve">
+    <value>Saídas armar beeps - parcial (+) </value>
+  </data>
+  <data name="Area_stay_disarm_beeps_output_minus" xml:space="preserve">
+    <value>Saídas desarmar beeps - parcial (-) </value>
+  </data>
+  <data name="Area_stay_disarm_beeps_output_plus" xml:space="preserve">
+    <value>Saídas desarmar beeps - parcial (+) </value>
+  </data>
+  <data name="Area_timezones_arm_start" xml:space="preserve">
+    <value>Início de horários - Armar</value>
+  </data>
+  <data name="Area_timezones_arm_start_minus" xml:space="preserve">
+    <value>Início de horários - Armar (-)</value>
+  </data>
+  <data name="Area_timezones_arm_start_plus" xml:space="preserve">
+    <value>Início de horários - Armar (+)</value>
+  </data>
+  <data name="Area_timezones_disarm_end" xml:space="preserve">
+    <value>Fim de horários - Desarmar</value>
+  </data>
+  <data name="Area_timezones_disarm_end_minus" xml:space="preserve">
+    <value>Fim de horários - Desarmar (-)</value>
+  </data>
+  <data name="Area_timezones_disarm_end_plus" xml:space="preserve">
+    <value>Fim de horários - Desarmar (+)</value>
+  </data>
+  <data name="Arm" xml:space="preserve">
+    <value>Armar</value>
+  </data>
+  <data name="ArmAway" xml:space="preserve">
+    <value>Armar total</value>
+  </data>
+  <data name="ArmStay" xml:space="preserve">
+    <value>Armar parcial</value>
+  </data>
+  <data name="Delay" xml:space="preserve">
+    <value>Atraso</value>
+  </data>
+  <data name="DelayOn" xml:space="preserve">
+    <value>Atraso - ON</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="DisarmAway" xml:space="preserve">
+    <value>Desarmar - total</value>
+  </data>
+  <data name="DisarmStay" xml:space="preserve">
+    <value>Desarmar - parcial</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>Sexta</value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>Segunda</value>
+  </data>
+  <data name="MegaX_Version" xml:space="preserve">
+    <value>Versão do Mega-X Configurator: </value>
+  </data>
+  <data name="Output_beeps_configuration_minus" xml:space="preserve">
+    <value>Número de beeps (-)</value>
+  </data>
+  <data name="Output_beeps_configuration_plus" xml:space="preserve">
+    <value>Número de beeps (+)</value>
+  </data>
+  <data name="Output_chime_configuration_minus" xml:space="preserve">
+    <value>Configurar chime (-)</value>
+  </data>
+  <data name="Output_chime_configuration_plus" xml:space="preserve">
+    <value>Configurar chime (+)</value>
+  </data>
+  <data name="Output_inverted" xml:space="preserve">
+    <value>Invertida</value>
+  </data>
+  <data name="Output_pulses_configuration_minus" xml:space="preserve">
+    <value>Saídas p/ impulso (-)</value>
+  </data>
+  <data name="Output_pulses_configuration_plus" xml:space="preserve">
+    <value>Saídas p/ impulso (+)</value>
+  </data>
+  <data name="Output_time_configuration" xml:space="preserve">
+    <value>Configurar tempos</value>
+  </data>
+  <data name="Outputs_pulsed" xml:space="preserve">
+    <value>Saídas p/Impulsos</value>
+  </data>
+  <data name="Outputs_beeps_number" xml:space="preserve">
+    <value>Número de beeps</value>
+  </data>
+  <data name="Output_time_configuration_minus" xml:space="preserve">
+    <value>Configurar tempos (-)</value>
+  </data>
+  <data name="Output_time_configuration_plus" xml:space="preserve">
+    <value>Configurar tempos (+)</value>
+  </data>
+  <data name="PulsesNumber" xml:space="preserve">
+    <value>Número de pulsos</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Restauro</value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>Sábado</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Domingo</value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>Quinta</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Tempo</value>
+  </data>
+  <data name="TimeOff" xml:space="preserve">
+    <value>Tempo - OFF</value>
+  </data>
+  <data name="TimeOn" xml:space="preserve">
+    <value>Tempo - ON</value>
+  </data>
+  <data name="Timezone_exceptions_minus" xml:space="preserve">
+    <value>Exceções (-)</value>
+  </data>
+  <data name="Timezone_exceptions_plus" xml:space="preserve">
+    <value>Exceções (+)</value>
+  </data>
+  <data name="Timezone_week_days_minus" xml:space="preserve">
+    <value>Dias da semana (-)</value>
+  </data>
+  <data name="Timezone_week_days_plus" xml:space="preserve">
+    <value>Dias da semana (+)</value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>Terça</value>
+  </data>
+  <data name="User_areas_minus" xml:space="preserve">
+    <value>Partições (-)</value>
+  </data>
+  <data name="User_areas_plus" xml:space="preserve">
+    <value>Partições (+)</value>
+  </data>
+  <data name="User_arm_disarm_permissions_minus" xml:space="preserve">
+    <value>Permissões armar/desarmar (-)</value>
+  </data>
+  <data name="User_arm_disarm_permissions_plus" xml:space="preserve">
+    <value>Permissões armar/desarmar (+)</value>
+  </data>
+  <data name="User_can_change_clock" xml:space="preserve">
+    <value>Pode alterar relógio</value>
+  </data>
+  <data name="User_data_final" xml:space="preserve">
+    <value>Data final</value>
+  </data>
+  <data name="User_data_inicial" xml:space="preserve">
+    <value>Data inicial</value>
+  </data>
+  <data name="User_timezone_config_minus" xml:space="preserve">
+    <value>Configurar horários (-)</value>
+  </data>
+  <data name="User_timezone_config_plus" xml:space="preserve">
+    <value>Configurar horários (+)</value>
+  </data>
+  <data name="User_user_type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="User_user_code" xml:space="preserve">
+    <value>Código</value>
+  </data>
+  <data name="ChangeUserCode" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="InitialFinalDate" xml:space="preserve">
+    <value>Data Inicial/Final</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permissões</value>
+  </data>
+  <data name="Timezone_weekdays" xml:space="preserve">
+    <value>Dias da semana</value>
+  </data>
+  <data name="Timezone_exceptions" xml:space="preserve">
+    <value>Exceções</value>
+  </data>
+  <data name="Timezone_exception1" xml:space="preserve">
+    <value>Exceção 1</value>
+  </data>
+  <data name="Keypad_backlight" xml:space="preserve">
+    <value>Iluminação</value>
+  </data>
+  <data name="Keypad_hour_date_format" xml:space="preserve">
+    <value>Formato de data/hora</value>
+  </data>
+  <data name="Keypad_beeps" xml:space="preserve">
+    <value>Beeps</value>
+  </data>
+  <data name="Areas_and_Keypads" xml:space="preserve">
+    <value>Partições e Teclados</value>
+  </data>
+  <data name="FButtons" xml:space="preserve">
+    <value>Botões F</value>
+  </data>
+  <data name="FButton_2" xml:space="preserve">
+    <value>Botão F2</value>
+  </data>
+  <data name="FButton_3" xml:space="preserve">
+    <value>Botão F3</value>
+  </data>
+  <data name="FButton_4" xml:space="preserve">
+    <value>Botão F4</value>
+  </data>
+  <data name="Timezone_exception2" xml:space="preserve">
+    <value>Exceção 2</value>
+  </data>
+  <data name="Timezone_exception3" xml:space="preserve">
+    <value>Exceção 3</value>
+  </data>
+  <data name="Timezone_exception4" xml:space="preserve">
+    <value>Exceção 4</value>
+  </data>
+  <data name="CodeChanged" xml:space="preserve">
+    <value>Código Atualizado</value>
+  </data>
+  <data name="User_Button_A_Away" xml:space="preserve">
+    <value>Botão A - Armar Total</value>
+  </data>
+  <data name="User_Button_A_Stay" xml:space="preserve">
+    <value>Botão A - Armar Parcial</value>
+  </data>
+  <data name="User_Button_B_Away" xml:space="preserve">
+    <value>Botão B - Armar Total</value>
+  </data>
+  <data name="User_Button_B_Stay" xml:space="preserve">
+    <value>Botão B - Armar Parcial</value>
+  </data>
+  <data name="User_Button_C_Away" xml:space="preserve">
+    <value>Botão C - Armar Total</value>
+  </data>
+  <data name="User_Button_C_Stay" xml:space="preserve">
+    <value>Botão C - Armar Parcial</value>
+  </data>
+  <data name="User_Button_D_Away" xml:space="preserve">
+    <value>Botão D - Armar Total</value>
+  </data>
+  <data name="User_Button_D_Stay" xml:space="preserve">
+    <value>Botão D - Armar Parcial</value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>Quarta</value>
+  </data>
+  <data name="User_Buttons" xml:space="preserve">
+    <value>Botões</value>
+  </data>
+  <data name="Arm_disarm_permissions" xml:space="preserve">
+    <value>Permissões para Armar/Desarmar</value>
+  </data>
+  <data name="Zone_24h" xml:space="preserve">
+    <value>Zona 24H</value>
+  </data>
+  <data name="Output_permissions" xml:space="preserve">
+    <value>Permissões para saídas</value>
+  </data>
+  <data name="User_area_permissions" xml:space="preserve">
+    <value>Permissões para partições</value>
+  </data>
+  <data name="AccessProgramMode" xml:space="preserve">
+    <value>Acesso ao modo de programador</value>
+  </data>
+  <data name="Alarm" xml:space="preserve">
+    <value>Alarme</value>
+  </data>
+  <data name="Areas_minus" xml:space="preserve">
+    <value>Partições (-)</value>
+  </data>
+  <data name="Areas_plus" xml:space="preserve">
+    <value>Partições (+)</value>
+  </data>
+  <data name="ArmDisarmAway" xml:space="preserve">
+    <value>Armar/desarmar total</value>
+  </data>
+  <data name="ArmDisarmStay" xml:space="preserve">
+    <value>Armar/desarmar parcial</value>
+  </data>
+  <data name="Arm_disarm_permissions_minus" xml:space="preserve">
+    <value>Permissões armar/desarmar (-)</value>
+  </data>
+  <data name="Arm_disarm_permissions_plus" xml:space="preserve">
+    <value>Permissões armar/desarmar (+)</value>
+  </data>
+  <data name="BatteryLow" xml:space="preserve">
+    <value>Bateria baixa</value>
+  </data>
+  <data name="ComAttempts" xml:space="preserve">
+    <value>Nº de tentivas de comunicação</value>
+  </data>
+  <data name="DateHourChange" xml:space="preserve">
+    <value>Mudança de data/hora</value>
+  </data>
+  <data name="DisarmAwayDuringExitTime" xml:space="preserve">
+    <value>Desarmar durante tempo de saída - total</value>
+  </data>
+  <data name="DisarmStayDuringExitTime" xml:space="preserve">
+    <value>Desarmar durante tempo de saída - parcial</value>
+  </data>
+  <data name="DuressAlarm" xml:space="preserve">
+    <value>Alarm de coação</value>
+  </data>
+  <data name="EntryTime" xml:space="preserve">
+    <value>Tempo de entrada</value>
+  </data>
+  <data name="ExitTime" xml:space="preserve">
+    <value>Tempo de saída</value>
+  </data>
+  <data name="FireAlarm" xml:space="preserve">
+    <value>Alarme incêndio</value>
+  </data>
+  <data name="FuseFail" xml:space="preserve">
+    <value>Falha Fusível</value>
+  </data>
+  <data name="F_Buttons_config_minus" xml:space="preserve">
+    <value>Botões F (-)</value>
+  </data>
+  <data name="F_Buttons_config_plus" xml:space="preserve">
+    <value>Botões F (+)</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="KeypadComProblems" xml:space="preserve">
+    <value>Problemas de comunicação - teclado</value>
+  </data>
+  <data name="ArmDisarmPermissions" xml:space="preserve">
+    <value>Permissões Armar/Desarmar </value>
+  </data>
+  <data name="Keypads_beeps_minus" xml:space="preserve">
+    <value>Beeps (-)</value>
+  </data>
+  <data name="Keypads_beeps_plus" xml:space="preserve">
+    <value>Beeps (+)</value>
+  </data>
+  <data name="KeypadTamper" xml:space="preserve">
+    <value>Tamper de teclados</value>
+  </data>
+  <data name="Keypad_backligth_off_if_mail_fail" xml:space="preserve">
+    <value>Desligar iluminação em falha 230V</value>
+  </data>
+  <data name="Keypad_backligth_time" xml:space="preserve">
+    <value>Tempo de iluminação</value>
+  </data>
+  <data name="Keypad_date_format" xml:space="preserve">
+    <value>Formato de data</value>
+  </data>
+  <data name="Keypad_F2_button" xml:space="preserve">
+    <value>F2</value>
+  </data>
+  <data name="Keypad_F3_button" xml:space="preserve">
+    <value>F3</value>
+  </data>
+  <data name="Keypad_F4_button" xml:space="preserve">
+    <value>F4</value>
+  </data>
+  <data name="Keypad_hour_format" xml:space="preserve">
+    <value>Formato de hora</value>
+  </data>
+  <data name="Keypad_no_indications_while_armed" xml:space="preserve">
+    <value>Sem indicações - se armado</value>
+  </data>
+  <data name="Keypad_silent_during_entry_time" xml:space="preserve">
+    <value>Sem beeps durante o t. de entrada</value>
+  </data>
+  <data name="Keypad_silent_during_exit_time" xml:space="preserve">
+    <value>Sem beeps durante o t. de saída</value>
+  </data>
+  <data name="Keypad_use_tamper" xml:space="preserve">
+    <value>Ativar tamper do teclado</value>
+  </data>
+  <data name="MedicalAlarm" xml:space="preserve">
+    <value>Alarme médico</value>
+  </data>
+  <data name="OutputsFailure" xml:space="preserve">
+    <value>Falha de saídas</value>
+  </data>
+  <data name="PanelTamper" xml:space="preserve">
+    <value>Tamper da central</value>
+  </data>
+  <data name="PanicAlarm" xml:space="preserve">
+    <value>Alarme pânico</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Número telefone</value>
+  </data>
+  <data name="Phone_kissof_minus" xml:space="preserve">
+    <value>Configurar confirmação de chamada (-)</value>
+  </data>
+  <data name="Phone_kissoff" xml:space="preserve">
+    <value>Confirmação de chamada</value>
+  </data>
+  <data name="Phone_kissof_plus" xml:space="preserve">
+    <value>Configurar confirmação de chamada (+)</value>
+  </data>
+  <data name="Phone_kiss_off_CID" xml:space="preserve">
+    <value>Terminar chamada se receber confirmação de chamada (CID)</value>
+  </data>
+  <data name="Phone_kiss_off_voice" xml:space="preserve">
+    <value>Terminar chamada se receber confirmação de chamada (voz)</value>
+  </data>
+  <data name="Phone_report_minus" xml:space="preserve">
+    <value>Configurar report (-)</value>
+  </data>
+  <data name="Phone_report_plus" xml:space="preserve">
+    <value>Configurar report (+)</value>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Prefixo</value>
+  </data>
+  <data name="PSTNFail" xml:space="preserve">
+    <value>Falha PSTN</value>
+  </data>
+  <data name="ReceiverFail" xml:space="preserve">
+    <value>Falha de recetor</value>
+  </data>
+  <data name="SensorWatch" xml:space="preserve">
+    <value>Alarme de inatividade de zona</value>
+  </data>
+  <data name="SystemProblems" xml:space="preserve">
+    <value>Problemas de sistema</value>
+  </data>
+  <data name="TamperAlarm" xml:space="preserve">
+    <value>Alarme de tamper</value>
+  </data>
+  <data name="TestCall" xml:space="preserve">
+    <value>Fazer chamadas de teste</value>
+  </data>
+  <data name="Tests" xml:space="preserve">
+    <value>Testes</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="TimezoneAssignments" xml:space="preserve">
+    <value>Associação de horários</value>
+  </data>
+  <data name="TimezoneAssignments_minus" xml:space="preserve">
+    <value>Associação de horários (-)</value>
+  </data>
+  <data name="TimezoneAssignments_plus" xml:space="preserve">
+    <value>Associação de horários (+)</value>
+  </data>
+  <data name="Zone_Terminals" xml:space="preserve">
+    <value>Terminais</value>
+  </data>
+  <data name="Report_config" xml:space="preserve">
+    <value>Configuração de relatórios</value>
+  </data>
+  <data name="Test_config" xml:space="preserve">
+    <value>Configurar horário teste</value>
+  </data>
+  <data name="Test_config_minus" xml:space="preserve">
+    <value>Configurar horário teste (-)</value>
+  </data>
+  <data name="Test_config_plus" xml:space="preserve">
+    <value>Configurar horário teste (+)</value>
+  </data>
+  <data name="ZoneBypass" xml:space="preserve">
+    <value>Omissão de zona</value>
+  </data>
+  <data name="ZoneTamper" xml:space="preserve">
+    <value>Tamper de zona</value>
+  </data>
+  <data name="_230VFail" xml:space="preserve">
+    <value>Falha 230V</value>
+  </data>
+  <data name="Arm_conditions_minus" xml:space="preserve">
+    <value>Condições p/ armar (-)</value>
+  </data>
+  <data name="Arm_conditions_plus" xml:space="preserve">
+    <value>Condições p/ armar (+)</value>
+  </data>
+  <data name="Arm_if_battery_low_or_230V_fail" xml:space="preserve">
+    <value>Armar se Bateria fraca ou falha 230V</value>
+  </data>
+  <data name="CoationDigit" xml:space="preserve">
+    <value>Digito de coação</value>
+  </data>
+  <data name="CRAClientNumber" xml:space="preserve">
+    <value>Cód. cliente CRA</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Keyswitch_minus" xml:space="preserve">
+    <value>Chave (-)</value>
+  </data>
+  <data name="Keyswitch_plus" xml:space="preserve">
+    <value>Chave (+)</value>
+  </data>
+  <data name="Keyswitch" xml:space="preserve">
+    <value>Chave</value>
+  </data>
+  <data name="Maintenance_minus" xml:space="preserve">
+    <value>Assistência técnica (-)</value>
+  </data>
+  <data name="Maintenance_plus" xml:space="preserve">
+    <value>Assistência técnica (+)</value>
+  </data>
+  <data name="Not_arm_if_com_problems" xml:space="preserve">
+    <value>Não armar se comunicações c/ erros</value>
+  </data>
+  <data name="Not_Arm_if_keypad_faulty" xml:space="preserve">
+    <value>Não armar se teclado em falha</value>
+  </data>
+  <data name="Not_arm_if_line_faulty" xml:space="preserve">
+    <value>Não armar se linha em falha</value>
+  </data>
+  <data name="OutputControlIsDisabledWhenArmed" xml:space="preserve">
+    <value>Controlo de saídas desativado (quando armado)</value>
+  </data>
+  <data name="PanelTamper_minus" xml:space="preserve">
+    <value>Tamper da central (-)</value>
+  </data>
+  <data name="PanelTamper_plus" xml:space="preserve">
+    <value>Tamper da central (+)</value>
+  </data>
+  <data name="SirenTamper_minus" xml:space="preserve">
+    <value>Tamper de sirene (-)</value>
+  </data>
+  <data name="SirenTamper_plus" xml:space="preserve">
+    <value>Tamper de sirene (+)</value>
+  </data>
+  <data name="SirenTamper" xml:space="preserve">
+    <value>Tamper de sirene</value>
+  </data>
+  <data name="Siren_Output_option_1" xml:space="preserve">
+    <value>Opção 1</value>
+  </data>
+  <data name="Siren_Output_option_2" xml:space="preserve">
+    <value>Opção 2</value>
+  </data>
+  <data name="Siren_Output_option_3" xml:space="preserve">
+    <value>Opção 3</value>
+  </data>
+  <data name="TimeInMinutes" xml:space="preserve">
+    <value>Tempo em minutos</value>
+  </data>
+  <data name="Toggle" xml:space="preserve">
+    <value>Toggle</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="_230VFailReportDelay" xml:space="preserve">
+    <value>Atraso para falha de 230V</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Por favor aguarde...</value>
+  </data>
+  <data name="ReadingDialer" xml:space="preserve">
+    <value>A ler configurações do comunicador</value>
+  </data>
+  <data name="ReadingGlobal" xml:space="preserve">
+    <value>A ler configurações do sistema</value>
+  </data>
+  <data name="ReadingKeypads" xml:space="preserve">
+    <value>A ler configurações dos teclados</value>
+  </data>
+  <data name="ReadingOutputs" xml:space="preserve">
+    <value>A ler configurações das saídas</value>
+  </data>
+  <data name="ReadingPartitions" xml:space="preserve">
+    <value>A ler configurações das partições</value>
+  </data>
+  <data name="ReadingPhones" xml:space="preserve">
+    <value>A ler configurações dos telefones</value>
+  </data>
+  <data name="ReadingTimezones" xml:space="preserve">
+    <value>A ler configurações dos horários</value>
+  </data>
+  <data name="ReadingUsers" xml:space="preserve">
+    <value>A ler configurações dos utilizadores</value>
+  </data>
+  <data name="ReadingZones" xml:space="preserve">
+    <value>A ler configurações das zonas</value>
+  </data>
+  <data name="ReadWithSuccess" xml:space="preserve">
+    <value>Leitura efetuada com sucesso!</value>
+  </data>
+  <data name="WriteWithSuccess" xml:space="preserve">
+    <value>Escrita efetuada com sucesso!</value>
+  </data>
+  <data name="WritingDialer" xml:space="preserve">
+    <value>A escrever configurações do comunicador</value>
+  </data>
+  <data name="WritingGlobal" xml:space="preserve">
+    <value>A escrever configurações do sistema</value>
+  </data>
+  <data name="WritingKeypads" xml:space="preserve">
+    <value>A escrever configurações dos teclados</value>
+  </data>
+  <data name="WritingOutputs" xml:space="preserve">
+    <value>A escrever configurações das saídas</value>
+  </data>
+  <data name="WritingPartitions" xml:space="preserve">
+    <value>A escrever configurações das partições</value>
+  </data>
+  <data name="WritingPhones" xml:space="preserve">
+    <value>A escrever configurações dos telefones</value>
+  </data>
+  <data name="WritingTimezones" xml:space="preserve">
+    <value>A escrever configurações dos horários</value>
+  </data>
+  <data name="WritingUsers" xml:space="preserve">
+    <value>A escrever configurações dos utilizadores</value>
+  </data>
+  <data name="WritingZones" xml:space="preserve">
+    <value>A escrever configurações das zonas</value>
+  </data>
+  <data name="DeleteConfigFile" xml:space="preserve">
+    <value>Apagar ficheiro</value>
+  </data>
+  <data name="LastChanged" xml:space="preserve">
+    <value>Última modificação</value>
+  </data>
+  <data name="NewConfigFile" xml:space="preserve">
+    <value>Novo ficheiro</value>
+  </data>
+  <data name="NotArmIfZonesOpen" xml:space="preserve">
+    <value>Não armar com zonas abertas</value>
+  </data>
+  <data name="Address1" xml:space="preserve">
+    <value>Endereço 1</value>
+  </data>
+  <data name="Address2" xml:space="preserve">
+    <value>Endereço 2</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Cidade</value>
+  </data>
+  <data name="ClickHeaderToConfigure" xml:space="preserve">
+    <value>Clicar no cabeçalho para configurar</value>
+  </data>
+  <data name="ClientInfo" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="ClientName" xml:space="preserve">
+    <value>Nome do cliente</value>
+  </data>
+  <data name="District" xml:space="preserve">
+    <value>Distrito</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="FaxNumber" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Código Postal</value>
+  </data>
+  <data name="SystemConfiguration" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="Website" xml:space="preserve">
+    <value>Site</value>
+  </data>
+  <data name="InfoDataWillBeLost" xml:space="preserve">
+    <value>Se clicar 'não', as alterações serão perdidas.</value>
+  </data>
+  <data name="QuestionSaveChanges" xml:space="preserve">
+    <value>Guardar alterações?</value>
+  </data>
+  <data name="QuestionSaveChangesExtended" xml:space="preserve">
+    <value>Guardar alterações antes de fechar?</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Ficheiro</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>A guardar configuração...</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Autenticação</value>
+  </data>
+  <data name="LoginOk" xml:space="preserve">
+    <value>Entrar</value>
+  </data>
+  <data name="Audio" xml:space="preserve">
+    <value>Mensagens de voz</value>
+  </data>
+  <data name="ComConnected" xml:space="preserve">
+    <value>Ligado</value>
+  </data>
+  <data name="ComDisconnected" xml:space="preserve">
+    <value>Desligado</value>
+  </data>
+  <data name="PleaseConnectFirst" xml:space="preserve">
+    <value>Por favor selecione uma porta COM!</value>
+  </data>
+  <data name="Communications" xml:space="preserve">
+    <value>Comunicações</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="Help_Area_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada partição.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_ClickHeaderToConfigure" xml:space="preserve">
+    <value>Clique no cabeçalho para obter configurações omitidas.</value>
+  </data>
+  <data name="Help_Client_H1_P2" xml:space="preserve">
+    <value>Aqui pode adicionar informações do cliente a que pertence a configuração.</value>
+  </data>
+  <data name="Help_Dialer_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar o comunicador.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_GlobalSystem_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar o sistema.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_Home_H1_P2" xml:space="preserve">
+    <value>Aqui pode navegar pelos menus.\r\nClique no que pretende configurar.</value>
+  </data>
+  <data name="Help_Keypad_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada teclado.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_Login_H1_P1" xml:space="preserve">
+    <value>Senha pré-definida.</value>
+  </data>
+  <data name="Help_Login_H1_P2" xml:space="preserve">
+    <value>A senha pré-definida para o utilizador 'Admin' é '1234'.</value>
+  </data>
+  <data name="Help_Output_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada saída.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_Phone_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada telefone.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_Timezone_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada horário.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_User_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada utilizador.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="Help_Zone_H1_P2" xml:space="preserve">
+    <value>Aqui pode configurar cada zona.\r\nPode enviar para a Mega-X ou gravar as alterações.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Alterar senha</value>
+  </data>
+  <data name="ChangePasswordButton" xml:space="preserve">
+    <value>Alterar</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirmar nova senha</value>
+  </data>
+  <data name="Help_New_Password_H1_P1" xml:space="preserve">
+    <value>Alterar senha</value>
+  </data>
+  <data name="Help_New_Password_H1_P2" xml:space="preserve">
+    <value>Aqui é possível alterar a senha atual de um utilizador. Esta alteração não é reversível.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova senha</value>
+  </data>
+  <data name="NewPasswordConfirmationNotMatch" xml:space="preserve">
+    <value>Nova senha e confirmação de nova senha não são iguais!</value>
+  </data>
+  <data name="PasswordChanged" xml:space="preserve">
+    <value>Senha alterada com sucesso!</value>
+  </data>
+  <data name="PasswordUserNotMatch" xml:space="preserve">
+    <value>Utilizador/Senha errados!</value>
+  </data>
+  <data name="DataChooseDialogRead" xml:space="preserve">
+    <value>Por favor selecione aquilo que pretende ler da central:</value>
+  </data>
+  <data name="DataChooseDialogWrite" xml:space="preserve">
+    <value>Por favor selecione aquilo que pretende escrever para a central:</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Preferências</value>
+  </data>
+  <data name="Help_Settings_H1_P2" xml:space="preserve">
+    <value>Aqui pode alterar as configurações gerais da aplicação.</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Eventos</value>
+  </data>
+  <data name="ReadingEvents" xml:space="preserve">
+    <value>A ler os eventos do sistema</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_24_HOUR_SAFE" xml:space="preserve">
+    <value>Alarme de zona 24h restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_ACCESS_PROGRAM_MODE_ENTRY" xml:space="preserve">
+    <value>Entrada em modo de programação</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_ACCESS_PROGRAM_MODE_EXIT" xml:space="preserve">
+    <value>Saída de modo de programação</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_AC_LOSS" xml:space="preserve">
+    <value>Falha de alimentação restaurada</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_ARMED_STAY" xml:space="preserve">
+    <value>Armado - parcial</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_AUTO_ARM_FAILED" xml:space="preserve">
+    <value>Falha de armar automático</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_BATTERY_MISSING_DEAD" xml:space="preserve">
+    <value>Bateria ligada</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_BURGLARY" xml:space="preserve">
+    <value>Alarme de intrusão restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_DURESS_ACCESS_GRANTED" xml:space="preserve">
+    <value>Acesso por dígito de coação</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_EXPANSION_MODULE_TAMPER" xml:space="preserve">
+    <value>Tamper de módulo de expansão restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_FAILED_TO_CLOSE" xml:space="preserve">
+    <value>Falha - armar</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_FAILURE_TO_COMMUNICATE_EVENT" xml:space="preserve">
+    <value>Falha a reportar evento</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_FIRE" xml:space="preserve">
+    <value>Restauro de alarme de incêndio</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_LOW_SYSTEM_BATTERY" xml:space="preserve">
+    <value>Bateria carregada</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_MEDICAL" xml:space="preserve">
+    <value>Restauro de alarme médico</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_NEAR_ALARM_WORSENS" xml:space="preserve">
+    <value>Alarme de máscara de zona restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_OC_BY_USER" xml:space="preserve">
+    <value>Desarmado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_PANIC_ZONE_TROUBLE" xml:space="preserve">
+    <value>Alarme de pânico restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_PERIODIC_TEST_REPORT" xml:space="preserve">
+    <value>Teste periódico</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_QUICK_ARM" xml:space="preserve">
+    <value>Desarme rápido</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_SENSOR_WATCH_TROUBLE" xml:space="preserve">
+    <value>Alarme de inatividade de zona restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_SOUNDER_RELAY_DISABLE" xml:space="preserve">
+    <value>Alarme de tamper de sirene restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_SYSTEM_RESET" xml:space="preserve">
+    <value>Reset de sistema</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_SYSTEM_SHUTDOWN_COMMAND_RECEIVED" xml:space="preserve">
+    <value>Sistema desligado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_SYSTEM_TAMPER" xml:space="preserve">
+    <value>Alarme de tamper da central restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_TAMPER" xml:space="preserve">
+    <value>Alarme de zona restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_TELCO_1_FAULT" xml:space="preserve">
+    <value>PSTN restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_WRONG_CODE_ENTRY" xml:space="preserve">
+    <value>Código restaurado</value>
+  </data>
+  <data name="EventMessage_End_KP_EVT_CODE_ZONE_SENSOR_BYPASS" xml:space="preserve">
+    <value>Omissão restaurada</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_24_HOUR_SAFE" xml:space="preserve">
+    <value>Alarme de zona 24h</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_ACCESS_PROGRAM_MODE_ENTRY" xml:space="preserve">
+    <value>Entrada em modo de programação</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_ACCESS_PROGRAM_MODE_EXIT" xml:space="preserve">
+    <value>Saída do modo de programação</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_AC_LOSS" xml:space="preserve">
+    <value>Falha de 230V</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_ARMED_STAY" xml:space="preserve">
+    <value>Armado - parcial</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_AUTO_ARM_FAILED" xml:space="preserve">
+    <value>Falha - armar automáticamente</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_BATTERY_MISSING_DEAD" xml:space="preserve">
+    <value>Bateria em falta ou morta</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_BURGLARY" xml:space="preserve">
+    <value>Alarme de intrusão</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_DURESS_ACCESS_GRANTED" xml:space="preserve">
+    <value>Acesso por coasão</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_EXPANSION_MODULE_TAMPER" xml:space="preserve">
+    <value>Alarme de tamper - módulo de expansão</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_FAILED_TO_CLOSE" xml:space="preserve">
+    <value>Falha - armar</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_FAILURE_TO_COMMUNICATE_EVENT" xml:space="preserve">
+    <value>Falha a reportar evento</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_FIRE" xml:space="preserve">
+    <value>Alarme de fogo</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_LOW_SYSTEM_BATTERY" xml:space="preserve">
+    <value>Bateria fraca</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_MEDICAL" xml:space="preserve">
+    <value>Alarme médico</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_NEAR_ALARM_WORSENS" xml:space="preserve">
+    <value>Alarme de máscara de zona</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_OC_BY_USER" xml:space="preserve">
+    <value>Armar - total</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_PANIC_ZONE_TROUBLE" xml:space="preserve">
+    <value>Alarme de pânico</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_PERIODIC_TEST_REPORT" xml:space="preserve">
+    <value>Teste periódico</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_QUICK_ARM" xml:space="preserve">
+    <value>Armar rápido</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_SENSOR_WATCH_TROUBLE" xml:space="preserve">
+    <value>Alarme de inatividade de zona</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_SOUNDER_RELAY_DISABLE" xml:space="preserve">
+    <value>Alarme de tamper de sirene</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_SYSTEM_RESET" xml:space="preserve">
+    <value>Reset de sistema</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_SYSTEM_SHUTDOWN_COMMAND_RECEIVED" xml:space="preserve">
+    <value>Sistema desligado</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_SYSTEM_TAMPER" xml:space="preserve">
+    <value>Alarme de tamper da central</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_TAMPER" xml:space="preserve">
+    <value>Alarme de tamper de zona</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_TELCO_1_FAULT" xml:space="preserve">
+    <value>Erro de PSTN</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_WRONG_CODE_ENTRY" xml:space="preserve">
+    <value>Introduzido código errado</value>
+  </data>
+  <data name="EventMessage_Start_KP_EVT_CODE_ZONE_SENSOR_BYPASS" xml:space="preserve">
+    <value>Omissão de zona</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="Area_none" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="Last14Days" xml:space="preserve">
+    <value>Nos últimos 14 dias</value>
+  </data>
+  <data name="Last30Days" xml:space="preserve">
+    <value>Nos últimos 30 dias</value>
+  </data>
+  <data name="Last7Days" xml:space="preserve">
+    <value>Nos últimos 7 dias</value>
+  </data>
+  <data name="LastYear" xml:space="preserve">
+    <value>No último ano</value>
+  </data>
+  <data name="Today" xml:space="preserve">
+    <value>Hoje</value>
+  </data>
+  <data name="_24h_active" xml:space="preserve">
+    <value>Zona 24h ativa</value>
+  </data>
+  <data name="_24h_auto_reset" xml:space="preserve">
+    <value>restauro automático</value>
+  </data>
+  <data name="_24h_config_minus" xml:space="preserve">
+    <value>Configurar zona 24h (-)</value>
+  </data>
+  <data name="_24h_config_plus" xml:space="preserve">
+    <value>Configurar zona 24h (+)</value>
+  </data>
+  <data name="_24h_firezone" xml:space="preserve">
+    <value>Zona de incêndio</value>
+  </data>
+  <data name="Installer_minus" xml:space="preserve">
+    <value>Instalador (-)</value>
+  </data>
+  <data name="Installer_plus" xml:space="preserve">
+    <value>Instalador (+)</value>
+  </data>
+  <data name="VisbleInKeypad" xml:space="preserve">
+    <value>Visível nos teclados</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="Circuit" xml:space="preserve">
+    <value>Circuito</value>
+  </data>
+  <data name="Shortcuts" xml:space="preserve">
+    <value>Atalhos</value>
+  </data>
+  <data name="Disconnection_Successfull" xml:space="preserve">
+    <value>Desligado com sucesso!</value>
+  </data>
+  <data name="Normally_Closed" xml:space="preserve">
+    <value>NF</value>
+  </data>
+  <data name="Normally_Open" xml:space="preserve">
+    <value>NA</value>
+  </data>
+  <data name="Select_Everything" xml:space="preserve">
+    <value>Tudo</value>
+  </data>
+  <data name="Select_Nothing" xml:space="preserve">
+    <value>Nada</value>
+  </data>
+  <data name="Event_date_hour" xml:space="preserve">
+    <value>Data/Hora</value>
+  </data>
+  <data name="Event_Description" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="Event_Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="Filters" xml:space="preserve">
+    <value>Filtros</value>
+  </data>
+  <data name="Filter_Alarms" xml:space="preserve">
+    <value>Alarmes</value>
+  </data>
+  <data name="Filter_Arm_disarm" xml:space="preserve">
+    <value>Armar/Desarmar</value>
+  </data>
+  <data name="Filter_Faults" xml:space="preserve">
+    <value>Falhas</value>
+  </data>
+  <data name="FW_version" xml:space="preserve">
+    <value>Versão de FW</value>
+  </data>
+  <data name="Hw_Version" xml:space="preserve">
+    <value>Versão de HW</value>
+  </data>
+  <data name="Read_Events" xml:space="preserve">
+    <value>Ler eventos</value>
+  </data>
+  <data name="Serial_Number" xml:space="preserve">
+    <value>Número de série</value>
+  </data>
+  <data name="Timezones_data_final" xml:space="preserve">
+    <value>Hora final</value>
+  </data>
+  <data name="Timezones_data_inicial" xml:space="preserve">
+    <value>Hora inicial</value>
+  </data>
+  <data name="Timezones_Exception_1_final_date" xml:space="preserve">
+    <value>Exceção 1 - data final</value>
+  </data>
+  <data name="Timezones_Exception_1_initial_date" xml:space="preserve">
+    <value>Exceção 1 - data inicial</value>
+  </data>
+  <data name="Timezones_Exception_2_final_date" xml:space="preserve">
+    <value>Exceção 2 - data final</value>
+  </data>
+  <data name="Timezones_Exception_2_initial_date" xml:space="preserve">
+    <value>Exceção 2 - data inicial</value>
+  </data>
+  <data name="Timezones_Exception_3_final_date" xml:space="preserve">
+    <value>Exceção 3 - data final</value>
+  </data>
+  <data name="Timezones_Exception_3_initial_date" xml:space="preserve">
+    <value>Exceção 3 - data inicial</value>
+  </data>
+  <data name="Timezones_Exception_4_final_date" xml:space="preserve">
+    <value>Exceção 4 - data final</value>
+  </data>
+  <data name="Timezones_Exception_4_initial_date" xml:space="preserve">
+    <value>Exceção 4 - data inicial</value>
+  </data>
+  <data name="VoiceCallCode" xml:space="preserve">
+    <value>Cód. de acesso remoto</value>
+  </data>
+  <data name="Zone_audio_1" xml:space="preserve">
+    <value>Áudio - 1</value>
+  </data>
+  <data name="Zone_audio_2" xml:space="preserve">
+    <value>Áudio - 2</value>
+  </data>
+  <data name="Zone_audio_3" xml:space="preserve">
+    <value>Áudio - 3</value>
+  </data>
+  <data name="Zone_audio_4" xml:space="preserve">
+    <value>Áudio - 4</value>
+  </data>
+  <data name="Zone_audio_minus" xml:space="preserve">
+    <value>Áudio (-)</value>
+  </data>
+  <data name="Zone_audio_plus" xml:space="preserve">
+    <value>Áudio (+)</value>
+  </data>
+  <data name="Button_cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Button_Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Default_Configuration" xml:space="preserve">
+    <value>Configuração pré-definida</value>
+  </data>
+  <data name="Menu_item_Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Menu_item_New" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="Menu_item_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="Menu_item_Save" xml:space="preserve">
+    <value>Gravar</value>
+  </data>
+  <data name="Use_template" xml:space="preserve">
+    <value>Copiar de configuração existente</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erro!</value>
+  </data>
+  <data name="File_in_use" xml:space="preserve">
+    <value>Não é possível apagar este ficheiro porque se encontra a ser utilizado.</value>
+  </data>
+  <data name="Restore_default_configuration" xml:space="preserve">
+    <value>Restaurar configurações pré-definidas</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="QuestionRestoreDefaultsExtended" xml:space="preserve">
+    <value>Pretende repor as configurações de fábrica?</value>
+  </data>
+  <data name="Ring_counter" xml:space="preserve">
+    <value>Número de toques</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Terminar sessão</value>
+  </data>
+  <data name="QuestionLogoutExtended" xml:space="preserve">
+    <value>Tem a certeza que pretende terminar sessão?</value>
+  </data>
+  <data name="VoiceMessagesCustomized" xml:space="preserve">
+    <value>Costumizados</value>
+  </data>
+  <data name="VoiceMessagesReserved" xml:space="preserve">
+    <value>Reservados</value>
+  </data>
+  <data name="WriteAudio" xml:space="preserve">
+    <value>Escrever áudio</value>
+  </data>
+  <data name="ComSettings" xml:space="preserve">
+    <value>Comunicações</value>
+  </data>
+  <data name="PleaseConnectMicroFirst" xml:space="preserve">
+    <value>Por fazer ligue o microfone primeiro!</value>
+  </data>
+  <data name="FileNotFound" xml:space="preserve">
+    <value>Não é possível ler o ficheiro do disco.</value>
+  </data>
+  <data name="FirmwareUpdate" xml:space="preserve">
+    <value>Atualização de FW</value>
+  </data>
+  <data name="NoFileSelected" xml:space="preserve">
+    <value>Seleccione um ficheiro de atualização.</value>
+  </data>
+  <data name="SearchFile" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="UpdateFirmwareAction" xml:space="preserve">
+    <value>Atualizar FW</value>
+  </data>
+  <data name="UpdateFirmwareDone" xml:space="preserve">
+    <value>Atualização de firmware concluída. Retire o cabo de dados e aguarde que o sistema arranque.</value>
+  </data>
+  <data name="UpdatingFirmware" xml:space="preserve">
+    <value>A atualizar firmware do sistema. Por favor não desligue o cabo de dados...</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Localização</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Calling" xml:space="preserve">
+    <value>Em chamada</value>
+  </data>
+  <data name="OutputBeep_1" xml:space="preserve">
+    <value>Saída p/Beeps 1</value>
+  </data>
+  <data name="OutputBeep_2" xml:space="preserve">
+    <value>Saída p/Beeps 2</value>
+  </data>
+  <data name="OutputBeep_3" xml:space="preserve">
+    <value>Saída p/Beeps 3</value>
+  </data>
+  <data name="OutputPulsed_1" xml:space="preserve">
+    <value>Saída p/Impulsos 1</value>
+  </data>
+  <data name="OutputPulsed_2" xml:space="preserve">
+    <value>Saída p/Impulsos 2</value>
+  </data>
+  <data name="OutputPulsed_3" xml:space="preserve">
+    <value>Saída p/Impulsos 3</value>
+  </data>
+  <data name="Output_1" xml:space="preserve">
+    <value>Saída 1</value>
+  </data>
+  <data name="Output_10" xml:space="preserve">
+    <value>Saída 10</value>
+  </data>
+  <data name="Output_11" xml:space="preserve">
+    <value>Saída 11</value>
+  </data>
+  <data name="Output_12" xml:space="preserve">
+    <value>Saída 12</value>
+  </data>
+  <data name="Output_13" xml:space="preserve">
+    <value>Saída 13</value>
+  </data>
+  <data name="Output_2" xml:space="preserve">
+    <value>Saída 2</value>
+  </data>
+  <data name="Output_3" xml:space="preserve">
+    <value>Saída 3</value>
+  </data>
+  <data name="Output_4" xml:space="preserve">
+    <value>Saída 4</value>
+  </data>
+  <data name="Output_5" xml:space="preserve">
+    <value>Saída 5</value>
+  </data>
+  <data name="Output_6" xml:space="preserve">
+    <value>Saída 6</value>
+  </data>
+  <data name="Output_7" xml:space="preserve">
+    <value>Saída 7</value>
+  </data>
+  <data name="Output_8" xml:space="preserve">
+    <value>Saída 8</value>
+  </data>
+  <data name="Output_9" xml:space="preserve">
+    <value>Saída 9</value>
+  </data>
+  <data name="AlarmOutput_Chime" xml:space="preserve">
+    <value>Alarme de Chime</value>
+  </data>
+  <data name="AlarmOutput_SensorWatch" xml:space="preserve">
+    <value>Alarme de Inatividade da Zona</value>
+  </data>
+  <data name="AlarmOutput_EntryTime" xml:space="preserve">
+    <value>Alarme de Tempo de Entrada</value>
+  </data>
+  <data name="AlarmOutput_AntiMask" xml:space="preserve">
+    <value>Alarme Anti-Máscara</value>
+  </data>
+  <data name="AlarmOutput_24h" xml:space="preserve">
+    <value>Alarme 24H</value>
+  </data>
+  <data name="AlarmOutput_Fire" xml:space="preserve">
+    <value>Alarme de Incêndio</value>
+  </data>
+  <data name="AlarmOutput_Zone" xml:space="preserve">
+    <value>Alarme da Zona</value>
+  </data>
+  <data name="AlarmOutput_Tamper" xml:space="preserve">
+    <value>Alarme do Tamper</value>
+  </data>
+  <data name="Option_1" xml:space="preserve">
+    <value>Opção 1</value>
+  </data>
+  <data name="Option_2" xml:space="preserve">
+    <value>Opção 2</value>
+  </data>
+  <data name="Option_3" xml:space="preserve">
+    <value>Opção 3</value>
+  </data>
+  <data name="Option_Pulses_1" xml:space="preserve">
+    <value>Opção 1 (p/Impulsos)</value>
+  </data>
+  <data name="Option_Pulses_2" xml:space="preserve">
+    <value>Opção 2 (p/Impulsos)</value>
+  </data>
+  <data name="Option_Pulses_3" xml:space="preserve">
+    <value>Opção 3 (p/Impulsos)</value>
+  </data>
+  <data name="Option_Beeps_1" xml:space="preserve">
+    <value>Opção 1 (p/Beeps)</value>
+  </data>
+  <data name="Option_Beeps_2" xml:space="preserve">
+    <value>Opção 2 (p/Beeps)</value>
+  </data>
+  <data name="Option_Beeps_3" xml:space="preserve">
+    <value>Opção 3 (p/Beeps)</value>
+  </data>
+  <data name="General_Settings" xml:space="preserve">
+    <value>Configurações Gerais</value>
+  </data>
+  <data name="Timezone_1" xml:space="preserve">
+    <value>Horário 1</value>
+  </data>
+  <data name="Timezone_2" xml:space="preserve">
+    <value>Horário 2</value>
+  </data>
+  <data name="Timezone_3" xml:space="preserve">
+    <value>Horário 3</value>
+  </data>
+  <data name="Timezone_4" xml:space="preserve">
+    <value>Horário 4</value>
+  </data>
+  <data name="Timezone_5" xml:space="preserve">
+    <value>Horário 5</value>
+  </data>
+  <data name="Timezone_6" xml:space="preserve">
+    <value>Horário 6</value>
+  </data>
+  <data name="Timezone_7" xml:space="preserve">
+    <value>Horário 7</value>
+  </data>
+  <data name="Timezone_8" xml:space="preserve">
+    <value>Horário 8</value>
+  </data>
+  <data name="ReportDelay" xml:space="preserve">
+    <value>Atraso de report</value>
+  </data>
+  <data name="Timezones_minus" xml:space="preserve">
+    <value>Horários (-)</value>
+  </data>
+  <data name="Timezones_plus" xml:space="preserve">
+    <value>Horários (+)</value>
+  </data>
+  <data name="Output_Permissions_Call_minus" xml:space="preserve">
+    <value>Permissões de saídas (-)</value>
+  </data>
+  <data name="Output_Permissions_Call_plus" xml:space="preserve">
+    <value>Permissões de saídas (+)</value>
+  </data>
+  <data name="Bypass" xml:space="preserve">
+    <value>Omissão: </value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Ligado</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Desligado</value>
+  </data>
+  <data name="InCall" xml:space="preserve">
+    <value>Em chamada: </value>
+  </data>
+  <data name="MaskAlarm" xml:space="preserve">
+    <value>Alarme de máscara</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Não</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Open" xml:space="preserve">
+    <value>Aberta</value>
+  </data>
+  <data name="PSTN" xml:space="preserve">
+    <value>Linha telefónica: </value>
+  </data>
+  <data name="RTActive" xml:space="preserve">
+    <value>Ativo: </value>
+  </data>
+  <data name="RTAlarm" xml:space="preserve">
+    <value>Alarme: </value>
+  </data>
+  <data name="RTArmed" xml:space="preserve">
+    <value>Armada: </value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Estado: </value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sim</value>
+  </data>
+  <data name="UnknownDevice" xml:space="preserve">
+    <value>Dispositivo desconhecido! Tente outra porta.</value>
+  </data>
+  <data name="ClickToSelect" xml:space="preserve">
+    <value>Clique para adicionar ao sistema</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Já existe uma configuração com esse nome</value>
+  </data>
+  <data name="FileNameCantBeEmpty" xml:space="preserve">
+    <value>O nome do ficheiro de configuração não pode estar vazio</value>
+  </data>
+  <data name="keypad_1" xml:space="preserve">
+    <value>Teclado 1</value>
+  </data>
+  <data name="keypad_2" xml:space="preserve">
+    <value>Teclado 2</value>
+  </data>
+  <data name="keypad_3" xml:space="preserve">
+    <value>Teclado 3</value>
+  </data>
+  <data name="keypad_4" xml:space="preserve">
+    <value>Teclado 4</value>
+  </data>
+  <data name="keypad_5" xml:space="preserve">
+    <value>Teclado 5</value>
+  </data>
+  <data name="keypad_6" xml:space="preserve">
+    <value>Teclado 6</value>
+  </data>
+  <data name="keypad_7" xml:space="preserve">
+    <value>Teclado 7</value>
+  </data>
+  <data name="keypad_8" xml:space="preserve">
+    <value>Teclado 8</value>
+  </data>
+  <data name="Phone_1" xml:space="preserve">
+    <value>Telefone 1</value>
+  </data>
+  <data name="Phone_10" xml:space="preserve">
+    <value>Telefone 10</value>
+  </data>
+  <data name="Phone_11" xml:space="preserve">
+    <value>Telefone 11</value>
+  </data>
+  <data name="Phone_12" xml:space="preserve">
+    <value>Telefone  12</value>
+  </data>
+  <data name="Phone_13" xml:space="preserve">
+    <value>Telefone 13</value>
+  </data>
+  <data name="Phone_14" xml:space="preserve">
+    <value>Telefone 14</value>
+  </data>
+  <data name="Phone_15" xml:space="preserve">
+    <value>Telefone 15</value>
+  </data>
+  <data name="Phone_16" xml:space="preserve">
+    <value>Telefone 16</value>
+  </data>
+  <data name="Phone_2" xml:space="preserve">
+    <value>Telefone 2</value>
+  </data>
+  <data name="Phone_3" xml:space="preserve">
+    <value>Telefone 3</value>
+  </data>
+  <data name="Phone_4" xml:space="preserve">
+    <value>Telefone 4</value>
+  </data>
+  <data name="Phone_5" xml:space="preserve">
+    <value>Telefone 5</value>
+  </data>
+  <data name="Phone_6" xml:space="preserve">
+    <value>Telefone 6</value>
+  </data>
+  <data name="Phone_7" xml:space="preserve">
+    <value>Telefone 7</value>
+  </data>
+  <data name="Phone_8" xml:space="preserve">
+    <value>Telefone 8</value>
+  </data>
+  <data name="Phone_9" xml:space="preserve">
+    <value>Telefone 9</value>
+  </data>
+  <data name="BypassOff" xml:space="preserve">
+    <value>Desligar Omissão</value>
+  </data>
+  <data name="BypassOn" xml:space="preserve">
+    <value>Omitir</value>
+  </data>
+  <data name="OutputOff" xml:space="preserve">
+    <value>Desligar</value>
+  </data>
+  <data name="OutputOn" xml:space="preserve">
+    <value>Ligar</value>
+  </data>
+  <data name="InfoClient" xml:space="preserve">
+    <value>Informação do Cliente</value>
+  </data>
+  <data name="descriptionAudio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="input_times" xml:space="preserve">
+    <value>Tempos de Entrada</value>
+  </data>
+  <data name="Areas_Keypads_Configuration" xml:space="preserve">
+    <value>Configuração de Áreas e Teclados</value>
+  </data>
+  <data name="bypassKeypad" xml:space="preserve">
+    <value>Bypass in Keypads</value>
+  </data>
+  <data name="ShowBypassInKeypads" xml:space="preserve">
+    <value>Apresentar Omissão nos Teclados</value>
+  </data>
+  <data name="Zone_configuration" xml:space="preserve">
+    <value>Configuração da Zona</value>
+  </data>
+  <data name="ConfigArea" xml:space="preserve">
+    <value>Configuração da Área</value>
+  </data>
+  <data name="Zone_options" xml:space="preserve">
+    <value>Opções de Zona</value>
+  </data>
+  <data name="configure_zone_24" xml:space="preserve">
+    <value>Configurar zona 24h</value>
+  </data>
+  <data name="AudioConfigurations" xml:space="preserve">
+    <value>Configurações Audio</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FreeSpace" xml:space="preserve">
+    <value>Espaço livre</value>
+  </data>
+  <data name="Audio_system_configurations" xml:space="preserve">
+    <value>Configurações Audio do Sistema</value>
+  </data>
+  <data name="ReadingAudioSystemConfigurations" xml:space="preserve">
+    <value>Lendo Configurações Audio do Sistema</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Write_System_Settings" xml:space="preserve">
+    <value>Escreve Configurações de Sistema</value>
+  </data>
+  <data name="Read_System_Settings" xml:space="preserve">
+    <value>Ler Configurações de Sistema</value>
+  </data>
+  <data name="ProdigyConfigurator" xml:space="preserve">
+    <value>Mega-X Configurator</value>
+  </data>
+  <data name="AudioSystemConfigurationSpace" xml:space="preserve">
+    <value>O espaço para ficheiros audio atingiu o limite</value>
+  </data>
+  <data name="AreaConfig" xml:space="preserve">
+    <value>Configuração de Partição</value>
+  </data>
+  <data name="GlobalSystemConfig" xml:space="preserve">
+    <value>Configuração Global do Sistema</value>
+  </data>
+  <data name="KeypadConfig" xml:space="preserve">
+    <value>Configuração de Teclado</value>
+  </data>
+  <data name="OutputConfig" xml:space="preserve">
+    <value>Configuração de Saída</value>
+  </data>
+  <data name="PhoneConfig" xml:space="preserve">
+    <value>Configuração de Telefone</value>
+  </data>
+  <data name="TimezoneConfig" xml:space="preserve">
+    <value>Configuração de Horário</value>
+  </data>
+  <data name="UserConfig" xml:space="preserve">
+    <value>Configuração de Utilizador</value>
+  </data>
+  <data name="ZoneConfig" xml:space="preserve">
+    <value>Configuração de Zona</value>
+  </data>
+  <data name="Output_CleanAssociations" xml:space="preserve">
+    <value>Apagar Associações</value>
+  </data>
+  <data name="Zone_Terminal_Diagram" xml:space="preserve">
+    <value>Esquema elétrico dos terminais</value>
+  </data>
+  <data name="Exception_1_minus" xml:space="preserve">
+    <value>Exceção 1 (-)</value>
+  </data>
+  <data name="Exception_1_plus" xml:space="preserve">
+    <value>Exceção 1 (+)</value>
+  </data>
+  <data name="Exception_2_minus" xml:space="preserve">
+    <value>Exceção 2 (-)</value>
+  </data>
+  <data name="Exception_2_plus" xml:space="preserve">
+    <value>Exceção 2 (+)</value>
+  </data>
+  <data name="Exception_3_minus" xml:space="preserve">
+    <value>Exceção 3 (-)</value>
+  </data>
+  <data name="Exception_3_plus" xml:space="preserve">
+    <value>Exceção 3 (+)</value>
+  </data>
+  <data name="Exception_4_minus" xml:space="preserve">
+    <value>Exceção 4 (-)</value>
+  </data>
+  <data name="Exception_4_plus" xml:space="preserve">
+    <value>Exceção 4 (+)</value>
+  </data>
+  <data name="FinalDate" xml:space="preserve">
+    <value>Data Final</value>
+  </data>
+  <data name="InitialDate" xml:space="preserve">
+    <value>Data Inicial</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="User_name" xml:space="preserve">
+    <value>Nome do utilizador</value>
+  </data>
+  <data name="EventsIn" xml:space="preserve">
+    <value>Eventos em</value>
+  </data>
+  <data name="ClearFilters" xml:space="preserve">
+    <value>Apagar filtros</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Até</value>
+  </data>
+  <data name="Keypad_Ack" xml:space="preserve">
+    <value>Reconhecimento do teclado</value>
+  </data>
+  <data name="CheckAllEvents" xml:space="preserve">
+    <value>Marcar todos os eventos</value>
+  </data>
+  <data name="Help_Filters_H1_P21" xml:space="preserve">
+    <value>Pode utilizar filtros para mostrar/esconder configurações por categoria</value>
+  </data>
+  <data name="DateTimeUpdated" xml:space="preserve">
+    <value>Data/Hora atualizados com sucesso</value>
+  </data>
+  <data name="SaveWithSuccess" xml:space="preserve">
+    <value>Guardado com sucesso</value>
+  </data>
+  <data name="FastTips" xml:space="preserve">
+    <value>Dicas rápidas</value>
+  </data>
+  <data name="HelpTip_ChangePassword_2" xml:space="preserve">
+    <value>A opção para alterar a password de login está localizada na barra superior. Clicando em “Admin” vai mostrar um menu onde é possível alterar a sua password, bem como terminar sessão do mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_1" xml:space="preserve">
+    <value>Download/Upload</value>
+  </data>
+  <data name="HelpTip_DownloadUpload_2" xml:space="preserve">
+    <value>É possível fazer com que o Upload/Download do/para o mega-X seja mais rápido. Utilizando os botões do canto superior direito em cada uma das categorias de configuração, pode-se fazer o upload ou download parcial.</value>
+  </data>
+  <data name="HelpTip_ElementConfig_1" xml:space="preserve">
+    <value>Configuração individual</value>
+  </data>
+  <data name="HelpTip_ElementConfig_2" xml:space="preserve">
+    <value>Pode configurar um único elemento através de um duplo clique na linha de qualquer coluna de qualquer menu. Isto vai abrir uma nova janela onde é possível configurar apenas esse elemento de uma forma mais fácil. É também possível aceder a essa janela através do menu no lado esquerdo da aplicação.</value>
+  </data>
+  <data name="HelpTip_Language_1" xml:space="preserve">
+    <value>Mudar idioma</value>
+  </data>
+  <data name="HelpTip_Language_2" xml:space="preserve">
+    <value>É possível mudar o idioma entre inglês (en-US) e português (pt-PT) no menu Preferências ou na janela de login ao abrir o mega-X Configuration Tool.</value>
+  </data>
+  <data name="HelpTip_Wizard_1" xml:space="preserve">
+    <value>Assistente de Novo Ficheiro</value>
+  </data>
+  <data name="HelpTip_Wizard_2" xml:space="preserve">
+    <value>Quando é criado um novo ficheiro é possível ser ajudado por um Assistente de forma a fazer desta tarefa mais fácil e intuitiva. Este Assistente vai ajudar a dar início a um novo projeto de configuração para o mega-X.</value>
+  </data>
+</root>
