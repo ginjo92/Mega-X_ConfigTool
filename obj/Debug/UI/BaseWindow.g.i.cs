@@ -70,7 +70,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 120 "..\..\..\UI\BaseWindow.xaml"
+        #line 119 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel BaseFileMenuDockPanel;
         
@@ -78,7 +78,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 121 "..\..\..\UI\BaseWindow.xaml"
+        #line 120 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Menu BaseFileMenu;
         
@@ -86,7 +86,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 125 "..\..\..\UI\BaseWindow.xaml"
+        #line 124 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel TopBarLeft;
         
@@ -94,7 +94,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 127 "..\..\..\UI\BaseWindow.xaml"
+        #line 126 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile FileTile;
         
@@ -102,7 +102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 154 "..\..\..\UI\BaseWindow.xaml"
+        #line 153 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ContextMenu File_ContextMenu;
         
@@ -110,7 +110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 165 "..\..\..\UI\BaseWindow.xaml"
+        #line 164 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.MenuItem MenuItemSave;
         
@@ -118,7 +118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 192 "..\..\..\UI\BaseWindow.xaml"
+        #line 191 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile SettingsTile;
         
@@ -126,7 +126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 219 "..\..\..\UI\BaseWindow.xaml"
+        #line 218 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ContextMenu Preferences_ContextMenu;
         
@@ -134,7 +134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 221 "..\..\..\UI\BaseWindow.xaml"
+        #line 220 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile RestoreTile;
         
@@ -142,7 +142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 232 "..\..\..\UI\BaseWindow.xaml"
+        #line 231 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Header_Language;
         
@@ -150,7 +150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 237 "..\..\..\UI\BaseWindow.xaml"
+        #line 236 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel PT_Active;
         
@@ -158,7 +158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 238 "..\..\..\UI\BaseWindow.xaml"
+        #line 237 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton RadioLocalePT;
         
@@ -166,7 +166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 246 "..\..\..\UI\BaseWindow.xaml"
+        #line 245 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image SwitchLeft;
         
@@ -174,7 +174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 247 "..\..\..\UI\BaseWindow.xaml"
+        #line 246 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton RadioLocaleEN_Disabled;
         
@@ -182,7 +182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 255 "..\..\..\UI\BaseWindow.xaml"
+        #line 254 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel EN_Active;
         
@@ -190,7 +190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 256 "..\..\..\UI\BaseWindow.xaml"
+        #line 255 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton RadioLocalePT_disabled;
         
@@ -198,7 +198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 263 "..\..\..\UI\BaseWindow.xaml"
+        #line 262 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image SwitchRight;
         
@@ -206,7 +206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 264 "..\..\..\UI\BaseWindow.xaml"
+        #line 263 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RadioButton RadioLocaleEN;
         
@@ -214,7 +214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 274 "..\..\..\UI\BaseWindow.xaml"
+        #line 273 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel Header_About;
         
@@ -222,7 +222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 284 "..\..\..\UI\BaseWindow.xaml"
+        #line 283 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label SoftwareVersionDescription;
         
@@ -230,7 +230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 285 "..\..\..\UI\BaseWindow.xaml"
+        #line 284 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label SoftwareVersion2;
         
@@ -238,7 +238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 294 "..\..\..\UI\BaseWindow.xaml"
+        #line 293 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel TopBarRight;
         
@@ -246,7 +246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 296 "..\..\..\UI\BaseWindow.xaml"
+        #line 295 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label ConfigFileName;
         
@@ -254,7 +254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 298 "..\..\..\UI\BaseWindow.xaml"
+        #line 297 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile HelpTile;
         
@@ -262,7 +262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 307 "..\..\..\UI\BaseWindow.xaml"
+        #line 306 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserTile;
         
@@ -270,7 +270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 312 "..\..\..\UI\BaseWindow.xaml"
+        #line 311 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image TopBar_User_Image;
         
@@ -278,7 +278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 313 "..\..\..\UI\BaseWindow.xaml"
+        #line 312 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock TopBar_User_Name;
         
@@ -286,7 +286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 334 "..\..\..\UI\BaseWindow.xaml"
+        #line 333 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ContextMenu User_ContextMenu;
         
@@ -294,7 +294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 354 "..\..\..\UI\BaseWindow.xaml"
+        #line 353 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel TOP_TILES;
         
@@ -302,7 +302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 357 "..\..\..\UI\BaseWindow.xaml"
+        #line 356 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile DownloadTile;
         
@@ -310,7 +310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 362 "..\..\..\UI\BaseWindow.xaml"
+        #line 361 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UploadTile;
         
@@ -318,7 +318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 366 "..\..\..\UI\BaseWindow.xaml"
+        #line 365 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile COMsettings;
         
@@ -326,7 +326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 370 "..\..\..\UI\BaseWindow.xaml"
+        #line 369 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UpdateDateHour;
         
@@ -334,7 +334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 375 "..\..\..\UI\BaseWindow.xaml"
+        #line 374 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ReadFWUpdateData;
         
@@ -342,7 +342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 380 "..\..\..\UI\BaseWindow.xaml"
+        #line 379 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel PanelLabels;
         
@@ -350,7 +350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 381 "..\..\..\UI\BaseWindow.xaml"
+        #line 380 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label SerialNumberLabel;
         
@@ -358,7 +358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 382 "..\..\..\UI\BaseWindow.xaml"
+        #line 381 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label SerialNumberValueLabel;
         
@@ -366,7 +366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 384 "..\..\..\UI\BaseWindow.xaml"
+        #line 383 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label HWNumberLabel;
         
@@ -374,7 +374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 385 "..\..\..\UI\BaseWindow.xaml"
+        #line 384 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label HWNumberValueLabel;
         
@@ -382,7 +382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 387 "..\..\..\UI\BaseWindow.xaml"
+        #line 386 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label FWNumberLabel;
         
@@ -390,7 +390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 388 "..\..\..\UI\BaseWindow.xaml"
+        #line 387 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label FWNumberValueLabel;
         
@@ -398,7 +398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 393 "..\..\..\UI\BaseWindow.xaml"
+        #line 392 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel BaseFrame;
         
@@ -406,7 +406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 395 "..\..\..\UI\BaseWindow.xaml"
+        #line 394 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabControl MainTabControl;
         
@@ -414,7 +414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 398 "..\..\..\UI\BaseWindow.xaml"
+        #line 397 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainHomeTab;
         
@@ -422,7 +422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 415 "..\..\..\UI\BaseWindow.xaml"
+        #line 414 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Areas;
         
@@ -430,7 +430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 421 "..\..\..\UI\BaseWindow.xaml"
+        #line 420 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Zones;
         
@@ -438,7 +438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 427 "..\..\..\UI\BaseWindow.xaml"
+        #line 426 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Keypads;
         
@@ -446,7 +446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 433 "..\..\..\UI\BaseWindow.xaml"
+        #line 432 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Outputs;
         
@@ -454,7 +454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 439 "..\..\..\UI\BaseWindow.xaml"
+        #line 438 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Timezones;
         
@@ -462,7 +462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 445 "..\..\..\UI\BaseWindow.xaml"
+        #line 444 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Users;
         
@@ -470,7 +470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 451 "..\..\..\UI\BaseWindow.xaml"
+        #line 450 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Phones;
         
@@ -478,7 +478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 457 "..\..\..\UI\BaseWindow.xaml"
+        #line 456 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Dialer;
         
@@ -486,7 +486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 463 "..\..\..\UI\BaseWindow.xaml"
+        #line 462 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_GlobalConfig;
         
@@ -494,7 +494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 469 "..\..\..\UI\BaseWindow.xaml"
+        #line 468 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_ClientInfo;
         
@@ -502,7 +502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 475 "..\..\..\UI\BaseWindow.xaml"
+        #line 474 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Expansors;
         
@@ -510,7 +510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 481 "..\..\..\UI\BaseWindow.xaml"
+        #line 480 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Audio;
         
@@ -518,7 +518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 487 "..\..\..\UI\BaseWindow.xaml"
+        #line 486 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Status;
         
@@ -526,7 +526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 493 "..\..\..\UI\BaseWindow.xaml"
+        #line 492 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_Debug;
         
@@ -534,7 +534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 499 "..\..\..\UI\BaseWindow.xaml"
+        #line 498 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Open_FirmwareUpdate;
         
@@ -542,7 +542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 509 "..\..\..\UI\BaseWindow.xaml"
+        #line 508 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZonesTab;
         
@@ -550,7 +550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 520 "..\..\..\UI\BaseWindow.xaml"
+        #line 519 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ZonesHeader;
         
@@ -558,7 +558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 526 "..\..\..\UI\BaseWindow.xaml"
+        #line 525 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZonesDownloadTile;
         
@@ -566,7 +566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 532 "..\..\..\UI\BaseWindow.xaml"
+        #line 531 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneUploadTile;
         
@@ -574,7 +574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 541 "..\..\..\UI\BaseWindow.xaml"
+        #line 540 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_SettingsTile;
         
@@ -582,7 +582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 546 "..\..\..\UI\BaseWindow.xaml"
+        #line 545 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_SettingsTileDISABLED;
         
@@ -590,7 +590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 552 "..\..\..\UI\BaseWindow.xaml"
+        #line 551 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_AreasKeypadsTile;
         
@@ -598,7 +598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 557 "..\..\..\UI\BaseWindow.xaml"
+        #line 556 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_AreasKeypadsTileDISABLED;
         
@@ -606,7 +606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 563 "..\..\..\UI\BaseWindow.xaml"
+        #line 562 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_TerminalsTile;
         
@@ -614,7 +614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 568 "..\..\..\UI\BaseWindow.xaml"
+        #line 567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_TerminalsTileDISABLED;
         
@@ -622,7 +622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 574 "..\..\..\UI\BaseWindow.xaml"
+        #line 573 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_OutputsTile;
         
@@ -630,7 +630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 579 "..\..\..\UI\BaseWindow.xaml"
+        #line 578 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_OutputsTileDISABLED;
         
@@ -638,7 +638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 585 "..\..\..\UI\BaseWindow.xaml"
+        #line 584 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_AudioTile;
         
@@ -646,7 +646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 590 "..\..\..\UI\BaseWindow.xaml"
+        #line 589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ZoneShortcuts_AudioTileDISABLED;
         
@@ -654,7 +654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 597 "..\..\..\UI\BaseWindow.xaml"
+        #line 596 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid zoneDataGrid;
         
@@ -662,7 +662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 602 "..\..\..\UI\BaseWindow.xaml"
+        #line 601 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn idColumn;
         
@@ -670,7 +670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 616 "..\..\..\UI\BaseWindow.xaml"
+        #line 615 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn ImageHardwarePositionColumn;
         
@@ -678,7 +678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 669 "..\..\..\UI\BaseWindow.xaml"
+        #line 668 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn descriptionColumn;
         
@@ -686,7 +686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 692 "..\..\..\UI\BaseWindow.xaml"
+        #line 691 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn zone_activeColumn;
         
@@ -694,7 +694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 714 "..\..\..\UI\BaseWindow.xaml"
+        #line 713 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn soak_testColumn;
         
@@ -702,7 +702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 735 "..\..\..\UI\BaseWindow.xaml"
+        #line 734 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn always_reportColumn;
         
@@ -710,7 +710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 756 "..\..\..\UI\BaseWindow.xaml"
+        #line 755 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn arm_if_not_readyColumn;
         
@@ -718,7 +718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 779 "..\..\..\UI\BaseWindow.xaml"
+        #line 778 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn EntryTimes_minus;
         
@@ -726,7 +726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 859 "..\..\..\UI\BaseWindow.xaml"
+        #line 858 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn EntryTimes_plus;
         
@@ -734,7 +734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 884 "..\..\..\UI\BaseWindow.xaml"
+        #line 883 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn _24H_Config_minus;
         
@@ -742,7 +742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 988 "..\..\..\UI\BaseWindow.xaml"
+        #line 987 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn _24H_Config_plus;
         
@@ -750,7 +750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1015 "..\..\..\UI\BaseWindow.xaml"
+        #line 1014 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_Config_minus;
         
@@ -758,7 +758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1099 "..\..\..\UI\BaseWindow.xaml"
+        #line 1098 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_Config_plus;
         
@@ -766,7 +766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1124 "..\..\..\UI\BaseWindow.xaml"
+        #line 1123 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Bypass_Config_minus;
         
@@ -774,7 +774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1225 "..\..\..\UI\BaseWindow.xaml"
+        #line 1224 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Bypass_Config_plus;
         
@@ -782,7 +782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1250 "..\..\..\UI\BaseWindow.xaml"
+        #line 1249 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Type_minus;
         
@@ -790,7 +790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1453 "..\..\..\UI\BaseWindow.xaml"
+        #line 1452 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Type_plus;
         
@@ -798,7 +798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1478 "..\..\..\UI\BaseWindow.xaml"
+        #line 1477 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Chime_Config_minus;
         
@@ -806,7 +806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1559 "..\..\..\UI\BaseWindow.xaml"
+        #line 1558 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Chime_Config_plus;
         
@@ -814,7 +814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1586 "..\..\..\UI\BaseWindow.xaml"
+        #line 1585 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_Areas_Away_minus;
         
@@ -822,7 +822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1788 "..\..\..\UI\BaseWindow.xaml"
+        #line 1787 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_Areas_Away_plus;
         
@@ -830,7 +830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 1812 "..\..\..\UI\BaseWindow.xaml"
+        #line 1811 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_Areas_Stay_minus;
         
@@ -838,7 +838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2014 "..\..\..\UI\BaseWindow.xaml"
+        #line 2013 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_Areas_Stay_plus;
         
@@ -846,7 +846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2039 "..\..\..\UI\BaseWindow.xaml"
+        #line 2038 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridCheckBoxColumn Zones_KeypadBypass;
         
@@ -854,7 +854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2055 "..\..\..\UI\BaseWindow.xaml"
+        #line 2054 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_ShowKeypad_minus;
         
@@ -862,7 +862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2257 "..\..\..\UI\BaseWindow.xaml"
+        #line 2256 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zones_ShowKeypad_plus;
         
@@ -870,7 +870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2283 "..\..\..\UI\BaseWindow.xaml"
+        #line 2282 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn terminal_circuit_typeColumn;
         
@@ -878,7 +878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2308 "..\..\..\UI\BaseWindow.xaml"
+        #line 2307 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R1_Config_minus;
         
@@ -886,7 +886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2420 "..\..\..\UI\BaseWindow.xaml"
+        #line 2419 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R1_Config_plus;
         
@@ -894,7 +894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2445 "..\..\..\UI\BaseWindow.xaml"
+        #line 2444 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R2_Config_minus;
         
@@ -902,7 +902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2557 "..\..\..\UI\BaseWindow.xaml"
+        #line 2556 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R2_Config_plus;
         
@@ -910,7 +910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2582 "..\..\..\UI\BaseWindow.xaml"
+        #line 2581 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R3_Config_minus;
         
@@ -918,7 +918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2694 "..\..\..\UI\BaseWindow.xaml"
+        #line 2693 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn R3_Config_plus;
         
@@ -926,7 +926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2721 "..\..\..\UI\BaseWindow.xaml"
+        #line 2720 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Alarm_Output_minus;
         
@@ -934,7 +934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2834 "..\..\..\UI\BaseWindow.xaml"
+        #line 2833 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Alarm_Output_plus;
         
@@ -942,7 +942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2860 "..\..\..\UI\BaseWindow.xaml"
+        #line 2859 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Chime_Output_minus;
         
@@ -950,7 +950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2971 "..\..\..\UI\BaseWindow.xaml"
+        #line 2970 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Chime_Output_plus;
         
@@ -958,7 +958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 2997 "..\..\..\UI\BaseWindow.xaml"
+        #line 2996 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Sensor_Watch_Output_minus;
         
@@ -966,7 +966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3110 "..\..\..\UI\BaseWindow.xaml"
+        #line 3109 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Sensor_Watch_Output_plus;
         
@@ -974,7 +974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3136 "..\..\..\UI\BaseWindow.xaml"
+        #line 3135 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Entry_Time_Output_minus;
         
@@ -982,7 +982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3249 "..\..\..\UI\BaseWindow.xaml"
+        #line 3248 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Entry_Time_Output_plus;
         
@@ -990,7 +990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3275 "..\..\..\UI\BaseWindow.xaml"
+        #line 3274 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Anti_Mask_Output_minus;
         
@@ -998,7 +998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3388 "..\..\..\UI\BaseWindow.xaml"
+        #line 3387 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Anti_Mask_Output_plus;
         
@@ -1006,7 +1006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3414 "..\..\..\UI\BaseWindow.xaml"
+        #line 3413 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn _24H_Alarm_Output_minus;
         
@@ -1014,7 +1014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3527 "..\..\..\UI\BaseWindow.xaml"
+        #line 3526 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn _24H_Alarm_Output_plus;
         
@@ -1022,7 +1022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3553 "..\..\..\UI\BaseWindow.xaml"
+        #line 3552 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Fire_Alarm_Output_minus;
         
@@ -1030,7 +1030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3666 "..\..\..\UI\BaseWindow.xaml"
+        #line 3665 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Fire_Alarm_Output_plus;
         
@@ -1038,7 +1038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3692 "..\..\..\UI\BaseWindow.xaml"
+        #line 3691 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Tamper_Alarm_Output_minus;
         
@@ -1046,7 +1046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3805 "..\..\..\UI\BaseWindow.xaml"
+        #line 3804 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Tamper_Alarm_Output_plus;
         
@@ -1054,7 +1054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3832 "..\..\..\UI\BaseWindow.xaml"
+        #line 3831 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Audio_minus;
         
@@ -1062,7 +1062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3965 "..\..\..\UI\BaseWindow.xaml"
+        #line 3964 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Zone_Audio_plus;
         
@@ -1070,7 +1070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 3994 "..\..\..\UI\BaseWindow.xaml"
+        #line 3993 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreasTab;
         
@@ -1078,7 +1078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4005 "..\..\..\UI\BaseWindow.xaml"
+        #line 4004 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreasHeader;
         
@@ -1086,7 +1086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4011 "..\..\..\UI\BaseWindow.xaml"
+        #line 4010 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasDownloadTile;
         
@@ -1094,7 +1094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4017 "..\..\..\UI\BaseWindow.xaml"
+        #line 4016 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasUploadTile;
         
@@ -1102,7 +1102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4026 "..\..\..\UI\BaseWindow.xaml"
+        #line 4025 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_SettingsTile;
         
@@ -1110,7 +1110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4031 "..\..\..\UI\BaseWindow.xaml"
+        #line 4030 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_SettingsTileDISABLED;
         
@@ -1118,7 +1118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4037 "..\..\..\UI\BaseWindow.xaml"
+        #line 4036 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_TimezonesTile;
         
@@ -1126,7 +1126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4042 "..\..\..\UI\BaseWindow.xaml"
+        #line 4041 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_TimezonesTileDISABLED;
         
@@ -1134,7 +1134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4048 "..\..\..\UI\BaseWindow.xaml"
+        #line 4047 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_OutputsTile;
         
@@ -1142,7 +1142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4053 "..\..\..\UI\BaseWindow.xaml"
+        #line 4052 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_OutputsTileDISABLED;
         
@@ -1150,7 +1150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4059 "..\..\..\UI\BaseWindow.xaml"
+        #line 4058 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_AudioTile;
         
@@ -1158,7 +1158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4064 "..\..\..\UI\BaseWindow.xaml"
+        #line 4063 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AreasShortcuts_AudioTileDISABLED;
         
@@ -1166,7 +1166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4071 "..\..\..\UI\BaseWindow.xaml"
+        #line 4070 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid areaDataGrid;
         
@@ -1174,7 +1174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4076 "..\..\..\UI\BaseWindow.xaml"
+        #line 4075 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn idColumn1;
         
@@ -1182,7 +1182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4097 "..\..\..\UI\BaseWindow.xaml"
+        #line 4096 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn descriptionColumn1;
         
@@ -1190,7 +1190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4114 "..\..\..\UI\BaseWindow.xaml"
+        #line 4113 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn dRCV_account_numberColumn;
         
@@ -1198,7 +1198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4130 "..\..\..\UI\BaseWindow.xaml"
+        #line 4129 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn voice_call_codeColumn;
         
@@ -1206,7 +1206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4147 "..\..\..\UI\BaseWindow.xaml"
+        #line 4146 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn not_arm_if_zones_open_after_exit_delayColumn;
         
@@ -1214,7 +1214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4169 "..\..\..\UI\BaseWindow.xaml"
+        #line 4168 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Area_Code_Required_minus;
         
@@ -1222,7 +1222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4270 "..\..\..\UI\BaseWindow.xaml"
+        #line 4269 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Area_Code_Required_plus;
         
@@ -1230,7 +1230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4294 "..\..\..\UI\BaseWindow.xaml"
+        #line 4293 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Exit_Times_minus;
         
@@ -1238,7 +1238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4374 "..\..\..\UI\BaseWindow.xaml"
+        #line 4373 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Exit_Times_plus;
         
@@ -1246,7 +1246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4400 "..\..\..\UI\BaseWindow.xaml"
+        #line 4399 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezones_Start_Arm_minus;
         
@@ -1254,7 +1254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4600 "..\..\..\UI\BaseWindow.xaml"
+        #line 4599 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezones_Start_Arm_plus;
         
@@ -1262,7 +1262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4624 "..\..\..\UI\BaseWindow.xaml"
+        #line 4623 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezones_End_Disarm_minus;
         
@@ -1270,7 +1270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4824 "..\..\..\UI\BaseWindow.xaml"
+        #line 4823 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezones_End_Disarm_plus;
         
@@ -1278,7 +1278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4850 "..\..\..\UI\BaseWindow.xaml"
+        #line 4849 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Outputs_minus;
         
@@ -1286,7 +1286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4963 "..\..\..\UI\BaseWindow.xaml"
+        #line 4962 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Outputs_plus;
         
@@ -1294,7 +1294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 4988 "..\..\..\UI\BaseWindow.xaml"
+        #line 4987 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Outputs_minus;
         
@@ -1302,7 +1302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5099 "..\..\..\UI\BaseWindow.xaml"
+        #line 5098 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Outputs_plus;
         
@@ -1310,7 +1310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5124 "..\..\..\UI\BaseWindow.xaml"
+        #line 5123 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Outputs_minus;
         
@@ -1318,7 +1318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5235 "..\..\..\UI\BaseWindow.xaml"
+        #line 5234 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Outputs_plus;
         
@@ -1326,7 +1326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5260 "..\..\..\UI\BaseWindow.xaml"
+        #line 5259 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Outputs_minus;
         
@@ -1334,7 +1334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5372 "..\..\..\UI\BaseWindow.xaml"
+        #line 5371 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Outputs_plus;
         
@@ -1342,7 +1342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5397 "..\..\..\UI\BaseWindow.xaml"
+        #line 5396 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Pulsed_Outputs_minus;
         
@@ -1350,7 +1350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5508 "..\..\..\UI\BaseWindow.xaml"
+        #line 5507 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Pulsed_Outputs_plus;
         
@@ -1358,7 +1358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5533 "..\..\..\UI\BaseWindow.xaml"
+        #line 5532 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Pulsed_Outputs_minus;
         
@@ -1366,7 +1366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5645 "..\..\..\UI\BaseWindow.xaml"
+        #line 5644 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Pulsed_Outputs_plus;
         
@@ -1374,7 +1374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5670 "..\..\..\UI\BaseWindow.xaml"
+        #line 5669 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Pulsed_Outputs_minus;
         
@@ -1382,7 +1382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5782 "..\..\..\UI\BaseWindow.xaml"
+        #line 5781 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Pulsed_Outputs_plus;
         
@@ -1390,7 +1390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5807 "..\..\..\UI\BaseWindow.xaml"
+        #line 5806 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Pulsed_Outputs_minus;
         
@@ -1398,7 +1398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5919 "..\..\..\UI\BaseWindow.xaml"
+        #line 5918 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Pulsed_Outputs_plus;
         
@@ -1406,7 +1406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 5944 "..\..\..\UI\BaseWindow.xaml"
+        #line 5943 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Beeps_Outputs_minus;
         
@@ -1414,7 +1414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6056 "..\..\..\UI\BaseWindow.xaml"
+        #line 6055 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Away_Beeps_Outputs_plus;
         
@@ -1422,7 +1422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6081 "..\..\..\UI\BaseWindow.xaml"
+        #line 6080 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Beeps_Outputs_minus;
         
@@ -1430,7 +1430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6194 "..\..\..\UI\BaseWindow.xaml"
+        #line 6193 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Arm_Stay_Beeps_Outputs_plus;
         
@@ -1438,7 +1438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6219 "..\..\..\UI\BaseWindow.xaml"
+        #line 6218 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Beeps_Outputs_minus;
         
@@ -1446,7 +1446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6331 "..\..\..\UI\BaseWindow.xaml"
+        #line 6330 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Away_Beeps_Outputs_plus;
         
@@ -1454,7 +1454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6356 "..\..\..\UI\BaseWindow.xaml"
+        #line 6355 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Beeps_Outputs_minus;
         
@@ -1462,7 +1462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6468 "..\..\..\UI\BaseWindow.xaml"
+        #line 6467 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Disarm_Stay_Beeps_Outputs_plus;
         
@@ -1470,7 +1470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6494 "..\..\..\UI\BaseWindow.xaml"
+        #line 6493 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Area_Audio_minus;
         
@@ -1478,7 +1478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6627 "..\..\..\UI\BaseWindow.xaml"
+        #line 6626 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Area_Audio_plus;
         
@@ -1486,7 +1486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6656 "..\..\..\UI\BaseWindow.xaml"
+        #line 6655 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersTab;
         
@@ -1494,7 +1494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6667 "..\..\..\UI\BaseWindow.xaml"
+        #line 6666 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid UsersHeader;
         
@@ -1502,7 +1502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6673 "..\..\..\UI\BaseWindow.xaml"
+        #line 6672 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UsersDownloadTile;
         
@@ -1510,7 +1510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6679 "..\..\..\UI\BaseWindow.xaml"
+        #line 6678 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UsersUploadTile;
         
@@ -1518,7 +1518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6688 "..\..\..\UI\BaseWindow.xaml"
+        #line 6687 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_SettingsTile;
         
@@ -1526,7 +1526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6693 "..\..\..\UI\BaseWindow.xaml"
+        #line 6692 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_SettingsTileDISABLED;
         
@@ -1534,7 +1534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6699 "..\..\..\UI\BaseWindow.xaml"
+        #line 6698 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_TimezonesTile;
         
@@ -1542,7 +1542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6704 "..\..\..\UI\BaseWindow.xaml"
+        #line 6703 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_TimezonesTileDISABLED;
         
@@ -1550,7 +1550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6710 "..\..\..\UI\BaseWindow.xaml"
+        #line 6709 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_PermissionsTile;
         
@@ -1558,7 +1558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6715 "..\..\..\UI\BaseWindow.xaml"
+        #line 6714 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_PermissionsTileDISABLED;
         
@@ -1566,7 +1566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6721 "..\..\..\UI\BaseWindow.xaml"
+        #line 6720 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_ButtonsTile;
         
@@ -1574,7 +1574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6726 "..\..\..\UI\BaseWindow.xaml"
+        #line 6725 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_ButtonsTileDISABLED;
         
@@ -1582,7 +1582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6732 "..\..\..\UI\BaseWindow.xaml"
+        #line 6731 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_AudioTile;
         
@@ -1590,7 +1590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6737 "..\..\..\UI\BaseWindow.xaml"
+        #line 6736 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile UserShortcuts_AudioTileDISABLED;
         
@@ -1598,7 +1598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6744 "..\..\..\UI\BaseWindow.xaml"
+        #line 6743 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid userDataGrid;
         
@@ -1606,7 +1606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6750 "..\..\..\UI\BaseWindow.xaml"
+        #line 6749 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn User_ID_Column;
         
@@ -1614,7 +1614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6767 "..\..\..\UI\BaseWindow.xaml"
+        #line 6766 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn User_Name_Column;
         
@@ -1622,7 +1622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6791 "..\..\..\UI\BaseWindow.xaml"
+        #line 6790 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Type_Column;
         
@@ -1630,7 +1630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6816 "..\..\..\UI\BaseWindow.xaml"
+        #line 6815 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Active_Column;
         
@@ -1638,7 +1638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6838 "..\..\..\UI\BaseWindow.xaml"
+        #line 6837 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Code_Column;
         
@@ -1646,7 +1646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6894 "..\..\..\UI\BaseWindow.xaml"
+        #line 6893 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_CanChangeClock;
         
@@ -1654,7 +1654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6915 "..\..\..\UI\BaseWindow.xaml"
+        #line 6914 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_ValidateCalendar;
         
@@ -1662,7 +1662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6936 "..\..\..\UI\BaseWindow.xaml"
+        #line 6935 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_InitialDate;
         
@@ -1670,7 +1670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6963 "..\..\..\UI\BaseWindow.xaml"
+        #line 6962 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_FinalDate;
         
@@ -1678,7 +1678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 6993 "..\..\..\UI\BaseWindow.xaml"
+        #line 6992 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Timezone_Permissions_minus;
         
@@ -1686,7 +1686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7213 "..\..\..\UI\BaseWindow.xaml"
+        #line 7212 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Timezone_Permissions_plus;
         
@@ -1694,7 +1694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7240 "..\..\..\UI\BaseWindow.xaml"
+        #line 7239 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_ArmDisarm_Permissions_minus;
         
@@ -1702,7 +1702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7358 "..\..\..\UI\BaseWindow.xaml"
+        #line 7357 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_ArmDisarm_Permissions_plus;
         
@@ -1710,7 +1710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7383 "..\..\..\UI\BaseWindow.xaml"
+        #line 7382 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Area_Permissions_minus;
         
@@ -1718,7 +1718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7583 "..\..\..\UI\BaseWindow.xaml"
+        #line 7582 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Area_Permissions_plus;
         
@@ -1726,7 +1726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7608 "..\..\..\UI\BaseWindow.xaml"
+        #line 7607 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Output_Permissions_minus;
         
@@ -1734,7 +1734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7907 "..\..\..\UI\BaseWindow.xaml"
+        #line 7906 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Output_Permissions_plus;
         
@@ -1742,7 +1742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 7934 "..\..\..\UI\BaseWindow.xaml"
+        #line 7933 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_A_AreaAway_minus;
         
@@ -1750,7 +1750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8134 "..\..\..\UI\BaseWindow.xaml"
+        #line 8133 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_A_AreaAway_plus;
         
@@ -1758,7 +1758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8159 "..\..\..\UI\BaseWindow.xaml"
+        #line 8158 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_A_AreaStay_minus;
         
@@ -1766,7 +1766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8359 "..\..\..\UI\BaseWindow.xaml"
+        #line 8358 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_A_AreaStay_plus;
         
@@ -1774,7 +1774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8384 "..\..\..\UI\BaseWindow.xaml"
+        #line 8383 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_B_AreaAway_minus;
         
@@ -1782,7 +1782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8584 "..\..\..\UI\BaseWindow.xaml"
+        #line 8583 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_B_AreaAway_plus;
         
@@ -1790,7 +1790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8609 "..\..\..\UI\BaseWindow.xaml"
+        #line 8608 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_B_AreaStay_minus;
         
@@ -1798,7 +1798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8809 "..\..\..\UI\BaseWindow.xaml"
+        #line 8808 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_B_AreaStay_plus;
         
@@ -1806,7 +1806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 8834 "..\..\..\UI\BaseWindow.xaml"
+        #line 8833 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_C_AreaAway_minus;
         
@@ -1814,7 +1814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9034 "..\..\..\UI\BaseWindow.xaml"
+        #line 9033 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_C_AreaAway_plus;
         
@@ -1822,7 +1822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9059 "..\..\..\UI\BaseWindow.xaml"
+        #line 9058 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_C_AreaStay_minus;
         
@@ -1830,7 +1830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9259 "..\..\..\UI\BaseWindow.xaml"
+        #line 9258 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_C_AreaStay_plus;
         
@@ -1838,7 +1838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9284 "..\..\..\UI\BaseWindow.xaml"
+        #line 9283 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_D_AreaAway_minus;
         
@@ -1846,7 +1846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9484 "..\..\..\UI\BaseWindow.xaml"
+        #line 9483 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_D_AreaAway_plus;
         
@@ -1854,7 +1854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9509 "..\..\..\UI\BaseWindow.xaml"
+        #line 9508 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_D_AreaStay_minus;
         
@@ -1862,7 +1862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9709 "..\..\..\UI\BaseWindow.xaml"
+        #line 9708 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Button_D_AreaStay_plus;
         
@@ -1870,7 +1870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9735 "..\..\..\UI\BaseWindow.xaml"
+        #line 9734 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Audio_minus;
         
@@ -1878,7 +1878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9868 "..\..\..\UI\BaseWindow.xaml"
+        #line 9867 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn User_Audio_plus;
         
@@ -1886,7 +1886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9897 "..\..\..\UI\BaseWindow.xaml"
+        #line 9896 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab;
         
@@ -1894,7 +1894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9908 "..\..\..\UI\BaseWindow.xaml"
+        #line 9907 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsHeader;
         
@@ -1902,7 +1902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9914 "..\..\..\UI\BaseWindow.xaml"
+        #line 9913 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadsDownloadTile;
         
@@ -1910,7 +1910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9920 "..\..\..\UI\BaseWindow.xaml"
+        #line 9919 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadsUploadTile;
         
@@ -1918,7 +1918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9929 "..\..\..\UI\BaseWindow.xaml"
+        #line 9928 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_SettingsTile;
         
@@ -1926,7 +1926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9934 "..\..\..\UI\BaseWindow.xaml"
+        #line 9933 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_SettingsTileDISABLED;
         
@@ -1934,7 +1934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9940 "..\..\..\UI\BaseWindow.xaml"
+        #line 9939 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_AreasTile;
         
@@ -1942,7 +1942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9945 "..\..\..\UI\BaseWindow.xaml"
+        #line 9944 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_AreasTileDISABLED;
         
@@ -1950,7 +1950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9951 "..\..\..\UI\BaseWindow.xaml"
+        #line 9950 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_BeepsTile;
         
@@ -1958,7 +1958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9956 "..\..\..\UI\BaseWindow.xaml"
+        #line 9955 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_BeepsTileDISABLED;
         
@@ -1966,7 +1966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9962 "..\..\..\UI\BaseWindow.xaml"
+        #line 9961 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_ArmDisarmTile;
         
@@ -1974,7 +1974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9967 "..\..\..\UI\BaseWindow.xaml"
+        #line 9966 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_ArmDisarmTileDISABLED;
         
@@ -1982,7 +1982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9973 "..\..\..\UI\BaseWindow.xaml"
+        #line 9972 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_FbuttonsTile;
         
@@ -1990,7 +1990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9978 "..\..\..\UI\BaseWindow.xaml"
+        #line 9977 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_FbuttonsTileDISABLED;
         
@@ -1998,7 +1998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9984 "..\..\..\UI\BaseWindow.xaml"
+        #line 9983 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_AudioTile;
         
@@ -2006,7 +2006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9989 "..\..\..\UI\BaseWindow.xaml"
+        #line 9988 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile KeypadShortcuts_AudioTileDISABLED;
         
@@ -2014,7 +2014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 9996 "..\..\..\UI\BaseWindow.xaml"
+        #line 9995 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid keypadDataGrid;
         
@@ -2022,7 +2022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10002 "..\..\..\UI\BaseWindow.xaml"
+        #line 10001 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn Keypad_ID_Column;
         
@@ -2030,7 +2030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10018 "..\..\..\UI\BaseWindow.xaml"
+        #line 10017 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn Keypad_Name_Column;
         
@@ -2038,7 +2038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10041 "..\..\..\UI\BaseWindow.xaml"
+        #line 10040 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Active_Column;
         
@@ -2046,7 +2046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10062 "..\..\..\UI\BaseWindow.xaml"
+        #line 10061 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn Backlight_Time_Column;
         
@@ -2054,7 +2054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10078 "..\..\..\UI\BaseWindow.xaml"
+        #line 10077 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Backlight_OFF_230V_Column;
         
@@ -2062,7 +2062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10099 "..\..\..\UI\BaseWindow.xaml"
+        #line 10098 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Enable_Tamper_Column;
         
@@ -2070,7 +2070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10120 "..\..\..\UI\BaseWindow.xaml"
+        #line 10119 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn NoIndicationsWhileArmed_Column;
         
@@ -2078,7 +2078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10142 "..\..\..\UI\BaseWindow.xaml"
+        #line 10141 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn SilentDuring_EntryTime_Column;
         
@@ -2086,7 +2086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10163 "..\..\..\UI\BaseWindow.xaml"
+        #line 10162 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn SilentDuring_ExitTime_Column;
         
@@ -2094,7 +2094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10185 "..\..\..\UI\BaseWindow.xaml"
+        #line 10184 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_HourFormat_Column;
         
@@ -2102,7 +2102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10209 "..\..\..\UI\BaseWindow.xaml"
+        #line 10208 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_DateFormat_Column;
         
@@ -2110,7 +2110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10235 "..\..\..\UI\BaseWindow.xaml"
+        #line 10234 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Areas_minus;
         
@@ -2118,7 +2118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10434 "..\..\..\UI\BaseWindow.xaml"
+        #line 10433 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Areas_plus;
         
@@ -2126,7 +2126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10460 "..\..\..\UI\BaseWindow.xaml"
+        #line 10459 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Beeps_minus;
         
@@ -2134,7 +2134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10760 "..\..\..\UI\BaseWindow.xaml"
+        #line 10759 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Beeps_plus;
         
@@ -2142,7 +2142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10786 "..\..\..\UI\BaseWindow.xaml"
+        #line 10785 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_ArmDisarm_Permissions_minus;
         
@@ -2150,7 +2150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10945 "..\..\..\UI\BaseWindow.xaml"
+        #line 10944 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_ArmDisarm_Permissions_plus;
         
@@ -2158,7 +2158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 10971 "..\..\..\UI\BaseWindow.xaml"
+        #line 10970 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Fbuttons_minus;
         
@@ -2166,7 +2166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11083 "..\..\..\UI\BaseWindow.xaml"
+        #line 11082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Fbuttons_plus;
         
@@ -2174,7 +2174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11108 "..\..\..\UI\BaseWindow.xaml"
+        #line 11107 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Audio_minus;
         
@@ -2182,7 +2182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11241 "..\..\..\UI\BaseWindow.xaml"
+        #line 11240 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keypad_Audio_plus;
         
@@ -2190,7 +2190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11270 "..\..\..\UI\BaseWindow.xaml"
+        #line 11269 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUpdateFirmwareTab;
         
@@ -2198,7 +2198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11272 "..\..\..\UI\BaseWindow.xaml"
+        #line 11271 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid FirmwareUpdateHeader;
         
@@ -2206,7 +2206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11278 "..\..\..\UI\BaseWindow.xaml"
+        #line 11277 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock upload_file_path_textbox;
         
@@ -2214,7 +2214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11279 "..\..\..\UI\BaseWindow.xaml"
+        #line 11278 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button upload_choose_file_button;
         
@@ -2222,7 +2222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11281 "..\..\..\UI\BaseWindow.xaml"
+        #line 11280 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile upload_update_file_button;
         
@@ -2230,7 +2230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11291 "..\..\..\UI\BaseWindow.xaml"
+        #line 11290 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainOutputsTab;
         
@@ -2238,7 +2238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11302 "..\..\..\UI\BaseWindow.xaml"
+        #line 11301 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputsHeader;
         
@@ -2246,7 +2246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11308 "..\..\..\UI\BaseWindow.xaml"
+        #line 11307 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputsDownloadTile;
         
@@ -2254,7 +2254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11314 "..\..\..\UI\BaseWindow.xaml"
+        #line 11313 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputsUploadTile;
         
@@ -2262,7 +2262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11323 "..\..\..\UI\BaseWindow.xaml"
+        #line 11322 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputShortcuts_SettingsTile;
         
@@ -2270,7 +2270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11328 "..\..\..\UI\BaseWindow.xaml"
+        #line 11327 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputShortcuts_SettingsTileDISABLED;
         
@@ -2278,7 +2278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11334 "..\..\..\UI\BaseWindow.xaml"
+        #line 11333 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputShortcuts_TimezonesTile;
         
@@ -2286,7 +2286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11339 "..\..\..\UI\BaseWindow.xaml"
+        #line 11338 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile OutputShortcuts_TimezonesTileDISABLED;
         
@@ -2294,7 +2294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11346 "..\..\..\UI\BaseWindow.xaml"
+        #line 11345 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid outputDataGrid;
         
@@ -2302,7 +2302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11351 "..\..\..\UI\BaseWindow.xaml"
+        #line 11350 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn idColumn3;
         
@@ -2310,7 +2310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11372 "..\..\..\UI\BaseWindow.xaml"
+        #line 11371 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn outputdescriptionColumn;
         
@@ -2318,7 +2318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11396 "..\..\..\UI\BaseWindow.xaml"
+        #line 11395 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn cleanassociationsColumn;
         
@@ -2326,7 +2326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11421 "..\..\..\UI\BaseWindow.xaml"
+        #line 11420 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn invertedColumn;
         
@@ -2334,7 +2334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11443 "..\..\..\UI\BaseWindow.xaml"
+        #line 11442 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn TimeConfig_minus;
         
@@ -2342,7 +2342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11543 "..\..\..\UI\BaseWindow.xaml"
+        #line 11542 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn TimeConfig_plus;
         
@@ -2350,7 +2350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11568 "..\..\..\UI\BaseWindow.xaml"
+        #line 11567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_ChimeConfig_minus;
         
@@ -2358,7 +2358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11649 "..\..\..\UI\BaseWindow.xaml"
+        #line 11648 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_ChimeConfig_plus;
         
@@ -2366,7 +2366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11674 "..\..\..\UI\BaseWindow.xaml"
+        #line 11673 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_PulseConfig_minus;
         
@@ -2374,7 +2374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11794 "..\..\..\UI\BaseWindow.xaml"
+        #line 11793 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_PulseConfig_plus;
         
@@ -2382,7 +2382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11819 "..\..\..\UI\BaseWindow.xaml"
+        #line 11818 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_Beeps_minus;
         
@@ -2390,7 +2390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11899 "..\..\..\UI\BaseWindow.xaml"
+        #line 11898 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_Beeps_plus;
         
@@ -2398,7 +2398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 11925 "..\..\..\UI\BaseWindow.xaml"
+        #line 11924 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_Timezones_minus;
         
@@ -2406,7 +2406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12125 "..\..\..\UI\BaseWindow.xaml"
+        #line 12124 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Output_Timezones_plus;
         
@@ -2414,7 +2414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12154 "..\..\..\UI\BaseWindow.xaml"
+        #line 12153 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainTimezonesTab;
         
@@ -2422,7 +2422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12165 "..\..\..\UI\BaseWindow.xaml"
+        #line 12164 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid TimezonesHeader;
         
@@ -2430,7 +2430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12171 "..\..\..\UI\BaseWindow.xaml"
+        #line 12170 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezonesDownloadTile;
         
@@ -2438,7 +2438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12177 "..\..\..\UI\BaseWindow.xaml"
+        #line 12176 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezonesUploadTile;
         
@@ -2446,7 +2446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12186 "..\..\..\UI\BaseWindow.xaml"
+        #line 12185 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezoneShortcuts_SettingsTile;
         
@@ -2454,7 +2454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12191 "..\..\..\UI\BaseWindow.xaml"
+        #line 12190 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezoneShortcuts_SettingsTileDISABLED;
         
@@ -2462,7 +2462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12197 "..\..\..\UI\BaseWindow.xaml"
+        #line 12196 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezoneShortcuts_ExceptionsTile;
         
@@ -2470,7 +2470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12202 "..\..\..\UI\BaseWindow.xaml"
+        #line 12201 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile TimezoneShortcuts_ExceptionsTileDISABLED;
         
@@ -2478,7 +2478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12209 "..\..\..\UI\BaseWindow.xaml"
+        #line 12208 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid timezoneDataGrid;
         
@@ -2486,7 +2486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12214 "..\..\..\UI\BaseWindow.xaml"
+        #line 12213 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn TimezoneID_Column;
         
@@ -2494,7 +2494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12235 "..\..\..\UI\BaseWindow.xaml"
+        #line 12234 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn TimezoneName_Column;
         
@@ -2502,7 +2502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12258 "..\..\..\UI\BaseWindow.xaml"
+        #line 12257 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_InitialHour;
         
@@ -2510,7 +2510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12281 "..\..\..\UI\BaseWindow.xaml"
+        #line 12280 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_FinalHour;
         
@@ -2518,7 +2518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12305 "..\..\..\UI\BaseWindow.xaml"
+        #line 12304 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Weekdays_minus;
         
@@ -2526,7 +2526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12485 "..\..\..\UI\BaseWindow.xaml"
+        #line 12484 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Weekdays_plus;
         
@@ -2534,7 +2534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12512 "..\..\..\UI\BaseWindow.xaml"
+        #line 12511 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_1_minus;
         
@@ -2542,7 +2542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12614 "..\..\..\UI\BaseWindow.xaml"
+        #line 12613 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_1_plus;
         
@@ -2550,7 +2550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12639 "..\..\..\UI\BaseWindow.xaml"
+        #line 12638 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_2_minus;
         
@@ -2558,7 +2558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12741 "..\..\..\UI\BaseWindow.xaml"
+        #line 12740 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_2_plus;
         
@@ -2566,7 +2566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12766 "..\..\..\UI\BaseWindow.xaml"
+        #line 12765 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_3_minus;
         
@@ -2574,7 +2574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12868 "..\..\..\UI\BaseWindow.xaml"
+        #line 12867 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_3_plus;
         
@@ -2582,7 +2582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12893 "..\..\..\UI\BaseWindow.xaml"
+        #line 12892 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_4_minus;
         
@@ -2590,7 +2590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 12995 "..\..\..\UI\BaseWindow.xaml"
+        #line 12994 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Timezone_Exception_4_plus;
         
@@ -2598,7 +2598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13024 "..\..\..\UI\BaseWindow.xaml"
+        #line 13023 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainPhonesTab;
         
@@ -2606,7 +2606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13035 "..\..\..\UI\BaseWindow.xaml"
+        #line 13034 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesHeader;
         
@@ -2614,7 +2614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13041 "..\..\..\UI\BaseWindow.xaml"
+        #line 13040 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhonesDownloadTile;
         
@@ -2622,7 +2622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13047 "..\..\..\UI\BaseWindow.xaml"
+        #line 13046 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhonesUploadTile;
         
@@ -2630,7 +2630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13056 "..\..\..\UI\BaseWindow.xaml"
+        #line 13055 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_SettingsTile;
         
@@ -2638,7 +2638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13061 "..\..\..\UI\BaseWindow.xaml"
+        #line 13060 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_SettingsTileDISABLED;
         
@@ -2646,7 +2646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13067 "..\..\..\UI\BaseWindow.xaml"
+        #line 13066 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_ReportsTile;
         
@@ -2654,7 +2654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13072 "..\..\..\UI\BaseWindow.xaml"
+        #line 13071 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_ReportsTileDISABLED;
         
@@ -2662,7 +2662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13078 "..\..\..\UI\BaseWindow.xaml"
+        #line 13077 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_TestsTile;
         
@@ -2670,7 +2670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13083 "..\..\..\UI\BaseWindow.xaml"
+        #line 13082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile PhoneShortcuts_TestsTileDISABLED;
         
@@ -2678,7 +2678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13090 "..\..\..\UI\BaseWindow.xaml"
+        #line 13089 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid phoneDataGrid;
         
@@ -2686,7 +2686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13095 "..\..\..\UI\BaseWindow.xaml"
+        #line 13094 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phones_ID;
         
@@ -2694,7 +2694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13116 "..\..\..\UI\BaseWindow.xaml"
+        #line 13115 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn Phones_Name;
         
@@ -2702,7 +2702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13138 "..\..\..\UI\BaseWindow.xaml"
+        #line 13137 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridCheckBoxColumn Phones_ActiveColumn;
         
@@ -2710,7 +2710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13155 "..\..\..\UI\BaseWindow.xaml"
+        #line 13154 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn prefix_column;
         
@@ -2718,7 +2718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13176 "..\..\..\UI\BaseWindow.xaml"
+        #line 13175 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn phone_numberColumn;
         
@@ -2726,7 +2726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13198 "..\..\..\UI\BaseWindow.xaml"
+        #line 13197 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn ComAttempts_Column;
         
@@ -2734,7 +2734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13215 "..\..\..\UI\BaseWindow.xaml"
+        #line 13214 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phones_Area_minus;
         
@@ -2742,7 +2742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13415 "..\..\..\UI\BaseWindow.xaml"
+        #line 13414 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phones_Area_plus;
         
@@ -2750,7 +2750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13440 "..\..\..\UI\BaseWindow.xaml"
+        #line 13439 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_KissOff_minus;
         
@@ -2758,7 +2758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13541 "..\..\..\UI\BaseWindow.xaml"
+        #line 13540 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_KissOff_plus;
         
@@ -2766,7 +2766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 13568 "..\..\..\UI\BaseWindow.xaml"
+        #line 13567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_Reports_minus;
         
@@ -2774,7 +2774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14008 "..\..\..\UI\BaseWindow.xaml"
+        #line 14007 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_Reports_plus;
         
@@ -2782,7 +2782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14034 "..\..\..\UI\BaseWindow.xaml"
+        #line 14033 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_TestCalls;
         
@@ -2790,7 +2790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14057 "..\..\..\UI\BaseWindow.xaml"
+        #line 14056 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_VoiceCallType;
         
@@ -2798,7 +2798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14083 "..\..\..\UI\BaseWindow.xaml"
+        #line 14082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_TestConfig_minus;
         
@@ -2806,7 +2806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14283 "..\..\..\UI\BaseWindow.xaml"
+        #line 14282 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Phone_TestConfig_plus;
         
@@ -2814,7 +2814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14311 "..\..\..\UI\BaseWindow.xaml"
+        #line 14310 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainDialerTab;
         
@@ -2822,7 +2822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14322 "..\..\..\UI\BaseWindow.xaml"
+        #line 14321 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DialerHeader;
         
@@ -2830,7 +2830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14328 "..\..\..\UI\BaseWindow.xaml"
+        #line 14327 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile DialerDownloadTile;
         
@@ -2838,7 +2838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14334 "..\..\..\UI\BaseWindow.xaml"
+        #line 14333 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile DialerUploadTile;
         
@@ -2846,7 +2846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14340 "..\..\..\UI\BaseWindow.xaml"
+        #line 14339 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid dialerDataGrid;
         
@@ -2854,7 +2854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14366 "..\..\..\UI\BaseWindow.xaml"
+        #line 14365 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn ring_counter_Column;
         
@@ -2862,7 +2862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14393 "..\..\..\UI\BaseWindow.xaml"
+        #line 14392 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainDebugTab;
         
@@ -2870,7 +2870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14395 "..\..\..\UI\BaseWindow.xaml"
+        #line 14394 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DebugHeader;
         
@@ -2878,7 +2878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14403 "..\..\..\UI\BaseWindow.xaml"
+        #line 14402 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugGlobalCheckbox;
         
@@ -2886,7 +2886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14409 "..\..\..\UI\BaseWindow.xaml"
+        #line 14408 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugUsersCheckbox;
         
@@ -2894,7 +2894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14415 "..\..\..\UI\BaseWindow.xaml"
+        #line 14414 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugAlarmCheckbox;
         
@@ -2902,7 +2902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14421 "..\..\..\UI\BaseWindow.xaml"
+        #line 14420 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugFaultsCheckbox;
         
@@ -2910,7 +2910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14427 "..\..\..\UI\BaseWindow.xaml"
+        #line 14426 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugTimezonesCheckbox;
         
@@ -2918,7 +2918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14433 "..\..\..\UI\BaseWindow.xaml"
+        #line 14432 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugAreasCheckbox;
         
@@ -2926,7 +2926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14439 "..\..\..\UI\BaseWindow.xaml"
+        #line 14438 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugKeypadsCheckbox;
         
@@ -2934,7 +2934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14445 "..\..\..\UI\BaseWindow.xaml"
+        #line 14444 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugOutputsCheckbox;
         
@@ -2942,7 +2942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14451 "..\..\..\UI\BaseWindow.xaml"
+        #line 14450 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox DebugCommunicationsCheckbox;
         
@@ -2950,7 +2950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14459 "..\..\..\UI\BaseWindow.xaml"
+        #line 14458 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem DebugHexTab;
         
@@ -2958,7 +2958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14460 "..\..\..\UI\BaseWindow.xaml"
+        #line 14459 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RichTextBox TextboxDebugHEX;
         
@@ -2966,7 +2966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14464 "..\..\..\UI\BaseWindow.xaml"
+        #line 14463 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem DebugASCIITab;
         
@@ -2974,7 +2974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14465 "..\..\..\UI\BaseWindow.xaml"
+        #line 14464 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.RichTextBox TextboxDebugASCII;
         
@@ -2982,7 +2982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14473 "..\..\..\UI\BaseWindow.xaml"
+        #line 14472 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem ClientConfigTab;
         
@@ -2990,7 +2990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14475 "..\..\..\UI\BaseWindow.xaml"
+        #line 14474 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ClientInfoHeader;
         
@@ -2998,7 +2998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14485 "..\..\..\UI\BaseWindow.xaml"
+        #line 14484 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem EventsTab;
         
@@ -3006,7 +3006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14487 "..\..\..\UI\BaseWindow.xaml"
+        #line 14486 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid EventsHeader;
         
@@ -3014,7 +3014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14513 "..\..\..\UI\BaseWindow.xaml"
+        #line 14512 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile Reab_Events_Button;
         
@@ -3022,7 +3022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14517 "..\..\..\UI\BaseWindow.xaml"
+        #line 14516 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ClearFilters;
         
@@ -3030,7 +3030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14521 "..\..\..\UI\BaseWindow.xaml"
+        #line 14520 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile CheckAllEvents;
         
@@ -3038,7 +3038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14529 "..\..\..\UI\BaseWindow.xaml"
+        #line 14528 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock EventDateFrom;
         
@@ -3046,7 +3046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14530 "..\..\..\UI\BaseWindow.xaml"
+        #line 14529 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock EventDateTo;
         
@@ -3054,7 +3054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14533 "..\..\..\UI\BaseWindow.xaml"
+        #line 14532 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ButtonFilterArmDisarm;
         
@@ -3062,7 +3062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14538 "..\..\..\UI\BaseWindow.xaml"
+        #line 14537 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ButtonFilterAlarms;
         
@@ -3070,7 +3070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14543 "..\..\..\UI\BaseWindow.xaml"
+        #line 14542 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile ButtonFilterFaults;
         
@@ -3078,7 +3078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14548 "..\..\..\UI\BaseWindow.xaml"
+        #line 14547 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox PartitionComboBox;
         
@@ -3086,7 +3086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14551 "..\..\..\UI\BaseWindow.xaml"
+        #line 14550 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker Event_DateFrom;
         
@@ -3094,7 +3094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14552 "..\..\..\UI\BaseWindow.xaml"
+        #line 14551 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker Event_DateTo;
         
@@ -3102,7 +3102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14553 "..\..\..\UI\BaseWindow.xaml"
+        #line 14552 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile SelectRangeDate;
         
@@ -3110,7 +3110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14564 "..\..\..\UI\BaseWindow.xaml"
+        #line 14563 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid eventDataGrid;
         
@@ -3118,7 +3118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14568 "..\..\..\UI\BaseWindow.xaml"
+        #line 14567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Events_ID;
         
@@ -3126,7 +3126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14590 "..\..\..\UI\BaseWindow.xaml"
+        #line 14589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn eventdescriptionColumn;
         
@@ -3134,7 +3134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14607 "..\..\..\UI\BaseWindow.xaml"
+        #line 14606 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn craAccountNumberColumn;
         
@@ -3142,7 +3142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14641 "..\..\..\UI\BaseWindow.xaml"
+        #line 14640 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn userColumn;
         
@@ -3150,7 +3150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14658 "..\..\..\UI\BaseWindow.xaml"
+        #line 14657 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn areaColumn;
         
@@ -3158,7 +3158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14680 "..\..\..\UI\BaseWindow.xaml"
+        #line 14679 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn zoneColumn;
         
@@ -3166,7 +3166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14702 "..\..\..\UI\BaseWindow.xaml"
+        #line 14701 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn KeypadAckColumn;
         
@@ -3174,7 +3174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14737 "..\..\..\UI\BaseWindow.xaml"
+        #line 14736 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn dateTimeColumn;
         
@@ -3182,7 +3182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14767 "..\..\..\UI\BaseWindow.xaml"
+        #line 14766 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem AudioMessagesTab;
         
@@ -3190,7 +3190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14780 "..\..\..\UI\BaseWindow.xaml"
+        #line 14779 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AudioHeader;
         
@@ -3198,7 +3198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14786 "..\..\..\UI\BaseWindow.xaml"
+        #line 14785 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ProgressBar progressBarAudioMeasure;
         
@@ -3206,7 +3206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14789 "..\..\..\UI\BaseWindow.xaml"
+        #line 14788 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label lblBarAudioMeasure;
         
@@ -3214,7 +3214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14792 "..\..\..\UI\BaseWindow.xaml"
+        #line 14791 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AudioMessagesUploadTile;
         
@@ -3222,7 +3222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14798 "..\..\..\UI\BaseWindow.xaml"
+        #line 14797 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AudioSystemConfigurationDownload;
         
@@ -3230,7 +3230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14804 "..\..\..\UI\BaseWindow.xaml"
+        #line 14803 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile AudioSystemConfigurationUpload;
         
@@ -3238,7 +3238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14812 "..\..\..\UI\BaseWindow.xaml"
+        #line 14811 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel ReservedAudio;
         
@@ -3246,7 +3246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14815 "..\..\..\UI\BaseWindow.xaml"
+        #line 14814 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid AudioReservedDataGrid;
         
@@ -3254,7 +3254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14819 "..\..\..\UI\BaseWindow.xaml"
+        #line 14818 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn AudioReservedIdColumn;
         
@@ -3262,7 +3262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14836 "..\..\..\UI\BaseWindow.xaml"
+        #line 14835 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn AudioReservedDescriptionColumn;
         
@@ -3270,7 +3270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14858 "..\..\..\UI\BaseWindow.xaml"
+        #line 14857 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn AudioReservedActionsColumn;
         
@@ -3278,7 +3278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14947 "..\..\..\UI\BaseWindow.xaml"
+        #line 14946 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel CostumizedAudio;
         
@@ -3286,7 +3286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14950 "..\..\..\UI\BaseWindow.xaml"
+        #line 14949 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid AudioCustomizedDataGrid;
         
@@ -3294,7 +3294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14955 "..\..\..\UI\BaseWindow.xaml"
+        #line 14954 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn AudioCustomizedIdColumn;
         
@@ -3302,7 +3302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14972 "..\..\..\UI\BaseWindow.xaml"
+        #line 14971 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn AudioCustomizedDescriptionColumn;
         
@@ -3310,7 +3310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 14995 "..\..\..\UI\BaseWindow.xaml"
+        #line 14994 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn AudioCustomizedActionsColumn;
         
@@ -3318,7 +3318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15164 "..\..\..\UI\BaseWindow.xaml"
+        #line 15163 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel AudioConfigs;
         
@@ -3326,7 +3326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15167 "..\..\..\UI\BaseWindow.xaml"
+        #line 15166 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid AudioConfigDataGrid;
         
@@ -3334,7 +3334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15172 "..\..\..\UI\BaseWindow.xaml"
+        #line 15171 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn idAudioConfigColumn;
         
@@ -3342,7 +3342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15190 "..\..\..\UI\BaseWindow.xaml"
+        #line 15189 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn audioConfigDescriptionColumn;
         
@@ -3350,7 +3350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15212 "..\..\..\UI\BaseWindow.xaml"
+        #line 15211 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn audioConfigZoneAudioExtendedTemplate;
         
@@ -3358,7 +3358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15348 "..\..\..\UI\BaseWindow.xaml"
+        #line 15347 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem StatusTab;
         
@@ -3366,7 +3366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15351 "..\..\..\UI\BaseWindow.xaml"
+        #line 15350 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid StatusHeader;
         
@@ -3374,7 +3374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15367 "..\..\..\UI\BaseWindow.xaml"
+        #line 15366 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Partitions_minus;
         
@@ -3382,7 +3382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15375 "..\..\..\UI\BaseWindow.xaml"
+        #line 15374 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Partitions_plus;
         
@@ -3390,7 +3390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15385 "..\..\..\UI\BaseWindow.xaml"
+        #line 15384 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Status_Partitions;
         
@@ -3398,7 +3398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15387 "..\..\..\UI\BaseWindow.xaml"
+        #line 15386 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition1;
         
@@ -3406,7 +3406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15392 "..\..\..\UI\BaseWindow.xaml"
+        #line 15391 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition2;
         
@@ -3414,7 +3414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15397 "..\..\..\UI\BaseWindow.xaml"
+        #line 15396 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition3;
         
@@ -3422,7 +3422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15402 "..\..\..\UI\BaseWindow.xaml"
+        #line 15401 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition4;
         
@@ -3430,7 +3430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15407 "..\..\..\UI\BaseWindow.xaml"
+        #line 15406 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition5;
         
@@ -3438,7 +3438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15412 "..\..\..\UI\BaseWindow.xaml"
+        #line 15411 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition6;
         
@@ -3446,7 +3446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15417 "..\..\..\UI\BaseWindow.xaml"
+        #line 15416 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition7;
         
@@ -3454,7 +3454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15422 "..\..\..\UI\BaseWindow.xaml"
+        #line 15421 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPartition8;
         
@@ -3462,7 +3462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15440 "..\..\..\UI\BaseWindow.xaml"
+        #line 15439 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Zones_minus;
         
@@ -3470,7 +3470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15448 "..\..\..\UI\BaseWindow.xaml"
+        #line 15447 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Zones_plus;
         
@@ -3478,7 +3478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15458 "..\..\..\UI\BaseWindow.xaml"
+        #line 15457 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Status_Zones;
         
@@ -3486,7 +3486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15461 "..\..\..\UI\BaseWindow.xaml"
+        #line 15460 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone1;
         
@@ -3494,7 +3494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15466 "..\..\..\UI\BaseWindow.xaml"
+        #line 15465 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone2;
         
@@ -3502,7 +3502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15471 "..\..\..\UI\BaseWindow.xaml"
+        #line 15470 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone3;
         
@@ -3510,7 +3510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15476 "..\..\..\UI\BaseWindow.xaml"
+        #line 15475 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone4;
         
@@ -3518,7 +3518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15481 "..\..\..\UI\BaseWindow.xaml"
+        #line 15480 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone5;
         
@@ -3526,7 +3526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15486 "..\..\..\UI\BaseWindow.xaml"
+        #line 15485 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone6;
         
@@ -3534,7 +3534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15491 "..\..\..\UI\BaseWindow.xaml"
+        #line 15490 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone7;
         
@@ -3542,7 +3542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15496 "..\..\..\UI\BaseWindow.xaml"
+        #line 15495 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone8;
         
@@ -3550,7 +3550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15501 "..\..\..\UI\BaseWindow.xaml"
+        #line 15500 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone9;
         
@@ -3558,7 +3558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15506 "..\..\..\UI\BaseWindow.xaml"
+        #line 15505 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone10;
         
@@ -3566,7 +3566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15513 "..\..\..\UI\BaseWindow.xaml"
+        #line 15512 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone11;
         
@@ -3574,7 +3574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15518 "..\..\..\UI\BaseWindow.xaml"
+        #line 15517 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone12;
         
@@ -3582,7 +3582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15523 "..\..\..\UI\BaseWindow.xaml"
+        #line 15522 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone13;
         
@@ -3590,7 +3590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15528 "..\..\..\UI\BaseWindow.xaml"
+        #line 15527 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone14;
         
@@ -3598,7 +3598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15533 "..\..\..\UI\BaseWindow.xaml"
+        #line 15532 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone15;
         
@@ -3606,7 +3606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15538 "..\..\..\UI\BaseWindow.xaml"
+        #line 15537 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone16;
         
@@ -3614,7 +3614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15543 "..\..\..\UI\BaseWindow.xaml"
+        #line 15542 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone17;
         
@@ -3622,7 +3622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15548 "..\..\..\UI\BaseWindow.xaml"
+        #line 15547 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone18;
         
@@ -3630,7 +3630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15553 "..\..\..\UI\BaseWindow.xaml"
+        #line 15552 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone19;
         
@@ -3638,7 +3638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15558 "..\..\..\UI\BaseWindow.xaml"
+        #line 15557 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone20;
         
@@ -3646,7 +3646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15565 "..\..\..\UI\BaseWindow.xaml"
+        #line 15564 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone21;
         
@@ -3654,7 +3654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15570 "..\..\..\UI\BaseWindow.xaml"
+        #line 15569 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone22;
         
@@ -3662,7 +3662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15575 "..\..\..\UI\BaseWindow.xaml"
+        #line 15574 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone23;
         
@@ -3670,7 +3670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15580 "..\..\..\UI\BaseWindow.xaml"
+        #line 15579 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone24;
         
@@ -3678,7 +3678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15585 "..\..\..\UI\BaseWindow.xaml"
+        #line 15584 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone25;
         
@@ -3686,7 +3686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15590 "..\..\..\UI\BaseWindow.xaml"
+        #line 15589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone26;
         
@@ -3694,7 +3694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15595 "..\..\..\UI\BaseWindow.xaml"
+        #line 15594 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone27;
         
@@ -3702,7 +3702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15600 "..\..\..\UI\BaseWindow.xaml"
+        #line 15599 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone28;
         
@@ -3710,7 +3710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15605 "..\..\..\UI\BaseWindow.xaml"
+        #line 15604 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone29;
         
@@ -3718,7 +3718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15610 "..\..\..\UI\BaseWindow.xaml"
+        #line 15609 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone30;
         
@@ -3726,7 +3726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15617 "..\..\..\UI\BaseWindow.xaml"
+        #line 15616 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone31;
         
@@ -3734,7 +3734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15622 "..\..\..\UI\BaseWindow.xaml"
+        #line 15621 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusZone32;
         
@@ -3742,7 +3742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15641 "..\..\..\UI\BaseWindow.xaml"
+        #line 15640 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Outputs_minus;
         
@@ -3750,7 +3750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15649 "..\..\..\UI\BaseWindow.xaml"
+        #line 15648 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Outputs_plus;
         
@@ -3758,7 +3758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15659 "..\..\..\UI\BaseWindow.xaml"
+        #line 15658 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid StatusOutputsGrid;
         
@@ -3766,7 +3766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15662 "..\..\..\UI\BaseWindow.xaml"
+        #line 15661 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput1;
         
@@ -3774,7 +3774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15667 "..\..\..\UI\BaseWindow.xaml"
+        #line 15666 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput2;
         
@@ -3782,7 +3782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15672 "..\..\..\UI\BaseWindow.xaml"
+        #line 15671 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput3;
         
@@ -3790,7 +3790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15677 "..\..\..\UI\BaseWindow.xaml"
+        #line 15676 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput4;
         
@@ -3798,7 +3798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15682 "..\..\..\UI\BaseWindow.xaml"
+        #line 15681 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput5;
         
@@ -3806,7 +3806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15687 "..\..\..\UI\BaseWindow.xaml"
+        #line 15686 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput6;
         
@@ -3814,7 +3814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15692 "..\..\..\UI\BaseWindow.xaml"
+        #line 15691 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput7;
         
@@ -3822,7 +3822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15697 "..\..\..\UI\BaseWindow.xaml"
+        #line 15696 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput8;
         
@@ -3830,7 +3830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15702 "..\..\..\UI\BaseWindow.xaml"
+        #line 15701 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput9;
         
@@ -3838,7 +3838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15707 "..\..\..\UI\BaseWindow.xaml"
+        #line 15706 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput10;
         
@@ -3846,7 +3846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15714 "..\..\..\UI\BaseWindow.xaml"
+        #line 15713 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput11;
         
@@ -3854,7 +3854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15719 "..\..\..\UI\BaseWindow.xaml"
+        #line 15718 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput12;
         
@@ -3862,7 +3862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15724 "..\..\..\UI\BaseWindow.xaml"
+        #line 15723 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusOutput13;
         
@@ -3870,7 +3870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15743 "..\..\..\UI\BaseWindow.xaml"
+        #line 15742 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Dialer_minus;
         
@@ -3878,7 +3878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15751 "..\..\..\UI\BaseWindow.xaml"
+        #line 15750 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Dialer_plus;
         
@@ -3886,7 +3886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15760 "..\..\..\UI\BaseWindow.xaml"
+        #line 15759 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid StatusDialerGrid;
         
@@ -3894,7 +3894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15762 "..\..\..\UI\BaseWindow.xaml"
+        #line 15761 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusPSTN;
         
@@ -3902,7 +3902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15766 "..\..\..\UI\BaseWindow.xaml"
+        #line 15765 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusCall;
         
@@ -3910,7 +3910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15783 "..\..\..\UI\BaseWindow.xaml"
+        #line 15782 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Timezones_minus;
         
@@ -3918,7 +3918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15791 "..\..\..\UI\BaseWindow.xaml"
+        #line 15790 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button Status_Timezones_plus;
         
@@ -3926,7 +3926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15800 "..\..\..\UI\BaseWindow.xaml"
+        #line 15799 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid StatusTimezonesGrid;
         
@@ -3934,7 +3934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15802 "..\..\..\UI\BaseWindow.xaml"
+        #line 15801 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone1;
         
@@ -3942,7 +3942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15806 "..\..\..\UI\BaseWindow.xaml"
+        #line 15805 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone2;
         
@@ -3950,7 +3950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15810 "..\..\..\UI\BaseWindow.xaml"
+        #line 15809 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone3;
         
@@ -3958,7 +3958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15814 "..\..\..\UI\BaseWindow.xaml"
+        #line 15813 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone4;
         
@@ -3966,7 +3966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15818 "..\..\..\UI\BaseWindow.xaml"
+        #line 15817 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone5;
         
@@ -3974,7 +3974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15822 "..\..\..\UI\BaseWindow.xaml"
+        #line 15821 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone6;
         
@@ -3982,7 +3982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15826 "..\..\..\UI\BaseWindow.xaml"
+        #line 15825 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone7;
         
@@ -3990,7 +3990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15830 "..\..\..\UI\BaseWindow.xaml"
+        #line 15829 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile StatusTimezone8;
         
@@ -3998,7 +3998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15841 "..\..\..\UI\BaseWindow.xaml"
+        #line 15840 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainGlobalConfigTab;
         
@@ -4006,7 +4006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15864 "..\..\..\UI\BaseWindow.xaml"
+        #line 15863 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile SystemDownloadTile;
         
@@ -4014,7 +4014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15872 "..\..\..\UI\BaseWindow.xaml"
+        #line 15871 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile SystemUploadTile;
         
@@ -4022,7 +4022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15879 "..\..\..\UI\BaseWindow.xaml"
+        #line 15878 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGrid globalSystemDataGrid;
         
@@ -4030,7 +4030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15881 "..\..\..\UI\BaseWindow.xaml"
+        #line 15880 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn cRA_client_numberColumn;
         
@@ -4038,7 +4038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15882 "..\..\..\UI\BaseWindow.xaml"
+        #line 15881 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn outputs_codeColumn;
         
@@ -4046,7 +4046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15885 "..\..\..\UI\BaseWindow.xaml"
+        #line 15884 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn outputs_permissions_extended_template;
         
@@ -4054,7 +4054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15975 "..\..\..\UI\BaseWindow.xaml"
+        #line 15974 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn outputs_permissions_compressed_template;
         
@@ -4062,7 +4062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15984 "..\..\..\UI\BaseWindow.xaml"
+        #line 15983 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn coation_digitColumn;
         
@@ -4070,7 +4070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15986 "..\..\..\UI\BaseWindow.xaml"
+        #line 15985 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn dial_report_delayColumn;
         
@@ -4078,7 +4078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15987 "..\..\..\UI\BaseWindow.xaml"
+        #line 15986 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTextColumn _230V_fail_report_delayColumn;
         
@@ -4086,7 +4086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15990 "..\..\..\UI\BaseWindow.xaml"
+        #line 15989 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn output_control_is_disabled_when_armedColumn;
         
@@ -4094,7 +4094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 15999 "..\..\..\UI\BaseWindow.xaml"
+        #line 15998 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn time_in_minutesColumn;
         
@@ -4102,7 +4102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16012 "..\..\..\UI\BaseWindow.xaml"
+        #line 16011 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn siren_tamper_extended_template;
         
@@ -4110,7 +4110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16085 "..\..\..\UI\BaseWindow.xaml"
+        #line 16084 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn siren_tamper_compressed_template;
         
@@ -4118,7 +4118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16114 "..\..\..\UI\BaseWindow.xaml"
+        #line 16113 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn panel_tamper_extended_template;
         
@@ -4126,7 +4126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16187 "..\..\..\UI\BaseWindow.xaml"
+        #line 16186 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn panel_tamper_compressed_template;
         
@@ -4134,7 +4134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16217 "..\..\..\UI\BaseWindow.xaml"
+        #line 16216 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn keyswitch_extended_template;
         
@@ -4142,7 +4142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16268 "..\..\..\UI\BaseWindow.xaml"
+        #line 16267 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn keyswitch_compressed_template;
         
@@ -4150,7 +4150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16286 "..\..\..\UI\BaseWindow.xaml"
+        #line 16285 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_area_away_extended_template;
         
@@ -4158,7 +4158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16354 "..\..\..\UI\BaseWindow.xaml"
+        #line 16353 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_area_away_compressed_template;
         
@@ -4166,7 +4166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16363 "..\..\..\UI\BaseWindow.xaml"
+        #line 16362 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_area_stay_extended_template;
         
@@ -4174,7 +4174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16431 "..\..\..\UI\BaseWindow.xaml"
+        #line 16430 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn Keyswitch_area_stay_compressed_template;
         
@@ -4182,7 +4182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16457 "..\..\..\UI\BaseWindow.xaml"
+        #line 16456 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn arm_conditions_extended_template;
         
@@ -4190,7 +4190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16507 "..\..\..\UI\BaseWindow.xaml"
+        #line 16506 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn arm_conditions_compressed_template;
         
@@ -4198,7 +4198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16521 "..\..\..\UI\BaseWindow.xaml"
+        #line 16520 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn installer_extended_template;
         
@@ -4206,7 +4206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16568 "..\..\..\UI\BaseWindow.xaml"
+        #line 16567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn installer_compressed_template;
         
@@ -4214,7 +4214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16577 "..\..\..\UI\BaseWindow.xaml"
+        #line 16576 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn maintenance_extended_template;
         
@@ -4222,7 +4222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16627 "..\..\..\UI\BaseWindow.xaml"
+        #line 16626 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn maintenance_compressed_template;
         
@@ -4230,7 +4230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16652 "..\..\..\UI\BaseWindow.xaml"
+        #line 16651 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn global_audio_extended_template;
         
@@ -4238,7 +4238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16718 "..\..\..\UI\BaseWindow.xaml"
+        #line 16717 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DataGridTemplateColumn global_audio_compressed_template;
         
@@ -4246,7 +4246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16740 "..\..\..\UI\BaseWindow.xaml"
+        #line 16739 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreaPVTTab;
         
@@ -4254,7 +4254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16747 "..\..\..\UI\BaseWindow.xaml"
+        #line 16746 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel AreasPVTHeader;
         
@@ -4262,7 +4262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16754 "..\..\..\UI\BaseWindow.xaml"
+        #line 16753 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainArea_button_back;
         
@@ -4270,7 +4270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16762 "..\..\..\UI\BaseWindow.xaml"
+        #line 16761 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainArea_button_next;
         
@@ -4278,7 +4278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16770 "..\..\..\UI\BaseWindow.xaml"
+        #line 16769 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainArea_button_undo;
         
@@ -4286,7 +4286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16778 "..\..\..\UI\BaseWindow.xaml"
+        #line 16777 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainArea_button_home;
         
@@ -4294,7 +4294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16789 "..\..\..\UI\BaseWindow.xaml"
+        #line 16788 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreaTab_Configuration;
         
@@ -4302,7 +4302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16825 "..\..\..\UI\BaseWindow.xaml"
+        #line 16824 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox DescriptiongroupBoxArea;
         
@@ -4310,7 +4310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16832 "..\..\..\UI\BaseWindow.xaml"
+        #line 16831 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_area_description;
         
@@ -4318,7 +4318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16834 "..\..\..\UI\BaseWindow.xaml"
+        #line 16833 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox descriptionTextBoxArea;
         
@@ -4326,7 +4326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16841 "..\..\..\UI\BaseWindow.xaml"
+        #line 16840 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Area_NotArm_Checkbox;
         
@@ -4334,7 +4334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16847 "..\..\..\UI\BaseWindow.xaml"
+        #line 16846 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox AreaSettingsGroupBox;
         
@@ -4342,7 +4342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16849 "..\..\..\UI\BaseWindow.xaml"
+        #line 16848 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreaSettingsGrid;
         
@@ -4350,7 +4350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16850 "..\..\..\UI\BaseWindow.xaml"
+        #line 16849 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Area_CRAClientNumber_TextBox;
         
@@ -4358,7 +4358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16853 "..\..\..\UI\BaseWindow.xaml"
+        #line 16852 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Area_VoiceCallCode_TextBox;
         
@@ -4366,7 +4366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16859 "..\..\..\UI\BaseWindow.xaml"
+        #line 16858 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox AreaCodeReq_GroupBox;
         
@@ -4374,7 +4374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16860 "..\..\..\UI\BaseWindow.xaml"
+        #line 16859 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreaCodeReq_Grid;
         
@@ -4382,7 +4382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16861 "..\..\..\UI\BaseWindow.xaml"
+        #line 16860 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Area_CodeAway_Checkbox;
         
@@ -4390,7 +4390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16863 "..\..\..\UI\BaseWindow.xaml"
+        #line 16862 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Area_CodeStay_Checkbox;
         
@@ -4398,7 +4398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16865 "..\..\..\UI\BaseWindow.xaml"
+        #line 16864 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Area_CodeDisarm_Checkbox;
         
@@ -4406,7 +4406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16872 "..\..\..\UI\BaseWindow.xaml"
+        #line 16871 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ExitTimesGroupBox;
         
@@ -4414,7 +4414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16873 "..\..\..\UI\BaseWindow.xaml"
+        #line 16872 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid3;
         
@@ -4422,7 +4422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16874 "..\..\..\UI\BaseWindow.xaml"
+        #line 16873 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox exit_time_awayTextBox;
         
@@ -4430,7 +4430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16877 "..\..\..\UI\BaseWindow.xaml"
+        #line 16876 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox exit_time_stayTextBox;
         
@@ -4438,7 +4438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16885 "..\..\..\UI\BaseWindow.xaml"
+        #line 16884 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreaTab_Timezones;
         
@@ -4446,7 +4446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16919 "..\..\..\UI\BaseWindow.xaml"
+        #line 16918 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreaTimezones_Grid;
         
@@ -4454,7 +4454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16921 "..\..\..\UI\BaseWindow.xaml"
+        #line 16920 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox Timezones_StartArm_GroupBox;
         
@@ -4462,7 +4462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16924 "..\..\..\UI\BaseWindow.xaml"
+        #line 16923 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreaTimezones_Arm_Grid;
         
@@ -4470,7 +4470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16926 "..\..\..\UI\BaseWindow.xaml"
+        #line 16925 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm1_CheckBox;
         
@@ -4478,7 +4478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16928 "..\..\..\UI\BaseWindow.xaml"
+        #line 16927 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm2_CheckBox;
         
@@ -4486,7 +4486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16930 "..\..\..\UI\BaseWindow.xaml"
+        #line 16929 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm3_CheckBox;
         
@@ -4494,7 +4494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16932 "..\..\..\UI\BaseWindow.xaml"
+        #line 16931 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm4_CheckBox;
         
@@ -4502,7 +4502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16934 "..\..\..\UI\BaseWindow.xaml"
+        #line 16933 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm5_CheckBox;
         
@@ -4510,7 +4510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16936 "..\..\..\UI\BaseWindow.xaml"
+        #line 16935 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm6_CheckBox;
         
@@ -4518,7 +4518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16938 "..\..\..\UI\BaseWindow.xaml"
+        #line 16937 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm7_CheckBox;
         
@@ -4526,7 +4526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16940 "..\..\..\UI\BaseWindow.xaml"
+        #line 16939 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Arm8_CheckBox;
         
@@ -4534,7 +4534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16945 "..\..\..\UI\BaseWindow.xaml"
+        #line 16944 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox Timezones_EndDisarm_GroupBox;
         
@@ -4542,7 +4542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16947 "..\..\..\UI\BaseWindow.xaml"
+        #line 16946 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid AreaTimezones_Disarm_Grid;
         
@@ -4550,7 +4550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16948 "..\..\..\UI\BaseWindow.xaml"
+        #line 16947 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm1_CheckBox;
         
@@ -4558,7 +4558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16950 "..\..\..\UI\BaseWindow.xaml"
+        #line 16949 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm2_CheckBox;
         
@@ -4566,7 +4566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16952 "..\..\..\UI\BaseWindow.xaml"
+        #line 16951 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm3_CheckBox;
         
@@ -4574,7 +4574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16954 "..\..\..\UI\BaseWindow.xaml"
+        #line 16953 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm4_CheckBox;
         
@@ -4582,7 +4582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16956 "..\..\..\UI\BaseWindow.xaml"
+        #line 16955 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm5_CheckBox;
         
@@ -4590,7 +4590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16958 "..\..\..\UI\BaseWindow.xaml"
+        #line 16957 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm6_CheckBox;
         
@@ -4598,7 +4598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16960 "..\..\..\UI\BaseWindow.xaml"
+        #line 16959 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm7_CheckBox;
         
@@ -4606,7 +4606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16962 "..\..\..\UI\BaseWindow.xaml"
+        #line 16961 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AreaTimezones_Disarm8_CheckBox;
         
@@ -4614,7 +4614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 16970 "..\..\..\UI\BaseWindow.xaml"
+        #line 16969 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreaTab_Outputs;
         
@@ -4622,7 +4622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17007 "..\..\..\UI\BaseWindow.xaml"
+        #line 17006 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_outputs;
         
@@ -4630,7 +4630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17010 "..\..\..\UI\BaseWindow.xaml"
+        #line 17009 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputConfigGroupBox;
         
@@ -4638,7 +4638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17022 "..\..\..\UI\BaseWindow.xaml"
+        #line 17021 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayOutput1_Grid;
         
@@ -4646,7 +4646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17025 "..\..\..\UI\BaseWindow.xaml"
+        #line 17024 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayOutput1_ComboBox;
         
@@ -4654,7 +4654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17030 "..\..\..\UI\BaseWindow.xaml"
+        #line 17029 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayOutput2_Grid;
         
@@ -4662,7 +4662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17032 "..\..\..\UI\BaseWindow.xaml"
+        #line 17031 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayOutput2_ComboBox;
         
@@ -4670,7 +4670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17036 "..\..\..\UI\BaseWindow.xaml"
+        #line 17035 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayOutput3_Grid;
         
@@ -4678,7 +4678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17038 "..\..\..\UI\BaseWindow.xaml"
+        #line 17037 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayOutput3_ComboBox;
         
@@ -4686,7 +4686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17043 "..\..\..\UI\BaseWindow.xaml"
+        #line 17042 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayOutput1_Grid;
         
@@ -4694,7 +4694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17046 "..\..\..\UI\BaseWindow.xaml"
+        #line 17045 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayOutput1_ComboBox;
         
@@ -4702,7 +4702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17050 "..\..\..\UI\BaseWindow.xaml"
+        #line 17049 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayOutput2_Grid;
         
@@ -4710,7 +4710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17052 "..\..\..\UI\BaseWindow.xaml"
+        #line 17051 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayOutput2_ComboBox;
         
@@ -4718,7 +4718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17056 "..\..\..\UI\BaseWindow.xaml"
+        #line 17055 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayOutput3_Grid;
         
@@ -4726,7 +4726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17058 "..\..\..\UI\BaseWindow.xaml"
+        #line 17057 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayOutput3_ComboBox;
         
@@ -4734,7 +4734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17063 "..\..\..\UI\BaseWindow.xaml"
+        #line 17062 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayOutput1_Grid;
         
@@ -4742,7 +4742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17066 "..\..\..\UI\BaseWindow.xaml"
+        #line 17065 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayOutput1_ComboBox;
         
@@ -4750,7 +4750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17070 "..\..\..\UI\BaseWindow.xaml"
+        #line 17069 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayOutput2_Grid;
         
@@ -4758,7 +4758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17072 "..\..\..\UI\BaseWindow.xaml"
+        #line 17071 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayOutput2_ComboBox;
         
@@ -4766,7 +4766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17076 "..\..\..\UI\BaseWindow.xaml"
+        #line 17075 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayOutput3_Grid;
         
@@ -4774,7 +4774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17078 "..\..\..\UI\BaseWindow.xaml"
+        #line 17077 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayOutput3_ComboBox;
         
@@ -4782,7 +4782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17083 "..\..\..\UI\BaseWindow.xaml"
+        #line 17082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayOutput1_Grid;
         
@@ -4790,7 +4790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17086 "..\..\..\UI\BaseWindow.xaml"
+        #line 17085 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayOutput1_ComboBox;
         
@@ -4798,7 +4798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17090 "..\..\..\UI\BaseWindow.xaml"
+        #line 17089 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayOutput2_Grid;
         
@@ -4806,7 +4806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17092 "..\..\..\UI\BaseWindow.xaml"
+        #line 17091 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayOutput2_ComboBox;
         
@@ -4814,7 +4814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17096 "..\..\..\UI\BaseWindow.xaml"
+        #line 17095 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayOutput3_Grid;
         
@@ -4822,7 +4822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17098 "..\..\..\UI\BaseWindow.xaml"
+        #line 17097 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayOutput3_ComboBox;
         
@@ -4830,7 +4830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17103 "..\..\..\UI\BaseWindow.xaml"
+        #line 17102 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayPulsedOutput1_Grid;
         
@@ -4838,7 +4838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17105 "..\..\..\UI\BaseWindow.xaml"
+        #line 17104 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayPulsedOutput1_ComboBox;
         
@@ -4846,7 +4846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17110 "..\..\..\UI\BaseWindow.xaml"
+        #line 17109 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayPulsedOutput2_Grid;
         
@@ -4854,7 +4854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17112 "..\..\..\UI\BaseWindow.xaml"
+        #line 17111 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayPulsedOutput2_ComboBox;
         
@@ -4862,7 +4862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17116 "..\..\..\UI\BaseWindow.xaml"
+        #line 17115 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayPulsedOutput3_Grid;
         
@@ -4870,7 +4870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17118 "..\..\..\UI\BaseWindow.xaml"
+        #line 17117 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayPulsedOutput3_ComboBox;
         
@@ -4878,7 +4878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17123 "..\..\..\UI\BaseWindow.xaml"
+        #line 17122 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayPulsedOutput1_Grid;
         
@@ -4886,7 +4886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17125 "..\..\..\UI\BaseWindow.xaml"
+        #line 17124 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayPulsedOutput1_ComboBox;
         
@@ -4894,7 +4894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17129 "..\..\..\UI\BaseWindow.xaml"
+        #line 17128 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayPulsedOutput2_Grid;
         
@@ -4902,7 +4902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17131 "..\..\..\UI\BaseWindow.xaml"
+        #line 17130 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayPulsedOutput2_ComboBox;
         
@@ -4910,7 +4910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17135 "..\..\..\UI\BaseWindow.xaml"
+        #line 17134 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayPulsedOutput3_Grid;
         
@@ -4918,7 +4918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17137 "..\..\..\UI\BaseWindow.xaml"
+        #line 17136 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayPulsedOutput3_ComboBox;
         
@@ -4926,7 +4926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17142 "..\..\..\UI\BaseWindow.xaml"
+        #line 17141 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayPulsedOutput1_Grid;
         
@@ -4934,7 +4934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17144 "..\..\..\UI\BaseWindow.xaml"
+        #line 17143 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayPulsedOutput1_ComboBox;
         
@@ -4942,7 +4942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17148 "..\..\..\UI\BaseWindow.xaml"
+        #line 17147 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayPulsedOutput2_Grid;
         
@@ -4950,7 +4950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17150 "..\..\..\UI\BaseWindow.xaml"
+        #line 17149 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayPulsedOutput2_ComboBox;
         
@@ -4958,7 +4958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17154 "..\..\..\UI\BaseWindow.xaml"
+        #line 17153 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayPulsedOutput3_Grid;
         
@@ -4966,7 +4966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17156 "..\..\..\UI\BaseWindow.xaml"
+        #line 17155 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayPulsedOutput3_ComboBox;
         
@@ -4974,7 +4974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17161 "..\..\..\UI\BaseWindow.xaml"
+        #line 17160 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayPulsedOutput1_Grid;
         
@@ -4982,7 +4982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17163 "..\..\..\UI\BaseWindow.xaml"
+        #line 17162 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayPulsedOutput1_ComboBox;
         
@@ -4990,7 +4990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17167 "..\..\..\UI\BaseWindow.xaml"
+        #line 17166 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayPulsedOutput2_Grid;
         
@@ -4998,7 +4998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17169 "..\..\..\UI\BaseWindow.xaml"
+        #line 17168 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayPulsedOutput2_ComboBox;
         
@@ -5006,7 +5006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17173 "..\..\..\UI\BaseWindow.xaml"
+        #line 17172 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayPulsedOutput3_Grid;
         
@@ -5014,7 +5014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17175 "..\..\..\UI\BaseWindow.xaml"
+        #line 17174 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayPulsedOutput3_ComboBox;
         
@@ -5022,7 +5022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17183 "..\..\..\UI\BaseWindow.xaml"
+        #line 17182 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayBeepOutput1_Grid;
         
@@ -5030,7 +5030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17185 "..\..\..\UI\BaseWindow.xaml"
+        #line 17184 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayBeepOutput1_ComboBox;
         
@@ -5038,7 +5038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17189 "..\..\..\UI\BaseWindow.xaml"
+        #line 17188 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayBeepOutput2_Grid;
         
@@ -5046,7 +5046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17191 "..\..\..\UI\BaseWindow.xaml"
+        #line 17190 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayBeepOutput2_ComboBox;
         
@@ -5054,7 +5054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17195 "..\..\..\UI\BaseWindow.xaml"
+        #line 17194 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmAwayBeepOutput3_Grid;
         
@@ -5062,7 +5062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17197 "..\..\..\UI\BaseWindow.xaml"
+        #line 17196 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmAwayBeepOutput3_ComboBox;
         
@@ -5070,7 +5070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17203 "..\..\..\UI\BaseWindow.xaml"
+        #line 17202 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayBeepOutput1_Grid;
         
@@ -5078,7 +5078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17205 "..\..\..\UI\BaseWindow.xaml"
+        #line 17204 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayBeepOutput1_ComboBox;
         
@@ -5086,7 +5086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17209 "..\..\..\UI\BaseWindow.xaml"
+        #line 17208 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayBeepOutput2_Grid;
         
@@ -5094,7 +5094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17211 "..\..\..\UI\BaseWindow.xaml"
+        #line 17210 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayBeepOutput2_ComboBox;
         
@@ -5102,7 +5102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17215 "..\..\..\UI\BaseWindow.xaml"
+        #line 17214 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ArmStayBeepOutput3_Grid;
         
@@ -5110,7 +5110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17217 "..\..\..\UI\BaseWindow.xaml"
+        #line 17216 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ArmStayBeepOutput3_ComboBox;
         
@@ -5118,7 +5118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17222 "..\..\..\UI\BaseWindow.xaml"
+        #line 17221 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayBeepOutput1_Grid;
         
@@ -5126,7 +5126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17224 "..\..\..\UI\BaseWindow.xaml"
+        #line 17223 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayBeepOutput1_ComboBox;
         
@@ -5134,7 +5134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17228 "..\..\..\UI\BaseWindow.xaml"
+        #line 17227 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayBeepOutput2_Grid;
         
@@ -5142,7 +5142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17230 "..\..\..\UI\BaseWindow.xaml"
+        #line 17229 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayBeepOutput2_ComboBox;
         
@@ -5150,7 +5150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17234 "..\..\..\UI\BaseWindow.xaml"
+        #line 17233 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmAwayBeepOutput3_Grid;
         
@@ -5158,7 +5158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17236 "..\..\..\UI\BaseWindow.xaml"
+        #line 17235 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmAwayBeepOutput3_ComboBox;
         
@@ -5166,7 +5166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17241 "..\..\..\UI\BaseWindow.xaml"
+        #line 17240 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayBeepOutput1_Grid;
         
@@ -5174,7 +5174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17243 "..\..\..\UI\BaseWindow.xaml"
+        #line 17242 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayBeepOutput1_ComboBox;
         
@@ -5182,7 +5182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17247 "..\..\..\UI\BaseWindow.xaml"
+        #line 17246 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayBeepOutput2_Grid;
         
@@ -5190,7 +5190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17249 "..\..\..\UI\BaseWindow.xaml"
+        #line 17248 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayBeepOutput2_ComboBox;
         
@@ -5198,7 +5198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17253 "..\..\..\UI\BaseWindow.xaml"
+        #line 17252 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid DisarmStayBeepOutput3_Grid;
         
@@ -5206,7 +5206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17255 "..\..\..\UI\BaseWindow.xaml"
+        #line 17254 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox DisarmStayBeepOutput3_ComboBox;
         
@@ -5214,7 +5214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17265 "..\..\..\UI\BaseWindow.xaml"
+        #line 17264 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainAreaTab_Audio;
         
@@ -5222,7 +5222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17300 "..\..\..\UI\BaseWindow.xaml"
+        #line 17299 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox AreaAudio_GroupBox;
         
@@ -5230,7 +5230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17304 "..\..\..\UI\BaseWindow.xaml"
+        #line 17303 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Area_Audio_1Grid;
         
@@ -5238,7 +5238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17306 "..\..\..\UI\BaseWindow.xaml"
+        #line 17305 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Area_Audio_1ComboBox;
         
@@ -5246,7 +5246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17311 "..\..\..\UI\BaseWindow.xaml"
+        #line 17310 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Area_Audio_2Grid;
         
@@ -5254,7 +5254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17313 "..\..\..\UI\BaseWindow.xaml"
+        #line 17312 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Area_Audio_2Column;
         
@@ -5262,7 +5262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17317 "..\..\..\UI\BaseWindow.xaml"
+        #line 17316 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Area_Audio_3Grid;
         
@@ -5270,7 +5270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17319 "..\..\..\UI\BaseWindow.xaml"
+        #line 17318 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Area_Audio_3Column;
         
@@ -5278,7 +5278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17323 "..\..\..\UI\BaseWindow.xaml"
+        #line 17322 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Area_Audio_4Grid;
         
@@ -5286,7 +5286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17325 "..\..\..\UI\BaseWindow.xaml"
+        #line 17324 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Area_Audio_4Column;
         
@@ -5294,7 +5294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17337 "..\..\..\UI\BaseWindow.xaml"
+        #line 17336 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZonePVTTab;
         
@@ -5302,7 +5302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17344 "..\..\..\UI\BaseWindow.xaml"
+        #line 17343 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel ZonesPVTHeader;
         
@@ -5310,7 +5310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17351 "..\..\..\UI\BaseWindow.xaml"
+        #line 17350 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainZone_button_back;
         
@@ -5318,7 +5318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17359 "..\..\..\UI\BaseWindow.xaml"
+        #line 17358 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainZone_button_next;
         
@@ -5326,7 +5326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17367 "..\..\..\UI\BaseWindow.xaml"
+        #line 17366 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainZone_button_undo;
         
@@ -5334,7 +5334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17375 "..\..\..\UI\BaseWindow.xaml"
+        #line 17374 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainZone_button_home;
         
@@ -5342,7 +5342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17386 "..\..\..\UI\BaseWindow.xaml"
+        #line 17385 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZoneTab_Config;
         
@@ -5350,7 +5350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17422 "..\..\..\UI\BaseWindow.xaml"
+        #line 17421 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneDescription_GroupBox;
         
@@ -5358,7 +5358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17423 "..\..\..\UI\BaseWindow.xaml"
+        #line 17422 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid2;
         
@@ -5366,7 +5366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17425 "..\..\..\UI\BaseWindow.xaml"
+        #line 17424 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox descriptionTextBox;
         
@@ -5374,7 +5374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17428 "..\..\..\UI\BaseWindow.xaml"
+        #line 17427 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox zone_activeCheckBox;
         
@@ -5382,7 +5382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17430 "..\..\..\UI\BaseWindow.xaml"
+        #line 17429 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OnSoak_CheckBox;
         
@@ -5390,7 +5390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17432 "..\..\..\UI\BaseWindow.xaml"
+        #line 17431 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox AlwaysReport_CheckBox;
         
@@ -5398,7 +5398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17434 "..\..\..\UI\BaseWindow.xaml"
+        #line 17433 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ArmIfNotReady_CheckBox;
         
@@ -5406,7 +5406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17439 "..\..\..\UI\BaseWindow.xaml"
+        #line 17438 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneType_GroupBox;
         
@@ -5414,7 +5414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17440 "..\..\..\UI\BaseWindow.xaml"
+        #line 17439 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ZoneType_Grid;
         
@@ -5422,7 +5422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17441 "..\..\..\UI\BaseWindow.xaml"
+        #line 17440 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneType_Silent_CheckBox;
         
@@ -5430,7 +5430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17443 "..\..\..\UI\BaseWindow.xaml"
+        #line 17442 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneType_Handover_CheckBox;
         
@@ -5438,7 +5438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17445 "..\..\..\UI\BaseWindow.xaml"
+        #line 17444 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneType_TwoTrigger_CheckBox;
         
@@ -5446,7 +5446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17447 "..\..\..\UI\BaseWindow.xaml"
+        #line 17446 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox ZoneType_TwoTriggerTime_TextBox;
         
@@ -5454,7 +5454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17450 "..\..\..\UI\BaseWindow.xaml"
+        #line 17449 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneType_SensorWatch_CheckBox;
         
@@ -5462,7 +5462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17452 "..\..\..\UI\BaseWindow.xaml"
+        #line 17451 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox sensor_watch_timeTextBox;
         
@@ -5470,7 +5470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17455 "..\..\..\UI\BaseWindow.xaml"
+        #line 17454 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneType_ExitTerminator_CheckBox;
         
@@ -5478,7 +5478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17457 "..\..\..\UI\BaseWindow.xaml"
+        #line 17456 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox ZoneType_ExitTerminatorCounter_TextBox;
         
@@ -5486,7 +5486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17462 "..\..\..\UI\BaseWindow.xaml"
+        #line 17461 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneEntryTime_GroupBox;
         
@@ -5494,7 +5494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17463 "..\..\..\UI\BaseWindow.xaml"
+        #line 17462 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid3_;
         
@@ -5502,7 +5502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17464 "..\..\..\UI\BaseWindow.xaml"
+        #line 17463 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox entry_time_awayTextBox;
         
@@ -5510,7 +5510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17467 "..\..\..\UI\BaseWindow.xaml"
+        #line 17466 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox entry_time_stayTextBox;
         
@@ -5518,7 +5518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17472 "..\..\..\UI\BaseWindow.xaml"
+        #line 17471 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox Zone24h_GroupBox;
         
@@ -5526,7 +5526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17473 "..\..\..\UI\BaseWindow.xaml"
+        #line 17472 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Zone24h_Grid;
         
@@ -5534,7 +5534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17474 "..\..\..\UI\BaseWindow.xaml"
+        #line 17473 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ck24hZoneActive;
         
@@ -5542,7 +5542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17476 "..\..\..\UI\BaseWindow.xaml"
+        #line 17475 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ck24hZoneAutoReset;
         
@@ -5550,7 +5550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17478 "..\..\..\UI\BaseWindow.xaml"
+        #line 17477 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ck24hZoneFirezone;
         
@@ -5558,7 +5558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17482 "..\..\..\UI\BaseWindow.xaml"
+        #line 17481 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneKeySwitch_GroupBox;
         
@@ -5566,7 +5566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17483 "..\..\..\UI\BaseWindow.xaml"
+        #line 17482 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ZoneKeySwitch_Grid;
         
@@ -5574,7 +5574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17484 "..\..\..\UI\BaseWindow.xaml"
+        #line 17483 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox keyswitch_zoneCheckBox;
         
@@ -5582,7 +5582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17488 "..\..\..\UI\BaseWindow.xaml"
+        #line 17487 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ZoneKeySwitchType_ComboBox;
         
@@ -5590,7 +5590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17494 "..\..\..\UI\BaseWindow.xaml"
+        #line 17493 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneBypass_GroupBox;
         
@@ -5598,7 +5598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17495 "..\..\..\UI\BaseWindow.xaml"
+        #line 17494 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ZoneBypass_Grid;
         
@@ -5606,7 +5606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17496 "..\..\..\UI\BaseWindow.xaml"
+        #line 17495 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneBypass_Always_CheckBox;
         
@@ -5614,7 +5614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17498 "..\..\..\UI\BaseWindow.xaml"
+        #line 17497 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneBypass_Manual_CheckBox;
         
@@ -5622,7 +5622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17500 "..\..\..\UI\BaseWindow.xaml"
+        #line 17499 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneBypass_Auto_CheckBox;
         
@@ -5630,7 +5630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17504 "..\..\..\UI\BaseWindow.xaml"
+        #line 17503 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneChime_GroupBox;
         
@@ -5638,7 +5638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17505 "..\..\..\UI\BaseWindow.xaml"
+        #line 17504 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid ZoneChime_Grid;
         
@@ -5646,7 +5646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17506 "..\..\..\UI\BaseWindow.xaml"
+        #line 17505 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneChime_Arm_CheckBox;
         
@@ -5654,7 +5654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17508 "..\..\..\UI\BaseWindow.xaml"
+        #line 17507 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ZoneChime_Disarm_CheckBox;
         
@@ -5662,7 +5662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17515 "..\..\..\UI\BaseWindow.xaml"
+        #line 17514 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZoneTab_AreasKeypads;
         
@@ -5670,7 +5670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17550 "..\..\..\UI\BaseWindow.xaml"
+        #line 17549 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox AreasandKeypadsgroupBox;
         
@@ -5678,7 +5678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17551 "..\..\..\UI\BaseWindow.xaml"
+        #line 17550 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid1;
         
@@ -5686,7 +5686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17566 "..\..\..\UI\BaseWindow.xaml"
+        #line 17565 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_1CheckBox;
         
@@ -5694,7 +5694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17568 "..\..\..\UI\BaseWindow.xaml"
+        #line 17567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_2CheckBox;
         
@@ -5702,7 +5702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17570 "..\..\..\UI\BaseWindow.xaml"
+        #line 17569 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_3CheckBox;
         
@@ -5710,7 +5710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17572 "..\..\..\UI\BaseWindow.xaml"
+        #line 17571 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_4CheckBox;
         
@@ -5718,7 +5718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17574 "..\..\..\UI\BaseWindow.xaml"
+        #line 17573 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_5CheckBox;
         
@@ -5726,7 +5726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17576 "..\..\..\UI\BaseWindow.xaml"
+        #line 17575 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_6CheckBox;
         
@@ -5734,7 +5734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17578 "..\..\..\UI\BaseWindow.xaml"
+        #line 17577 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_7CheckBox;
         
@@ -5742,7 +5742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17580 "..\..\..\UI\BaseWindow.xaml"
+        #line 17579 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_away_8CheckBox;
         
@@ -5750,7 +5750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17586 "..\..\..\UI\BaseWindow.xaml"
+        #line 17585 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_1CheckBox;
         
@@ -5758,7 +5758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17588 "..\..\..\UI\BaseWindow.xaml"
+        #line 17587 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_2CheckBox;
         
@@ -5766,7 +5766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17590 "..\..\..\UI\BaseWindow.xaml"
+        #line 17589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_3CheckBox;
         
@@ -5774,7 +5774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17592 "..\..\..\UI\BaseWindow.xaml"
+        #line 17591 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_4CheckBox;
         
@@ -5782,7 +5782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17594 "..\..\..\UI\BaseWindow.xaml"
+        #line 17593 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_5CheckBox;
         
@@ -5790,7 +5790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17596 "..\..\..\UI\BaseWindow.xaml"
+        #line 17595 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_6CheckBox;
         
@@ -5798,7 +5798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17598 "..\..\..\UI\BaseWindow.xaml"
+        #line 17597 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_7CheckBox;
         
@@ -5806,7 +5806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17600 "..\..\..\UI\BaseWindow.xaml"
+        #line 17599 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox area_stay_8CheckBox;
         
@@ -5814,7 +5814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17606 "..\..\..\UI\BaseWindow.xaml"
+        #line 17605 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox showByPassGroupBox;
         
@@ -5822,7 +5822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17607 "..\..\..\UI\BaseWindow.xaml"
+        #line 17606 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_;
         
@@ -5830,7 +5830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17610 "..\..\..\UI\BaseWindow.xaml"
+        #line 17609 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckZoneKeypadVisible;
         
@@ -5838,7 +5838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17614 "..\..\..\UI\BaseWindow.xaml"
+        #line 17613 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass1;
         
@@ -5846,7 +5846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17617 "..\..\..\UI\BaseWindow.xaml"
+        #line 17616 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass2;
         
@@ -5854,7 +5854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17620 "..\..\..\UI\BaseWindow.xaml"
+        #line 17619 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass3;
         
@@ -5862,7 +5862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17623 "..\..\..\UI\BaseWindow.xaml"
+        #line 17622 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass4;
         
@@ -5870,7 +5870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17626 "..\..\..\UI\BaseWindow.xaml"
+        #line 17625 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass5;
         
@@ -5878,7 +5878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17629 "..\..\..\UI\BaseWindow.xaml"
+        #line 17628 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass6;
         
@@ -5886,7 +5886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17632 "..\..\..\UI\BaseWindow.xaml"
+        #line 17631 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass7;
         
@@ -5894,7 +5894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17635 "..\..\..\UI\BaseWindow.xaml"
+        #line 17634 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox ckBypass8;
         
@@ -5902,7 +5902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17645 "..\..\..\UI\BaseWindow.xaml"
+        #line 17644 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZoneTab_CircuitType;
         
@@ -5910,7 +5910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17681 "..\..\..\UI\BaseWindow.xaml"
+        #line 17680 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox gpTerminalConfiguration;
         
@@ -5918,7 +5918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17684 "..\..\..\UI\BaseWindow.xaml"
+        #line 17683 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox terminal_circuit_typeColumn1;
         
@@ -5926,7 +5926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17689 "..\..\..\UI\BaseWindow.xaml"
+        #line 17688 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid R1_Grid;
         
@@ -5934,7 +5934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17691 "..\..\..\UI\BaseWindow.xaml"
+        #line 17690 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r1value_grid;
         
@@ -5942,7 +5942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17693 "..\..\..\UI\BaseWindow.xaml"
+        #line 17692 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r1value_combobox;
         
@@ -5950,7 +5950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17697 "..\..\..\UI\BaseWindow.xaml"
+        #line 17696 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r1function_grid;
         
@@ -5958,7 +5958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17699 "..\..\..\UI\BaseWindow.xaml"
+        #line 17698 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r1function_combobox;
         
@@ -5966,7 +5966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17703 "..\..\..\UI\BaseWindow.xaml"
+        #line 17702 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r1contact_grid;
         
@@ -5974,7 +5974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17705 "..\..\..\UI\BaseWindow.xaml"
+        #line 17704 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r1contact_combobox;
         
@@ -5982,7 +5982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17710 "..\..\..\UI\BaseWindow.xaml"
+        #line 17709 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid R2_Grid;
         
@@ -5990,7 +5990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17712 "..\..\..\UI\BaseWindow.xaml"
+        #line 17711 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r2value_grid;
         
@@ -5998,7 +5998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17714 "..\..\..\UI\BaseWindow.xaml"
+        #line 17713 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r2value_combobox;
         
@@ -6006,7 +6006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17718 "..\..\..\UI\BaseWindow.xaml"
+        #line 17717 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r2function_grid;
         
@@ -6014,7 +6014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17720 "..\..\..\UI\BaseWindow.xaml"
+        #line 17719 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r2function_combobox;
         
@@ -6022,7 +6022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17724 "..\..\..\UI\BaseWindow.xaml"
+        #line 17723 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r2contact_grid;
         
@@ -6030,7 +6030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17726 "..\..\..\UI\BaseWindow.xaml"
+        #line 17725 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r2contact_combobox;
         
@@ -6038,7 +6038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17731 "..\..\..\UI\BaseWindow.xaml"
+        #line 17730 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid R3_Grid;
         
@@ -6046,7 +6046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17733 "..\..\..\UI\BaseWindow.xaml"
+        #line 17732 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r3value_grid;
         
@@ -6054,7 +6054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17735 "..\..\..\UI\BaseWindow.xaml"
+        #line 17734 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r3value_combobox;
         
@@ -6062,7 +6062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17739 "..\..\..\UI\BaseWindow.xaml"
+        #line 17738 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r3function_grid;
         
@@ -6070,7 +6070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17741 "..\..\..\UI\BaseWindow.xaml"
+        #line 17740 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r3function_combobox;
         
@@ -6078,7 +6078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17745 "..\..\..\UI\BaseWindow.xaml"
+        #line 17744 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid r3contact_grid;
         
@@ -6086,7 +6086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17747 "..\..\..\UI\BaseWindow.xaml"
+        #line 17746 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox r3contact_combobox;
         
@@ -6094,7 +6094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17756 "..\..\..\UI\BaseWindow.xaml"
+        #line 17755 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox gpTerminalDiagram;
         
@@ -6102,7 +6102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17758 "..\..\..\UI\BaseWindow.xaml"
+        #line 17757 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_circuit;
         
@@ -6110,7 +6110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17759 "..\..\..\UI\BaseWindow.xaml"
+        #line 17758 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Circuit_R1;
         
@@ -6118,7 +6118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17760 "..\..\..\UI\BaseWindow.xaml"
+        #line 17759 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Circuit_R1R2;
         
@@ -6126,7 +6126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17761 "..\..\..\UI\BaseWindow.xaml"
+        #line 17760 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Circuit_R1R3;
         
@@ -6134,7 +6134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17762 "..\..\..\UI\BaseWindow.xaml"
+        #line 17761 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image Circuit_R1R2R3;
         
@@ -6142,7 +6142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17765 "..\..\..\UI\BaseWindow.xaml"
+        #line 17764 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_R1;
         
@@ -6150,7 +6150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17766 "..\..\..\UI\BaseWindow.xaml"
+        #line 17765 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_1k;
         
@@ -6158,7 +6158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17767 "..\..\..\UI\BaseWindow.xaml"
+        #line 17766 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_2k2;
         
@@ -6166,7 +6166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17768 "..\..\..\UI\BaseWindow.xaml"
+        #line 17767 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_3k3;
         
@@ -6174,7 +6174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17769 "..\..\..\UI\BaseWindow.xaml"
+        #line 17768 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_3k9;
         
@@ -6182,7 +6182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17770 "..\..\..\UI\BaseWindow.xaml"
+        #line 17769 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_4k7;
         
@@ -6190,7 +6190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17771 "..\..\..\UI\BaseWindow.xaml"
+        #line 17770 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_5k6;
         
@@ -6198,7 +6198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17772 "..\..\..\UI\BaseWindow.xaml"
+        #line 17771 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_6k8;
         
@@ -6206,7 +6206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17773 "..\..\..\UI\BaseWindow.xaml"
+        #line 17772 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_8k2;
         
@@ -6214,7 +6214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17774 "..\..\..\UI\BaseWindow.xaml"
+        #line 17773 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_10k;
         
@@ -6222,7 +6222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17776 "..\..\..\UI\BaseWindow.xaml"
+        #line 17775 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_R2;
         
@@ -6230,7 +6230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17777 "..\..\..\UI\BaseWindow.xaml"
+        #line 17776 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_1k;
         
@@ -6238,7 +6238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17778 "..\..\..\UI\BaseWindow.xaml"
+        #line 17777 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_2k2;
         
@@ -6246,7 +6246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17779 "..\..\..\UI\BaseWindow.xaml"
+        #line 17778 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_3k3;
         
@@ -6254,7 +6254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17780 "..\..\..\UI\BaseWindow.xaml"
+        #line 17779 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_3k9;
         
@@ -6262,7 +6262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17781 "..\..\..\UI\BaseWindow.xaml"
+        #line 17780 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_4k7;
         
@@ -6270,7 +6270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17782 "..\..\..\UI\BaseWindow.xaml"
+        #line 17781 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_5k6;
         
@@ -6278,7 +6278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17783 "..\..\..\UI\BaseWindow.xaml"
+        #line 17782 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_6k8;
         
@@ -6286,7 +6286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17784 "..\..\..\UI\BaseWindow.xaml"
+        #line 17783 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_8k2;
         
@@ -6294,7 +6294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17785 "..\..\..\UI\BaseWindow.xaml"
+        #line 17784 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_10k;
         
@@ -6302,7 +6302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17787 "..\..\..\UI\BaseWindow.xaml"
+        #line 17786 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_R3;
         
@@ -6310,7 +6310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17788 "..\..\..\UI\BaseWindow.xaml"
+        #line 17787 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_1k;
         
@@ -6318,7 +6318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17793 "..\..\..\UI\BaseWindow.xaml"
+        #line 17792 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_2k2;
         
@@ -6326,7 +6326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17798 "..\..\..\UI\BaseWindow.xaml"
+        #line 17797 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_3k3;
         
@@ -6334,7 +6334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17803 "..\..\..\UI\BaseWindow.xaml"
+        #line 17802 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_3k9;
         
@@ -6342,7 +6342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17808 "..\..\..\UI\BaseWindow.xaml"
+        #line 17807 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_4k7;
         
@@ -6350,7 +6350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17813 "..\..\..\UI\BaseWindow.xaml"
+        #line 17812 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_5k6;
         
@@ -6358,7 +6358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17818 "..\..\..\UI\BaseWindow.xaml"
+        #line 17817 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_6k8;
         
@@ -6366,7 +6366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17823 "..\..\..\UI\BaseWindow.xaml"
+        #line 17822 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_8k2;
         
@@ -6374,7 +6374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17828 "..\..\..\UI\BaseWindow.xaml"
+        #line 17827 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_10k;
         
@@ -6382,7 +6382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17835 "..\..\..\UI\BaseWindow.xaml"
+        #line 17834 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_NO;
         
@@ -6390,7 +6390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17836 "..\..\..\UI\BaseWindow.xaml"
+        #line 17835 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_NO;
         
@@ -6398,7 +6398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17837 "..\..\..\UI\BaseWindow.xaml"
+        #line 17836 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_NO;
         
@@ -6406,7 +6406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17838 "..\..\..\UI\BaseWindow.xaml"
+        #line 17837 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_NO;
         
@@ -6414,7 +6414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17844 "..\..\..\UI\BaseWindow.xaml"
+        #line 17843 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Terminals_NC;
         
@@ -6422,7 +6422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17845 "..\..\..\UI\BaseWindow.xaml"
+        #line 17844 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R1_NC;
         
@@ -6430,7 +6430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17846 "..\..\..\UI\BaseWindow.xaml"
+        #line 17845 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R2_NC;
         
@@ -6438,7 +6438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17847 "..\..\..\UI\BaseWindow.xaml"
+        #line 17846 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image R3_NC;
         
@@ -6446,7 +6446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17858 "..\..\..\UI\BaseWindow.xaml"
+        #line 17857 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZoneTab_OutputConfig;
         
@@ -6454,7 +6454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17896 "..\..\..\UI\BaseWindow.xaml"
+        #line 17895 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox gpOutputConfiguration;
         
@@ -6462,7 +6462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17903 "..\..\..\UI\BaseWindow.xaml"
+        #line 17902 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_Chime;
         
@@ -6470,7 +6470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17905 "..\..\..\UI\BaseWindow.xaml"
+        #line 17904 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_chime_alarm_output_1Column1;
         
@@ -6478,7 +6478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17907 "..\..\..\UI\BaseWindow.xaml"
+        #line 17906 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox chime_alarm_output_1Column1;
         
@@ -6486,7 +6486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17911 "..\..\..\UI\BaseWindow.xaml"
+        #line 17910 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_chime_alarm_output_2Column1;
         
@@ -6494,7 +6494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17913 "..\..\..\UI\BaseWindow.xaml"
+        #line 17912 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox chime_alarm_output_2Column1;
         
@@ -6502,7 +6502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17917 "..\..\..\UI\BaseWindow.xaml"
+        #line 17916 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_chime_alarm_output_3Column1;
         
@@ -6510,7 +6510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17919 "..\..\..\UI\BaseWindow.xaml"
+        #line 17918 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox chime_alarm_output_3Column1;
         
@@ -6518,7 +6518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17924 "..\..\..\UI\BaseWindow.xaml"
+        #line 17923 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_SensorWatch;
         
@@ -6526,7 +6526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17926 "..\..\..\UI\BaseWindow.xaml"
+        #line 17925 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_sensor_watch_alarm_output_1ComboBox;
         
@@ -6534,7 +6534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17928 "..\..\..\UI\BaseWindow.xaml"
+        #line 17927 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox sensor_watch_alarm_output_1ComboBox;
         
@@ -6542,7 +6542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17932 "..\..\..\UI\BaseWindow.xaml"
+        #line 17931 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_sensor_watch_alarm_output_2ComboBox;
         
@@ -6550,7 +6550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17934 "..\..\..\UI\BaseWindow.xaml"
+        #line 17933 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox sensor_watch_alarm_output_2ComboBox;
         
@@ -6558,7 +6558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17938 "..\..\..\UI\BaseWindow.xaml"
+        #line 17937 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_sensor_watch_alarm_output_3ComboBox;
         
@@ -6566,7 +6566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17940 "..\..\..\UI\BaseWindow.xaml"
+        #line 17939 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox sensor_watch_alarm_output_3ComboBox;
         
@@ -6574,7 +6574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17945 "..\..\..\UI\BaseWindow.xaml"
+        #line 17944 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_EntryTime;
         
@@ -6582,7 +6582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17947 "..\..\..\UI\BaseWindow.xaml"
+        #line 17946 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_entry_time_alarm_output_1ComboBox;
         
@@ -6590,7 +6590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17949 "..\..\..\UI\BaseWindow.xaml"
+        #line 17948 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox entry_time_alarm_output_1ComboBox;
         
@@ -6598,7 +6598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17953 "..\..\..\UI\BaseWindow.xaml"
+        #line 17952 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_entry_time_alarm_output_2ComboBox;
         
@@ -6606,7 +6606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17955 "..\..\..\UI\BaseWindow.xaml"
+        #line 17954 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox entry_time_alarm_output_2ComboBox;
         
@@ -6614,7 +6614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17959 "..\..\..\UI\BaseWindow.xaml"
+        #line 17958 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_entry_time_alarm_output_3ComboBox;
         
@@ -6622,7 +6622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17961 "..\..\..\UI\BaseWindow.xaml"
+        #line 17960 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox entry_time_alarm_output_3ComboBox;
         
@@ -6630,7 +6630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17966 "..\..\..\UI\BaseWindow.xaml"
+        #line 17965 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_AntiMask;
         
@@ -6638,7 +6638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17968 "..\..\..\UI\BaseWindow.xaml"
+        #line 17967 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_anti_mask_alarm_output_1ComboBox;
         
@@ -6646,7 +6646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17970 "..\..\..\UI\BaseWindow.xaml"
+        #line 17969 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox anti_mask_alarm_output_1ComboBox;
         
@@ -6654,7 +6654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17974 "..\..\..\UI\BaseWindow.xaml"
+        #line 17973 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_anti_mask_alarm_output_2ComboBox;
         
@@ -6662,7 +6662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17976 "..\..\..\UI\BaseWindow.xaml"
+        #line 17975 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox anti_mask_alarm_output_2ComboBox;
         
@@ -6670,7 +6670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17980 "..\..\..\UI\BaseWindow.xaml"
+        #line 17979 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_anti_mask_alarm_output_3ComboBox;
         
@@ -6678,7 +6678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17982 "..\..\..\UI\BaseWindow.xaml"
+        #line 17981 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox anti_mask_alarm_output_3ComboBox;
         
@@ -6686,7 +6686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17987 "..\..\..\UI\BaseWindow.xaml"
+        #line 17986 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_24h;
         
@@ -6694,7 +6694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17989 "..\..\..\UI\BaseWindow.xaml"
+        #line 17988 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_24_hour_alarm_output_1ComboBox;
         
@@ -6702,7 +6702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17991 "..\..\..\UI\BaseWindow.xaml"
+        #line 17990 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox _24_hour_alarm_output_1ComboBox;
         
@@ -6710,7 +6710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17995 "..\..\..\UI\BaseWindow.xaml"
+        #line 17994 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid__24_hour_alarm_output_2ComboBox;
         
@@ -6718,7 +6718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 17997 "..\..\..\UI\BaseWindow.xaml"
+        #line 17996 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox _24_hour_alarm_output_2ComboBox;
         
@@ -6726,7 +6726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18001 "..\..\..\UI\BaseWindow.xaml"
+        #line 18000 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_24_hour_alarm_output_3ComboBox;
         
@@ -6734,7 +6734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18003 "..\..\..\UI\BaseWindow.xaml"
+        #line 18002 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox _24_hour_alarm_output_3ComboBox;
         
@@ -6742,7 +6742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18008 "..\..\..\UI\BaseWindow.xaml"
+        #line 18007 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_Fire;
         
@@ -6750,7 +6750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18010 "..\..\..\UI\BaseWindow.xaml"
+        #line 18009 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_fire_alarm_output_1ComboBox;
         
@@ -6758,7 +6758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18012 "..\..\..\UI\BaseWindow.xaml"
+        #line 18011 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox fire_alarm_output_1ComboBox;
         
@@ -6766,7 +6766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18016 "..\..\..\UI\BaseWindow.xaml"
+        #line 18015 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_fire_alarm_output_2ComboBox;
         
@@ -6774,7 +6774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18018 "..\..\..\UI\BaseWindow.xaml"
+        #line 18017 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox fire_alarm_output_2ComboBox;
         
@@ -6782,7 +6782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18022 "..\..\..\UI\BaseWindow.xaml"
+        #line 18021 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_fire_alarm_output_3ComboBox;
         
@@ -6790,7 +6790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18024 "..\..\..\UI\BaseWindow.xaml"
+        #line 18023 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox fire_alarm_output_3ComboBox;
         
@@ -6798,7 +6798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18029 "..\..\..\UI\BaseWindow.xaml"
+        #line 18028 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_Zone;
         
@@ -6806,7 +6806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18031 "..\..\..\UI\BaseWindow.xaml"
+        #line 18030 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_zone_alarm_output_1ComboBox;
         
@@ -6814,7 +6814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18033 "..\..\..\UI\BaseWindow.xaml"
+        #line 18032 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox zone_alarm_output_1ComboBox;
         
@@ -6822,7 +6822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18037 "..\..\..\UI\BaseWindow.xaml"
+        #line 18036 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_zone_alarm_output_2ComboBox;
         
@@ -6830,7 +6830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18039 "..\..\..\UI\BaseWindow.xaml"
+        #line 18038 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox zone_alarm_output_2ComboBox;
         
@@ -6838,7 +6838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18043 "..\..\..\UI\BaseWindow.xaml"
+        #line 18042 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_zone_alarm_output_3ComboBox;
         
@@ -6846,7 +6846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18045 "..\..\..\UI\BaseWindow.xaml"
+        #line 18044 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox zone_alarm_output_3ComboBox;
         
@@ -6854,7 +6854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18050 "..\..\..\UI\BaseWindow.xaml"
+        #line 18049 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputAlarm_Tamper;
         
@@ -6862,7 +6862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18052 "..\..\..\UI\BaseWindow.xaml"
+        #line 18051 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_tamper_alarm_output_1ComboBox;
         
@@ -6870,7 +6870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18054 "..\..\..\UI\BaseWindow.xaml"
+        #line 18053 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox tamper_alarm_output_1ComboBox;
         
@@ -6878,7 +6878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18058 "..\..\..\UI\BaseWindow.xaml"
+        #line 18057 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_tamper_alarm_output_2ComboBox;
         
@@ -6886,7 +6886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18060 "..\..\..\UI\BaseWindow.xaml"
+        #line 18059 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox tamper_alarm_output_2ComboBox;
         
@@ -6894,7 +6894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18064 "..\..\..\UI\BaseWindow.xaml"
+        #line 18063 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_tamper_alarm_output_3ComboBox;
         
@@ -6902,7 +6902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18066 "..\..\..\UI\BaseWindow.xaml"
+        #line 18065 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox tamper_alarm_output_3ComboBox;
         
@@ -6910,7 +6910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18076 "..\..\..\UI\BaseWindow.xaml"
+        #line 18075 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainZoneTab_Audio;
         
@@ -6918,7 +6918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18111 "..\..\..\UI\BaseWindow.xaml"
+        #line 18110 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox ZoneAudio_GroupBox;
         
@@ -6926,7 +6926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18118 "..\..\..\UI\BaseWindow.xaml"
+        #line 18117 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Zone_Audio_1Grid;
         
@@ -6934,7 +6934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18120 "..\..\..\UI\BaseWindow.xaml"
+        #line 18119 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Zone_Audio_1ComboBox;
         
@@ -6942,7 +6942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18124 "..\..\..\UI\BaseWindow.xaml"
+        #line 18123 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Zone_Audio_2Grid;
         
@@ -6950,7 +6950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18126 "..\..\..\UI\BaseWindow.xaml"
+        #line 18125 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Zone_Audio_2Column;
         
@@ -6958,7 +6958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18130 "..\..\..\UI\BaseWindow.xaml"
+        #line 18129 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Zone_Audio_3Grid;
         
@@ -6966,7 +6966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18132 "..\..\..\UI\BaseWindow.xaml"
+        #line 18131 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Zone_Audio_3Column;
         
@@ -6974,7 +6974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18136 "..\..\..\UI\BaseWindow.xaml"
+        #line 18135 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Zone_Audio_4Grid;
         
@@ -6982,7 +6982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18138 "..\..\..\UI\BaseWindow.xaml"
+        #line 18137 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Zone_Audio_4Column;
         
@@ -6990,7 +6990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18150 "..\..\..\UI\BaseWindow.xaml"
+        #line 18149 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersPVTTab;
         
@@ -6998,7 +6998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18157 "..\..\..\UI\BaseWindow.xaml"
+        #line 18156 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel UserPVTHeader;
         
@@ -7006,7 +7006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18164 "..\..\..\UI\BaseWindow.xaml"
+        #line 18163 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainUser_button_back;
         
@@ -7014,7 +7014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18172 "..\..\..\UI\BaseWindow.xaml"
+        #line 18171 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainUser_button_next;
         
@@ -7022,7 +7022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18180 "..\..\..\UI\BaseWindow.xaml"
+        #line 18179 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainUser_button_undo;
         
@@ -7030,7 +7030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18188 "..\..\..\UI\BaseWindow.xaml"
+        #line 18187 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainUser_button_home;
         
@@ -7038,7 +7038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18199 "..\..\..\UI\BaseWindow.xaml"
+        #line 18198 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersTab_Config;
         
@@ -7046,7 +7046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18233 "..\..\..\UI\BaseWindow.xaml"
+        #line 18232 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_user_main_pvt;
         
@@ -7054,7 +7054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18235 "..\..\..\UI\BaseWindow.xaml"
+        #line 18234 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox UsersDescription_GroupBox;
         
@@ -7062,7 +7062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18236 "..\..\..\UI\BaseWindow.xaml"
+        #line 18235 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Description_Grid;
         
@@ -7070,7 +7070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18238 "..\..\..\UI\BaseWindow.xaml"
+        #line 18237 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox User_Description_TextBox;
         
@@ -7078,7 +7078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18243 "..\..\..\UI\BaseWindow.xaml"
+        #line 18242 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox User_Type_ComboBox;
         
@@ -7086,7 +7086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18247 "..\..\..\UI\BaseWindow.xaml"
+        #line 18246 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Active_CheckBox;
         
@@ -7094,7 +7094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18251 "..\..\..\UI\BaseWindow.xaml"
+        #line 18250 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Primitives.ToggleButton User_UserCode_Button;
         
@@ -7102,7 +7102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18255 "..\..\..\UI\BaseWindow.xaml"
+        #line 18254 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Media.Animation.BeginStoryboard MakeItVisible;
         
@@ -7110,7 +7110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18266 "..\..\..\UI\BaseWindow.xaml"
+        #line 18265 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Media.Animation.BeginStoryboard MakeItInvisible;
         
@@ -7118,7 +7118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18280 "..\..\..\UI\BaseWindow.xaml"
+        #line 18279 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox User_UserCode_TextBox;
         
@@ -7126,7 +7126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18285 "..\..\..\UI\BaseWindow.xaml"
+        #line 18284 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_CanChangeClock_CheckBox;
         
@@ -7134,7 +7134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18287 "..\..\..\UI\BaseWindow.xaml"
+        #line 18286 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ValidateCalendar_CheckBox;
         
@@ -7142,7 +7142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18292 "..\..\..\UI\BaseWindow.xaml"
+        #line 18291 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_Dates_GroupBox;
         
@@ -7150,7 +7150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18293 "..\..\..\UI\BaseWindow.xaml"
+        #line 18292 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Dates_Grid;
         
@@ -7158,7 +7158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18295 "..\..\..\UI\BaseWindow.xaml"
+        #line 18294 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker User_Dates_Initial_DatePicker;
         
@@ -7166,7 +7166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18299 "..\..\..\UI\BaseWindow.xaml"
+        #line 18298 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker User_Dates_Final_DatePicker;
         
@@ -7174,7 +7174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18307 "..\..\..\UI\BaseWindow.xaml"
+        #line 18306 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersTab_Timezones;
         
@@ -7182,7 +7182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18341 "..\..\..\UI\BaseWindow.xaml"
+        #line 18340 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid grid_user_main_pvt_timezones;
         
@@ -7190,7 +7190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18343 "..\..\..\UI\BaseWindow.xaml"
+        #line 18342 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_TimezonePermissions_GroupBox;
         
@@ -7198,7 +7198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18344 "..\..\..\UI\BaseWindow.xaml"
+        #line 18343 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_TimezonePermissions_Grid;
         
@@ -7206,7 +7206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18345 "..\..\..\UI\BaseWindow.xaml"
+        #line 18344 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissionsActive;
         
@@ -7214,7 +7214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18347 "..\..\..\UI\BaseWindow.xaml"
+        #line 18346 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions1_CheckBox;
         
@@ -7222,7 +7222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18349 "..\..\..\UI\BaseWindow.xaml"
+        #line 18348 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions2_CheckBox;
         
@@ -7230,7 +7230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18351 "..\..\..\UI\BaseWindow.xaml"
+        #line 18350 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions3_CheckBox;
         
@@ -7238,7 +7238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18353 "..\..\..\UI\BaseWindow.xaml"
+        #line 18352 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions4_CheckBox;
         
@@ -7246,7 +7246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18355 "..\..\..\UI\BaseWindow.xaml"
+        #line 18354 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions5_CheckBox;
         
@@ -7254,7 +7254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18357 "..\..\..\UI\BaseWindow.xaml"
+        #line 18356 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions6_CheckBox;
         
@@ -7262,7 +7262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18359 "..\..\..\UI\BaseWindow.xaml"
+        #line 18358 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions7_CheckBox;
         
@@ -7270,7 +7270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18361 "..\..\..\UI\BaseWindow.xaml"
+        #line 18360 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_TimezonePermissions8_CheckBox;
         
@@ -7278,7 +7278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18368 "..\..\..\UI\BaseWindow.xaml"
+        #line 18367 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersTab_Permissions;
         
@@ -7286,7 +7286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18404 "..\..\..\UI\BaseWindow.xaml"
+        #line 18403 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ArmDisarm_GroupBox;
         
@@ -7294,7 +7294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18405 "..\..\..\UI\BaseWindow.xaml"
+        #line 18404 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ArmDisarm_Grid;
         
@@ -7302,7 +7302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18407 "..\..\..\UI\BaseWindow.xaml"
+        #line 18406 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ArmAway_CheckBox;
         
@@ -7310,7 +7310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18409 "..\..\..\UI\BaseWindow.xaml"
+        #line 18408 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ArmStay_CheckBox;
         
@@ -7318,7 +7318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18411 "..\..\..\UI\BaseWindow.xaml"
+        #line 18410 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_DisarmAway_CheckBox;
         
@@ -7326,7 +7326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18413 "..\..\..\UI\BaseWindow.xaml"
+        #line 18412 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_DisarmStay_CheckBox;
         
@@ -7334,7 +7334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18418 "..\..\..\UI\BaseWindow.xaml"
+        #line 18417 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_Partitions_GroupBox;
         
@@ -7342,7 +7342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18419 "..\..\..\UI\BaseWindow.xaml"
+        #line 18418 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Partitions_Grid;
         
@@ -7350,7 +7350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18420 "..\..\..\UI\BaseWindow.xaml"
+        #line 18419 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions1_CheckBox;
         
@@ -7358,7 +7358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18422 "..\..\..\UI\BaseWindow.xaml"
+        #line 18421 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions2_CheckBox;
         
@@ -7366,7 +7366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18424 "..\..\..\UI\BaseWindow.xaml"
+        #line 18423 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions3_CheckBox;
         
@@ -7374,7 +7374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18426 "..\..\..\UI\BaseWindow.xaml"
+        #line 18425 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions4_CheckBox;
         
@@ -7382,7 +7382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18428 "..\..\..\UI\BaseWindow.xaml"
+        #line 18427 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions5_CheckBox;
         
@@ -7390,7 +7390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18430 "..\..\..\UI\BaseWindow.xaml"
+        #line 18429 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions6_CheckBox;
         
@@ -7398,7 +7398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18432 "..\..\..\UI\BaseWindow.xaml"
+        #line 18431 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions7_CheckBox;
         
@@ -7406,7 +7406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18434 "..\..\..\UI\BaseWindow.xaml"
+        #line 18433 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_Partitions8_CheckBox;
         
@@ -7414,7 +7414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18438 "..\..\..\UI\BaseWindow.xaml"
+        #line 18437 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_OutputPermissions_GroupBox;
         
@@ -7422,7 +7422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18439 "..\..\..\UI\BaseWindow.xaml"
+        #line 18438 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_OutputPermissions_Grid;
         
@@ -7430,7 +7430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18440 "..\..\..\UI\BaseWindow.xaml"
+        #line 18439 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions1_CheckBox;
         
@@ -7438,7 +7438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18442 "..\..\..\UI\BaseWindow.xaml"
+        #line 18441 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions2_CheckBox;
         
@@ -7446,7 +7446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18444 "..\..\..\UI\BaseWindow.xaml"
+        #line 18443 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions3_CheckBox;
         
@@ -7454,7 +7454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18446 "..\..\..\UI\BaseWindow.xaml"
+        #line 18445 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions4_CheckBox;
         
@@ -7462,7 +7462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18448 "..\..\..\UI\BaseWindow.xaml"
+        #line 18447 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions5_CheckBox;
         
@@ -7470,7 +7470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18450 "..\..\..\UI\BaseWindow.xaml"
+        #line 18449 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions6_CheckBox;
         
@@ -7478,7 +7478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18452 "..\..\..\UI\BaseWindow.xaml"
+        #line 18451 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions7_CheckBox;
         
@@ -7486,7 +7486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18454 "..\..\..\UI\BaseWindow.xaml"
+        #line 18453 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions8_CheckBox;
         
@@ -7494,7 +7494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18456 "..\..\..\UI\BaseWindow.xaml"
+        #line 18455 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions9_CheckBox;
         
@@ -7502,7 +7502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18458 "..\..\..\UI\BaseWindow.xaml"
+        #line 18457 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions10_CheckBox;
         
@@ -7510,7 +7510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18460 "..\..\..\UI\BaseWindow.xaml"
+        #line 18459 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions11_CheckBox;
         
@@ -7518,7 +7518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18462 "..\..\..\UI\BaseWindow.xaml"
+        #line 18461 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions12_CheckBox;
         
@@ -7526,7 +7526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18464 "..\..\..\UI\BaseWindow.xaml"
+        #line 18463 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_OutputPermissions13_CheckBox;
         
@@ -7534,7 +7534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18473 "..\..\..\UI\BaseWindow.xaml"
+        #line 18472 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUsersTab_Buttons;
         
@@ -7542,7 +7542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18510 "..\..\..\UI\BaseWindow.xaml"
+        #line 18509 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonA_Away_GroupBox;
         
@@ -7550,7 +7550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18511 "..\..\..\UI\BaseWindow.xaml"
+        #line 18510 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonA_Away_Grid;
         
@@ -7558,7 +7558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18515 "..\..\..\UI\BaseWindow.xaml"
+        #line 18514 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away1_CheckBox;
         
@@ -7566,7 +7566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18517 "..\..\..\UI\BaseWindow.xaml"
+        #line 18516 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away2_CheckBox;
         
@@ -7574,7 +7574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18519 "..\..\..\UI\BaseWindow.xaml"
+        #line 18518 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away3_CheckBox;
         
@@ -7582,7 +7582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18521 "..\..\..\UI\BaseWindow.xaml"
+        #line 18520 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away4_CheckBox;
         
@@ -7590,7 +7590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18523 "..\..\..\UI\BaseWindow.xaml"
+        #line 18522 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away5_CheckBox;
         
@@ -7598,7 +7598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18525 "..\..\..\UI\BaseWindow.xaml"
+        #line 18524 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away6_CheckBox;
         
@@ -7606,7 +7606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18527 "..\..\..\UI\BaseWindow.xaml"
+        #line 18526 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away7_CheckBox;
         
@@ -7614,7 +7614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18529 "..\..\..\UI\BaseWindow.xaml"
+        #line 18528 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Away8_CheckBox;
         
@@ -7622,7 +7622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18534 "..\..\..\UI\BaseWindow.xaml"
+        #line 18533 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonA_Stay_GroupBox;
         
@@ -7630,7 +7630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18535 "..\..\..\UI\BaseWindow.xaml"
+        #line 18534 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonA_Stay_Grid;
         
@@ -7638,7 +7638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18536 "..\..\..\UI\BaseWindow.xaml"
+        #line 18535 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay1_CheckBox;
         
@@ -7646,7 +7646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18538 "..\..\..\UI\BaseWindow.xaml"
+        #line 18537 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay2_CheckBox;
         
@@ -7654,7 +7654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18540 "..\..\..\UI\BaseWindow.xaml"
+        #line 18539 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay3_CheckBox;
         
@@ -7662,7 +7662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18542 "..\..\..\UI\BaseWindow.xaml"
+        #line 18541 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay4_CheckBox;
         
@@ -7670,7 +7670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18544 "..\..\..\UI\BaseWindow.xaml"
+        #line 18543 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay5_CheckBox;
         
@@ -7678,7 +7678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18546 "..\..\..\UI\BaseWindow.xaml"
+        #line 18545 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay6_CheckBox;
         
@@ -7686,7 +7686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18548 "..\..\..\UI\BaseWindow.xaml"
+        #line 18547 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay7_CheckBox;
         
@@ -7694,7 +7694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18550 "..\..\..\UI\BaseWindow.xaml"
+        #line 18549 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonA_Stay8_CheckBox;
         
@@ -7702,7 +7702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18554 "..\..\..\UI\BaseWindow.xaml"
+        #line 18553 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonB_Away_GroupBox;
         
@@ -7710,7 +7710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18555 "..\..\..\UI\BaseWindow.xaml"
+        #line 18554 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonB_Away_Grid;
         
@@ -7718,7 +7718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18556 "..\..\..\UI\BaseWindow.xaml"
+        #line 18555 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away1_CheckBox;
         
@@ -7726,7 +7726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18558 "..\..\..\UI\BaseWindow.xaml"
+        #line 18557 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away2_CheckBox;
         
@@ -7734,7 +7734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18560 "..\..\..\UI\BaseWindow.xaml"
+        #line 18559 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away3_CheckBox;
         
@@ -7742,7 +7742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18562 "..\..\..\UI\BaseWindow.xaml"
+        #line 18561 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away4_CheckBox;
         
@@ -7750,7 +7750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18564 "..\..\..\UI\BaseWindow.xaml"
+        #line 18563 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away5_CheckBox;
         
@@ -7758,7 +7758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18566 "..\..\..\UI\BaseWindow.xaml"
+        #line 18565 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away6_CheckBox;
         
@@ -7766,7 +7766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18568 "..\..\..\UI\BaseWindow.xaml"
+        #line 18567 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away7_CheckBox;
         
@@ -7774,7 +7774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18570 "..\..\..\UI\BaseWindow.xaml"
+        #line 18569 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Away8_CheckBox;
         
@@ -7782,7 +7782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18574 "..\..\..\UI\BaseWindow.xaml"
+        #line 18573 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonB_Stay_GroupBox;
         
@@ -7790,7 +7790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18575 "..\..\..\UI\BaseWindow.xaml"
+        #line 18574 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonB_Stay_Grid;
         
@@ -7798,7 +7798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18576 "..\..\..\UI\BaseWindow.xaml"
+        #line 18575 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay1_CheckBox;
         
@@ -7806,7 +7806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18578 "..\..\..\UI\BaseWindow.xaml"
+        #line 18577 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay2_CheckBox;
         
@@ -7814,7 +7814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18580 "..\..\..\UI\BaseWindow.xaml"
+        #line 18579 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay3_CheckBox;
         
@@ -7822,7 +7822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18582 "..\..\..\UI\BaseWindow.xaml"
+        #line 18581 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay4_CheckBox;
         
@@ -7830,7 +7830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18584 "..\..\..\UI\BaseWindow.xaml"
+        #line 18583 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay5_CheckBox;
         
@@ -7838,7 +7838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18586 "..\..\..\UI\BaseWindow.xaml"
+        #line 18585 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay6_CheckBox;
         
@@ -7846,7 +7846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18588 "..\..\..\UI\BaseWindow.xaml"
+        #line 18587 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay7_CheckBox;
         
@@ -7854,7 +7854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18590 "..\..\..\UI\BaseWindow.xaml"
+        #line 18589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonB_Stay8_CheckBox;
         
@@ -7862,7 +7862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18594 "..\..\..\UI\BaseWindow.xaml"
+        #line 18593 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonC_Away_GroupBox;
         
@@ -7870,7 +7870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18595 "..\..\..\UI\BaseWindow.xaml"
+        #line 18594 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonC_Away_Grid;
         
@@ -7878,7 +7878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18596 "..\..\..\UI\BaseWindow.xaml"
+        #line 18595 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away1_CheckBox;
         
@@ -7886,7 +7886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18598 "..\..\..\UI\BaseWindow.xaml"
+        #line 18597 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away2_CheckBox;
         
@@ -7894,7 +7894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18600 "..\..\..\UI\BaseWindow.xaml"
+        #line 18599 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away3_CheckBox;
         
@@ -7902,7 +7902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18602 "..\..\..\UI\BaseWindow.xaml"
+        #line 18601 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away4_CheckBox;
         
@@ -7910,7 +7910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18604 "..\..\..\UI\BaseWindow.xaml"
+        #line 18603 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away5_CheckBox;
         
@@ -7918,7 +7918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18606 "..\..\..\UI\BaseWindow.xaml"
+        #line 18605 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away6_CheckBox;
         
@@ -7926,7 +7926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18608 "..\..\..\UI\BaseWindow.xaml"
+        #line 18607 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away7_CheckBox;
         
@@ -7934,7 +7934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18610 "..\..\..\UI\BaseWindow.xaml"
+        #line 18609 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Away8_CheckBox;
         
@@ -7942,7 +7942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18614 "..\..\..\UI\BaseWindow.xaml"
+        #line 18613 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonC_Stay_GroupBox;
         
@@ -7950,7 +7950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18615 "..\..\..\UI\BaseWindow.xaml"
+        #line 18614 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonC_Stay_Grid;
         
@@ -7958,7 +7958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18616 "..\..\..\UI\BaseWindow.xaml"
+        #line 18615 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay1_CheckBox;
         
@@ -7966,7 +7966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18618 "..\..\..\UI\BaseWindow.xaml"
+        #line 18617 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay2_CheckBox;
         
@@ -7974,7 +7974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18620 "..\..\..\UI\BaseWindow.xaml"
+        #line 18619 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay3_CheckBox;
         
@@ -7982,7 +7982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18622 "..\..\..\UI\BaseWindow.xaml"
+        #line 18621 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay4_CheckBox;
         
@@ -7990,7 +7990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18624 "..\..\..\UI\BaseWindow.xaml"
+        #line 18623 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay5_CheckBox;
         
@@ -7998,7 +7998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18626 "..\..\..\UI\BaseWindow.xaml"
+        #line 18625 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay6_CheckBox;
         
@@ -8006,7 +8006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18628 "..\..\..\UI\BaseWindow.xaml"
+        #line 18627 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay7_CheckBox;
         
@@ -8014,7 +8014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18630 "..\..\..\UI\BaseWindow.xaml"
+        #line 18629 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonC_Stay8_CheckBox;
         
@@ -8022,7 +8022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18634 "..\..\..\UI\BaseWindow.xaml"
+        #line 18633 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonD_Away_GroupBox;
         
@@ -8030,7 +8030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18635 "..\..\..\UI\BaseWindow.xaml"
+        #line 18634 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonD_Away_Grid;
         
@@ -8038,7 +8038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18636 "..\..\..\UI\BaseWindow.xaml"
+        #line 18635 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away1_CheckBox;
         
@@ -8046,7 +8046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18638 "..\..\..\UI\BaseWindow.xaml"
+        #line 18637 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away2_CheckBox;
         
@@ -8054,7 +8054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18640 "..\..\..\UI\BaseWindow.xaml"
+        #line 18639 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away3_CheckBox;
         
@@ -8062,7 +8062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18642 "..\..\..\UI\BaseWindow.xaml"
+        #line 18641 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away4_CheckBox;
         
@@ -8070,7 +8070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18644 "..\..\..\UI\BaseWindow.xaml"
+        #line 18643 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away5_CheckBox;
         
@@ -8078,7 +8078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18646 "..\..\..\UI\BaseWindow.xaml"
+        #line 18645 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away6_CheckBox;
         
@@ -8086,7 +8086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18648 "..\..\..\UI\BaseWindow.xaml"
+        #line 18647 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away7_CheckBox;
         
@@ -8094,7 +8094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18650 "..\..\..\UI\BaseWindow.xaml"
+        #line 18649 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Away8_CheckBox;
         
@@ -8102,7 +8102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18654 "..\..\..\UI\BaseWindow.xaml"
+        #line 18653 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox User_ButtonD_Stay_GroupBox;
         
@@ -8110,7 +8110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18655 "..\..\..\UI\BaseWindow.xaml"
+        #line 18654 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_ButtonD_Stay_Grid;
         
@@ -8118,7 +8118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18656 "..\..\..\UI\BaseWindow.xaml"
+        #line 18655 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay1_CheckBox;
         
@@ -8126,7 +8126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18658 "..\..\..\UI\BaseWindow.xaml"
+        #line 18657 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay2_CheckBox;
         
@@ -8134,7 +8134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18660 "..\..\..\UI\BaseWindow.xaml"
+        #line 18659 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay3_CheckBox;
         
@@ -8142,7 +8142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18662 "..\..\..\UI\BaseWindow.xaml"
+        #line 18661 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay4_CheckBox;
         
@@ -8150,7 +8150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18664 "..\..\..\UI\BaseWindow.xaml"
+        #line 18663 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay5_CheckBox;
         
@@ -8158,7 +8158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18666 "..\..\..\UI\BaseWindow.xaml"
+        #line 18665 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay6_CheckBox;
         
@@ -8166,7 +8166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18668 "..\..\..\UI\BaseWindow.xaml"
+        #line 18667 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay7_CheckBox;
         
@@ -8174,7 +8174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18670 "..\..\..\UI\BaseWindow.xaml"
+        #line 18669 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox User_ButtonD_Stay8_CheckBox;
         
@@ -8182,7 +8182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18678 "..\..\..\UI\BaseWindow.xaml"
+        #line 18677 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainUserTab_Audio;
         
@@ -8190,7 +8190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18713 "..\..\..\UI\BaseWindow.xaml"
+        #line 18712 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox UserAudio_GroupBox;
         
@@ -8198,7 +8198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18721 "..\..\..\UI\BaseWindow.xaml"
+        #line 18720 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Audio_1Grid;
         
@@ -8206,7 +8206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18723 "..\..\..\UI\BaseWindow.xaml"
+        #line 18722 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox User_Audio_1ComboBox;
         
@@ -8214,7 +8214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18727 "..\..\..\UI\BaseWindow.xaml"
+        #line 18726 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Audio_2Grid;
         
@@ -8222,7 +8222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18729 "..\..\..\UI\BaseWindow.xaml"
+        #line 18728 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox User_Audio_2Column;
         
@@ -8230,7 +8230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18733 "..\..\..\UI\BaseWindow.xaml"
+        #line 18732 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Audio_3Grid;
         
@@ -8238,7 +8238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18735 "..\..\..\UI\BaseWindow.xaml"
+        #line 18734 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox User_Audio_3Column;
         
@@ -8246,7 +8246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18739 "..\..\..\UI\BaseWindow.xaml"
+        #line 18738 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid User_Audio_4Grid;
         
@@ -8254,7 +8254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18741 "..\..\..\UI\BaseWindow.xaml"
+        #line 18740 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox User_Audio_4Column;
         
@@ -8262,7 +8262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18753 "..\..\..\UI\BaseWindow.xaml"
+        #line 18752 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainTimezonesPVTTab;
         
@@ -8270,7 +8270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18760 "..\..\..\UI\BaseWindow.xaml"
+        #line 18759 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel TimezonesPVTHeader;
         
@@ -8278,7 +8278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18767 "..\..\..\UI\BaseWindow.xaml"
+        #line 18766 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainTimezone_button_back;
         
@@ -8286,7 +8286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18775 "..\..\..\UI\BaseWindow.xaml"
+        #line 18774 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainTimezone_button_next;
         
@@ -8294,7 +8294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18783 "..\..\..\UI\BaseWindow.xaml"
+        #line 18782 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainTimezone_button_undo;
         
@@ -8302,7 +8302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18791 "..\..\..\UI\BaseWindow.xaml"
+        #line 18790 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainTimezone_button_home;
         
@@ -8310,7 +8310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18802 "..\..\..\UI\BaseWindow.xaml"
+        #line 18801 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainTimezonesTab_Config;
         
@@ -8318,7 +8318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18839 "..\..\..\UI\BaseWindow.xaml"
+        #line 18838 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesDescription_GroupBox;
         
@@ -8326,7 +8326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18840 "..\..\..\UI\BaseWindow.xaml"
+        #line 18839 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid TimezonesDescription_Grid;
         
@@ -8334,7 +8334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18842 "..\..\..\UI\BaseWindow.xaml"
+        #line 18841 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox TimezonesDescription_TextBox;
         
@@ -8342,7 +8342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18851 "..\..\..\UI\BaseWindow.xaml"
+        #line 18850 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.TimePicker Timezone_Dates_Initial_DatePicker;
         
@@ -8350,7 +8350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18854 "..\..\..\UI\BaseWindow.xaml"
+        #line 18853 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.TimePicker Timezone_Dates_Final_DatePicker;
         
@@ -8358,7 +8358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18860 "..\..\..\UI\BaseWindow.xaml"
+        #line 18859 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesWeekDays_GroupBox;
         
@@ -8366,7 +8366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18861 "..\..\..\UI\BaseWindow.xaml"
+        #line 18860 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid TimezonesWeekDays_Grid;
         
@@ -8374,7 +8374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18872 "..\..\..\UI\BaseWindow.xaml"
+        #line 18871 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Monday;
         
@@ -8382,7 +8382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18873 "..\..\..\UI\BaseWindow.xaml"
+        #line 18872 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Tuesday;
         
@@ -8390,7 +8390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18874 "..\..\..\UI\BaseWindow.xaml"
+        #line 18873 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Wednesday;
         
@@ -8398,7 +8398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18875 "..\..\..\UI\BaseWindow.xaml"
+        #line 18874 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Thursday;
         
@@ -8406,7 +8406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18876 "..\..\..\UI\BaseWindow.xaml"
+        #line 18875 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Friday;
         
@@ -8414,7 +8414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18877 "..\..\..\UI\BaseWindow.xaml"
+        #line 18876 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Saturday;
         
@@ -8422,7 +8422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18878 "..\..\..\UI\BaseWindow.xaml"
+        #line 18877 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Sunday;
         
@@ -8430,7 +8430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18886 "..\..\..\UI\BaseWindow.xaml"
+        #line 18885 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainTimezonesTab_Exceptions;
         
@@ -8438,7 +8438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18922 "..\..\..\UI\BaseWindow.xaml"
+        #line 18921 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesException1_GroupBox;
         
@@ -8446,7 +8446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18928 "..\..\..\UI\BaseWindow.xaml"
+        #line 18927 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Timezones_Exception1_Grid;
         
@@ -8454,7 +8454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18930 "..\..\..\UI\BaseWindow.xaml"
+        #line 18929 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Exception1_Active;
         
@@ -8462,7 +8462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18931 "..\..\..\UI\BaseWindow.xaml"
+        #line 18930 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception1_InitialDate;
         
@@ -8470,7 +8470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18933 "..\..\..\UI\BaseWindow.xaml"
+        #line 18932 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception1_FinalDate;
         
@@ -8478,7 +8478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18938 "..\..\..\UI\BaseWindow.xaml"
+        #line 18937 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesException2_GroupBox;
         
@@ -8486,7 +8486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18944 "..\..\..\UI\BaseWindow.xaml"
+        #line 18943 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Timezones_Exception2_Grid;
         
@@ -8494,7 +8494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18946 "..\..\..\UI\BaseWindow.xaml"
+        #line 18945 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Exception2_Active;
         
@@ -8502,7 +8502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18947 "..\..\..\UI\BaseWindow.xaml"
+        #line 18946 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception2_InitialDate;
         
@@ -8510,7 +8510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18949 "..\..\..\UI\BaseWindow.xaml"
+        #line 18948 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception2_FinalDate;
         
@@ -8518,7 +8518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18954 "..\..\..\UI\BaseWindow.xaml"
+        #line 18953 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesException3_GroupBox;
         
@@ -8526,7 +8526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18960 "..\..\..\UI\BaseWindow.xaml"
+        #line 18959 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Timezones_Exception3_Grid;
         
@@ -8534,7 +8534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18962 "..\..\..\UI\BaseWindow.xaml"
+        #line 18961 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Exception3_Active;
         
@@ -8542,7 +8542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18963 "..\..\..\UI\BaseWindow.xaml"
+        #line 18962 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception3_InitialDate;
         
@@ -8550,7 +8550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18965 "..\..\..\UI\BaseWindow.xaml"
+        #line 18964 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception3_FinalDate;
         
@@ -8558,7 +8558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18970 "..\..\..\UI\BaseWindow.xaml"
+        #line 18969 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox TimezonesException4_GroupBox;
         
@@ -8566,7 +8566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18976 "..\..\..\UI\BaseWindow.xaml"
+        #line 18975 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Timezones_Exception4_Grid;
         
@@ -8574,7 +8574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18978 "..\..\..\UI\BaseWindow.xaml"
+        #line 18977 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Timezones_Exception4_Active;
         
@@ -8582,7 +8582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18979 "..\..\..\UI\BaseWindow.xaml"
+        #line 18978 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception4_InitialDate;
         
@@ -8590,7 +8590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18981 "..\..\..\UI\BaseWindow.xaml"
+        #line 18980 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Timezones_Exception4_FinalDate;
         
@@ -8598,7 +8598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 18993 "..\..\..\UI\BaseWindow.xaml"
+        #line 18992 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsPVTTab;
         
@@ -8606,7 +8606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19000 "..\..\..\UI\BaseWindow.xaml"
+        #line 18999 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel KeypadsPVTHeader;
         
@@ -8614,7 +8614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19007 "..\..\..\UI\BaseWindow.xaml"
+        #line 19006 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainKeypad_button_back;
         
@@ -8622,7 +8622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19015 "..\..\..\UI\BaseWindow.xaml"
+        #line 19014 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainKeypad_button_next;
         
@@ -8630,7 +8630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19023 "..\..\..\UI\BaseWindow.xaml"
+        #line 19022 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainKeypad_button_undo;
         
@@ -8638,7 +8638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19031 "..\..\..\UI\BaseWindow.xaml"
+        #line 19030 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainKeypad_button_home;
         
@@ -8646,7 +8646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19042 "..\..\..\UI\BaseWindow.xaml"
+        #line 19041 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_Config;
         
@@ -8654,7 +8654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19079 "..\..\..\UI\BaseWindow.xaml"
+        #line 19078 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsDescription_GroupBox;
         
@@ -8662,7 +8662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19080 "..\..\..\UI\BaseWindow.xaml"
+        #line 19079 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsDescription_Grid;
         
@@ -8670,7 +8670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19083 "..\..\..\UI\BaseWindow.xaml"
+        #line 19082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox KeypadsDescription_TextBox;
         
@@ -8678,7 +8678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19086 "..\..\..\UI\BaseWindow.xaml"
+        #line 19085 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsActive_CheckBox;
         
@@ -8686,7 +8686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19090 "..\..\..\UI\BaseWindow.xaml"
+        #line 19089 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsEnableTamber_CheckBox;
         
@@ -8694,7 +8694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19092 "..\..\..\UI\BaseWindow.xaml"
+        #line 19091 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsSilentEntryTime_CheckBox;
         
@@ -8702,7 +8702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19097 "..\..\..\UI\BaseWindow.xaml"
+        #line 19096 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsNoIndiciations_CheckBox;
         
@@ -8710,7 +8710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19100 "..\..\..\UI\BaseWindow.xaml"
+        #line 19099 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsSilentExitTime_CheckBox;
         
@@ -8718,7 +8718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19106 "..\..\..\UI\BaseWindow.xaml"
+        #line 19105 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsBacklight_GroupBox;
         
@@ -8726,7 +8726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19107 "..\..\..\UI\BaseWindow.xaml"
+        #line 19106 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsBacklight_Grid;
         
@@ -8734,7 +8734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19110 "..\..\..\UI\BaseWindow.xaml"
+        #line 19109 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox KeypadsBacklightTime_TextBox;
         
@@ -8742,7 +8742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19113 "..\..\..\UI\BaseWindow.xaml"
+        #line 19112 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsBacklight230V_CheckBox;
         
@@ -8750,7 +8750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19122 "..\..\..\UI\BaseWindow.xaml"
+        #line 19121 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_Areas;
         
@@ -8758,7 +8758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19158 "..\..\..\UI\BaseWindow.xaml"
+        #line 19157 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsAreas_GroupBox;
         
@@ -8766,7 +8766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19159 "..\..\..\UI\BaseWindow.xaml"
+        #line 19158 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsAreas_Grid;
         
@@ -8774,7 +8774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19161 "..\..\..\UI\BaseWindow.xaml"
+        #line 19160 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions1_CheckBox;
         
@@ -8782,7 +8782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19163 "..\..\..\UI\BaseWindow.xaml"
+        #line 19162 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions2_CheckBox;
         
@@ -8790,7 +8790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19165 "..\..\..\UI\BaseWindow.xaml"
+        #line 19164 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions3_CheckBox;
         
@@ -8798,7 +8798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19167 "..\..\..\UI\BaseWindow.xaml"
+        #line 19166 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions4_CheckBox;
         
@@ -8806,7 +8806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19169 "..\..\..\UI\BaseWindow.xaml"
+        #line 19168 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions5_CheckBox;
         
@@ -8814,7 +8814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19171 "..\..\..\UI\BaseWindow.xaml"
+        #line 19170 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions6_CheckBox;
         
@@ -8822,7 +8822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19173 "..\..\..\UI\BaseWindow.xaml"
+        #line 19172 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions7_CheckBox;
         
@@ -8830,7 +8830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19175 "..\..\..\UI\BaseWindow.xaml"
+        #line 19174 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Keypad_Partitions8_CheckBox;
         
@@ -8838,7 +8838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19183 "..\..\..\UI\BaseWindow.xaml"
+        #line 19182 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_Beeps;
         
@@ -8846,7 +8846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19219 "..\..\..\UI\BaseWindow.xaml"
+        #line 19218 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsBeeps_GroupBox;
         
@@ -8854,7 +8854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19220 "..\..\..\UI\BaseWindow.xaml"
+        #line 19219 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsBeeps_Grid;
         
@@ -8862,7 +8862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19222 "..\..\..\UI\BaseWindow.xaml"
+        #line 19221 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_Alarm_CheckBox;
         
@@ -8870,7 +8870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19224 "..\..\..\UI\BaseWindow.xaml"
+        #line 19223 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_OutputFuseAlarm_CheckBox;
         
@@ -8878,7 +8878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19226 "..\..\..\UI\BaseWindow.xaml"
+        #line 19225 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_SensorAlarm_CheckBox;
         
@@ -8886,7 +8886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19230 "..\..\..\UI\BaseWindow.xaml"
+        #line 19229 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_MedicalAlarm_CheckBox;
         
@@ -8894,7 +8894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19232 "..\..\..\UI\BaseWindow.xaml"
+        #line 19231 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_BatteryLowAlarm_CheckBox;
         
@@ -8902,7 +8902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19236 "..\..\..\UI\BaseWindow.xaml"
+        #line 19235 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_FireAlarm_CheckBox;
         
@@ -8910,7 +8910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19238 "..\..\..\UI\BaseWindow.xaml"
+        #line 19237 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_PSTNFailAlarm_CheckBox;
         
@@ -8918,7 +8918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19240 "..\..\..\UI\BaseWindow.xaml"
+        #line 19239 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_ExitAlarm_CheckBox;
         
@@ -8926,7 +8926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19245 "..\..\..\UI\BaseWindow.xaml"
+        #line 19244 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_PanicAlarm_CheckBox;
         
@@ -8934,7 +8934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19247 "..\..\..\UI\BaseWindow.xaml"
+        #line 19246 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_SystemTamperAlarm_CheckBox;
         
@@ -8942,7 +8942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19252 "..\..\..\UI\BaseWindow.xaml"
+        #line 19251 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_230VFailAlarm_CheckBox;
         
@@ -8950,7 +8950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19254 "..\..\..\UI\BaseWindow.xaml"
+        #line 19253 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_ReceiverAlarm_CheckBox;
         
@@ -8958,7 +8958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19256 "..\..\..\UI\BaseWindow.xaml"
+        #line 19255 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadBeeps_EntryAlarm_CheckBox;
         
@@ -8966,7 +8966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19264 "..\..\..\UI\BaseWindow.xaml"
+        #line 19263 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_ArmDisarmPermissions;
         
@@ -8974,7 +8974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19300 "..\..\..\UI\BaseWindow.xaml"
+        #line 19299 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsAreas_ArmDisarm_GroupBox;
         
@@ -8982,7 +8982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19302 "..\..\..\UI\BaseWindow.xaml"
+        #line 19301 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsAreas_ArmDisarm_Grid;
         
@@ -8990,7 +8990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19303 "..\..\..\UI\BaseWindow.xaml"
+        #line 19302 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_ArmAway_CheckBox;
         
@@ -8998,7 +8998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19305 "..\..\..\UI\BaseWindow.xaml"
+        #line 19304 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_ArmStay_CheckBox;
         
@@ -9006,7 +9006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19307 "..\..\..\UI\BaseWindow.xaml"
+        #line 19306 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_DisarmAway_CheckBox;
         
@@ -9014,7 +9014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19309 "..\..\..\UI\BaseWindow.xaml"
+        #line 19308 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_DisarmStay_CheckBox;
         
@@ -9022,7 +9022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19312 "..\..\..\UI\BaseWindow.xaml"
+        #line 19311 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsAreas_ArmDisarm2_Grid;
         
@@ -9030,7 +9030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19313 "..\..\..\UI\BaseWindow.xaml"
+        #line 19312 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_DisarmAwayExitTime_CheckBox;
         
@@ -9038,7 +9038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19315 "..\..\..\UI\BaseWindow.xaml"
+        #line 19314 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox KeypadsAreas_DisarmStayExitTime_CheckBox;
         
@@ -9046,7 +9046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19324 "..\..\..\UI\BaseWindow.xaml"
+        #line 19323 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_FButtons;
         
@@ -9054,7 +9054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19362 "..\..\..\UI\BaseWindow.xaml"
+        #line 19361 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsFButtons_GroupBox;
         
@@ -9062,7 +9062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19363 "..\..\..\UI\BaseWindow.xaml"
+        #line 19362 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid KeypadsFButtons_Grid;
         
@@ -9070,7 +9070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19370 "..\..\..\UI\BaseWindow.xaml"
+        #line 19369 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox KeypadsFButton2_ComboBox;
         
@@ -9078,7 +9078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19376 "..\..\..\UI\BaseWindow.xaml"
+        #line 19375 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox KeypadsFButton3_ComboBox;
         
@@ -9086,7 +9086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19382 "..\..\..\UI\BaseWindow.xaml"
+        #line 19381 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox KeypadsFButton4_ComboBox;
         
@@ -9094,7 +9094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19394 "..\..\..\UI\BaseWindow.xaml"
+        #line 19393 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainKeypadsTab_Audio;
         
@@ -9102,7 +9102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19430 "..\..\..\UI\BaseWindow.xaml"
+        #line 19429 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox KeypadsAudio_GroupBox;
         
@@ -9110,7 +9110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19433 "..\..\..\UI\BaseWindow.xaml"
+        #line 19432 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Keypads_Audio_1Grid;
         
@@ -9118,7 +9118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19435 "..\..\..\UI\BaseWindow.xaml"
+        #line 19434 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Keypads_Audio_1ComboBox;
         
@@ -9126,7 +9126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19440 "..\..\..\UI\BaseWindow.xaml"
+        #line 19439 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Keypads_Audio_2Grid;
         
@@ -9134,7 +9134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19442 "..\..\..\UI\BaseWindow.xaml"
+        #line 19441 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Keypads_Audio_2Column;
         
@@ -9142,7 +9142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19446 "..\..\..\UI\BaseWindow.xaml"
+        #line 19445 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Keypads_Audio_3Grid;
         
@@ -9150,7 +9150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19448 "..\..\..\UI\BaseWindow.xaml"
+        #line 19447 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Keypads_Audio_3Column;
         
@@ -9158,7 +9158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19452 "..\..\..\UI\BaseWindow.xaml"
+        #line 19451 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Keypads_Audio_4Grid;
         
@@ -9166,7 +9166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19454 "..\..\..\UI\BaseWindow.xaml"
+        #line 19453 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox Keypads_Audio_4Column;
         
@@ -9174,7 +9174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19467 "..\..\..\UI\BaseWindow.xaml"
+        #line 19466 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainOutputsPVTTab;
         
@@ -9182,7 +9182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19474 "..\..\..\UI\BaseWindow.xaml"
+        #line 19473 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel OutputsPVTHeader;
         
@@ -9190,7 +9190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19481 "..\..\..\UI\BaseWindow.xaml"
+        #line 19480 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainOutput_button_back;
         
@@ -9198,7 +9198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19489 "..\..\..\UI\BaseWindow.xaml"
+        #line 19488 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainOutput_button_next;
         
@@ -9206,7 +9206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19497 "..\..\..\UI\BaseWindow.xaml"
+        #line 19496 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainOutput_button_undo;
         
@@ -9214,7 +9214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19505 "..\..\..\UI\BaseWindow.xaml"
+        #line 19504 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainOutput_button_home;
         
@@ -9222,7 +9222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19516 "..\..\..\UI\BaseWindow.xaml"
+        #line 19515 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainOutputsTab_Config;
         
@@ -9230,7 +9230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19553 "..\..\..\UI\BaseWindow.xaml"
+        #line 19552 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsDescription_GroupBox;
         
@@ -9238,7 +9238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19554 "..\..\..\UI\BaseWindow.xaml"
+        #line 19553 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid Outputs_Description_Grid;
         
@@ -9246,7 +9246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19556 "..\..\..\UI\BaseWindow.xaml"
+        #line 19555 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox Outputs_Description_TextBox;
         
@@ -9254,7 +9254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19560 "..\..\..\UI\BaseWindow.xaml"
+        #line 19559 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Output_Inverted_CheckBox;
         
@@ -9262,7 +9262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19565 "..\..\..\UI\BaseWindow.xaml"
+        #line 19564 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsTimeConfig_GroupBox;
         
@@ -9270,7 +9270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19573 "..\..\..\UI\BaseWindow.xaml"
+        #line 19572 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsTimeConfig_DelayON_TextBox;
         
@@ -9278,7 +9278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19575 "..\..\..\UI\BaseWindow.xaml"
+        #line 19574 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsTimeConfig_TimeON_TextBox;
         
@@ -9286,7 +9286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19577 "..\..\..\UI\BaseWindow.xaml"
+        #line 19576 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsTimeConfig_ResetTime_TextBox;
         
@@ -9294,7 +9294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19582 "..\..\..\UI\BaseWindow.xaml"
+        #line 19581 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsChime_GroupBox;
         
@@ -9302,7 +9302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19590 "..\..\..\UI\BaseWindow.xaml"
+        #line 19589 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsChime_Time_TextBox;
         
@@ -9310,7 +9310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19592 "..\..\..\UI\BaseWindow.xaml"
+        #line 19591 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsChime_Delay_TextBox;
         
@@ -9318,7 +9318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19597 "..\..\..\UI\BaseWindow.xaml"
+        #line 19596 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsPulsed_GroupBox;
         
@@ -9326,7 +9326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19600 "..\..\..\UI\BaseWindow.xaml"
+        #line 19599 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsPulsed_Active_CheckBox;
         
@@ -9334,7 +9334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19603 "..\..\..\UI\BaseWindow.xaml"
+        #line 19602 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsPulsed_PulsesNumber_TextBox;
         
@@ -9342,7 +9342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19611 "..\..\..\UI\BaseWindow.xaml"
+        #line 19610 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsPulsed_Arm_TextBox;
         
@@ -9350,7 +9350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19613 "..\..\..\UI\BaseWindow.xaml"
+        #line 19612 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsPulsed_Disarm_TextBox;
         
@@ -9358,7 +9358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19618 "..\..\..\UI\BaseWindow.xaml"
+        #line 19617 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsBeepsNumber_GroupBox;
         
@@ -9366,7 +9366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19625 "..\..\..\UI\BaseWindow.xaml"
+        #line 19624 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsBeepsNumber_Arm_TextBox;
         
@@ -9374,7 +9374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19627 "..\..\..\UI\BaseWindow.xaml"
+        #line 19626 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox OutputsBeepsNumber_Disarm_TextBox;
         
@@ -9382,7 +9382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19636 "..\..\..\UI\BaseWindow.xaml"
+        #line 19635 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainOutputsTab_Timezones;
         
@@ -9390,7 +9390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19673 "..\..\..\UI\BaseWindow.xaml"
+        #line 19672 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox OutputsTimezones_GroupBox;
         
@@ -9398,7 +9398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19674 "..\..\..\UI\BaseWindow.xaml"
+        #line 19673 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid OutputsTimezones_Grid;
         
@@ -9406,7 +9406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19676 "..\..\..\UI\BaseWindow.xaml"
+        #line 19675 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones1_CheckBox;
         
@@ -9414,7 +9414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19678 "..\..\..\UI\BaseWindow.xaml"
+        #line 19677 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones2_CheckBox;
         
@@ -9422,7 +9422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19680 "..\..\..\UI\BaseWindow.xaml"
+        #line 19679 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones3_CheckBox;
         
@@ -9430,7 +9430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19682 "..\..\..\UI\BaseWindow.xaml"
+        #line 19681 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones4_CheckBox;
         
@@ -9438,7 +9438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19684 "..\..\..\UI\BaseWindow.xaml"
+        #line 19683 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones5_CheckBox;
         
@@ -9446,7 +9446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19686 "..\..\..\UI\BaseWindow.xaml"
+        #line 19685 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones6_CheckBox;
         
@@ -9454,7 +9454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19688 "..\..\..\UI\BaseWindow.xaml"
+        #line 19687 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones7_CheckBox;
         
@@ -9462,7 +9462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19690 "..\..\..\UI\BaseWindow.xaml"
+        #line 19689 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox OutputsTimezones8_CheckBox;
         
@@ -9470,7 +9470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19703 "..\..\..\UI\BaseWindow.xaml"
+        #line 19702 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainglobalSystemPVTTab;
         
@@ -9478,7 +9478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19710 "..\..\..\UI\BaseWindow.xaml"
+        #line 19709 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel GlobalSystemPVTHeader;
         
@@ -9486,7 +9486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19716 "..\..\..\UI\BaseWindow.xaml"
+        #line 19715 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainGlobalSystem_button_home;
         
@@ -9494,7 +9494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19727 "..\..\..\UI\BaseWindow.xaml"
+        #line 19726 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile GlobalSystemDownloadTile;
         
@@ -9502,7 +9502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19733 "..\..\..\UI\BaseWindow.xaml"
+        #line 19732 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Tile GlobalSystemUploadTile;
         
@@ -9510,7 +9510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19740 "..\..\..\UI\BaseWindow.xaml"
+        #line 19739 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainglobalSystemTab_Config;
         
@@ -9518,7 +9518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19743 "..\..\..\UI\BaseWindow.xaml"
+        #line 19742 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemDescription_GroupBox;
         
@@ -9526,7 +9526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19744 "..\..\..\UI\BaseWindow.xaml"
+        #line 19743 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemDescription_Grid;
         
@@ -9534,7 +9534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19746 "..\..\..\UI\BaseWindow.xaml"
+        #line 19745 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_CRA_TextBox;
         
@@ -9542,7 +9542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19749 "..\..\..\UI\BaseWindow.xaml"
+        #line 19748 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_CallOutput_TextBox;
         
@@ -9550,7 +9550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19755 "..\..\..\UI\BaseWindow.xaml"
+        #line 19754 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_DuressDigit_TextBox;
         
@@ -9558,7 +9558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19758 "..\..\..\UI\BaseWindow.xaml"
+        #line 19757 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_TimeInMinutes_TextBox;
         
@@ -9566,7 +9566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19763 "..\..\..\UI\BaseWindow.xaml"
+        #line 19762 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_ReportDelay_TextBox;
         
@@ -9574,7 +9574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19766 "..\..\..\UI\BaseWindow.xaml"
+        #line 19765 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystem_230VReportDelay_TextBox;
         
@@ -9582,7 +9582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19787 "..\..\..\UI\BaseWindow.xaml"
+        #line 19786 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemOutputs_GroupBox;
         
@@ -9590,7 +9590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19788 "..\..\..\UI\BaseWindow.xaml"
+        #line 19787 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemOutputs_Grid;
         
@@ -9598,7 +9598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19789 "..\..\..\UI\BaseWindow.xaml"
+        #line 19788 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystem_OutputPermissions_Grid;
         
@@ -9606,7 +9606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19790 "..\..\..\UI\BaseWindow.xaml"
+        #line 19789 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions1_CheckBox;
         
@@ -9614,7 +9614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19792 "..\..\..\UI\BaseWindow.xaml"
+        #line 19791 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions2_CheckBox;
         
@@ -9622,7 +9622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19794 "..\..\..\UI\BaseWindow.xaml"
+        #line 19793 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions3_CheckBox;
         
@@ -9630,7 +9630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19796 "..\..\..\UI\BaseWindow.xaml"
+        #line 19795 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions4_CheckBox;
         
@@ -9638,7 +9638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19798 "..\..\..\UI\BaseWindow.xaml"
+        #line 19797 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions5_CheckBox;
         
@@ -9646,7 +9646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19800 "..\..\..\UI\BaseWindow.xaml"
+        #line 19799 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions6_CheckBox;
         
@@ -9654,7 +9654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19802 "..\..\..\UI\BaseWindow.xaml"
+        #line 19801 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions7_CheckBox;
         
@@ -9662,7 +9662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19804 "..\..\..\UI\BaseWindow.xaml"
+        #line 19803 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions8_CheckBox;
         
@@ -9670,7 +9670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19806 "..\..\..\UI\BaseWindow.xaml"
+        #line 19805 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions9_CheckBox;
         
@@ -9678,7 +9678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19808 "..\..\..\UI\BaseWindow.xaml"
+        #line 19807 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions10_CheckBox;
         
@@ -9686,7 +9686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19810 "..\..\..\UI\BaseWindow.xaml"
+        #line 19809 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions11_CheckBox;
         
@@ -9694,7 +9694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19812 "..\..\..\UI\BaseWindow.xaml"
+        #line 19811 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions12_CheckBox;
         
@@ -9702,7 +9702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19814 "..\..\..\UI\BaseWindow.xaml"
+        #line 19813 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputPermissions13_CheckBox;
         
@@ -9710,7 +9710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19819 "..\..\..\UI\BaseWindow.xaml"
+        #line 19818 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_OutputControl_CheckBox;
         
@@ -9718,7 +9718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19823 "..\..\..\UI\BaseWindow.xaml"
+        #line 19822 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemSiren_GroupBox;
         
@@ -9726,7 +9726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19824 "..\..\..\UI\BaseWindow.xaml"
+        #line 19823 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemSiren_Grid;
         
@@ -9734,7 +9734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19827 "..\..\..\UI\BaseWindow.xaml"
+        #line 19826 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemSiren_Type_ComboBox;
         
@@ -9742,7 +9742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19830 "..\..\..\UI\BaseWindow.xaml"
+        #line 19829 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemSiren_Active_CheckBox;
         
@@ -9750,7 +9750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19835 "..\..\..\UI\BaseWindow.xaml"
+        #line 19834 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemSiren1_ComboBox;
         
@@ -9758,7 +9758,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19840 "..\..\..\UI\BaseWindow.xaml"
+        #line 19839 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemSiren2_ComboBox;
         
@@ -9766,7 +9766,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19845 "..\..\..\UI\BaseWindow.xaml"
+        #line 19844 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemSiren3_ComboBox;
         
@@ -9774,7 +9774,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19851 "..\..\..\UI\BaseWindow.xaml"
+        #line 19850 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemPanel_GroupBox;
         
@@ -9782,7 +9782,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19852 "..\..\..\UI\BaseWindow.xaml"
+        #line 19851 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemPanel_Grid;
         
@@ -9790,7 +9790,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19855 "..\..\..\UI\BaseWindow.xaml"
+        #line 19854 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemPanel_Type_ComboBox;
         
@@ -9798,7 +9798,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19858 "..\..\..\UI\BaseWindow.xaml"
+        #line 19857 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemPanel_Active_CheckBox;
         
@@ -9806,7 +9806,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19863 "..\..\..\UI\BaseWindow.xaml"
+        #line 19862 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemPanel1_ComboBox;
         
@@ -9814,7 +9814,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19868 "..\..\..\UI\BaseWindow.xaml"
+        #line 19867 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemPanel2_ComboBox;
         
@@ -9822,7 +9822,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19873 "..\..\..\UI\BaseWindow.xaml"
+        #line 19872 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemPanel3_ComboBox;
         
@@ -9830,7 +9830,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19879 "..\..\..\UI\BaseWindow.xaml"
+        #line 19878 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemKeyswitch_GroupBox;
         
@@ -9838,7 +9838,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19880 "..\..\..\UI\BaseWindow.xaml"
+        #line 19879 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemKeyswitch_Grid;
         
@@ -9846,7 +9846,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19882 "..\..\..\UI\BaseWindow.xaml"
+        #line 19881 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemKeyswitch_Type_CheckBox;
         
@@ -9854,7 +9854,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19884 "..\..\..\UI\BaseWindow.xaml"
+        #line 19883 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox globalSystemKeyswitch_Toggle_ComboBox;
         
@@ -9862,7 +9862,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19887 "..\..\..\UI\BaseWindow.xaml"
+        #line 19886 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemKeyswitch_Active_CheckBox;
         
@@ -9870,7 +9870,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19890 "..\..\..\UI\BaseWindow.xaml"
+        #line 19889 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemAreas_Grid;
         
@@ -9878,7 +9878,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19892 "..\..\..\UI\BaseWindow.xaml"
+        #line 19891 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions1_CheckBox;
         
@@ -9886,7 +9886,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19894 "..\..\..\UI\BaseWindow.xaml"
+        #line 19893 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions2_CheckBox;
         
@@ -9894,7 +9894,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19896 "..\..\..\UI\BaseWindow.xaml"
+        #line 19895 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions3_CheckBox;
         
@@ -9902,7 +9902,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19898 "..\..\..\UI\BaseWindow.xaml"
+        #line 19897 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions4_CheckBox;
         
@@ -9910,7 +9910,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19900 "..\..\..\UI\BaseWindow.xaml"
+        #line 19899 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions5_CheckBox;
         
@@ -9918,7 +9918,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19902 "..\..\..\UI\BaseWindow.xaml"
+        #line 19901 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions6_CheckBox;
         
@@ -9926,7 +9926,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19904 "..\..\..\UI\BaseWindow.xaml"
+        #line 19903 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions7_CheckBox;
         
@@ -9934,7 +9934,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19906 "..\..\..\UI\BaseWindow.xaml"
+        #line 19905 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions8_CheckBox;
         
@@ -9942,7 +9942,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19909 "..\..\..\UI\BaseWindow.xaml"
+        #line 19908 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemAreasStay_Grid;
         
@@ -9950,7 +9950,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19911 "..\..\..\UI\BaseWindow.xaml"
+        #line 19910 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions1Stay_CheckBox;
         
@@ -9958,7 +9958,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19913 "..\..\..\UI\BaseWindow.xaml"
+        #line 19912 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions2Stay_CheckBox;
         
@@ -9966,7 +9966,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19915 "..\..\..\UI\BaseWindow.xaml"
+        #line 19914 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions3Stay_CheckBox;
         
@@ -9974,7 +9974,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19917 "..\..\..\UI\BaseWindow.xaml"
+        #line 19916 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions4Stay_CheckBox;
         
@@ -9982,7 +9982,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19919 "..\..\..\UI\BaseWindow.xaml"
+        #line 19918 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions5Stay_CheckBox;
         
@@ -9990,7 +9990,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19921 "..\..\..\UI\BaseWindow.xaml"
+        #line 19920 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions6Stay_CheckBox;
         
@@ -9998,7 +9998,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19923 "..\..\..\UI\BaseWindow.xaml"
+        #line 19922 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions7Stay_CheckBox;
         
@@ -10006,7 +10006,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19925 "..\..\..\UI\BaseWindow.xaml"
+        #line 19924 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystem_Partitions8Stay_CheckBox;
         
@@ -10014,7 +10014,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19930 "..\..\..\UI\BaseWindow.xaml"
+        #line 19929 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemArmConditions_GroupBox;
         
@@ -10022,7 +10022,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19931 "..\..\..\UI\BaseWindow.xaml"
+        #line 19930 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemArmConditions_Grid;
         
@@ -10030,7 +10030,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19933 "..\..\..\UI\BaseWindow.xaml"
+        #line 19932 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemArmConditions1_CheckBox;
         
@@ -10038,7 +10038,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19935 "..\..\..\UI\BaseWindow.xaml"
+        #line 19934 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemArmConditions2_CheckBox;
         
@@ -10046,7 +10046,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19937 "..\..\..\UI\BaseWindow.xaml"
+        #line 19936 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemArmConditions3_CheckBox;
         
@@ -10054,7 +10054,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19939 "..\..\..\UI\BaseWindow.xaml"
+        #line 19938 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemArmConditions4_CheckBox;
         
@@ -10062,7 +10062,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19944 "..\..\..\UI\BaseWindow.xaml"
+        #line 19943 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox globalSystemMaintenance_GroupBox;
         
@@ -10070,7 +10070,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19945 "..\..\..\UI\BaseWindow.xaml"
+        #line 19944 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid globalSystemMaintenance_Grid;
         
@@ -10078,7 +10078,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19947 "..\..\..\UI\BaseWindow.xaml"
+        #line 19946 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemMaintenance_VisibleInKeypads_CheckBox;
         
@@ -10086,7 +10086,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19949 "..\..\..\UI\BaseWindow.xaml"
+        #line 19948 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystemMaintenance_Description_TextBox;
         
@@ -10094,7 +10094,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19953 "..\..\..\UI\BaseWindow.xaml"
+        #line 19952 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox globalSystemMaintenance_Phone_TextBox;
         
@@ -10102,7 +10102,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19958 "..\..\..\UI\BaseWindow.xaml"
+        #line 19957 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox globalSystemMaintenance_Active_CheckBox;
         
@@ -10110,7 +10110,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19960 "..\..\..\UI\BaseWindow.xaml"
+        #line 19959 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DatePicker maintenance_dateColumn;
         
@@ -10118,7 +10118,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19973 "..\..\..\UI\BaseWindow.xaml"
+        #line 19972 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainPhonesPVTTab;
         
@@ -10126,7 +10126,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19980 "..\..\..\UI\BaseWindow.xaml"
+        #line 19979 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.StackPanel PhonesPVTHeader;
         
@@ -10134,7 +10134,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19987 "..\..\..\UI\BaseWindow.xaml"
+        #line 19986 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainPhone_button_back;
         
@@ -10142,7 +10142,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 19995 "..\..\..\UI\BaseWindow.xaml"
+        #line 19994 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainPhone_button_next;
         
@@ -10150,7 +10150,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20003 "..\..\..\UI\BaseWindow.xaml"
+        #line 20002 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainPhone_button_undo;
         
@@ -10158,7 +10158,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20011 "..\..\..\UI\BaseWindow.xaml"
+        #line 20010 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button MainPhone_button_home;
         
@@ -10166,7 +10166,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20022 "..\..\..\UI\BaseWindow.xaml"
+        #line 20021 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainPhonesTab_Config;
         
@@ -10174,7 +10174,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20059 "..\..\..\UI\BaseWindow.xaml"
+        #line 20058 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhonesDescription_GroupBox;
         
@@ -10182,7 +10182,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20060 "..\..\..\UI\BaseWindow.xaml"
+        #line 20059 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesDescription_Grid;
         
@@ -10190,7 +10190,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20061 "..\..\..\UI\BaseWindow.xaml"
+        #line 20060 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesDescription1_Grid;
         
@@ -10198,7 +10198,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20062 "..\..\..\UI\BaseWindow.xaml"
+        #line 20061 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox PhonesDescription_TextBox;
         
@@ -10206,7 +10206,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20065 "..\..\..\UI\BaseWindow.xaml"
+        #line 20064 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhonesDescription_Active_CheckBox;
         
@@ -10214,7 +10214,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20068 "..\..\..\UI\BaseWindow.xaml"
+        #line 20067 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesDescription2_Grid;
         
@@ -10222,7 +10222,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20069 "..\..\..\UI\BaseWindow.xaml"
+        #line 20068 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox PhonesDescription_Prefix_TextBox;
         
@@ -10230,7 +10230,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20072 "..\..\..\UI\BaseWindow.xaml"
+        #line 20071 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox PhonesDescription_PhoneNumber_TextBox;
         
@@ -10238,7 +10238,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20076 "..\..\..\UI\BaseWindow.xaml"
+        #line 20075 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox PhonesDescription_ComAttempts_TextBox;
         
@@ -10246,7 +10246,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20082 "..\..\..\UI\BaseWindow.xaml"
+        #line 20081 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhonesAreas_GroupBox;
         
@@ -10254,7 +10254,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20083 "..\..\..\UI\BaseWindow.xaml"
+        #line 20082 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesAreas_Grid;
         
@@ -10262,7 +10262,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20084 "..\..\..\UI\BaseWindow.xaml"
+        #line 20083 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions1_CheckBox;
         
@@ -10270,7 +10270,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20086 "..\..\..\UI\BaseWindow.xaml"
+        #line 20085 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions2_CheckBox;
         
@@ -10278,7 +10278,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20088 "..\..\..\UI\BaseWindow.xaml"
+        #line 20087 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions3_CheckBox;
         
@@ -10286,7 +10286,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20090 "..\..\..\UI\BaseWindow.xaml"
+        #line 20089 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions4_CheckBox;
         
@@ -10294,7 +10294,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20092 "..\..\..\UI\BaseWindow.xaml"
+        #line 20091 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions5_CheckBox;
         
@@ -10302,7 +10302,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20094 "..\..\..\UI\BaseWindow.xaml"
+        #line 20093 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions6_CheckBox;
         
@@ -10310,7 +10310,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20096 "..\..\..\UI\BaseWindow.xaml"
+        #line 20095 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions7_CheckBox;
         
@@ -10318,7 +10318,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20098 "..\..\..\UI\BaseWindow.xaml"
+        #line 20097 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_Partitions8_CheckBox;
         
@@ -10326,7 +10326,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20102 "..\..\..\UI\BaseWindow.xaml"
+        #line 20101 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhonesKissOff_GroupBox;
         
@@ -10334,7 +10334,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20103 "..\..\..\UI\BaseWindow.xaml"
+        #line 20102 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesKissOff_Grid;
         
@@ -10342,7 +10342,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20104 "..\..\..\UI\BaseWindow.xaml"
+        #line 20103 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_KissOff1_CheckBox;
         
@@ -10350,7 +10350,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20106 "..\..\..\UI\BaseWindow.xaml"
+        #line 20105 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_KissOff2_CheckBox;
         
@@ -10358,7 +10358,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20108 "..\..\..\UI\BaseWindow.xaml"
+        #line 20107 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox Phones_KissOff3_CheckBox;
         
@@ -10366,7 +10366,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20116 "..\..\..\UI\BaseWindow.xaml"
+        #line 20115 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainPhonesTab_Reports;
         
@@ -10374,7 +10374,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20153 "..\..\..\UI\BaseWindow.xaml"
+        #line 20152 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhoneReports_GroupBox;
         
@@ -10382,7 +10382,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20154 "..\..\..\UI\BaseWindow.xaml"
+        #line 20153 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesDescription3_Grid;
         
@@ -10390,7 +10390,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20156 "..\..\..\UI\BaseWindow.xaml"
+        #line 20155 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesReports_Grid;
         
@@ -10398,7 +10398,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20168 "..\..\..\UI\BaseWindow.xaml"
+        #line 20167 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesReports2_Grid;
         
@@ -10406,7 +10406,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20180 "..\..\..\UI\BaseWindow.xaml"
+        #line 20179 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesReports3_Grid;
         
@@ -10414,7 +10414,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20192 "..\..\..\UI\BaseWindow.xaml"
+        #line 20191 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesReports4_Grid;
         
@@ -10422,7 +10422,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20211 "..\..\..\UI\BaseWindow.xaml"
+        #line 20210 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TabItem MainPhonesTab_Tests;
         
@@ -10430,7 +10430,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20250 "..\..\..\UI\BaseWindow.xaml"
+        #line 20249 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhoneTestOptions_GroupBox;
         
@@ -10438,7 +10438,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20251 "..\..\..\UI\BaseWindow.xaml"
+        #line 20250 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesDescription4_Grid;
         
@@ -10446,7 +10446,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20253 "..\..\..\UI\BaseWindow.xaml"
+        #line 20252 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhonesDescription_TestCalls_CheckBox;
         
@@ -10454,7 +10454,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20256 "..\..\..\UI\BaseWindow.xaml"
+        #line 20255 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox PhonesDescription_CallType_ComboBox;
         
@@ -10462,7 +10462,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20262 "..\..\..\UI\BaseWindow.xaml"
+        #line 20261 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.GroupBox PhonesHourDaysTest_GroupBox;
         
@@ -10470,7 +10470,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20263 "..\..\..\UI\BaseWindow.xaml"
+        #line 20262 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Grid PhonesHourDaysTest_Grid;
         
@@ -10478,7 +10478,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20266 "..\..\..\UI\BaseWindow.xaml"
+        #line 20265 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.TimePicker PhoneHourDayTest_Hour_TimePicker;
         
@@ -10486,7 +10486,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20279 "..\..\..\UI\BaseWindow.xaml"
+        #line 20278 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Monday;
         
@@ -10494,7 +10494,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20280 "..\..\..\UI\BaseWindow.xaml"
+        #line 20279 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Tuesday;
         
@@ -10502,7 +10502,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20281 "..\..\..\UI\BaseWindow.xaml"
+        #line 20280 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Wednesday;
         
@@ -10510,7 +10510,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20282 "..\..\..\UI\BaseWindow.xaml"
+        #line 20281 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Thursday;
         
@@ -10518,7 +10518,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20283 "..\..\..\UI\BaseWindow.xaml"
+        #line 20282 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Friday;
         
@@ -10526,7 +10526,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20284 "..\..\..\UI\BaseWindow.xaml"
+        #line 20283 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Saturday;
         
@@ -10534,7 +10534,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20285 "..\..\..\UI\BaseWindow.xaml"
+        #line 20284 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox PhoneCallTest_Sunday;
         
@@ -10542,7 +10542,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20299 "..\..\..\UI\BaseWindow.xaml"
+        #line 20298 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.DockPanel BaseStatusBarDockPanel;
         
@@ -10550,7 +10550,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20300 "..\..\..\UI\BaseWindow.xaml"
+        #line 20299 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Primitives.StatusBar BaseStatusBar;
         
@@ -10558,7 +10558,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20303 "..\..\..\UI\BaseWindow.xaml"
+        #line 20302 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label SoftwareVersion;
         
@@ -10566,7 +10566,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20306 "..\..\..\UI\BaseWindow.xaml"
+        #line 20305 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Shapes.Rectangle StatusBarDisconnectedIcon;
         
@@ -10574,7 +10574,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20312 "..\..\..\UI\BaseWindow.xaml"
+        #line 20311 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Shapes.Rectangle StatusBarConnectedIcon;
         
@@ -10582,7 +10582,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20318 "..\..\..\UI\BaseWindow.xaml"
+        #line 20317 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBlock TextBoxConnectedDisconnected;
         
@@ -10590,7 +10590,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20377 "..\..\..\UI\BaseWindow.xaml"
+        #line 20376 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal MahApps.Metro.Controls.Flyout FlyCom;
         
@@ -10598,7 +10598,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20384 "..\..\..\UI\BaseWindow.xaml"
+        #line 20383 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image FlyComImage;
         
@@ -10606,7 +10606,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20391 "..\..\..\UI\BaseWindow.xaml"
+        #line 20390 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.ComboBox ComPortComboBox;
         
@@ -10614,7 +10614,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20392 "..\..\..\UI\BaseWindow.xaml"
+        #line 20391 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button SerialConnectButton;
         
@@ -10622,7 +10622,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20396 "..\..\..\UI\BaseWindow.xaml"
+        #line 20395 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeView MainTreeView;
         
@@ -10630,7 +10630,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20403 "..\..\..\UI\BaseWindow.xaml"
+        #line 20402 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewHome;
         
@@ -10638,7 +10638,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20407 "..\..\..\UI\BaseWindow.xaml"
+        #line 20406 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewAreas;
         
@@ -10646,7 +10646,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20411 "..\..\..\UI\BaseWindow.xaml"
+        #line 20410 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewZones;
         
@@ -10654,7 +10654,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20414 "..\..\..\UI\BaseWindow.xaml"
+        #line 20413 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewKeypads;
         
@@ -10662,7 +10662,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20417 "..\..\..\UI\BaseWindow.xaml"
+        #line 20416 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewOutputs;
         
@@ -10670,7 +10670,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20420 "..\..\..\UI\BaseWindow.xaml"
+        #line 20419 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewTimezones;
         
@@ -10678,7 +10678,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20423 "..\..\..\UI\BaseWindow.xaml"
+        #line 20422 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewUsers;
         
@@ -10686,7 +10686,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20426 "..\..\..\UI\BaseWindow.xaml"
+        #line 20425 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewPhones;
         
@@ -10694,7 +10694,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20429 "..\..\..\UI\BaseWindow.xaml"
+        #line 20428 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewDialer;
         
@@ -10702,7 +10702,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20432 "..\..\..\UI\BaseWindow.xaml"
+        #line 20431 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewGlobalSystem;
         
@@ -10710,7 +10710,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20435 "..\..\..\UI\BaseWindow.xaml"
+        #line 20434 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewClient;
         
@@ -10718,7 +10718,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20438 "..\..\..\UI\BaseWindow.xaml"
+        #line 20437 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewEvents;
         
@@ -10726,7 +10726,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20441 "..\..\..\UI\BaseWindow.xaml"
+        #line 20440 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewAudioMessages;
         
@@ -10734,7 +10734,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20444 "..\..\..\UI\BaseWindow.xaml"
+        #line 20443 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewStatus;
         
@@ -10742,7 +10742,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20447 "..\..\..\UI\BaseWindow.xaml"
+        #line 20446 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewDebug;
         
@@ -10750,7 +10750,7 @@ namespace ProdigyConfigToolWPF {
         #line hidden
         
         
-        #line 20450 "..\..\..\UI\BaseWindow.xaml"
+        #line 20449 "..\..\..\UI\BaseWindow.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TreeViewItem TreeviewFwUpdate;
         
@@ -10811,7 +10811,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 2:
             
-            #line 111 "..\..\..\UI\BaseWindow.xaml"
+            #line 110 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.NewCommand_Executed);
             
             #line default
@@ -10819,7 +10819,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 3:
             
-            #line 112 "..\..\..\UI\BaseWindow.xaml"
+            #line 111 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.OpenCommand_Executed);
             
             #line default
@@ -10827,7 +10827,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 4:
             
-            #line 113 "..\..\..\UI\BaseWindow.xaml"
+            #line 112 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.SaveCommand_Executed);
             
             #line default
@@ -10835,7 +10835,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 5:
             
-            #line 114 "..\..\..\UI\BaseWindow.xaml"
+            #line 113 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.SaveAsCommand_Executed);
             
             #line default
@@ -10843,7 +10843,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 6:
             
-            #line 115 "..\..\..\UI\BaseWindow.xaml"
+            #line 114 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.CloseCommand_Executed);
             
             #line default
@@ -10869,7 +10869,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 13:
             
-            #line 182 "..\..\..\UI\BaseWindow.xaml"
+            #line 181 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.OpenCommand_Executed);
             
             #line default
@@ -10877,7 +10877,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 14:
             
-            #line 183 "..\..\..\UI\BaseWindow.xaml"
+            #line 182 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.NewCommand_Executed);
             
             #line default
@@ -10885,7 +10885,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 15:
             
-            #line 184 "..\..\..\UI\BaseWindow.xaml"
+            #line 183 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.SaveCommand_Executed);
             
             #line default
@@ -10893,7 +10893,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 16:
             
-            #line 185 "..\..\..\UI\BaseWindow.xaml"
+            #line 184 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.SaveAsCommand_Executed);
             
             #line default
@@ -10901,7 +10901,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 17:
             
-            #line 186 "..\..\..\UI\BaseWindow.xaml"
+            #line 185 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Input.CommandBinding)(target)).Executed += new System.Windows.Input.ExecutedRoutedEventHandler(this.CloseCommand_Executed);
             
             #line default
@@ -10916,7 +10916,7 @@ namespace ProdigyConfigToolWPF {
             case 20:
             this.RestoreTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 223 "..\..\..\UI\BaseWindow.xaml"
+            #line 222 "..\..\..\UI\BaseWindow.xaml"
             this.RestoreTile.Click += new System.Windows.RoutedEventHandler(this.RestoreDefaultMenuItem_Click);
             
             #line default
@@ -10931,7 +10931,7 @@ namespace ProdigyConfigToolWPF {
             case 23:
             this.RadioLocalePT = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 239 "..\..\..\UI\BaseWindow.xaml"
+            #line 238 "..\..\..\UI\BaseWindow.xaml"
             this.RadioLocalePT.Click += new System.Windows.RoutedEventHandler(this.RadioLocalePT_Click);
             
             #line default
@@ -10943,7 +10943,7 @@ namespace ProdigyConfigToolWPF {
             case 25:
             this.RadioLocaleEN_Disabled = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 247 "..\..\..\UI\BaseWindow.xaml"
+            #line 246 "..\..\..\UI\BaseWindow.xaml"
             this.RadioLocaleEN_Disabled.Click += new System.Windows.RoutedEventHandler(this.RadioLocaleEN_Click);
             
             #line default
@@ -10955,7 +10955,7 @@ namespace ProdigyConfigToolWPF {
             case 27:
             this.RadioLocalePT_disabled = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 256 "..\..\..\UI\BaseWindow.xaml"
+            #line 255 "..\..\..\UI\BaseWindow.xaml"
             this.RadioLocalePT_disabled.Click += new System.Windows.RoutedEventHandler(this.RadioLocalePT_Click);
             
             #line default
@@ -10967,7 +10967,7 @@ namespace ProdigyConfigToolWPF {
             case 29:
             this.RadioLocaleEN = ((System.Windows.Controls.RadioButton)(target));
             
-            #line 264 "..\..\..\UI\BaseWindow.xaml"
+            #line 263 "..\..\..\UI\BaseWindow.xaml"
             this.RadioLocaleEN.Click += new System.Windows.RoutedEventHandler(this.RadioLocaleEN_Click);
             
             #line default
@@ -10991,7 +10991,7 @@ namespace ProdigyConfigToolWPF {
             case 35:
             this.HelpTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 299 "..\..\..\UI\BaseWindow.xaml"
+            #line 298 "..\..\..\UI\BaseWindow.xaml"
             this.HelpTile.Click += new System.Windows.RoutedEventHandler(this.TitleBarHelpButton_Click);
             
             #line default
@@ -11011,7 +11011,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 40:
             
-            #line 335 "..\..\..\UI\BaseWindow.xaml"
+            #line 334 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.ChangePassword_Click);
             
             #line default
@@ -11019,7 +11019,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 41:
             
-            #line 340 "..\..\..\UI\BaseWindow.xaml"
+            #line 339 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.MenuItem)(target)).Click += new System.Windows.RoutedEventHandler(this.TitleBarLogoutButton_Click);
             
             #line default
@@ -11031,7 +11031,7 @@ namespace ProdigyConfigToolWPF {
             case 43:
             this.DownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 358 "..\..\..\UI\BaseWindow.xaml"
+            #line 357 "..\..\..\UI\BaseWindow.xaml"
             this.DownloadTile.Click += new System.Windows.RoutedEventHandler(this.DownloadTile_Click);
             
             #line default
@@ -11040,7 +11040,7 @@ namespace ProdigyConfigToolWPF {
             case 44:
             this.UploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 363 "..\..\..\UI\BaseWindow.xaml"
+            #line 362 "..\..\..\UI\BaseWindow.xaml"
             this.UploadTile.Click += new System.Windows.RoutedEventHandler(this.UploadTile_Click);
             
             #line default
@@ -11049,7 +11049,7 @@ namespace ProdigyConfigToolWPF {
             case 45:
             this.COMsettings = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 367 "..\..\..\UI\BaseWindow.xaml"
+            #line 366 "..\..\..\UI\BaseWindow.xaml"
             this.COMsettings.Click += new System.Windows.RoutedEventHandler(this.ComConfigTile_Click);
             
             #line default
@@ -11058,7 +11058,7 @@ namespace ProdigyConfigToolWPF {
             case 46:
             this.UpdateDateHour = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 371 "..\..\..\UI\BaseWindow.xaml"
+            #line 370 "..\..\..\UI\BaseWindow.xaml"
             this.UpdateDateHour.Click += new System.Windows.RoutedEventHandler(this.UpdateDateHourTile_Click);
             
             #line default
@@ -11067,7 +11067,7 @@ namespace ProdigyConfigToolWPF {
             case 47:
             this.ReadFWUpdateData = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 376 "..\..\..\UI\BaseWindow.xaml"
+            #line 375 "..\..\..\UI\BaseWindow.xaml"
             this.ReadFWUpdateData.Click += new System.Windows.RoutedEventHandler(this.read_update_Click);
             
             #line default
@@ -11100,7 +11100,7 @@ namespace ProdigyConfigToolWPF {
             case 56:
             this.MainTabControl = ((System.Windows.Controls.TabControl)(target));
             
-            #line 396 "..\..\..\UI\BaseWindow.xaml"
+            #line 395 "..\..\..\UI\BaseWindow.xaml"
             this.MainTabControl.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.MainTabControl_SelectionChanged);
             
             #line default
@@ -11112,7 +11112,7 @@ namespace ProdigyConfigToolWPF {
             case 58:
             this.Open_Areas = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 416 "..\..\..\UI\BaseWindow.xaml"
+            #line 415 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Areas.Click += new System.Windows.RoutedEventHandler(this.Open_Areas_Click);
             
             #line default
@@ -11121,7 +11121,7 @@ namespace ProdigyConfigToolWPF {
             case 59:
             this.Open_Zones = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 422 "..\..\..\UI\BaseWindow.xaml"
+            #line 421 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Zones.Click += new System.Windows.RoutedEventHandler(this.Open_Zones_Click);
             
             #line default
@@ -11130,7 +11130,7 @@ namespace ProdigyConfigToolWPF {
             case 60:
             this.Open_Keypads = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 428 "..\..\..\UI\BaseWindow.xaml"
+            #line 427 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Keypads.Click += new System.Windows.RoutedEventHandler(this.Open_Keypads_Click);
             
             #line default
@@ -11139,7 +11139,7 @@ namespace ProdigyConfigToolWPF {
             case 61:
             this.Open_Outputs = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 434 "..\..\..\UI\BaseWindow.xaml"
+            #line 433 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Outputs.Click += new System.Windows.RoutedEventHandler(this.Open_Outputs_Click);
             
             #line default
@@ -11148,7 +11148,7 @@ namespace ProdigyConfigToolWPF {
             case 62:
             this.Open_Timezones = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 440 "..\..\..\UI\BaseWindow.xaml"
+            #line 439 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Timezones.Click += new System.Windows.RoutedEventHandler(this.Open_Timezones_Click);
             
             #line default
@@ -11157,7 +11157,7 @@ namespace ProdigyConfigToolWPF {
             case 63:
             this.Open_Users = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 446 "..\..\..\UI\BaseWindow.xaml"
+            #line 445 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Users.Click += new System.Windows.RoutedEventHandler(this.Open_Users_Click);
             
             #line default
@@ -11166,7 +11166,7 @@ namespace ProdigyConfigToolWPF {
             case 64:
             this.Open_Phones = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 452 "..\..\..\UI\BaseWindow.xaml"
+            #line 451 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Phones.Click += new System.Windows.RoutedEventHandler(this.Open_Phones_Click);
             
             #line default
@@ -11175,7 +11175,7 @@ namespace ProdigyConfigToolWPF {
             case 65:
             this.Open_Dialer = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 458 "..\..\..\UI\BaseWindow.xaml"
+            #line 457 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Dialer.Click += new System.Windows.RoutedEventHandler(this.Open_Dialer_Click);
             
             #line default
@@ -11184,7 +11184,7 @@ namespace ProdigyConfigToolWPF {
             case 66:
             this.Open_GlobalConfig = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 464 "..\..\..\UI\BaseWindow.xaml"
+            #line 463 "..\..\..\UI\BaseWindow.xaml"
             this.Open_GlobalConfig.Click += new System.Windows.RoutedEventHandler(this.Open_GlobalConfig_Click);
             
             #line default
@@ -11193,7 +11193,7 @@ namespace ProdigyConfigToolWPF {
             case 67:
             this.Open_ClientInfo = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 470 "..\..\..\UI\BaseWindow.xaml"
+            #line 469 "..\..\..\UI\BaseWindow.xaml"
             this.Open_ClientInfo.Click += new System.Windows.RoutedEventHandler(this.Open_ClientInfo_Click);
             
             #line default
@@ -11202,7 +11202,7 @@ namespace ProdigyConfigToolWPF {
             case 68:
             this.Open_Expansors = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 476 "..\..\..\UI\BaseWindow.xaml"
+            #line 475 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Expansors.Click += new System.Windows.RoutedEventHandler(this.Open_Events_Click);
             
             #line default
@@ -11211,7 +11211,7 @@ namespace ProdigyConfigToolWPF {
             case 69:
             this.Open_Audio = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 482 "..\..\..\UI\BaseWindow.xaml"
+            #line 481 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Audio.Click += new System.Windows.RoutedEventHandler(this.Open_Audio_Click);
             
             #line default
@@ -11220,7 +11220,7 @@ namespace ProdigyConfigToolWPF {
             case 70:
             this.Open_Status = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 488 "..\..\..\UI\BaseWindow.xaml"
+            #line 487 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Status.Click += new System.Windows.RoutedEventHandler(this.Open_Status_Click);
             
             #line default
@@ -11229,7 +11229,7 @@ namespace ProdigyConfigToolWPF {
             case 71:
             this.Open_Debug = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 494 "..\..\..\UI\BaseWindow.xaml"
+            #line 493 "..\..\..\UI\BaseWindow.xaml"
             this.Open_Debug.Click += new System.Windows.RoutedEventHandler(this.Open_Debug_Click);
             
             #line default
@@ -11238,7 +11238,7 @@ namespace ProdigyConfigToolWPF {
             case 72:
             this.Open_FirmwareUpdate = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 500 "..\..\..\UI\BaseWindow.xaml"
+            #line 499 "..\..\..\UI\BaseWindow.xaml"
             this.Open_FirmwareUpdate.Click += new System.Windows.RoutedEventHandler(this.Open_FWUpdate_Click);
             
             #line default
@@ -11253,7 +11253,7 @@ namespace ProdigyConfigToolWPF {
             case 75:
             this.ZonesDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 527 "..\..\..\UI\BaseWindow.xaml"
+            #line 526 "..\..\..\UI\BaseWindow.xaml"
             this.ZonesDownloadTile.Click += new System.Windows.RoutedEventHandler(this.ZonesDownloadTile_Click);
             
             #line default
@@ -11262,7 +11262,7 @@ namespace ProdigyConfigToolWPF {
             case 76:
             this.ZoneUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 533 "..\..\..\UI\BaseWindow.xaml"
+            #line 532 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneUploadTile.Click += new System.Windows.RoutedEventHandler(this.ZonesUploadTile_Click);
             
             #line default
@@ -11271,7 +11271,7 @@ namespace ProdigyConfigToolWPF {
             case 77:
             this.ZoneShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 542 "..\..\..\UI\BaseWindow.xaml"
+            #line 541 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_GeneralSettingsButton_Click);
             
             #line default
@@ -11280,7 +11280,7 @@ namespace ProdigyConfigToolWPF {
             case 78:
             this.ZoneShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 547 "..\..\..\UI\BaseWindow.xaml"
+            #line 546 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_GeneralSettingsButton_Click);
             
             #line default
@@ -11289,7 +11289,7 @@ namespace ProdigyConfigToolWPF {
             case 79:
             this.ZoneShortcuts_AreasKeypadsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 553 "..\..\..\UI\BaseWindow.xaml"
+            #line 552 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_AreasKeypadsTile.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_AreasKeypadsButton_Click);
             
             #line default
@@ -11298,7 +11298,7 @@ namespace ProdigyConfigToolWPF {
             case 80:
             this.ZoneShortcuts_AreasKeypadsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 558 "..\..\..\UI\BaseWindow.xaml"
+            #line 557 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_AreasKeypadsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_AreasKeypadsButton_Click);
             
             #line default
@@ -11307,7 +11307,7 @@ namespace ProdigyConfigToolWPF {
             case 81:
             this.ZoneShortcuts_TerminalsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 564 "..\..\..\UI\BaseWindow.xaml"
+            #line 563 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_TerminalsTile.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_TerminalsButton_Click);
             
             #line default
@@ -11316,7 +11316,7 @@ namespace ProdigyConfigToolWPF {
             case 82:
             this.ZoneShortcuts_TerminalsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 569 "..\..\..\UI\BaseWindow.xaml"
+            #line 568 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_TerminalsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_TerminalsButton_Click);
             
             #line default
@@ -11325,7 +11325,7 @@ namespace ProdigyConfigToolWPF {
             case 83:
             this.ZoneShortcuts_OutputsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 575 "..\..\..\UI\BaseWindow.xaml"
+            #line 574 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_OutputsTile.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_OutputsButton_Click);
             
             #line default
@@ -11334,7 +11334,7 @@ namespace ProdigyConfigToolWPF {
             case 84:
             this.ZoneShortcuts_OutputsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 580 "..\..\..\UI\BaseWindow.xaml"
+            #line 579 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_OutputsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_OutputsButton_Click);
             
             #line default
@@ -11343,7 +11343,7 @@ namespace ProdigyConfigToolWPF {
             case 85:
             this.ZoneShortcuts_AudioTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 586 "..\..\..\UI\BaseWindow.xaml"
+            #line 585 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_AudioTile.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_AudioButton_Click);
             
             #line default
@@ -11352,7 +11352,7 @@ namespace ProdigyConfigToolWPF {
             case 86:
             this.ZoneShortcuts_AudioTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 591 "..\..\..\UI\BaseWindow.xaml"
+            #line 590 "..\..\..\UI\BaseWindow.xaml"
             this.ZoneShortcuts_AudioTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.ZoneShortcuts_AudioButton_Click);
             
             #line default
@@ -11361,7 +11361,7 @@ namespace ProdigyConfigToolWPF {
             case 87:
             this.zoneDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 600 "..\..\..\UI\BaseWindow.xaml"
+            #line 599 "..\..\..\UI\BaseWindow.xaml"
             this.zoneDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.zoneDataGrid_MouseDoubleClick);
             
             #line default
@@ -11529,7 +11529,7 @@ namespace ProdigyConfigToolWPF {
             case 184:
             this.AreasDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4012 "..\..\..\UI\BaseWindow.xaml"
+            #line 4011 "..\..\..\UI\BaseWindow.xaml"
             this.AreasDownloadTile.Click += new System.Windows.RoutedEventHandler(this.AreasDownloadTile_Click);
             
             #line default
@@ -11538,7 +11538,7 @@ namespace ProdigyConfigToolWPF {
             case 185:
             this.AreasUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4018 "..\..\..\UI\BaseWindow.xaml"
+            #line 4017 "..\..\..\UI\BaseWindow.xaml"
             this.AreasUploadTile.Click += new System.Windows.RoutedEventHandler(this.AreasUploadTile_Click);
             
             #line default
@@ -11547,7 +11547,7 @@ namespace ProdigyConfigToolWPF {
             case 186:
             this.AreasShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4027 "..\..\..\UI\BaseWindow.xaml"
+            #line 4026 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_SettingsButton_Click);
             
             #line default
@@ -11556,7 +11556,7 @@ namespace ProdigyConfigToolWPF {
             case 187:
             this.AreasShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4032 "..\..\..\UI\BaseWindow.xaml"
+            #line 4031 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_SettingsButton_Click);
             
             #line default
@@ -11565,7 +11565,7 @@ namespace ProdigyConfigToolWPF {
             case 188:
             this.AreasShortcuts_TimezonesTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4038 "..\..\..\UI\BaseWindow.xaml"
+            #line 4037 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_TimezonesTile.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_TimezonesButton_Click);
             
             #line default
@@ -11574,7 +11574,7 @@ namespace ProdigyConfigToolWPF {
             case 189:
             this.AreasShortcuts_TimezonesTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4043 "..\..\..\UI\BaseWindow.xaml"
+            #line 4042 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_TimezonesTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_TimezonesButton_Click);
             
             #line default
@@ -11583,7 +11583,7 @@ namespace ProdigyConfigToolWPF {
             case 190:
             this.AreasShortcuts_OutputsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4049 "..\..\..\UI\BaseWindow.xaml"
+            #line 4048 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_OutputsTile.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_OutputsButton_Click);
             
             #line default
@@ -11592,7 +11592,7 @@ namespace ProdigyConfigToolWPF {
             case 191:
             this.AreasShortcuts_OutputsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4054 "..\..\..\UI\BaseWindow.xaml"
+            #line 4053 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_OutputsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_OutputsButton_Click);
             
             #line default
@@ -11601,7 +11601,7 @@ namespace ProdigyConfigToolWPF {
             case 192:
             this.AreasShortcuts_AudioTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4060 "..\..\..\UI\BaseWindow.xaml"
+            #line 4059 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_AudioTile.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_AudioButton_Click);
             
             #line default
@@ -11610,7 +11610,7 @@ namespace ProdigyConfigToolWPF {
             case 193:
             this.AreasShortcuts_AudioTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 4065 "..\..\..\UI\BaseWindow.xaml"
+            #line 4064 "..\..\..\UI\BaseWindow.xaml"
             this.AreasShortcuts_AudioTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.AreasShortcuts_AudioButton_Click);
             
             #line default
@@ -11619,7 +11619,7 @@ namespace ProdigyConfigToolWPF {
             case 194:
             this.areaDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 4073 "..\..\..\UI\BaseWindow.xaml"
+            #line 4072 "..\..\..\UI\BaseWindow.xaml"
             this.areaDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.areaDataGrid_MouseDoubleClick);
             
             #line default
@@ -11751,7 +11751,7 @@ namespace ProdigyConfigToolWPF {
             case 271:
             this.UsersDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6674 "..\..\..\UI\BaseWindow.xaml"
+            #line 6673 "..\..\..\UI\BaseWindow.xaml"
             this.UsersDownloadTile.Click += new System.Windows.RoutedEventHandler(this.UsersDownloadTile_Click);
             
             #line default
@@ -11760,7 +11760,7 @@ namespace ProdigyConfigToolWPF {
             case 272:
             this.UsersUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6680 "..\..\..\UI\BaseWindow.xaml"
+            #line 6679 "..\..\..\UI\BaseWindow.xaml"
             this.UsersUploadTile.Click += new System.Windows.RoutedEventHandler(this.UsersUploadTile_Click);
             
             #line default
@@ -11769,7 +11769,7 @@ namespace ProdigyConfigToolWPF {
             case 273:
             this.UserShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6689 "..\..\..\UI\BaseWindow.xaml"
+            #line 6688 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_SettingsButton_Click);
             
             #line default
@@ -11778,7 +11778,7 @@ namespace ProdigyConfigToolWPF {
             case 274:
             this.UserShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6694 "..\..\..\UI\BaseWindow.xaml"
+            #line 6693 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_SettingsButton_Click);
             
             #line default
@@ -11787,7 +11787,7 @@ namespace ProdigyConfigToolWPF {
             case 275:
             this.UserShortcuts_TimezonesTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6700 "..\..\..\UI\BaseWindow.xaml"
+            #line 6699 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_TimezonesTile.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_TimezonesButton_Click);
             
             #line default
@@ -11796,7 +11796,7 @@ namespace ProdigyConfigToolWPF {
             case 276:
             this.UserShortcuts_TimezonesTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6705 "..\..\..\UI\BaseWindow.xaml"
+            #line 6704 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_TimezonesTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_TimezonesButton_Click);
             
             #line default
@@ -11805,7 +11805,7 @@ namespace ProdigyConfigToolWPF {
             case 277:
             this.UserShortcuts_PermissionsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6711 "..\..\..\UI\BaseWindow.xaml"
+            #line 6710 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_PermissionsTile.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_PermissionsButton_Click);
             
             #line default
@@ -11814,7 +11814,7 @@ namespace ProdigyConfigToolWPF {
             case 278:
             this.UserShortcuts_PermissionsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6716 "..\..\..\UI\BaseWindow.xaml"
+            #line 6715 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_PermissionsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_PermissionsButton_Click);
             
             #line default
@@ -11823,7 +11823,7 @@ namespace ProdigyConfigToolWPF {
             case 279:
             this.UserShortcuts_ButtonsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6722 "..\..\..\UI\BaseWindow.xaml"
+            #line 6721 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_ButtonsTile.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_ButtonsButton_Click);
             
             #line default
@@ -11832,7 +11832,7 @@ namespace ProdigyConfigToolWPF {
             case 280:
             this.UserShortcuts_ButtonsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6727 "..\..\..\UI\BaseWindow.xaml"
+            #line 6726 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_ButtonsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_ButtonsButton_Click);
             
             #line default
@@ -11841,7 +11841,7 @@ namespace ProdigyConfigToolWPF {
             case 281:
             this.UserShortcuts_AudioTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6733 "..\..\..\UI\BaseWindow.xaml"
+            #line 6732 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_AudioTile.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_AudioButton_Click);
             
             #line default
@@ -11850,7 +11850,7 @@ namespace ProdigyConfigToolWPF {
             case 282:
             this.UserShortcuts_AudioTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 6738 "..\..\..\UI\BaseWindow.xaml"
+            #line 6737 "..\..\..\UI\BaseWindow.xaml"
             this.UserShortcuts_AudioTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.UserShortcuts_AudioButton_Click);
             
             #line default
@@ -11859,7 +11859,7 @@ namespace ProdigyConfigToolWPF {
             case 283:
             this.userDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 6747 "..\..\..\UI\BaseWindow.xaml"
+            #line 6746 "..\..\..\UI\BaseWindow.xaml"
             this.userDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.userDataGrid_MouseDoubleClick);
             
             #line default
@@ -11979,7 +11979,7 @@ namespace ProdigyConfigToolWPF {
             case 348:
             this.KeypadsDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9915 "..\..\..\UI\BaseWindow.xaml"
+            #line 9914 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadsDownloadTile.Click += new System.Windows.RoutedEventHandler(this.KeypadsDownloadTile_Click);
             
             #line default
@@ -11988,7 +11988,7 @@ namespace ProdigyConfigToolWPF {
             case 349:
             this.KeypadsUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9921 "..\..\..\UI\BaseWindow.xaml"
+            #line 9920 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadsUploadTile.Click += new System.Windows.RoutedEventHandler(this.KeypadsUploadTile_Click);
             
             #line default
@@ -11997,7 +11997,7 @@ namespace ProdigyConfigToolWPF {
             case 350:
             this.KeypadShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9930 "..\..\..\UI\BaseWindow.xaml"
+            #line 9929 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_SettingsButton_Click);
             
             #line default
@@ -12006,7 +12006,7 @@ namespace ProdigyConfigToolWPF {
             case 351:
             this.KeypadShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9935 "..\..\..\UI\BaseWindow.xaml"
+            #line 9934 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_SettingsButton_Click);
             
             #line default
@@ -12015,7 +12015,7 @@ namespace ProdigyConfigToolWPF {
             case 352:
             this.KeypadShortcuts_AreasTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9941 "..\..\..\UI\BaseWindow.xaml"
+            #line 9940 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_AreasTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_AreasButton_Click);
             
             #line default
@@ -12024,7 +12024,7 @@ namespace ProdigyConfigToolWPF {
             case 353:
             this.KeypadShortcuts_AreasTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9946 "..\..\..\UI\BaseWindow.xaml"
+            #line 9945 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_AreasTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_AreasButton_Click);
             
             #line default
@@ -12033,7 +12033,7 @@ namespace ProdigyConfigToolWPF {
             case 354:
             this.KeypadShortcuts_BeepsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9952 "..\..\..\UI\BaseWindow.xaml"
+            #line 9951 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_BeepsTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_BeepsButton_Click);
             
             #line default
@@ -12042,7 +12042,7 @@ namespace ProdigyConfigToolWPF {
             case 355:
             this.KeypadShortcuts_BeepsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9957 "..\..\..\UI\BaseWindow.xaml"
+            #line 9956 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_BeepsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_BeepsButton_Click);
             
             #line default
@@ -12051,7 +12051,7 @@ namespace ProdigyConfigToolWPF {
             case 356:
             this.KeypadShortcuts_ArmDisarmTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9963 "..\..\..\UI\BaseWindow.xaml"
+            #line 9962 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_ArmDisarmTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_ArmDisarmButton_Click);
             
             #line default
@@ -12060,7 +12060,7 @@ namespace ProdigyConfigToolWPF {
             case 357:
             this.KeypadShortcuts_ArmDisarmTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9968 "..\..\..\UI\BaseWindow.xaml"
+            #line 9967 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_ArmDisarmTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_ArmDisarmButton_Click);
             
             #line default
@@ -12069,7 +12069,7 @@ namespace ProdigyConfigToolWPF {
             case 358:
             this.KeypadShortcuts_FbuttonsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9974 "..\..\..\UI\BaseWindow.xaml"
+            #line 9973 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_FbuttonsTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_FbuttonsButton_Click);
             
             #line default
@@ -12078,7 +12078,7 @@ namespace ProdigyConfigToolWPF {
             case 359:
             this.KeypadShortcuts_FbuttonsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9979 "..\..\..\UI\BaseWindow.xaml"
+            #line 9978 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_FbuttonsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_FbuttonsButton_Click);
             
             #line default
@@ -12087,7 +12087,7 @@ namespace ProdigyConfigToolWPF {
             case 360:
             this.KeypadShortcuts_AudioTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9985 "..\..\..\UI\BaseWindow.xaml"
+            #line 9984 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_AudioTile.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_AudioButton_Click);
             
             #line default
@@ -12096,7 +12096,7 @@ namespace ProdigyConfigToolWPF {
             case 361:
             this.KeypadShortcuts_AudioTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 9990 "..\..\..\UI\BaseWindow.xaml"
+            #line 9989 "..\..\..\UI\BaseWindow.xaml"
             this.KeypadShortcuts_AudioTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.KeypadShortcuts_AudioButton_Click);
             
             #line default
@@ -12105,7 +12105,7 @@ namespace ProdigyConfigToolWPF {
             case 362:
             this.keypadDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 9999 "..\..\..\UI\BaseWindow.xaml"
+            #line 9998 "..\..\..\UI\BaseWindow.xaml"
             this.keypadDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.keypadDataGrid_MouseDoubleClick);
             
             #line default
@@ -12186,7 +12186,7 @@ namespace ProdigyConfigToolWPF {
             case 398:
             this.upload_choose_file_button = ((System.Windows.Controls.Button)(target));
             
-            #line 11279 "..\..\..\UI\BaseWindow.xaml"
+            #line 11278 "..\..\..\UI\BaseWindow.xaml"
             this.upload_choose_file_button.Click += new System.Windows.RoutedEventHandler(this.ChooseFileButton_Click);
             
             #line default
@@ -12195,7 +12195,7 @@ namespace ProdigyConfigToolWPF {
             case 399:
             this.upload_update_file_button = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11283 "..\..\..\UI\BaseWindow.xaml"
+            #line 11282 "..\..\..\UI\BaseWindow.xaml"
             this.upload_update_file_button.Click += new System.Windows.RoutedEventHandler(this.UploadFileButton_Click);
             
             #line default
@@ -12210,7 +12210,7 @@ namespace ProdigyConfigToolWPF {
             case 402:
             this.OutputsDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11309 "..\..\..\UI\BaseWindow.xaml"
+            #line 11308 "..\..\..\UI\BaseWindow.xaml"
             this.OutputsDownloadTile.Click += new System.Windows.RoutedEventHandler(this.OutputsDownloadTile_Click);
             
             #line default
@@ -12219,7 +12219,7 @@ namespace ProdigyConfigToolWPF {
             case 403:
             this.OutputsUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11315 "..\..\..\UI\BaseWindow.xaml"
+            #line 11314 "..\..\..\UI\BaseWindow.xaml"
             this.OutputsUploadTile.Click += new System.Windows.RoutedEventHandler(this.OutputsUploadTile_Click);
             
             #line default
@@ -12228,7 +12228,7 @@ namespace ProdigyConfigToolWPF {
             case 404:
             this.OutputShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11324 "..\..\..\UI\BaseWindow.xaml"
+            #line 11323 "..\..\..\UI\BaseWindow.xaml"
             this.OutputShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.OutputShortcuts_SettingsButton_Click);
             
             #line default
@@ -12237,7 +12237,7 @@ namespace ProdigyConfigToolWPF {
             case 405:
             this.OutputShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11329 "..\..\..\UI\BaseWindow.xaml"
+            #line 11328 "..\..\..\UI\BaseWindow.xaml"
             this.OutputShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.OutputShortcuts_SettingsButton_Click);
             
             #line default
@@ -12246,7 +12246,7 @@ namespace ProdigyConfigToolWPF {
             case 406:
             this.OutputShortcuts_TimezonesTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11335 "..\..\..\UI\BaseWindow.xaml"
+            #line 11334 "..\..\..\UI\BaseWindow.xaml"
             this.OutputShortcuts_TimezonesTile.Click += new System.Windows.RoutedEventHandler(this.OutputShortcuts_TimezonesButton_Click);
             
             #line default
@@ -12255,7 +12255,7 @@ namespace ProdigyConfigToolWPF {
             case 407:
             this.OutputShortcuts_TimezonesTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 11340 "..\..\..\UI\BaseWindow.xaml"
+            #line 11339 "..\..\..\UI\BaseWindow.xaml"
             this.OutputShortcuts_TimezonesTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.OutputShortcuts_TimezonesButton_Click);
             
             #line default
@@ -12264,7 +12264,7 @@ namespace ProdigyConfigToolWPF {
             case 408:
             this.outputDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 11349 "..\..\..\UI\BaseWindow.xaml"
+            #line 11348 "..\..\..\UI\BaseWindow.xaml"
             this.outputDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.outputDataGrid_MouseDoubleClick);
             
             #line default
@@ -12321,7 +12321,7 @@ namespace ProdigyConfigToolWPF {
             case 436:
             this.TimezonesDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12172 "..\..\..\UI\BaseWindow.xaml"
+            #line 12171 "..\..\..\UI\BaseWindow.xaml"
             this.TimezonesDownloadTile.Click += new System.Windows.RoutedEventHandler(this.TimezonesDownloadTile_Click);
             
             #line default
@@ -12330,7 +12330,7 @@ namespace ProdigyConfigToolWPF {
             case 437:
             this.TimezonesUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12178 "..\..\..\UI\BaseWindow.xaml"
+            #line 12177 "..\..\..\UI\BaseWindow.xaml"
             this.TimezonesUploadTile.Click += new System.Windows.RoutedEventHandler(this.TimezonesUploadTile_Click);
             
             #line default
@@ -12339,7 +12339,7 @@ namespace ProdigyConfigToolWPF {
             case 438:
             this.TimezoneShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12187 "..\..\..\UI\BaseWindow.xaml"
+            #line 12186 "..\..\..\UI\BaseWindow.xaml"
             this.TimezoneShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.TimezoneShortcuts_SettingsButton_Click);
             
             #line default
@@ -12348,7 +12348,7 @@ namespace ProdigyConfigToolWPF {
             case 439:
             this.TimezoneShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12192 "..\..\..\UI\BaseWindow.xaml"
+            #line 12191 "..\..\..\UI\BaseWindow.xaml"
             this.TimezoneShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.TimezoneShortcuts_SettingsButton_Click);
             
             #line default
@@ -12357,7 +12357,7 @@ namespace ProdigyConfigToolWPF {
             case 440:
             this.TimezoneShortcuts_ExceptionsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12198 "..\..\..\UI\BaseWindow.xaml"
+            #line 12197 "..\..\..\UI\BaseWindow.xaml"
             this.TimezoneShortcuts_ExceptionsTile.Click += new System.Windows.RoutedEventHandler(this.TimezoneShortcuts_ExceptionsButton_Click);
             
             #line default
@@ -12366,7 +12366,7 @@ namespace ProdigyConfigToolWPF {
             case 441:
             this.TimezoneShortcuts_ExceptionsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 12203 "..\..\..\UI\BaseWindow.xaml"
+            #line 12202 "..\..\..\UI\BaseWindow.xaml"
             this.TimezoneShortcuts_ExceptionsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.TimezoneShortcuts_ExceptionsButton_Click);
             
             #line default
@@ -12375,7 +12375,7 @@ namespace ProdigyConfigToolWPF {
             case 442:
             this.timezoneDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 12212 "..\..\..\UI\BaseWindow.xaml"
+            #line 12211 "..\..\..\UI\BaseWindow.xaml"
             this.timezoneDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.timezoneDataGrid_MouseDoubleClick);
             
             #line default
@@ -12432,7 +12432,7 @@ namespace ProdigyConfigToolWPF {
             case 469:
             this.PhonesDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13042 "..\..\..\UI\BaseWindow.xaml"
+            #line 13041 "..\..\..\UI\BaseWindow.xaml"
             this.PhonesDownloadTile.Click += new System.Windows.RoutedEventHandler(this.PhonesDownloadTile_Click);
             
             #line default
@@ -12441,7 +12441,7 @@ namespace ProdigyConfigToolWPF {
             case 470:
             this.PhonesUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13048 "..\..\..\UI\BaseWindow.xaml"
+            #line 13047 "..\..\..\UI\BaseWindow.xaml"
             this.PhonesUploadTile.Click += new System.Windows.RoutedEventHandler(this.PhonesUploadTile_Click);
             
             #line default
@@ -12450,7 +12450,7 @@ namespace ProdigyConfigToolWPF {
             case 471:
             this.PhoneShortcuts_SettingsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13057 "..\..\..\UI\BaseWindow.xaml"
+            #line 13056 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_SettingsTile.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_SettingsButton_Click);
             
             #line default
@@ -12459,7 +12459,7 @@ namespace ProdigyConfigToolWPF {
             case 472:
             this.PhoneShortcuts_SettingsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13062 "..\..\..\UI\BaseWindow.xaml"
+            #line 13061 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_SettingsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_SettingsButton_Click);
             
             #line default
@@ -12468,7 +12468,7 @@ namespace ProdigyConfigToolWPF {
             case 473:
             this.PhoneShortcuts_ReportsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13068 "..\..\..\UI\BaseWindow.xaml"
+            #line 13067 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_ReportsTile.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_ReportsButton_Click);
             
             #line default
@@ -12477,7 +12477,7 @@ namespace ProdigyConfigToolWPF {
             case 474:
             this.PhoneShortcuts_ReportsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13073 "..\..\..\UI\BaseWindow.xaml"
+            #line 13072 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_ReportsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_ReportsButton_Click);
             
             #line default
@@ -12486,7 +12486,7 @@ namespace ProdigyConfigToolWPF {
             case 475:
             this.PhoneShortcuts_TestsTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13079 "..\..\..\UI\BaseWindow.xaml"
+            #line 13078 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_TestsTile.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_TestsButton_Click);
             
             #line default
@@ -12495,7 +12495,7 @@ namespace ProdigyConfigToolWPF {
             case 476:
             this.PhoneShortcuts_TestsTileDISABLED = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 13084 "..\..\..\UI\BaseWindow.xaml"
+            #line 13083 "..\..\..\UI\BaseWindow.xaml"
             this.PhoneShortcuts_TestsTileDISABLED.Click += new System.Windows.RoutedEventHandler(this.PhoneShortcuts_TestsButton_Click);
             
             #line default
@@ -12504,7 +12504,7 @@ namespace ProdigyConfigToolWPF {
             case 477:
             this.phoneDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 13093 "..\..\..\UI\BaseWindow.xaml"
+            #line 13092 "..\..\..\UI\BaseWindow.xaml"
             this.phoneDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.phoneDataGrid_MouseDoubleClick);
             
             #line default
@@ -12567,7 +12567,7 @@ namespace ProdigyConfigToolWPF {
             case 504:
             this.DialerDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14329 "..\..\..\UI\BaseWindow.xaml"
+            #line 14328 "..\..\..\UI\BaseWindow.xaml"
             this.DialerDownloadTile.Click += new System.Windows.RoutedEventHandler(this.DialerDownloadTile_Click);
             
             #line default
@@ -12576,7 +12576,7 @@ namespace ProdigyConfigToolWPF {
             case 505:
             this.DialerUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14335 "..\..\..\UI\BaseWindow.xaml"
+            #line 14334 "..\..\..\UI\BaseWindow.xaml"
             this.DialerUploadTile.Click += new System.Windows.RoutedEventHandler(this.DialerUploadTile_Click);
             
             #line default
@@ -12585,7 +12585,7 @@ namespace ProdigyConfigToolWPF {
             case 506:
             this.dialerDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 14343 "..\..\..\UI\BaseWindow.xaml"
+            #line 14342 "..\..\..\UI\BaseWindow.xaml"
             this.dialerDataGrid.MouseDoubleClick += new System.Windows.Input.MouseButtonEventHandler(this.dialerDataGrid_MouseDoubleClick);
             
             #line default
@@ -12629,7 +12629,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 519:
             
-            #line 14455 "..\..\..\UI\BaseWindow.xaml"
+            #line 14454 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.DebugClearButton_Click);
             
             #line default
@@ -12662,7 +12662,7 @@ namespace ProdigyConfigToolWPF {
             case 528:
             this.Reab_Events_Button = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14514 "..\..\..\UI\BaseWindow.xaml"
+            #line 14513 "..\..\..\UI\BaseWindow.xaml"
             this.Reab_Events_Button.Click += new System.Windows.RoutedEventHandler(this.Reab_Events_Button_click);
             
             #line default
@@ -12671,7 +12671,7 @@ namespace ProdigyConfigToolWPF {
             case 529:
             this.ClearFilters = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14518 "..\..\..\UI\BaseWindow.xaml"
+            #line 14517 "..\..\..\UI\BaseWindow.xaml"
             this.ClearFilters.Click += new System.Windows.RoutedEventHandler(this.ClearFilters_Click);
             
             #line default
@@ -12680,7 +12680,7 @@ namespace ProdigyConfigToolWPF {
             case 530:
             this.CheckAllEvents = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14522 "..\..\..\UI\BaseWindow.xaml"
+            #line 14521 "..\..\..\UI\BaseWindow.xaml"
             this.CheckAllEvents.Click += new System.Windows.RoutedEventHandler(this.CheckAllEvents_Click);
             
             #line default
@@ -12695,7 +12695,7 @@ namespace ProdigyConfigToolWPF {
             case 533:
             this.ButtonFilterArmDisarm = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14534 "..\..\..\UI\BaseWindow.xaml"
+            #line 14533 "..\..\..\UI\BaseWindow.xaml"
             this.ButtonFilterArmDisarm.Click += new System.Windows.RoutedEventHandler(this.ButtonFilterArmDisarm_Click);
             
             #line default
@@ -12704,7 +12704,7 @@ namespace ProdigyConfigToolWPF {
             case 534:
             this.ButtonFilterAlarms = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14539 "..\..\..\UI\BaseWindow.xaml"
+            #line 14538 "..\..\..\UI\BaseWindow.xaml"
             this.ButtonFilterAlarms.Click += new System.Windows.RoutedEventHandler(this.ButtonFilterAlarms_Click);
             
             #line default
@@ -12713,7 +12713,7 @@ namespace ProdigyConfigToolWPF {
             case 535:
             this.ButtonFilterFaults = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14544 "..\..\..\UI\BaseWindow.xaml"
+            #line 14543 "..\..\..\UI\BaseWindow.xaml"
             this.ButtonFilterFaults.Click += new System.Windows.RoutedEventHandler(this.ButtonFilterFaults_Click);
             
             #line default
@@ -12722,7 +12722,7 @@ namespace ProdigyConfigToolWPF {
             case 536:
             this.PartitionComboBox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 14550 "..\..\..\UI\BaseWindow.xaml"
+            #line 14549 "..\..\..\UI\BaseWindow.xaml"
             this.PartitionComboBox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.PartitionComboBox_SelectionChanged);
             
             #line default
@@ -12737,7 +12737,7 @@ namespace ProdigyConfigToolWPF {
             case 539:
             this.SelectRangeDate = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14554 "..\..\..\UI\BaseWindow.xaml"
+            #line 14553 "..\..\..\UI\BaseWindow.xaml"
             this.SelectRangeDate.Click += new System.Windows.RoutedEventHandler(this.SelectRangeDate_Click);
             
             #line default
@@ -12785,7 +12785,7 @@ namespace ProdigyConfigToolWPF {
             case 553:
             this.AudioMessagesUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14793 "..\..\..\UI\BaseWindow.xaml"
+            #line 14792 "..\..\..\UI\BaseWindow.xaml"
             this.AudioMessagesUploadTile.Click += new System.Windows.RoutedEventHandler(this.Send_Audio_messages);
             
             #line default
@@ -12794,7 +12794,7 @@ namespace ProdigyConfigToolWPF {
             case 554:
             this.AudioSystemConfigurationDownload = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14799 "..\..\..\UI\BaseWindow.xaml"
+            #line 14798 "..\..\..\UI\BaseWindow.xaml"
             this.AudioSystemConfigurationDownload.Click += new System.Windows.RoutedEventHandler(this.AudioSystemConfigurationDownload_Click);
             
             #line default
@@ -12803,7 +12803,7 @@ namespace ProdigyConfigToolWPF {
             case 555:
             this.AudioSystemConfigurationUpload = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 14805 "..\..\..\UI\BaseWindow.xaml"
+            #line 14804 "..\..\..\UI\BaseWindow.xaml"
             this.AudioSystemConfigurationUpload.Click += new System.Windows.RoutedEventHandler(this.AudioSystemConfigurationUpload_Click);
             
             #line default
@@ -12815,7 +12815,7 @@ namespace ProdigyConfigToolWPF {
             case 557:
             this.AudioReservedDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 14816 "..\..\..\UI\BaseWindow.xaml"
+            #line 14815 "..\..\..\UI\BaseWindow.xaml"
             this.AudioReservedDataGrid.Loaded += new System.Windows.RoutedEventHandler(this.AudioReservedDataGrid_Loaded);
             
             #line default
@@ -12836,7 +12836,7 @@ namespace ProdigyConfigToolWPF {
             case 565:
             this.AudioCustomizedDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 14952 "..\..\..\UI\BaseWindow.xaml"
+            #line 14951 "..\..\..\UI\BaseWindow.xaml"
             this.AudioCustomizedDataGrid.RowEditEnding += new System.EventHandler<System.Windows.Controls.DataGridRowEditEndingEventArgs>(this.AudioCustomizedDataGrid_RowEditEnding);
             
             #line default
@@ -12875,7 +12875,7 @@ namespace ProdigyConfigToolWPF {
             case 584:
             this.Status_Partitions_minus = ((System.Windows.Controls.Button)(target));
             
-            #line 15367 "..\..\..\UI\BaseWindow.xaml"
+            #line 15366 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Partitions_minus.Click += new System.Windows.RoutedEventHandler(this.StatusPartitionsButton_Click);
             
             #line default
@@ -12884,7 +12884,7 @@ namespace ProdigyConfigToolWPF {
             case 585:
             this.Status_Partitions_plus = ((System.Windows.Controls.Button)(target));
             
-            #line 15375 "..\..\..\UI\BaseWindow.xaml"
+            #line 15374 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Partitions_plus.Click += new System.Windows.RoutedEventHandler(this.StatusPartitionsButton_Click);
             
             #line default
@@ -12896,7 +12896,7 @@ namespace ProdigyConfigToolWPF {
             case 587:
             this.StatusPartition1 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15389 "..\..\..\UI\BaseWindow.xaml"
+            #line 15388 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition1.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12905,7 +12905,7 @@ namespace ProdigyConfigToolWPF {
             case 588:
             this.StatusPartition2 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15394 "..\..\..\UI\BaseWindow.xaml"
+            #line 15393 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition2.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12914,7 +12914,7 @@ namespace ProdigyConfigToolWPF {
             case 589:
             this.StatusPartition3 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15399 "..\..\..\UI\BaseWindow.xaml"
+            #line 15398 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition3.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12923,7 +12923,7 @@ namespace ProdigyConfigToolWPF {
             case 590:
             this.StatusPartition4 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15404 "..\..\..\UI\BaseWindow.xaml"
+            #line 15403 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition4.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12932,7 +12932,7 @@ namespace ProdigyConfigToolWPF {
             case 591:
             this.StatusPartition5 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15409 "..\..\..\UI\BaseWindow.xaml"
+            #line 15408 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition5.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12941,7 +12941,7 @@ namespace ProdigyConfigToolWPF {
             case 592:
             this.StatusPartition6 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15414 "..\..\..\UI\BaseWindow.xaml"
+            #line 15413 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition6.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12950,7 +12950,7 @@ namespace ProdigyConfigToolWPF {
             case 593:
             this.StatusPartition7 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15419 "..\..\..\UI\BaseWindow.xaml"
+            #line 15418 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition7.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12959,7 +12959,7 @@ namespace ProdigyConfigToolWPF {
             case 594:
             this.StatusPartition8 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15424 "..\..\..\UI\BaseWindow.xaml"
+            #line 15423 "..\..\..\UI\BaseWindow.xaml"
             this.StatusPartition8.Click += new System.Windows.RoutedEventHandler(this.StatusPartition1_Click);
             
             #line default
@@ -12968,7 +12968,7 @@ namespace ProdigyConfigToolWPF {
             case 595:
             this.Status_Zones_minus = ((System.Windows.Controls.Button)(target));
             
-            #line 15440 "..\..\..\UI\BaseWindow.xaml"
+            #line 15439 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Zones_minus.Click += new System.Windows.RoutedEventHandler(this.StatusZonesButton_Click);
             
             #line default
@@ -12977,7 +12977,7 @@ namespace ProdigyConfigToolWPF {
             case 596:
             this.Status_Zones_plus = ((System.Windows.Controls.Button)(target));
             
-            #line 15448 "..\..\..\UI\BaseWindow.xaml"
+            #line 15447 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Zones_plus.Click += new System.Windows.RoutedEventHandler(this.StatusZonesButton_Click);
             
             #line default
@@ -12989,7 +12989,7 @@ namespace ProdigyConfigToolWPF {
             case 598:
             this.StatusZone1 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15463 "..\..\..\UI\BaseWindow.xaml"
+            #line 15462 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone1.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -12998,7 +12998,7 @@ namespace ProdigyConfigToolWPF {
             case 599:
             this.StatusZone2 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15468 "..\..\..\UI\BaseWindow.xaml"
+            #line 15467 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone2.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13007,7 +13007,7 @@ namespace ProdigyConfigToolWPF {
             case 600:
             this.StatusZone3 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15473 "..\..\..\UI\BaseWindow.xaml"
+            #line 15472 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone3.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13016,7 +13016,7 @@ namespace ProdigyConfigToolWPF {
             case 601:
             this.StatusZone4 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15478 "..\..\..\UI\BaseWindow.xaml"
+            #line 15477 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone4.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13025,7 +13025,7 @@ namespace ProdigyConfigToolWPF {
             case 602:
             this.StatusZone5 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15483 "..\..\..\UI\BaseWindow.xaml"
+            #line 15482 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone5.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13034,7 +13034,7 @@ namespace ProdigyConfigToolWPF {
             case 603:
             this.StatusZone6 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15488 "..\..\..\UI\BaseWindow.xaml"
+            #line 15487 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone6.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13043,7 +13043,7 @@ namespace ProdigyConfigToolWPF {
             case 604:
             this.StatusZone7 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15493 "..\..\..\UI\BaseWindow.xaml"
+            #line 15492 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone7.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13052,7 +13052,7 @@ namespace ProdigyConfigToolWPF {
             case 605:
             this.StatusZone8 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15498 "..\..\..\UI\BaseWindow.xaml"
+            #line 15497 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone8.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13061,7 +13061,7 @@ namespace ProdigyConfigToolWPF {
             case 606:
             this.StatusZone9 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15503 "..\..\..\UI\BaseWindow.xaml"
+            #line 15502 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone9.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13070,7 +13070,7 @@ namespace ProdigyConfigToolWPF {
             case 607:
             this.StatusZone10 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15508 "..\..\..\UI\BaseWindow.xaml"
+            #line 15507 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone10.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13079,7 +13079,7 @@ namespace ProdigyConfigToolWPF {
             case 608:
             this.StatusZone11 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15515 "..\..\..\UI\BaseWindow.xaml"
+            #line 15514 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone11.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13088,7 +13088,7 @@ namespace ProdigyConfigToolWPF {
             case 609:
             this.StatusZone12 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15520 "..\..\..\UI\BaseWindow.xaml"
+            #line 15519 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone12.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13097,7 +13097,7 @@ namespace ProdigyConfigToolWPF {
             case 610:
             this.StatusZone13 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15525 "..\..\..\UI\BaseWindow.xaml"
+            #line 15524 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone13.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13106,7 +13106,7 @@ namespace ProdigyConfigToolWPF {
             case 611:
             this.StatusZone14 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15530 "..\..\..\UI\BaseWindow.xaml"
+            #line 15529 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone14.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13115,7 +13115,7 @@ namespace ProdigyConfigToolWPF {
             case 612:
             this.StatusZone15 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15535 "..\..\..\UI\BaseWindow.xaml"
+            #line 15534 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone15.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13124,7 +13124,7 @@ namespace ProdigyConfigToolWPF {
             case 613:
             this.StatusZone16 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15540 "..\..\..\UI\BaseWindow.xaml"
+            #line 15539 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone16.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13133,7 +13133,7 @@ namespace ProdigyConfigToolWPF {
             case 614:
             this.StatusZone17 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15545 "..\..\..\UI\BaseWindow.xaml"
+            #line 15544 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone17.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13142,7 +13142,7 @@ namespace ProdigyConfigToolWPF {
             case 615:
             this.StatusZone18 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15550 "..\..\..\UI\BaseWindow.xaml"
+            #line 15549 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone18.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13151,7 +13151,7 @@ namespace ProdigyConfigToolWPF {
             case 616:
             this.StatusZone19 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15555 "..\..\..\UI\BaseWindow.xaml"
+            #line 15554 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone19.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13160,7 +13160,7 @@ namespace ProdigyConfigToolWPF {
             case 617:
             this.StatusZone20 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15560 "..\..\..\UI\BaseWindow.xaml"
+            #line 15559 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone20.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13169,7 +13169,7 @@ namespace ProdigyConfigToolWPF {
             case 618:
             this.StatusZone21 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15567 "..\..\..\UI\BaseWindow.xaml"
+            #line 15566 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone21.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13178,7 +13178,7 @@ namespace ProdigyConfigToolWPF {
             case 619:
             this.StatusZone22 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15572 "..\..\..\UI\BaseWindow.xaml"
+            #line 15571 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone22.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13187,7 +13187,7 @@ namespace ProdigyConfigToolWPF {
             case 620:
             this.StatusZone23 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15577 "..\..\..\UI\BaseWindow.xaml"
+            #line 15576 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone23.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13196,7 +13196,7 @@ namespace ProdigyConfigToolWPF {
             case 621:
             this.StatusZone24 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15582 "..\..\..\UI\BaseWindow.xaml"
+            #line 15581 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone24.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13205,7 +13205,7 @@ namespace ProdigyConfigToolWPF {
             case 622:
             this.StatusZone25 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15587 "..\..\..\UI\BaseWindow.xaml"
+            #line 15586 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone25.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13214,7 +13214,7 @@ namespace ProdigyConfigToolWPF {
             case 623:
             this.StatusZone26 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15592 "..\..\..\UI\BaseWindow.xaml"
+            #line 15591 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone26.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13223,7 +13223,7 @@ namespace ProdigyConfigToolWPF {
             case 624:
             this.StatusZone27 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15597 "..\..\..\UI\BaseWindow.xaml"
+            #line 15596 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone27.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13232,7 +13232,7 @@ namespace ProdigyConfigToolWPF {
             case 625:
             this.StatusZone28 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15602 "..\..\..\UI\BaseWindow.xaml"
+            #line 15601 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone28.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13241,7 +13241,7 @@ namespace ProdigyConfigToolWPF {
             case 626:
             this.StatusZone29 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15607 "..\..\..\UI\BaseWindow.xaml"
+            #line 15606 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone29.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13250,7 +13250,7 @@ namespace ProdigyConfigToolWPF {
             case 627:
             this.StatusZone30 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15612 "..\..\..\UI\BaseWindow.xaml"
+            #line 15611 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone30.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13259,7 +13259,7 @@ namespace ProdigyConfigToolWPF {
             case 628:
             this.StatusZone31 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15619 "..\..\..\UI\BaseWindow.xaml"
+            #line 15618 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone31.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13268,7 +13268,7 @@ namespace ProdigyConfigToolWPF {
             case 629:
             this.StatusZone32 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15624 "..\..\..\UI\BaseWindow.xaml"
+            #line 15623 "..\..\..\UI\BaseWindow.xaml"
             this.StatusZone32.Click += new System.Windows.RoutedEventHandler(this.StatusZone_Click);
             
             #line default
@@ -13277,7 +13277,7 @@ namespace ProdigyConfigToolWPF {
             case 630:
             this.Status_Outputs_minus = ((System.Windows.Controls.Button)(target));
             
-            #line 15641 "..\..\..\UI\BaseWindow.xaml"
+            #line 15640 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Outputs_minus.Click += new System.Windows.RoutedEventHandler(this.StatusOutputsButton_Click);
             
             #line default
@@ -13286,7 +13286,7 @@ namespace ProdigyConfigToolWPF {
             case 631:
             this.Status_Outputs_plus = ((System.Windows.Controls.Button)(target));
             
-            #line 15649 "..\..\..\UI\BaseWindow.xaml"
+            #line 15648 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Outputs_plus.Click += new System.Windows.RoutedEventHandler(this.StatusOutputsButton_Click);
             
             #line default
@@ -13298,7 +13298,7 @@ namespace ProdigyConfigToolWPF {
             case 633:
             this.StatusOutput1 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15664 "..\..\..\UI\BaseWindow.xaml"
+            #line 15663 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput1.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13307,7 +13307,7 @@ namespace ProdigyConfigToolWPF {
             case 634:
             this.StatusOutput2 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15669 "..\..\..\UI\BaseWindow.xaml"
+            #line 15668 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput2.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13316,7 +13316,7 @@ namespace ProdigyConfigToolWPF {
             case 635:
             this.StatusOutput3 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15674 "..\..\..\UI\BaseWindow.xaml"
+            #line 15673 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput3.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13325,7 +13325,7 @@ namespace ProdigyConfigToolWPF {
             case 636:
             this.StatusOutput4 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15679 "..\..\..\UI\BaseWindow.xaml"
+            #line 15678 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput4.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13334,7 +13334,7 @@ namespace ProdigyConfigToolWPF {
             case 637:
             this.StatusOutput5 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15684 "..\..\..\UI\BaseWindow.xaml"
+            #line 15683 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput5.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13343,7 +13343,7 @@ namespace ProdigyConfigToolWPF {
             case 638:
             this.StatusOutput6 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15689 "..\..\..\UI\BaseWindow.xaml"
+            #line 15688 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput6.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13352,7 +13352,7 @@ namespace ProdigyConfigToolWPF {
             case 639:
             this.StatusOutput7 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15694 "..\..\..\UI\BaseWindow.xaml"
+            #line 15693 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput7.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13361,7 +13361,7 @@ namespace ProdigyConfigToolWPF {
             case 640:
             this.StatusOutput8 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15699 "..\..\..\UI\BaseWindow.xaml"
+            #line 15698 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput8.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13370,7 +13370,7 @@ namespace ProdigyConfigToolWPF {
             case 641:
             this.StatusOutput9 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15704 "..\..\..\UI\BaseWindow.xaml"
+            #line 15703 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput9.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13379,7 +13379,7 @@ namespace ProdigyConfigToolWPF {
             case 642:
             this.StatusOutput10 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15709 "..\..\..\UI\BaseWindow.xaml"
+            #line 15708 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput10.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13388,7 +13388,7 @@ namespace ProdigyConfigToolWPF {
             case 643:
             this.StatusOutput11 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15716 "..\..\..\UI\BaseWindow.xaml"
+            #line 15715 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput11.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13397,7 +13397,7 @@ namespace ProdigyConfigToolWPF {
             case 644:
             this.StatusOutput12 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15721 "..\..\..\UI\BaseWindow.xaml"
+            #line 15720 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput12.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13406,7 +13406,7 @@ namespace ProdigyConfigToolWPF {
             case 645:
             this.StatusOutput13 = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15726 "..\..\..\UI\BaseWindow.xaml"
+            #line 15725 "..\..\..\UI\BaseWindow.xaml"
             this.StatusOutput13.Click += new System.Windows.RoutedEventHandler(this.StatusOutputs_Click);
             
             #line default
@@ -13415,7 +13415,7 @@ namespace ProdigyConfigToolWPF {
             case 646:
             this.Status_Dialer_minus = ((System.Windows.Controls.Button)(target));
             
-            #line 15743 "..\..\..\UI\BaseWindow.xaml"
+            #line 15742 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Dialer_minus.Click += new System.Windows.RoutedEventHandler(this.StatusDialerButton_Click);
             
             #line default
@@ -13424,7 +13424,7 @@ namespace ProdigyConfigToolWPF {
             case 647:
             this.Status_Dialer_plus = ((System.Windows.Controls.Button)(target));
             
-            #line 15751 "..\..\..\UI\BaseWindow.xaml"
+            #line 15750 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Dialer_plus.Click += new System.Windows.RoutedEventHandler(this.StatusDialerButton_Click);
             
             #line default
@@ -13442,7 +13442,7 @@ namespace ProdigyConfigToolWPF {
             case 651:
             this.Status_Timezones_minus = ((System.Windows.Controls.Button)(target));
             
-            #line 15783 "..\..\..\UI\BaseWindow.xaml"
+            #line 15782 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Timezones_minus.Click += new System.Windows.RoutedEventHandler(this.StatusTimezonesButton_Click);
             
             #line default
@@ -13451,7 +13451,7 @@ namespace ProdigyConfigToolWPF {
             case 652:
             this.Status_Timezones_plus = ((System.Windows.Controls.Button)(target));
             
-            #line 15791 "..\..\..\UI\BaseWindow.xaml"
+            #line 15790 "..\..\..\UI\BaseWindow.xaml"
             this.Status_Timezones_plus.Click += new System.Windows.RoutedEventHandler(this.StatusTimezonesButton_Click);
             
             #line default
@@ -13490,7 +13490,7 @@ namespace ProdigyConfigToolWPF {
             case 663:
             this.SystemDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15864 "..\..\..\UI\BaseWindow.xaml"
+            #line 15863 "..\..\..\UI\BaseWindow.xaml"
             this.SystemDownloadTile.Click += new System.Windows.RoutedEventHandler(this.SystemDownloadTile_Click);
             
             #line default
@@ -13499,7 +13499,7 @@ namespace ProdigyConfigToolWPF {
             case 664:
             this.SystemUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 15872 "..\..\..\UI\BaseWindow.xaml"
+            #line 15871 "..\..\..\UI\BaseWindow.xaml"
             this.SystemUploadTile.Click += new System.Windows.RoutedEventHandler(this.SystemUploadTile_Click);
             
             #line default
@@ -13508,7 +13508,7 @@ namespace ProdigyConfigToolWPF {
             case 665:
             this.globalSystemDataGrid = ((System.Windows.Controls.DataGrid)(target));
             
-            #line 15879 "..\..\..\UI\BaseWindow.xaml"
+            #line 15878 "..\..\..\UI\BaseWindow.xaml"
             this.globalSystemDataGrid.AddHandler(System.Windows.Controls.Primitives.ButtonBase.ClickEvent, new System.Windows.RoutedEventHandler(this.GlobalSystemColumnHeaderClickedHandler));
             
             #line default
@@ -13604,7 +13604,7 @@ namespace ProdigyConfigToolWPF {
             case 696:
             this.MainArea_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 16754 "..\..\..\UI\BaseWindow.xaml"
+            #line 16753 "..\..\..\UI\BaseWindow.xaml"
             this.MainArea_button_back.Click += new System.Windows.RoutedEventHandler(this.MainArea_button_back_Click);
             
             #line default
@@ -13613,7 +13613,7 @@ namespace ProdigyConfigToolWPF {
             case 697:
             this.MainArea_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 16762 "..\..\..\UI\BaseWindow.xaml"
+            #line 16761 "..\..\..\UI\BaseWindow.xaml"
             this.MainArea_button_next.Click += new System.Windows.RoutedEventHandler(this.MainArea_button_next_Click);
             
             #line default
@@ -13622,7 +13622,7 @@ namespace ProdigyConfigToolWPF {
             case 698:
             this.MainArea_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 16770 "..\..\..\UI\BaseWindow.xaml"
+            #line 16769 "..\..\..\UI\BaseWindow.xaml"
             this.MainArea_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainArea_button_undo_Click);
             
             #line default
@@ -13631,7 +13631,7 @@ namespace ProdigyConfigToolWPF {
             case 699:
             this.MainArea_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 16778 "..\..\..\UI\BaseWindow.xaml"
+            #line 16777 "..\..\..\UI\BaseWindow.xaml"
             this.MainArea_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -13994,7 +13994,7 @@ namespace ProdigyConfigToolWPF {
             case 818:
             this.Area_Audio_1ComboBox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17308 "..\..\..\UI\BaseWindow.xaml"
+            #line 17307 "..\..\..\UI\BaseWindow.xaml"
             this.Area_Audio_1ComboBox.DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -14027,7 +14027,7 @@ namespace ProdigyConfigToolWPF {
             case 827:
             this.MainZone_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 17351 "..\..\..\UI\BaseWindow.xaml"
+            #line 17350 "..\..\..\UI\BaseWindow.xaml"
             this.MainZone_button_back.Click += new System.Windows.RoutedEventHandler(this.MainZone_button_back_Click);
             
             #line default
@@ -14036,7 +14036,7 @@ namespace ProdigyConfigToolWPF {
             case 828:
             this.MainZone_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 17359 "..\..\..\UI\BaseWindow.xaml"
+            #line 17358 "..\..\..\UI\BaseWindow.xaml"
             this.MainZone_button_next.Click += new System.Windows.RoutedEventHandler(this.MainZone_button_next_Click);
             
             #line default
@@ -14045,7 +14045,7 @@ namespace ProdigyConfigToolWPF {
             case 829:
             this.MainZone_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 17367 "..\..\..\UI\BaseWindow.xaml"
+            #line 17366 "..\..\..\UI\BaseWindow.xaml"
             this.MainZone_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainZone_button_undo_Click);
             
             #line default
@@ -14054,7 +14054,7 @@ namespace ProdigyConfigToolWPF {
             case 830:
             this.MainZone_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 17375 "..\..\..\UI\BaseWindow.xaml"
+            #line 17374 "..\..\..\UI\BaseWindow.xaml"
             this.MainZone_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -14246,7 +14246,7 @@ namespace ProdigyConfigToolWPF {
             case 892:
             this.ckZoneKeypadVisible = ((System.Windows.Controls.CheckBox)(target));
             
-            #line 17612 "..\..\..\UI\BaseWindow.xaml"
+            #line 17611 "..\..\..\UI\BaseWindow.xaml"
             this.ckZoneKeypadVisible.Click += new System.Windows.RoutedEventHandler(this.ckZoneKeypadVisible_Click);
             
             #line default
@@ -14285,7 +14285,7 @@ namespace ProdigyConfigToolWPF {
             case 903:
             this.terminal_circuit_typeColumn1 = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17685 "..\..\..\UI\BaseWindow.xaml"
+            #line 17684 "..\..\..\UI\BaseWindow.xaml"
             this.terminal_circuit_typeColumn1.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.terminal_circuit_typeColumn1_SelectionChanged);
             
             #line default
@@ -14300,7 +14300,7 @@ namespace ProdigyConfigToolWPF {
             case 906:
             this.r1value_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17695 "..\..\..\UI\BaseWindow.xaml"
+            #line 17694 "..\..\..\UI\BaseWindow.xaml"
             this.r1value_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r1value_combobox_SelectionChanged);
             
             #line default
@@ -14318,7 +14318,7 @@ namespace ProdigyConfigToolWPF {
             case 910:
             this.r1contact_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17707 "..\..\..\UI\BaseWindow.xaml"
+            #line 17706 "..\..\..\UI\BaseWindow.xaml"
             this.r1contact_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r1contact_combobox_SelectionChanged);
             
             #line default
@@ -14333,7 +14333,7 @@ namespace ProdigyConfigToolWPF {
             case 913:
             this.r2value_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17716 "..\..\..\UI\BaseWindow.xaml"
+            #line 17715 "..\..\..\UI\BaseWindow.xaml"
             this.r2value_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r2value_combobox_SelectionChanged);
             
             #line default
@@ -14351,7 +14351,7 @@ namespace ProdigyConfigToolWPF {
             case 917:
             this.r2contact_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17728 "..\..\..\UI\BaseWindow.xaml"
+            #line 17727 "..\..\..\UI\BaseWindow.xaml"
             this.r2contact_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r2contact_combobox_SelectionChanged);
             
             #line default
@@ -14366,7 +14366,7 @@ namespace ProdigyConfigToolWPF {
             case 920:
             this.r3value_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17737 "..\..\..\UI\BaseWindow.xaml"
+            #line 17736 "..\..\..\UI\BaseWindow.xaml"
             this.r3value_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r3value_combobox_SelectionChanged);
             
             #line default
@@ -14384,7 +14384,7 @@ namespace ProdigyConfigToolWPF {
             case 924:
             this.r3contact_combobox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 17749 "..\..\..\UI\BaseWindow.xaml"
+            #line 17748 "..\..\..\UI\BaseWindow.xaml"
             this.r3contact_combobox.SelectionChanged += new System.Windows.Controls.SelectionChangedEventHandler(this.r3contact_combobox_SelectionChanged);
             
             #line default
@@ -14708,7 +14708,7 @@ namespace ProdigyConfigToolWPF {
             case 1030:
             this.Zone_Audio_1ComboBox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 18122 "..\..\..\UI\BaseWindow.xaml"
+            #line 18121 "..\..\..\UI\BaseWindow.xaml"
             this.Zone_Audio_1ComboBox.DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -14741,7 +14741,7 @@ namespace ProdigyConfigToolWPF {
             case 1039:
             this.MainUser_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 18164 "..\..\..\UI\BaseWindow.xaml"
+            #line 18163 "..\..\..\UI\BaseWindow.xaml"
             this.MainUser_button_back.Click += new System.Windows.RoutedEventHandler(this.MainUser_button_back_Click);
             
             #line default
@@ -14750,7 +14750,7 @@ namespace ProdigyConfigToolWPF {
             case 1040:
             this.MainUser_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 18172 "..\..\..\UI\BaseWindow.xaml"
+            #line 18171 "..\..\..\UI\BaseWindow.xaml"
             this.MainUser_button_next.Click += new System.Windows.RoutedEventHandler(this.MainUser_button_next_Click);
             
             #line default
@@ -14759,7 +14759,7 @@ namespace ProdigyConfigToolWPF {
             case 1041:
             this.MainUser_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 18180 "..\..\..\UI\BaseWindow.xaml"
+            #line 18179 "..\..\..\UI\BaseWindow.xaml"
             this.MainUser_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainUser_button_undo_Click);
             
             #line default
@@ -14768,7 +14768,7 @@ namespace ProdigyConfigToolWPF {
             case 1042:
             this.MainUser_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 18188 "..\..\..\UI\BaseWindow.xaml"
+            #line 18187 "..\..\..\UI\BaseWindow.xaml"
             this.MainUser_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -15215,7 +15215,7 @@ namespace ProdigyConfigToolWPF {
             case 1189:
             this.User_Audio_1ComboBox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 18725 "..\..\..\UI\BaseWindow.xaml"
+            #line 18724 "..\..\..\UI\BaseWindow.xaml"
             this.User_Audio_1ComboBox.DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -15248,7 +15248,7 @@ namespace ProdigyConfigToolWPF {
             case 1198:
             this.MainTimezone_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 18767 "..\..\..\UI\BaseWindow.xaml"
+            #line 18766 "..\..\..\UI\BaseWindow.xaml"
             this.MainTimezone_button_back.Click += new System.Windows.RoutedEventHandler(this.MainTimezone_button_back_Click);
             
             #line default
@@ -15257,7 +15257,7 @@ namespace ProdigyConfigToolWPF {
             case 1199:
             this.MainTimezone_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 18775 "..\..\..\UI\BaseWindow.xaml"
+            #line 18774 "..\..\..\UI\BaseWindow.xaml"
             this.MainTimezone_button_next.Click += new System.Windows.RoutedEventHandler(this.MainTimezone_button_next_Click);
             
             #line default
@@ -15266,7 +15266,7 @@ namespace ProdigyConfigToolWPF {
             case 1200:
             this.MainTimezone_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 18783 "..\..\..\UI\BaseWindow.xaml"
+            #line 18782 "..\..\..\UI\BaseWindow.xaml"
             this.MainTimezone_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainTimezone_button_undo_Click);
             
             #line default
@@ -15275,7 +15275,7 @@ namespace ProdigyConfigToolWPF {
             case 1201:
             this.MainTimezone_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 18791 "..\..\..\UI\BaseWindow.xaml"
+            #line 18790 "..\..\..\UI\BaseWindow.xaml"
             this.MainTimezone_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -15398,7 +15398,7 @@ namespace ProdigyConfigToolWPF {
             case 1240:
             this.MainKeypad_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 19007 "..\..\..\UI\BaseWindow.xaml"
+            #line 19006 "..\..\..\UI\BaseWindow.xaml"
             this.MainKeypad_button_back.Click += new System.Windows.RoutedEventHandler(this.MainKeypad_button_back_Click);
             
             #line default
@@ -15407,7 +15407,7 @@ namespace ProdigyConfigToolWPF {
             case 1241:
             this.MainKeypad_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 19015 "..\..\..\UI\BaseWindow.xaml"
+            #line 19014 "..\..\..\UI\BaseWindow.xaml"
             this.MainKeypad_button_next.Click += new System.Windows.RoutedEventHandler(this.MainKeypad_button_next_Click);
             
             #line default
@@ -15416,7 +15416,7 @@ namespace ProdigyConfigToolWPF {
             case 1242:
             this.MainKeypad_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 19023 "..\..\..\UI\BaseWindow.xaml"
+            #line 19022 "..\..\..\UI\BaseWindow.xaml"
             this.MainKeypad_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainKeypad_button_undo_Click);
             
             #line default
@@ -15425,7 +15425,7 @@ namespace ProdigyConfigToolWPF {
             case 1243:
             this.MainKeypad_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 19031 "..\..\..\UI\BaseWindow.xaml"
+            #line 19030 "..\..\..\UI\BaseWindow.xaml"
             this.MainKeypad_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -15611,7 +15611,7 @@ namespace ProdigyConfigToolWPF {
             case 1303:
             this.Keypads_Audio_1ComboBox = ((System.Windows.Controls.ComboBox)(target));
             
-            #line 19437 "..\..\..\UI\BaseWindow.xaml"
+            #line 19436 "..\..\..\UI\BaseWindow.xaml"
             this.Keypads_Audio_1ComboBox.DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -15644,7 +15644,7 @@ namespace ProdigyConfigToolWPF {
             case 1312:
             this.MainOutput_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 19481 "..\..\..\UI\BaseWindow.xaml"
+            #line 19480 "..\..\..\UI\BaseWindow.xaml"
             this.MainOutput_button_back.Click += new System.Windows.RoutedEventHandler(this.MainOutput_button_back_Click);
             
             #line default
@@ -15653,7 +15653,7 @@ namespace ProdigyConfigToolWPF {
             case 1313:
             this.MainOutput_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 19489 "..\..\..\UI\BaseWindow.xaml"
+            #line 19488 "..\..\..\UI\BaseWindow.xaml"
             this.MainOutput_button_next.Click += new System.Windows.RoutedEventHandler(this.MainOutput_button_next_Click);
             
             #line default
@@ -15662,7 +15662,7 @@ namespace ProdigyConfigToolWPF {
             case 1314:
             this.MainOutput_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 19497 "..\..\..\UI\BaseWindow.xaml"
+            #line 19496 "..\..\..\UI\BaseWindow.xaml"
             this.MainOutput_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainOutput_button_undo_Click);
             
             #line default
@@ -15671,7 +15671,7 @@ namespace ProdigyConfigToolWPF {
             case 1315:
             this.MainOutput_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 19505 "..\..\..\UI\BaseWindow.xaml"
+            #line 19504 "..\..\..\UI\BaseWindow.xaml"
             this.MainOutput_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -15779,7 +15779,7 @@ namespace ProdigyConfigToolWPF {
             case 1349:
             this.MainGlobalSystem_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 19716 "..\..\..\UI\BaseWindow.xaml"
+            #line 19715 "..\..\..\UI\BaseWindow.xaml"
             this.MainGlobalSystem_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -15788,7 +15788,7 @@ namespace ProdigyConfigToolWPF {
             case 1350:
             this.GlobalSystemDownloadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 19728 "..\..\..\UI\BaseWindow.xaml"
+            #line 19727 "..\..\..\UI\BaseWindow.xaml"
             this.GlobalSystemDownloadTile.Click += new System.Windows.RoutedEventHandler(this.SystemDownloadTile_Click);
             
             #line default
@@ -15797,7 +15797,7 @@ namespace ProdigyConfigToolWPF {
             case 1351:
             this.GlobalSystemUploadTile = ((MahApps.Metro.Controls.Tile)(target));
             
-            #line 19734 "..\..\..\UI\BaseWindow.xaml"
+            #line 19733 "..\..\..\UI\BaseWindow.xaml"
             this.GlobalSystemUploadTile.Click += new System.Windows.RoutedEventHandler(this.SystemUploadTile_Click);
             
             #line default
@@ -16040,7 +16040,7 @@ namespace ProdigyConfigToolWPF {
             case 1430:
             this.MainPhone_button_back = ((System.Windows.Controls.Button)(target));
             
-            #line 19987 "..\..\..\UI\BaseWindow.xaml"
+            #line 19986 "..\..\..\UI\BaseWindow.xaml"
             this.MainPhone_button_back.Click += new System.Windows.RoutedEventHandler(this.MainPhone_button_back_Click);
             
             #line default
@@ -16049,7 +16049,7 @@ namespace ProdigyConfigToolWPF {
             case 1431:
             this.MainPhone_button_next = ((System.Windows.Controls.Button)(target));
             
-            #line 19995 "..\..\..\UI\BaseWindow.xaml"
+            #line 19994 "..\..\..\UI\BaseWindow.xaml"
             this.MainPhone_button_next.Click += new System.Windows.RoutedEventHandler(this.MainPhone_button_next_Click);
             
             #line default
@@ -16058,7 +16058,7 @@ namespace ProdigyConfigToolWPF {
             case 1432:
             this.MainPhone_button_undo = ((System.Windows.Controls.Button)(target));
             
-            #line 20003 "..\..\..\UI\BaseWindow.xaml"
+            #line 20002 "..\..\..\UI\BaseWindow.xaml"
             this.MainPhone_button_undo.Click += new System.Windows.RoutedEventHandler(this.MainPhone_button_undo_Click);
             
             #line default
@@ -16067,7 +16067,7 @@ namespace ProdigyConfigToolWPF {
             case 1433:
             this.MainPhone_button_home = ((System.Windows.Controls.Button)(target));
             
-            #line 20011 "..\..\..\UI\BaseWindow.xaml"
+            #line 20010 "..\..\..\UI\BaseWindow.xaml"
             this.MainPhone_button_home.Click += new System.Windows.RoutedEventHandler(this.Button_GoHome_Click);
             
             #line default
@@ -16225,7 +16225,7 @@ namespace ProdigyConfigToolWPF {
             return;
             case 1484:
             
-            #line 20305 "..\..\..\UI\BaseWindow.xaml"
+            #line 20304 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.DockPanel)(target)).MouseDown += new System.Windows.Input.MouseButtonEventHandler(this.ComConfigTile_Click);
             
             #line default
@@ -16246,7 +16246,7 @@ namespace ProdigyConfigToolWPF {
             case 1489:
             this.FlyComImage = ((System.Windows.Controls.Image)(target));
             
-            #line 20384 "..\..\..\UI\BaseWindow.xaml"
+            #line 20383 "..\..\..\UI\BaseWindow.xaml"
             this.FlyComImage.MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.FlyComImage_MouseLeftButtonDown);
             
             #line default
@@ -16258,7 +16258,7 @@ namespace ProdigyConfigToolWPF {
             case 1491:
             this.SerialConnectButton = ((System.Windows.Controls.Button)(target));
             
-            #line 20392 "..\..\..\UI\BaseWindow.xaml"
+            #line 20391 "..\..\..\UI\BaseWindow.xaml"
             this.SerialConnectButton.Click += new System.Windows.RoutedEventHandler(this.SerialConnectButton_Click);
             
             #line default
@@ -16267,7 +16267,7 @@ namespace ProdigyConfigToolWPF {
             case 1492:
             this.MainTreeView = ((System.Windows.Controls.TreeView)(target));
             
-            #line 20401 "..\..\..\UI\BaseWindow.xaml"
+            #line 20400 "..\..\..\UI\BaseWindow.xaml"
             this.MainTreeView.SelectedItemChanged += new System.Windows.RoutedPropertyChangedEventHandler<object>(this.MainTreeView_SelectedItemChanged);
             
             #line default
@@ -16339,7 +16339,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 841 "..\..\..\UI\BaseWindow.xaml"
+            #line 840 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.EntryTimes_minus_Click);
             
             #line default
@@ -16350,7 +16350,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 863 "..\..\..\UI\BaseWindow.xaml"
+            #line 862 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.EntryTimes_plus_Click);
             
             #line default
@@ -16361,7 +16361,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 966 "..\..\..\UI\BaseWindow.xaml"
+            #line 965 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this._24H_Config_minus_Click);
             
             #line default
@@ -16372,7 +16372,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 991 "..\..\..\UI\BaseWindow.xaml"
+            #line 990 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this._24H_Config_plus_Click);
             
             #line default
@@ -16383,7 +16383,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1080 "..\..\..\UI\BaseWindow.xaml"
+            #line 1079 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keyswitch_Config_minus_Click);
             
             #line default
@@ -16394,7 +16394,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1102 "..\..\..\UI\BaseWindow.xaml"
+            #line 1101 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keyswitch_Config_plus_Click);
             
             #line default
@@ -16405,7 +16405,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1206 "..\..\..\UI\BaseWindow.xaml"
+            #line 1205 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Bypass_Config_minus_Click);
             
             #line default
@@ -16416,7 +16416,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1228 "..\..\..\UI\BaseWindow.xaml"
+            #line 1227 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Bypass_Config_plus_Click);
             
             #line default
@@ -16427,7 +16427,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1423 "..\..\..\UI\BaseWindow.xaml"
+            #line 1422 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Type_minus_Click);
             
             #line default
@@ -16438,7 +16438,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1456 "..\..\..\UI\BaseWindow.xaml"
+            #line 1455 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Type_plus_Click);
             
             #line default
@@ -16449,7 +16449,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1543 "..\..\..\UI\BaseWindow.xaml"
+            #line 1542 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Chime_Config_minus_Click);
             
             #line default
@@ -16460,7 +16460,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1562 "..\..\..\UI\BaseWindow.xaml"
+            #line 1561 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Chime_Config_plus_Click);
             
             #line default
@@ -16471,7 +16471,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1758 "..\..\..\UI\BaseWindow.xaml"
+            #line 1757 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_Areas_Away_minus_Click);
             
             #line default
@@ -16482,7 +16482,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1791 "..\..\..\UI\BaseWindow.xaml"
+            #line 1790 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_Areas_Away_plus_Click);
             
             #line default
@@ -16493,7 +16493,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 1984 "..\..\..\UI\BaseWindow.xaml"
+            #line 1983 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_Areas_Stay_minus_Click);
             
             #line default
@@ -16504,7 +16504,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2017 "..\..\..\UI\BaseWindow.xaml"
+            #line 2016 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_Areas_Stay_plus_Click);
             
             #line default
@@ -16515,7 +16515,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2227 "..\..\..\UI\BaseWindow.xaml"
+            #line 2226 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_ShowKeypad_minus_Click);
             
             #line default
@@ -16526,7 +16526,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2260 "..\..\..\UI\BaseWindow.xaml"
+            #line 2259 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zones_ShowKeypad_plus_Click);
             
             #line default
@@ -16537,7 +16537,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2390 "..\..\..\UI\BaseWindow.xaml"
+            #line 2389 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R1_Config_minus_Click);
             
             #line default
@@ -16548,7 +16548,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2423 "..\..\..\UI\BaseWindow.xaml"
+            #line 2422 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R1_Config_plus_Click);
             
             #line default
@@ -16559,7 +16559,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2527 "..\..\..\UI\BaseWindow.xaml"
+            #line 2526 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R2_Config_minus_Click);
             
             #line default
@@ -16570,7 +16570,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2560 "..\..\..\UI\BaseWindow.xaml"
+            #line 2559 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R2_Config_plus_Click);
             
             #line default
@@ -16581,7 +16581,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2664 "..\..\..\UI\BaseWindow.xaml"
+            #line 2663 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R3_Config_minus_Click);
             
             #line default
@@ -16592,7 +16592,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2697 "..\..\..\UI\BaseWindow.xaml"
+            #line 2696 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.R3_Config_plus_Click);
             
             #line default
@@ -16603,7 +16603,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2803 "..\..\..\UI\BaseWindow.xaml"
+            #line 2802 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Alarm_Output_minus_Click);
             
             #line default
@@ -16614,7 +16614,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2837 "..\..\..\UI\BaseWindow.xaml"
+            #line 2836 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Alarm_Output_plus_Click);
             
             #line default
@@ -16625,7 +16625,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2942 "..\..\..\UI\BaseWindow.xaml"
+            #line 2941 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Chime_Output_minus_Click);
             
             #line default
@@ -16636,7 +16636,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 2974 "..\..\..\UI\BaseWindow.xaml"
+            #line 2973 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Chime_Output_plus_Click);
             
             #line default
@@ -16647,7 +16647,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3079 "..\..\..\UI\BaseWindow.xaml"
+            #line 3078 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Sensor_Watch_Output_minus_Click);
             
             #line default
@@ -16658,7 +16658,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3113 "..\..\..\UI\BaseWindow.xaml"
+            #line 3112 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Sensor_Watch_Output_plus_Click);
             
             #line default
@@ -16669,7 +16669,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3218 "..\..\..\UI\BaseWindow.xaml"
+            #line 3217 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Entry_Time_Output_minus_Click);
             
             #line default
@@ -16680,7 +16680,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3252 "..\..\..\UI\BaseWindow.xaml"
+            #line 3251 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Entry_Time_Output_plus_Click);
             
             #line default
@@ -16691,7 +16691,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3357 "..\..\..\UI\BaseWindow.xaml"
+            #line 3356 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Anti_Mask_Output_minus_Click);
             
             #line default
@@ -16702,7 +16702,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3391 "..\..\..\UI\BaseWindow.xaml"
+            #line 3390 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Anti_Mask_Output_plus_Click);
             
             #line default
@@ -16713,7 +16713,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3496 "..\..\..\UI\BaseWindow.xaml"
+            #line 3495 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this._24H_Alarm_Output_minus_Click);
             
             #line default
@@ -16724,7 +16724,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3530 "..\..\..\UI\BaseWindow.xaml"
+            #line 3529 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this._24H_Alarm_Output_plus_Click);
             
             #line default
@@ -16735,7 +16735,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3635 "..\..\..\UI\BaseWindow.xaml"
+            #line 3634 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Fire_Alarm_Output_minus_Click);
             
             #line default
@@ -16746,7 +16746,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3669 "..\..\..\UI\BaseWindow.xaml"
+            #line 3668 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Fire_Alarm_Output_plus_Click);
             
             #line default
@@ -16757,7 +16757,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3774 "..\..\..\UI\BaseWindow.xaml"
+            #line 3773 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Tamper_Alarm_Output_minus_Click);
             
             #line default
@@ -16768,7 +16768,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3808 "..\..\..\UI\BaseWindow.xaml"
+            #line 3807 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Tamper_Alarm_Output_plus_Click);
             
             #line default
@@ -16779,7 +16779,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3932 "..\..\..\UI\BaseWindow.xaml"
+            #line 3931 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Audio_minus_Click);
             
             #line default
@@ -16788,7 +16788,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 179:
             
-            #line 3947 "..\..\..\UI\BaseWindow.xaml"
+            #line 3946 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -16798,7 +16798,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 3968 "..\..\..\UI\BaseWindow.xaml"
+            #line 3967 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Zone_Audio_plus_Click);
             
             #line default
@@ -16809,7 +16809,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4252 "..\..\..\UI\BaseWindow.xaml"
+            #line 4251 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Area_Code_Required_minus_Click);
             
             #line default
@@ -16820,7 +16820,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4273 "..\..\..\UI\BaseWindow.xaml"
+            #line 4272 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Area_Code_Required_plus_Click);
             
             #line default
@@ -16831,7 +16831,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4358 "..\..\..\UI\BaseWindow.xaml"
+            #line 4357 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Exit_Times_minus_Click);
             
             #line default
@@ -16842,7 +16842,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4377 "..\..\..\UI\BaseWindow.xaml"
+            #line 4376 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Exit_Times_plus_Click);
             
             #line default
@@ -16853,7 +16853,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4572 "..\..\..\UI\BaseWindow.xaml"
+            #line 4571 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezones_Start_Arm_minus_Click);
             
             #line default
@@ -16864,7 +16864,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4603 "..\..\..\UI\BaseWindow.xaml"
+            #line 4602 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezones_Start_Arm_plus_Click);
             
             #line default
@@ -16875,7 +16875,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4796 "..\..\..\UI\BaseWindow.xaml"
+            #line 4795 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezones_End_Disarm_minus_Click);
             
             #line default
@@ -16886,7 +16886,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4827 "..\..\..\UI\BaseWindow.xaml"
+            #line 4826 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezones_End_Disarm_plus_Click);
             
             #line default
@@ -16897,7 +16897,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4932 "..\..\..\UI\BaseWindow.xaml"
+            #line 4931 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Outputs_minus_Click);
             
             #line default
@@ -16908,7 +16908,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 4966 "..\..\..\UI\BaseWindow.xaml"
+            #line 4965 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Outputs_plus_Click);
             
             #line default
@@ -16919,7 +16919,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5068 "..\..\..\UI\BaseWindow.xaml"
+            #line 5067 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Outputs_minus_Click);
             
             #line default
@@ -16930,7 +16930,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5102 "..\..\..\UI\BaseWindow.xaml"
+            #line 5101 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Outputs_plus_Click);
             
             #line default
@@ -16941,7 +16941,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5204 "..\..\..\UI\BaseWindow.xaml"
+            #line 5203 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Outputs_minus_Click);
             
             #line default
@@ -16952,7 +16952,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5238 "..\..\..\UI\BaseWindow.xaml"
+            #line 5237 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Outputs_plus_Click);
             
             #line default
@@ -16963,7 +16963,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5341 "..\..\..\UI\BaseWindow.xaml"
+            #line 5340 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Outputs_minus_Click);
             
             #line default
@@ -16974,7 +16974,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5375 "..\..\..\UI\BaseWindow.xaml"
+            #line 5374 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Outputs_plus_Click);
             
             #line default
@@ -16985,7 +16985,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5478 "..\..\..\UI\BaseWindow.xaml"
+            #line 5477 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Pulsed_Outputs_minus_Click);
             
             #line default
@@ -16996,7 +16996,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5511 "..\..\..\UI\BaseWindow.xaml"
+            #line 5510 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Pulsed_Outputs_plus_Click);
             
             #line default
@@ -17007,7 +17007,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5614 "..\..\..\UI\BaseWindow.xaml"
+            #line 5613 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Pulsed_Outputs_minus_Click);
             
             #line default
@@ -17018,7 +17018,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5648 "..\..\..\UI\BaseWindow.xaml"
+            #line 5647 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Pulsed_Outputs_plus_Click);
             
             #line default
@@ -17029,7 +17029,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5751 "..\..\..\UI\BaseWindow.xaml"
+            #line 5750 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Pulsed_Outputs_minus_Click);
             
             #line default
@@ -17040,7 +17040,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5785 "..\..\..\UI\BaseWindow.xaml"
+            #line 5784 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Pulsed_Outputs_plus_Click);
             
             #line default
@@ -17051,7 +17051,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5888 "..\..\..\UI\BaseWindow.xaml"
+            #line 5887 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Pulsed_Outputs_minus_Click);
             
             #line default
@@ -17062,7 +17062,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 5922 "..\..\..\UI\BaseWindow.xaml"
+            #line 5921 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Pulsed_Outputs_plus_Click);
             
             #line default
@@ -17073,7 +17073,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6025 "..\..\..\UI\BaseWindow.xaml"
+            #line 6024 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Beeps_Outputs_minus_Click);
             
             #line default
@@ -17084,7 +17084,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6059 "..\..\..\UI\BaseWindow.xaml"
+            #line 6058 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Away_Beeps_Outputs_plus_Click);
             
             #line default
@@ -17095,7 +17095,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6162 "..\..\..\UI\BaseWindow.xaml"
+            #line 6161 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Beeps_Outputs_minus_Click);
             
             #line default
@@ -17106,7 +17106,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6197 "..\..\..\UI\BaseWindow.xaml"
+            #line 6196 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Arm_Stay_Beeps_Outputs_plus_Click);
             
             #line default
@@ -17117,7 +17117,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6300 "..\..\..\UI\BaseWindow.xaml"
+            #line 6299 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Beeps_Outputs_minus_Click);
             
             #line default
@@ -17128,7 +17128,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6334 "..\..\..\UI\BaseWindow.xaml"
+            #line 6333 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Away_Beeps_Outputs_plus_Click);
             
             #line default
@@ -17139,7 +17139,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6437 "..\..\..\UI\BaseWindow.xaml"
+            #line 6436 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Beeps_Outputs_minus_Click);
             
             #line default
@@ -17150,7 +17150,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6471 "..\..\..\UI\BaseWindow.xaml"
+            #line 6470 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Disarm_Stay_Beeps_Outputs_plus_Click);
             
             #line default
@@ -17161,7 +17161,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6594 "..\..\..\UI\BaseWindow.xaml"
+            #line 6593 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Area_Audio_minus_Click);
             
             #line default
@@ -17170,7 +17170,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 266:
             
-            #line 6609 "..\..\..\UI\BaseWindow.xaml"
+            #line 6608 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -17180,7 +17180,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 6630 "..\..\..\UI\BaseWindow.xaml"
+            #line 6629 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Area_Audio_plus_Click);
             
             #line default
@@ -17191,7 +17191,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7182 "..\..\..\UI\BaseWindow.xaml"
+            #line 7181 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Timezone_Permissions_minus_Click);
             
             #line default
@@ -17202,7 +17202,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7216 "..\..\..\UI\BaseWindow.xaml"
+            #line 7215 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Timezone_Permissions_plus_Click);
             
             #line default
@@ -17213,7 +17213,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7338 "..\..\..\UI\BaseWindow.xaml"
+            #line 7337 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_ArmDisarm_Permissions_minus_Click);
             
             #line default
@@ -17224,7 +17224,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7361 "..\..\..\UI\BaseWindow.xaml"
+            #line 7360 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_ArmDisarm_Permissions_plus_Click);
             
             #line default
@@ -17235,7 +17235,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7555 "..\..\..\UI\BaseWindow.xaml"
+            #line 7554 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Area_Permissions_minus_Click);
             
             #line default
@@ -17246,7 +17246,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7586 "..\..\..\UI\BaseWindow.xaml"
+            #line 7585 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Area_Permissions_plus_Click);
             
             #line default
@@ -17257,7 +17257,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7869 "..\..\..\UI\BaseWindow.xaml"
+            #line 7868 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Output_Permissions_minus_Click);
             
             #line default
@@ -17268,7 +17268,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 7910 "..\..\..\UI\BaseWindow.xaml"
+            #line 7909 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Output_Permissions_plus_Click);
             
             #line default
@@ -17279,7 +17279,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8105 "..\..\..\UI\BaseWindow.xaml"
+            #line 8104 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_A_AreaAway_minus_Click);
             
             #line default
@@ -17290,7 +17290,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8137 "..\..\..\UI\BaseWindow.xaml"
+            #line 8136 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_A_AreaAway_plus_Click);
             
             #line default
@@ -17301,7 +17301,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8330 "..\..\..\UI\BaseWindow.xaml"
+            #line 8329 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_A_AreaStay_minus_Click);
             
             #line default
@@ -17312,7 +17312,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8362 "..\..\..\UI\BaseWindow.xaml"
+            #line 8361 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_A_AreaStay_plus_Click);
             
             #line default
@@ -17323,7 +17323,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8555 "..\..\..\UI\BaseWindow.xaml"
+            #line 8554 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_B_AreaAway_minus_Click);
             
             #line default
@@ -17334,7 +17334,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8587 "..\..\..\UI\BaseWindow.xaml"
+            #line 8586 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_B_AreaAway_plus_Click);
             
             #line default
@@ -17345,7 +17345,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8780 "..\..\..\UI\BaseWindow.xaml"
+            #line 8779 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_B_AreaStay_minus_Click);
             
             #line default
@@ -17356,7 +17356,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 8812 "..\..\..\UI\BaseWindow.xaml"
+            #line 8811 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_B_AreaStay_plus_Click);
             
             #line default
@@ -17367,7 +17367,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9005 "..\..\..\UI\BaseWindow.xaml"
+            #line 9004 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_C_AreaAway_minus_Click);
             
             #line default
@@ -17378,7 +17378,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9037 "..\..\..\UI\BaseWindow.xaml"
+            #line 9036 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_C_AreaAway_plus_Click);
             
             #line default
@@ -17389,7 +17389,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9230 "..\..\..\UI\BaseWindow.xaml"
+            #line 9229 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_C_AreaStay_minus_Click);
             
             #line default
@@ -17400,7 +17400,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9262 "..\..\..\UI\BaseWindow.xaml"
+            #line 9261 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_C_AreaStay_plus_Click);
             
             #line default
@@ -17411,7 +17411,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9455 "..\..\..\UI\BaseWindow.xaml"
+            #line 9454 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_D_AreaAway_minus_Click);
             
             #line default
@@ -17422,7 +17422,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9487 "..\..\..\UI\BaseWindow.xaml"
+            #line 9486 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_D_AreaAway_plus_Click);
             
             #line default
@@ -17433,7 +17433,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9680 "..\..\..\UI\BaseWindow.xaml"
+            #line 9679 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_D_AreaStay_minus_Click);
             
             #line default
@@ -17444,7 +17444,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9712 "..\..\..\UI\BaseWindow.xaml"
+            #line 9711 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Button_D_AreaStay_plus_Click);
             
             #line default
@@ -17455,7 +17455,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9835 "..\..\..\UI\BaseWindow.xaml"
+            #line 9834 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Audio_minus_Click);
             
             #line default
@@ -17464,7 +17464,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 343:
             
-            #line 9850 "..\..\..\UI\BaseWindow.xaml"
+            #line 9849 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -17474,7 +17474,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 9871 "..\..\..\UI\BaseWindow.xaml"
+            #line 9870 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.User_Audio_plus_Click);
             
             #line default
@@ -17485,7 +17485,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10406 "..\..\..\UI\BaseWindow.xaml"
+            #line 10405 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Areas_minus_Click);
             
             #line default
@@ -17496,7 +17496,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10437 "..\..\..\UI\BaseWindow.xaml"
+            #line 10436 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Areas_plus_Click);
             
             #line default
@@ -17507,7 +17507,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10722 "..\..\..\UI\BaseWindow.xaml"
+            #line 10721 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Beeps_minus_Click);
             
             #line default
@@ -17518,7 +17518,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10763 "..\..\..\UI\BaseWindow.xaml"
+            #line 10762 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Beeps_plus_Click);
             
             #line default
@@ -17529,7 +17529,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10921 "..\..\..\UI\BaseWindow.xaml"
+            #line 10920 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_ArmDisarm_Permissions_minus_Click);
             
             #line default
@@ -17540,7 +17540,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 10948 "..\..\..\UI\BaseWindow.xaml"
+            #line 10947 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_ArmDisarm_Permissions_plus_Click);
             
             #line default
@@ -17551,7 +17551,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11052 "..\..\..\UI\BaseWindow.xaml"
+            #line 11051 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Fbuttons_minus_Click);
             
             #line default
@@ -17562,7 +17562,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11086 "..\..\..\UI\BaseWindow.xaml"
+            #line 11085 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Fbuttons_plus_Click);
             
             #line default
@@ -17573,7 +17573,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11208 "..\..\..\UI\BaseWindow.xaml"
+            #line 11207 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Audio_minus_Click);
             
             #line default
@@ -17582,7 +17582,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 392:
             
-            #line 11223 "..\..\..\UI\BaseWindow.xaml"
+            #line 11222 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -17592,7 +17592,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11244 "..\..\..\UI\BaseWindow.xaml"
+            #line 11243 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Keypad_Audio_plus_Click);
             
             #line default
@@ -17601,7 +17601,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 412:
             
-            #line 11413 "..\..\..\UI\BaseWindow.xaml"
+            #line 11412 "..\..\..\UI\BaseWindow.xaml"
             ((MahApps.Metro.Controls.Tile)(target)).Click += new System.Windows.RoutedEventHandler(this.OutputsCleanTile_Click);
             
             #line default
@@ -17611,7 +17611,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11525 "..\..\..\UI\BaseWindow.xaml"
+            #line 11524 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.TimeConfig_minus_Click);
             
             #line default
@@ -17622,7 +17622,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11546 "..\..\..\UI\BaseWindow.xaml"
+            #line 11545 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.TimeConfig_plus_Click);
             
             #line default
@@ -17633,7 +17633,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11632 "..\..\..\UI\BaseWindow.xaml"
+            #line 11631 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_ChimeConfig_minus_Click);
             
             #line default
@@ -17644,7 +17644,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11652 "..\..\..\UI\BaseWindow.xaml"
+            #line 11651 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_ChimeConfig_plus_Click);
             
             #line default
@@ -17655,7 +17655,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11774 "..\..\..\UI\BaseWindow.xaml"
+            #line 11773 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_PulseConfig_minus_Click);
             
             #line default
@@ -17666,7 +17666,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11797 "..\..\..\UI\BaseWindow.xaml"
+            #line 11796 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_PulseConfig_plus_Click);
             
             #line default
@@ -17677,7 +17677,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11883 "..\..\..\UI\BaseWindow.xaml"
+            #line 11882 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_Beeps_minus_Click);
             
             #line default
@@ -17688,7 +17688,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 11902 "..\..\..\UI\BaseWindow.xaml"
+            #line 11901 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_Beeps_plus_Click);
             
             #line default
@@ -17699,7 +17699,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12097 "..\..\..\UI\BaseWindow.xaml"
+            #line 12096 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_Timezones_minus_Click);
             
             #line default
@@ -17710,7 +17710,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12128 "..\..\..\UI\BaseWindow.xaml"
+            #line 12127 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Output_Timezones_plus_Click);
             
             #line default
@@ -17721,7 +17721,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12459 "..\..\..\UI\BaseWindow.xaml"
+            #line 12458 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Weekdays_minus_Click);
             
             #line default
@@ -17732,7 +17732,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12488 "..\..\..\UI\BaseWindow.xaml"
+            #line 12487 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Weekdays_plus_Click);
             
             #line default
@@ -17743,7 +17743,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12595 "..\..\..\UI\BaseWindow.xaml"
+            #line 12594 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_1_minus_Click);
             
             #line default
@@ -17754,7 +17754,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12617 "..\..\..\UI\BaseWindow.xaml"
+            #line 12616 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_1_plus_Click);
             
             #line default
@@ -17765,7 +17765,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12722 "..\..\..\UI\BaseWindow.xaml"
+            #line 12721 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_2_minus_Click);
             
             #line default
@@ -17776,7 +17776,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12744 "..\..\..\UI\BaseWindow.xaml"
+            #line 12743 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_2_plus_Click);
             
             #line default
@@ -17787,7 +17787,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12849 "..\..\..\UI\BaseWindow.xaml"
+            #line 12848 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_3_minus_Click);
             
             #line default
@@ -17798,7 +17798,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12871 "..\..\..\UI\BaseWindow.xaml"
+            #line 12870 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_3_plus_Click);
             
             #line default
@@ -17809,7 +17809,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12976 "..\..\..\UI\BaseWindow.xaml"
+            #line 12975 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_4_minus_Click);
             
             #line default
@@ -17820,7 +17820,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 12998 "..\..\..\UI\BaseWindow.xaml"
+            #line 12997 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Timezone_Exception_4_plus_Click);
             
             #line default
@@ -17831,7 +17831,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 13387 "..\..\..\UI\BaseWindow.xaml"
+            #line 13386 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phones_Area_minus_Click);
             
             #line default
@@ -17842,7 +17842,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 13418 "..\..\..\UI\BaseWindow.xaml"
+            #line 13417 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phones_Area_plus_Click);
             
             #line default
@@ -17853,7 +17853,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 13522 "..\..\..\UI\BaseWindow.xaml"
+            #line 13521 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_KissOff_minus_Click);
             
             #line default
@@ -17864,7 +17864,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 13544 "..\..\..\UI\BaseWindow.xaml"
+            #line 13543 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_KissOff_plus_Click);
             
             #line default
@@ -17875,7 +17875,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 13956 "..\..\..\UI\BaseWindow.xaml"
+            #line 13955 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_Reports_minus_Click);
             
             #line default
@@ -17886,7 +17886,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 14011 "..\..\..\UI\BaseWindow.xaml"
+            #line 14010 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_Reports_plus_Click);
             
             #line default
@@ -17897,7 +17897,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 14255 "..\..\..\UI\BaseWindow.xaml"
+            #line 14254 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_TestConfig_minus_Click);
             
             #line default
@@ -17908,7 +17908,7 @@ namespace ProdigyConfigToolWPF {
             eventSetter = new System.Windows.EventSetter();
             eventSetter.Event = System.Windows.Controls.Primitives.ButtonBase.ClickEvent;
             
-            #line 14286 "..\..\..\UI\BaseWindow.xaml"
+            #line 14285 "..\..\..\UI\BaseWindow.xaml"
             eventSetter.Handler = new System.Windows.RoutedEventHandler(this.Phone_TestConfig_plus_Click);
             
             #line default
@@ -17917,7 +17917,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 561:
             
-            #line 14877 "..\..\..\UI\BaseWindow.xaml"
+            #line 14876 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioReservedPlayButton_Click);
             
             #line default
@@ -17925,7 +17925,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 562:
             
-            #line 14897 "..\..\..\UI\BaseWindow.xaml"
+            #line 14896 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioReservedPauseButton_Click);
             
             #line default
@@ -17933,7 +17933,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 563:
             
-            #line 14917 "..\..\..\UI\BaseWindow.xaml"
+            #line 14916 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioReservedStopButton_Click);
             
             #line default
@@ -17941,7 +17941,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 569:
             
-            #line 15014 "..\..\..\UI\BaseWindow.xaml"
+            #line 15013 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Load_WAV_File_Click);
             
             #line default
@@ -17949,7 +17949,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 570:
             
-            #line 15034 "..\..\..\UI\BaseWindow.xaml"
+            #line 15033 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.buttonRecordWav_Click);
             
             #line default
@@ -17957,7 +17957,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 571:
             
-            #line 15054 "..\..\..\UI\BaseWindow.xaml"
+            #line 15053 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.buttonStopRecordWav_Click);
             
             #line default
@@ -17965,7 +17965,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 572:
             
-            #line 15074 "..\..\..\UI\BaseWindow.xaml"
+            #line 15073 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.buttonDeleteRecordWav_Click);
             
             #line default
@@ -17973,7 +17973,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 573:
             
-            #line 15095 "..\..\..\UI\BaseWindow.xaml"
+            #line 15094 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioCustomizedPlayButton_Click);
             
             #line default
@@ -17981,7 +17981,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 574:
             
-            #line 15115 "..\..\..\UI\BaseWindow.xaml"
+            #line 15114 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioCustomizedPauseButton_Click);
             
             #line default
@@ -17989,7 +17989,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 575:
             
-            #line 15135 "..\..\..\UI\BaseWindow.xaml"
+            #line 15134 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.AudioCustomizedStopButton_Click);
             
             #line default
@@ -17997,7 +17997,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 581:
             
-            #line 15321 "..\..\..\UI\BaseWindow.xaml"
+            #line 15320 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
@@ -18005,7 +18005,7 @@ namespace ProdigyConfigToolWPF {
             break;
             case 692:
             
-            #line 16697 "..\..\..\UI\BaseWindow.xaml"
+            #line 16696 "..\..\..\UI\BaseWindow.xaml"
             ((System.Windows.Controls.ComboBox)(target)).DropDownOpened += new System.EventHandler(this.Update_audio_comboboxes_list);
             
             #line default
