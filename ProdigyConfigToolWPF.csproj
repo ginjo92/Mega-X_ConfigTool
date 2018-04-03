@@ -365,240 +365,6 @@
     <None Include="Database\Login\SqliteLogin.prgy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="DefaultAudioFiles\000Ac Power.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\001Acesso.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\002Alarme.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\003AntiMascara.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\004Armada.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\005Bateria.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\006Bypass.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\007Chamada.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\008Coacao.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\009Codigo.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\010Desarmada.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\011Desligada.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\012Enviar.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\013Errado.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\014Eventos.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\015Falha.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\016Fraca.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\017Horas.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\018Incendio.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\019Iniciado.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\020Ligada.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\021Linha.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\022Medico.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\023Ok.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\024Particao.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\025Programacao.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\026Panico.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\027Restauro.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\028Reset.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\029Saida.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\030Sistema.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\031Sirene.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\032Stay.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\033Supervisao.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\034Tamper.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\035Teclado.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\036Telefone.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\037Teste.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\038Terminado.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\039Zona.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\100Zero.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\101Um.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\102Dois.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\103Tres.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\104Quatro.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\105Cinco.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\106Seis.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\107Sete.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\108Oito.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\109Nove.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\110Dez.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\111Onze.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\112Doze.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\113Treze.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\114Quatorze.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\115Quinze.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\116Dezasseis.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\117Dezassete.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\118Dezoito.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\119Dezanove.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\120Vinte.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\121Vinte_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\130Trinta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\131Trinta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\140Quarenta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\141Quarenta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\150Cinquenta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\151Cinquenta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\160Sessenta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\161Sessenta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\170Setenta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\171Setenta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\180Oitenta.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\181Oitenta_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\190Noventa.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\191Noventa_e.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\200Cem.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\201Cento E.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="DefaultAudioFiles\A Armar.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -608,12 +374,15 @@
     <None Include="DefaultAudioFiles\Aberta.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\AC Power.raw" />
+    <None Include="DefaultAudioFiles\Acesso.raw" />
     <None Include="DefaultAudioFiles\Adeus.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Agora.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Alarme.raw" />
     <None Include="DefaultAudioFiles\Alerta.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -632,6 +401,7 @@
     <None Include="DefaultAudioFiles\Ano.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\AntiMascara.raw" />
     <None Include="DefaultAudioFiles\Apartamento.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -641,6 +411,7 @@
     <None Include="DefaultAudioFiles\Area.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Armada.raw" />
     <None Include="DefaultAudioFiles\Ativado.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -651,9 +422,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Audio.raw">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="DefaultAudioFiles\audio_outputs.mai">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Auto.raw">
@@ -674,6 +442,7 @@
     <None Include="DefaultAudioFiles\Baixo.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Bateria.raw" />
     <None Include="DefaultAudioFiles\Bem Vindo.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -686,6 +455,7 @@
     <None Include="DefaultAudioFiles\Bus.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Bypass.raw" />
     <None Include="DefaultAudioFiles\Camera.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -713,6 +483,8 @@
     <None Include="DefaultAudioFiles\Cave.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Cem.raw" />
+    <None Include="DefaultAudioFiles\Cento E.raw" />
     <None Include="DefaultAudioFiles\Central.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -728,6 +500,7 @@
     <None Include="DefaultAudioFiles\Chaime.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Chamada.raw" />
     <None Include="DefaultAudioFiles\Chave.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -737,9 +510,14 @@
     <None Include="DefaultAudioFiles\Cima.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Cinco.raw" />
+    <None Include="DefaultAudioFiles\Cinquenta.raw" />
+    <None Include="DefaultAudioFiles\Cinquenta_e.raw" />
     <None Include="DefaultAudioFiles\Circuito.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Coacao.raw" />
+    <None Include="DefaultAudioFiles\Codigo.raw" />
     <None Include="DefaultAudioFiles\Cold.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -782,6 +560,7 @@
     <None Include="DefaultAudioFiles\Desactivo.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Desarmada.raw" />
     <None Include="DefaultAudioFiles\Desarmado.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -791,6 +570,7 @@
     <None Include="DefaultAudioFiles\Desbloqueado.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Desligada.raw" />
     <None Include="DefaultAudioFiles\Desligando.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -806,6 +586,11 @@
     <None Include="DefaultAudioFiles\Detector.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Dez.raw" />
+    <None Include="DefaultAudioFiles\Dezanove.raw" />
+    <None Include="DefaultAudioFiles\Dezasseis.raw" />
+    <None Include="DefaultAudioFiles\Dezassete.raw" />
+    <None Include="DefaultAudioFiles\Dezoito.raw" />
     <None Include="DefaultAudioFiles\Dia.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -818,6 +603,8 @@
     <None Include="DefaultAudioFiles\Dobrada.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Dois.raw" />
+    <None Include="DefaultAudioFiles\Doze.raw" />
     <None Include="DefaultAudioFiles\E.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -845,9 +632,11 @@
     <None Include="DefaultAudioFiles\Entrando.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Enviar.raw" />
     <None Include="DefaultAudioFiles\Equipamento.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Errado.raw" />
     <None Include="DefaultAudioFiles\Erro.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -899,6 +688,7 @@
     <None Include="DefaultAudioFiles\Evacuar.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Eventos.raw" />
     <None Include="DefaultAudioFiles\Exercício.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -911,6 +701,7 @@
     <None Include="DefaultAudioFiles\Exterior.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Falha.raw" />
     <None Include="DefaultAudioFiles\Falhou.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -935,6 +726,7 @@
     <None Include="DefaultAudioFiles\Fio.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Fraca.raw" />
     <None Include="DefaultAudioFiles\Frente.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -959,15 +751,18 @@
     <None Include="DefaultAudioFiles\Hall.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Horas.raw" />
     <None Include="DefaultAudioFiles\Humidade.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Imediatamente.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Incendio.raw" />
     <None Include="DefaultAudioFiles\Infantario.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Iniciado.raw" />
     <None Include="DefaultAudioFiles\Instalador.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -998,9 +793,11 @@
     <None Include="DefaultAudioFiles\Ladrao.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Ligada.raw" />
     <None Include="DefaultAudioFiles\Limpa.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Linha.raw" />
     <None Include="DefaultAudioFiles\Luz.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1025,6 +822,7 @@
     <None Include="DefaultAudioFiles\Medicina.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Medico.raw" />
     <None Include="DefaultAudioFiles\Meio.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1070,6 +868,9 @@
     <None Include="DefaultAudioFiles\Normal.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Nove.raw" />
+    <None Include="DefaultAudioFiles\Noventa.raw" />
+    <None Include="DefaultAudioFiles\Noventa_e.raw" />
     <None Include="DefaultAudioFiles\Numero.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1079,9 +880,14 @@
     <None Include="DefaultAudioFiles\Off.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Oitenta.raw" />
+    <None Include="DefaultAudioFiles\Oitenta_e.raw" />
+    <None Include="DefaultAudioFiles\Oito.raw" />
+    <None Include="DefaultAudioFiles\Ok.raw" />
     <None Include="DefaultAudioFiles\On.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Onze.raw" />
     <None Include="DefaultAudioFiles\Opção.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1091,9 +897,11 @@
     <None Include="DefaultAudioFiles\Painel.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Panico.raw" />
     <None Include="DefaultAudioFiles\Para.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Particao.raw" />
     <None Include="DefaultAudioFiles\Partir.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1133,6 +941,7 @@
     <None Include="DefaultAudioFiles\Programa.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Programacao.raw" />
     <None Include="DefaultAudioFiles\Protegido.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1145,9 +954,13 @@
     <None Include="DefaultAudioFiles\Quando.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Quarenta.raw" />
+    <None Include="DefaultAudioFiles\Quarenta_e.raw" />
     <None Include="DefaultAudioFiles\Quarto Andar.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Quatorze.raw" />
+    <None Include="DefaultAudioFiles\Quatro.raw" />
     <None Include="DefaultAudioFiles\Quem.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1175,9 +988,12 @@
     <None Include="DefaultAudioFiles\Reportando.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Reset.raw" />
+    <None Include="DefaultAudioFiles\Restauro.raw" />
     <None Include="DefaultAudioFiles\Rádio.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Saida.raw" />
     <None Include="DefaultAudioFiles\Sair.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1208,36 +1024,49 @@
     <None Include="DefaultAudioFiles\Seguro.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Seis.raw" />
     <None Include="DefaultAudioFiles\Sensor.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Sessenta.raw" />
+    <None Include="DefaultAudioFiles\Sessenta_e.raw" />
+    <None Include="DefaultAudioFiles\Sete.raw" />
+    <None Include="DefaultAudioFiles\Setenta.raw" />
+    <None Include="DefaultAudioFiles\Setenta_e.raw" />
     <None Include="DefaultAudioFiles\Silêncio.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Sim.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Sirene.raw" />
+    <None Include="DefaultAudioFiles\Sistema.raw" />
     <None Include="DefaultAudioFiles\Sobre.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Sobrecarga.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Stay.raw" />
     <None Include="DefaultAudioFiles\Stop.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Supervisao.raw" />
     <None Include="DefaultAudioFiles\Série.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Talvez.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Tamper.raw" />
     <None Include="DefaultAudioFiles\Tarde.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DefaultAudioFiles\Tarefa.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Teclado.raw" />
+    <None Include="DefaultAudioFiles\Telefone.raw" />
     <None Include="DefaultAudioFiles\Telhado.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1247,6 +1076,8 @@
     <None Include="DefaultAudioFiles\Terceiro Andar.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Terminado.raw" />
+    <None Include="DefaultAudioFiles\Teste.raw" />
     <None Include="DefaultAudioFiles\Tipo.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1262,9 +1093,14 @@
     <None Include="DefaultAudioFiles\Transmissor.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Tres.raw" />
+    <None Include="DefaultAudioFiles\Treze.raw" />
+    <None Include="DefaultAudioFiles\Trinta.raw" />
+    <None Include="DefaultAudioFiles\Trinta_e.raw" />
     <None Include="DefaultAudioFiles\Tu.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Um.raw" />
     <None Include="DefaultAudioFiles\Utilizador.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1277,6 +1113,8 @@
     <None Include="DefaultAudioFiles\Vidro.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Vinte.raw" />
+    <None Include="DefaultAudioFiles\Vinte_e.raw" />
     <None Include="DefaultAudioFiles\Violado.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1289,6 +1127,8 @@
     <None Include="DefaultAudioFiles\Voz.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="DefaultAudioFiles\Zero.raw" />
+    <None Include="DefaultAudioFiles\Zona.raw" />
     <None Include="DefaultAudioFiles\Zonas.raw">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1335,9 +1175,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

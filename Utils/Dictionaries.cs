@@ -185,30 +185,19 @@ namespace ProdigyConfigToolWPF
 
         public static Dictionary<long, string> GetAudioMessages()
         {
-            defaultDataSet.AudioDefaultDataTable a = new defaultDataSet.AudioDefaultDataTable();
-            AudioDefaultTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioDefaultTableAdapter();
-            databaseDataSetAudioDefaultTableAdapter.Fill(a);
+            defaultDataSet.AudioDataTable a = new defaultDataSet.AudioDataTable();
+            AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
+            databaseDataSetAudioTableAdapter.Fill(a);
             Dictionary<long, string> Audio = new Dictionary<long, string>();
             Audio.Add(0xffff, Properties.Resources.Keypad_function_button_none);
-            foreach (defaultDataSet.AudioDefaultRow row in a.Rows)
+            foreach (defaultDataSet.AudioRow row in a.Rows)
             {
                 try
                 {
                     Audio.Add(row.Id, row.Description);
                 }catch { }
             }
-            defaultDataSet.AudioCustomizedDataTable b = new defaultDataSet.AudioCustomizedDataTable();
-            AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
-            databaseDataSetAudioCustomizedTableAdapter.Fill(b);
-            foreach (defaultDataSet.AudioCustomizedRow row in b.Rows)
-            {
-                try
-                {
-                    Audio.Add(row.Id, row.Description);
-                }catch { }
-                
-            }
-
+           
             return Audio;
         }
     }

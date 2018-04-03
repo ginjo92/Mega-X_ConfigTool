@@ -2766,4 +2766,7 @@
   <data name="HelpTip_Wizard_2" xml:space="preserve">
     <value>When creating a new file it's possible to be assisted by a Wizard to make it in a easier and intuitive way. This Wizard will help you start a new configuration project for mega-X.</value>
   </data>
+  <data name="WritingAudioConfig" xml:space="preserve">
+    <value>Writing audio configurations</value>
+  </data>
 </root>

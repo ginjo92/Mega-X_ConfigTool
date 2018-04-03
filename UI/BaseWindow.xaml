@@ -29,6 +29,15 @@
 
         <LinearGradientBrush x:Key="ProgressBarBackground" EndPoint="1,0" StartPoint="0,0"/>
 
+        <Style x:Key="ButtonIsEnabledFalse" TargetType="Button">
+            <Setter Property="Opacity" Value="1.0" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False" >
+                    <Setter Property="Opacity" Value="0.25" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <Style x:Key="LargeTileStyle" TargetType="Controls:Tile">
             <Setter Property="Height" Value="125" />
             <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
@@ -93,8 +102,7 @@
         <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding AudioCustomized, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="AudioDefaultViewSource" Source="{Binding AudioDefault, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioSystemConfigurationViewSource" Source="{Binding AudioSystemConfiguration, Source={StaticResource databaseDataSet}}"/>
     </Controls:MetroWindow.Resources>
 
@@ -341,8 +349,6 @@
             </StackPanel>
         </DockPanel>
 
-        
-        
         <!--TILES-->
         <DockPanel x:Name="TOP_TILES" Margin="0,36,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" DataContext="{StaticResource keypadViewSource}" Opacity="0.9">
             <!--Utilities menu-->
@@ -14714,7 +14720,7 @@
                                                     <Image.Style>
                                                         <Style TargetType="{x:Type Image}">
                                                             <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding Keypad_ack}" Value="">
+                                                                <DataTrigger Binding="{Binding Keypad_ack}" Value="1">
                                                                     <Setter Property="Visibility" Value="Visible"/>
                                                                 </DataTrigger>
                                                                 <DataTrigger Binding="{Binding Keypad_ack}" Value="0">
@@ -14757,235 +14763,585 @@
                     </StackPanel>
                 </TabItem>
                 <!--AUDIO MESSAGES-->
-                <TabItem x:Name="AudioMessagesTab" Header="{x:Static p:Resources.descriptionAudio}" Visibility="Hidden" HorizontalContentAlignment="Left" VerticalContentAlignment="Top">
-                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
-                        <StackPanel CanVerticallyScroll="True">
-                            <Grid x:Name="AudioHeader" Grid.Column="0" Grid.Row="0" Margin="20,10,0,10" VerticalAlignment="Center">
-                                <Image Source="/images/new/audio.png" Width="45" Height="45" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
-                                <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
-                                   Text="{x:Static p:Resources.descriptionAudio}"/>
-                            </Grid>
-                            <Grid ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid Width="300" Height="50">
-                                    <ProgressBar Name="progressBarAudioMeasure" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" Width="150" 
-                                                 Style="{DynamicResource ProgressBarStyle}" Foreground="{DynamicResource ProgressBarForeground}" Background="{DynamicResource ProgressBarBackground}"
-                                                 Height="15" Minimum="0" Maximum="4181216" Value="0">
-                                    </ProgressBar>
-
-                                    <TextBlock>
-                                        <Label Name="lblBarAudioMeasure" Margin="160,10,0,0" Content="{x:Static p:Resources.FreeSpace }"/>
-                                    </TextBlock>
+                <TabItem x:Name="AudioMessagesTab" Header="{x:Static p:Resources.descriptionAudio}" Visibility="Hidden" HorizontalContentAlignment="Stretch">
+                    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-90,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="400*"/>
+                        </Grid.RowDefinitions>
+                        <!--HEADER-->
+                        <StackPanel Grid.Column="0" Grid.Row="0" Height="Auto">
+                            <Grid>
+                                <Grid x:Name="AudioHeader" Margin="20,10,0,10" VerticalAlignment="Center">
+                                    <Image Source="/images/new/audio.png" Width="45" Height="45" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
+                                    <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
+                                           Text="{ x:Static p:Resources.descriptionAudio }"/>
                                 </Grid>
 
-                                <Controls:Tile Title="{x:Static p:Resources.WriteAudio}" HorizontalTitleAlignment="Center"
-			                                   x:Name="AudioMessagesUploadTile" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-			                                   TitleFontSize="10" Margin="0,10,-500,10" Height="80" Width="80" Click="Send_Audio_messages">
+                                <ProgressBar Name="progressBarAudioMeasure" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,18,320,0" Width="100" 
+                                                                 Style="{ DynamicResource ProgressBarStyle}" Foreground="{DynamicResource ProgressBarForeground}" Background="{DynamicResource ProgressBarBackground}"
+                                                                 Height="15" Minimum="0" Maximum="4181216" Value="0"/>
+                                <Label Name="lblBarAudioMeasure" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,43,316,0" Content="{x:Static p:Resources.FreeSpace }" FontSize="8" Foreground="Gray"/>
 
-                                    <iconPacks:PackIconModern Width="20" Height="20" Kind="ArrowUp"/>
+                                <!--UPLOAD AUDIO-->
+                                <Controls:Tile x:Name="AudioMessagesUploadTile" Width="100" Height="28" Title="{x:Static p:Resources.WriteAudio}" TitleFontSize="9" 
+                                               VerticalAlignment="Top" Background="WhiteSmoke" Click="Send_Audio_messages" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                               Margin="0,30,211,3" Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                                 </Controls:Tile>
-
-                                <Controls:Tile Title="{x:Static p:Resources.Write_System_Settings}" HorizontalTitleAlignment="Center"
-			                                   x:Name="AudioSystemConfigurationUpload" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-			                                   TitleFontSize="8" Margin="0,10,-800,10" Height="80" Width="80" Click="AudioSystemConfigurationUpload_Click">
-                                    <iconPacks:PackIconModern Width="20" Height="20" Kind="ArrowUp"/>
+                                <!--DOWNLOAD-->
+                                <Controls:Tile x:Name="AudioSystemConfigurationDownload" Width="100" Height="28" Title="{x:Static p:Resources.Read_System_Settings}" TitleFontSize="9" 
+                                               VerticalAlignment="Top" Background="WhiteSmoke" Click="AudioSystemConfigurationDownload_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                               Margin="0,30,107,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    <Image Source="/images/new/download.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                                 </Controls:Tile>
-
-                                <Controls:Tile Title="{x:Static p:Resources.Read_System_Settings}" HorizontalTitleAlignment="Center"
-			                                    x:Name="AudioSystemConfigurationDownload" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-			                                    TitleFontSize="9" Margin="0,0,-1000,0" Height="80" Width="80" Click="AudioSystemConfigurationDownload_Click">
-
-                                    <iconPacks:PackIconModern Width="20" Height="20" Kind="ArrowDown"/>
+                                <!--UPLOAD CONFIGS-->
+                                <Controls:Tile x:Name="AudioSystemConfigurationUpload"  Width="100" Height="28" Title="{x:Static p:Resources.Write_System_Settings}" TitleFontSize="9" 
+                                               VerticalAlignment="Top" Background="WhiteSmoke" Click="AudioSystemConfigurationUpload_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                               Margin="0,30,3,3" Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                                    <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                                 </Controls:Tile>
-
-                                <Expander Header="{ x:Static p:Resources.VoiceMessagesReserved }" Grid.Column="0" Grid.Row="1" IsExpanded="True">
-                                    <DataGrid x:Name="AudioReservedDataGrid" Grid.Column="0" Grid.Row="2" ColumnHeaderHeight="75" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioDefaultViewSource}}"  RowDetailsVisibilityMode="VisibleWhenSelected" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="400" Margin="0,0,0,0" CanUserSortColumns="False">
-                                        <DataGrid.Columns>
-                                            <DataGridTemplateColumn x:Name="AudioReservedIdColumn" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="SizeToHeader">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <Label Content="{Binding Id}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTextColumn x:Name="AudioReservedDescriptionColumn" Binding="{Binding Description}" IsReadOnly="True" Header="{x:Static p:Resources.Description}"/>
-
-                                            <DataGridTemplateColumn x:Name="AudioReservedActionsColumn"  IsReadOnly="True" Header="">
-                                                <DataGridTemplateColumn.CellTemplate >
-                                                    <DataTemplate>
-                                                        <DockPanel >
-                                                            <Button x:Name="ButtonPlayReserved" Click="AudioReservedPlayButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0">
-                                                                <Image Source="/images/audio/play.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="ButtonPauseReserved" Click="AudioReservedPauseButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False">
-                                                                <Image Source="/images/audio/pause.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="ButtonStopReserved" Click="AudioReservedStopButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="False">
-                                                                <Image Source="/images/audio/stop.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                        </DockPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Expander>
-
-                                <Expander Header="{ x:Static p:Resources.VoiceMessagesCustomized }" Grid.Column="1" Grid.Row="1" IsExpanded="True">
-                                    <DataGrid x:Name="AudioCustomizedDataGrid" Grid.Column="1" Grid.Row="2" ColumnHeaderHeight="75" CanUserAddRows="True" CanUserDeleteRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioCustomizedViewSource}}"  RowDetailsVisibilityMode="VisibleWhenSelected" Height="400" Margin="10,0,0,0" Loaded="AudioCustomizedDataGrid_Loaded" PreviewMouseWheel="AudioCustomizedDataGrid_PreviewMouseWheel" CanUserSortColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding">
-                                        <DataGrid.Columns>
-                                            <DataGridTemplateColumn x:Name="AudioCustomizedIdColumn" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="Auto">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <Label Content="{Binding Id}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTextColumn x:Name="AudioCustomizedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" />
-
-                                            <DataGridTemplateColumn x:Name="AudioCustomizedActionsColumn" IsReadOnly="True" Header="" CanUserResize="False" CanUserReorder="False">
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Auto" >
-                                                            <Button  x:Name="buttonLoadWav" Click="Load_WAV_File_Click" IsEnabled="False">
-                                                                <Image Source="/images/audio/search.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="buttonRecordWav" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="buttonRecordWav_Click" IsEnabled="False" >
-                                                                <Image Source="/images/audio/record.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="buttonStopRecordWav" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="buttonStopRecordWav_Click" IsEnabled="False">
-                                                                <Image Source="/images/audio/stop_record.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="buttonDeleteRecordWav" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="buttonDeleteRecordWav_Click" IsEnabled="False">
-                                                                <Image Source="/images/audio/error.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="ButtonPlayCustomized" Click="AudioCustomizedPlayButton_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" IsEnabled="False">
-                                                                <Image Source="/images/audio/play.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Left" Click="AudioCustomizedPauseButton_Click" VerticalAlignment="Top" IsEnabled="False">
-                                                                <Image Source="/images/audio/pause.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                            <Button x:Name="ButtonStopCustomized" HorizontalAlignment="Left" Click="AudioCustomizedStopButton_Click" VerticalAlignment="Top" IsEnabled="False">
-                                                                <Image Source="/images/audio/stop.png" Width="25" Height="25"/>
-                                                            </Button>
-                                                        </DockPanel>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Expander>
-
-                                <Expander Header="Configurações Audio" Grid.Column="2" Grid.Row="1" IsExpanded="True">
-                                    <DataGrid x:Name="AudioConfigDataGrid" Grid.Column="1" Grid.Row="1" FrozenColumnCount ="3" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioSystemConfigurationViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" GridViewColumnHeader.Click="AudioConfigDataGrid_Click"  VerticalContentAlignment="Center" Height="400" ColumnHeaderHeight="75" MouseDoubleClick="AudioConfigDataGrid_MouseDoubleClick">
-                                        <DataGrid.Columns>
-                                            <DataGridTextColumn x:Name="idAudioConfigColumn" Binding="{Binding ID}" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="SizeToHeader">
-                                            </DataGridTextColumn>
-
-                                            <DataGridTextColumn x:Name="audioConfigDescriptionColumn" Binding="{Binding DESCRIPTION}" Header="{x:Static p:Resources.Zone_Description}" Width="SizeToHeader" >
-                                                <DataGridTextColumn.EditingElementStyle>
-                                                    <Style TargetType="TextBox">
-                                                        <Setter Property="MaxLength" Value="80"/>
-                                                    </Style>
-                                                </DataGridTextColumn.EditingElementStyle>
-                                            </DataGridTextColumn>
-
-                                            <!--Audio config-->
-                                            <DataGridTemplateColumn x:Name="audioConfigZoneAudioExtendedTemplate" CanUserResize="False" Visibility="Hidden" Header="{x:Static p:Resources.Zone_audio_minus}" >
-                                                <DataGridTemplateColumn.HeaderTemplate>
-                                                    <DataTemplate>
-                                                        <Grid VerticalAlignment="Center" Background="#BDBDBD" HorizontalAlignment="Center">
-                                                            <Grid.RowDefinitions>
-                                                                <RowDefinition Height="auto"/>
-                                                                <RowDefinition Height="4*"/>
-                                                            </Grid.RowDefinitions>
-                                                            <Grid Grid.Row="0" VerticalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" HorizontalAlignment="Center"    >
-                                                                <Grid.ColumnDefinitions>
-                                                                    <ColumnDefinition Width="auto" />
-                                                                    <ColumnDefinition Width="{Binding ElementName=Zone_audio_1, Path=ActualWidth}" />
-                                                                    <ColumnDefinition Width="{Binding ElementName=Zone_audio_2, Path=ActualWidth}" />
-                                                                    <ColumnDefinition Width="{Binding ElementName=Zone_audio_3, Path=ActualWidth}" />
-                                                                    <ColumnDefinition Width="{Binding ElementName=Zone_audio_4, Path=ActualWidth}" />
-                                                                </Grid.ColumnDefinitions>
-                                                                <Border Grid.Column="0" Grid.ColumnSpan="4" BorderBrush="Black" HorizontalAlignment="Center" BorderThickness="0" VerticalAlignment="Center">
-                                                                    <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Content="{x:Static p:Resources.Zone_audio_minus}" />
-                                                                </Border>
-                                                            </Grid>
-                                                            <DataGrid AutoGenerateColumns="False"
-                                                        Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.IsSharedSizeScope="True" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" VerticalScrollBarVisibility="Disabled" CanUserResizeColumns="False" VerticalAlignment="Center" Grid.RowSpan="1" >
-                                                                <DataGrid.Columns>
-                                                                    <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_1}" x:Name="Zone_audio_1" CanUserResize="True" CanUserReorder="False" MinWidth="100" Width="100" />
-                                                                    <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_2}" x:Name="Zone_audio_2" CanUserResize="True" CanUserReorder="False" MinWidth="100" Width="105" />
-                                                                    <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_3}" x:Name="Zone_audio_3" CanUserResize="True" CanUserReorder="False"  MinWidth="100" Width="105" />
-                                                                    <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_4}" x:Name="Zone_audio_4" CanUserResize="True" CanUserReorder="False" MinWidth="100" Width="100" />
-                                                                </DataGrid.Columns>
-                                                            </DataGrid>
-                                                        </Grid>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.HeaderTemplate>
-
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <Grid HorizontalAlignment="Left" VerticalAlignment="Center">
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="Auto" />
-                                                                <ColumnDefinition Width="Auto" />
-                                                            </Grid.ColumnDefinitions>
-                                                            <ComboBox Grid.Column="0" x:Name="Zone_audio_1Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
-                                                      DisplayMemberPath="Value" 
-                                                      SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding AUDIO1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" DropDownOpened="Update_audio_comboboxes_list" />
-                                                            <ComboBox Grid.Column="1" x:Name="Zone_audio_2Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
-                                                      DisplayMemberPath="Value" 
-                                                      SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding AUDIO2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="3,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" />
-                                                            <ComboBox Grid.Column="2" x:Name="Zone_audio_3Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
-                                                      DisplayMemberPath="Value" 
-                                                      SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding AUDIO3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="3,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" />
-                                                            <ComboBox Grid.Column="3" x:Name="Zone_audio_4Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
-                                                      DisplayMemberPath="Value" 
-                                                      SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding AUDIO4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="3,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" />
-                                                        </Grid>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-
-                                            <DataGridTemplateColumn x:Name="audioConfigZoneAudioCompressedTemplate" Header="{x:Static p:Resources.Zone_audio_plus}" IsReadOnly="True" Width="Auto" Visibility="Visible">
-                                                <DataGridTemplateColumn.HeaderStyle>
-                                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                                        <Setter Property="Background" Value="#BDBDBD" />
-                                                        <Setter Property="BorderBrush" Value="Gray"/>
-                                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
-                                                    </Style>
-                                                </DataGridTemplateColumn.HeaderStyle>
-                                                <DataGridTemplateColumn.CellTemplate>
-                                                    <DataTemplate>
-                                                        <Label Content="{x:Static p:Resources.ClickHeaderToConfigure}"/>
-                                                    </DataTemplate>
-                                                </DataGridTemplateColumn.CellTemplate>
-                                            </DataGridTemplateColumn>
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </Expander>
                             </Grid>
+                            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanContentScroll="True">
+                                <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Margin="10" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="Auto" Height="470">
+                                    <DockPanel x:Name="ReservedAudio" Grid.Column="0" Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock Text="{ x:Static p:Resources.VoiceMessagesReserved }" FontSize="14" FontWeight="Bold"/>
+                                            <DataGrid x:Name="AudioReservedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioViewSource}}"  
+                                                  RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="AudioReservedDataGrid_Loaded" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="500" CanUserSortColumns="False">
+                                                <DataGrid.Columns>
+                                                    <!--ID-->
+                                                    <DataGridTextColumn x:Name="AudioReservedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Name-->
+                                                    <DataGridTextColumn x:Name="AudioReservedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
+                                                        <DataGridTextColumn.EditingElementStyle>
+                                                            <Style TargetType="TextBox">
+                                                                <Setter Property="MaxLength" Value="20"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.EditingElementStyle>
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Description}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Actions-->
+                                                    <DataGridTemplateColumn x:Name="AudioReservedActionsColumn" IsReadOnly="True" Header="" Width="90" CanUserResize="False">
+                                                        <DataGridTemplateColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="Width" Value="90"/>
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTemplateColumn.HeaderStyle>
+                                                        <DataGridTemplateColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Options}" Width="90" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataGridTemplateColumn.CellTemplate >
+                                                            <DataTemplate>
+                                                                <StackPanel Orientation="Horizontal" Margin="0,2">
+                                                                    <Button x:Name="ButtonPlayReserved" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioReservedPlayButton_Click" Margin="0,0,0,0">
+                                                                        <Image Source="/images/audio/play.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPlayReserved, Path=IsEnabled}" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPlayReserved, Path=IsEnabled}" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="ButtonPauseReserved" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioReservedPauseButton_Click" Margin="5,0,0,0">
+                                                                        <Image Source="/images/audio/pause.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPauseReserved, Path=IsEnabled}" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPauseReserved, Path=IsEnabled}" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="ButtonStopReserved" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioReservedStopButton_Click" Margin="5,0,0,0" >
+                                                                        <Image Source="/images/audio/stop.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonStopReserved, Path=IsEnabled}" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonStopReserved, Path=IsEnabled}" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                </StackPanel>
+
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <GridSplitter Height="Auto" Margin="10"  Grid.Column="0" Grid.Row="1" />
+                                    <DockPanel x:Name="CostumizedAudio"  Grid.Column="0" Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock Text="{ x:Static p:Resources.VoiceMessagesCustomized }" FontSize="14" FontWeight="Bold"/>
+                                            <DataGrid x:Name="AudioCustomizedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="True" AutoGenerateColumns="False" EnableRowVirtualization="True" 
+                                                      ItemsSource="{Binding Source={StaticResource AudioViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserResizeColumns="False" 
+                                                      CanUserReorderColumns="False" Height="500" CanUserSortColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding" >
+                                                <DataGrid.Columns>
+                                                    <!--ID-->
+                                                    <DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Name-->
+                                                    <DataGridTextColumn x:Name="AudioCustomizedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
+                                                        <DataGridTextColumn.EditingElementStyle>
+                                                            <Style TargetType="TextBox">
+                                                                <Setter Property="MaxLength" Value="20"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.EditingElementStyle>
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="Width" Value="120"/>
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Description}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Actions-->
+                                                    <DataGridTemplateColumn x:Name="AudioCustomizedActionsColumn" IsReadOnly="True" CanUserResize="False" CanUserReorder="False" Width="215">
+                                                        <DataGridTemplateColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="Width" Value="215"/>
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTemplateColumn.HeaderStyle>
+                                                        <DataGridTemplateColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Options}" Width="210" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
+                                                                    <Button x:Name="buttonLoadWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Load_WAV_File_Click" Margin="0,0,0,0" IsEnabled="True">
+                                                                        <Image Source="/images/audio/search.png" Width="25" Height="25" Cursor="Hand" />
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="buttonRecordWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="buttonRecordWav_Click" Margin="5,0,0,0" IsEnabled="true">
+                                                                        <Image Source="/images/audio/record.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="buttonStopRecordWav" HorizontalAlignment="Right" VerticalAlignment="Center" Click="buttonStopRecordWav_Click" Margin="5,0,0,0" IsEnabled="false">
+                                                                        <Image Source="/images/audio/stop_record.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="buttonDeleteRecordWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="buttonDeleteRecordWav_Click" Margin="5,0,0,0" IsEnabled="False">
+                                                                        <Image Source="/images/audio/error.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=buttonLoadWav, Path=IsEnabled}" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </DataTrigger>
+                                                                                    <DataTrigger Binding="{Binding ElementName=buttonLoadWav, Path=IsEnabled}" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <GridSplitter Width="1" Height="Auto" Foreground="Black" Margin="5" Opacity="1"/>
+                                                                    <Button x:Name="ButtonPlayCustomized" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioCustomizedPlayButton_Click" Margin="0,0,0,0" IsEnabled="False">
+                                                                        <Image Source="/images/audio/play.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioCustomizedPauseButton_Click" Margin="5,0,0,0" IsEnabled="False">
+                                                                        <Image Source="/images/audio/pause.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                    <Button x:Name="ButtonStopCustomized" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioCustomizedStopButton_Click" Margin="5,0,0,0" IsEnabled="False">
+                                                                        <Image Source="/images/audio/stop.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                        <Button.Template>
+                                                                            <ControlTemplate TargetType="Button">
+                                                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                                                            </ControlTemplate>
+                                                                        </Button.Template>
+                                                                        <Button.Style>
+                                                                            <Style>
+                                                                                <Style.Triggers>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Button.Style>
+                                                                    </Button>
+                                                                </StackPanel>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </StackPanel>
+                                    </DockPanel>
+                                    <GridSplitter Height="Auto" Margin="10"  Grid.Column="0" Grid.Row="1" />
+                                    <DockPanel x:Name="AudioConfigs" Grid.Column="0" Grid.Row="1" Width="640" HorizontalAlignment="Center">
+                                        <StackPanel HorizontalAlignment="Center">
+                                            <TextBlock Text="{ x:Static p:Resources.AudioConfigurations }" FontSize="14" FontWeight="Bold"/>
+                                            <DataGrid x:Name="AudioConfigDataGrid" FrozenColumnCount ="3" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioSystemConfigurationViewSource}}" 
+                                                      RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" 
+                                                      HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="500" MinWidth="560" MaxWidth="740" ColumnHeaderHeight="60" >
+                                                <DataGrid.Columns>
+                                                    <!--ID-->
+                                                    <DataGridTextColumn x:Name="idAudioConfigColumn" Binding="{Binding ID}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="Width" Value="40"/>
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Name-->
+                                                    <DataGridTextColumn x:Name="audioConfigDescriptionColumn" Binding="{Binding DESCRIPTION}" Header="{x:Static p:Resources.Zone_Description}" Width="120" MinWidth="120" MaxWidth="300" CanUserResize="True">
+                                                        <DataGridTextColumn.EditingElementStyle>
+                                                            <Style TargetType="TextBox">
+                                                                <Setter Property="MaxLength" Value="20"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.EditingElementStyle>
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Zone_Description}" Width="300" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+                                                    <!--Audio config-->
+                                                    <DataGridTemplateColumn x:Name="audioConfigZoneAudioExtendedTemplate" CanUserResize="False" Visibility="Visible" Header="{x:Static p:Resources.Audio_system_configurations}" Width="500" >
+                                                        <DataGridTemplateColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <Grid Background="White" Margin="-10">
+                                                                    <Grid.RowDefinitions>
+                                                                        <RowDefinition Height="30"/>
+                                                                        <RowDefinition Height="30"/>
+                                                                    </Grid.RowDefinitions>
+                                                                    <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                                                        <Grid.ColumnDefinitions>
+                                                                            <ColumnDefinition Width="480" />
+                                                                            <ColumnDefinition Width="120" />
+                                                                            <ColumnDefinition Width="120" />
+                                                                            <ColumnDefinition Width="120" />
+                                                                            <ColumnDefinition Width="120" />
+                                                                        </Grid.ColumnDefinitions>
+                                                                        <Border BorderBrush="Gray" BorderThickness="1">
+                                                                            <Label Grid.Row="0"  HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_audio_minus}"/>
+                                                                        </Border>
+                                                                    </Grid>
+                                                                    <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
+                                                                          VerticalContentAlignment="Center" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" 
+                                                                          VerticalScrollBarVisibility="Disabled" CanUserResizeColumns="False" VerticalAlignment="Center" >
+                                                                        <DataGrid.Columns>
+                                                                            <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_1}" x:Name="Area_audio_1" CanUserResize="True" CanUserReorder="False">
+                                                                                <DataGridTextColumn.HeaderStyle>
+                                                                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                                        <Setter Property="Width" Value="120"/>
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                        <Setter Property="Background" Value="White" />
+                                                                                        <Setter Property="BorderBrush" Value="Gray"/>
+                                                                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.HeaderStyle>
+                                                                                <DataGridTextColumn.HeaderTemplate>
+                                                                                    <DataTemplate>
+                                                                                        <TextBlock Text="{x:Static p:Resources.Zone_audio_1}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                                    </DataTemplate>
+                                                                                </DataGridTextColumn.HeaderTemplate>
+                                                                            </DataGridTextColumn>
+                                                                            <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_2}" x:Name="Area_audio_2" CanUserResize="True" CanUserReorder="False">
+                                                                                <DataGridTextColumn.HeaderStyle>
+                                                                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                                        <Setter Property="Width" Value="120"/>
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                        <Setter Property="Background" Value="White" />
+                                                                                        <Setter Property="BorderBrush" Value="Gray"/>
+                                                                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.HeaderStyle>
+                                                                                <DataGridTextColumn.HeaderTemplate>
+                                                                                    <DataTemplate>
+                                                                                        <TextBlock Text="{x:Static p:Resources.Zone_audio_2}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                                    </DataTemplate>
+                                                                                </DataGridTextColumn.HeaderTemplate>
+                                                                            </DataGridTextColumn>
+                                                                            <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_3}" x:Name="Area_audio_3" CanUserResize="True" CanUserReorder="False">
+                                                                                <DataGridTextColumn.HeaderStyle>
+                                                                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                                        <Setter Property="Width" Value="120"/>
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                        <Setter Property="Background" Value="White" />
+                                                                                        <Setter Property="BorderBrush" Value="Gray"/>
+                                                                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.HeaderStyle>
+                                                                                <DataGridTextColumn.HeaderTemplate>
+                                                                                    <DataTemplate>
+                                                                                        <TextBlock Text="{x:Static p:Resources.Zone_audio_3}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                                    </DataTemplate>
+                                                                                </DataGridTextColumn.HeaderTemplate>
+                                                                            </DataGridTextColumn>
+                                                                            <DataGridTextColumn Header="{x:Static p:Resources.Zone_audio_4}" x:Name="Area_audio_4" CanUserResize="True" CanUserReorder="False">
+                                                                                <DataGridTextColumn.HeaderStyle>
+                                                                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                                        <Setter Property="Width" Value="120"/>
+                                                                                        <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                                        <Setter Property="Background" Value="White" />
+                                                                                        <Setter Property="BorderBrush" Value="Gray"/>
+                                                                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                                    </Style>
+                                                                                </DataGridTextColumn.HeaderStyle>
+                                                                                <DataGridTextColumn.HeaderTemplate>
+                                                                                    <DataTemplate>
+                                                                                        <TextBlock Text="{x:Static p:Resources.Zone_audio_4}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                                    </DataTemplate>
+                                                                                </DataGridTextColumn.HeaderTemplate>
+                                                                            </DataGridTextColumn>
+                                                                        </DataGrid.Columns>
+                                                                    </DataGrid>
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.HeaderTemplate>
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="120" />
+                                                                        <ColumnDefinition Width="120" />
+                                                                        <ColumnDefinition Width="120" />
+                                                                        <ColumnDefinition Width="120" />
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <ComboBox Grid.Column="0" x:Name="Zone_audio_1Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
+                                                              DisplayMemberPath="Value" Margin="-20,0,0,0"
+                                                              SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding AUDIO1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="Auto" DropDownOpened="Update_audio_comboboxes_list" />
+                                                                    <ComboBox Grid.Column="1" x:Name="Zone_audio_2Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
+                                                              DisplayMemberPath="Value" Margin="-20,0,0,0"
+                                                              SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding AUDIO2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="Auto" />
+                                                                    <ComboBox Grid.Column="2" x:Name="Zone_audio_3Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
+                                                              DisplayMemberPath="Value" Margin="-20,0,0,0"
+                                                              SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding AUDIO3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="Auto" />
+                                                                    <ComboBox Grid.Column="3" x:Name="Zone_audio_4Column" ItemsSource="{Binding Source={StaticResource AudioMessages_dict}}"
+                                                              DisplayMemberPath="Value" Margin="-20,0,0,0"
+                                                              SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding AUDIO4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="100" Height="Auto" />
+                                                                </Grid>
+                                                            </DataTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
+                                                    </DataGridTemplateColumn>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </StackPanel>
+                            </ScrollViewer>
                         </StackPanel>
-                    </ScrollViewer>
+                    </Grid>
                 </TabItem>
                 <!--STATUS-->
                 <TabItem x:Name="StatusTab" Header="{x:Static p:Resources.Status}" Visibility="Hidden">
@@ -19962,7 +20318,7 @@
                 </DockPanel>
             </StatusBar>
         </DockPanel>
-        <!--HELP FLYOUT-->
+        <!--HELP FLYOUT--><!--
         <Controls:Flyout x:Name="HelpFlyout" HorizontalContentAlignment="Right" Background="LightGray" Visibility="Hidden"
                          BorderBrush="Gray" BorderThickness="1"
                          Opacity="0.85"  HorizontalAlignment="Right"
@@ -20015,7 +20371,7 @@
                     </StackPanel>
                 </StackPanel>
             </DockPanel>
-        </Controls:Flyout>
+        </Controls:Flyout>-->
         <!--FLYOUT-->
         <Controls:Flyout x:Name="FlyCom" FontWeight="Bold"
                          Background="LightGray" Opacity="0.85" BorderBrush="Gray" BorderThickness="1"

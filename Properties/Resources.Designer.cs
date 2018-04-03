@@ -6343,6 +6343,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Writing audio configurations.
+        /// </summary>
+        public static string WritingAudioConfig {
+            get {
+                return ResourceManager.GetString("WritingAudioConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Writing dialer configuration.
         /// </summary>
         public static string WritingDialer {

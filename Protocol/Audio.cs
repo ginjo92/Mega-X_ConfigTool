@@ -131,6 +131,10 @@ namespace ProdigyConfigToolWPF.Protocol
                 unified_file_stream.WriteByte((byte)((audio_positions[i] >> 8) & 0xFF));
                 unified_file_stream.WriteByte((byte)((audio_positions[i] >> 0) & 0xFF));
 
+                string AudioIDs = Convert.ToString(audio_ids[i + reserved_audios_counter]);
+                string AudioSizes = Convert.ToString(audio_size[i + reserved_audios_counter]);
+                string AudioPositions = Convert.ToString(audio_positions[i + reserved_audios_counter]);
+                System.Diagnostics.Debug.WriteLine("AUDIO --- ID: " + AudioIDs + " Size: " + AudioSizes + " Pos: " + AudioPositions);
             }
 
             for (int i = 0; i < customized_grid.Items.Count -1; i++)
@@ -149,6 +153,11 @@ namespace ProdigyConfigToolWPF.Protocol
                 unified_file_stream.WriteByte((byte)((audio_positions[i + reserved_audios_counter] >> 16) & 0xFF));
                 unified_file_stream.WriteByte((byte)((audio_positions[i + reserved_audios_counter] >> 8) & 0xFF));
                 unified_file_stream.WriteByte((byte)((audio_positions[i + reserved_audios_counter] >> 0) & 0xFF));
+
+                string AudioIDs = Convert.ToString(audio_ids[i + reserved_audios_counter]);
+                string AudioSizes = Convert.ToString(audio_size[i + reserved_audios_counter]);
+                string AudioPositions = Convert.ToString(audio_positions[i + reserved_audios_counter]);
+                System.Diagnostics.Debug.WriteLine("AUDIO --- ID: " + AudioIDs + " Size: " + AudioSizes + " Pos: " + AudioPositions);
 
             }
 

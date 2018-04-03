@@ -17,7 +17,6 @@
     <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
-    <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding AudioCustomized, Source={StaticResource databaseDataSet}}"/>
-    <CollectionViewSource x:Key="AudioDefaultViewSource" Source="{Binding AudioDefault, Source={StaticResource databaseDataSet}}"/>
+    <CollectionViewSource x:Key="audioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
 
 </ResourceDictionary>

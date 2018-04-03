@@ -2772,4 +2772,7 @@
   <data name="HelpTip_Wizard_2" xml:space="preserve">
     <value>Quando é criado um novo ficheiro é possível ser ajudado por um Assistente de forma a fazer desta tarefa mais fácil e intuitiva. Este Assistente vai ajudar a dar início a um novo projeto de configuração para o mega-X.</value>
   </data>
+  <data name="WritingAudioConfig" xml:space="preserve">
+    <value>A escrever configurações dos audios</value>
+  </data>
 </root>

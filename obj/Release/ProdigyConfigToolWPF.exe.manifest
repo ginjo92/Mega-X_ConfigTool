@@ -48,6 +48,16 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.Diagnostics.STrace" version="13.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.SqlClrProvider" version="13.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ControlzEx.dll" size="180224">
       <assemblyIdentity name="ControlzEx" version="3.0.2.4" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -116,6 +126,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>/mM8UisrZmg7eBPPXzqMvoCaVfXuEmIYea0rk6QqS4A=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.QualityTools.Testing.Fakes.dll" size="297752">
+      <assemblyIdentity name="Microsoft.QualityTools.Testing.Fakes" version="12.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9+k9rt9ZJsrGMQYuH5RJvz+pxLnxr6JaFDq6ZeJxZpE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -192,14 +214,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8434688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8124416">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QtBpzC0vX5l3/GyBjprXOAP5uuMzrSlViweWm0Q5XI0=</dsig:DigestValue>
+        <dsig:DigestValue>9+PpICGJ+qK3daTwifoAQhqa3v3funnqkdO6gnrzyh4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -211,7 +233,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nz6ILrwCQa1adBEFfC2YC8c52kl9Wm5LUvPST/+2/Kc=</dsig:DigestValue>
+        <dsig:DigestValue>mAjP3qOx9ACsLjchCylrdfXr48CK7ZOiPk51FmkGtk8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -223,43 +245,43 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>i01ig99VVlbyrmm6sKCwQkw8hr3qpenYRH40EhAyQWo=</dsig:DigestValue>
+        <dsig:DigestValue>6NgAFVEQFx3IKu71rBFQ2OeglpfXOh2IUlhU1XTSnBg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="312832">
-      <assemblyIdentity name="System.Data.SQLite" version="1.0.105.2" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="1371136">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bYBbQW+Fxy9PydLAqQeOzVcb5+ZKkuSf37b4fT7HehA=</dsig:DigestValue>
+        <dsig:DigestValue>Pf1OpX6kDkmBU8EpUwJ/hOFeFkDI1/UnPJqs6UeWA34=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.EF6.dll" size="184320">
-      <assemblyIdentity name="System.Data.SQLite.EF6" version="1.0.105.2" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.EF6.dll" size="184832">
+      <assemblyIdentity name="System.Data.SQLite.EF6" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kclhuVWWAzxSvn7/a8UdOH6fxBDNl910L+F65xGEjZU=</dsig:DigestValue>
+        <dsig:DigestValue>AwjgWXIYSpIrsmtkJJhmV83HdSPHeKrD4pqTJQzjvDU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.Linq.dll" size="184320">
-      <assemblyIdentity name="System.Data.SQLite.Linq" version="1.0.105.2" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.Linq.dll" size="184832">
+      <assemblyIdentity name="System.Data.SQLite.Linq" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3VkiLq9CMvhWTcvlRR+gRHThv5Ac8hbmtrUmDbcxy+w=</dsig:DigestValue>
+        <dsig:DigestValue>1+3RYlfUawqrRUQvUlJEoqH1Zl5VuRA+9Kpa+W9omHY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -476,13 +498,13 @@
       <dsig:DigestValue>Iiggy2P8Vl/0VtkEsX5fWHkGHrEdmU1rQFjQvj+mVa8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ProdigyConfigToolWPF.exe.config" size="2924">
+  <file name="ProdigyConfigToolWPF.exe.config" size="3066">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3Lgm3kPFwZdWPJPdlxGgEJUBcJ1j35cc78yfyTYz4IY=</dsig:DigestValue>
+      <dsig:DigestValue>eBc0NllXpwDlGvGk+lG4+0+mYdUPI1m2dvyrZ+zX+2w=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
