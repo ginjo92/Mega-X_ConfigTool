@@ -12414,125 +12414,151 @@ namespace ProdigyConfigToolWPF
         private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = zoneDataGrid.SelectedIndex;
-            int column = zoneDataGrid.CurrentColumn.DisplayIndex;
+            if(row!=0)
+            { 
+                int column = zoneDataGrid.CurrentColumn.DisplayIndex;
 
-            if (column.Equals(0))
-            {
-                MainTabControl.SelectedItem = MainZonePVTTab;
-                System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
-                zoneViewSource.View.MoveCurrentToPosition(zoneDataGrid.SelectedIndex);
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(zoneDataGrid.SelectedIndex);
+                }
+
+                TreeviewZones.IsExpanded = true;
+                (TreeviewZones.Items[zoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
             }
-
-            TreeviewZones.IsExpanded = true;
-            (TreeviewZones.Items[zoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
         }
 
         private void areaDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = areaDataGrid.SelectedIndex;
-            int column = areaDataGrid.CurrentColumn.DisplayIndex;
-
-            int width = (int)areaDataGrid.Width;
-            int height = (int)areaDataGrid.Height;
-
-            if (column.Equals(0))
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainAreaPVTTab;
-                System.Windows.Data.CollectionViewSource areaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
-                areaViewSource.View.MoveCurrentToPosition(areaDataGrid.SelectedIndex);
-            }
+                int column = areaDataGrid.CurrentColumn.DisplayIndex;
 
-            TreeviewAreas.IsExpanded = true;
-            (TreeviewAreas.Items[areaDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                int width = (int)areaDataGrid.Width;
+                int height = (int)areaDataGrid.Height;
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainAreaPVTTab;
+                    System.Windows.Data.CollectionViewSource areaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
+                    areaViewSource.View.MoveCurrentToPosition(areaDataGrid.SelectedIndex);
+                }
+
+                TreeviewAreas.IsExpanded = true;
+                (TreeviewAreas.Items[areaDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
         }
 
         private void userDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = userDataGrid.SelectedIndex;
-            int column = userDataGrid.CurrentColumn.DisplayIndex;
-
-            int width = (int)userDataGrid.Width;
-            int height = (int)userDataGrid.Height;
-
-            if (column.Equals(0))
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainUsersPVTTab;
-                System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
-                userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
-            }
+                int column = userDataGrid.CurrentColumn.DisplayIndex;
 
-            TreeviewUsers.IsExpanded = true;
-            (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                int width = (int)userDataGrid.Width;
+                int height = (int)userDataGrid.Height;
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainUsersPVTTab;
+                    System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
+                    userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+                }
+
+                TreeviewUsers.IsExpanded = true;
+                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
         }
 
         private void keypadDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = keypadDataGrid.SelectedIndex;
-            int column = keypadDataGrid.CurrentColumn.DisplayIndex;
-
-            if (column.Equals(0))
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainKeypadsPVTTab;
-                System.Windows.Data.CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
-                keypadViewSource.View.MoveCurrentToPosition(keypadDataGrid.SelectedIndex);
-            }
-            else {
-                
-            }
+                int column = keypadDataGrid.CurrentColumn.DisplayIndex;
 
-            TreeviewKeypads.IsExpanded = true;
-            (TreeviewKeypads.Items[keypadDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainKeypadsPVTTab;
+                    System.Windows.Data.CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
+                    keypadViewSource.View.MoveCurrentToPosition(keypadDataGrid.SelectedIndex);
+                }
+                else
+                {
+
+                }
+
+                TreeviewKeypads.IsExpanded = true;
+                (TreeviewKeypads.Items[keypadDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
         }
 
         private void outputDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = outputDataGrid.SelectedIndex;
-            int column = outputDataGrid.CurrentColumn.DisplayIndex;
-
-            int width = (int)outputDataGrid.Width;
-            int height = (int)outputDataGrid.Height;
-
-            if (column.Equals(0))
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainOutputsPVTTab;
-                System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
-                outputViewSource.View.MoveCurrentToPosition(outputDataGrid.SelectedIndex);
-            }
+                int column = outputDataGrid.CurrentColumn.DisplayIndex;
 
-            TreeviewOutputs.IsExpanded = true;
-            (TreeviewOutputs.Items[outputDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                int width = (int)outputDataGrid.Width;
+                int height = (int)outputDataGrid.Height;
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(outputDataGrid.SelectedIndex);
+                }
+
+                TreeviewOutputs.IsExpanded = true;
+                (TreeviewOutputs.Items[outputDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
         }
 
         private void timezoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             int row = timezoneDataGrid.SelectedIndex;
-            int column = timezoneDataGrid.CurrentColumn.DisplayIndex;
-
-            int width = (int)timezoneDataGrid.Width;
-            int height = (int)timezoneDataGrid.Height;
-
-            if (column.Equals(0))
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainTimezonesPVTTab;
-                System.Windows.Data.CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
-                timezoneViewSource.View.MoveCurrentToPosition(timezoneDataGrid.SelectedIndex);
-            }
+                int column = timezoneDataGrid.CurrentColumn.DisplayIndex;
 
-            TreeviewTimezones.IsExpanded = true;
-            (TreeviewTimezones.Items[timezoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                int width = (int)timezoneDataGrid.Width;
+                int height = (int)timezoneDataGrid.Height;
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainTimezonesPVTTab;
+                    System.Windows.Data.CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
+                    timezoneViewSource.View.MoveCurrentToPosition(timezoneDataGrid.SelectedIndex);
+                }
+
+                TreeviewTimezones.IsExpanded = true;
+                (TreeviewTimezones.Items[timezoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
         }
 
         private void phoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if (phoneDataGrid.CurrentColumn.DisplayIndex.Equals(0))
+            int row = phoneDataGrid.SelectedIndex;
+            if (row != 0)
             {
-                MainTabControl.SelectedItem = MainPhonesPVTTab;
-                System.Windows.Data.CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
-                phoneViewSource.View.MoveCurrentToPosition(phoneDataGrid.SelectedIndex);
+                int column = phoneDataGrid.CurrentColumn.DisplayIndex;
+
+
+                if (column.Equals(0))
+                {
+                    MainTabControl.SelectedItem = MainPhonesPVTTab;
+                    System.Windows.Data.CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
+                    phoneViewSource.View.MoveCurrentToPosition(phoneDataGrid.SelectedIndex);
+                }
+
+                TreeviewPhones.IsExpanded = true;
+                (TreeviewPhones.Items[phoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
             }
-             
-            TreeviewPhones.IsExpanded = true;
-            (TreeviewPhones.Items[phoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
         }
 
         #endregion
