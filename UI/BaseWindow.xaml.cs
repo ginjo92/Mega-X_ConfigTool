@@ -70,6 +70,9 @@ namespace ProdigyConfigToolWPF
 
         public System.Windows.Threading.DispatcherTimer serial_port_connection_timer = new System.Windows.Threading.DispatcherTimer();
 
+        AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
+        AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
+
         FileStream audio_stream;
         
         private bool default_restore_is_set = false;
@@ -108,7 +111,9 @@ namespace ProdigyConfigToolWPF
             {
                 InitializeComponent();
                 this.DataContext = this;
+
                 
+
                 timer = new System.Windows.Forms.Timer();
                 timer.Interval = 2000;
                 timer.Tick += new EventHandler(OnTimedEvent);
@@ -351,10 +356,10 @@ namespace ProdigyConfigToolWPF
                 
                 //AUDIO
                 string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; 
+                string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\";
 
                 //AUDIO DEFAULT
-                AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
+                //AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
                 databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017")) {
@@ -372,7 +377,7 @@ namespace ProdigyConfigToolWPF
                 AudioDefaultViewSource.View.MoveCurrentToFirst();
 
                 //AUDIO CUSTOMIZED
-                AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
+                //AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
                 databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
@@ -390,8 +395,14 @@ namespace ProdigyConfigToolWPF
                 AudioCustomizedViewSource.Source = audio_customized_table;
                 AudioCustomizedViewSource.View.MoveCurrentToFirst();
 
-                databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
-                databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
+
+                AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
+                databaseDataSetAudioTableAdapter.Fill(databaseDataSet.Audio);
+                System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
+                AudioViewSource.View.MoveCurrentToFirst();
+                
+                //databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
+                //databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
 
                 //defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
                 //SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
@@ -9274,8 +9285,10 @@ namespace ProdigyConfigToolWPF
             if (result == true)
             {
                 System.IO.File.Copy(configurations_folder + AppDbFile, dlg.FileName);
+                AppDbFile = dlg.FileName;
+                Save_Database_data();
                 Close();
-                MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null);
+                MainWindow window1 = new MainWindow(AppLocale, AppRole, AppDbFile, null, null, null, null);
                 window1.Show();
                 //Não gravar antigo, mesmo que haja alterações
                 //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
@@ -9616,7 +9629,7 @@ namespace ProdigyConfigToolWPF
 
             #endregion
 
-            #region AUDIO_CUSTOMIZED
+            #region AUDIO
 
             try
             {
@@ -9630,9 +9643,14 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                var a = databaseDataSet.Audio.GetChanges();
-                AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
-                databaseDataSetAudioTableAdapter.Update(databaseDataSet.Audio);
+                //var a = databaseDataSet.Audio.GetChanges();
+                AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
+                
+                databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
+
+                //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
+                //databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
+                //databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
 
             }
             catch (Exception ex)
@@ -9680,11 +9698,11 @@ namespace ProdigyConfigToolWPF
                 }
             }
 
-            //if (!databaseDataSet.HasChanges())
-            //{
-            //    Close();
-            //}
-            
+            else 
+            {
+                //Close();
+            }
+
 
             if (serialPort.IsOpen)
                 serialPort.Close();
@@ -10575,16 +10593,29 @@ namespace ProdigyConfigToolWPF
                 con.Close();
                 databaseDataSet.Audio.Clear();
 
+                DataTable audio_full_table = new DataTable();
+                audio_full_table = audio_table.Copy();
+                audio_full_table.Merge(audio_customized_table);
+
+                defaultDataSet.AudioDataTable audio_table1 = new defaultDataSet.AudioDataTable();
+                audio_table1.Merge(audio_full_table);
+
+                AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
+                databaseDatasetTableAdapter.Fill(audio_table1);
+                databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
+                
                 //delete table
                 foreach (defaultDataSet.AudioRow row in (databaseDataSet.Audio.Select("Id <> null")))
                 {
                     row.Delete();
                 }
 
-                foreach (defaultDataSet.AudioRow row in audio_customized_table)
+                foreach (defaultDataSet.AudioRow row in audio_table1)
                 {
                     databaseDataSet.Audio.Rows.Add(row.ItemArray);
                 }
+
+               
                 #endregion
 
                 #region AUDIO SYSTEM CONFIG
@@ -10598,8 +10629,6 @@ namespace ProdigyConfigToolWPF
                 adapter.Fill(audio_system_table);
                 con.Close();
                 databaseDataSet.AudioSystemConfiguration.Clear();
-                databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
-                databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
 
                 //delete table
                 foreach (defaultDataSet.AudioSystemConfigurationRow row in (databaseDataSet.Audio.Select("Id <> null")))
@@ -15335,7 +15364,10 @@ namespace ProdigyConfigToolWPF
             FlyCom.IsOpen = false;
         }
 
-        
+        private void AudioCustomButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 

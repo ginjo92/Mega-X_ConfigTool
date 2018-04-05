@@ -195,7 +195,8 @@ namespace ProdigyConfigToolWPF
                 try
                 {
                     Audio.Add(row.Id, row.Description);
-                }catch { }
+                }
+                catch { }
             }
            
             return Audio;

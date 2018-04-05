@@ -14943,6 +14943,7 @@
                                                     </DataGridTemplateColumn>
                                                 </DataGrid.Columns>
                                             </DataGrid>
+                                            
                                         </StackPanel>
                                     </DockPanel>
                                     <GridSplitter Height="Auto" Margin="10"  Grid.Column="0" Grid.Row="1" />

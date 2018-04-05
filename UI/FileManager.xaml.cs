@@ -179,6 +179,7 @@ namespace ProdigyConfigToolWPF
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
 
             string sourcePath = configurations_folder + DbFile.Name;
+            
             string targetPath = configurations_folder + "\\old\\" + DbFile.Name;
 
             GC.Collect();
