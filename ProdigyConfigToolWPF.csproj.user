@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <EnableSecurityDebugging>false</EnableSecurityDebugging>
-    <PublishUrlHistory>C:\Users\pleitao\Desktop\prodigyconfigtoolwpf\Mega-X_ConfigTool\TestRelease\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\TestRelease\|C:\Users\pleitao\Desktop\prodigyconfigtoolwpf\Mega-X_ConfigTool\TestRelease\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

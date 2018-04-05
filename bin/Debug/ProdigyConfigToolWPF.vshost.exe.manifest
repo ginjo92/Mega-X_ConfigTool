@@ -214,14 +214,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8808448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8810496">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yyAuwwm4+y63dsU/0mAs/tczWM3Oe2xPZCn+V7Mrs68=</dsig:DigestValue>
+        <dsig:DigestValue>o1C19JfzD8Pjx+pm6HDRTDhnb33tPzn0cwpjqvphkUE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -233,7 +233,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yKZ/b15kPKAG5hoc9RwRpqGNth50wUHUzL9DT85Khr4=</dsig:DigestValue>
+        <dsig:DigestValue>Kfz3BAkRAmEmOgILt3BhExs2ywA3Qk1HiIB/c10T/44=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -245,19 +245,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SFE9+o1A4sAgP64VSLZPC7HkS2kltFWTRqCCBk1dP4Y=</dsig:DigestValue>
+        <dsig:DigestValue>c46HBUJLIrEK0+eKI/ixlEwJm1bgYopzOud3eVHVxCI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="1371136">
-      <assemblyIdentity name="System.Data.SQLite" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="345600">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Pf1OpX6kDkmBU8EpUwJ/hOFeFkDI1/UnPJqs6UeWA34=</dsig:DigestValue>
+        <dsig:DigestValue>VLEF/4rXqsFJ5PQmFaN6Bj/sfOmz7dLNbN7B62xX4sA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -489,6 +489,78 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="bin\Debug\en\ProdigyConfigToolWPF.resources.dll" size="65024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sdgCFfd7/3wzRtRiBpO0BbDr1215M3URktjThFKUmzs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\ProdigyConfigToolWPF.exe" size="8810496">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5U1x1QsYMqyZQsQGElFYOi/bpmApZrr98XwBjPURkCI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\ProdigyConfigToolWPF.pdb" size="3655168">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4Sc0LlbmDnUdRxHeH/CZvVjNoNhDf7PEZ03xl4S1aXw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\pt\ProdigyConfigToolWPF.resources.dll" size="68608">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fdN2Nhc99aIWzTZRoFUZWGnIjiD/Fj4ExtMDNyr9MQM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\en\ProdigyConfigToolWPF.resources.dll" size="65024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JyQayHXVM+1WzJBeLIguMEda4M2JoiTDbes+yfjgbLs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\ProdigyConfigToolWPF.exe" size="8124416">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tNANn6hp0G6t7bvmowYWFJS8Qa9DlYyCDvplIkCT/q4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\ProdigyConfigToolWPF.pdb" size="3175936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PiH+WCDvSuBRN4X3yhiTjqmzh6ek4zwhiwLwtOMlv7g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\pt\ProdigyConfigToolWPF.resources.dll" size="68608">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/ZoKy1NEn4hhs50WYTewifX+WDzSSybRdYgGoulLUUs=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="icon.ico" size="139235">
     <hash>
       <dsig:Transforms>

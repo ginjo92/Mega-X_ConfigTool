@@ -8,6 +8,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("icon.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/en/prodigyconfigtoolwpf.resources.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/prodigyconfigtoolwpf.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/prodigyconfigtoolwpf.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/debug/pt/prodigyconfigtoolwpf.resources.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/release/en/prodigyconfigtoolwpf.resources.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/release/prodigyconfigtoolwpf.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/release/prodigyconfigtoolwpf.pdb")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/release/pt/prodigyconfigtoolwpf.resources.dll")]
 
 

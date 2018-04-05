@@ -102,8 +102,10 @@
         <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
+        <!--<CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>-->
         <CollectionViewSource x:Key="AudioSystemConfigurationViewSource" Source="{Binding AudioSystemConfiguration, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="AudioDefaultViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
     </Controls:MetroWindow.Resources>
 
     <Window.CommandBindings>
@@ -6882,6 +6884,7 @@
                                                         </EventTrigger>
                                                     </ToggleButton.Triggers>
                                                 </ToggleButton>
+                                                
                                                 <TextBox x:Name="UserCodeTextBox" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                                          FontWeight="Bold" FontSize="10"
                                                          Visibility="Hidden" />
@@ -14773,20 +14776,20 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="400*"/>
                         </Grid.RowDefinitions>
-                        <!--HEADER-->
+                        
                         <StackPanel Grid.Column="0" Grid.Row="0" Height="Auto">
                             <Grid>
+                                <!--HEADER-->
                                 <Grid x:Name="AudioHeader" Margin="20,10,0,10" VerticalAlignment="Center">
                                     <Image Source="/images/new/audio.png" Width="45" Height="45" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
                                     <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                            Text="{ x:Static p:Resources.descriptionAudio }"/>
                                 </Grid>
-
+                                <!--PROGRESS BAR-->
                                 <ProgressBar Name="progressBarAudioMeasure" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,18,320,0" Width="100" 
                                                                  Style="{ DynamicResource ProgressBarStyle}" Foreground="{DynamicResource ProgressBarForeground}" Background="{DynamicResource ProgressBarBackground}"
                                                                  Height="15" Minimum="0" Maximum="4181216" Value="0"/>
                                 <Label Name="lblBarAudioMeasure" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,43,316,0" Content="{x:Static p:Resources.FreeSpace }" FontSize="8" Foreground="Gray"/>
-
                                 <!--UPLOAD AUDIO-->
                                 <Controls:Tile x:Name="AudioMessagesUploadTile" Width="100" Height="28" Title="{x:Static p:Resources.WriteAudio}" TitleFontSize="9" 
                                                VerticalAlignment="Top" Background="WhiteSmoke" Click="Send_Audio_messages" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -14811,7 +14814,7 @@
                                     <DockPanel x:Name="ReservedAudio" Grid.Column="0" Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
                                         <StackPanel HorizontalAlignment="Center">
                                             <TextBlock Text="{ x:Static p:Resources.VoiceMessagesReserved }" FontSize="14" FontWeight="Bold"/>
-                                            <DataGrid x:Name="AudioReservedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioViewSource}}"  
+                                            <DataGrid x:Name="AudioReservedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioDefaultViewSource}}"  
                                                   RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="AudioReservedDataGrid_Loaded" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="500" CanUserSortColumns="False">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
@@ -14947,8 +14950,8 @@
                                         <StackPanel HorizontalAlignment="Center">
                                             <TextBlock Text="{ x:Static p:Resources.VoiceMessagesCustomized }" FontSize="14" FontWeight="Bold"/>
                                             <DataGrid x:Name="AudioCustomizedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="True" AutoGenerateColumns="False" EnableRowVirtualization="True" 
-                                                      ItemsSource="{Binding Source={StaticResource AudioViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserResizeColumns="False" 
-                                                      CanUserReorderColumns="False" Height="500" CanUserSortColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding" >
+                                                      ItemsSource="{Binding Source={StaticResource AudioCustomizedViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserResizeColumns="False" 
+                                                      CanUserReorderColumns="False" Height="500" CanUserSortColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding" CanUserDeleteRows="True">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
                                                     <DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -15875,7 +15878,9 @@
                                 </Rectangle.OpacityMask>
                             </Rectangle>
                         </Controls:Tile>
-                        <DataGrid x:Name="globalSystemDataGrid" Grid.Column="1" Grid.Row="1" ColumnHeaderHeight="75" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource globalSystemViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" GridViewColumnHeader.Click="GlobalSystemColumnHeaderClickedHandler" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="400" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <DataGrid x:Name="globalSystemDataGrid" Grid.Column="1" Grid.Row="1" ColumnHeaderHeight="75" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
+                                  ItemsSource="{Binding Source={StaticResource globalSystemViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" GridViewColumnHeader.Click="GlobalSystemColumnHeaderClickedHandler" 
+                                  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Height="400" HorizontalAlignment="Left" VerticalAlignment="Top">
                             <DataGrid.Columns>
                                 <DataGridTextColumn x:Name="cRA_client_numberColumn" Binding="{Binding CRA client number, StringFormat={}{0:D4}}" Header="{x:Static p:Resources.CRAClientNumber}" Width="SizeToHeader"/>
                                 <DataGridTextColumn x:Name="outputs_codeColumn" Binding="{Binding Outputs code, StringFormat={}{0:D4}}" Header="{x:Static p:Resources.GlobalSystem_call_output_code}" Width="SizeToHeader" />
@@ -19724,14 +19729,14 @@
                         </StackPanel>
                         <!--DOWNLOAD-->
                         <Controls:Tile x:Name="GlobalSystemDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
-                                       VerticalAlignment="Top" Background="LightGray" Click="SystemDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="SystemDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,107,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
                             <Image Source="/images/new/download.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
                         <!--UPLOAD-->
                         <Controls:Tile x:Name="GlobalSystemUploadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Upload}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="SystemUploadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
-                                       Margin="0,30,3,3" Foreground="Black">
+                                       Margin="0,30,3,3" Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
                         <!--CONTENT-->

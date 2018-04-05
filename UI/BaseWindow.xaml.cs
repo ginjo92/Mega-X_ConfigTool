@@ -96,8 +96,8 @@ namespace ProdigyConfigToolWPF
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
-            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
 
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
             
 
             XmlLanguageConverter c = new XmlLanguageConverter();
@@ -281,96 +281,172 @@ namespace ProdigyConfigToolWPF
                 defaultDataSet databaseDataSet = ((defaultDataSet)(this.FindResource("databaseDataSet")));
                 this.databaseDataSet = databaseDataSet;
 
-                // Load data into the table Zone. You can modify this code as needed.
-                //ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
+                // ZONE
+                ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
                 databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-                System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                 zoneViewSource.View.MoveCurrentToFirst();
 
-                // Load data into the table Keyswitch_Types. You can modify this code as needed.
+                // AREA
                 AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
                 databaseDataSetAreaTableAdapter.Fill(databaseDataSet.Area);
                 CollectionViewSource AreaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
                 AreaViewSource.View.MoveCurrentToFirst();
 
-                // Load data into the table User. You can modify this code as needed.
+                // USER
                 UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
                 databaseDataSetUserTableAdapter.Fill(databaseDataSet.User);
                 CollectionViewSource userViewSource = ((CollectionViewSource)(this.FindResource("userViewSource")));
                 userViewSource.View.MoveCurrentToFirst();
 
-                // Load data into the table Keypad. You can modify this code as needed.
+                // KEYPAD
                 KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
                 databaseDataSetKeypadTableAdapter.Fill(databaseDataSet.Keypad);
-                System.Windows.Data.CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
+                CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
                 keypadViewSource.View.MoveCurrentToFirst();
-                // Load data into the table Output. You can modify this code as needed.
+
+                // OUTPUT
                 OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
                 databaseDataSetOutputTableAdapter.Fill(databaseDataSet.Output);
-                System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
                 outputViewSource.View.MoveCurrentToFirst();
-                // Load data into the table Timezone. You can modify this code as needed.
+
+                // TIMEZONE
                 TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
                 databaseDataSetTimezoneTableAdapter.Fill(databaseDataSet.Timezone);
-                System.Windows.Data.CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
+                CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
                 timezoneViewSource.View.MoveCurrentToFirst();
-                // Load data into the table Phone. You can modify this code as needed.
+
+                // PHONE
                 PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
                 databaseDataSetPhoneTableAdapter.Fill(databaseDataSet.Phone);
-                System.Windows.Data.CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
+                CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
                 phoneViewSource.View.MoveCurrentToFirst();
-                // Load data into the table Dialer. You can modify this code as needed.
+
+                // DIALER
                 DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
                 databaseDataSetDialerTableAdapter.Fill(databaseDataSet.Dialer);
-                System.Windows.Data.CollectionViewSource dialerViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("dialerViewSource")));
+                CollectionViewSource dialerViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("dialerViewSource")));
                 dialerViewSource.View.MoveCurrentToFirst();
-                // Load data into the table GlobalSystem. You can modify this code as needed.
+
+                // GLOBAL SYSTEM
                 GlobalSystemTableAdapter databaseDataSetGlobalSystemTableAdapter = new GlobalSystemTableAdapter();
                 databaseDataSetGlobalSystemTableAdapter.Fill(databaseDataSet.GlobalSystem);
-                System.Windows.Data.CollectionViewSource globalSystemViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("globalSystemViewSource")));
+                CollectionViewSource globalSystemViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("globalSystemViewSource")));
                 globalSystemViewSource.View.MoveCurrentToFirst();
 
-                // Load data into the table MainInfo. You can modify this code as needed.
+                // CLIENT INFO
                 MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
                 databaseDataSetMainInfoTableAdapter.Fill(databaseDataSet.MainInfo);
                 System.Windows.Data.CollectionViewSource mainInfoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("clientInfoViewSource")));
                 mainInfoViewSource.View.MoveCurrentToFirst();
 
-                // Load data into the table Audio Default. You can modify this code as needed.
-                AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
-                databaseDataSetAudioTableAdapter.Fill(databaseDataSet.Audio);
-                System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
-                AudioViewSource.View.MoveCurrentToFirst();
+                // AUDIO
+                //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
+                //databaseDataSetAudioTableAdapter.Fill(databaseDataSet.Audio);
+                //System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
+                //AudioViewSource.View.MoveCurrentToFirst();
 
+                //System.Windows.Data.CollectionViewSource AudioDefaultViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
+                
+                //AUDIO
+                string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+                string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; 
+
+                //AUDIO DEFAULT
+                AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
+                databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
+                defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017")) {
+                    con.Open();
+                    SQLiteCommand cmd = con.CreateCommand();
+                    cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 0");
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                    {
+                        adapter.Fill(audio_table);
+                        con.Close();
+                    }
+                }
+                System.Windows.Data.CollectionViewSource AudioDefaultViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioDefaultViewSource")));
+                AudioDefaultViewSource.Source = audio_table;
+                AudioDefaultViewSource.View.MoveCurrentToFirst();
+
+                //AUDIO CUSTOMIZED
+                AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
+                databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
+                defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
+                {
+                    con.Open();
+                    SQLiteCommand cmd = con.CreateCommand();
+                    cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
+                    using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd))
+                    {
+                        adapter.Fill(audio_customized_table);
+                        con.Close();
+                    }
+                }
+                System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
+                AudioCustomizedViewSource.Source = audio_customized_table;
+                AudioCustomizedViewSource.View.MoveCurrentToFirst();
+
+                databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
+                databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
+
+                //defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
+                //SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
+                //con.Open();
+                //SQLiteCommand cmd = con.CreateCommand();
+                //cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 0");
+                //SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
+                //SQLiteCommandBuilder builder = new SQLiteCommandBuilder(adapter);
+                //adapter.Fill(audio_table);
+                //con.Close();
+
+                //defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
+                //con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
+                //con.Open();
+                //cmd = con.CreateCommand();
+                //cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
+                //adapter = new SQLiteDataAdapter(cmd);
+                //builder = new SQLiteCommandBuilder(adapter);
+                //adapter.Fill(audio_customized_table);
+                //con.Close();
+
+
+                //AUDIO SYSTEM
                 AudioSystemConfigurationTableAdapter databaseDataSetAudioSystemConfigurationTableAdapter = new defaultDataSetTableAdapters.AudioSystemConfigurationTableAdapter();
                 databaseDataSetAudioSystemConfigurationTableAdapter.Fill(databaseDataSet.AudioSystemConfiguration);
                 System.Windows.Data.CollectionViewSource AudioSystemConfigurationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioSystemConfigurationViewSource")));
                 AudioSystemConfigurationViewSource.View.MoveCurrentToFirst();
-                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
-                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
 
-                //// Load data into the table Audio Customized. You can modify this code as needed.
-                //AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
 
-                //System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrement = true;
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioDefault.Rows.Count;
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementStep = 1;
-                //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.AudioCustomized);
-                //AudioCustomizedViewSource.View.MoveCurrentToFirst();
 
-                //force update of the table after edit one cell
-                //databaseDataSet.AudioCustomized.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
+                    //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
+                    //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
 
-                // Load data into the table Event. You can modify this code as needed.
-                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-                //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
-                //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
-                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
-                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-                //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-                //eventViewSource.View.MoveCurrentToFirst();
+                    //// Load data into the table Audio Customized. You can modify this code as needed.
+                    //AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
+
+                    //System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
+                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrement = true;
+                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioDefault.Rows.Count;
+                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementStep = 1;
+                    //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.AudioCustomized);
+                    //AudioCustomizedViewSource.View.MoveCurrentToFirst();
+
+                    //force update of the table after edit one cell
+                    //databaseDataSet.AudioCustomized.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
+
+                    // Load data into the table Event. You can modify this code as needed.
+                    //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                    //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+                    //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
+                    //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+                    //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+                    //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                    //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+                    //eventViewSource.View.MoveCurrentToFirst();
             }
             catch (Exception ex)
             {
@@ -2804,6 +2880,8 @@ namespace ProdigyConfigToolWPF
             }
         }
 
+        #region *** Tile Clicks ***
+
         private void UsersTile_Click(object sender, RoutedEventArgs e)
         {
             ((TreeViewItem)MainTreeView.Items[6]).IsSelected = true;
@@ -2853,6 +2931,8 @@ namespace ProdigyConfigToolWPF
         {
             TreeviewClient.IsSelected = true;
         }
+
+        #endregion
 
         /* for test purposes only*/
         public void updateDebugTextBox(byte[] buf, int size, uint type)
@@ -9172,20 +9252,31 @@ namespace ProdigyConfigToolWPF
         private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
-            dlg.FileName = "ProdigyConfig"; // Default file name
+            string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string filename = "MegaXConfig";
+            dlg.FileName = filename; // Default file name
             dlg.DefaultExt = ".prgy"; // Default file extension
-            dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
+            //dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
+            dlg.InitialDirectory = configurations_folder;
+
+            //QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
             dlg.Filter = "Mega-X Configurator files (.prgy)|*.prgy"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();
 
+            System.Console.WriteLine("***SAVE AS***\n" +
+                "FROM: " + configurations_folder + AppDbFile + "\n" +
+                "TO:   " + dlg.FileName);
+
             // Process save file dialog box results
             if (result == true)
             {
-                //System.IO.File.Copy(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + AppDbFile,
-                //                    dlg.InitialDirectory + dlg.FileName);
-
+                System.IO.File.Copy(configurations_folder + AppDbFile, dlg.FileName);
+                Close();
+                MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null);
+                window1.Show();
                 //Não gravar antigo, mesmo que haja alterações
                 //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
                 //Abrir novo ficheiro de config e fechar o antigo
@@ -9747,7 +9838,9 @@ namespace ProdigyConfigToolWPF
                 helpWindow.Show();
             }
         }
-        
+
+        #region *** Event Events and Filters ***
+
         private async void Reab_Events_Button_click(object sender, RoutedEventArgs e)
         {
             if (this.serialPort.IsOpen)
@@ -10108,7 +10201,71 @@ namespace ProdigyConfigToolWPF
 
             return return_filter;
         }
-        
+
+        private void ClearFilters_Click(object sender, RoutedEventArgs e)
+        {
+            string clearfilter = string.Empty;
+            databaseDataSet.Event.DefaultView.RowFilter = clearfilter;
+
+            PartitionComboBox.SelectedIndex = 0;
+            //EventTimeComboBox.SelectedIndex = 0;
+
+            EventFilterArmDisarm = false;
+            ButtonFilterArmDisarm.Background = Brushes.WhiteSmoke;
+            EventFilterAlarms = false;
+            ButtonFilterAlarms.Background = Brushes.WhiteSmoke;
+            EventFilterFaults = false;
+            ButtonFilterFaults.Background = Brushes.WhiteSmoke;
+        }
+
+        private void SelectRangeDate_Click(object sender, RoutedEventArgs e)
+        {
+            if (Event_DateFrom.SelectedDate != null || Event_DateTo.SelectedDate != null)
+            {
+                DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
+                DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
+
+                DateTime datetime_from = new DateTime(date_from.Year, date_from.Month, date_from.Day, 00, 00, 00);
+                DateTime datetime_to = new DateTime(date_to.Year, date_to.Month, date_to.Day, 23, 59, 59);
+
+                string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
+                                         + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
+
+                databaseDataSet.Event.DefaultView.RowFilter = filter_date;
+
+                System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
+            }
+        }
+
+        private void CheckAllEvents_Click(object sender, RoutedEventArgs e)
+        {
+            General protocol = new General();
+            Event events = new Event();
+
+            string columnName = databaseDataSet.Event.Keypad_ackColumn.ColumnName;
+
+            foreach (DataRow row in databaseDataSet.Event.Rows)
+            {
+                row[columnName] = 1;
+            }
+
+            int event_cnt = eventDataGrid.Items.Count;
+
+            protocol.check_all_events(this);
+
+            //for (int i = 1; i < event_cnt; i++) //Constants.KP_MAX_ZONES
+            //{
+            //    events.Write(this, (uint)i);
+
+            //}
+            //eventDataGrid.Items.Clear();
+            //eventDataGrid.DataContext = databaseDataSet.Tables["Event"];
+
+            eventDataGrid.Items.Refresh();
+        }
+
+        #endregion
+
         private void RestoreDefaultMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var messageBox = MessageBox.Show(Properties.Resources.QuestionRestoreDefaultsExtended, "", MessageBoxButton.YesNo);
@@ -10387,7 +10544,7 @@ namespace ProdigyConfigToolWPF
                 con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = string.Format("SELECT * INTO AudioDefault FROM Audio WHERE Type = 0");
+                cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 0");
                 adapter = new SQLiteDataAdapter(cmd);
                 builder = new SQLiteCommandBuilder(adapter);
                 adapter.Fill(audio_table);
@@ -10411,7 +10568,7 @@ namespace ProdigyConfigToolWPF
                 con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
                 con.Open();
                 cmd = con.CreateCommand();
-                cmd.CommandText = string.Format("SELECT * INTO AudioCustomized FROM Audio WHERE Type = 1");
+                cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
                 adapter = new SQLiteDataAdapter(cmd);
                 builder = new SQLiteCommandBuilder(adapter);
                 adapter.Fill(audio_customized_table);
@@ -15166,67 +15323,7 @@ namespace ProdigyConfigToolWPF
             
         }
   
-        private void ClearFilters_Click(object sender, RoutedEventArgs e)
-        {
-            string clearfilter = string.Empty;
-            databaseDataSet.Event.DefaultView.RowFilter = clearfilter;
-
-            PartitionComboBox.SelectedIndex = 0;
-            //EventTimeComboBox.SelectedIndex = 0;
-
-            EventFilterArmDisarm = false;
-            ButtonFilterArmDisarm.Background = Brushes.WhiteSmoke;
-            EventFilterAlarms = false;
-            ButtonFilterAlarms.Background = Brushes.WhiteSmoke;
-            EventFilterFaults = false;
-            ButtonFilterFaults.Background = Brushes.WhiteSmoke;
-        }
-
-        private void SelectRangeDate_Click(object sender, RoutedEventArgs e)
-        {
-            if(Event_DateFrom.SelectedDate != null || Event_DateTo.SelectedDate != null)
-            { 
-                DateTime date_from = Event_DateFrom.SelectedDate.Value.Date;
-                DateTime date_to = Event_DateTo.SelectedDate.Value.Date;
-
-                DateTime datetime_from = new DateTime(date_from.Year, date_from.Month, date_from.Day, 00, 00, 00);
-                DateTime datetime_to = new DateTime(date_to.Year, date_to.Month, date_to.Day, 23, 59, 59);
-
-                string filter_date = databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " >= #" + datetime_from + "# AND "
-                                         + databaseDataSet.Event.DateTimeColumn.ColumnName.ToString() + " <= #" + datetime_to + "#";
-            
-                databaseDataSet.Event.DefaultView.RowFilter = filter_date;
-
-                System.Diagnostics.Debug.WriteLine("FILTER: " + filter_date);
-            }
-        }
-
-        private void CheckAllEvents_Click(object sender, RoutedEventArgs e)
-        {
-            General protocol = new General();
-            Event events = new Event();
-            
-            string columnName = databaseDataSet.Event.Keypad_ackColumn.ColumnName;
-
-            foreach (DataRow row in databaseDataSet.Event.Rows)
-            {
-                row[columnName] = 1;
-            }
-
-            int event_cnt = eventDataGrid.Items.Count;
-
-            protocol.check_all_events(this);
-
-            //for (int i = 1; i < event_cnt; i++) //Constants.KP_MAX_ZONES
-            //{
-            //    events.Write(this, (uint)i);
-                
-            //}
-            //eventDataGrid.Items.Clear();
-            //eventDataGrid.DataContext = databaseDataSet.Tables["Event"];
-
-            eventDataGrid.Items.Refresh();
-        }
+        
 
         private void HelpFlyoutImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -15241,3 +15338,4 @@ namespace ProdigyConfigToolWPF
         
     }
 }
+

@@ -18,7 +18,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Users\pleitao\Desktop\prodigyconfigtoolwpf\Mega-X_ConfigTool\TestRelease\</PublishUrl>
+    <PublishUrl>C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\TestRelease\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -130,8 +130,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
-      <HintPath>..\packages\System.Data.SQLite.x86.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -359,6 +359,8 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="bin\Debug\ProdigyConfigToolWPF.exe.config" />
+    <None Include="bin\Release\ProdigyConfigToolWPF.exe.config" />
     <None Include="configuration\setup\default\default.prgy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1603,6 +1605,16 @@
   <ItemGroup>
     <Resource Include="images\buttons\tips.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\en\ProdigyConfigToolWPF.resources.dll" />
+    <Content Include="bin\Debug\ProdigyConfigToolWPF.exe" />
+    <Content Include="bin\Debug\ProdigyConfigToolWPF.pdb" />
+    <Content Include="bin\Debug\pt\ProdigyConfigToolWPF.resources.dll" />
+    <Content Include="bin\Release\en\ProdigyConfigToolWPF.resources.dll" />
+    <Content Include="bin\Release\ProdigyConfigToolWPF.exe" />
+    <Content Include="bin\Release\ProdigyConfigToolWPF.pdb" />
+    <Content Include="bin\Release\pt\ProdigyConfigToolWPF.resources.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -1610,11 +1622,11 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.2.2.0\build\net452\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.2.2.0\build\net452\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets'))" />
   </Target>
   <Import Project="..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets" Condition="Exists('..\packages\Costura.Fody.1.6.2\build\dotnet\Costura.Fody.targets')" />
   <Import Project="..\packages\Fody.2.2.0\build\net452\Fody.targets" Condition="Exists('..\packages\Fody.2.2.0\build\net452\Fody.targets')" />
-  <Import Project="..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.105.2\build\net46\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net46\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
