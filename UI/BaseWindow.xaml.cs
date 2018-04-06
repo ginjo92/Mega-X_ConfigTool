@@ -9645,7 +9645,10 @@ namespace ProdigyConfigToolWPF
                 }
                 //var a = databaseDataSet.Audio.GetChanges();
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
-                
+                System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
+                //AudioCustomizedViewSource.Refresh();
+                AudioCustomizedViewSource.View.MoveCurrentToFirst();
+
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
 
                 //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();

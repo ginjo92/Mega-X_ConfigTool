@@ -1819,7 +1819,6 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Xceed.Wpf.DataGrid.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\ControlzEx.pdb
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\EntityFramework.xml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\EntityFramework.SqlServer.xml
