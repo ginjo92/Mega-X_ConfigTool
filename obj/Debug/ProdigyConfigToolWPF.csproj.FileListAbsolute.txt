@@ -1839,7 +1839,6 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\ro\Xceed.Wpf.AvalonDock.reso
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\ProdigyConfigToolWPF.csprojResolveAssemblyReference.cache
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\Resources\BureauBlue.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\Resources\custom.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\Resources\Icons.baml
@@ -1884,4 +1883,3 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Help.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Help.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Microsoft.SqlServer.Management.Collector.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\ProdigyConfigToolWPF_Content.g.cs

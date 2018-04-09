@@ -360,8 +360,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="bin\Debug\ProdigyConfigToolWPF.exe.config" />
-    <None Include="bin\Release\ProdigyConfigToolWPF.exe.config" />
     <None Include="configuration\setup\default\default.prgy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1605,16 +1603,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\buttons\tips.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\en\ProdigyConfigToolWPF.resources.dll" />
-    <Content Include="bin\Debug\ProdigyConfigToolWPF.exe" />
-    <Content Include="bin\Debug\ProdigyConfigToolWPF.pdb" />
-    <Content Include="bin\Debug\pt\ProdigyConfigToolWPF.resources.dll" />
-    <Content Include="bin\Release\en\ProdigyConfigToolWPF.resources.dll" />
-    <Content Include="bin\Release\ProdigyConfigToolWPF.exe" />
-    <Content Include="bin\Release\ProdigyConfigToolWPF.pdb" />
-    <Content Include="bin\Release\pt\ProdigyConfigToolWPF.resources.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

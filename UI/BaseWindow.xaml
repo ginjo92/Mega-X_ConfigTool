@@ -102,7 +102,7 @@
         <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
-        <!--<CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>-->
+        <CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioSystemConfigurationViewSource" Source="{Binding AudioSystemConfiguration, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioDefaultViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
@@ -14818,7 +14818,7 @@
                                                   RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="AudioReservedDataGrid_Loaded" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="500" CanUserSortColumns="False">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
-                                                    <DataGridTextColumn x:Name="AudioReservedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <!--<DataGridTextColumn x:Name="AudioReservedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14833,7 +14833,7 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
-                                                    </DataGridTextColumn>
+                                                    </DataGridTextColumn>-->
                                                     <!--Name-->
                                                     <DataGridTextColumn x:Name="AudioReservedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
                                                         <DataGridTextColumn.EditingElementStyle>
@@ -14955,7 +14955,7 @@
                                                       CanUserReorderColumns="False" Height="500" CanUserSortColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding" CanUserDeleteRows="True">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
-                                                    <DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <!--<DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14970,7 +14970,7 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
-                                                    </DataGridTextColumn>
+                                                    </DataGridTextColumn>-->
                                                     <!--Name-->
                                                     <DataGridTextColumn x:Name="AudioCustomizedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
                                                         <DataGridTextColumn.EditingElementStyle>
@@ -14994,6 +14994,25 @@
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
                                                     </DataGridTextColumn>
+
+                                                    <!--Type-->
+                                                    <DataGridTextColumn x:Name="AudioCustomizedTypeColumn" Binding="{Binding Type}" Header="Type test" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{x:Static p:Resources.Type}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
+
                                                     <!--Actions-->
                                                     <DataGridTemplateColumn x:Name="AudioCustomizedActionsColumn" IsReadOnly="True" CanUserResize="False" CanUserReorder="False" Width="215">
                                                         <DataGridTemplateColumn.HeaderStyle>
@@ -15172,7 +15191,7 @@
                                                       HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="500" MinWidth="560" MaxWidth="740" ColumnHeaderHeight="60" >
                                                 <DataGrid.Columns>
                                                     <!--ID-->
-                                                    <DataGridTextColumn x:Name="idAudioConfigColumn" Binding="{Binding ID}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <!--<DataGridTextColumn x:Name="idAudioConfigColumn" Binding="{Binding ID}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="Width" Value="40"/>
@@ -15188,7 +15207,7 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
-                                                    </DataGridTextColumn>
+                                                    </DataGridTextColumn>-->
                                                     <!--Name-->
                                                     <DataGridTextColumn x:Name="audioConfigDescriptionColumn" Binding="{Binding DESCRIPTION}" Header="{x:Static p:Resources.Zone_Description}" Width="120" MinWidth="120" MaxWidth="300" CanUserResize="True">
                                                         <DataGridTextColumn.EditingElementStyle>

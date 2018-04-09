@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ProdigyConfigToolWPF.exe" version="1.0.0.7" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ProdigyConfigToolWPF.exe" version="1.0.0.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -45,6 +45,11 @@
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Costura" version="1.6.2.0" publicKeyToken="9919EF960D84173D" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.ConnectionInfo" version="13.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -142,18 +147,6 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.ConnectionInfo.dll" size="163528">
-      <assemblyIdentity name="Microsoft.SqlServer.ConnectionInfo" version="13.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sOpB0KTnl3dW8cr5/H8P2RC4QcH6eAeyGsgX/+Kwn9E=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.SqlServer.Management.Collector.dll" size="128200">
       <assemblyIdentity name="Microsoft.SqlServer.Management.Collector" version="13.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -214,14 +207,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8124416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8128512">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tNANn6hp0G6t7bvmowYWFJS8Qa9DlYyCDvplIkCT/q4=</dsig:DigestValue>
+        <dsig:DigestValue>1C7d/ihcWMX83RPJ8vS40WpCcDTPea+XYEzpFdMr+Ks=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -233,7 +226,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JyQayHXVM+1WzJBeLIguMEda4M2JoiTDbes+yfjgbLs=</dsig:DigestValue>
+        <dsig:DigestValue>O0jIqrE9wMIL6bDORG9ZSqV9w5xcRjj3Npt8dVCzmoA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -245,7 +238,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/ZoKy1NEn4hhs50WYTewifX+WDzSSybRdYgGoulLUUs=</dsig:DigestValue>
+        <dsig:DigestValue>/eVrxXNcs4zSazzMp8D9wrwFhS5fhdKqfX6oqdflkFY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -489,6 +482,78 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="bin\Debug\en\ProdigyConfigToolWPF.resources.dll" size="65024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vIhkyR4XK2uKttjCwMJi5VIOr13zfwAXsOOq7qvUNng=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\ProdigyConfigToolWPF.exe" size="8813056">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Mtp6+NVSXszVdL27e2W55vTpkaOVZwcIKDleq3CFnMk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\ProdigyConfigToolWPF.pdb" size="3659264">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>vORyj6IxUlMsVM/3w3dw6J/ina/RQmWuPLl5htV+FtY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\pt\ProdigyConfigToolWPF.resources.dll" size="68608">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GV550pETDz9A7393CW0WpTvXtIC/ZY5rIwOsq86Yww4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\en\ProdigyConfigToolWPF.resources.dll" size="65024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JyQayHXVM+1WzJBeLIguMEda4M2JoiTDbes+yfjgbLs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\ProdigyConfigToolWPF.exe" size="8124416">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tNANn6hp0G6t7bvmowYWFJS8Qa9DlYyCDvplIkCT/q4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\ProdigyConfigToolWPF.pdb" size="3175936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PiH+WCDvSuBRN4X3yhiTjqmzh6ek4zwhiwLwtOMlv7g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Release\pt\ProdigyConfigToolWPF.resources.dll" size="68608">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/ZoKy1NEn4hhs50WYTewifX+WDzSSybRdYgGoulLUUs=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="icon.ico" size="139235">
     <hash>
       <dsig:Transforms>

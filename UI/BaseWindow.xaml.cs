@@ -359,8 +359,9 @@ namespace ProdigyConfigToolWPF
                 string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\";
 
                 //AUDIO DEFAULT
-                //AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
-                databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
+                
+                
+                //databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017")) {
                     con.Open();
@@ -372,13 +373,14 @@ namespace ProdigyConfigToolWPF
                         con.Close();
                     }
                 }
+                //databaseDataSetAudioDefaultTableAdapter.Fill(audio_table);
                 System.Windows.Data.CollectionViewSource AudioDefaultViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioDefaultViewSource")));
                 AudioDefaultViewSource.Source = audio_table;
                 AudioDefaultViewSource.View.MoveCurrentToFirst();
 
                 //AUDIO CUSTOMIZED
                 //AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
-                databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
+                //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
                 {
@@ -391,13 +393,19 @@ namespace ProdigyConfigToolWPF
                         con.Close();
                     }
                 }
+                audio_customized_table.TypeColumn.DefaultValue = 1;
+                audio_customized_table.VisibleColumn.DefaultValue = 1;
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                AudioCustomizedViewSource.Source = audio_customized_table;
+                
+                //databaseDataSetAudioCustomizedTableAdapter.Fill(audio_customized_table);
+                DebugTable(audio_customized_table);
                 AudioCustomizedViewSource.View.MoveCurrentToFirst();
+                AudioCustomizedViewSource.Source = audio_customized_table;
+     
 
+                databaseDataSet.Audio.AcceptChanges();
 
                 AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
-                databaseDataSetAudioTableAdapter.Fill(databaseDataSet.Audio);
                 System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
                 AudioViewSource.View.MoveCurrentToFirst();
                 
@@ -433,31 +441,32 @@ namespace ProdigyConfigToolWPF
 
 
 
-                    //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
-                    //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
+                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
+                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
 
-                    //// Load data into the table Audio Customized. You can modify this code as needed.
-                    //AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
+                //// Load data into the table Audio Customized. You can modify this code as needed.
+                //AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
 
-                    //System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrement = true;
-                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioDefault.Rows.Count;
-                    //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementStep = 1;
-                    //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.AudioCustomized);
-                    //AudioCustomizedViewSource.View.MoveCurrentToFirst();
+                //System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
+                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrement = true;
+                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioDefault.Rows.Count;
+                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementStep = 1;
+                //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.AudioCustomized);
+                //AudioCustomizedViewSource.View.MoveCurrentToFirst();
 
-                    //force update of the table after edit one cell
-                    //databaseDataSet.AudioCustomized.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
+                //force update of the table after edit one cell
+                audio_customized_table.RowDeleted += new DataRowChangeEventHandler(Update_table_after_edit);
+                audio_customized_table.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
 
-                    // Load data into the table Event. You can modify this code as needed.
-                    //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                    //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-                    //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
-                    //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
-                    //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
-                    //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-                    //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-                    //eventViewSource.View.MoveCurrentToFirst();
+                //// Load data into the table Event. You can modify this code as needed.
+                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+                //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
+                //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+                //eventViewSource.View.MoveCurrentToFirst();
             }
             catch (Exception ex)
             {
@@ -9616,6 +9625,17 @@ namespace ProdigyConfigToolWPF
 
             try
             {
+                if (default_restore_is_set)
+                {
+                    using (SQLiteConnection sqlConn = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Database\" + AppDbFile + ";Password=idsancoprodigy2017"))
+                    {
+                        sqlConn.Open();
+                        SQLiteCommand sqlCommand = sqlConn.CreateCommand();
+                        sqlCommand.CommandText = "DELETE FROM AudioSystemConfiguration WHERE Id <> 0";
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                }
+
                 AudioSystemConfigurationTableAdapter databaseDatasetTableAdapter = new AudioSystemConfigurationTableAdapter();
                 
                 databaseDatasetTableAdapter.Update(databaseDataSet.AudioSystemConfiguration);
@@ -9641,16 +9661,16 @@ namespace ProdigyConfigToolWPF
                         SQLiteCommand sqlCommand = sqlConn.CreateCommand();
                         sqlCommand.CommandText = "DELETE FROM Audio WHERE Id <> 0";
                         sqlCommand.ExecuteNonQuery();
+                        sqlConn.Close();
                     }
                 }
                 //var a = databaseDataSet.Audio.GetChanges();
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                //AudioCustomizedViewSource.Refresh();
-                AudioCustomizedViewSource.View.MoveCurrentToFirst();
+                
 
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
-
+                //AudioCustomizedViewSource.View.MoveCurrentToFirst();
                 //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
                 //databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
                 //databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
@@ -10600,11 +10620,10 @@ namespace ProdigyConfigToolWPF
                 audio_full_table = audio_table.Copy();
                 audio_full_table.Merge(audio_customized_table);
 
-                defaultDataSet.AudioDataTable audio_table1 = new defaultDataSet.AudioDataTable();
-                audio_table1.Merge(audio_full_table);
+                
 
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
-                databaseDatasetTableAdapter.Fill(audio_table1);
+                databaseDatasetTableAdapter.Fill(audio_table);
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
                 
                 //delete table
@@ -10613,7 +10632,7 @@ namespace ProdigyConfigToolWPF
                     row.Delete();
                 }
 
-                foreach (defaultDataSet.AudioRow row in audio_table1)
+                foreach (defaultDataSet.AudioRow row in audio_customized_table)
                 {
                     databaseDataSet.Audio.Rows.Add(row.ItemArray);
                 }
@@ -10673,7 +10692,7 @@ namespace ProdigyConfigToolWPF
             {
                 try
                 {
-                    //var a = databaseDataSet.AudioCustomized.GetChanges();
+                    
                     AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
                     databaseDataSetAudioTableAdapter.Update((defaultDataSet.AudioDataTable)e.Row.Table);
 
@@ -10963,9 +10982,10 @@ namespace ProdigyConfigToolWPF
         
         private void Load_WAV_File_Click(object sender, RoutedEventArgs e)
         {
-            //GetDataGridRows(AudioCustomizedDataGrid);
+            GetDataGridRows(AudioCustomizedDataGrid);
             //AudioCustomizedDataGrid.Items.Add();
             DataRowView row = (DataRowView)AudioCustomizedDataGrid.Items.CurrentItem;
+            
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             // Set filter for file extension and default file extension 
@@ -11811,6 +11831,9 @@ namespace ProdigyConfigToolWPF
         {
 
             DataRowView a = (DataRowView)e.Row.Item;
+            
+            databaseDataSet.Audio.TypeColumn.DefaultValue = 1;
+            
 
             //if (a.IsNew)
             //{
@@ -15370,6 +15393,45 @@ namespace ProdigyConfigToolWPF
         private void AudioCustomButtonAdd_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void DebugTable(DataTable table)
+        {
+            Debug.WriteLine("--- DebugTable(" + table.TableName + ") ---");
+            int zeilen = table.Rows.Count;
+            int spalten = table.Columns.Count;
+
+            // Header
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                string s = table.Columns[i].ToString();
+                Debug.Write(String.Format("{0,-20} | ", s));
+            }
+            Debug.Write(Environment.NewLine);
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                Debug.Write("---------------------|-");
+            }
+            Debug.Write(Environment.NewLine);
+
+            // Data
+            for (int i = 0; i < zeilen; i++)
+            {
+                DataRow row = table.Rows[i];
+                //Debug.WriteLine("{0} {1} ", row[0], row[1]);
+                for (int j = 0; j < spalten; j++)
+                {
+                    string s = row[j].ToString();
+                    if (s.Length > 20) s = s.Substring(0, 17) + "...";
+                    Debug.Write(String.Format("{0,-20} | ", s));
+                }
+                Debug.Write(Environment.NewLine);
+            }
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                Debug.Write("---------------------|-");
+            }
+            Debug.Write(Environment.NewLine);
         }
     }
 }
