@@ -207,14 +207,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8812544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8814080">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7iuQxtKXJ8Yfjtzv7ek6CC7gsluU+kHTNWtYSfa1l9k=</dsig:DigestValue>
+        <dsig:DigestValue>fn01hYivdTfvcAB8ndIjRL/Y4Veafdwio6U9IIkE5mk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -226,7 +226,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>po3YKZWg0wbrC7c/fydj+dP0KmzW5IMdu3gNC5SsO5k=</dsig:DigestValue>
+        <dsig:DigestValue>eqDShYtkvxeLhKlPXsPvNe/mDZspRMdPQrAOhE1oxBY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -238,7 +238,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NjuDHa/1dGMoJ5MIYF6NA1LzkoFS4YdV4A52l/AomSU=</dsig:DigestValue>
+        <dsig:DigestValue>fIfCI+tVbg4ahFNoIvLs7apV5tMmIw9CK6QncZEMpSM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

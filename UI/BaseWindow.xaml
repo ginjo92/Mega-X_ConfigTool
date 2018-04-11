@@ -14814,11 +14814,11 @@
                                     <DockPanel x:Name="ReservedAudio" Grid.Column="0" Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
                                         <StackPanel HorizontalAlignment="Center">
                                             <TextBlock Text="{ x:Static p:Resources.VoiceMessagesReserved }" FontSize="14" FontWeight="Bold"/>
-                                            <DataGrid x:Name="AudioReservedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource AudioDefaultViewSource}}"  
-                                                  RowDetailsVisibilityMode="VisibleWhenSelected" Loaded="AudioReservedDataGrid_Loaded" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="500" CanUserSortColumns="False">
+                                            <DataGrid x:Name="AudioReservedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="False" ItemsSource="{Binding Source={StaticResource AudioDefaultViewSource}}"  
+                                                  RowDetailsVisibilityMode="VisibleWhenSelected"  Loaded="AudioReservedDataGrid_Loaded" CanUserResizeColumns="False" CanUserReorderColumns="False" Height="500" CanUserSortColumns="False">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
-                                                    <!--<DataGridTextColumn x:Name="AudioReservedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <DataGridTextColumn x:Name="AudioReservedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False" Visibility="Collapsed">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14833,7 +14833,7 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
-                                                    </DataGridTextColumn>-->
+                                                    </DataGridTextColumn>
                                                     <!--Name-->
                                                     <DataGridTextColumn x:Name="AudioReservedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
                                                         <DataGridTextColumn.EditingElementStyle>
@@ -14873,11 +14873,11 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Options}" Width="90" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTemplateColumn.HeaderTemplate>
-                                                        <DataGridTemplateColumn.CellTemplate >
+                                                        <DataGridTemplateColumn.CellTemplate >                                                                                                   
                                                             <DataTemplate>
-                                                                <StackPanel Orientation="Horizontal" Margin="0,2">
-                                                                    <Button x:Name="ButtonPlayReserved" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioReservedPlayButton_Click" Margin="0,0,0,0">
-                                                                        <Image Source="/images/audio/play.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                                    <Button x:Name="ButtonPlayReserved" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioReservedPlayButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/play.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -14886,18 +14886,18 @@
                                                                         <Button.Style>
                                                                             <Style>
                                                                                 <Style.Triggers>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPlayReserved, Path=IsEnabled}" Value="true">
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
                                                                                         <Setter Property="Button.Opacity" Value="1"/>
-                                                                                    </DataTrigger>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPlayReserved, Path=IsEnabled}" Value="false">
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
                                                                                         <Setter Property="Button.Opacity" Value="0.25"/>
-                                                                                    </DataTrigger>
+                                                                                    </Trigger>
                                                                                 </Style.Triggers>
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonPauseReserved" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioReservedPauseButton_Click" Margin="5,0,0,0">
-                                                                        <Image Source="/images/audio/pause.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="ButtonPauseReserved" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioReservedPauseButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/pause.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -14906,18 +14906,18 @@
                                                                         <Button.Style>
                                                                             <Style>
                                                                                 <Style.Triggers>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPauseReserved, Path=IsEnabled}" Value="true">
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
                                                                                         <Setter Property="Button.Opacity" Value="1"/>
-                                                                                    </DataTrigger>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonPauseReserved, Path=IsEnabled}" Value="false">
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
                                                                                         <Setter Property="Button.Opacity" Value="0.25"/>
-                                                                                    </DataTrigger>
+                                                                                    </Trigger>
                                                                                 </Style.Triggers>
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonStopReserved" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioReservedStopButton_Click" Margin="5,0,0,0" >
-                                                                        <Image Source="/images/audio/stop.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="ButtonStopReserved" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioReservedStopButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/stop.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -14926,36 +14926,34 @@
                                                                         <Button.Style>
                                                                             <Style>
                                                                                 <Style.Triggers>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonStopReserved, Path=IsEnabled}" Value="true">
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
                                                                                         <Setter Property="Button.Opacity" Value="1"/>
-                                                                                    </DataTrigger>
-                                                                                    <DataTrigger Binding="{Binding ElementName=ButtonStopReserved, Path=IsEnabled}" Value="false">
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
                                                                                         <Setter Property="Button.Opacity" Value="0.25"/>
-                                                                                    </DataTrigger>
+                                                                                    </Trigger>
                                                                                 </Style.Triggers>
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
                                                                 </StackPanel>
-
                                                             </DataTemplate>
                                                         </DataGridTemplateColumn.CellTemplate>
                                                     </DataGridTemplateColumn>
                                                 </DataGrid.Columns>
                                             </DataGrid>
-                                            
                                         </StackPanel>
                                     </DockPanel>
                                     <GridSplitter Height="Auto" Margin="10"  Grid.Column="0" Grid.Row="1" />
                                     <DockPanel x:Name="CostumizedAudio"  Grid.Column="0" Grid.Row="1" Width="Auto" HorizontalAlignment="Center">
                                         <StackPanel HorizontalAlignment="Center">
                                             <TextBlock Text="{ x:Static p:Resources.VoiceMessagesCustomized }" FontSize="14" FontWeight="Bold"/>
-                                            <DataGrid x:Name="AudioCustomizedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="True" AutoGenerateColumns="False" EnableRowVirtualization="True" 
+                                            <DataGrid x:Name="AudioCustomizedDataGrid" ColumnHeaderHeight="60" CanUserAddRows="True" AutoGenerateColumns="False" EnableRowVirtualization="True" Loaded="AudioCustomizedDataGrid_Loaded"
                                                       ItemsSource="{Binding Source={StaticResource AudioCustomizedViewSource}}" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserResizeColumns="False" 
                                                       CanUserReorderColumns="False" Height="500" CanUserSortColumns="False" RowEditEnding="AudioCustomizedDataGrid_RowEditEnding" CanUserDeleteRows="True">
                                                 <DataGrid.Columns>
                                                     <!--ID-->
-                                                    <!--<DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <DataGridTextColumn x:Name="AudioCustomizedIdColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False" Visibility="Collapsed">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14970,7 +14968,12 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
-                                                    </DataGridTextColumn>-->
+                                                        <DataGridTextColumn.ElementStyle>
+                                                            <Style TargetType="TextBlock">
+                                                                <Setter Property="Background" Value="WhiteSmoke"></Setter>
+                                                            </Style>
+                                                        </DataGridTextColumn.ElementStyle>
+                                                    </DataGridTextColumn>
                                                     <!--Name-->
                                                     <DataGridTextColumn x:Name="AudioCustomizedDescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="True">
                                                         <DataGridTextColumn.EditingElementStyle>
@@ -14993,10 +14996,27 @@
                                                                 <TextBlock Text="{x:Static p:Resources.Description}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
+                                                        
                                                     </DataGridTextColumn>
-
+                                                    <!--Path-->
+                                                    <DataGridTextColumn x:Name="AudioCustomizedPathColumn" Binding="{Binding FilePath}" Header="FilePath" IsReadOnly="True" Width="120" CanUserResize="True" Visibility="Collapsed">
+                                                        <DataGridTextColumn.HeaderStyle>
+                                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                <Setter Property="Background" Value="White" />
+                                                                <Setter Property="BorderBrush" Value="Gray"/>
+                                                                <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                            </Style>
+                                                        </DataGridTextColumn.HeaderStyle>
+                                                        <DataGridTextColumn.HeaderTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="FilePath" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </DataTemplate>
+                                                        </DataGridTextColumn.HeaderTemplate>
+                                                    </DataGridTextColumn>
                                                     <!--Type-->
-                                                    <DataGridTextColumn x:Name="AudioCustomizedTypeColumn" Binding="{Binding Type}" Header="Type test" IsReadOnly="True" Width="40" CanUserResize="False">
+                                                    <DataGridTextColumn x:Name="AudioCustomizedTypeColumn" Binding="{Binding Type}" Header="Type test" IsReadOnly="True" Width="40" CanUserResize="False" Visibility="Collapsed">
                                                         <DataGridTextColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -15032,9 +15052,9 @@
                                                         </DataGridTemplateColumn.HeaderTemplate>
                                                         <DataGridTemplateColumn.CellTemplate>
                                                             <DataTemplate>
-                                                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                                                    <Button x:Name="buttonLoadWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Load_WAV_File_Click" Margin="0,0,0,0" IsEnabled="True">
-                                                                        <Image Source="/images/audio/search.png" Width="25" Height="25" Cursor="Hand" />
+                                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                                                    <Button x:Name="buttonLoadWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Load_WAV_File_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/search.png" Width="22" Height="22" Cursor="Hand" />
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15053,8 +15073,8 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="buttonRecordWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="buttonRecordWav_Click" Margin="5,0,0,0" IsEnabled="true">
-                                                                        <Image Source="/images/audio/record.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="buttonRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonRecordWav_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/record.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15073,8 +15093,8 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="buttonStopRecordWav" HorizontalAlignment="Right" VerticalAlignment="Center" Click="buttonStopRecordWav_Click" Margin="5,0,0,0" IsEnabled="false">
-                                                                        <Image Source="/images/audio/stop_record.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="buttonStopRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonStopRecordWav_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/stop_record.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15093,8 +15113,8 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="buttonDeleteRecordWav" HorizontalAlignment="Left" VerticalAlignment="Center" Click="buttonDeleteRecordWav_Click" Margin="5,0,0,0" IsEnabled="False">
-                                                                        <Image Source="/images/audio/error.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="buttonDeleteRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonDeleteRecordWav_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/error.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15103,19 +15123,25 @@
                                                                         <Button.Style>
                                                                             <Style>
                                                                                 <Style.Triggers>
-                                                                                    <DataTrigger Binding="{Binding ElementName=buttonLoadWav, Path=IsEnabled}" Value="true">
+                                                                                    <!--<DataTrigger Binding="{Binding ElementName=buttonLoadWav, Path=IsEnabled}" Value="true">
                                                                                         <Setter Property="Button.Opacity" Value="1"/>
                                                                                     </DataTrigger>
                                                                                     <DataTrigger Binding="{Binding ElementName=buttonLoadWav, Path=IsEnabled}" Value="false">
                                                                                         <Setter Property="Button.Opacity" Value="0.25"/>
-                                                                                    </DataTrigger>
+                                                                                    </DataTrigger>-->
+                                                                                    <Trigger Property="Button.IsEnabled" Value="true">
+                                                                                        <Setter Property="Button.Opacity" Value="1"/>
+                                                                                    </Trigger>
+                                                                                    <Trigger Property="Button.IsEnabled" Value="false">
+                                                                                        <Setter Property="Button.Opacity" Value="0.25"/>
+                                                                                    </Trigger>
                                                                                 </Style.Triggers>
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
                                                                     <GridSplitter Width="1" Height="Auto" Foreground="Black" Margin="5" Opacity="1"/>
-                                                                    <Button x:Name="ButtonPlayCustomized" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioCustomizedPlayButton_Click" Margin="0,0,0,0" IsEnabled="False">
-                                                                        <Image Source="/images/audio/play.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="ButtonPlayCustomized" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioCustomizedPlayButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/play.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15134,8 +15160,8 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AudioCustomizedPauseButton_Click" Margin="5,0,0,0" IsEnabled="False">
-                                                                        <Image Source="/images/audio/pause.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioCustomizedPauseButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/pause.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>
@@ -15154,8 +15180,8 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonStopCustomized" HorizontalAlignment="Right" VerticalAlignment="Center" Click="AudioCustomizedStopButton_Click" Margin="5,0,0,0" IsEnabled="False">
-                                                                        <Image Source="/images/audio/stop.png" Width="25" Height="25" Cursor="Hand"/>
+                                                                    <Button x:Name="ButtonStopCustomized" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioCustomizedStopButton_Click" Margin="2,2">
+                                                                        <Image Source="/images/audio/stop.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
                                                                                 <ContentPresenter Content="{TemplateBinding Content}"/>

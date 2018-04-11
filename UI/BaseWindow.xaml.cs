@@ -47,7 +47,7 @@ namespace ProdigyConfigToolWPF
         private bool EventFilterFaults = false;
         private bool EventFilterAreas = false;
 
-       
+
 
         public SerialPort serialPort = new SerialPort();
         public byte[] cp_id = { 0x0, 00 };
@@ -55,7 +55,7 @@ namespace ProdigyConfigToolWPF
         public byte[] hw_version = { 0x00, 0x00, 0x00 };
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
-        
+
         byte[] combined_file_data_bytes = new byte[0];
         public uint event_code;
         WaveIn waveSource;
@@ -74,12 +74,12 @@ namespace ProdigyConfigToolWPF
         AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
 
         FileStream audio_stream;
-        
+
         private bool default_restore_is_set = false;
 
         ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
 
-        string mai_file = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\";
+        string mai_file = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
         System.Windows.Forms.Timer timer = null;
         bool audio_system_momory_isfull = false;
         bool audio_system_momory_istrigger = false;
@@ -94,14 +94,14 @@ namespace ProdigyConfigToolWPF
             WizardDialerSetup = DialerConfig;
             WizardPartitionsSetup = PartitionsConfig;
             WizardPhonesSetup = PhonesConfig;
-            
+
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
 
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
-            
+
 
             XmlLanguageConverter c = new XmlLanguageConverter();
             XmlLanguage c2 = (XmlLanguage)c.ConvertFrom(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString());
@@ -111,8 +111,6 @@ namespace ProdigyConfigToolWPF
             {
                 InitializeComponent();
                 this.DataContext = this;
-
-                
 
                 timer = new System.Windows.Forms.Timer();
                 timer.Interval = 2000;
@@ -147,8 +145,45 @@ namespace ProdigyConfigToolWPF
                     PT_Active.Visibility = Visibility.Collapsed;
                     break;
             }
-            
         }
+
+        //void IfFilePathIsNull()
+        //{
+        //    var row_list = GetDataGridRows(AudioCustomizedDataGrid);
+
+        //    Button loadwav_button_custom = new Button();
+        //    Button record_button_custom = new Button();
+        //    Button stoprecord_button_custom = new Button();
+        //    Button delete_button_custom = new Button();
+
+        //    Button play_button_custom = new Button();
+        //    Button play_pause_custom = new Button();
+        //    Button play_stop_custom = new Button();
+
+        //    foreach (DataGridRow single_row in row_list)
+        //    {
+
+        //        if (AudioCustomizedDataGrid.Columns[2] != null) //If FilePath is empty
+        //        {
+        //            loadwav_button_custom = single_row.FindChild<Button>("buttonLoadWav");
+        //            loadwav_button_custom.IsEnabled = false;
+        //            record_button_custom = single_row.FindChild<Button>("buttonRecordWav");
+        //            record_button_custom.IsEnabled = false;
+        //            stoprecord_button_custom = single_row.FindChild<Button>("buttonStopRecordWav");
+        //            stoprecord_button_custom.IsEnabled = false;
+        //            delete_button_custom = single_row.FindChild<Button>("buttonDeleteRecordWav");
+        //            delete_button_custom.IsEnabled = true;
+
+        //            play_button_custom = single_row.FindChild<Button>("ButtonPlayCustomized");
+        //            play_button_custom.IsEnabled = true;
+        //            play_pause_custom = single_row.FindChild<Button>("ButtonPauseCustomized");
+        //            play_pause_custom.IsEnabled = false;
+        //            play_stop_custom = single_row.FindChild<Button>("ButtonStopCustomized");
+        //            play_stop_custom.IsEnabled = false;
+        //        }
+        //        AudioCustomizedDataGrid.UpdateLayout();
+        //    }
+        //}
 
         void OnTimedEvent(object source, EventArgs e)
         {
@@ -353,17 +388,18 @@ namespace ProdigyConfigToolWPF
                 //AudioViewSource.View.MoveCurrentToFirst();
 
                 //System.Windows.Data.CollectionViewSource AudioDefaultViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
-                
+
                 //AUDIO
                 string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\";
 
                 //AUDIO DEFAULT
-                
-                
+
+
                 //databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
-                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017")) {
+                using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
+                {
                     con.Open();
                     SQLiteCommand cmd = con.CreateCommand();
                     cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 0");
@@ -396,19 +432,19 @@ namespace ProdigyConfigToolWPF
                 audio_customized_table.TypeColumn.DefaultValue = 1;
                 audio_customized_table.VisibleColumn.DefaultValue = 1;
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                
+
                 //databaseDataSetAudioCustomizedTableAdapter.Fill(audio_customized_table);
                 DebugTable(audio_customized_table);
                 AudioCustomizedViewSource.View.MoveCurrentToFirst();
                 AudioCustomizedViewSource.Source = audio_customized_table;
-     
+
 
                 databaseDataSet.Audio.AcceptChanges();
 
                 AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
                 AudioViewSource.View.MoveCurrentToFirst();
-                
+
                 //databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
                 //databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
 
@@ -431,6 +467,8 @@ namespace ProdigyConfigToolWPF
                 //builder = new SQLiteCommandBuilder(adapter);
                 //adapter.Fill(audio_customized_table);
                 //con.Close();
+
+
 
 
                 //AUDIO SYSTEM
@@ -472,6 +510,8 @@ namespace ProdigyConfigToolWPF
             {
                 await DialogManager.ShowMessageAsync(this, ex.Message, "");
             }
+
+
 
             if (WizardKeypadSetup != null)
                 SetKeypadConfigurationFromWizard(WizardKeypadSetup);
@@ -990,8 +1030,8 @@ namespace ProdigyConfigToolWPF
         {
             try
             {
-                if(serialPort.IsOpen)
-                { 
+                if (serialPort.IsOpen)
+                {
                     serialPort.Write(tx_buffer, offset, count);
                     //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
                 }
@@ -2895,7 +2935,7 @@ namespace ProdigyConfigToolWPF
                     real_time_timer.Stop();
                 }
 
-                
+
                 #endregion
             }
         }
@@ -4135,9 +4175,9 @@ namespace ProdigyConfigToolWPF
                     }
                     else user_code_tmp += 0;
 
-                    
+
                     databaseDataSet.User.Rows[user_to_read]["UserCode"] = user_code_tmp;
-                  
+
 
                     #endregion
 
@@ -6128,7 +6168,7 @@ namespace ProdigyConfigToolWPF
                     event_keypad_ack[j] = buf[i];
                 }
 
-                
+
                 uint event_id = ((uint)id[3] << 24) + ((uint)id[2] << 16) + ((uint)id[1] << 8) + (uint)id[0];
                 int session = (event_session[1] << 8) + event_session[0];
 
@@ -6156,7 +6196,7 @@ namespace ProdigyConfigToolWPF
                 int day = event_day[0];
                 int year = event_year[0] + 1792;
 
-                
+
 
                 try
                 {
@@ -6201,7 +6241,7 @@ namespace ProdigyConfigToolWPF
 
                     databaseDataSet.Event.Rows.Add(new_event);
 
-                    
+
 
                     if (addr == (Constants.KP_EVENTS_FINAL_ADDR - Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH))
                         AddEventItemToDatagrid();
@@ -8047,7 +8087,7 @@ namespace ProdigyConfigToolWPF
                                 combined_file_data_bytes = AppendTwoByteArrays(combined_file_data_bytes, converted_file_line_data_bytes);
                                 line_counter++;
                             }
-                           
+
                             controller.CloseAsync();
                             file.Close();
 
@@ -8128,7 +8168,7 @@ namespace ProdigyConfigToolWPF
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
             }
         }
-        
+
         public byte GetHexFromAscii(byte origin)
         {
             if (origin >= '0' && origin <= '9')
@@ -9608,7 +9648,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.CommandText = "DELETE FROM Event WHERE Id <> 0";
                         sqlCommand.ExecuteNonQuery();
                     }
-                    
+
                 }
 
                 EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
@@ -9637,7 +9677,7 @@ namespace ProdigyConfigToolWPF
                 }
 
                 AudioSystemConfigurationTableAdapter databaseDatasetTableAdapter = new AudioSystemConfigurationTableAdapter();
-                
+
                 databaseDatasetTableAdapter.Update(databaseDataSet.AudioSystemConfiguration);
 
 
@@ -9667,7 +9707,7 @@ namespace ProdigyConfigToolWPF
                 //var a = databaseDataSet.Audio.GetChanges();
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                
+
 
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
                 //AudioCustomizedViewSource.View.MoveCurrentToFirst();
@@ -9721,7 +9761,7 @@ namespace ProdigyConfigToolWPF
                 }
             }
 
-            else 
+            else
             {
                 //Close();
             }
@@ -9762,13 +9802,13 @@ namespace ProdigyConfigToolWPF
             waveFile.Close();//close writter
 
 
-            WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + ".wav");
+            WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav");
             byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
 
             temporary_file.Read(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length);
 
 
-            using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + ".raw", FileMode.Create))
+            using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw", FileMode.Create))
             {
 
 
@@ -9782,7 +9822,7 @@ namespace ProdigyConfigToolWPF
                 audio_stream.Close();                                                               //waveOut.Play();
                 temporary_file.Close();
 
-                File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + ".wav"));
+                File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav"));
 
             }
 
@@ -9896,7 +9936,7 @@ namespace ProdigyConfigToolWPF
                 var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
                 controller.Maximum = 100.0;
                 controller.Minimum = 0.0;
-                
+
                 await Task.Run(() =>
                 {
                     controller.SetMessage(Properties.Resources.ReadingEvents);
@@ -9907,7 +9947,7 @@ namespace ProdigyConfigToolWPF
                         this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(500.0 + 1.0)))));
                         System.Threading.Thread.Sleep(20);
                     }
-                    
+
                     controller.CloseAsync();
 
                 });
@@ -9969,8 +10009,8 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Event.DefaultView.RowFilter = String.Empty;
                 else
                     databaseDataSet.Event.DefaultView.RowFilter = databaseDataSet.Event.EventIdColumn.ColumnName + " IN(" + events_filter + ")";
-                
-                ButtonFilterAlarms.Background = Brushes.WhiteSmoke; 
+
+                ButtonFilterAlarms.Background = Brushes.WhiteSmoke;
             }
         }
 
@@ -9994,7 +10034,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Event.DefaultView.RowFilter = String.Empty;
                 else
                     databaseDataSet.Event.DefaultView.RowFilter = databaseDataSet.Event.EventIdColumn.ColumnName + " IN(" + events_filter + ")";
-                
+
                 ButtonFilterFaults.Background = Brushes.WhiteSmoke;
 
             }
@@ -10603,7 +10643,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Audio.Rows.Add(row.ItemArray);
                 }
                 #endregion
-                
+
                 #region AUDIO CUSTOMIZED
                 defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
                 con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
@@ -10620,12 +10660,12 @@ namespace ProdigyConfigToolWPF
                 audio_full_table = audio_table.Copy();
                 audio_full_table.Merge(audio_customized_table);
 
-                
+
 
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
                 databaseDatasetTableAdapter.Fill(audio_table);
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
-                
+
                 //delete table
                 foreach (defaultDataSet.AudioRow row in (databaseDataSet.Audio.Select("Id <> null")))
                 {
@@ -10637,7 +10677,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Audio.Rows.Add(row.ItemArray);
                 }
 
-               
+
                 #endregion
 
                 #region AUDIO SYSTEM CONFIG
@@ -10692,7 +10732,7 @@ namespace ProdigyConfigToolWPF
             {
                 try
                 {
-                    
+
                     AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
                     databaseDataSetAudioTableAdapter.Update((defaultDataSet.AudioDataTable)e.Row.Table);
 
@@ -10979,13 +11019,17 @@ namespace ProdigyConfigToolWPF
 
         #region AUDIO
 
-        
+
         private void Load_WAV_File_Click(object sender, RoutedEventArgs e)
         {
             GetDataGridRows(AudioCustomizedDataGrid);
-            //AudioCustomizedDataGrid.Items.Add();
-            DataRowView row = (DataRowView)AudioCustomizedDataGrid.Items.CurrentItem;
-            
+            DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
+            current_audio_row = row;
+
+            defaultDataSet.AudioDataTable AudioDT = new defaultDataSet.AudioDataTable();
+            databaseDataSetAudioCustomizedTableAdapter.Fill(AudioDT);
+            DebugTable(AudioDT);
+
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             // Set filter for file extension and default file extension 
@@ -11001,60 +11045,56 @@ namespace ProdigyConfigToolWPF
                     WaveFormat target = new WaveFormat(8000, 8, 1);
                     WaveStream stream = new WaveFileReader(filePaths[i]);
                     WaveFormatConversionStream str = new WaveFormatConversionStream(target, stream);
-                    System.Diagnostics.Debug.WriteLine("GINJO FILE PATH: " + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + "_8bit.wav");
-                    WaveFileWriter.CreateWaveFile(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + "_8bit.wav", str); //or the path of .wav file
+                    System.Diagnostics.Debug.WriteLine("New Customized Audio: " + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav");
+                    WaveFileWriter.CreateWaveFile(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav", str); //or the path of .wav file
 
-                    WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + "_8bit.wav");
+                    WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + "_8bit.wav");
                     byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
 
                     temporary_file.Read(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length);
 
-                    using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + ".raw", FileMode.Create))
+                    using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw", FileMode.Create))
                     {
                         audio_stream.Write(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length); // Requires System.IO
 
                         temporary_file.Close();
-                        File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + "_8bit.wav"));
+                        File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav"));
                         ;
                     }
+
                 }
                 var row_list = GetDataGridRows(AudioCustomizedDataGrid);
                 foreach (DataGridRow single_row in row_list)
                 {
+                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
+
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
                     if (single_row.IsSelected == true)
                     {
-                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                        play_button.IsEnabled = true;
-                        play_button.Opacity = 1;
-
-                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                        play_pause.IsEnabled = false;
-                        play_pause.Opacity = 0.25;
-
-                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                        play_stop.IsEnabled = false;
-                        play_stop.Opacity = 0.25;
-
-                        Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                        delete_button.IsEnabled = true;
-                        delete_button.Opacity = 1;
-
-                        Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                        stop_record_button.IsEnabled = false;
-                        stop_record_button.Opacity = 0.25;
-
-                        Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                        start_record_button.IsEnabled = false;
-                        start_record_button.Opacity = 0.25;
-
-                        Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
                         load_wav_button.IsEnabled = false;
-                        load_wav_button.Opacity = 0.25;
+                        start_record_button.IsEnabled = false;
+                        stop_record_button.IsEnabled = false;
+                        delete_button.IsEnabled = true;
+
+                        play_button.IsEnabled = true;
+                        play_pause.IsEnabled = false;
+                        play_stop.IsEnabled = false;
+
+                        AudioCustomizedDataGrid.UpdateLayout();
                     }
                 }
+                row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
 
+                //AudioDT.DescriptionColumn.Equals(row["Description"].ToString());
+                //AudioDT.DescriptionColumn.Equals(row["Description"].ToString());
             }
-            
+
         }
 
         private void buttonRecordWav_Click(object sender, RoutedEventArgs e)
@@ -11062,53 +11102,43 @@ namespace ProdigyConfigToolWPF
             int waveInDevices = WaveIn.DeviceCount;
             if (waveInDevices != 0)
             {
-                
+
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
                 
-
                 waveSource = new WaveIn();
                 waveSource.WaveFormat = new WaveFormat(8000, 8, 1);
 
                 waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
                 waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-                waveFile = new WaveFileWriter((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + ".wav"), waveSource.WaveFormat);
+                waveFile = new WaveFileWriter((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav"), waveSource.WaveFormat);
 
                 var row_list = GetDataGridRows(AudioCustomizedDataGrid);
                 foreach (DataGridRow single_row in row_list)
                 {
+                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
+
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
                     if (single_row.IsSelected == true)
                     {
-                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                        play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                        play_pause.IsEnabled = false;
-                        play_pause.Opacity = 0.25;
-
-                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                        play_stop.IsEnabled = false;
-                        play_stop.Opacity = 0.25;
-
-                        Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                        delete_button.IsEnabled = false;
-                        delete_button.Opacity = 0.25;
-
-                        Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                        stop_record_button.IsEnabled = true;
-                        stop_record_button.Opacity = 1;
-
-                        Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                        start_record_button.IsEnabled = false;
-                        start_record_button.Opacity = 0.25;
-
-                        Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
                         load_wav_button.IsEnabled = false;
-                        load_wav_button.Opacity = 0.25;
+                        start_record_button.IsEnabled = false;
+                        stop_record_button.IsEnabled = true;
+                        delete_button.IsEnabled = false;
+
+                        play_button.IsEnabled = false;
+                        play_pause.IsEnabled = false;
+                        play_stop.IsEnabled = false;
+
+                        AudioCustomizedDataGrid.UpdateLayout();
                     }
                 }
-
                 waveSource.StartRecording();
             }
             else
@@ -11123,35 +11153,27 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioCustomizedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
+
+                Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                    play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                    play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                    play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
-
-                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                    delete_button.IsEnabled = true;
-                    delete_button.Opacity = 1;
-
-                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                    stop_record_button.IsEnabled = false;
-                    stop_record_button.Opacity = 0.25;
-
-                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                    start_record_button.IsEnabled = false;
-                    start_record_button.Opacity = 0.25;
-
-                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
                     load_wav_button.IsEnabled = false;
-                    load_wav_button.Opacity = 0.25;
+                    start_record_button.IsEnabled = false;
+                    stop_record_button.IsEnabled = false;
+                    delete_button.IsEnabled = true;
+
+                    play_button.IsEnabled = true;
+                    play_pause.IsEnabled = false;
+                    play_stop.IsEnabled = false;
+
+                    AudioCustomizedDataGrid.UpdateLayout();
                 }
             }
             waveSource.StopRecording();
@@ -11162,25 +11184,24 @@ namespace ProdigyConfigToolWPF
             ComboBox a = (ComboBox)sender;
             a.ItemsSource = Dictionaries.GetAudioMessages();
         }
-        
+
         void wavePlayer_PlaybackStopped(object sender, StoppedEventArgs e)
         {
             Button play_button = new Button();
             Button play_pause = new Button();
             Button play_stop = new Button();
 
-            //set_button_UI_for_costumized_audio();
+            set_button_UI_for_costumized_audio();
 
             var row_list = GetDataGridRows(AudioReservedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
                 play_button = single_row.FindChild<Button>("ButtonPlayReserved");
-                play_button.IsEnabled = true;
-
                 play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
-                play_pause.IsEnabled = false;
-
                 play_stop = single_row.FindChild<Button>("ButtonPauseReserved");
+
+                play_button.IsEnabled = true;
+                play_pause.IsEnabled = false;
                 play_stop.IsEnabled = false;
 
                 AudioCustomizedDataGrid.UpdateLayout();
@@ -11236,7 +11257,7 @@ namespace ProdigyConfigToolWPF
                     controller.SetMessage("A escrever faixas de aúdio");
                     int audio_number_of_msgs = 0;
 
-                    byte[] audio_file_bytes = File.ReadAllBytes(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\new_audio_files_unified.mai");
+                    byte[] audio_file_bytes = File.ReadAllBytes(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\new_audio_files_unified.mai");
 
                     audio_number_of_msgs = (audio_file_bytes.Length / 235) + 1;
                     //send each message
@@ -11272,167 +11293,28 @@ namespace ProdigyConfigToolWPF
             }
         }
         
-        private void AudioCustomizedPlayButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (waveOut.PlaybackState.Equals(PlaybackState.Stopped))
-            {
-                var row_list = GetDataGridRows(AudioCustomizedDataGrid);
-
-                foreach (DataGridRow single_row in row_list)
-                {
-                    if (single_row.IsSelected == true)
-                    {
-                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                        play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                        play_pause.IsEnabled = true;
-                        play_pause.Opacity = 1;
-
-                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                        play_stop.IsEnabled = true;
-                        play_stop.Opacity = 1;
-
-                        //Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                        //delete_button.IsEnabled = false;
-
-                        //Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                        //stop_record_button.IsEnabled = false;
-
-                        //Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                        //start_record_button.IsEnabled = false;
-
-                        //Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
-                        //load_wav_button.IsEnabled = false;
-
-                        AudioCustomizedDataGrid.UpdateLayout();
-                    }
-                }
-
-                DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
-                current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + ".raw");
-
-                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
-
-                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
-                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
-                waveOut.Init(rawSource);
-                waveOut.Play();
-
-            }
-            else if (((DataRowView)AudioCustomizedDataGrid.CurrentItem).Equals(current_audio_row))
-            {
-                var row_list = GetDataGridRows(AudioCustomizedDataGrid);
-
-                foreach (DataGridRow single_row in row_list)
-                {
-                    if (single_row.IsSelected == true)
-                    {
-                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                        play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                        play_pause.IsEnabled = true;
-                        play_pause.Opacity = 1;
-
-                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                        play_stop.IsEnabled = true;
-                        play_stop.Opacity = 1;
-
-                        AudioCustomizedDataGrid.UpdateLayout();
-                    }
-                }
-
-                waveOut.Resume();
-            }
-            else
-            {
-                var row_list = GetDataGridRows(AudioCustomizedDataGrid);
-                waveOut.Stop();
-                waveOut.Dispose();
-                waveOut = new WaveOut();
-                waveOut.PlaybackStopped += wavePlayer_PlaybackStopped;
-
-                foreach (DataGridRow single_row in row_list)
-                {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                    play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                    play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                    play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
-
-                    AudioCustomizedDataGrid.UpdateLayout();
-                }
-
-                foreach (DataGridRow single_row in row_list)
-                {
-                    if (single_row.IsSelected == true)
-                    {
-                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                        play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                        play_pause.IsEnabled = true;
-                        play_pause.Opacity = 1;
-
-                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                        play_stop.IsEnabled = true;
-                        play_stop.Opacity = 1;
-
-                        AudioCustomizedDataGrid.UpdateLayout();
-                    }
-                }
-
-
-                DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
-                current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + ".raw");
-
-                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
-
-                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
-                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
-                waveOut.Init(rawSource);
-                waveOut.Play();
-            }
-        }
-
         private void AudioReservedDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
+
             try
             {
-
-                Button play_button = new Button();
-                Button play_pause = new Button();
-                Button play_stop = new Button();
-
                 var row_list = GetDataGridRows(AudioReservedDataGrid);
 
                 foreach (DataGridRow single_row in row_list)
                 {
-                    if (single_row.IsSelected == true)
-                    {
-                        play_button = single_row.FindChild<Button>("ButtonPlayReserved");
-                        play_button.IsEnabled = true;
-                        play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
-                        play_pause.IsEnabled = false;
-                        play_stop = single_row.FindChild<Button>("ButtonStopReserved");
-                        play_stop.IsEnabled = false;
+                    DataRowView row_view = single_row.Item as DataRowView;
 
-                        AudioReservedDataGrid.UpdateLayout();
-                    }
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
+                    play_button.IsEnabled = true;
+                    play_pause.IsEnabled = false;
+                    play_stop.IsEnabled = false;
+
                 }
+                AudioReservedDataGrid.UpdateLayout();
             }
             catch
             {
@@ -11442,65 +11324,55 @@ namespace ProdigyConfigToolWPF
 
         private void AudioReservedPlayButton_Click(object sender, RoutedEventArgs e)
         {
-            Button play_button = new Button();
-            Button play_pause = new Button();
-            Button play_stop = new Button();
+            var row_list = GetDataGridRows(AudioReservedDataGrid);
 
-            if (waveOut.PlaybackState.Equals(PlaybackState.Stopped))
+            DataRowView row = (DataRowView)AudioReservedDataGrid.CurrentItem;
+            current_audio_row = row;
+            var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+
+            audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
+
+            WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
+            RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
+
+            waveOut.Init(rawSource);
+
+            if (waveOut.PlaybackState == PlaybackState.Stopped)
             {
-                var row_list = GetDataGridRows(AudioReservedDataGrid);
-
                 foreach (DataGridRow single_row in row_list)
                 {
+                    DataRowView row_view = single_row.Item as DataRowView;
+
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
+
                     if (single_row.IsSelected == true)
                     {
-                        play_button = single_row.FindChild<Button>("ButtonPlayReserved");
                         play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                         play_pause.IsEnabled = true;
-                        play_pause.Opacity = 1;
-
-                        play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                         play_stop.IsEnabled = true;
-                        play_stop.Opacity = 1;
 
                         AudioReservedDataGrid.UpdateLayout();
                     }
+                    waveOut.Play();
                 }
-
-                DataRowView row = (DataRowView)AudioReservedDataGrid.CurrentItem;
-                current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + ".raw");
-
-                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
-
-                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
-                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
-                waveOut.Init(rawSource);
-                waveOut.Play();
-
             }
             else if (((DataRowView)AudioReservedDataGrid.CurrentItem).Equals(current_audio_row))
             {
-                var row_list = GetDataGridRows(AudioReservedDataGrid);
-
                 foreach (DataGridRow single_row in row_list)
                 {
+                    DataRowView row_view = single_row.Item as DataRowView;
                     if (single_row.IsSelected == true)
                     {
-                        play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                        Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                        Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                        Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+                        
                         play_button.IsEnabled = false;
-                        play_button.Opacity = 0.25;
-
-                        play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                         play_pause.IsEnabled = true;
-                        play_pause.Opacity = 1;
-
-                        play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                         play_stop.IsEnabled = true;
-                        play_stop.Opacity = 1;
 
                         AudioReservedDataGrid.UpdateLayout();
                     }
@@ -11509,7 +11381,6 @@ namespace ProdigyConfigToolWPF
             }
             else
             {
-                var row_list = GetDataGridRows(AudioReservedDataGrid);
                 waveOut.Stop();
                 waveOut.Dispose();
                 waveOut = new WaveOut();
@@ -11517,50 +11388,33 @@ namespace ProdigyConfigToolWPF
 
                 foreach (DataGridRow single_row in row_list)
                 {
-                    play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
                     play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                     play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                     play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
 
                     AudioReservedDataGrid.UpdateLayout();
                 }
-
                 foreach (DataGridRow single_row in row_list)
                 {
                     if (single_row.IsSelected == true)
                     {
-                        play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                        Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                        Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                        Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
                         play_button.IsEnabled = false;
-
-                        play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                         play_pause.IsEnabled = true;
-
-                        play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                         play_stop.IsEnabled = true;
+
                         AudioReservedDataGrid.UpdateLayout();
                     }
                 }
-
-
-                DataRowView row = (DataRowView)AudioReservedDataGrid.CurrentItem;
-                current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"].ToString() + ".raw");
-
-                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
-
-                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
-                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
-                waveOut.Init(rawSource);
                 waveOut.Play();
-
-            }
+            }    
         }
 
         private void AudioReservedStopButton_Click(object sender, RoutedEventArgs e)
@@ -11568,19 +11422,16 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioReservedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
+               
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
                     play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                     play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                     play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
 
                     AudioReservedDataGrid.UpdateLayout();
                 }
@@ -11593,24 +11444,122 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioReservedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
+
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
                     play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                     play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
                     play_stop.IsEnabled = true;
-                    play_stop.Opacity = 0.25;
-
+                   
                     AudioReservedDataGrid.UpdateLayout();
                 }
             }
             waveOut.Pause();
+        }
+
+        private void AudioCustomizedPlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            var row_list = GetDataGridRows(AudioCustomizedDataGrid);
+
+            if (waveOut.PlaybackState.Equals(PlaybackState.Stopped))
+            {
+                foreach (DataGridRow single_row in row_list)
+                {
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
+                    if (single_row.IsSelected == true)
+                    {
+                        play_button.IsEnabled = false;
+                        play_pause.IsEnabled = true;
+                        play_stop.IsEnabled = true;
+                        
+                        AudioCustomizedDataGrid.UpdateLayout();
+                    }
+                }
+
+                DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
+                current_audio_row = row;
+                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+
+                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
+
+                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
+                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
+                waveOut.Init(rawSource);
+                waveOut.Play();
+
+            }
+            else if (((DataRowView)AudioCustomizedDataGrid.CurrentItem).Equals(current_audio_row))
+            {
+                foreach (DataGridRow single_row in row_list)
+                {
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
+                    if (single_row.IsSelected == true)
+                    {
+                        play_button.IsEnabled = false;
+                        play_pause.IsEnabled = true;
+                        play_stop.IsEnabled = true;
+
+                        AudioCustomizedDataGrid.UpdateLayout();
+                    }
+                }
+                waveOut.Resume();
+            }
+            else
+            {
+                waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = new WaveOut();
+                waveOut.PlaybackStopped += wavePlayer_PlaybackStopped;
+
+                foreach (DataGridRow single_row in row_list)
+                {
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
+                    play_button.IsEnabled = true;
+                    play_pause.IsEnabled = false;
+                    play_stop.IsEnabled = false;
+
+                    AudioCustomizedDataGrid.UpdateLayout();
+                }
+
+                foreach (DataGridRow single_row in row_list)
+                {
+                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
+                    if (single_row.IsSelected == true)
+                    {
+                        play_button.IsEnabled = false;
+                        play_pause.IsEnabled = true;
+                        play_stop.IsEnabled = true;
+
+                        AudioCustomizedDataGrid.UpdateLayout();
+                    }
+                }
+                
+                DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
+                current_audio_row = row;
+                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+
+                audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
+
+                WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
+                RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(audio_stream, waveFormat);
+                waveOut.Init(rawSource);
+                waveOut.Play();
+            }
         }
 
         private void AudioCustomizedStopButton_Click(object sender, RoutedEventArgs e)
@@ -11618,31 +11567,15 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioCustomizedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
                     play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
                     play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
                     play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
-
-                    //Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                    //delete_button.IsEnabled = true;
-
-                    //Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                    //stop_record_button.IsEnabled = false;
-
-                    //Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                    //start_record_button.IsEnabled = false;
-
-                    //Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
-                    //load_wav_button.IsEnabled = false;
 
                     AudioCustomizedDataGrid.UpdateLayout();
                 }
@@ -11655,31 +11588,15 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioCustomizedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
                     play_button.IsEnabled = true;
-                    play_button.Opacity = 1;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
                     play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
                     play_stop.IsEnabled = true;
-                    play_stop.Opacity = 0.25;
-
-                    //Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                    //delete_button.IsEnabled = true;
-
-                    //Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                    //stop_record_button.IsEnabled = false;
-
-                    //Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                    //start_record_button.IsEnabled = false;
-
-                    //Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
-                    //load_wav_button.IsEnabled = false;
 
                     AudioCustomizedDataGrid.UpdateLayout();
                 }
@@ -11692,35 +11609,25 @@ namespace ProdigyConfigToolWPF
             var row_list = GetDataGridRows(AudioCustomizedDataGrid);
             foreach (DataGridRow single_row in row_list)
             {
+                Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
+
+                Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
+                
                 if (single_row.IsSelected == true)
                 {
-                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-                    play_button.IsEnabled = false;
-                    play_button.Opacity = 0.25;
-
-                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-                    play_pause.IsEnabled = false;
-                    play_pause.Opacity = 0.25;
-
-                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                    play_stop.IsEnabled = false;
-                    play_stop.Opacity = 0.25;
-
-                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-                    delete_button.IsEnabled = false;
-                    delete_button.Opacity = 0.25;
-
-                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-                    stop_record_button.IsEnabled = false;
-                    stop_record_button.Opacity = 0.25;
-
-                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-                    start_record_button.IsEnabled = true;
-                    start_record_button.Opacity = 1;
-
-                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
                     load_wav_button.IsEnabled = true;
-                    load_wav_button.Opacity = 1;
+                    start_record_button.IsEnabled = true;
+                    stop_record_button.IsEnabled = false;
+                    delete_button.IsEnabled = false;
+
+                    play_button.IsEnabled = false;
+                    play_pause.IsEnabled = false;
+                    play_stop.IsEnabled = false;
 
                     AudioCustomizedDataGrid.UpdateLayout();
                 }
@@ -11728,13 +11635,13 @@ namespace ProdigyConfigToolWPF
             DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
             System.GC.Collect();
             System.GC.WaitForPendingFinalizers();
-            File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row["Description"] + ".raw"));
+            File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw"));
         }
 
-        //private void AudioCustomizedDataGrid_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    set_button_UI_for_costumized_audio();
-        //}
+        private void AudioCustomizedDataGrid_Loaded(object sender, RoutedEventArgs e)
+        {
+            set_button_UI_for_costumized_audio();
+        }
 
         private void ChangePassword_Click(object sender, RoutedEventArgs e)
         {
@@ -11750,82 +11657,77 @@ namespace ProdigyConfigToolWPF
 
         }
 
-        //private void set_button_UI_for_costumized_audio()
-        //{
-        //    InitializeComponent();
-        //    try
-        //    {
-        //        var row_list = GetDataGridRows(AudioCustomizedDataGrid);
+        private void set_button_UI_for_costumized_audio()
+        {
+            InitializeComponent();
+            try
+            {
+                var row_list = GetDataGridRows(AudioCustomizedDataGrid);
+                
+                foreach (DataGridRow single_row in row_list)
+                {
+                    DataRowView row_view = single_row.Item as DataRowView;
+                    
 
-        //        foreach (DataGridRow single_row in row_list)
-        //            {
-        //                DataRowView row_view = single_row.Item as DataRowView;
-        //                //System.Diagnostics.Debug.WriteLine("AUDIO PATH: " + row_view["FilePath"]);
-        //                if (!File.Exists((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row_view["Description"] + ".raw")))
-        //                {
-        //                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-        //                    play_button.IsEnabled = false;
+                    string audiofolder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
+                    Debug.WriteLine(audiofolder);
 
-        //                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-        //                    play_pause.IsEnabled = false;
+                    if (File.Exists(audiofolder + row_view["Description"] + ".raw"))
+                    {
+                        Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                        Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                        Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                        Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
 
-        //                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-        //                    play_stop.IsEnabled = false;
+                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
 
-        //                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-        //                    delete_button.IsEnabled = false;
+                        load_wav_button.IsEnabled = false;
+                        start_record_button.IsEnabled = false;
+                        stop_record_button.IsEnabled = false;
+                        delete_button.IsEnabled = true;
 
-        //                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-        //                    stop_record_button.IsEnabled = false;
+                        play_button.IsEnabled = true;
+                        play_pause.IsEnabled = false;
+                        play_stop.IsEnabled = false;
 
-        //                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-        //                    start_record_button.IsEnabled = true;
+                        AudioCustomizedDataGrid.UpdateLayout();
+                    }
+                    else
+                    {
+                        Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
+                        Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
+                        Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
+                        Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
 
-        //                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
-        //                    load_wav_button.IsEnabled = true;
+                        Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
+                        Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
+                        Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
 
-        //                    AudioCustomizedDataGrid.UpdateLayout();
-        //                }
+                        load_wav_button.IsEnabled = true;
+                        start_record_button.IsEnabled = true;
+                        stop_record_button.IsEnabled = false;
+                        delete_button.IsEnabled = false;
 
-        //                else if (File.Exists((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\DefaultAudioFiles\" + row_view["Description"] + ".raw")))
-        //                {
-        //                    Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
-        //                    play_button.IsEnabled = true;
+                        play_button.IsEnabled = false;
+                        play_pause.IsEnabled = false;
+                        play_stop.IsEnabled = false;
 
-        //                    Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
-        //                    play_pause.IsEnabled = false;
+                        AudioCustomizedDataGrid.UpdateLayout();
+                    }
+                }
+            }
+            catch
+            {
 
-        //                    Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-        //                    play_stop.IsEnabled = false;
+            }
+        }
 
-        //                    Button delete_button = single_row.FindChild<Button>("buttonDeleteRecordWav");
-        //                    delete_button.IsEnabled = true;
-
-        //                    Button stop_record_button = single_row.FindChild<Button>("buttonStopRecordWav");
-        //                    stop_record_button.IsEnabled = false;
-
-        //                    Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
-        //                    start_record_button.IsEnabled = false;
-
-        //                    Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
-        //                    load_wav_button.IsEnabled = false;
-
-        //                    AudioCustomizedDataGrid.UpdateLayout();
-        //                }
-
-        //            }
-
-        //    }
-        //    catch
-        //    {
-
-        //    }
-        //}
-
-        //private void AudioCustomizedDataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
-        //{
-        //    set_button_UI_for_costumized_audio();
-        //}
+        private void AudioCustomizedDataGrid_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            set_button_UI_for_costumized_audio();
+        }
 
         private void AudioCustomizedDataGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
         {
@@ -11834,27 +11736,26 @@ namespace ProdigyConfigToolWPF
             
             databaseDataSet.Audio.TypeColumn.DefaultValue = 1;
             
+            if (a.IsNew)
+            {
+                set_button_UI_for_costumized_audio();
+            }
+            else
+            {
+                var datag = (DataGrid)sender;
+                var p = (DataRowView)datag.SelectedValue;
+                var p1 = (DataRowView)e.Row.Item;
 
-            //if (a.IsNew)
-            //{
-            //    set_button_UI_for_costumized_audio();
-            //}
-            //else
-            //{
-            //    var datag = (DataGrid)sender;
-            //    var p = (DataRowView)datag.SelectedValue;
-            //    var p1 = (DataRowView)e.Row.Item;
+                defaultDataSet.AudioRow qw = p.Row as defaultDataSet.AudioRow;
+                defaultDataSet.AudioRow qw1 = p1.Row as defaultDataSet.AudioRow;
+                Debug.WriteLine(qw.Description);
+                Debug.WriteLine(qw1.Description);
 
-            //    defaultDataSet.AudioCustomizedRow qw = p.Row as defaultDataSet.AudioCustomizedRow;
-            //    defaultDataSet.AudioCustomizedRow qw1 = p1.Row as defaultDataSet.AudioCustomizedRow;
-            //    Debug.WriteLine(qw.Description);
-            //    Debug.WriteLine(qw1.Description);
-
-            //    qw1.EndEdit();
-            //    Debug.WriteLine(qw1.Description);
+                qw1.EndEdit();
+                Debug.WriteLine(qw1.Description);
 
 
-            //}
+            }
 
         }
 
@@ -15378,8 +15279,6 @@ namespace ProdigyConfigToolWPF
             
         }
   
-        
-
         private void HelpFlyoutImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //HelpFlyout.IsOpen = false;
