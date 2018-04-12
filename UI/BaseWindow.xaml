@@ -14896,7 +14896,7 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonPauseReserved" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioReservedPauseButton_Click" Margin="2,2">
+                                                                    <Button x:Name="ButtonPauseReserved" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioReservedPauseButton_Click" Margin="2,2" Visibility="Collapsed">
                                                                         <Image Source="/images/audio/pause.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
@@ -15093,7 +15093,7 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="buttonStopRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonStopRecordWav_Click" Margin="2,2">
+                                                                    <Button x:Name="buttonStopRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonStopRecordWav_Click" Margin="2,2" Visibility="Collapsed">
                                                                         <Image Source="/images/audio/stop_record.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
@@ -15160,7 +15160,7 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioCustomizedPauseButton_Click" Margin="2,2">
+                                                                    <Button x:Name="ButtonPauseCustomized" HorizontalAlignment="Center" VerticalAlignment="Center" Click="AudioCustomizedPauseButton_Click" Margin="2,2" Visibility="Collapsed">
                                                                         <Image Source="/images/audio/pause.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">

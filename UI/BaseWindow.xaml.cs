@@ -83,7 +83,7 @@ namespace ProdigyConfigToolWPF
         System.Windows.Forms.Timer timer = null;
         bool audio_system_momory_isfull = false;
         bool audio_system_momory_istrigger = false;
-
+        bool audio_recording = false;
         public MainWindow(string locale, int role, string ChoosenDbFile, Dictionary<int, bool> KeypadConfig, Dictionary<int, bool> DialerConfig, Dictionary<int, bool> PartitionsConfig, Dictionary<int, bool> PhonesConfig)
         {
             AppLocale = locale;
@@ -11104,7 +11104,7 @@ namespace ProdigyConfigToolWPF
             {
 
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
-                
+
                 waveSource = new WaveIn();
                 waveSource.WaveFormat = new WaveFormat(8000, 8, 1);
 
@@ -11136,10 +11136,13 @@ namespace ProdigyConfigToolWPF
                         play_pause.IsEnabled = false;
                         play_stop.IsEnabled = false;
 
+                        start_record_button.Visibility = Visibility.Collapsed;
+                        stop_record_button.Visibility = Visibility.Visible;
                         AudioCustomizedDataGrid.UpdateLayout();
                     }
                 }
                 waveSource.StartRecording();
+                row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
             }
             else
             {
@@ -11173,6 +11176,8 @@ namespace ProdigyConfigToolWPF
                     play_pause.IsEnabled = false;
                     play_stop.IsEnabled = false;
 
+                    start_record_button.Visibility = Visibility.Visible;
+                    stop_record_button.Visibility = Visibility.Collapsed;
                     AudioCustomizedDataGrid.UpdateLayout();
                 }
             }
@@ -11636,6 +11641,7 @@ namespace ProdigyConfigToolWPF
             System.GC.Collect();
             System.GC.WaitForPendingFinalizers();
             File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw"));
+            row.Delete();
         }
 
         private void AudioCustomizedDataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -11670,7 +11676,7 @@ namespace ProdigyConfigToolWPF
                     
 
                     string audiofolder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
-                    Debug.WriteLine(audiofolder);
+                    Debug.WriteLine(audiofolder + row_view["Description"] + ".raw");
 
                     if (File.Exists(audiofolder + row_view["Description"] + ".raw"))
                     {
