@@ -6279,7 +6279,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_230_ok[1] << 8) + faixas_audio_230_ok[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_230_ok[1] << 8) + faixas_audio_230_ok[0];
                         }
 
                         if (((faixas_audio_230_ok[3] << 8) + faixas_audio_230_ok[2]).Equals(0xffff))
@@ -6288,7 +6288,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_230_ok[3] << 8) + faixas_audio_230_ok[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_230_ok[3] << 8) + faixas_audio_230_ok[2];
                         }
 
                         if (((faixas_audio_230_ok[5] << 8) + faixas_audio_230_ok[4]).Equals(0xffff))
@@ -6297,7 +6297,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_230_ok[5] << 8) + faixas_audio_230_ok[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_230_ok[5] << 8) + faixas_audio_230_ok[4];
                         }
 
                         if (((faixas_audio_230_ok[7] << 8) + faixas_audio_230_ok[6]).Equals(0xffff))
@@ -6306,7 +6306,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_230_ok[7] << 8) + faixas_audio_230_ok[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_230_ok[7] << 8) + faixas_audio_230_ok[6];
                         }
 
                         #endregion
@@ -6329,7 +6329,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_230_falha[1] << 8) + faixas_audio_230_falha[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_230_falha[1] << 8) + faixas_audio_230_falha[0];
                         }
 
                         if (((faixas_audio_230_falha[3] << 8) + faixas_audio_230_falha[2]).Equals(0xffff))
@@ -6338,7 +6338,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_230_falha[3] << 8) + faixas_audio_230_falha[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_230_falha[3] << 8) + faixas_audio_230_falha[2];
                         }
 
                         if (((faixas_audio_230_falha[5] << 8) + faixas_audio_230_falha[4]).Equals(0xffff))
@@ -6347,7 +6347,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_230_falha[5] << 8) + faixas_audio_230_falha[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_230_falha[5] << 8) + faixas_audio_230_falha[4];
                         }
 
                         if (((faixas_audio_230_falha[7] << 8) + faixas_audio_230_falha[6]).Equals(0xffff))
@@ -6356,7 +6356,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_230_falha[7] << 8) + faixas_audio_230_falha[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_230_falha[7] << 8) + faixas_audio_230_falha[6];
                         }
 
                         #endregion
@@ -6379,7 +6379,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bateria_ok[1] << 8) + faixas_audio_bateria_ok[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bateria_ok[1] << 8) + faixas_audio_bateria_ok[0];
                         }
 
                         if (((faixas_audio_bateria_ok[3] << 8) + faixas_audio_bateria_ok[2]).Equals(0xffff))
@@ -6388,7 +6388,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bateria_ok[3] << 8) + faixas_audio_bateria_ok[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bateria_ok[3] << 8) + faixas_audio_bateria_ok[2];
                         }
 
                         if (((faixas_audio_bateria_ok[5] << 8) + faixas_audio_bateria_ok[4]).Equals(0xffff))
@@ -6397,7 +6397,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bateria_ok[5] << 8) + faixas_audio_bateria_ok[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bateria_ok[5] << 8) + faixas_audio_bateria_ok[4];
                         }
 
                         if (((faixas_audio_bateria_ok[7] << 8) + faixas_audio_bateria_ok[6]).Equals(0xffff))
@@ -6406,7 +6406,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bateria_ok[7] << 8) + faixas_audio_bateria_ok[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bateria_ok[7] << 8) + faixas_audio_bateria_ok[6];
                         }
 
                         #endregion
@@ -6429,7 +6429,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bateria_falha[1] << 8) + faixas_audio_bateria_falha[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bateria_falha[1] << 8) + faixas_audio_bateria_falha[0];
                         }
 
                         if (((faixas_audio_bateria_falha[3] << 8) + faixas_audio_bateria_falha[2]).Equals(0xffff))
@@ -6438,7 +6438,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bateria_falha[3] << 8) + faixas_audio_bateria_falha[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bateria_falha[3] << 8) + faixas_audio_bateria_falha[2];
                         }
 
                         if (((faixas_audio_bateria_falha[5] << 8) + faixas_audio_bateria_falha[4]).Equals(0xffff))
@@ -6447,7 +6447,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bateria_falha[5] << 8) + faixas_audio_bateria_falha[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bateria_falha[5] << 8) + faixas_audio_bateria_falha[4];
                         }
 
                         if (((faixas_audio_bateria_falha[7] << 8) + faixas_audio_bateria_falha[6]).Equals(0xffff))
@@ -6456,7 +6456,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bateria_falha[7] << 8) + faixas_audio_bateria_falha[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bateria_falha[7] << 8) + faixas_audio_bateria_falha[6];
                         }
 
                         #endregion
@@ -6479,7 +6479,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_coacao[1] << 8) + faixas_audio_coacao[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_coacao[1] << 8) + faixas_audio_coacao[0];
                         }
 
                         if (((faixas_audio_coacao[3] << 8) + faixas_audio_coacao[2]).Equals(0xffff))
@@ -6488,7 +6488,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_coacao[3] << 8) + faixas_audio_coacao[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_coacao[3] << 8) + faixas_audio_coacao[2];
                         }
 
                         if (((faixas_audio_coacao[5] << 8) + faixas_audio_coacao[4]).Equals(0xffff))
@@ -6497,7 +6497,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_coacao[5] << 8) + faixas_audio_coacao[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_coacao[5] << 8) + faixas_audio_coacao[4];
                         }
 
                         if (((faixas_audio_coacao[7] << 8) + faixas_audio_coacao[6]).Equals(0xffff))
@@ -6506,7 +6506,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_coacao[7] << 8) + faixas_audio_coacao[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_coacao[7] << 8) + faixas_audio_coacao[6];
                         }
 
                         #endregion
@@ -6529,7 +6529,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_config_start[1] << 8) + faixas_audio_config_start[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_config_start[1] << 8) + faixas_audio_config_start[0];
                         }
 
                         if (((faixas_audio_config_start[3] << 8) + faixas_audio_config_start[2]).Equals(0xffff))
@@ -6538,7 +6538,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_config_start[3] << 8) + faixas_audio_config_start[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_config_start[3] << 8) + faixas_audio_config_start[2];
                         }
 
                         if (((faixas_audio_config_start[5] << 8) + faixas_audio_config_start[4]).Equals(0xffff))
@@ -6547,7 +6547,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_config_start[5] << 8) + faixas_audio_config_start[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_config_start[5] << 8) + faixas_audio_config_start[4];
                         }
 
                         if (((faixas_audio_config_start[7] << 8) + faixas_audio_config_start[6]).Equals(0xffff))
@@ -6556,7 +6556,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_config_start[7] << 8) + faixas_audio_config_start[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_config_start[7] << 8) + faixas_audio_config_start[6];
                         }
 
                         #endregion
@@ -6579,7 +6579,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_config_end[1] << 8) + faixas_audio_config_end[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_config_end[1] << 8) + faixas_audio_config_end[0];
                         }
 
                         if (((faixas_audio_config_end[3] << 8) + faixas_audio_config_end[2]).Equals(0xffff))
@@ -6588,7 +6588,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_config_end[3] << 8) + faixas_audio_config_end[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_config_end[3] << 8) + faixas_audio_config_end[2];
                         }
 
                         if (((faixas_audio_config_end[5] << 8) + faixas_audio_config_end[4]).Equals(0xffff))
@@ -6597,7 +6597,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_config_end[5] << 8) + faixas_audio_config_end[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_config_end[5] << 8) + faixas_audio_config_end[4];
                         }
 
                         if (((faixas_audio_config_end[7] << 8) + faixas_audio_config_end[6]).Equals(0xffff))
@@ -6606,7 +6606,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_config_end[7] << 8) + faixas_audio_config_end[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_config_end[7] << 8) + faixas_audio_config_end[6];
                         }
 
                         #endregion
@@ -6629,7 +6629,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper[1] << 8) + faixas_audio_tamper[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper[1] << 8) + faixas_audio_tamper[0];
                         }
 
                         if (((faixas_audio_tamper[3] << 8) + faixas_audio_tamper[2]).Equals(0xffff))
@@ -6638,7 +6638,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper[3] << 8) + faixas_audio_tamper[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper[3] << 8) + faixas_audio_tamper[2];
                         }
 
                         if (((faixas_audio_tamper[5] << 8) + faixas_audio_tamper[4]).Equals(0xffff))
@@ -6647,7 +6647,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper[5] << 8) + faixas_audio_tamper[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper[5] << 8) + faixas_audio_tamper[4];
                         }
 
                         if (((faixas_audio_tamper[7] << 8) + faixas_audio_tamper[6]).Equals(0xffff))
@@ -6656,7 +6656,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper[7] << 8) + faixas_audio_tamper[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper[7] << 8) + faixas_audio_tamper[6];
                         }
 
                         #endregion
@@ -6679,7 +6679,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bypass[1] << 8) + faixas_audio_bypass[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_bypass[1] << 8) + faixas_audio_bypass[0];
                         }
 
                         if (((faixas_audio_bypass[3] << 8) + faixas_audio_bypass[2]).Equals(0xffff))
@@ -6688,7 +6688,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bypass[3] << 8) + faixas_audio_bypass[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_bypass[3] << 8) + faixas_audio_bypass[2];
                         }
 
                         if (((faixas_audio_bypass[5] << 8) + faixas_audio_bypass[4]).Equals(0xffff))
@@ -6697,7 +6697,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bypass[5] << 8) + faixas_audio_bypass[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_bypass[5] << 8) + faixas_audio_bypass[4];
                         }
 
                         if (((faixas_audio_bypass[7] << 8) + faixas_audio_bypass[6]).Equals(0xffff))
@@ -6706,7 +6706,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bypass[7] << 8) + faixas_audio_bypass[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_bypass[7] << 8) + faixas_audio_bypass[6];
                         }
 
                         #endregion
@@ -6729,7 +6729,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme[1] << 8) + faixas_audio_alarme[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme[1] << 8) + faixas_audio_alarme[0];
                         }
 
                         if (((faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2]).Equals(0xffff))
@@ -6738,7 +6738,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2];
                         }
 
                         if (((faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4]).Equals(0xffff))
@@ -6747,7 +6747,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4];
                         }
 
                         if (((faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6]).Equals(0xffff))
@@ -6756,7 +6756,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6];
                         }
 
                         #endregion
@@ -6779,7 +6779,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_panico[1] << 8) + faixas_audio_alarme_panico[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_panico[1] << 8) + faixas_audio_alarme_panico[0];
                         }
 
                         if (((faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2]).Equals(0xffff))
@@ -6788,7 +6788,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2];
                         }
 
                         if (((faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4]).Equals(0xffff))
@@ -6797,7 +6797,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4];
                         }
 
                         if (((faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6]).Equals(0xffff))
@@ -6806,7 +6806,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6];
                         }
 
                         #endregion
@@ -6829,7 +6829,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme[1] << 8) + faixas_audio_alarme[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme[1] << 8) + faixas_audio_alarme[0];
                         }
 
                         if (((faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2]).Equals(0xffff))
@@ -6838,7 +6838,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme[3] << 8) + faixas_audio_alarme[2];
                         }
 
                         if (((faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4]).Equals(0xffff))
@@ -6847,7 +6847,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme[5] << 8) + faixas_audio_alarme[4];
                         }
 
                         if (((faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6]).Equals(0xffff))
@@ -6856,7 +6856,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme[7] << 8) + faixas_audio_alarme[6];
                         }
 
                         #endregion
@@ -6879,7 +6879,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_panico[1] << 8) + faixas_audio_alarme_panico[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_panico[1] << 8) + faixas_audio_alarme_panico[0];
                         }
 
                         if (((faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2]).Equals(0xffff))
@@ -6888,7 +6888,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_panico[3] << 8) + faixas_audio_alarme_panico[2];
                         }
 
                         if (((faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4]).Equals(0xffff))
@@ -6897,7 +6897,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_panico[5] << 8) + faixas_audio_alarme_panico[4];
                         }
 
                         if (((faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6]).Equals(0xffff))
@@ -6906,7 +6906,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_panico[7] << 8) + faixas_audio_alarme_panico[6];
                         }
 
                         #endregion
@@ -6929,7 +6929,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_medico[1] << 8) + faixas_audio_alarme_medico[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_medico[1] << 8) + faixas_audio_alarme_medico[0];
                         }
 
                         if (((faixas_audio_alarme_medico[3] << 8) + faixas_audio_alarme_medico[2]).Equals(0xffff))
@@ -6938,7 +6938,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_medico[3] << 8) + faixas_audio_alarme_medico[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_medico[3] << 8) + faixas_audio_alarme_medico[2];
                         }
 
                         if (((faixas_audio_alarme_medico[5] << 8) + faixas_audio_alarme_medico[4]).Equals(0xffff))
@@ -6947,7 +6947,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_medico[5] << 8) + faixas_audio_alarme_medico[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_medico[5] << 8) + faixas_audio_alarme_medico[4];
                         }
 
                         if (((faixas_audio_alarme_medico[7] << 8) + faixas_audio_alarme_medico[6]).Equals(0xffff))
@@ -6956,7 +6956,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_medico[7] << 8) + faixas_audio_alarme_medico[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_medico[7] << 8) + faixas_audio_alarme_medico[6];
                         }
 
                         #endregion
@@ -6979,7 +6979,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_incendio[1] << 8) + faixas_audio_alarme_incendio[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_incendio[1] << 8) + faixas_audio_alarme_incendio[0];
                         }
 
                         if (((faixas_audio_alarme_incendio[3] << 8) + faixas_audio_alarme_incendio[2]).Equals(0xffff))
@@ -6988,7 +6988,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_incendio[3] << 8) + faixas_audio_alarme_incendio[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_incendio[3] << 8) + faixas_audio_alarme_incendio[2];
                         }
 
                         if (((faixas_audio_alarme_incendio[5] << 8) + faixas_audio_alarme_incendio[4]).Equals(0xffff))
@@ -6997,7 +6997,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_incendio[5] << 8) + faixas_audio_alarme_incendio[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_incendio[5] << 8) + faixas_audio_alarme_incendio[4];
                         }
 
                         if (((faixas_audio_alarme_incendio[7] << 8) + faixas_audio_alarme_incendio[6]).Equals(0xffff))
@@ -7006,7 +7006,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_incendio[7] << 8) + faixas_audio_alarme_incendio[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_incendio[7] << 8) + faixas_audio_alarme_incendio[6];
                         }
 
                         #endregion
@@ -7029,7 +7029,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_mask[1] << 8) + faixas_audio_alarme_mask[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_mask[1] << 8) + faixas_audio_alarme_mask[0];
                         }
 
                         if (((faixas_audio_alarme_mask[3] << 8) + faixas_audio_alarme_mask[2]).Equals(0xffff))
@@ -7038,7 +7038,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_mask[3] << 8) + faixas_audio_alarme_mask[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_mask[3] << 8) + faixas_audio_alarme_mask[2];
                         }
 
                         if (((faixas_audio_alarme_mask[5] << 8) + faixas_audio_alarme_mask[4]).Equals(0xffff))
@@ -7047,7 +7047,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_mask[5] << 8) + faixas_audio_alarme_mask[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_mask[5] << 8) + faixas_audio_alarme_mask[4];
                         }
 
                         if (((faixas_audio_alarme_mask[7] << 8) + faixas_audio_alarme_mask[6]).Equals(0xffff))
@@ -7056,7 +7056,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_mask[7] << 8) + faixas_audio_alarme_mask[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_mask[7] << 8) + faixas_audio_alarme_mask[6];
                         }
 
                         #endregion
@@ -7079,7 +7079,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_supervisao[1] << 8) + faixas_audio_alarme_supervisao[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_supervisao[1] << 8) + faixas_audio_alarme_supervisao[0];
                         }
 
                         if (((faixas_audio_alarme_supervisao[3] << 8) + faixas_audio_alarme_supervisao[2]).Equals(0xffff))
@@ -7088,7 +7088,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_supervisao[3] << 8) + faixas_audio_alarme_supervisao[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_supervisao[3] << 8) + faixas_audio_alarme_supervisao[2];
                         }
 
                         if (((faixas_audio_alarme_supervisao[5] << 8) + faixas_audio_alarme_supervisao[4]).Equals(0xffff))
@@ -7097,7 +7097,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_supervisao[5] << 8) + faixas_audio_alarme_supervisao[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_supervisao[5] << 8) + faixas_audio_alarme_supervisao[4];
                         }
 
                         if (((faixas_audio_alarme_supervisao[7] << 8) + faixas_audio_alarme_supervisao[6]).Equals(0xffff))
@@ -7106,7 +7106,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_supervisao[7] << 8) + faixas_audio_alarme_supervisao[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_supervisao[7] << 8) + faixas_audio_alarme_supervisao[6];
                         }
 
                         #endregion
@@ -7129,7 +7129,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_24[1] << 8) + faixas_audio_alarme_24[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_alarme_24[1] << 8) + faixas_audio_alarme_24[0];
                         }
 
                         if (((faixas_audio_alarme_24[3] << 8) + faixas_audio_alarme_24[2]).Equals(0xffff))
@@ -7138,7 +7138,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_24[3] << 8) + faixas_audio_alarme_24[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_alarme_24[3] << 8) + faixas_audio_alarme_24[2];
                         }
 
                         if (((faixas_audio_alarme_24[5] << 8) + faixas_audio_alarme_24[4]).Equals(0xffff))
@@ -7147,7 +7147,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_24[5] << 8) + faixas_audio_alarme_24[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_alarme_24[5] << 8) + faixas_audio_alarme_24[4];
                         }
 
                         if (((faixas_audio_alarme_24[7] << 8) + faixas_audio_alarme_24[6]).Equals(0xffff))
@@ -7156,7 +7156,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_24[7] << 8) + faixas_audio_alarme_24[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_alarme_24[7] << 8) + faixas_audio_alarme_24[6];
                         }
 
                         #endregion
@@ -7179,7 +7179,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_codigo_ok[1] << 8) + faixas_audio_codigo_ok[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_codigo_ok[1] << 8) + faixas_audio_codigo_ok[0];
                         }
 
                         if (((faixas_audio_codigo_ok[3] << 8) + faixas_audio_codigo_ok[2]).Equals(0xffff))
@@ -7188,7 +7188,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_codigo_ok[3] << 8) + faixas_audio_codigo_ok[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_codigo_ok[3] << 8) + faixas_audio_codigo_ok[2];
                         }
 
                         if (((faixas_audio_codigo_ok[5] << 8) + faixas_audio_codigo_ok[4]).Equals(0xffff))
@@ -7197,7 +7197,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_codigo_ok[5] << 8) + faixas_audio_codigo_ok[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_codigo_ok[5] << 8) + faixas_audio_codigo_ok[4];
                         }
 
                         if (((faixas_audio_codigo_ok[7] << 8) + faixas_audio_codigo_ok[6]).Equals(0xffff))
@@ -7206,7 +7206,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_codigo_ok[7] << 8) + faixas_audio_codigo_ok[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_codigo_ok[7] << 8) + faixas_audio_codigo_ok[6];
                         }
 
                         #endregion
@@ -7229,7 +7229,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_codigo_errado[1] << 8) + faixas_audio_codigo_errado[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_codigo_errado[1] << 8) + faixas_audio_codigo_errado[0];
                         }
 
                         if (((faixas_audio_codigo_errado[3] << 8) + faixas_audio_codigo_errado[2]).Equals(0xffff))
@@ -7238,7 +7238,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_codigo_errado[3] << 8) + faixas_audio_codigo_errado[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_codigo_errado[3] << 8) + faixas_audio_codigo_errado[2];
                         }
 
                         if (((faixas_audio_codigo_errado[5] << 8) + faixas_audio_codigo_errado[4]).Equals(0xffff))
@@ -7247,7 +7247,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_codigo_errado[5] << 8) + faixas_audio_codigo_errado[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_codigo_errado[5] << 8) + faixas_audio_codigo_errado[4];
                         }
 
                         if (((faixas_audio_codigo_errado[7] << 8) + faixas_audio_codigo_errado[6]).Equals(0xffff))
@@ -7256,7 +7256,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_codigo_errado[7] << 8) + faixas_audio_codigo_errado[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_codigo_errado[7] << 8) + faixas_audio_codigo_errado[6];
                         }
 
                         #endregion
@@ -7279,7 +7279,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_particao[1] << 8) + faixas_audio_particao[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_particao[1] << 8) + faixas_audio_particao[0];
                         }
 
                         if (((faixas_audio_particao[3] << 8) + faixas_audio_particao[2]).Equals(0xffff))
@@ -7288,7 +7288,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_particao[3] << 8) + faixas_audio_particao[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_particao[3] << 8) + faixas_audio_particao[2];
                         }
 
                         if (((faixas_audio_particao[5] << 8) + faixas_audio_particao[4]).Equals(0xffff))
@@ -7297,7 +7297,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_particao[5] << 8) + faixas_audio_particao[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_particao[5] << 8) + faixas_audio_particao[4];
                         }
 
                         if (((faixas_audio_particao[7] << 8) + faixas_audio_particao[6]).Equals(0xffff))
@@ -7306,7 +7306,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_particao[7] << 8) + faixas_audio_particao[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_particao[7] << 8) + faixas_audio_particao[6];
                         }
 
                         #endregion
@@ -7329,7 +7329,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_armada[1] << 8) + faixas_audio_armada[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_armada[1] << 8) + faixas_audio_armada[0];
                         }
 
                         if (((faixas_audio_armada[3] << 8) + faixas_audio_armada[2]).Equals(0xffff))
@@ -7338,7 +7338,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_armada[3] << 8) + faixas_audio_armada[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_armada[3] << 8) + faixas_audio_armada[2];
                         }
 
                         if (((faixas_audio_armada[5] << 8) + faixas_audio_armada[4]).Equals(0xffff))
@@ -7347,7 +7347,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_armada[5] << 8) + faixas_audio_armada[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_armada[5] << 8) + faixas_audio_armada[4];
                         }
 
                         if (((faixas_audio_armada[7] << 8) + faixas_audio_armada[6]).Equals(0xffff))
@@ -7356,7 +7356,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_armada[7] << 8) + faixas_audio_armada[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_armada[7] << 8) + faixas_audio_armada[6];
                         }
 
                         #endregion
@@ -7379,7 +7379,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_desarmada[1] << 8) + faixas_audio_desarmada[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_desarmada[1] << 8) + faixas_audio_desarmada[0];
                         }
 
                         if (((faixas_audio_desarmada[3] << 8) + faixas_audio_desarmada[2]).Equals(0xffff))
@@ -7388,7 +7388,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_desarmada[3] << 8) + faixas_audio_desarmada[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_desarmada[3] << 8) + faixas_audio_desarmada[2];
                         }
 
                         if (((faixas_audio_desarmada[5] << 8) + faixas_audio_desarmada[4]).Equals(0xffff))
@@ -7397,7 +7397,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_desarmada[5] << 8) + faixas_audio_desarmada[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_desarmada[5] << 8) + faixas_audio_desarmada[4];
                         }
 
                         if (((faixas_audio_desarmada[7] << 8) + faixas_audio_desarmada[6]).Equals(0xffff))
@@ -7406,7 +7406,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_desarmada[7] << 8) + faixas_audio_desarmada[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_desarmada[7] << 8) + faixas_audio_desarmada[6];
                         }
 
                         #endregion
@@ -7429,7 +7429,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_restauro[1] << 8) + faixas_audio_restauro[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_restauro[1] << 8) + faixas_audio_restauro[0];
                         }
 
                         if (((faixas_audio_restauro[3] << 8) + faixas_audio_restauro[2]).Equals(0xffff))
@@ -7438,7 +7438,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_restauro[3] << 8) + faixas_audio_restauro[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_restauro[3] << 8) + faixas_audio_restauro[2];
                         }
 
                         if (((faixas_audio_restauro[5] << 8) + faixas_audio_restauro[4]).Equals(0xffff))
@@ -7447,7 +7447,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_restauro[5] << 8) + faixas_audio_restauro[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_restauro[5] << 8) + faixas_audio_restauro[4];
                         }
 
                         if (((faixas_audio_restauro[7] << 8) + faixas_audio_restauro[6]).Equals(0xffff))
@@ -7456,7 +7456,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_restauro[7] << 8) + faixas_audio_restauro[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_restauro[7] << 8) + faixas_audio_restauro[6];
                         }
 
                         #endregion
@@ -7479,7 +7479,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_falha_linha_telefone[1] << 8) + faixas_audio_falha_linha_telefone[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_falha_linha_telefone[1] << 8) + faixas_audio_falha_linha_telefone[0];
                         }
 
                         if (((faixas_audio_falha_linha_telefone[3] << 8) + faixas_audio_falha_linha_telefone[2]).Equals(0xffff))
@@ -7488,7 +7488,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_falha_linha_telefone[3] << 8) + faixas_audio_falha_linha_telefone[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_falha_linha_telefone[3] << 8) + faixas_audio_falha_linha_telefone[2];
                         }
 
                         if (((faixas_audio_falha_linha_telefone[5] << 8) + faixas_audio_falha_linha_telefone[4]).Equals(0xffff))
@@ -7497,7 +7497,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_falha_linha_telefone[5] << 8) + faixas_audio_falha_linha_telefone[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_falha_linha_telefone[5] << 8) + faixas_audio_falha_linha_telefone[4];
                         }
 
                         if (((faixas_audio_falha_linha_telefone[7] << 8) + faixas_audio_falha_linha_telefone[6]).Equals(0xffff))
@@ -7506,7 +7506,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_falha_linha_telefone[7] << 8) + faixas_audio_falha_linha_telefone[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_falha_linha_telefone[7] << 8) + faixas_audio_falha_linha_telefone[6];
                         }
 
                         #endregion
@@ -7529,7 +7529,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_linha_telefone_ok[1] << 8) + faixas_audio_linha_telefone_ok[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_linha_telefone_ok[1] << 8) + faixas_audio_linha_telefone_ok[0];
                         }
 
                         if (((faixas_audio_linha_telefone_ok[3] << 8) + faixas_audio_linha_telefone_ok[2]).Equals(0xffff))
@@ -7538,7 +7538,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_linha_telefone_ok[3] << 8) + faixas_audio_linha_telefone_ok[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_linha_telefone_ok[3] << 8) + faixas_audio_linha_telefone_ok[2];
                         }
 
                         if (((faixas_audio_linha_telefone_ok[5] << 8) + faixas_audio_linha_telefone_ok[4]).Equals(0xffff))
@@ -7547,7 +7547,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_linha_telefone_ok[5] << 8) + faixas_audio_linha_telefone_ok[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_linha_telefone_ok[5] << 8) + faixas_audio_linha_telefone_ok[4];
                         }
 
                         if (((faixas_audio_linha_telefone_ok[7] << 8) + faixas_audio_linha_telefone_ok[6]).Equals(0xffff))
@@ -7556,7 +7556,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_linha_telefone_ok[7] << 8) + faixas_audio_linha_telefone_ok[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_linha_telefone_ok[7] << 8) + faixas_audio_linha_telefone_ok[6];
                         }
 
                         #endregion
@@ -7579,7 +7579,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_falha_enviar_eventos[1] << 8) + faixas_audio_falha_enviar_eventos[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_falha_enviar_eventos[1] << 8) + faixas_audio_falha_enviar_eventos[0];
                         }
 
                         if (((faixas_audio_falha_enviar_eventos[3] << 8) + faixas_audio_falha_enviar_eventos[2]).Equals(0xffff))
@@ -7588,7 +7588,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_falha_enviar_eventos[3] << 8) + faixas_audio_falha_enviar_eventos[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_falha_enviar_eventos[3] << 8) + faixas_audio_falha_enviar_eventos[2];
                         }
 
                         if (((faixas_audio_falha_enviar_eventos[5] << 8) + faixas_audio_falha_enviar_eventos[4]).Equals(0xffff))
@@ -7597,7 +7597,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_falha_enviar_eventos[5] << 8) + faixas_audio_falha_enviar_eventos[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_falha_enviar_eventos[5] << 8) + faixas_audio_falha_enviar_eventos[4];
                         }
 
                         if (((faixas_audio_falha_enviar_eventos[7] << 8) + faixas_audio_falha_enviar_eventos[6]).Equals(0xffff))
@@ -7606,7 +7606,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_falha_enviar_eventos[7] << 8) + faixas_audio_falha_enviar_eventos[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_falha_enviar_eventos[7] << 8) + faixas_audio_falha_enviar_eventos[6];
                         }
 
                         #endregion
@@ -7629,7 +7629,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_reset_sistema[1] << 8) + faixas_audio_reset_sistema[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_reset_sistema[1] << 8) + faixas_audio_reset_sistema[0];
                         }
 
                         if (((faixas_audio_reset_sistema[3] << 8) + faixas_audio_reset_sistema[2]).Equals(0xffff))
@@ -7638,7 +7638,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_reset_sistema[3] << 8) + faixas_audio_reset_sistema[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_reset_sistema[3] << 8) + faixas_audio_reset_sistema[2];
                         }
 
                         if (((faixas_audio_reset_sistema[5] << 8) + faixas_audio_reset_sistema[4]).Equals(0xffff))
@@ -7647,7 +7647,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_reset_sistema[5] << 8) + faixas_audio_reset_sistema[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_reset_sistema[5] << 8) + faixas_audio_reset_sistema[4];
                         }
 
                         if (((faixas_audio_reset_sistema[7] << 8) + faixas_audio_reset_sistema[6]).Equals(0xffff))
@@ -7656,7 +7656,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_reset_sistema[7] << 8) + faixas_audio_reset_sistema[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_reset_sistema[7] << 8) + faixas_audio_reset_sistema[6];
                         }
 
                         #endregion
@@ -7679,7 +7679,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_sistema[1] << 8) + faixas_audio_tamper_sistema[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_sistema[1] << 8) + faixas_audio_tamper_sistema[0];
                         }
 
                         if (((faixas_audio_tamper_sistema[3] << 8) + faixas_audio_tamper_sistema[2]).Equals(0xffff))
@@ -7688,7 +7688,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_sistema[3] << 8) + faixas_audio_tamper_sistema[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_sistema[3] << 8) + faixas_audio_tamper_sistema[2];
                         }
 
                         if (((faixas_audio_tamper_sistema[5] << 8) + faixas_audio_tamper_sistema[4]).Equals(0xffff))
@@ -7697,7 +7697,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_sistema[5] << 8) + faixas_audio_tamper_sistema[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_sistema[5] << 8) + faixas_audio_tamper_sistema[4];
                         }
 
                         if (((faixas_audio_tamper_sistema[7] << 8) + faixas_audio_tamper_sistema[6]).Equals(0xffff))
@@ -7706,7 +7706,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_sistema[7] << 8) + faixas_audio_tamper_sistema[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_sistema[7] << 8) + faixas_audio_tamper_sistema[6];
                         }
 
                         #endregion
@@ -7729,7 +7729,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_sirene[1] << 8) + faixas_audio_tamper_sirene[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_sirene[1] << 8) + faixas_audio_tamper_sirene[0];
                         }
 
                         if (((faixas_audio_tamper_sirene[3] << 8) + faixas_audio_tamper_sirene[2]).Equals(0xffff))
@@ -7738,7 +7738,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_sirene[3] << 8) + faixas_audio_tamper_sirene[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_sirene[3] << 8) + faixas_audio_tamper_sirene[2];
                         }
 
                         if (((faixas_audio_tamper_sirene[5] << 8) + faixas_audio_tamper_sirene[4]).Equals(0xffff))
@@ -7747,7 +7747,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_sirene[5] << 8) + faixas_audio_tamper_sirene[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_sirene[5] << 8) + faixas_audio_tamper_sirene[4];
                         }
 
                         if (((faixas_audio_tamper_sirene[7] << 8) + faixas_audio_tamper_sirene[6]).Equals(0xffff))
@@ -7756,7 +7756,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_sirene[7] << 8) + faixas_audio_tamper_sirene[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_sirene[7] << 8) + faixas_audio_tamper_sirene[6];
                         }
 
                         #endregion
@@ -7779,7 +7779,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_teclado[1] << 8) + faixas_audio_tamper_teclado[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_tamper_teclado[1] << 8) + faixas_audio_tamper_teclado[0];
                         }
 
                         if (((faixas_audio_tamper_teclado[3] << 8) + faixas_audio_tamper_teclado[2]).Equals(0xffff))
@@ -7788,7 +7788,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_teclado[3] << 8) + faixas_audio_tamper_teclado[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_tamper_teclado[3] << 8) + faixas_audio_tamper_teclado[2];
                         }
 
                         if (((faixas_audio_tamper_teclado[5] << 8) + faixas_audio_tamper_teclado[4]).Equals(0xffff))
@@ -7797,7 +7797,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_teclado[5] << 8) + faixas_audio_tamper_teclado[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_tamper_teclado[5] << 8) + faixas_audio_tamper_teclado[4];
                         }
 
                         if (((faixas_audio_tamper_teclado[7] << 8) + faixas_audio_tamper_teclado[6]).Equals(0xffff))
@@ -7806,7 +7806,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_teclado[7] << 8) + faixas_audio_tamper_teclado[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_tamper_teclado[7] << 8) + faixas_audio_tamper_teclado[6];
                         }
 
                         #endregion
@@ -7829,7 +7829,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_boas_vindas[1] << 8) + faixas_audio_boas_vindas[0] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO1"] = (faixas_audio_boas_vindas[1] << 8) + faixas_audio_boas_vindas[0];
                         }
 
                         if (((faixas_audio_boas_vindas[3] << 8) + faixas_audio_boas_vindas[2]).Equals(0xffff))
@@ -7838,7 +7838,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_boas_vindas[3] << 8) + faixas_audio_boas_vindas[2] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO2"] = (faixas_audio_boas_vindas[3] << 8) + faixas_audio_boas_vindas[2];
                         }
 
                         if (((faixas_audio_boas_vindas[5] << 8) + faixas_audio_boas_vindas[4]).Equals(0xffff))
@@ -7847,7 +7847,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_boas_vindas[5] << 8) + faixas_audio_boas_vindas[4] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO3"] = (faixas_audio_boas_vindas[5] << 8) + faixas_audio_boas_vindas[4];
                         }
 
                         if (((faixas_audio_boas_vindas[7] << 8) + faixas_audio_boas_vindas[6]).Equals(0xffff))
@@ -7856,7 +7856,7 @@ namespace ProdigyConfigToolWPF
                         }
                         else
                         {
-                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_boas_vindas[7] << 8) + faixas_audio_boas_vindas[6] + 1;
+                            databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_to_read]["AUDIO4"] = (faixas_audio_boas_vindas[7] << 8) + faixas_audio_boas_vindas[6];
                         }
 
                         #endregion
@@ -8190,1090 +8190,6 @@ namespace ProdigyConfigToolWPF
         {
             TextboxDebugHEX.Document.Blocks.Clear();
             TextboxDebugASCII.Document.Blocks.Clear();
-        }
-
-        private void GlobalSystemColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Keyswitch - Partitions Away
-                if (a.Column.Header.Equals(Properties.Resources.GlobalSystem_Keswitch_partitions_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.GlobalSystem_Keswitch_partitions_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.GlobalSystem_Keswitch_partitions_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.GlobalSystem_Keswitch_partitions_away_minus).Visibility = Visibility.Visible;
-                }
-
-                //Keyswitch - Partitions Stay
-                if (a.Column.Header.Equals(Properties.Resources.GlobalSystem_Keswitch_partitions_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.GlobalSystem_Keswitch_partitions_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.GlobalSystem_Keswitch_partitions_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.GlobalSystem_Keswitch_partitions_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //Tamper siren
-                if (a.Column.Header.Equals(Properties.Resources.SirenTamper_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.SirenTamper_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.SirenTamper_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.SirenTamper_minus).Visibility = Visibility.Visible;
-                }
-
-                //Panel tamper
-                if (a.Column.Header.Equals(Properties.Resources.PanelTamper_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.PanelTamper_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.PanelTamper_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.PanelTamper_minus).Visibility = Visibility.Visible;
-                }
-
-                //Keyswitch
-                if (a.Column.Header.Equals(Properties.Resources.Keyswitch_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Keyswitch_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Keyswitch_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Keyswitch_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm conditions
-                if (a.Column.Header.Equals(Properties.Resources.Arm_conditions_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Arm_conditions_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Arm_conditions_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Arm_conditions_minus).Visibility = Visibility.Visible;
-                }
-
-                //Installer
-                if (a.Column.Header.Equals(Properties.Resources.Installer_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Installer_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Installer_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Installer_minus).Visibility = Visibility.Visible;
-                }
-
-                //Maintenance
-                if (a.Column.Header.Equals(Properties.Resources.Maintenance_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Maintenance_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Maintenance_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Maintenance_minus).Visibility = Visibility.Visible;
-                }
-
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-
-                //Output permissions 
-                if (a.Column.Header.Equals(Properties.Resources.Output_Permissions_Call_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_Permissions_Call_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_Permissions_Call_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    globalSystemDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_Permissions_Call_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                // MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void ZonesColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //R1 Config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_r1_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r1_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_r1_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r1_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //R2 Config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_r2_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r2_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_r2_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r2_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //R3 Config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_r3_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r3_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_r3_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_r3_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Chime config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_chime_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_chime_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Zone type config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_type_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_type_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_type_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_type_minus).Visibility = Visibility.Visible;
-                }
-
-                //Bypass config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_bypass_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_bypass_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_bypass_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_bypass_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Keyswitch config
-                if (a.Column.Header.Equals(Properties.Resources.Zone_keyswitch_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_keyswitch_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_keyswitch_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_keyswitch_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Entry times
-                if (a.Column.Header.Equals(Properties.Resources.Zone_entry_times_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_entry_times_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_entry_times_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_entry_times_minus).Visibility = Visibility.Visible;
-                }
-
-                //Areas away
-                if (a.Column.Header.Equals(Properties.Resources.Zone_areas_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_areas_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_areas_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_areas_away_minus).Visibility = Visibility.Visible;
-                }
-
-                //Areas stay
-                if (a.Column.Header.Equals(Properties.Resources.Zone_areas_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_areas_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_areas_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_areas_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //Show keypad
-                if (a.Column.Header.Equals(Properties.Resources.Zone_bypass_keypads_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_bypass_keypads_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_bypass_keypads_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_bypass_keypads_minus).Visibility = Visibility.Visible;
-                }
-
-                //Chime Output
-                if (a.Column.Header.Equals(Properties.Resources.Zone_chime_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_chime_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_chime_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Sesnor watch Output
-                if (a.Column.Header.Equals(Properties.Resources.Zone_sensor_watch_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_sensor_watch_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_sensor_watch_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_sensor_watch_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Entry time Output
-                if (a.Column.Header.Equals(Properties.Resources.Zone_entry_time_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_entry_time_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_entry_time_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_entry_time_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Anti mask output
-                if (a.Column.Header.Equals(Properties.Resources.Zone_anti_mask_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_anti_mask_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_anti_mask_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_anti_mask_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //24h output
-                if (a.Column.Header.Equals(Properties.Resources.Zone_24h_alarm_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_24h_alarm_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_24h_alarm_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_24h_alarm_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Fire outputs
-                if (a.Column.Header.Equals(Properties.Resources.Zone_fire_alarm_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_fire_alarm_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_fire_alarm_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_fire_alarm_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Zone outputs
-                if (a.Column.Header.Equals(Properties.Resources.Zone_zone_alarm_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_zone_alarm_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_zone_alarm_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_zone_alarm_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Tamper outputs
-                if (a.Column.Header.Equals(Properties.Resources.Zone_tamper_alarm_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_tamper_alarm_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_tamper_alarm_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_tamper_alarm_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //24h configuration 
-                if (a.Column.Header.Equals(Properties.Resources._24h_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources._24h_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources._24h_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources._24h_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    zoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex) //this catch should be ignored
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void UsersColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //ARM/DISARM Permissions
-                if (a.Column.Header.Equals(Properties.Resources.User_arm_disarm_permissions_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_arm_disarm_permissions_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_arm_disarm_permissions_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_arm_disarm_permissions_minus).Visibility = Visibility.Visible;
-                }
-
-                //Areas
-                if (a.Column.Header.Equals(Properties.Resources.User_areas_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_areas_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_areas_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_areas_minus).Visibility = Visibility.Visible;
-                }
-
-
-                //Timezones config
-                if (a.Column.Header.Equals(Properties.Resources.User_timezone_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_timezone_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_timezone_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_timezone_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button A - Away
-                if (a.Column.Header.Equals(Properties.Resources.User_button_a_areas_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_a_areas_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_a_areas_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_a_areas_away_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button B - Away
-                if (a.Column.Header.Equals(Properties.Resources.User_button_b_areas_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_b_areas_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_b_areas_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_b_areas_away_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button C - Away
-                if (a.Column.Header.Equals(Properties.Resources.User_button_c_areas_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_c_areas_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_c_areas_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_c_areas_away_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button D - Away
-                if (a.Column.Header.Equals(Properties.Resources.User_button_d_areas_away_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_d_areas_away_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_d_areas_away_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_d_areas_away_minus).Visibility = Visibility.Visible;
-                }
-
-
-                //Button A - STAY
-                if (a.Column.Header.Equals(Properties.Resources.User_button_a_areas_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_a_areas_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_a_areas_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_a_areas_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button B - STAY
-                if (a.Column.Header.Equals(Properties.Resources.User_button_b_areas_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_b_areas_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_b_areas_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_b_areas_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button C - STAY
-                if (a.Column.Header.Equals(Properties.Resources.User_button_c_areas_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_c_areas_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_c_areas_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_c_areas_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //Button D - STAY
-                if (a.Column.Header.Equals(Properties.Resources.User_button_d_areas_stay_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_d_areas_stay_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.User_button_d_areas_stay_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.User_button_d_areas_stay_minus).Visibility = Visibility.Visible;
-                }
-
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-
-                //Output permissions 
-                if (a.Column.Header.Equals(Properties.Resources.Output_Permissions_Call_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_Permissions_Call_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_Permissions_Call_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    userDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_Permissions_Call_minus).Visibility = Visibility.Visible;
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void AreasColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Code required
-                if (a.Column.Header.Equals(Properties.Resources.Area_code_required_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_code_required_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_code_required_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_code_required_minus).Visibility = Visibility.Visible;
-                }
-
-                //Exit times
-                if (a.Column.Header.Equals(Properties.Resources.Area_exit_times_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_exit_times_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_exit_times_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_exit_times_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm away outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_arm_away_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_arm_away_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm stay outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_arm_stay_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_stay_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_arm_stay_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_stay_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //disarm away outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_disarm_away_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_away_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_disarm_away_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_away_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //disarm stay outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_disarm_stay_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_stay_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_disarm_stay_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_stay_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm away pulsed outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_arm_away_pulsed_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_pulsed_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_arm_away_pulsed_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_away_pulsed_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm stay pulsed outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_arm_stay_pulsed_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_stay_pulsed_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_arm_stay_pulsed_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arm_stay_pulsed_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Disarm away pulsed outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_disarm_away_pulsed_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_away_pulsed_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_disarm_away_pulsed_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_away_pulsed_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Disarm stay pulsed outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_disarm_stay_pulsed_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_stay_pulsed_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_disarm_stay_pulsed_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_disarm_stay_pulsed_output_minus).Visibility = Visibility.Visible;
-                }
-
-                ////Arming away pulsed outputs
-                //if (a.Column.Header.Equals(Properties.Resources.Area_arming_away_pulsed_output_minus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_away_pulsed_output_plus).Visibility = Visibility.Visible;
-                //}
-                //else if (a.Column.Header.Equals(Properties.Resources.Area_arming_away_pulsed_output_plus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_away_pulsed_output_minus).Visibility = Visibility.Visible;
-                //}
-
-                ////Arming away outputs
-                //if (a.Column.Header.Equals(Properties.Resources.Area_arming_away_output_minus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_away_output_plus).Visibility = Visibility.Visible;
-                //}
-                //else if (a.Column.Header.Equals(Properties.Resources.Area_arming_away_output_plus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_away_output_minus).Visibility = Visibility.Visible;
-                //}
-
-                ////Arming stay pulsed outputs
-                //if (a.Column.Header.Equals(Properties.Resources.Area_arming_stay_pulsed_output_minus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_stay_pulsed_output_plus).Visibility = Visibility.Visible;
-                //}
-                //else if (a.Column.Header.Equals(Properties.Resources.Area_arming_stay_pulsed_output_plus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_stay_pulsed_output_minus).Visibility = Visibility.Visible;
-                //}
-
-                ////Arming stay outputs
-                //if (a.Column.Header.Equals(Properties.Resources.Area_arming_stay_output_minus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_stay_output_plus).Visibility = Visibility.Visible;
-                //}
-                //else if (a.Column.Header.Equals(Properties.Resources.Area_arming_stay_output_plus))
-                //{
-                //    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                //    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_arming_stay_output_minus).Visibility = Visibility.Visible;
-                //}
-
-                //Away Arm beeps outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_away_arm_beeps_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_away_arm_beeps_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_away_arm_beeps_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_away_arm_beeps_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Away Disarm beeps outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_away_disarm_beeps_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_away_disarm_beeps_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_away_disarm_beeps_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_away_disarm_beeps_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Stay Arm beeps outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_stay_arm_beeps_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_stay_arm_beeps_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_stay_arm_beeps_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_stay_arm_beeps_output_minus).Visibility = Visibility.Visible;
-                }
-
-                //Stay Disarm beeps outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_stay_disarm_beeps_output_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_stay_disarm_beeps_output_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_stay_disarm_beeps_output_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_stay_disarm_beeps_output_minus).Visibility = Visibility.Visible;
-                }
-
-
-                //Timezones Arm start outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_timezones_arm_start_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_arm_start_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_timezones_arm_start_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_arm_start_minus).Visibility = Visibility.Visible;
-                }
-
-                //Timezones Disarm end outputs
-                if (a.Column.Header.Equals(Properties.Resources.Area_timezones_disarm_end_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_disarm_end_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Area_timezones_disarm_end_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Area_timezones_disarm_end_minus).Visibility = Visibility.Visible;
-                }
-
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    areaDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void TimezonesColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Week days
-                if (a.Column.Header.Equals(Properties.Resources.Timezone_week_days_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    timezoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezone_week_days_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Timezone_week_days_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    timezoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezone_week_days_minus).Visibility = Visibility.Visible;
-                }
-
-                //Exceptions config
-                if (a.Column.Header.Equals(Properties.Resources.Timezone_exceptions_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    timezoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezone_exceptions_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Timezone_exceptions_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    timezoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezone_exceptions_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void OutputsColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Time config
-                if (a.Column.Header.Equals(Properties.Resources.Output_time_configuration_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_time_configuration_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_time_configuration_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_time_configuration_minus).Visibility = Visibility.Visible;
-                }
-
-                //Chime config
-                if (a.Column.Header.Equals(Properties.Resources.Output_chime_configuration_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_chime_configuration_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_chime_configuration_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_chime_configuration_minus).Visibility = Visibility.Visible;
-                }
-
-                //Pulses config
-                if (a.Column.Header.Equals(Properties.Resources.Output_pulses_configuration_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_pulses_configuration_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_pulses_configuration_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_pulses_configuration_minus).Visibility = Visibility.Visible;
-                }
-
-                //Beeps config
-                if (a.Column.Header.Equals(Properties.Resources.Output_beeps_configuration_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_beeps_configuration_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Output_beeps_configuration_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Output_beeps_configuration_minus).Visibility = Visibility.Visible;
-                }
-
-                //Timezones config
-                if (a.Column.Header.Equals(Properties.Resources.Timezones_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezones_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Timezones_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    outputDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Timezones_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void KeypadsColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Areas config
-                if (a.Column.Header.Equals(Properties.Resources.Areas_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Areas_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Areas_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Areas_minus).Visibility = Visibility.Visible;
-                }
-
-                //Arm/disarm permission
-                if (a.Column.Header.Equals(Properties.Resources.Arm_disarm_permissions_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Arm_disarm_permissions_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Arm_disarm_permissions_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Arm_disarm_permissions_minus).Visibility = Visibility.Visible;
-                }
-
-
-                //F buttons config
-                if (a.Column.Header.Equals(Properties.Resources.F_Buttons_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.F_Buttons_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.F_Buttons_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.F_Buttons_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Beeps config
-                if (a.Column.Header.Equals(Properties.Resources.Keypads_beeps_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Keypads_beeps_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Keypads_beeps_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Keypads_beeps_minus).Visibility = Visibility.Visible;
-                }
-
-                //AUDIO tracks 
-                if (a.Column.Header.Equals(Properties.Resources.Zone_audio_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Zone_audio_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    keypadDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Zone_audio_minus).Visibility = Visibility.Visible;
-                }
-
-            }
-            catch (Exception ex)
-            {
-                //This catch should be ignored always
-                //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private void PhonesColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
-        {
-            DataGridColumnHeader a = e.OriginalSource as DataGridColumnHeader;
-
-            try
-            {
-                //Areas config
-                if (a.Column.Header.Equals(Properties.Resources.Areas_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Areas_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Areas_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Areas_minus).Visibility = Visibility.Visible;
-                }
-
-                //Kiss off config
-                if (a.Column.Header.Equals(Properties.Resources.Phone_kissof_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Phone_kissof_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Phone_kissof_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Phone_kissof_minus).Visibility = Visibility.Visible;
-                }
-
-                //Test config
-                if (a.Column.Header.Equals(Properties.Resources.Test_config_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Test_config_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Test_config_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Test_config_minus).Visibility = Visibility.Visible;
-                }
-
-                //Report config
-                if (a.Column.Header.Equals(Properties.Resources.Phone_report_minus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Phone_report_plus).Visibility = Visibility.Visible;
-                }
-                else if (a.Column.Header.Equals(Properties.Resources.Phone_report_plus))
-                {
-                    a.Column.Visibility = a.Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-                    phoneDataGrid.Columns.Single(c => c.Header.ToString() == Properties.Resources.Phone_report_minus).Visibility = Visibility.Visible;
-                }
-            }
-            catch (Exception ex)
-            {
-                // MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
         }
 
         public void QueriesTableAdapter(string connectionString)
@@ -9800,8 +8716,7 @@ namespace ProdigyConfigToolWPF
             DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
 
             waveFile.Close();//close writter
-
-
+            
             WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav");
             byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
 
@@ -9888,7 +8803,7 @@ namespace ProdigyConfigToolWPF
                 helpWindow.MainDialerTab.IsSelected = true;
                 helpWindow.Show();
             }
-            else if (MainGlobalConfigTab.IsSelected)
+            else if (MainglobalSystemPVTTab.IsSelected)
             {
                 helpWindow.MainGlobalSystemTab.IsSelected = true;
                 helpWindow.Show();
@@ -11018,8 +9933,7 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #region AUDIO
-
-
+        
         private void Load_WAV_File_Click(object sender, RoutedEventArgs e)
         {
             GetDataGridRows(AudioCustomizedDataGrid);
@@ -15337,6 +14251,11 @@ namespace ProdigyConfigToolWPF
                 Debug.Write("---------------------|-");
             }
             Debug.Write(Environment.NewLine);
+        }
+
+        private void ButtonPlayAudioConfig_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

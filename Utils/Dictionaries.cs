@@ -189,7 +189,7 @@ namespace ProdigyConfigToolWPF
             AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
             databaseDataSetAudioTableAdapter.Fill(a);
             Dictionary<long, string> Audio = new Dictionary<long, string>();
-            Audio.Add(0xffff, Properties.Resources.Keypad_function_button_none);
+            Audio.Add(0xffff, "");
             foreach (defaultDataSet.AudioRow row in a.Rows)
             {
                 try
