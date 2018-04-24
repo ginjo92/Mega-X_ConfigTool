@@ -598,7 +598,7 @@
                         <DataGrid x:Name="zoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="3"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="zoneDataGrid_MouseDoubleClick" DataContext="{StaticResource zoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="zoneDataGrid_MouseDoubleClick" DataContext="{StaticResource zoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" CanUserResize="False" IsReadOnly="True" Width="30">
                                     <DataGridTextColumn.HeaderStyle>
@@ -4073,7 +4073,7 @@
                         </StackPanel>
                         <!--DATAGRID-->
                         <DataGrid x:Name="areaDataGrid" Grid.Column="0" Grid.Row="2" ColumnHeaderHeight="75" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False"  
-                                  EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource areaViewSource}}" Margin="0" Height="Auto" Background="WhiteSmoke" CanUserDeleteRows="False"
+                                  EnableRowVirtualization="True" CanUserReorderColumns="False" ItemsSource="{Binding Source={StaticResource areaViewSource}}" Margin="0" Height="Auto" Background="WhiteSmoke" CanUserDeleteRows="False"
                                   MouseDoubleClick="areaDataGrid_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
                                 <DataGrid.Columns>
                                 <!--GENERAL SETTINGS-->
@@ -6748,7 +6748,7 @@
                         <DataGrid x:Name="userDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75"  Height="Auto" MouseDoubleClick="userDataGrid_MouseDoubleClick" DataContext="{StaticResource userViewSource}">
+                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" ColumnHeaderHeight="75"  Height="Auto" MouseDoubleClick="userDataGrid_MouseDoubleClick" DataContext="{StaticResource userViewSource}">
                             <DataGrid.Columns>
                                 <!--ID-->
                                 <DataGridTextColumn x:Name="User_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -10001,7 +10001,7 @@
                         <DataGrid x:Name="keypadDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="keypadDataGrid_MouseDoubleClick" DataContext="{StaticResource keypadViewSource}">
+                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" MouseDoubleClick="keypadDataGrid_MouseDoubleClick" DataContext="{StaticResource keypadViewSource}">
                             <DataGrid.Columns>
                                 <!--ID/NAME-->
                                 <DataGridTextColumn x:Name="Keypad_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -11349,7 +11349,7 @@
                         </StackPanel>
                         <!--DATAGRID-->
                         <DataGrid x:Name="outputDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
-                                  ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
+                                  ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
                                   VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="outputDataGrid_MouseDoubleClick" DataContext="{StaticResource outputViewSource}">
                             <DataGrid.Columns>
@@ -12212,7 +12212,7 @@
                         </StackPanel>
                         <!--DATAGRID-->
                         <DataGrid x:Name="timezoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
-                                  ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
+                                  ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
                                   VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="timezoneDataGrid_MouseDoubleClick" DataContext="{StaticResource timezoneViewSource}">
                             <DataGrid.Columns>
@@ -13093,7 +13093,7 @@
                         </StackPanel>
                         <!--DATAGRID-->
                         <DataGrid x:Name="phoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
-                                  ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
+                                  ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
                                   VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="phoneDataGrid_MouseDoubleClick" DataContext="{StaticResource phoneViewSource}">
                             <DataGrid.Columns>
@@ -14344,7 +14344,7 @@
                         <!--DATAGRID-->
                         <DataGrid x:Name="dialerDataGrid" Grid.Column="0" Grid.Row="1" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
-                                  HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
+                                  HorizontalContentAlignment="Center" CanUserReorderColumns="False" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
                                   VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="dialerDataGrid_MouseDoubleClick" DataContext="{StaticResource dialerViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="{x:Static p:Resources.Active}" Width="70" CanUserResize="False">
@@ -14567,7 +14567,7 @@
                                 <RowDefinition Height="400" />
                             </Grid.RowDefinitions>
                             <DataGrid x:Name="eventDataGrid" ColumnHeaderHeight="75" IsReadOnly="true" CanUserAddRows="false" AutoGenerateColumns="False" EnableRowVirtualization="True" Height="Auto"
-                                      ItemsSource="{Binding Source={StaticResource eventViewSource}, UpdateSourceTrigger=PropertyChanged}" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" 
+                                      ItemsSource="{Binding Source={StaticResource eventViewSource}, UpdateSourceTrigger=PropertyChanged}" CanUserReorderColumns="False" Margin="0" RowDetailsVisibilityMode="VisibleWhenSelected" 
                                       HorizontalAlignment="Left" EnableColumnVirtualization="True" VerticalContentAlignment="Stretch" VerticalScrollBarVisibility="Visible" Background="WhiteSmoke" Visibility="Collapsed">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn x:Name="Events_ID" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
@@ -14770,7 +14770,7 @@
                 </TabItem>
                 <!--AUDIO MESSAGES-->
                 <TabItem x:Name="AudioMessagesTab" Header="{x:Static p:Resources.descriptionAudio}" Visibility="Hidden" HorizontalContentAlignment="Stretch">
-                    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-90,0,0">
+                    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-40,0,0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="2*" />
                             <ColumnDefinition Width="Auto" />
@@ -16204,250 +16204,280 @@
                                                         <TextBlock Text="{Binding}" Foreground="White" HorizontalAlignment="Stretch" />
                                                     </DataTemplate>
                                                 </GroupBox.HeaderTemplate>
-                                                <Grid DataContext="{StaticResource areaViewSource}" >
-
-                                                    <GridSplitter Grid.Column="1" Width="2" HorizontalAlignment="Left" Margin="270,0,0,0" />
-                                                    <GridSplitter Grid.Column="1" Width="2" HorizontalAlignment="Left" Margin="570,0,0,0" />
-                                                    <GridSplitter Grid.Column="1" Width="2" HorizontalAlignment="Left" Margin="870,0,0,0" />
-                                                    <!--Arm Away Outputs-->
-                                                    <Grid x:Name="ArmAwayOutput1_Grid" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.ArmAway}" FontSize="15" Grid.Column="0" HorizontalAlignment="Center" Margin="0,-30,0,0" Grid.Row="0" VerticalAlignment="Top"/>
-                                                        <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Grid.Column="0"  HorizontalAlignment="Left"  Margin="3" Grid.Row="0" VerticalAlignment="Center" />
-                                                        <ComboBox x:Name="ArmAwayOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" DataContext="{StaticResource areaViewSource}" Margin="10" >
+                                                    <StackPanel x:Name="ArmAwayOutputs" Width="250">
+                                                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center">
+                                                            <Image Source="/images/armdisarm/arm_away.png" Width="35"/>
+                                                            <Label Content="{x:Static p:Resources.ArmAway}" FontSize="18" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmAwayOutputs_Normal" Margin="0,5" HorizontalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm away output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away output - 1}" Margin="130,0,10,0"/>
-
-                                                    </Grid>
-                                                    <Grid x:Name="ArmAwayOutput2_Grid" HorizontalAlignment="Left" Margin="0,60,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_2}" FontSize="12"  Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmAwayOutput3_Grid" HorizontalAlignment="Left" Margin="0,90,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmAwayOutputs_Pulsed" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byPulses}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayPulsedOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm away pulsed output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayPulsedOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Arm Stay Outputs-->
-                                                    <Grid x:Name="ArmStayOutput1_Grid" HorizontalAlignment="Left" Margin="300,30,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.ArmStay}" FontSize="15" Grid.Column="0" HorizontalAlignment="Center" Margin="0,-30,0,0" Grid.Row="0" VerticalAlignment="Top"/>
-                                                        <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away pulsed output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayPulsedOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayOutput2_Grid" HorizontalAlignment="Left" Margin="300,60,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away pulsed output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmAwayOutputs_Beeps" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byBeeps}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayBeepsOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm away beeps output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayBeepsOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayOutput3_Grid" HorizontalAlignment="Left" Margin="300,90,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away beeps output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmAwayBeepsOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Away Outputs-->
-                                                    <Grid x:Name="DisarmAwayOutput1_Grid" HorizontalAlignment="Left" Margin="600,30,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.DisarmAway}" FontSize="15" Grid.Column="0" HorizontalAlignment="Center" Margin="0,-30,0,0" Grid.Row="0" VerticalAlignment="Top"/>
-                                                        <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm away beeps output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                    <StackPanel x:Name="ArmStayOutputs"  Width="250" >
+                                                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center">
+                                                            <Image Source="/images/armdisarm/arm_stay.png" Width="35"/>
+                                                            <Label Content="{x:Static p:Resources.ArmStay}" FontSize="18" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmStayOutputs_Normal" Margin="0,5" HorizontalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm stay output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm away output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayOutput2_Grid" HorizontalAlignment="Left" Margin="600,60,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Grid.Column="0"  HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm away output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayOutput3_Grid" HorizontalAlignment="Left" Margin="600,90,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmStayOutputs_Pulsed" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byPulses}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayPulsedOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm stay pulsed output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayPulsedOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm away output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Stay Outputs-->
-                                                    <Grid x:Name="DisarmStayOutput1_Grid" HorizontalAlignment="Left" Margin="900,30,0,20" VerticalAlignment="Top" >
-                                                        <Label Content="{x:Static p:Resources.DisarmStay}" FontSize="15" Grid.Column="0" HorizontalAlignment="Center" Margin="0,-30,0,0" Grid.Row="0" VerticalAlignment="Top"/>
-                                                        <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay pulsed output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayPulsedOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm stay output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayOutput2_Grid" HorizontalAlignment="Left" Margin="900,60,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay pulsed output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="ArmStayOutputs_Beeps" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byBeeps}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayBeepsOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Arm stay beeps output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayBeepsOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm stay output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayOutput3_Grid" HorizontalAlignment="Left" Margin="900,90,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay beeps output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="ArmStayBeepsOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm stay output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Arm Away Pulsed Outputs-->
-                                                    <Grid x:Name="ArmAwayPulsedOutput1_Grid" HorizontalAlignment="Left" Margin="0,150,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayPulsedOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Arm stay beeps output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                    <StackPanel x:Name="DisarmAwayOutputs"  Width="250">
+                                                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center">
+                                                            <Image Source="/images/armdisarm/disarm_away.png" Width="35"/>
+                                                            <Label Content="{x:Static p:Resources.DisarmAway}" FontSize="18" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmAwayOutputs_Normal" Margin="0,5" HorizontalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm away output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away pulsed output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-
-                                                    <Grid x:Name="ArmAwayPulsedOutput2_Grid" HorizontalAlignment="Left" Margin="0,180,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_2}" FontSize="12" Grid.Column="0"  HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayPulsedOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away pulsed output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmAwayPulsedOutput3_Grid" HorizontalAlignment="Left" Margin="0,210,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayPulsedOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmAwayOutputs_Pulsed" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byPulses}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayPulsedOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm away pulsed output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayPulsedOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm away pulsed output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Arm Stay Pulsed Outputs-->
-                                                    <Grid x:Name="ArmStayPulsedOutput1_Grid" HorizontalAlignment="Left" Margin="300,150,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayPulsedOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away pulsed output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayPulsedOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay pulsed output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayPulsedOutput2_Grid" HorizontalAlignment="Left" Margin="300,180,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayPulsedOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away pulsed output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmAwayOutputs_Beeps" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byBeeps}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayBeepsOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm away beeps output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayBeepsOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay pulsed output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayPulsedOutput3_Grid" HorizontalAlignment="Left" Margin="300,210,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayPulsedOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away beeps output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmAwayBeepsOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Arm stay pulsed output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Away Pulsed Outputs-->
-                                                    <Grid x:Name="DisarmAwayPulsedOutput1_Grid" HorizontalAlignment="Left" Margin="600,150,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayPulsedOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm away beeps output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                    <StackPanel x:Name="DisarmStayOutputs"  Width="250">
+                                                        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Center">
+                                                            <Image Source="/images/armdisarm/disarm_stay.png" Width="35"/>
+                                                            <Label Content="{x:Static p:Resources.DisarmStay}" FontSize="18" VerticalAlignment="Center"/>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmStayOutputs_Normal" Margin="0,5" HorizontalAlignment="Center">
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm stay output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed away output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayPulsedOutput2_Grid" HorizontalAlignment="Left" Margin="600,180,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayPulsedOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm stay output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed away output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayPulsedOutput3_Grid" HorizontalAlignment="Left" Margin="600,210,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayPulsedOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm stay output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmStayOutputs_Pulsed" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byPulses}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayPulsedOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm stay pulsed output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayPulsedOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed away output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Stay Pulsed Outputs-->
-                                                    <Grid x:Name="DisarmStayPulsedOutput1_Grid" HorizontalAlignment="Left" Margin="900,150,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayPulsedOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm stay pulsed output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayPulsedOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed stay output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayPulsedOutput2_Grid" HorizontalAlignment="Left" Margin="900,180,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayPulsedOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm stay pulsed output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <StackPanel x:Name="DisarmStayOutputs_Beeps" Margin="0,5" HorizontalAlignment="Center">
+                                                            <Label Content="{x:Static p:Resources.byBeeps}" FontSize="14" VerticalAlignment="Center"/>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_1}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayBeepsOutput1_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
+				                                                        SelectedValue="{Binding Disarm stay beeps output - 1}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_2}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayBeepsOutput2_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed stay output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayPulsedOutput3_Grid" HorizontalAlignment="Left" Margin="900,210,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Pulses_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayPulsedOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
+				                                                    SelectedValue="{Binding Disarm stay beeps output - 2}" />
+                                                            </StackPanel>
+                                                            <StackPanel Orientation="Horizontal" >
+                                                                <Label Content="{x:Static p:Resources.Option_3}" FontSize="12" Margin="5" VerticalAlignment="Center" />
+                                                                <ComboBox x:Name="DisarmStayBeepsOutput3_ComboBox"  ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
 				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Disarm pulsed stay output - 3}" Margin="130,0,10,0"/>
-
-
-                                                    </Grid>
-
-                                                    <!--Arm Away Beep Outputs-->
-                                                    <Grid x:Name="ArmAwayBeepOutput1_Grid" HorizontalAlignment="Left" Margin="0,270,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayBeepOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away arm beeps output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmAwayBeepOutput2_Grid" HorizontalAlignment="Left" Margin="0,300,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_2}" FontSize="12" Grid.Column="0"  HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayBeepOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away arm beeps output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmAwayBeepOutput3_Grid" HorizontalAlignment="Left" Margin="0,330,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmAwayBeepOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away arm beeps output - 3}" Margin="130,0,10,0"/>
-
-                                                    </Grid>
-                                                    <!--Arm Stay Beep Outputs-->
-                                                    <Grid x:Name="ArmStayBeepOutput1_Grid" HorizontalAlignment="Left" Margin="300,270,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayBeepOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay arm beeps output - 1 }" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayBeepOutput2_Grid" HorizontalAlignment="Left" Margin="300,300,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayBeepOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay arm beeps output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="ArmStayBeepOutput3_Grid" HorizontalAlignment="Left" Margin="300,330,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="ArmStayBeepOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay arm beeps output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Away Beep Outputs-->
-                                                    <Grid x:Name="DisarmAwayBeepOutput1_Grid" HorizontalAlignment="Left" Margin="600,270,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayBeepOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away disarm beeps output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayBeepOutput2_Grid" HorizontalAlignment="Left" Margin="600,300,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayBeepOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away disarm beeps output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmAwayBeepOutput3_Grid" HorizontalAlignment="Left" Margin="600,330,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmAwayBeepOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Away disarm beeps output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <!--Disarm Stay Beep Outputs-->
-                                                    <Grid x:Name="DisarmStayBeepOutput1_Grid" HorizontalAlignment="Left" Margin="900,270,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_1}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayBeepOutput1_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay disarm beeps output - 1}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayBeepOutput2_Grid" HorizontalAlignment="Left" Margin="900,300,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_2}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayBeepOutput2_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay disarm beeps output - 2}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                    <Grid x:Name="DisarmStayBeepOutput3_Grid" HorizontalAlignment="Left" Margin="900,330,0,20" VerticalAlignment="Top">
-                                                        <Label Content="{x:Static p:Resources.Option_Beeps_3}" FontSize="12" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-                                                        <ComboBox x:Name="DisarmStayBeepOutput3_ComboBox"  Grid.Column="1" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
-				                                                    DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25"
-				                                                    SelectedValue="{Binding Stay disarm beeps output - 3}" Margin="130,0,10,0"/>
-                                                    </Grid>
-                                                </Grid>
+				                                                    SelectedValue="{Binding Disarm stay beeps output - 3}" />
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                </StackPanel>
                                             </GroupBox>
                                         </StackPanel>
                                     </ScrollViewer>
@@ -16739,94 +16769,93 @@
                                 </TabItem.HeaderTemplate>
                                 <StackPanel Margin="-8,-10,0,0">
                                     <GroupBox x:Name="AreasandKeypadsgroupBox" Header="{x:Static p:Resources.Areas}" Background="Tan" BorderBrush="Gray" Foreground="Black">
-                                        <Grid x:Name="grid1" DataContext="{StaticResource zoneViewSource}">
-                                            <Grid HorizontalAlignment="Center" Margin="100,20,0,20" VerticalAlignment="Top" >
-                                                <Label Content="A1" Margin="-350,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A2" Margin="-250,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A3" Margin="-150,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A4" Margin="-50,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A5" Margin="50,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A6" Margin="150,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A7" Margin="250,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                                <Label Content="A8" Margin="350,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
-                                            </Grid>
-
-                                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="100,20,0,20">
+                                        <StackPanel x:Name="grid1" DataContext="{StaticResource zoneViewSource}">
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" >
+                                                <Label Content="1" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="2" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="3" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="4" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="5" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="6" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="7" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                                <Label Content="8" HorizontalAlignment="Center" FontSize="14" Margin="15"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-65,-20,0,0">
                                                 <!--Area Away-->
-                                                <Label Content="Area away" Margin="-500,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
+                                                <Label Content="{x:Static p:Resources.Away}" HorizontalAlignment="Center" FontSize="14" Width="50" Margin="10,5"/>
                                                 <CheckBox x:Name="area_away_1CheckBox" IsChecked="{Binding Area away 1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-350,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_2CheckBox" IsChecked="{Binding Area away 2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-250,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_3CheckBox" IsChecked="{Binding Area away 3, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                      Margin="-150,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_4CheckBox" IsChecked="{Binding Area away 4, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-50,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_5CheckBox" IsChecked="{Binding Area away 5, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                      Margin="50,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_6CheckBox" IsChecked="{Binding Area away 6, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                      Margin="150,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_7CheckBox" IsChecked="{Binding Area away 7, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                      Margin="250,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_away_8CheckBox" IsChecked="{Binding Area away 8, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="350,0,0,0" HorizontalAlignment="Center"/>
-                                            </Grid>
-                                            <Grid HorizontalAlignment="Center" Margin="100,100,0,20"  VerticalAlignment="Center">
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-65,0,0,0">
                                                 <!--Area Stay-->
-                                                <Label Content="Area Stay" Margin="-500,0,0,0" HorizontalAlignment="Center" FontSize="14"/>
+                                                <Label Content="{x:Static p:Resources.Stay}" HorizontalAlignment="Center" FontSize="14" Width="50" Margin="10,5"/>
                                                 <CheckBox x:Name="area_stay_1CheckBox" IsChecked="{Binding Area stay 1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-350,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_2CheckBox" IsChecked="{Binding Area stay 2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-250,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_3CheckBox" IsChecked="{Binding Area stay 3, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-150,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_4CheckBox" IsChecked="{Binding Area stay 4, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="-50,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_5CheckBox" IsChecked="{Binding Area stay 5, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="50,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_6CheckBox" IsChecked="{Binding Area stay 6, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
-                                                      Margin="150,0,0,0" HorizontalAlignment="Center" />
+                                                      HorizontalAlignment="Center" Margin="12,5" />
                                                 <CheckBox x:Name="area_stay_7CheckBox" IsChecked="{Binding Area stay 7, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="250,0,0,0" HorizontalAlignment="Center"/>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
                                                 <CheckBox x:Name="area_stay_8CheckBox" IsChecked="{Binding Area stay 8, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                      Margin="350,0,0,0" HorizontalAlignment="Center"/>
-                                            </Grid>
+                                                      HorizontalAlignment="Center" Margin="12,5"/>
+                                            </StackPanel>
 
-                                        </Grid>
+                                        </StackPanel>
                                     </GroupBox>
                                     <GroupBox x:Name="showByPassGroupBox" Header="{x:Static p:Resources.Keypads}" Background="Tan" BorderBrush="Gray" Foreground="Black" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top">
-                                        <Grid x:Name="grid_" HorizontalAlignment="Center">
-                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,20,0,20">
-                                                <Grid>
-                                                    <CheckBox Name="ckZoneKeypadVisible" IsChecked="{Binding Keypad visible, UpdateSourceTrigger=PropertyChanged}" Margin="500,0,0,0" 
-                                                          FlowDirection="LeftToRight" Content="{x:Static p:Resources.Zone_Keypad_visible}"
+                                        <Grid x:Name="grid_" HorizontalAlignment="Center" Margin="-10">
+                                            <StackPanel HorizontalAlignment="Center" Margin="20" VerticalAlignment="Top">
+                                                <CheckBox Name="ckZoneKeypadVisible" IsChecked="{Binding Keypad visible, UpdateSourceTrigger=PropertyChanged}" Margin="0,15"
+                                                          FlowDirection="LeftToRight" Content="{x:Static p:Resources.Zone_Keypad_visible}" HorizontalAlignment="Center"
                                                           Click="ckZoneKeypadVisible_Click"/>
+                                                <StackPanel Orientation="Horizontal" Margin="0,15">
 
                                                     <CheckBox Name="ckBypass1" IsChecked="{Binding Show keypad 1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="1"
-                                                          HorizontalAlignment="Center" Margin="0,0,500,0"/>
+                                                          FlowDirection="RightToLeft"  Content="1" IsEnabled="False"
+                                                          HorizontalAlignment="Center" Margin="12,0"/>
                                                     <CheckBox Name="ckBypass2" IsChecked="{Binding Show keypad 2, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="2"
-                                                          HorizontalAlignment="Center" Margin="0,0,400,0"/>
+                                                          FlowDirection="RightToLeft"  Content="2" IsEnabled="False"
+                                                          HorizontalAlignment="Center" Margin="12,0"/>
                                                     <CheckBox Name="ckBypass3" IsChecked="{Binding Show keypad 3, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="3"
-                                                          HorizontalAlignment="Center" Margin="0,0,300,0"/>
+                                                          FlowDirection="RightToLeft"  Content="3" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
                                                     <CheckBox Name="ckBypass4" IsChecked="{Binding Show keypad 4, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="4"
-                                                          HorizontalAlignment="Center" Margin="0,0,200,0"/>
+                                                          FlowDirection="RightToLeft"  Content="4" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
                                                     <CheckBox Name="ckBypass5" IsChecked="{Binding Show keypad 5, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="5"
-                                                          HorizontalAlignment="Center" Margin="0,0,100,0"/>
+                                                          FlowDirection="RightToLeft"  Content="5" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
                                                     <CheckBox Name="ckBypass6" IsChecked="{Binding Show keypad 6, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="6"
-                                                          HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                                                          FlowDirection="RightToLeft"  Content="6" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
                                                     <CheckBox Name="ckBypass7" IsChecked="{Binding Show keypad 7, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="7"
-                                                          HorizontalAlignment="Center" Margin="0,0,-100,0"/>
+                                                          FlowDirection="RightToLeft"  Content="7" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
                                                     <CheckBox Name="ckBypass8" IsChecked="{Binding Show keypad 8, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                                                          FlowDirection="LeftToRight"  Content="8"
-                                                          HorizontalAlignment="Center" Margin="0,0,-200,0"/>
-                                                </Grid>
+                                                          FlowDirection="RightToLeft"  Content="8" IsEnabled="False"
+                                                          HorizontalAlignment="Center"  Margin="12,0"/>
+                                                </StackPanel>
                                             </StackPanel>
                                         </Grid>
                                     </GroupBox>
@@ -18235,7 +18264,7 @@
                     </Grid>
                 </TabItem>
                 <!--KEYPADS PRIVATE-->
-                <TabItem x:Name="MainKeypadsPVTTab" Header="Keypads" Visibility="Hidden" DataContext="{StaticResource timezoneViewSource}">
+                <TabItem x:Name="MainKeypadsPVTTab" Header="Keypads" Visibility="Hidden" DataContext="{StaticResource keypadViewSource}">
                     <Grid Margin="0,-60,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"/>
@@ -18709,7 +18738,7 @@
                     </Grid>
                 </TabItem>
                 <!--OUTPUTS PRIVATE-->
-                <TabItem x:Name="MainOutputsPVTTab" Header="Outputs" Visibility="Hidden" >
+                <TabItem x:Name="MainOutputsPVTTab" Header="Outputs" Visibility="Hidden" DataContext="{StaticResource outputViewSource}">
                     <Grid Margin="0,-60,0,0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="100"/>
@@ -19564,60 +19593,6 @@
                 </DockPanel>
             </StatusBar>
         </DockPanel>
-        <!--HELP FLYOUT--><!--
-        <Controls:Flyout x:Name="HelpFlyout" HorizontalContentAlignment="Right" Background="LightGray" Visibility="Hidden"
-                         BorderBrush="Gray" BorderThickness="1"
-                         Opacity="0.85"  HorizontalAlignment="Right"
-                         Margin="180,0,0,60" VerticalAlignment="Bottom"
-                         Position="Bottom" Width="700" CloseButtonVisibility="Collapsed"
-                         IsOpen="False" FontWeight="Bold"
-                         Height="150" TitleVisibility="Collapsed">
-        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Bottom" LastChildFill="True">
-                <StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                        <Image x:Name="HelpFlyoutImage" Source="/images/buttons/next.png" Width="20" Height="20" MouseLeftButtonDown="HelpFlyoutImage_MouseLeftButtonDown" Margin="28,0,0,0">
-                            <Image.RenderTransform>
-                                <RotateTransform Angle="90" />
-                            </Image.RenderTransform>
-                        </Image>
-                       
-                        <TextBlock Text="{x:Static p:Resources.Help}" Margin="-10,10" Foreground="Black"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="10,0,0,10">
-                        <RichTextBox x:Name="HelpRichTextBox_1" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
-                            <FlowDocument x:Name="Help_1">
-                                <Paragraph FontSize="12">
-                                    <Run  x:Name="Help_1_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12" Foreground="Black"/>
-                                </Paragraph>
-                                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
-                                    <Run x:Name="Help_1_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
-                        <RichTextBox x:Name="HelpRichTextBox_2" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
-                            <FlowDocument x:Name="Help_2">
-                                <Paragraph FontSize="12">
-                                    <Run  x:Name="Help_2_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12" Foreground="Black"/>
-                                </Paragraph>
-                                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
-                                    <Run x:Name="Help_2_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
-                        <RichTextBox x:Name="HelpRichTextBox_3" Background="WhiteSmoke" Margin="10,0" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Center" Width="205" Height="100" BorderBrush="Gray" BorderThickness="1">
-                            <FlowDocument x:Name="Help_3">
-                                <Paragraph FontSize="12">
-                                    <Run  x:Name="Help_3_P1" Text="{x:Static p:Resources.Help_Login_H1_P1}" FontWeight="Bold" FontSize="12" Foreground="Black"/>
-                                </Paragraph>
-                                <Paragraph FontStyle="Italic" TextAlignment="Left" FontSize="12" Foreground="#FF8D3939" >
-                                    <Run x:Name="Help_3_P2" Text="{x:Static p:Resources.Help_Login_H1_P2}"/>
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
-                    </StackPanel>
-                </StackPanel>
-            </DockPanel>
-        </Controls:Flyout>-->
         <!--FLYOUT-->
         <Controls:Flyout x:Name="FlyCom" FontWeight="Bold"
                          Background="LightGray" Opacity="0.85" BorderBrush="Gray" BorderThickness="1"

@@ -2775,4 +2775,10 @@
   <data name="WritingAudioConfig" xml:space="preserve">
     <value>A escrever configurações dos audios</value>
   </data>
+  <data name="byBeeps" xml:space="preserve">
+    <value>Por Beeps</value>
+  </data>
+  <data name="byPulses" xml:space="preserve">
+    <value>Por Impulsos</value>
+  </data>
 </root>

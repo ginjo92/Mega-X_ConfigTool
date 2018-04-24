@@ -611,35 +611,7 @@ namespace ProdigyConfigToolWPF
                 this.FlyCom.IsOpen = true;
             }
         }
-
-        private async void UploadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, String.Empty);
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-            }
-        }
-
-        private async void DownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, String.Empty);
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-            }
-        }
-
+        
         internal async void RequestDataFromProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
             Protocol.Zones zones = new Protocol.Zones();
@@ -8702,58 +8674,7 @@ namespace ProdigyConfigToolWPF
             MenuItemSave.IsEnabled = databaseDataSet.HasChanges();
         }
 
-        void waveSource_DataAvailable(object sender, WaveInEventArgs e)
-        {
-            if (waveFile != null)
-            {
-                waveFile.Write(e.Buffer, 0, e.BytesRecorded);
-                waveFile.Flush();
-            }
-        }
-
-        void waveSource_RecordingStopped(object sender, StoppedEventArgs e)
-        {
-            DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
-
-            waveFile.Close();//close writter
-            
-            WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav");
-            byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
-
-            temporary_file.Read(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length);
-
-
-            using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw", FileMode.Create))
-            {
-
-
-
-                audio_stream.Write(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length); // Requires System.IO
-                                                                                          ////fs.Close();
-                                                                                          //WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
-                                                                                          //RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(fs, waveFormat);
-                                                                                          //WaveOut waveOut = new WaveOut();
-                                                                                          //waveOut.Init(rawSource);
-                audio_stream.Close();                                                               //waveOut.Play();
-                temporary_file.Close();
-
-                File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav"));
-
-            }
-
-            if (waveSource != null)
-            {
-                waveSource.Dispose();
-                waveSource = null;
-            }
-
-            if (waveFile != null)
-            {
-                waveFile.Dispose();
-                waveFile = null;
-            }
-        }
-
+      
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
             Help helpWindow = new Help();
@@ -9261,7 +9182,7 @@ namespace ProdigyConfigToolWPF
         }
 
         #endregion
-
+       
         private void RestoreDefaultMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var messageBox = MessageBox.Show(Properties.Resources.QuestionRestoreDefaultsExtended, "", MessageBoxButton.YesNo);
@@ -9660,280 +9581,165 @@ namespace ProdigyConfigToolWPF
         }
 
         #region DOWNLOAD/UPLOAD TILES
-        private async void ZonesDownloadTile_Click(object sender, RoutedEventArgs e)
+        private async void isDownloadORUploadClick(Boolean isUpload, string structure)
         {
             if (this.serialPort.IsOpen)
             {
-                DataChoose data_choose = new DataChoose(this, false, "zones");
+                DataChoose data_choose = new DataChoose(this, isUpload, structure);
                 data_choose.Show();
                 this.IsEnabled = false;
             }
             else
             {
                 await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
             }
         }
 
-        private async void ZonesUploadTile_Click(object sender, RoutedEventArgs e)
+        private void DownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "zones");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, String.Empty);
+        }
+        private void UploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, String.Empty);
+        }
+        
+        private void ZonesDownloadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(false, "zones");
+        }
+        private void ZonesUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "zones");
         }
 
-        private async void AreasUploadTile_Click(object sender, RoutedEventArgs e)
+        private void AreasDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "areas");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "areas");
+        }
+        private void AreasUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "areas");
+        }
+               
+        private void KeypadsDownloadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(false, "keypads");
+        }
+        private void KeypadsUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "keypads");
         }
 
-        private async void AreasDownloadTile_Click(object sender, RoutedEventArgs e)
+        private void OutputsDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "areas");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "outputs");
+        }
+        private void OutputsUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "outputs");
         }
 
-        private async void KeypadsDownloadTile_Click(object sender, RoutedEventArgs e)
+        private void UsersDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "keypads");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "users");
+        }
+        private void UsersUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "users");
         }
 
-        private async void KeypadsUploadTile_Click(object sender, RoutedEventArgs e)
+        private void TimezonesDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "keypads");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "timezones");
+        }
+        private void TimezonesUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "timezones");
+        }
+                
+        private void PhonesDownloadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(false, "phones");
+        }
+        private void PhonesUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "phones");
         }
 
-        private async void OutputsDownloadTile_Click(object sender, RoutedEventArgs e)
+        private void DialerDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "outputs");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "dialer");
+        }
+        private void DialerUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "dialer");
         }
 
-        private async void OutputsUploadTile_Click(object sender, RoutedEventArgs e)
+        private void SystemDownloadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "outputs");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(false, "system");
         }
-
-        private async void UsersUploadTile_Click(object sender, RoutedEventArgs e)
+        private void SystemUploadTile_Click(object sender, RoutedEventArgs e)
         {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "users");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void UsersDownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "users");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-
-        }
-
-        private async void TimezonesUploadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "timezones");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void TimezonesDownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "timezones");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void PhonesUploadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "phones");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void PhonesDownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "phones");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void DialerUploadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "dialer");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void DialerDownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "dialer");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void SystemUploadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, true, "system");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
-        }
-
-        private async void SystemDownloadTile_Click(object sender, RoutedEventArgs e)
-        {
-            if (this.serialPort.IsOpen)
-            {
-                DataChoose data_choose = new DataChoose(this, false, "system");
-                data_choose.Show();
-                this.IsEnabled = false;
-            }
-            else
-            {
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.PleaseConnectFirst, "");
-                //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-            }
+            isDownloadORUploadClick(true, "system");
         }
         #endregion
 
         #region AUDIO
-        
+
+        void waveSource_DataAvailable(object sender, WaveInEventArgs e)
+        {
+            if (waveFile != null)
+            {
+                waveFile.Write(e.Buffer, 0, e.BytesRecorded);
+                waveFile.Flush();
+            }
+        }
+
+        void waveSource_RecordingStopped(object sender, StoppedEventArgs e)
+        {
+            DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
+
+            waveFile.Close();//close writter
+
+            WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav");
+            byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
+
+            temporary_file.Read(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length);
+
+
+            using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw", FileMode.Create))
+            {
+
+
+
+                audio_stream.Write(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length); // Requires System.IO
+                                                                                          ////fs.Close();
+                                                                                          //WaveFormat waveFormat = new WaveFormat(8000, 8, 1); // Same format.
+                                                                                          //RawSourceWaveStream rawSource = new NAudio.Wave.RawSourceWaveStream(fs, waveFormat);
+                                                                                          //WaveOut waveOut = new WaveOut();
+                                                                                          //waveOut.Init(rawSource);
+                audio_stream.Close();                                                               //waveOut.Play();
+                temporary_file.Close();
+
+                File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav"));
+
+            }
+
+            if (waveSource != null)
+            {
+                waveSource.Dispose();
+                waveSource = null;
+            }
+
+            if (waveFile != null)
+            {
+                waveFile.Dispose();
+                waveFile = null;
+            }
+        }
+
         private void Load_WAV_File_Click(object sender, RoutedEventArgs e)
         {
             GetDataGridRows(AudioCustomizedDataGrid);
@@ -10004,9 +9810,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
-
-                //AudioDT.DescriptionColumn.Equals(row["Description"].ToString());
-                //AudioDT.DescriptionColumn.Equals(row["Description"].ToString());
+                
             }
 
         }
@@ -11444,154 +11248,65 @@ namespace ProdigyConfigToolWPF
         
         #region Index MouseDoubleClick
 
-        private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void SelectPVT_onMouseDoubleClick(DataGrid dg, TabItem ti, TabItem ti_not, string vs_string, TreeViewItem tvi)
         {
-            int row = zoneDataGrid.SelectedIndex;
-            if(row!=0)
-            { 
-                int column = zoneDataGrid.CurrentColumn.DisplayIndex;
+            int row = dg.SelectedIndex;
+            System.Windows.Data.CollectionViewSource vs = ((System.Windows.Data.CollectionViewSource)(this.FindResource(vs_string)));
+           
+                int column = dg.CurrentColumn.DisplayIndex;
 
                 if (column.Equals(0))
                 {
-                    MainTabControl.SelectedItem = MainZonePVTTab;
-                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
-                    zoneViewSource.View.MoveCurrentToPosition(zoneDataGrid.SelectedIndex);
-                }
+                    MainTabControl.SelectedItem = ti;
+                    vs.View.MoveCurrentToPosition(dg.SelectedIndex);
 
-                TreeviewZones.IsExpanded = true;
-                (TreeviewZones.Items[zoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+                    tvi.IsExpanded = true;
+                    (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = true;
+                }
+                else
+                {
+                    MainTabControl.SelectedItem = ti_not;
+                    vs.View.MoveCurrentToPosition(dg.SelectedIndex);
+
+                    tvi.IsExpanded = false;
+                    (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = false;
+                }
+           
+        }
+
+        private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            SelectPVT_onMouseDoubleClick(zoneDataGrid, MainZonePVTTab, MainZonesTab, "zoneViewSource", TreeviewZones);
         }
 
         private void areaDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = areaDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = areaDataGrid.CurrentColumn.DisplayIndex;
-
-                int width = (int)areaDataGrid.Width;
-                int height = (int)areaDataGrid.Height;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainAreaPVTTab;
-                    System.Windows.Data.CollectionViewSource areaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
-                    areaViewSource.View.MoveCurrentToPosition(areaDataGrid.SelectedIndex);
-                }
-
-                TreeviewAreas.IsExpanded = true;
-                (TreeviewAreas.Items[areaDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(areaDataGrid, MainAreaPVTTab, MainAreasTab, "areaViewSource", TreeviewAreas);
         }
 
         private void userDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = userDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = userDataGrid.CurrentColumn.DisplayIndex;
-
-                int width = (int)userDataGrid.Width;
-                int height = (int)userDataGrid.Height;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainUsersPVTTab;
-                    System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
-                    userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
-                }
-
-                TreeviewUsers.IsExpanded = true;
-                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(userDataGrid, MainUsersPVTTab, MainUsersTab, "userViewSource", TreeviewUsers);
         }
 
         private void keypadDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = keypadDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = keypadDataGrid.CurrentColumn.DisplayIndex;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainKeypadsPVTTab;
-                    System.Windows.Data.CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
-                    keypadViewSource.View.MoveCurrentToPosition(keypadDataGrid.SelectedIndex);
-                }
-                else
-                {
-
-                }
-
-                TreeviewKeypads.IsExpanded = true;
-                (TreeviewKeypads.Items[keypadDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(keypadDataGrid, MainKeypadsPVTTab, MainKeypadsTab, "keypadViewSource", TreeviewKeypads);
         }
 
         private void outputDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = outputDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = outputDataGrid.CurrentColumn.DisplayIndex;
-
-                int width = (int)outputDataGrid.Width;
-                int height = (int)outputDataGrid.Height;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainOutputsPVTTab;
-                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
-                    outputViewSource.View.MoveCurrentToPosition(outputDataGrid.SelectedIndex);
-                }
-
-                TreeviewOutputs.IsExpanded = true;
-                (TreeviewOutputs.Items[outputDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(outputDataGrid, MainOutputsPVTTab, MainOutputsTab, "outputViewSource", TreeviewOutputs);
         }
 
         private void timezoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = timezoneDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = timezoneDataGrid.CurrentColumn.DisplayIndex;
-
-                int width = (int)timezoneDataGrid.Width;
-                int height = (int)timezoneDataGrid.Height;
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainTimezonesPVTTab;
-                    System.Windows.Data.CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
-                    timezoneViewSource.View.MoveCurrentToPosition(timezoneDataGrid.SelectedIndex);
-                }
-
-                TreeviewTimezones.IsExpanded = true;
-                (TreeviewTimezones.Items[timezoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(timezoneDataGrid, MainTimezonesPVTTab, MainTimezonesTab, "timezoneViewSource", TreeviewTimezones);
         }
 
         private void phoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = phoneDataGrid.SelectedIndex;
-            if (row != 0)
-            {
-                int column = phoneDataGrid.CurrentColumn.DisplayIndex;
-
-
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = MainPhonesPVTTab;
-                    System.Windows.Data.CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
-                    phoneViewSource.View.MoveCurrentToPosition(phoneDataGrid.SelectedIndex);
-                }
-
-                TreeviewPhones.IsExpanded = true;
-                (TreeviewPhones.Items[phoneDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
+            SelectPVT_onMouseDoubleClick(phoneDataGrid, MainPhonesPVTTab, MainPhonesTab, "phoneViewSource", TreeviewPhones);
         }
 
         #endregion
@@ -11701,11 +11416,10 @@ namespace ProdigyConfigToolWPF
             TreeviewPhones.IsExpanded = false;
         }
 
-        #region Areas
-        private void MainArea_button_next_Click(object sender, RoutedEventArgs e)
+        private void Button_Next_Click(TreeViewItem tvi)
         {
             int index = 0;
-            foreach (TreeViewItem i in TreeviewAreas.Items)
+            foreach (TreeViewItem i in tvi.Items)
             {
                 if (i.Equals(MainTreeView.SelectedItem))
                 {
@@ -11713,13 +11427,13 @@ namespace ProdigyConfigToolWPF
                 }
                 index++;
             }
-            ((TreeviewAreas).Items[(index + 1) % (TreeviewAreas as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            ((tvi).Items[(index + 1) % (tvi as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
         }
-        private void MainArea_button_back_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Back_Click(TreeViewItem tvi)
         {
             int index = 0;
-            foreach (TreeViewItem i in TreeviewAreas.Items)
+            foreach (TreeViewItem i in tvi.Items)
             {
                 if (i.Equals(MainTreeView.SelectedItem))
                 {
@@ -11728,11 +11442,20 @@ namespace ProdigyConfigToolWPF
                 index++;
             }
             if (index > 0)
-                ((TreeviewAreas).Items[index - 1] as TreeViewItem).IsSelected = true;
+                ((tvi).Items[index - 1] as TreeViewItem).IsSelected = true;
             else if (index == 0)
-                ((TreeviewAreas).Items[(Constants.KP_MAX_AREAS - 1) % (TreeviewAreas as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
+                ((tvi).Items[(Constants.KP_MAX_AREAS - 1) % (tvi as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
 
+        }
 
+        #region Areas
+        private void MainArea_button_next_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Next_Click(TreeviewAreas);
+        }
+        private void MainArea_button_back_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Back_Click(TreeviewAreas);
         }
         private void MainArea_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11745,34 +11468,11 @@ namespace ProdigyConfigToolWPF
         #region Zones
         private void MainZone_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewZones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewZones).Items[(index + 1) % (TreeviewZones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Next_Click(TreeviewZones);
         }
         private void MainZone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewZones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewZones).Items[index - 1] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewZones).Items[(Constants.KP_MAX_ZONES - 1) % (TreeviewZones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Back_Click(TreeviewZones);
         }
         private void MainZone_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11785,33 +11485,11 @@ namespace ProdigyConfigToolWPF
         #region Keypads
         private void MainKeypad_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewKeypads.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewKeypads).Items[(index + 1) % (TreeviewKeypads as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
+            Button_Next_Click(TreeviewKeypads);
         }
         private void MainKeypad_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewKeypads.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewKeypads).Items[index - 1] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewKeypads).Items[(Constants.KP_MAX_KEYPADS - 1) % (TreeviewKeypads as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Back_Click(TreeviewKeypads);
         }
         private void MainKeypad_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11824,34 +11502,11 @@ namespace ProdigyConfigToolWPF
         #region Outputs
         private void MainOutput_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewOutputs.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewOutputs).Items[(index + 1) % (TreeviewOutputs as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Next_Click(TreeviewOutputs);
         }
         private void MainOutput_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewOutputs.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewOutputs).Items[index - 1] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewOutputs).Items[(Constants.KP_MAX_OUTPUTS - 1) % (TreeviewOutputs as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Back_Click(TreeviewOutputs);
         }
         private void MainOutput_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11864,34 +11519,11 @@ namespace ProdigyConfigToolWPF
         #region Users
         private void MainUser_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewUsers.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewUsers).Items[(index + 1) % (TreeviewUsers as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Next_Click(TreeviewUsers);
         }
         private void MainUser_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewUsers.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewUsers).Items[(index - 1) % (TreeviewUsers as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewUsers).Items[(Constants.KP_MAX_USERS - 6) % (TreeviewUsers as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Back_Click(TreeviewUsers);
         }
         private void MainUser_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11904,33 +11536,11 @@ namespace ProdigyConfigToolWPF
         #region Timezones
         private void MainTimezone_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewTimezones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewTimezones).Items[(index + 1) % (TreeviewTimezones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Next_Click(TreeviewTimezones);
         }
         private void MainTimezone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewTimezones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewTimezones).Items[index - 1] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewTimezones).Items[(Constants.KP_MAX_TIMEZONES - 1) % (TreeviewTimezones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
+            Button_Back_Click(TreeviewTimezones);
         }
         private void MainTimezone_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11943,33 +11553,11 @@ namespace ProdigyConfigToolWPF
         #region Phones
         private void MainPhone_button_next_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewPhones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            ((TreeviewPhones).Items[(index + 1) % (TreeviewPhones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
-
+            Button_Next_Click(TreeviewPhones);
         }
         private void MainPhone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            int index = 0;
-            foreach (TreeViewItem i in TreeviewPhones.Items)
-            {
-                if (i.Equals(MainTreeView.SelectedItem))
-                {
-                    break;
-                }
-                index++;
-            }
-            if (index > 0)
-                ((TreeviewPhones).Items[index - 1] as TreeViewItem).IsSelected = true;
-            else if (index == 0)
-                ((TreeviewPhones).Items[(Constants.KP_MAX_PHONES - 1) % (TreeviewPhones as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
+            Button_Back_Click(TreeviewPhones);
         }
         private void MainPhone_button_undo_Click(object sender, RoutedEventArgs e)
         {

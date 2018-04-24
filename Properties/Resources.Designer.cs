@@ -1195,6 +1195,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to By Beeps.
+        /// </summary>
+        public static string byBeeps {
+            get {
+                return ResourceManager.GetString("byBeeps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bypass: .
         /// </summary>
         public static string Bypass {
@@ -1218,6 +1227,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string BypassOn {
             get {
                 return ResourceManager.GetString("BypassOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to By Pulses.
+        /// </summary>
+        public static string byPulses {
+            get {
+                return ResourceManager.GetString("byPulses", resourceCulture);
             }
         }
         

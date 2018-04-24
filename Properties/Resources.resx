@@ -2769,4 +2769,10 @@
   <data name="WritingAudioConfig" xml:space="preserve">
     <value>Writing audio configurations</value>
   </data>
+  <data name="byBeeps" xml:space="preserve">
+    <value>By Beeps</value>
+  </data>
+  <data name="byPulses" xml:space="preserve">
+    <value>By Pulses</value>
+  </data>
 </root>
