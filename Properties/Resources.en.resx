@@ -2751,4 +2751,55 @@
   <data name="byPulses" xml:space="preserve">
     <value>By Pulses</value>
   </data>
+  <data name="ChooseFile" xml:space="preserve">
+    <value>Choose a file</value>
+  </data>
+  <data name="User_1" xml:space="preserve">
+    <value>User 1</value>
+  </data>
+  <data name="User_10" xml:space="preserve">
+    <value>User 10</value>
+  </data>
+  <data name="User_11" xml:space="preserve">
+    <value>User 11</value>
+  </data>
+  <data name="User_12" xml:space="preserve">
+    <value>User 12</value>
+  </data>
+  <data name="User_13" xml:space="preserve">
+    <value>User 13</value>
+  </data>
+  <data name="User_14" xml:space="preserve">
+    <value>User 14</value>
+  </data>
+  <data name="User_15" xml:space="preserve">
+    <value>User 15</value>
+  </data>
+  <data name="User_16" xml:space="preserve">
+    <value>User 16</value>
+  </data>
+  <data name="User_2" xml:space="preserve">
+    <value>User 2</value>
+  </data>
+  <data name="User_3" xml:space="preserve">
+    <value>User 3</value>
+  </data>
+  <data name="User_4" xml:space="preserve">
+    <value>User 4</value>
+  </data>
+  <data name="User_5" xml:space="preserve">
+    <value>User 5</value>
+  </data>
+  <data name="User_6" xml:space="preserve">
+    <value>User 6</value>
+  </data>
+  <data name="User_7" xml:space="preserve">
+    <value>User 7</value>
+  </data>
+  <data name="User_8" xml:space="preserve">
+    <value>User 8</value>
+  </data>
+  <data name="User_9" xml:space="preserve">
+    <value>User 9</value>
+  </data>
 </root>

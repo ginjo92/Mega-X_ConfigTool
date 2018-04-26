@@ -1285,6 +1285,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Choose a file.
+        /// </summary>
+        public static string ChooseFile {
+            get {
+                return ResourceManager.GetString("ChooseFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Circuit.
         /// </summary>
         public static string Circuit {
@@ -5853,6 +5862,150 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 1.
+        /// </summary>
+        public static string User_1 {
+            get {
+                return ResourceManager.GetString("User_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 10.
+        /// </summary>
+        public static string User_10 {
+            get {
+                return ResourceManager.GetString("User_10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 11.
+        /// </summary>
+        public static string User_11 {
+            get {
+                return ResourceManager.GetString("User_11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 12.
+        /// </summary>
+        public static string User_12 {
+            get {
+                return ResourceManager.GetString("User_12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 13.
+        /// </summary>
+        public static string User_13 {
+            get {
+                return ResourceManager.GetString("User_13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 14.
+        /// </summary>
+        public static string User_14 {
+            get {
+                return ResourceManager.GetString("User_14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 15.
+        /// </summary>
+        public static string User_15 {
+            get {
+                return ResourceManager.GetString("User_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 16.
+        /// </summary>
+        public static string User_16 {
+            get {
+                return ResourceManager.GetString("User_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 2.
+        /// </summary>
+        public static string User_2 {
+            get {
+                return ResourceManager.GetString("User_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 3.
+        /// </summary>
+        public static string User_3 {
+            get {
+                return ResourceManager.GetString("User_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 4.
+        /// </summary>
+        public static string User_4 {
+            get {
+                return ResourceManager.GetString("User_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 5.
+        /// </summary>
+        public static string User_5 {
+            get {
+                return ResourceManager.GetString("User_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 6.
+        /// </summary>
+        public static string User_6 {
+            get {
+                return ResourceManager.GetString("User_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 7.
+        /// </summary>
+        public static string User_7 {
+            get {
+                return ResourceManager.GetString("User_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 8.
+        /// </summary>
+        public static string User_8 {
+            get {
+                return ResourceManager.GetString("User_8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User 9.
+        /// </summary>
+        public static string User_9 {
+            get {
+                return ResourceManager.GetString("User_9", resourceCulture);
             }
         }
         

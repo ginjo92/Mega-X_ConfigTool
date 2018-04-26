@@ -64,8 +64,9 @@ namespace ProdigyConfigToolWPF
         DataRowView current_audio_row;
         Dictionary<int, bool> WizardKeypadSetup;
         Dictionary<int, bool> WizardDialerSetup;
-        Dictionary<int, bool> WizardPartitionsSetup;
+        Dictionary<int, bool> WizardZonesSetup;
         Dictionary<int, bool> WizardPhonesSetup;
+        Dictionary<int, bool> WizardUsersSetup;
         System.Windows.Threading.DispatcherTimer real_time_timer = new System.Windows.Threading.DispatcherTimer();
 
         public System.Windows.Threading.DispatcherTimer serial_port_connection_timer = new System.Windows.Threading.DispatcherTimer();
@@ -84,7 +85,7 @@ namespace ProdigyConfigToolWPF
         bool audio_system_momory_isfull = false;
         bool audio_system_momory_istrigger = false;
         bool audio_recording = false;
-        public MainWindow(string locale, int role, string ChoosenDbFile, Dictionary<int, bool> KeypadConfig, Dictionary<int, bool> DialerConfig, Dictionary<int, bool> PartitionsConfig, Dictionary<int, bool> PhonesConfig)
+        public MainWindow(string locale, int role, string ChoosenDbFile, Dictionary<int, bool> KeypadConfig, Dictionary<int, bool> DialerConfig, Dictionary<int, bool> ZonesConfig, Dictionary<int, bool> PhonesConfig, Dictionary<int, bool> UsersConfig)
         {
             AppLocale = locale;
             AppRole = role;
@@ -92,8 +93,9 @@ namespace ProdigyConfigToolWPF
             FirmwareUpdateSize = 0;
             WizardKeypadSetup = KeypadConfig;
             WizardDialerSetup = DialerConfig;
-            WizardPartitionsSetup = PartitionsConfig;
+            WizardZonesSetup = ZonesConfig;
             WizardPhonesSetup = PhonesConfig;
+            WizardUsersSetup = UsersConfig;
 
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -519,11 +521,14 @@ namespace ProdigyConfigToolWPF
             if (WizardDialerSetup != null)
                 SetDialerConfigurationFromWizard(WizardDialerSetup);
 
-            if (WizardPartitionsSetup != null)
-                SetPartitionsConfigurationFromWizard(WizardPartitionsSetup);
+            if (WizardZonesSetup != null)
+                SetZonesConfigurationFromWizard(WizardZonesSetup);
 
             if (WizardPhonesSetup != null)
                 SetPhonesConfigurationFromWizard(WizardPhonesSetup);
+
+            if (WizardUsersSetup != null)
+                SetUsersConfigurationFromWizard(WizardUsersSetup);
         }
 
         #region WIZARD
@@ -554,14 +559,24 @@ namespace ProdigyConfigToolWPF
             databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Phone);
         }
 
-        private void SetPartitionsConfigurationFromWizard(Dictionary<int, bool> wizardPartitionsSetup)
+        private void SetZonesConfigurationFromWizard(Dictionary<int, bool> wizardZonesSetup)
         {
-            for (int i = 0; i < Constants.KP_MAX_AREAS; i++)
+            for (int i = 0; i < Constants.KP_MAX_ZONES; i++)
             {
-                databaseDataSet.Area.Rows[i]["Active"] = wizardPartitionsSetup[i];
+                databaseDataSet.Zone.Rows[i]["Zone Active"] = wizardZonesSetup[i];
             }
-            AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
-            databaseDataSetAreaTableAdapter.Update(databaseDataSet.Area);
+            ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
+            databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
+        }
+
+        private void SetUsersConfigurationFromWizard(Dictionary<int, bool> wizardUsersSetup)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                databaseDataSet.User.Rows[i]["User active"] = wizardUsersSetup[i];
+            }
+            UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+            databaseDataSetUserTableAdapter.Update(databaseDataSet.User);
         }
         #endregion
 
@@ -8225,7 +8240,7 @@ namespace ProdigyConfigToolWPF
                 AppDbFile = dlg.FileName;
                 Save_Database_data();
                 Close();
-                MainWindow window1 = new MainWindow(AppLocale, AppRole, AppDbFile, null, null, null, null);
+                MainWindow window1 = new MainWindow(AppLocale, AppRole, AppDbFile, null, null, null, null, null);
                 window1.Show();
                 //Não gravar antigo, mesmo que haja alterações
                 //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
@@ -8620,7 +8635,7 @@ namespace ProdigyConfigToolWPF
         {
             Preferences_ContextMenu.IsOpen = false;
             Close();
-            MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null);
+            MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null, null);
             window1.Show();
         }
 
@@ -8628,7 +8643,7 @@ namespace ProdigyConfigToolWPF
         {
             Preferences_ContextMenu.IsOpen = false;
             Close();
-            MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null);
+            MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null, null);
             window1.Show();
         }
 
@@ -11286,7 +11301,27 @@ namespace ProdigyConfigToolWPF
 
         private void userDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(userDataGrid, MainUsersPVTTab, MainUsersTab, "userViewSource", TreeviewUsers);
+            int row = userDataGrid.SelectedIndex;
+            int column = userDataGrid.CurrentColumn.DisplayIndex;
+
+            System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
+
+            if (column==0 && row<=200)
+            {
+                MainTabControl.SelectedItem = MainUsersPVTTab;
+                userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+
+                TreeviewUsers.IsExpanded = true;
+                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
+            else
+            {
+                MainTabControl.SelectedItem = MainUsersTab;
+                userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+
+                TreeviewUsers.IsExpanded = false;
+                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = false;
+            }
         }
 
         private void keypadDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)

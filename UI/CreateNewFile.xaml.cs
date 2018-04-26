@@ -104,7 +104,7 @@ namespace ProdigyConfigToolWPF
             }
             else
             {
-                var prodigy_configtool_window = new MainWindow(AppLocale, AppRole, (NewConfigName.Text + ".prgy"), null, null, null, null);
+                var prodigy_configtool_window = new MainWindow(AppLocale, AppRole, (NewConfigName.Text + ".prgy"), null, null, null, null, null);
                 prodigy_configtool_window.Show();
             }
             this.Close();

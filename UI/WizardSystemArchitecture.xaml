@@ -14,157 +14,272 @@
         <ObjectDataProvider x:Key="UserLogins_dict"
         MethodName="GetUserLogin" ObjectType="{x:Type local:Dictionaries}"/>
     </Controls:MetroWindow.Resources>
-    <Grid>
-        <DockPanel x:Name="PanelLeft" Margin="0,0,0,60" Width="390" HorizontalAlignment="Left">
-            <Border BorderThickness="1" BorderBrush="LightGray">
-                <StackPanel Background="WhiteSmoke">
-                    <TextBlock Text="{x:Static p:Resources.ClickToSelect}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+    <StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="430">
+            <Grid>
+                <DockPanel x:Name="PanelLeft" Margin="0,0,0,-60" Height="Auto" Width="390" HorizontalAlignment="Left">
+                    <Border BorderThickness="1" BorderBrush="LightGray">
+                        <StackPanel Background="WhiteSmoke">
+                            <TextBlock Text="{x:Static p:Resources.ClickToSelect}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
 
-                    <StackPanel x:Name="DragAreas" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <StackPanel>
-                            <TextBlock x:Name="DragAreasText" Text="{x:Static p:Resources.Areas}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image x:Name="DragArea1" Source="/images/wizard/areas1.png" MouseDown="DragArea1_MouseDown" ToolTip="{x:Static p:Resources.Area_1}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea2" Source="/images/wizard/areas2.png" MouseDown="DragArea2_MouseDown" ToolTip="{x:Static p:Resources.Area_2}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea3" Source="/images/wizard/areas3.png" MouseDown="DragArea3_MouseDown" ToolTip="{x:Static p:Resources.Area_3}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea4" Source="/images/wizard/areas4.png" MouseDown="DragArea4_MouseDown" ToolTip="{x:Static p:Resources.Area_4}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea5" Source="/images/wizard/areas5.png" MouseDown="DragArea5_MouseDown" ToolTip="{x:Static p:Resources.Area_5}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea6" Source="/images/wizard/areas6.png" MouseDown="DragArea6_MouseDown" ToolTip="{x:Static p:Resources.Area_6}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea7" Source="/images/wizard/areas7.png" MouseDown="DragArea7_MouseDown" ToolTip="{x:Static p:Resources.Area_7}" Width="34" Margin="2"/>
-                                <Image x:Name="DragArea8" Source="/images/wizard/areas8.png" MouseDown="DragArea8_MouseDown" ToolTip="{x:Static p:Resources.Area_8}" Width="34" Margin="2"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                    
-                    <StackPanel x:Name="DragKeypads" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <StackPanel>
-                            <TextBlock x:Name="DragKeypadsText" Text="{x:Static p:Resources.Keypads}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Image x:Name="DragKeypad1" Source="/images/wizard/keypad1.png" Width="34" MouseDown="DragKeypad1_MouseDown" ToolTip="{x:Static p:Resources.keypad_1}" Margin="2"/>
-                                <Image x:Name="DragKeypad2" Source="/images/wizard/keypad2.png" Width="34" MouseDown="DragKeypad2_MouseDown" ToolTip="{x:Static p:Resources.keypad_2}" Margin="2"/>
-                                <Image x:Name="DragKeypad3" Source="/images/wizard/keypad3.png" Width="34" MouseDown="DragKeypad3_MouseDown" ToolTip="{x:Static p:Resources.keypad_3}" Margin="2"/>
-                                <Image x:Name="DragKeypad4" Source="/images/wizard/keypad4.png" Width="34" MouseDown="DragKeypad4_MouseDown" ToolTip="{x:Static p:Resources.keypad_4}" Margin="2"/>
-                                <Image x:Name="DragKeypad5" Source="/images/wizard/keypad5.png" Width="34" MouseDown="DragKeypad5_MouseDown" ToolTip="{x:Static p:Resources.keypad_5}" Margin="2"/>
-                                <Image x:Name="DragKeypad6" Source="/images/wizard/keypad6.png" Width="34" MouseDown="DragKeypad6_MouseDown" ToolTip="{x:Static p:Resources.keypad_6}" Margin="2"/>
-                                <Image x:Name="DragKeypad7" Source="/images/wizard/keypad7.png" Width="34" MouseDown="DragKeypad7_MouseDown" ToolTip="{x:Static p:Resources.keypad_7}" Margin="2"/>
-                                <Image x:Name="DragKeypad8" Source="/images/wizard/keypad8.png" Width="34" MouseDown="DragKeypad8_MouseDown" ToolTip="{x:Static p:Resources.keypad_8}" Margin="2"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel x:Name="DragDialer" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <StackPanel>
-                            <TextBlock x:Name="DragDialerText" Text="{x:Static p:Resources.Communications}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image x:Name="DragDialer1" Source="/images/new/dialer.png" Visibility="Visible" MouseDown="DragDialer_MouseDown" ToolTip="{x:Static p:Resources.Dialer}" VerticalAlignment="Center" Width="34" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel x:Name="DragPhones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <StackPanel>
-                            <TextBlock x:Name="DragPhonesText" Text="{x:Static p:Resources.Phones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                    <Image x:Name="DragPhone1" Source="/images/wizard/phone1.png" MouseDown="DragPhone1_MouseDown" ToolTip="{x:Static p:Resources.Phone_1}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone2" Source="/images/wizard/phone2.png" MouseDown="DragPhone2_MouseDown" ToolTip="{x:Static p:Resources.Phone_2}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone3" Source="/images/wizard/phone3.png" MouseDown="DragPhone3_MouseDown" ToolTip="{x:Static p:Resources.Phone_3}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone4" Source="/images/wizard/phone4.png" MouseDown="DragPhone4_MouseDown" ToolTip="{x:Static p:Resources.Phone_4}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone5" Source="/images/wizard/phone5.png" MouseDown="DragPhone5_MouseDown" ToolTip="{x:Static p:Resources.Phone_5}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone6" Source="/images/wizard/phone6.png" MouseDown="DragPhone6_MouseDown" ToolTip="{x:Static p:Resources.Phone_6}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone7" Source="/images/wizard/phone7.png" MouseDown="DragPhone7_MouseDown" ToolTip="{x:Static p:Resources.Phone_7}" Width="34" Margin="2"/>
-                                    <Image x:Name="DragPhone8" Source="/images/wizard/phone8.png" MouseDown="DragPhone8_MouseDown" ToolTip="{x:Static p:Resources.Phone_8}" Width="34" Margin="2"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                        <Image x:Name="DragPhone9" Source="/images/wizard/phone9.png" MouseDown="DragPhone9_MouseDown" ToolTip="{x:Static p:Resources.Phone_9}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone10" Source="/images/wizard/phone10.png" MouseDown="DragPhone10_MouseDown" ToolTip="{x:Static p:Resources.Phone_10}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone11" Source="/images/wizard/phone11.png" MouseDown="DragPhone11_MouseDown" ToolTip="{x:Static p:Resources.Phone_11}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone12" Source="/images/wizard/phone12.png" MouseDown="DragPhone12_MouseDown" ToolTip="{x:Static p:Resources.Phone_12}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone13" Source="/images/wizard/phone13.png" MouseDown="DragPhone13_MouseDown" ToolTip="{x:Static p:Resources.Phone_13}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone14" Source="/images/wizard/phone14.png" MouseDown="DragPhone14_MouseDown" ToolTip="{x:Static p:Resources.Phone_14}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone15" Source="/images/wizard/phone15.png" MouseDown="DragPhone15_MouseDown" ToolTip="{x:Static p:Resources.Phone_15}" Width="34" Margin="2"/>
-                                <Image x:Name="DragPhone16" Source="/images/wizard/phone16.png" MouseDown="DragPhone16_MouseDown" ToolTip="{x:Static p:Resources.Phone_16}" Width="34" Margin="2"/>
+                            <StackPanel x:Name="DragZones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <StackPanel>
+                                    <TextBlock x:Name="DragZonesText" Text="{x:Static p:Resources.Zones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragZone1" Source="/images/wizard/zones1.png" MouseDown="DragZone1_MouseDown" ToolTip="{x:Static p:Resources.Zone_1}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone2" Source="/images/wizard/zones2.png" MouseDown="DragZone2_MouseDown" ToolTip="{x:Static p:Resources.Zone_2}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone3" Source="/images/wizard/zones3.png" MouseDown="DragZone3_MouseDown" ToolTip="{x:Static p:Resources.Zone_3}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone4" Source="/images/wizard/zones4.png" MouseDown="DragZone4_MouseDown" ToolTip="{x:Static p:Resources.Zone_4}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone5" Source="/images/wizard/zones5.png" MouseDown="DragZone5_MouseDown" ToolTip="{x:Static p:Resources.Zone_5}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone6" Source="/images/wizard/zones6.png" MouseDown="DragZone6_MouseDown" ToolTip="{x:Static p:Resources.Zone_6}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone7" Source="/images/wizard/zones7.png" MouseDown="DragZone7_MouseDown" ToolTip="{x:Static p:Resources.Zone_7}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone8" Source="/images/wizard/zones8.png" MouseDown="DragZone8_MouseDown" ToolTip="{x:Static p:Resources.Zone_8}" Width="34" Margin="2"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragZone9" Source="/images/wizard/zones9.png" MouseDown="DragZone9_MouseDown" ToolTip="{x:Static p:Resources.Zone_9}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone10" Source="/images/wizard/zones10.png" MouseDown="DragZone10_MouseDown" ToolTip="{x:Static p:Resources.Zone_10}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone11" Source="/images/wizard/zones11.png" MouseDown="DragZone11_MouseDown" ToolTip="{x:Static p:Resources.Zone_11}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone12" Source="/images/wizard/zones12.png" MouseDown="DragZone12_MouseDown" ToolTip="{x:Static p:Resources.Zone_12}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone13" Source="/images/wizard/zones13.png" MouseDown="DragZone13_MouseDown" ToolTip="{x:Static p:Resources.Zone_13}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone14" Source="/images/wizard/zones14.png" MouseDown="DragZone14_MouseDown" ToolTip="{x:Static p:Resources.Zone_14}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone15" Source="/images/wizard/zones15.png" MouseDown="DragZone15_MouseDown" ToolTip="{x:Static p:Resources.Zone_15}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone16" Source="/images/wizard/zones16.png" MouseDown="DragZone16_MouseDown" ToolTip="{x:Static p:Resources.Zone_16}" Width="34" Margin="2"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragZone17" Source="/images/wizard/zones17.png" MouseDown="DragZone17_MouseDown" ToolTip="{x:Static p:Resources.Zone_17}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone18" Source="/images/wizard/zones18.png" MouseDown="DragZone18_MouseDown" ToolTip="{x:Static p:Resources.Zone_18}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone19" Source="/images/wizard/zones19.png" MouseDown="DragZone19_MouseDown" ToolTip="{x:Static p:Resources.Zone_19}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone20" Source="/images/wizard/zones20.png" MouseDown="DragZone20_MouseDown" ToolTip="{x:Static p:Resources.Zone_20}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone21" Source="/images/wizard/zones21.png" MouseDown="DragZone21_MouseDown" ToolTip="{x:Static p:Resources.Zone_21}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone22" Source="/images/wizard/zones22.png" MouseDown="DragZone22_MouseDown" ToolTip="{x:Static p:Resources.Zone_22}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone23" Source="/images/wizard/zones23.png" MouseDown="DragZone23_MouseDown" ToolTip="{x:Static p:Resources.Zone_23}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone24" Source="/images/wizard/zones24.png" MouseDown="DragZone24_MouseDown" ToolTip="{x:Static p:Resources.Zone_24}" Width="34" Margin="2"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragZone25" Source="/images/wizard/zones25.png" MouseDown="DragZone25_MouseDown" ToolTip="{x:Static p:Resources.Zone_25}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone26" Source="/images/wizard/zones26.png" MouseDown="DragZone26_MouseDown" ToolTip="{x:Static p:Resources.Zone_26}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone27" Source="/images/wizard/zones27.png" MouseDown="DragZone27_MouseDown" ToolTip="{x:Static p:Resources.Zone_27}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone28" Source="/images/wizard/zones28.png" MouseDown="DragZone28_MouseDown" ToolTip="{x:Static p:Resources.Zone_28}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone29" Source="/images/wizard/zones29.png" MouseDown="DragZone29_MouseDown" ToolTip="{x:Static p:Resources.Zone_29}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone30" Source="/images/wizard/zones30.png" MouseDown="DragZone30_MouseDown" ToolTip="{x:Static p:Resources.Zone_30}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone31" Source="/images/wizard/zones31.png" MouseDown="DragZone31_MouseDown" ToolTip="{x:Static p:Resources.Zone_31}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragZone32" Source="/images/wizard/zones32.png" MouseDown="DragZone32_MouseDown" ToolTip="{x:Static p:Resources.Zone_32}" Width="34" Margin="2"/>
+                                    </StackPanel>
                                 </StackPanel>
                             </StackPanel>
-                        </StackPanel>
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </DockPanel>
 
-        <DockPanel x:Name="PanelRight" Margin="400,0,0,60" Width="390" HorizontalAlignment="Right">
-            <Border BorderThickness="1" BorderBrush="LightGray">
-                <StackPanel Background="WhiteSmoke">
-                    <TextBlock Text="{x:Static p:Resources.SystemConfiguration}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                            <StackPanel x:Name="DragKeypads" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <StackPanel>
+                                    <TextBlock x:Name="DragKeypadsText" Text="{x:Static p:Resources.Keypads}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Image x:Name="DragKeypad1" Source="/images/wizard/keypad1.png" Width="34" MouseDown="DragKeypad1_MouseDown" ToolTip="{x:Static p:Resources.keypad_1}" Margin="2"/>
+                                        <Image x:Name="DragKeypad2" Source="/images/wizard/keypad2.png" Width="34" MouseDown="DragKeypad2_MouseDown" ToolTip="{x:Static p:Resources.keypad_2}" Margin="2"/>
+                                        <Image x:Name="DragKeypad3" Source="/images/wizard/keypad3.png" Width="34" MouseDown="DragKeypad3_MouseDown" ToolTip="{x:Static p:Resources.keypad_3}" Margin="2"/>
+                                        <Image x:Name="DragKeypad4" Source="/images/wizard/keypad4.png" Width="34" MouseDown="DragKeypad4_MouseDown" ToolTip="{x:Static p:Resources.keypad_4}" Margin="2"/>
+                                        <Image x:Name="DragKeypad5" Source="/images/wizard/keypad5.png" Width="34" MouseDown="DragKeypad5_MouseDown" ToolTip="{x:Static p:Resources.keypad_5}" Margin="2"/>
+                                        <Image x:Name="DragKeypad6" Source="/images/wizard/keypad6.png" Width="34" MouseDown="DragKeypad6_MouseDown" ToolTip="{x:Static p:Resources.keypad_6}" Margin="2"/>
+                                        <Image x:Name="DragKeypad7" Source="/images/wizard/keypad7.png" Width="34" MouseDown="DragKeypad7_MouseDown" ToolTip="{x:Static p:Resources.keypad_7}" Margin="2"/>
+                                        <Image x:Name="DragKeypad8" Source="/images/wizard/keypad8.png" Width="34" MouseDown="DragKeypad8_MouseDown" ToolTip="{x:Static p:Resources.keypad_8}" Margin="2"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
 
-                    <StackPanel x:Name="SelectedAreas" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <TextBlock x:Name="SelectedAreasText" Text="{x:Static p:Resources.Areas}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <Image x:Name="SelectedArea1" Source="/images/wizard/areas1.png" MouseDown="SelectedArea1_MouseDown" ToolTip="{x:Static p:Resources.Area_1}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea2" Source="/images/wizard/areas2.png" MouseDown="SelectedArea2_MouseDown" ToolTip="{x:Static p:Resources.Area_2}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea3" Source="/images/wizard/areas3.png" MouseDown="SelectedArea3_MouseDown" ToolTip="{x:Static p:Resources.Area_3}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea4" Source="/images/wizard/areas4.png" MouseDown="SelectedArea4_MouseDown" ToolTip="{x:Static p:Resources.Area_4}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea5" Source="/images/wizard/areas5.png" MouseDown="SelectedArea5_MouseDown" ToolTip="{x:Static p:Resources.Area_5}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea6" Source="/images/wizard/areas6.png" MouseDown="SelectedArea6_MouseDown" ToolTip="{x:Static p:Resources.Area_6}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea7" Source="/images/wizard/areas7.png" MouseDown="SelectedArea7_MouseDown" ToolTip="{x:Static p:Resources.Area_7}" Width="34" Margin="2" Visibility="Hidden"/>
-                            <Image x:Name="SelectedArea8" Source="/images/wizard/areas8.png" MouseDown="SelectedArea8_MouseDown" ToolTip="{x:Static p:Resources.Area_8}" Width="34" Margin="2" Visibility="Hidden"/>
-                        </StackPanel>
-                    </StackPanel>
+                            <StackPanel x:Name="DragDialer" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <StackPanel>
+                                    <TextBlock x:Name="DragDialerText" Text="{x:Static p:Resources.Communications}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragDialer1" Source="/images/new/dialer.png" Visibility="Visible" MouseDown="DragDialer_MouseDown" ToolTip="{x:Static p:Resources.Dialer}" VerticalAlignment="Center" Width="34" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
 
-                    <StackPanel x:Name="SelectedKeypads" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <StackPanel>
-                            <TextBlock x:Name="SelectedKeypadsText" Text="{x:Static p:Resources.Keypads}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image x:Name="SelectedKeypad1" Source="/images/wizard/keypad1.png" MouseDown="SelectedKeypad1_MouseDown" ToolTip="{x:Static p:Resources.keypad_1}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad2" Source="/images/wizard/keypad2.png" MouseDown="SelectedKeypad2_MouseDown" ToolTip="{x:Static p:Resources.keypad_2}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad3" Source="/images/wizard/keypad3.png" MouseDown="SelectedKeypad3_MouseDown" ToolTip="{x:Static p:Resources.keypad_3}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad4" Source="/images/wizard/keypad4.png" MouseDown="SelectedKeypad4_MouseDown" ToolTip="{x:Static p:Resources.keypad_4}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad5" Source="/images/wizard/keypad5.png" MouseDown="SelectedKeypad5_MouseDown" ToolTip="{x:Static p:Resources.keypad_5}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad6" Source="/images/wizard/keypad6.png" MouseDown="SelectedKeypad6_MouseDown" ToolTip="{x:Static p:Resources.keypad_6}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad7" Source="/images/wizard/keypad7.png" MouseDown="SelectedKeypad7_MouseDown" ToolTip="{x:Static p:Resources.keypad_7}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedKeypad8" Source="/images/wizard/keypad8.png" MouseDown="SelectedKeypad8_MouseDown" ToolTip="{x:Static p:Resources.keypad_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                            <StackPanel x:Name="DragPhones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <StackPanel>
+                                    <TextBlock x:Name="DragPhonesText" Text="{x:Static p:Resources.Phones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <Image x:Name="DragPhone1" Source="/images/wizard/phone1.png" MouseDown="DragPhone1_MouseDown" ToolTip="{x:Static p:Resources.Phone_1}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone2" Source="/images/wizard/phone2.png" MouseDown="DragPhone2_MouseDown" ToolTip="{x:Static p:Resources.Phone_2}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone3" Source="/images/wizard/phone3.png" MouseDown="DragPhone3_MouseDown" ToolTip="{x:Static p:Resources.Phone_3}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone4" Source="/images/wizard/phone4.png" MouseDown="DragPhone4_MouseDown" ToolTip="{x:Static p:Resources.Phone_4}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone5" Source="/images/wizard/phone5.png" MouseDown="DragPhone5_MouseDown" ToolTip="{x:Static p:Resources.Phone_5}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone6" Source="/images/wizard/phone6.png" MouseDown="DragPhone6_MouseDown" ToolTip="{x:Static p:Resources.Phone_6}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone7" Source="/images/wizard/phone7.png" MouseDown="DragPhone7_MouseDown" ToolTip="{x:Static p:Resources.Phone_7}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone8" Source="/images/wizard/phone8.png" MouseDown="DragPhone8_MouseDown" ToolTip="{x:Static p:Resources.Phone_8}" Width="34" Margin="2"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <Image x:Name="DragPhone9" Source="/images/wizard/phone9.png" MouseDown="DragPhone9_MouseDown" ToolTip="{x:Static p:Resources.Phone_9}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone10" Source="/images/wizard/phone10.png" MouseDown="DragPhone10_MouseDown" ToolTip="{x:Static p:Resources.Phone_10}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone11" Source="/images/wizard/phone11.png" MouseDown="DragPhone11_MouseDown" ToolTip="{x:Static p:Resources.Phone_11}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone12" Source="/images/wizard/phone12.png" MouseDown="DragPhone12_MouseDown" ToolTip="{x:Static p:Resources.Phone_12}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone13" Source="/images/wizard/phone13.png" MouseDown="DragPhone13_MouseDown" ToolTip="{x:Static p:Resources.Phone_13}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone14" Source="/images/wizard/phone14.png" MouseDown="DragPhone14_MouseDown" ToolTip="{x:Static p:Resources.Phone_14}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone15" Source="/images/wizard/phone15.png" MouseDown="DragPhone15_MouseDown" ToolTip="{x:Static p:Resources.Phone_15}" Width="34" Margin="2"/>
+                                            <Image x:Name="DragPhone16" Source="/images/wizard/phone16.png" MouseDown="DragPhone16_MouseDown" ToolTip="{x:Static p:Resources.Phone_16}" Width="34" Margin="2"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel x:Name="DragUsers" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10,40,30">
+                                <StackPanel>
+                                    <TextBlock x:Name="DragUsersText" Text="{x:Static p:Resources.Users}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragUser1" Source="/images/wizard/user1.png" MouseDown="DragUser1_MouseDown" ToolTip="{x:Static p:Resources.User_1}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser2" Source="/images/wizard/user2.png" MouseDown="DragUser2_MouseDown" ToolTip="{x:Static p:Resources.User_2}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser3" Source="/images/wizard/user3.png" MouseDown="DragUser3_MouseDown" ToolTip="{x:Static p:Resources.User_3}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser4" Source="/images/wizard/user4.png" MouseDown="DragUser4_MouseDown" ToolTip="{x:Static p:Resources.User_4}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser5" Source="/images/wizard/user5.png" MouseDown="DragUser5_MouseDown" ToolTip="{x:Static p:Resources.User_5}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser6" Source="/images/wizard/user6.png" MouseDown="DragUser6_MouseDown" ToolTip="{x:Static p:Resources.User_6}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser7" Source="/images/wizard/user7.png" MouseDown="DragUser7_MouseDown" ToolTip="{x:Static p:Resources.User_7}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser8" Source="/images/wizard/user8.png" MouseDown="DragUser8_MouseDown" ToolTip="{x:Static p:Resources.User_8}" Width="34" Margin="2"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="DragUser9" Source="/images/wizard/user9.png" MouseDown="DragUser9_MouseDown" ToolTip="{x:Static p:Resources.User_9}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser10" Source="/images/wizard/user10.png" MouseDown="DragUser10_MouseDown" ToolTip="{x:Static p:Resources.User_10}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser11" Source="/images/wizard/user11.png" MouseDown="DragUser11_MouseDown" ToolTip="{x:Static p:Resources.User_11}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser12" Source="/images/wizard/user12.png" MouseDown="DragUser12_MouseDown" ToolTip="{x:Static p:Resources.User_12}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser13" Source="/images/wizard/user13.png" MouseDown="DragUser13_MouseDown" ToolTip="{x:Static p:Resources.User_13}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser14" Source="/images/wizard/user14.png" MouseDown="DragUser14_MouseDown" ToolTip="{x:Static p:Resources.User_14}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser15" Source="/images/wizard/user15.png" MouseDown="DragUser15_MouseDown" ToolTip="{x:Static p:Resources.User_15}" Width="34" Margin="2"/>
+                                        <Image x:Name="DragUser16" Source="/images/wizard/user16.png" MouseDown="DragUser16_MouseDown" ToolTip="{x:Static p:Resources.User_16}" Width="34" Margin="2"/>
+                                    </StackPanel>
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </Border>
+                </DockPanel>
 
-                    <StackPanel x:Name="SelectedDialers" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <TextBlock x:Name="SelectedDialersText" Text="{x:Static p:Resources.Communications}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                            <Image x:Name="SelectedDialer" Source="/images/new/dialer.png" Visibility="Hidden" MouseDown="SelectedDialer_MouseDown" ToolTip="{x:Static p:Resources.Dialer}" VerticalAlignment="Center" Width="34"/>
-                        </StackPanel>
-                    </StackPanel>
+                <DockPanel x:Name="PanelRight" Margin="400,0,0,60" Width="390" Height="Auto" HorizontalAlignment="Right">
+                    <Border BorderThickness="1" BorderBrush="LightGray">
+                        <StackPanel Background="WhiteSmoke">
+                            <TextBlock Text="{x:Static p:Resources.SystemConfiguration}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
 
-                    <StackPanel x:Name="SelectedPhones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
-                        <TextBlock x:Name="SelectedPhonesText" Text="{x:Static p:Resources.Phones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image x:Name="SelectedPhone1" Source="/images/wizard/phone1.png" MouseDown="SelectedPhone1_MouseDown" ToolTip="{x:Static p:Resources.Phone_1}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone2" Source="/images/wizard/phone2.png" MouseDown="SelectedPhone2_MouseDown" ToolTip="{x:Static p:Resources.Phone_2}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone3" Source="/images/wizard/phone3.png" MouseDown="SelectedPhone3_MouseDown" ToolTip="{x:Static p:Resources.Phone_3}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone4" Source="/images/wizard/phone4.png" MouseDown="SelectedPhone4_MouseDown" ToolTip="{x:Static p:Resources.Phone_4}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone5" Source="/images/wizard/phone5.png" MouseDown="SelectedPhone5_MouseDown" ToolTip="{x:Static p:Resources.Phone_5}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone6" Source="/images/wizard/phone6.png" MouseDown="SelectedPhone6_MouseDown" ToolTip="{x:Static p:Resources.Phone_6}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone7" Source="/images/wizard/phone7.png" MouseDown="SelectedPhone7_MouseDown" ToolTip="{x:Static p:Resources.Phone_7}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone8" Source="/images/wizard/phone8.png" MouseDown="SelectedPhone8_MouseDown" ToolTip="{x:Static p:Resources.Phone_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                            <StackPanel x:Name="SelectedZones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <TextBlock x:Name="SelectedZonesText" Text="{x:Static p:Resources.Zones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image x:Name="SelectedZone1" Source="/images/wizard/zones1.png" MouseDown="SelectedZone1_MouseDown" ToolTip="{x:Static p:Resources.Zone_1}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone2" Source="/images/wizard/zones2.png" MouseDown="SelectedZone2_MouseDown" ToolTip="{x:Static p:Resources.Zone_2}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone3" Source="/images/wizard/zones3.png" MouseDown="SelectedZone3_MouseDown" ToolTip="{x:Static p:Resources.Zone_3}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone4" Source="/images/wizard/zones4.png" MouseDown="SelectedZone4_MouseDown" ToolTip="{x:Static p:Resources.Zone_4}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone5" Source="/images/wizard/zones5.png" MouseDown="SelectedZone5_MouseDown" ToolTip="{x:Static p:Resources.Zone_5}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone6" Source="/images/wizard/zones6.png" MouseDown="SelectedZone6_MouseDown" ToolTip="{x:Static p:Resources.Zone_6}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone7" Source="/images/wizard/zones7.png" MouseDown="SelectedZone7_MouseDown" ToolTip="{x:Static p:Resources.Zone_7}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone8" Source="/images/wizard/zones8.png" MouseDown="SelectedZone8_MouseDown" ToolTip="{x:Static p:Resources.Zone_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image x:Name="SelectedZone9" Source="/images/wizard/zones9.png" MouseDown="SelectedZone9_MouseDown" ToolTip="{x:Static p:Resources.Zone_9}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone10" Source="/images/wizard/zones10.png" MouseDown="SelectedZone10_MouseDown" ToolTip="{x:Static p:Resources.Zone_10}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone11" Source="/images/wizard/zones11.png" MouseDown="SelectedZone11_MouseDown" ToolTip="{x:Static p:Resources.Zone_11}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone12" Source="/images/wizard/zones12.png" MouseDown="SelectedZone12_MouseDown" ToolTip="{x:Static p:Resources.Zone_12}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone13" Source="/images/wizard/zones13.png" MouseDown="SelectedZone13_MouseDown" ToolTip="{x:Static p:Resources.Zone_13}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone14" Source="/images/wizard/zones14.png" MouseDown="SelectedZone14_MouseDown" ToolTip="{x:Static p:Resources.Zone_14}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone15" Source="/images/wizard/zones15.png" MouseDown="SelectedZone15_MouseDown" ToolTip="{x:Static p:Resources.Zone_15}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone16" Source="/images/wizard/zones16.png" MouseDown="SelectedZone16_MouseDown" ToolTip="{x:Static p:Resources.Zone_16}" Width="34" Margin="2" Visibility="Hidden"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image x:Name="SelectedZone17" Source="/images/wizard/zones17.png" MouseDown="SelectedZone17_MouseDown" ToolTip="{x:Static p:Resources.Zone_17}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone18" Source="/images/wizard/zones18.png" MouseDown="SelectedZone18_MouseDown" ToolTip="{x:Static p:Resources.Zone_18}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone19" Source="/images/wizard/zones19.png" MouseDown="SelectedZone19_MouseDown" ToolTip="{x:Static p:Resources.Zone_19}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone20" Source="/images/wizard/zones20.png" MouseDown="SelectedZone20_MouseDown" ToolTip="{x:Static p:Resources.Zone_20}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone21" Source="/images/wizard/zones21.png" MouseDown="SelectedZone21_MouseDown" ToolTip="{x:Static p:Resources.Zone_21}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone22" Source="/images/wizard/zones22.png" MouseDown="SelectedZone22_MouseDown" ToolTip="{x:Static p:Resources.Zone_22}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone23" Source="/images/wizard/zones23.png" MouseDown="SelectedZone23_MouseDown" ToolTip="{x:Static p:Resources.Zone_23}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone24" Source="/images/wizard/zones24.png" MouseDown="SelectedZone24_MouseDown" ToolTip="{x:Static p:Resources.Zone_24}" Width="34" Margin="2" Visibility="Hidden"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image x:Name="SelectedZone25" Source="/images/wizard/zones25.png" MouseDown="SelectedZone25_MouseDown" ToolTip="{x:Static p:Resources.Zone_25}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone26" Source="/images/wizard/zones26.png" MouseDown="SelectedZone26_MouseDown" ToolTip="{x:Static p:Resources.Zone_26}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone27" Source="/images/wizard/zones27.png" MouseDown="SelectedZone27_MouseDown" ToolTip="{x:Static p:Resources.Zone_27}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone28" Source="/images/wizard/zones28.png" MouseDown="SelectedZone28_MouseDown" ToolTip="{x:Static p:Resources.Zone_28}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone29" Source="/images/wizard/zones29.png" MouseDown="SelectedZone29_MouseDown" ToolTip="{x:Static p:Resources.Zone_29}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone30" Source="/images/wizard/zones30.png" MouseDown="SelectedZone30_MouseDown" ToolTip="{x:Static p:Resources.Zone_30}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone31" Source="/images/wizard/zones31.png" MouseDown="SelectedZone31_MouseDown" ToolTip="{x:Static p:Resources.Zone_31}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    <Image x:Name="SelectedZone32" Source="/images/wizard/zones32.png" MouseDown="SelectedZone32_MouseDown" ToolTip="{x:Static p:Resources.Zone_32}" Width="34" Margin="2" Visibility="Hidden"/>
+                                </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <Image x:Name="SelectedPhone9" Source="/images/wizard/phone9.png" MouseDown="SelectedPhone9_MouseDown" ToolTip="{x:Static p:Resources.Phone_9}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone10" Source="/images/wizard/phone10.png" MouseDown="SelectedPhone10_MouseDown" ToolTip="{x:Static p:Resources.Phone_10}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone11" Source="/images/wizard/phone11.png" MouseDown="SelectedPhone11_MouseDown" ToolTip="{x:Static p:Resources.Phone_11}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone12" Source="/images/wizard/phone12.png" MouseDown="SelectedPhone12_MouseDown" ToolTip="{x:Static p:Resources.Phone_12}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone13" Source="/images/wizard/phone13.png" MouseDown="SelectedPhone13_MouseDown" ToolTip="{x:Static p:Resources.Phone_13}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone14" Source="/images/wizard/phone14.png" MouseDown="SelectedPhone14_MouseDown" ToolTip="{x:Static p:Resources.Phone_14}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone15" Source="/images/wizard/phone15.png" MouseDown="SelectedPhone15_MouseDown" ToolTip="{x:Static p:Resources.Phone_15}" Width="34" Margin="2" Visibility="Hidden"/>
-                                <Image x:Name="SelectedPhone16" Source="/images/wizard/phone16.png" MouseDown="SelectedPhone16_MouseDown" ToolTip="{x:Static p:Resources.Phone_16}" Width="34" Margin="2" Visibility="Hidden"/>
+
+                            <StackPanel x:Name="SelectedKeypads" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <StackPanel>
+                                    <TextBlock x:Name="SelectedKeypadsText" Text="{x:Static p:Resources.Keypads}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="SelectedKeypad1" Source="/images/wizard/keypad1.png" MouseDown="SelectedKeypad1_MouseDown" ToolTip="{x:Static p:Resources.keypad_1}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad2" Source="/images/wizard/keypad2.png" MouseDown="SelectedKeypad2_MouseDown" ToolTip="{x:Static p:Resources.keypad_2}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad3" Source="/images/wizard/keypad3.png" MouseDown="SelectedKeypad3_MouseDown" ToolTip="{x:Static p:Resources.keypad_3}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad4" Source="/images/wizard/keypad4.png" MouseDown="SelectedKeypad4_MouseDown" ToolTip="{x:Static p:Resources.keypad_4}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad5" Source="/images/wizard/keypad5.png" MouseDown="SelectedKeypad5_MouseDown" ToolTip="{x:Static p:Resources.keypad_5}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad6" Source="/images/wizard/keypad6.png" MouseDown="SelectedKeypad6_MouseDown" ToolTip="{x:Static p:Resources.keypad_6}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad7" Source="/images/wizard/keypad7.png" MouseDown="SelectedKeypad7_MouseDown" ToolTip="{x:Static p:Resources.keypad_7}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedKeypad8" Source="/images/wizard/keypad8.png" MouseDown="SelectedKeypad8_MouseDown" ToolTip="{x:Static p:Resources.keypad_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel x:Name="SelectedDialers" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <TextBlock x:Name="SelectedDialersText" Text="{x:Static p:Resources.Communications}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                    <Image x:Name="SelectedDialer" Source="/images/new/dialer.png" Visibility="Hidden" MouseDown="SelectedDialer_MouseDown" ToolTip="{x:Static p:Resources.Dialer}" VerticalAlignment="Center" Width="34"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel x:Name="SelectedPhones" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10">
+                                <TextBlock x:Name="SelectedPhonesText" Text="{x:Static p:Resources.Phones}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="SelectedPhone1" Source="/images/wizard/phone1.png" MouseDown="SelectedPhone1_MouseDown" ToolTip="{x:Static p:Resources.Phone_1}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone2" Source="/images/wizard/phone2.png" MouseDown="SelectedPhone2_MouseDown" ToolTip="{x:Static p:Resources.Phone_2}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone3" Source="/images/wizard/phone3.png" MouseDown="SelectedPhone3_MouseDown" ToolTip="{x:Static p:Resources.Phone_3}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone4" Source="/images/wizard/phone4.png" MouseDown="SelectedPhone4_MouseDown" ToolTip="{x:Static p:Resources.Phone_4}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone5" Source="/images/wizard/phone5.png" MouseDown="SelectedPhone5_MouseDown" ToolTip="{x:Static p:Resources.Phone_5}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone6" Source="/images/wizard/phone6.png" MouseDown="SelectedPhone6_MouseDown" ToolTip="{x:Static p:Resources.Phone_6}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone7" Source="/images/wizard/phone7.png" MouseDown="SelectedPhone7_MouseDown" ToolTip="{x:Static p:Resources.Phone_7}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone8" Source="/images/wizard/phone8.png" MouseDown="SelectedPhone8_MouseDown" ToolTip="{x:Static p:Resources.Phone_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="SelectedPhone9" Source="/images/wizard/phone9.png" MouseDown="SelectedPhone9_MouseDown" ToolTip="{x:Static p:Resources.Phone_9}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone10" Source="/images/wizard/phone10.png" MouseDown="SelectedPhone10_MouseDown" ToolTip="{x:Static p:Resources.Phone_10}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone11" Source="/images/wizard/phone11.png" MouseDown="SelectedPhone11_MouseDown" ToolTip="{x:Static p:Resources.Phone_11}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone12" Source="/images/wizard/phone12.png" MouseDown="SelectedPhone12_MouseDown" ToolTip="{x:Static p:Resources.Phone_12}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone13" Source="/images/wizard/phone13.png" MouseDown="SelectedPhone13_MouseDown" ToolTip="{x:Static p:Resources.Phone_13}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone14" Source="/images/wizard/phone14.png" MouseDown="SelectedPhone14_MouseDown" ToolTip="{x:Static p:Resources.Phone_14}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone15" Source="/images/wizard/phone15.png" MouseDown="SelectedPhone15_MouseDown" ToolTip="{x:Static p:Resources.Phone_15}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedPhone16" Source="/images/wizard/phone16.png" MouseDown="SelectedPhone16_MouseDown" ToolTip="{x:Static p:Resources.Phone_16}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel x:Name="SelectedUsers" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="40,10,40,30">
+                                <StackPanel>
+                                    <TextBlock x:Name="SelectedUsersText" Text="{x:Static p:Resources.Users}" FontSize="12" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="SelectedUser1" Source="/images/wizard/user1.png" MouseDown="SelectedUser1_MouseDown" ToolTip="{x:Static p:Resources.User_1}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser2" Source="/images/wizard/user2.png" MouseDown="SelectedUser2_MouseDown" ToolTip="{x:Static p:Resources.User_2}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser3" Source="/images/wizard/user3.png" MouseDown="SelectedUser3_MouseDown" ToolTip="{x:Static p:Resources.User_3}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser4" Source="/images/wizard/user4.png" MouseDown="SelectedUser4_MouseDown" ToolTip="{x:Static p:Resources.User_4}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser5" Source="/images/wizard/user5.png" MouseDown="SelectedUser5_MouseDown" ToolTip="{x:Static p:Resources.User_5}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser6" Source="/images/wizard/user6.png" MouseDown="SelectedUser6_MouseDown" ToolTip="{x:Static p:Resources.User_6}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser7" Source="/images/wizard/user7.png" MouseDown="SelectedUser7_MouseDown" ToolTip="{x:Static p:Resources.User_7}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser8" Source="/images/wizard/user8.png" MouseDown="SelectedUser8_MouseDown" ToolTip="{x:Static p:Resources.User_8}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Image x:Name="SelectedUser9" Source="/images/wizard/user9.png" MouseDown="SelectedUser9_MouseDown" ToolTip="{x:Static p:Resources.User_9}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser10" Source="/images/wizard/user10.png" MouseDown="SelectedUser10_MouseDown" ToolTip="{x:Static p:Resources.User_10}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser11" Source="/images/wizard/user11.png" MouseDown="SelectedUser11_MouseDown" ToolTip="{x:Static p:Resources.User_11}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser12" Source="/images/wizard/user12.png" MouseDown="SelectedUser12_MouseDown" ToolTip="{x:Static p:Resources.User_12}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser13" Source="/images/wizard/user13.png" MouseDown="SelectedUser13_MouseDown" ToolTip="{x:Static p:Resources.User_13}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser14" Source="/images/wizard/user14.png" MouseDown="SelectedUser14_MouseDown" ToolTip="{x:Static p:Resources.User_14}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser15" Source="/images/wizard/user15.png" MouseDown="SelectedUser15_MouseDown" ToolTip="{x:Static p:Resources.User_15}" Width="34" Margin="2" Visibility="Hidden"/>
+                                        <Image x:Name="SelectedUser16" Source="/images/wizard/user16.png" MouseDown="SelectedUser16_MouseDown" ToolTip="{x:Static p:Resources.User_16}" Width="34" Margin="2" Visibility="Hidden"/>
+                                    </StackPanel>
+                                </StackPanel>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </Border>
+                </DockPanel>
 
-                </StackPanel>
-            </Border>
-        </DockPanel>
-        
-        <DockPanel x:Name="Buttons" Height="60" Width="250" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="-10">
+            </Grid>
+        </ScrollViewer>
+        <DockPanel x:Name="Buttons" Height="60" Width="210" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Controls:Tile x:Name="LoginOK_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Ok}" TitleFontSize="10" 
                                        VerticalAlignment="Top" Background="#CC3DA254" HorizontalTitleAlignment="Right" Foreground="Black" 
                                        Click="ButtonOk_Click">
@@ -176,5 +291,9 @@
                 <Image Source="/images/login/login_cancel.png" Margin="30,0,0,0"/>
             </Controls:Tile>
         </DockPanel>
-    </Grid>
+    </StackPanel>
+    <!--<StackPanel>
+        
+    </StackPanel>-->
+
 </Controls:MetroWindow>

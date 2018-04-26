@@ -97,7 +97,7 @@ namespace ProdigyConfigToolWPF
                 if (obj.GetType() == typeof(ListViewItem))
                 {
                     File DbFile = (File)DBListBox.SelectedItem;
-                    var prodigy_configtool_window = new MainWindow(locale, role, DbFile.Name, null, null, null, null);
+                    var prodigy_configtool_window = new MainWindow(locale, role, DbFile.Name, null, null, null, null, null);
 
                     if (mainWindow != null)
                     {
@@ -167,21 +167,31 @@ namespace ProdigyConfigToolWPF
 
             File DbFile = (File)DBListBox.SelectedItem;
 
-            if(mainWindow != null)
+            if (DBListBox.SelectedIndex == -1)
             {
-                if (DbFile.Name.Equals(mainWindow.AppDbFile))
+                MessageBox.Show(Properties.Resources.ChooseFile, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+            }
+            else
+            {
+
+                if (mainWindow != null)
                 {
-                    MessageBox.Show(Properties.Resources.File_in_use, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                    if (DbFile.Name.Equals(mainWindow.AppDbFile))
+                    {
+                        MessageBox.Show(Properties.Resources.File_in_use, Properties.Resources.Error, MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                    }
+                    else
+                    {
+                        MoveDeletedFileToOldFolder(DbFile);
+                    }
                 }
                 else
                 {
                     MoveDeletedFileToOldFolder(DbFile);
                 }
             }
-            else
-            {
-                MoveDeletedFileToOldFolder(DbFile);
-            }  
+            
+            
         }
 
         private void MoveDeletedFileToOldFolder(File DbFile)

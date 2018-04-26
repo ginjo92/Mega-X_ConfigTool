@@ -1604,6 +1604,60 @@
   <ItemGroup>
     <Resource Include="images\buttons\tips.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\wizard\zones1.png" />
+    <Resource Include="images\wizard\zones10.png" />
+    <Resource Include="images\wizard\zones11.png" />
+    <Resource Include="images\wizard\zones12.png" />
+    <Resource Include="images\wizard\zones13.png" />
+    <Resource Include="images\wizard\zones14.png" />
+    <Resource Include="images\wizard\zones15.png" />
+    <Resource Include="images\wizard\zones16.png" />
+    <Resource Include="images\wizard\zones17.png" />
+    <Resource Include="images\wizard\zones18.png" />
+    <Resource Include="images\wizard\zones19.png" />
+    <Resource Include="images\wizard\zones2.png" />
+    <Resource Include="images\wizard\zones20.png" />
+    <Resource Include="images\wizard\zones21.png" />
+    <Resource Include="images\wizard\zones22.png" />
+    <Resource Include="images\wizard\zones23.png" />
+    <Resource Include="images\wizard\zones24.png" />
+    <Resource Include="images\wizard\zones25.png" />
+    <Resource Include="images\wizard\zones26.png" />
+    <Resource Include="images\wizard\zones27.png" />
+    <Resource Include="images\wizard\zones28.png" />
+    <Resource Include="images\wizard\zones29.png" />
+    <Resource Include="images\wizard\zones3.png" />
+    <Resource Include="images\wizard\zones30.png" />
+    <Resource Include="images\wizard\zones31.png" />
+    <Resource Include="images\wizard\zones32.png" />
+    <Resource Include="images\wizard\zones4.png" />
+    <Resource Include="images\wizard\zones5.png" />
+    <Resource Include="images\wizard\zones6.png" />
+    <Resource Include="images\wizard\zones7.png" />
+    <Resource Include="images\wizard\zones8.png" />
+    <Resource Include="images\wizard\zones9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\wizard\user10.png" />
+    <Resource Include="images\wizard\user11.png" />
+    <Resource Include="images\wizard\user12.png" />
+    <Resource Include="images\wizard\user13.png" />
+    <Resource Include="images\wizard\user14.png" />
+    <Resource Include="images\wizard\user15.png" />
+    <Resource Include="images\wizard\user16.png" />
+    <Resource Include="images\wizard\user2.png" />
+    <Resource Include="images\wizard\user3.png" />
+    <Resource Include="images\wizard\user4.png" />
+    <Resource Include="images\wizard\user5.png" />
+    <Resource Include="images\wizard\user6.png" />
+    <Resource Include="images\wizard\user7.png" />
+    <Resource Include="images\wizard\user8.png" />
+    <Resource Include="images\wizard\user9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\wizard\user1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
