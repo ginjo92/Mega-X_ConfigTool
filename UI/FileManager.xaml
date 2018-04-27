@@ -8,10 +8,12 @@
                       xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.FileManager"
                       mc:Ignorable="d"
-                      Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/images/icon.ico"
-                      Loaded="FileManagerWindow_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" MinWidth="1024" MinHeight="768">
+                      Title="Mega-X Config Tool" Height="510" Width="650" Icon="/images/icon.ico"
+                                                 Loaded="FileManagerWindow_Loaded" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None" 
+                                                 AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" >
     <Controls:MetroWindow.Resources>
         <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+        <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
     </Controls:MetroWindow.Resources>
 
     <!--Title bar Right content-->
@@ -49,30 +51,33 @@
     </Controls:MetroWindow.RightWindowCommands>-->
     <Grid>
         <!--FILE MENU-->
-        <DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top">
+        <!--<DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top">
             <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" Background="#FFCDC9C9" Opacity="0.5">
-                <!--TODO: Add names-->
+                -->
+        <!--TODO: Add names--><!--
                 <MenuItem Header="_File" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
                     <MenuItem Header="_Open" />
                     <MenuItem Header="_Close"/>
                     <MenuItem Header="_Save"/>
                 </MenuItem>
-                <!--TODO: Add names-->
+                -->
+        <!--TODO: Add names--><!--
                 <MenuItem Header="_Settings" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
                     <MenuItem Header="_Open"/>
                     <MenuItem Header="_Close"/>
                     <MenuItem Header="_Save"/>
                 </MenuItem>
-                <!--TODO: Add names-->
+                -->
+        <!--TODO: Add names--><!--
                 <MenuItem Header="_About" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
                     <MenuItem Header="_Open"/>
                     <MenuItem Header="_Close"/>
                     <MenuItem Header="_Save"/>
                 </MenuItem>
             </Menu>
-        </DockPanel>
+        </DockPanel>-->
         <!--TILES Shortcuts-->
-        <DockPanel Margin="0,36,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
+        <DockPanel Margin="0,0,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
             <!--Utilities menu-->
             <Controls:Tile x:Name="NewTile"  Width="200" Height="34" Title="{x:Static p:Resources.NewConfigFile}" TitleFontSize="12" HorizontalTitleAlignment="Right" 
                            VerticalAlignment="Center" Background="LightGray" Click="NewConfigTile_Click" HorizontalAlignment="Left" Foreground="Black" FontWeight="Bold">
@@ -101,11 +106,11 @@
                     </Rectangle.OpacityMask>
                 </Rectangle>
             </Controls:Tile>-->
-           
+
         </DockPanel>
         <!--CONTENT-->
-        <DockPanel x:Name="BaseFrame" Margin="0,76,0,35" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="#FFB1BFDA">
-            <ListView  x:Name="DBListBox" Width="300" HorizontalAlignment="Left" Background="WhiteSmoke" BorderThickness="1" BorderBrush="White"  SelectionChanged="ListViewClick" ControlzEx:KeyboardNavigationEx.AlwaysShowFocusVisual="True">
+        <DockPanel x:Name="BaseFrame" Margin="0,40,0,35" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="Gray">
+            <ListView  x:Name="DBListBox" Width="Auto" HorizontalAlignment="Left" Background="WhiteSmoke" BorderThickness="1" BorderBrush="White" SelectionChanged="ListViewClick" ControlzEx:KeyboardNavigationEx.AlwaysShowFocusVisual="False">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="{x:Type ListViewItem}">
                         <EventSetter Event="Control.MouseDoubleClick" Handler="ListView_MouseDoubleClick" />
@@ -113,58 +118,141 @@
                 </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView AllowsColumnReorder="False">
-                        <GridViewColumn Header="{x:Static p:Resources.Description}" Width="150" DisplayMemberBinding="{Binding Name}" />
-                        <GridViewColumn Header="{x:Static p:Resources.LastChanged}" Width="150" DisplayMemberBinding="{Binding LastChanged, StringFormat='{}{0:MM/dd/yyyy H:MM }'}" />
+                        <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="100">
+                            <GridViewColumn.Header>
+                                <TextBlock Text="{x:Static p:Resources.Description}" TextWrapping="Wrap"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding LastChanged, StringFormat='{}{0:MM/dd/yyyy H:MM }'}" Width="Auto">
+                            <GridViewColumn.Header>
+                                <TextBlock Text="{x:Static p:Resources.LastChanged}" TextWrapping="Wrap"/>
+                            </GridViewColumn.Header>
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <StackPanel Background="LightGray">
-                <Grid>
+            <Grid Background="LightGray" DataContext="{StaticResource clientInfoViewSource}" Margin="-10,0,0,0">
+                <StackPanel>
+                    <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <TextBlock Text="{x:Static p:Resources.Project}" Margin="15,10" FontSize="12" FontWeight="Bold"/>
+                        
+                    </StackPanel>-->
+                    <Label Content="{x:Static p:Resources.InfoClient}" Margin="10,10" FontSize="22"/>
+                    <TextBlock x:Name="ProjectName" FontSize="10" Foreground="Gray" Margin="15,-15,0,0"/>
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Height="Auto" Width="Auto" Margin="0,0,30,0" >
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                            <Label Margin="10,5" Content="{x:Static p:Resources.ClientName}" Width="120" FontWeight="Bold"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientName" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.Address1}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientAddr1" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5" Content="{x:Static p:Resources.Address2}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientAddr2" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5" Content="{x:Static p:Resources.City}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientCity" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.PostalCode}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientPostalCode" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.District}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientDistrict" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.Phone}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientPhone" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5" Content="{x:Static p:Resources.FaxNumber}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientFax" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.Email}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientEmail" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                            <Label Margin="10,5"  Content="{x:Static p:Resources.Website}" Width="120" FontWeight="Black"/>
+                            <Border BorderBrush="{x:Null}" Height="30">
+                                <TextBlock x:Name="ClientWebSite" VerticalAlignment="Stretch" Width="350" Height="30" Margin="0,7" Background="WhiteSmoke"/>
+                            </Border>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+
+                <!--<Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.ClientName}"/>
-                    <TextBlock x:Name="ClientName" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientName" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center" Foreground="Red"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Address1}"/>
-                    <TextBlock x:Name="ClientAddr1" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientAddr1" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Address2}"/>
-                    <TextBlock x:Name="ClientAddr2" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientAddr2" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.City}"/>
-                    <TextBlock x:Name="ClientCity" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientCity" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.PostalCode}"/>
-                    <TextBlock x:Name="ClientPostalCode" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientPostalCode" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.District}"/>
-                    <TextBlock x:Name="ClientDistrict" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientDistrict" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Phone}"/>
-                    <TextBlock x:Name="ClientPhone" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientPhone" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.FaxNumber}"/>
-                    <TextBlock x:Name="ClientFax" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientFax" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Email}"/>
-                    <TextBlock x:Name="ClientEmail" Margin="126,10,285,10" Background="WhiteSmoke"/>
+                    <TextBlock x:Name="ClientEmail" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid>
                     <Label Grid.Column="0" Margin="10" Content="{x:Static p:Resources.Website}"/>
-                    <TextBlock x:Name="ClientWebSite" Margin="126,10,285,10" Background="WhiteSmoke"/>
-                </Grid>
+                    <TextBlock x:Name="ClientWebSite" Margin="126,10,285,10" Background="WhiteSmoke" Height="30" VerticalAlignment="Center"/>
+                </Grid>-->
                 <!--<StackPanel Orientation="Horizontal" Opacity="0.8">
                     <Image Source="/images/maxalarm.png" Width="200" Margin="10"/>
                     <Image Source="/images/mega-x.png" Width="120" Margin="10,-10,0,0"/>
                 </StackPanel>-->
 
-            </StackPanel>
+            </Grid>
+        </DockPanel>
+        <DockPanel Height="34" VerticalAlignment="Bottom" Background="WhiteSmoke">
+            <Image Source="/images/maxalarm.png" Width="Auto" Height="30" HorizontalAlignment="Right" Margin="10,0"/>
         </DockPanel>
     </Grid>
 </Controls:MetroWindow>

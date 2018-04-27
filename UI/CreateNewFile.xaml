@@ -7,31 +7,32 @@
         xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
         mc:Ignorable="d"          
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen"
-        Title="{x:Static p:Resources.NewConfigFile}" Height="287.256" Width="246.24" ResizeMode="NoResize" IsMinButtonEnabled="False" ShowMinButton="False" 
+        Title="{x:Static p:Resources.NewConfigFile}" Height="250" Width="200" ResizeMode="NoResize" IsMinButtonEnabled="False" ShowMinButton="False" 
                       Topmost="True" ShowMaxRestoreButton="False" IsMaxRestoreButtonEnabled="False" ShowTitleBar="False" ShowCloseButton="True" IsWindowDraggable="False" 
-                      WindowStyle="None" Background="WhiteSmoke" AllowsTransparency="True">
+                      WindowStyle="None" Background="WhiteSmoke" AllowsTransparency="True" BorderBrush="LightGray" BorderThickness="1">
 
-    <StackPanel Background="WhiteSmoke" HorizontalAlignment="Center" Width="230" Margin="0,20">
-        <Label Content="{x:Static p:Resources.Description}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="20,0,0,0"/>
-        <TextBox  x:Name="NewConfigName" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0" Background="#FFFFFBFB" Width="180"/>
-        <RadioButton  x:Name="DefaultRadioButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20" IsChecked="True" Content="{x:Static p:Resources.Default_Configuration}"/>
-        <RadioButton x:Name="TemplateRadioButton" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="{x:Static p:Resources.Use_template}" Checked="TemplateRadioButton_Checked"/>
-        <ComboBox x:Name="ComboBoxFiles" IsEnabled="{Binding IsChecked, ElementName=radioButton}" Margin="35,20"/>
-        <Grid Margin="0,0">
-            <Controls:Tile x:Name="LoginOK_Tile" Width="80" Height="30" Title="{x:Static p:Resources.Button_Ok}" TitleFontSize="10" Margin="-100,0,0,0"
+    <StackPanel Background="WhiteSmoke" HorizontalAlignment="Center" Width="190 " Margin="10">
+        <Label Content="{x:Static p:Resources.Description}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="5,0,0,0"/>
+        <TextBox  x:Name="NewConfigName" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,0" Background="#FFFFFBFB" Width="170"/>
+        <RadioButton  x:Name="DefaultRadioButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" IsChecked="True" Content="{x:Static p:Resources.Default_Configuration}"/>
+        <RadioButton x:Name="TemplateRadioButton" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="TemplateRadioButton_Checked">
+            <RadioButton.Content>
+                <TextBlock Text="{x:Static p:Resources.Use_template}" TextWrapping="Wrap" Width="Auto"/>
+            </RadioButton.Content>
+        </RadioButton>
+        <ComboBox x:Name="ComboBoxFiles" IsEnabled="{Binding IsChecked, ElementName=radioButton}" Margin="10" Width="170"/>
+        <StackPanel Orientation="Horizontal" Width="170">
+            <Controls:Tile x:Name="LoginOK_Tile" Width="80" Height="30" Title="{x:Static p:Resources.Button_Ok}" TitleFontSize="10"
                                        VerticalAlignment="Top" Background="#CC3DA254" HorizontalTitleAlignment="Right" Foreground="Black" 
-                                       Click="ButtonCreateNewFile_Click"  IsDefault="True">
+                                       Click="ButtonCreateNewFile_Click"  IsDefault="True" Margin="0,0,0,0">
                 <Image Source="/images/login/login_ok.png" Margin="40,0,0,0"/>
             </Controls:Tile>
-            <Controls:Tile x:Name="LoginCancel_Tile" Width="80" Height="30" Title="{x:Static p:Resources.Button_cancel}" TitleFontSize="10" Margin="100,0,0,0"
+            <Controls:Tile x:Name="LoginCancel_Tile" Width="80" Height="30" Title="{x:Static p:Resources.Button_cancel}" TitleFontSize="10"
                                        VerticalAlignment="Top" Background="#FFC94C46" Click="ButtonCancel_Click" HorizontalTitleAlignment="Right"
-                                       Foreground="Black" IsCancel="True">
+                                       Foreground="Black" IsCancel="True" Margin="10,0,0,0">
                 <Image Source="/images/login/login_cancel.png" Margin="40,0,0,0"/>
             </Controls:Tile>
-
-
-
-        </Grid>
+        </StackPanel>
     </StackPanel>
 
 </Controls:MetroWindow>

@@ -2832,4 +2832,7 @@
   <data name="User_9" xml:space="preserve">
     <value>Utilizador 9</value>
   </data>
+  <data name="Project" xml:space="preserve">
+    <value>Projecto</value>
+  </data>
 </root>

@@ -3004,7 +3004,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informação do Cliente.
+        ///   Looks up a localized string similar to Client Information.
         /// </summary>
         public static string InfoClient {
             get {
@@ -4818,6 +4818,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string ProdigyConfigurator {
             get {
                 return ResourceManager.GetString("ProdigyConfigurator", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project.
+        /// </summary>
+        public static string Project {
+            get {
+                return ResourceManager.GetString("Project", resourceCulture);
             }
         }
         

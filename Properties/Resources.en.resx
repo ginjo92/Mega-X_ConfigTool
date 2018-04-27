@@ -2566,7 +2566,7 @@
     <value>Turn On</value>
   </data>
   <data name="InfoClient" xml:space="preserve">
-    <value>Info Client</value>
+    <value>Client Information</value>
   </data>
   <data name="descriptionAudio" xml:space="preserve">
     <value>Audio</value>
@@ -2801,5 +2801,8 @@
   </data>
   <data name="User_9" xml:space="preserve">
     <value>User 9</value>
+  </data>
+  <data name="Project" xml:space="preserve">
+    <value>Project</value>
   </data>
 </root>

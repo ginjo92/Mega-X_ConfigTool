@@ -25,7 +25,7 @@
 
         <StackPanel Margin="300,0,100,0">
             <GroupBox x:Name="infoClient" Header="{x:Static p:Resources.InfoClient}">
-                <Grid DataContext="{StaticResource zoneViewSource}" HorizontalAlignment="Center" Margin="12,-30,-270,0" VerticalAlignment="Center">
+                <Grid DataContext="{StaticResource clientInfoViewSource}" HorizontalAlignment="Center" Margin="12,-30,-270,0" VerticalAlignment="Center">
 
                     <TextBox x:Name="ClientName" Margin="0,50,285,10" Controls:TextBoxHelper.UseFloatingWatermark="True"  
                                      Controls:TextBoxHelper.Watermark="{x:Static p:Resources.ClientName}" VerticalAlignment="Top" Grid.Column="0"

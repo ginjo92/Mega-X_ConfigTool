@@ -127,6 +127,8 @@ namespace ProdigyConfigToolWPF
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + DbFile.Name + "; data source = " + configurations_folder + DbFile.Name);
 
+            
+
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + DbFile.Name + "; data source = Database\\" + DbFile.Name);
 
             // Opens an unencrypted database
@@ -140,6 +142,8 @@ namespace ProdigyConfigToolWPF
             // Load data into the table Zone. You can modify this code as needed.
             MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
             databaseDataSetMainInfoTableAdapter.Fill(databaseDataSet.MainInfo);
+
+            this.ProjectName.Text = DbFile.Name;
 
             this.ClientName.Text = databaseDataSet.MainInfo.Rows[0]["ClientName"].ToString();
             this.ClientAddr1.Text = databaseDataSet.MainInfo.Rows[0]["Address_1"].ToString();

@@ -667,7 +667,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Description}" CanUserResize="False" Header="{x:Static p:Resources.Zone_Description}" MinWidth="70" MaxWidth="210">
+                                <DataGridTextColumn x:Name="descriptionColumn" Binding="{Binding Description}" CanUserResize="False" Header="{x:Static p:Resources.Zone_Description}" Width="140">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -679,7 +679,7 @@
                                     </DataGridTextColumn.HeaderStyle>
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_Description}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static p:Resources.Zone_Description}" Width="140" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                     <DataGridTextColumn.EditingElementStyle>
@@ -4098,7 +4098,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn x:Name="descriptionColumn1" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="descriptionColumn1" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="120" CanUserResize="False">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -4110,7 +4110,7 @@
                                     </DataGridTextColumn.HeaderStyle>
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="300" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
@@ -6768,7 +6768,7 @@
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
                                 <!--Name-->
-                                <DataGridTextColumn x:Name="User_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="User_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="140" CanUserResize="False">
                                      <DataGridTextColumn.EditingElementStyle>
                                         <Style TargetType="TextBox">
                                             <Setter Property="MaxLength" Value="20"/>
@@ -6785,7 +6785,7 @@
                                     </DataGridTextColumn.HeaderStyle>
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="300" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="140" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
@@ -10020,7 +10020,7 @@
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn x:Name="Keypad_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="Keypad_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="140" CanUserResize="False">
                                     <DataGridTextColumn.EditingElementStyle>
                                         <Style TargetType="TextBox">
                                             <Setter Property="MaxLength" Value="20"/>
@@ -10037,7 +10037,7 @@
                                     </DataGridTextColumn.HeaderStyle>
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="300" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="140" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
@@ -11374,7 +11374,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn x:Name="outputdescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Zone_Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="outputdescriptionColumn" Binding="{Binding Description}" Header="{x:Static p:Resources.Zone_Description}" Width="140" CanUserResize="False">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -12237,7 +12237,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn x:Name="TimezoneName_Column" Binding="{Binding Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="TimezoneName_Column" Binding="{Binding Description}" Width="140" CanUserResize="False">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -13118,7 +13118,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn x:Name="Phones_Name" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="70" MinWidth="70" MaxWidth="300">
+                                <DataGridTextColumn x:Name="Phones_Name" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="140" CanUserResize="False">
                                     <DataGridTextColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -14483,7 +14483,41 @@
                                    Text="{x:Static p:Resources.ClientInfo}"/>
                         </Grid>
 
-                        <controls:UserControlClient Margin="-100,0,0,0"/>
+                        <Grid x:Name="ClientInfoGrid" DataContext="{StaticResource clientInfoViewSource}" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Margin="30,0,0,0">
+                                    <StackPanel DataContext="{StaticResource clientInfoViewSource}" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <TextBox x:Name="ClientName" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.ClientName}" VerticalAlignment="Center" 
+                                                 Width="500" Height="38" Text="{Binding ClientName, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientAddr1TextBox1" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Address1}" VerticalAlignment="Top" 
+                                                 Width="500" Height="38" Text="{Binding Address_1, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientAddr2TextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Address2}" VerticalAlignment="Top" 
+                                                 Width="500" Height="38" Text="{Binding Address_2, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientCityTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.City}" VerticalAlignment="Top"
+                                                 Width="500" Height="38" Text="{Binding City, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientPostalCodeTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.PostalCode}" VerticalAlignment="Top"
+                                                 Width="500" Height="38" Text="{Binding PostalCode, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientPhoneTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Phone}" VerticalAlignment="Top"
+                                                 Width="500" Height="38" Text="{Binding PhoneNumber, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientFaxTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.FaxNumber}" VerticalAlignment="Top"
+                                                 Width="500" Height="38" Text="{Binding FaxNumber, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientEmailTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Email}" VerticalAlignment="Top" 
+                                                 Width="500" Height="38" Text="{Binding Email, Mode=TwoWay}" Margin="10"/>
+                                        <TextBox x:Name="ClientWebPageTextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Website}" VerticalAlignment="Top"
+                                                 Width="500" Height="38" Text="{Binding WebPage, Mode=TwoWay}" Margin="10"/>
+                                    </StackPanel>
+                                
+                            </StackPanel>
+                        </Grid>
+
+                        <!--<controls:UserControlClient Margin="-100,0,0,0"/>-->
                     </StackPanel>
                 </TabItem>
                 <!--EVENTS-->

@@ -84,7 +84,6 @@ namespace ProdigyConfigToolWPF
         System.Windows.Forms.Timer timer = null;
         bool audio_system_momory_isfull = false;
         bool audio_system_momory_istrigger = false;
-        bool audio_recording = false;
         public MainWindow(string locale, int role, string ChoosenDbFile, Dictionary<int, bool> KeypadConfig, Dictionary<int, bool> DialerConfig, Dictionary<int, bool> ZonesConfig, Dictionary<int, bool> PhonesConfig, Dictionary<int, bool> UsersConfig)
         {
             AppLocale = locale;
