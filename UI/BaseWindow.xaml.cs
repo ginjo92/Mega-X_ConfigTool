@@ -36,6 +36,7 @@ namespace ProdigyConfigToolWPF
     {
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
 
+        string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
         private string AppLocale;
         public int AppRole;
@@ -13878,6 +13879,14 @@ namespace ProdigyConfigToolWPF
         private void ButtonPlayAudioConfig_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void CloseFile_Click(object sender, RoutedEventArgs e)
+        {
+            
+            var filemanagerwindow = new FileManager(AppLocale, AppRole, this);
+            this.Close();
+            filemanagerwindow.Show();
         }
     }
 }

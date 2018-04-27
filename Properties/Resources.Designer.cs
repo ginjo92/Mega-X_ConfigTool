@@ -5272,6 +5272,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Skip.
+        /// </summary>
+        public static string Skip {
+            get {
+                return ResourceManager.GetString("Skip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to State: .
         /// </summary>
         public static string State {
@@ -5304,6 +5313,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Sunday {
             get {
                 return ResourceManager.GetString("Sunday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure to delete this file?.
+        /// </summary>
+        public static string SureToDeleteFile {
+            get {
+                return ResourceManager.GetString("SureToDeleteFile", resourceCulture);
             }
         }
         

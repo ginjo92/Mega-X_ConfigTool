@@ -1658,6 +1658,15 @@
   <ItemGroup>
     <Resource Include="images\wizard\user1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\buttons\skip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\login\login_skip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\buttons\closefile.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

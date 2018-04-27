@@ -17,7 +17,7 @@
     <StackPanel>
         <ScrollViewer VerticalScrollBarVisibility="Auto" Height="430">
             <Grid>
-                <DockPanel x:Name="PanelLeft" Margin="0,0,0,-60" Height="Auto" Width="390" HorizontalAlignment="Left">
+                <DockPanel x:Name="PanelLeft" Margin="0,0,0,50" Height="Auto" Width="390" HorizontalAlignment="Left">
                     <Border BorderThickness="1" BorderBrush="LightGray">
                         <StackPanel Background="WhiteSmoke">
                             <TextBlock Text="{x:Static p:Resources.ClickToSelect}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
@@ -150,7 +150,7 @@
                     </Border>
                 </DockPanel>
 
-                <DockPanel x:Name="PanelRight" Margin="400,0,0,60" Width="390" Height="Auto" HorizontalAlignment="Right">
+                <DockPanel x:Name="PanelRight" Margin="400,0,0,50" Width="390" Height="Auto" HorizontalAlignment="Right">
                     <Border BorderThickness="1" BorderBrush="LightGray">
                         <StackPanel Background="WhiteSmoke">
                             <TextBlock Text="{x:Static p:Resources.SystemConfiguration}" FontSize="18" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" />
@@ -279,18 +279,23 @@
 
             </Grid>
         </ScrollViewer>
-        <DockPanel x:Name="Buttons" Height="60" Width="210" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+        <StackPanel Orientation="Horizontal" x:Name="Buttons" Height="60" Width="300" HorizontalAlignment="Right" VerticalAlignment="Bottom">
             <Controls:Tile x:Name="LoginOK_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Ok}" TitleFontSize="10" 
                                        VerticalAlignment="Top" Background="#CC3DA254" HorizontalTitleAlignment="Right" Foreground="Black" 
                                        Click="ButtonOk_Click">
                 <Image Source="/images/login/login_ok.png" Margin="30,0,0,0"/>
+            </Controls:Tile>
+            <Controls:Tile x:Name="LoginSkip_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Skip}" TitleFontSize="10" 
+                                       VerticalAlignment="Top" Background="Khaki" Click="ButtonSkip_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Black">
+                <Image Source="/images/login/login_skip.png" Margin="30,0,0,0"/>
             </Controls:Tile>
             <Controls:Tile x:Name="LoginCancel_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Button_cancel}" TitleFontSize="10" 
                                        VerticalAlignment="Top" Background="#FFC94C46" Click="ButtonCancel_Click" HorizontalTitleAlignment="Right"
                                        Foreground="Black">
                 <Image Source="/images/login/login_cancel.png" Margin="30,0,0,0"/>
             </Controls:Tile>
-        </DockPanel>
+        </StackPanel>
     </StackPanel>
     <!--<StackPanel>
         

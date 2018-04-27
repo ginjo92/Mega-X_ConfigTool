@@ -69,8 +69,8 @@ namespace ProdigyConfigToolWPF
                 DeleteTile.IsEnabled = false;
             }
 
-            if (mainWindow != null)
-                DeleteTile.Visibility = Visibility.Collapsed;
+            //if (mainWindow != null)
+            //    DeleteTile.Visibility = Visibility.Collapsed;
 
         }
 
@@ -186,12 +186,29 @@ namespace ProdigyConfigToolWPF
                     }
                     else
                     {
-                        MoveDeletedFileToOldFolder(DbFile);
+                        var messageBox = MessageBox.Show(Properties.Resources.DeleteConfigFile, Properties.Resources.SureToDeleteFile, MessageBoxButton.YesNo);
+                        if (messageBox == MessageBoxResult.No)
+                        {
+                            
+                        }
+                        else if (messageBox == MessageBoxResult.Yes)
+                        {
+                           MoveDeletedFileToOldFolder(DbFile);
+                        }
                     }
                 }
                 else
                 {
-                    MoveDeletedFileToOldFolder(DbFile);
+                    var messageBox = MessageBox.Show(Properties.Resources.DeleteConfigFile, Properties.Resources.SureToDeleteFile, MessageBoxButton.YesNo);
+                    if (messageBox == MessageBoxResult.No)
+                    {
+
+                    }
+                    else if (messageBox == MessageBoxResult.Yes)
+                    {
+                        MoveDeletedFileToOldFolder(DbFile);
+                    }
+                   
                 }
             }
             

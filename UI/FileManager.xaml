@@ -10,7 +10,8 @@
                       mc:Ignorable="d"
                       Title="Mega-X Config Tool" Height="510" Width="650" Icon="/images/icon.ico"
                                                  Loaded="FileManagerWindow_Loaded" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None" 
-                                                 AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" >
+                                                 AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" ResizeMode="NoResize" >
+
     <Controls:MetroWindow.Resources>
         <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
@@ -50,32 +51,6 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>-->
     <Grid>
-        <!--FILE MENU-->
-        <!--<DockPanel x:Name="BaseFileMenuDockPanel" VerticalAlignment="Top">
-            <Menu x:Name="BaseFileMenu" DockPanel.Dock="Top" Height="35" Width="Auto" Background="#FFCDC9C9" Opacity="0.5">
-                -->
-        <!--TODO: Add names--><!--
-                <MenuItem Header="_File" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
-                    <MenuItem Header="_Open" />
-                    <MenuItem Header="_Close"/>
-                    <MenuItem Header="_Save"/>
-                </MenuItem>
-                -->
-        <!--TODO: Add names--><!--
-                <MenuItem Header="_Settings" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
-                    <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Close"/>
-                    <MenuItem Header="_Save"/>
-                </MenuItem>
-                -->
-        <!--TODO: Add names--><!--
-                <MenuItem Header="_About" Foreground="Black" Margin="2" Background="#FFCDC9C9" Visibility="Collapsed">
-                    <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Close"/>
-                    <MenuItem Header="_Save"/>
-                </MenuItem>
-            </Menu>
-        </DockPanel>-->
         <!--TILES Shortcuts-->
         <DockPanel Margin="0,0,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
             <!--Utilities menu-->

@@ -2835,4 +2835,10 @@
   <data name="Project" xml:space="preserve">
     <value>Projecto</value>
   </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Ignorar</value>
+  </data>
+  <data name="SureToDeleteFile" xml:space="preserve">
+    <value>Pretende eliminar este ficheiro?</value>
+  </data>
 </root>

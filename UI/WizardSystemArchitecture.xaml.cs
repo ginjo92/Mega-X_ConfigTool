@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace ProdigyConfigToolWPF
 {
@@ -23,6 +24,9 @@ namespace ProdigyConfigToolWPF
         private string AppLocale;
         private int AppRole;
         private string config_file_name;
+        private MainWindow mainWindow;
+        
+        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\\"; //My documents folder
 
         public WizardSystemArchitecture(string locale, int role, string config_file_name)
         {
@@ -32,10 +36,21 @@ namespace ProdigyConfigToolWPF
             InitializeComponent();
         }
 
-        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        private void ButtonSkip_Click(object sender, RoutedEventArgs e)
         {
             var prodigy_configtool_window = new MainWindow(AppLocale, AppRole, config_file_name, null, null, null, null, null);
             prodigy_configtool_window.Show();
+
+            this.Close();
+        }
+
+        private void ButtonCancel_Click(object sender, RoutedEventArgs e)
+        {
+            
+            File.Delete(configurations_folder + config_file_name);
+
+            var filemanager_window = new FileManager(AppLocale, AppRole, null);
+            filemanager_window.Show();
 
             this.Close();
         }
