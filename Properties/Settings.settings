@@ -5,14 +5,6 @@
     <Setting Name="DefaultCulture" Type="System.String" Scope="User">
       <Value Profile="(Default)">pt-PT</Value>
     </Setting>
-    <Setting Name="SqliteLoginConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;attachdbfilename=|DataDirectory|\Database\Login\SqliteLogin.prgy;data source=Database\Login\SqliteLogin.prgy&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SQLite.EF6&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">attachdbfilename=|DataDirectory|\Database\Login\SqliteLogin.prgy;data source=Database\Login\SqliteLogin.prgy</Value>
-    </Setting>
     <Setting Name="defaultConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
@@ -20,6 +12,14 @@
   &lt;ProviderName&gt;System.Data.SQLite.EF6&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">attachdbfilename=|DataDirectory|\configuration\setup\default\default.prgy;data source=configuration\setup\default\default.prgy</Value>
+    </Setting>
+    <Setting Name="SqliteLoginConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;attachdbfilename=|DataDirectory|\Database\Login\SqliteLogin.prgy;data source=Database\Login\SqliteLogin.prgy&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SQLite.EF6&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">attachdbfilename=|DataDirectory|\Database\Login\SqliteLogin.prgy;data source=Database\Login\SqliteLogin.prgy</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -207,14 +207,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8606720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8637440">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.0.1.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Tt7zvcy4GSQUJqMKKoDRVS52DCuLvufT/GmI4VBOfJI=</dsig:DigestValue>
+        <dsig:DigestValue>zujrQ5L+iOnWkCTjKZOLcc8WZyL9DKa4RMZrjqKzIMg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -226,7 +226,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>07cj0/2S2bFSWbJD4waN4mypr8t9r+H0PD34br6BcOU=</dsig:DigestValue>
+        <dsig:DigestValue>uyrL2KgB3MDoWw22JhekiW3rVYL01SHwZhVdv0KwdJw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -238,7 +238,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+dHrGL7GIIq/zMXcH6pEyywj/YWH4GcmwlcF6lVOrjs=</dsig:DigestValue>
+        <dsig:DigestValue>AV/77B9XR4mHcGqwk1HHoLph32JhiI4fxNJGQSwn0Fs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -497,7 +497,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eBc0NllXpwDlGvGk+lG4+0+mYdUPI1m2dvyrZ+zX+2w=</dsig:DigestValue>
+      <dsig:DigestValue>n44LRIdeDlfiY9yXDMe8ufSbBp/ZLchKNaEC40PxIyw=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

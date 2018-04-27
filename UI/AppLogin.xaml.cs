@@ -40,32 +40,32 @@ namespace ProdigyConfigToolWPF
             this.Language = XmlLanguage.GetLanguage(
                         Properties.Settings.Default.DefaultCulture);
             
-            switch (Properties.Settings.Default.DefaultCulture)
-            {
-                case "pt-PT":
-                    InitializeComponent();
-                    RadioLocaleEN_Active.Visibility = Visibility.Collapsed;
-                    RadioLocalePT_Active.Visibility = Visibility.Visible;
-                    break;
+            //switch (Properties.Settings.Default.DefaultCulture)
+            //{
+            //    case "pt-PT":
+            //        InitializeComponent();
+            //        RadioLocaleEN_Active.Visibility = Visibility.Collapsed;
+            //        RadioLocalePT_Active.Visibility = Visibility.Visible;
+            //        break;
 
-                case "en-US":
-                    InitializeComponent();
-                    RadioLocaleEN_Active.Visibility = Visibility.Visible;
-                    RadioLocalePT_Active.Visibility = Visibility.Collapsed;
-                    break;
+            //    case "en-US":
+            //        InitializeComponent();
+            //        RadioLocaleEN_Active.Visibility = Visibility.Visible;
+            //        RadioLocalePT_Active.Visibility = Visibility.Collapsed;
+            //        break;
 
-                default:
-                    InitializeComponent();
-                    RadioLocaleEN_Active.Visibility = Visibility.Visible;
-                    RadioLocalePT_Active.Visibility = Visibility.Collapsed;
-                    break;
-            }
+            //    default:
+            //        InitializeComponent();
+            //        RadioLocaleEN_Active.Visibility = Visibility.Visible;
+            //        RadioLocalePT_Active.Visibility = Visibility.Collapsed;
+            //        break;
+            //}
 
 
             if (args.Length == 2)
             {
                 //Get all needed information from Form
-                string user_login = this.UserLoginValue.Text;
+                //string user_login = this.UserLoginValue.Text;
                 string user_password = args[1];
 
                 //TODO: Create DB and process it - return and pass to mainWindow - role, and username
@@ -74,49 +74,6 @@ namespace ProdigyConfigToolWPF
                 user_login_table_adapter.Fill(login_dataset.UserLogin);
 
                 foreach (DataRow dr in login_dataset.UserLogin.Rows)
-                {
-                    if (dr["UserName"].ToString() == user_login)
-                    {
-                        if (dr["Password"].ToString() == user_password)
-                        {
-                            loginsuccessfull = true;
-
-                            //sanitize locale
-                            string locale = sanitize_locale(this);
-
-                            var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
-                            prodigy_configtool_window.Show();
-                            this.Close();
-
-                        }
-                    }
-                }
-
-
-                if (!loginsuccessfull)
-                {
-                    MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                    this.Close();
-                }
-
-               
-            }
-        }
-
-        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            //Get all needed information from Form
-            string user_login = this.UserLoginValue.Text;          
-            string user_password = this.UserPasswordValue.Password;
-
-            //TODO: Create DB and process it - return and pass to mainWindow - role, and username
-            SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
-            UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
-            user_login_table_adapter.Fill(login_dataset.UserLogin);
-
-            foreach (DataRow dr in login_dataset.UserLogin.Rows)
-            {
-                if (dr["UserName"].ToString() == user_login)
                 {
                     if (dr["Password"].ToString() == user_password)
                     {
@@ -128,15 +85,46 @@ namespace ProdigyConfigToolWPF
                         var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
                         prodigy_configtool_window.Show();
                         this.Close();
-                       
+
                     }
                 }
+                if (loginsuccessfull == false)
+                {
+                    MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                    this.Close();
+                }
             }
+        }
 
-            if (!loginsuccessfull)
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            //Get all needed information from Form
+            //string user_login = this.UserLoginValue.Text;          
+            string user_password = this.UserPasswordValue.Password;
+
+            //TODO: Create DB and process it - return and pass to mainWindow - role, and username
+            SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
+            UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
+            user_login_table_adapter.Fill(login_dataset.UserLogin);
+
+            foreach (DataRow dr in login_dataset.UserLogin.Rows)
+            {
+                 if (dr["Password"].ToString() == user_password)
+                    {
+                        loginsuccessfull = true;
+
+                        //sanitize locale
+                        string locale = sanitize_locale(this);
+
+                        var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
+                        prodigy_configtool_window.Show();
+                        this.Close();
+                    }
+            }
+            if (loginsuccessfull == false)
             {
                 MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                //this.Close();
+                this.Close();
             }
         }
 
@@ -236,8 +224,8 @@ namespace ProdigyConfigToolWPF
         {
             if (e.Key == Key.Enter)
             {
-                //Get all needed information from Form
-                string user_login = this.UserLoginValue.Text;
+                ////Get all needed information from Form
+                //string user_login = this.UserLoginValue.Text;
                 string user_password = this.UserPasswordValue.Password;
 
                 //TODO: Create DB and process it - return and pass to mainWindow - role, and username
@@ -247,21 +235,23 @@ namespace ProdigyConfigToolWPF
 
                 foreach (DataRow dr in login_dataset.UserLogin.Rows)
                 {
-                    if (dr["UserName"].ToString() == user_login)
+                    if (dr["Password"].ToString() == user_password)
                     {
-                        if (dr["Password"].ToString() == user_password)
-                        {
-                            loginsuccessfull = true;
+                        loginsuccessfull = true;
 
-                            //sanitize locale
-                            string locale = sanitize_locale(this);
+                        //sanitize locale
+                        string locale = sanitize_locale(this);
 
-                            var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
-                            prodigy_configtool_window.Show();
-                            this.Close();
+                        var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
+                        prodigy_configtool_window.Show();
+                        this.Close();
 
-                        }
                     }
+                }
+                if (loginsuccessfull == false)
+                {
+                    MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                    this.Close();
                 }
             }
         }

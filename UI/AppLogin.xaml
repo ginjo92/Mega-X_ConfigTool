@@ -30,48 +30,55 @@
     <Grid>
         <!--FLYOUT-->
         
-        <Border   HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="400" Width="330" Background="#FFF7F7F7" BorderBrush="Black" >
+        <Border   HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Height="350" Width="330" Background="#FFF7F7F7" BorderBrush="Black" >
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
             <StackPanel Background="WhiteSmoke">
                 <Controls:Tile x:Name="UserLoginHeader" Width="Auto" Height="100" TitleFontSize="10" 
-                               HorizontalTitleAlignment="Center" Background="Black" VerticalAlignment="Top" Margin="0" BorderBrush="Black" 
-                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20" IsEnabled="False">
-                    <Image Source="/images/login/login.png" Height="180"/>
+                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Margin="0" BorderBrush="Black" 
+                               HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20" IsEnabled="True">
+                    <Image Source="/images/mega-x2.png"/>
                 </Controls:Tile>
-                <Label Content="{x:Static p:Resources.Login}" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"/>
                 <!--USER NAME-->
-                <Grid   HorizontalAlignment="Left" Margin="20,20,20,0" VerticalAlignment="Top" Background="White" Height="50" Width="330" >
+                <!--<Grid HorizontalAlignment="Left" Margin="20,20,20,0" VerticalAlignment="Top" Background="White" Height="50" Width="330" >
                     <Controls:Tile x:Name="UserLogin" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="White" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalTitleAlignment="Top" Foreground="#FF705D5D" BorderThickness="1" BorderBrush="Black" IsEnabled="False">
-                        <Image Source="/images/login/username.png" Height="36"/>
+                        <Image x:Name="UserLoginImage" Height="36"/>
                     </Controls:Tile>
-                    <ComboBox x:Name="UserLoginValue" Grid.Column="1" Background="White"  VerticalAlignment="Center" Width="240" Height="50" HorizontalAlignment="Left" Margin="50,0,0,0" FontSize="20" IsEditable="True" HorizontalContentAlignment="Center"  ItemsSource="{Binding Source={StaticResource UserLogins_dict}}" SelectedValuePath="Value" 
-                                DisplayMemberPath="Value" SelectedIndex="0" />
-                </Grid>
+                    <ComboBox x:Name="UserLoginValue" Background="White"  VerticalAlignment="Center" Width="240" Height="50" HorizontalAlignment="Left" Margin="50,0,0,0" 
+                              FontSize="20" IsEditable="True" HorizontalContentAlignment="Center"  ItemsSource="{Binding Source={StaticResource UserLogins_dict}}" 
+                              SelectedValuePath="Value" DisplayMemberPath="Value" SelectedIndex="0" />
+                </Grid>-->
                 <!--USER PSWD-->
-                <Grid   HorizontalAlignment="Left" Margin="20,25,20,0" VerticalAlignment="Top" Background="White" Width="330" Height="50" >
-
-                    <Controls:Tile x:Name="UserPassword" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="WhiteSmoke" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" VerticalTitleAlignment="Top" Foreground="#FF705D5D" BorderThickness="1" BorderBrush="Black" IsEnabled="False">
-                       
-                        <Image Source="/images/login/password.png" Height="38"/>
+                <Label Content="Login" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
+                
+                <Grid   HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" Background="White" Width="330" Height="50" >
+                    <Controls:Tile x:Name="UserPassword" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="WhiteSmoke" Margin="0" 
+                                   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15" HorizontalAlignment="Left" 
+                                   VerticalTitleAlignment="Top" Foreground="#FF705D5D" BorderThickness="1" BorderBrush="LightGray" IsEnabled="True">
+                        <StackPanel Margin="0,0" Height="50">
+                            <Image Source="/images/login/password.png" Height="40" Margin="0,0" Opacity="0.75"/>
+                            <TextBlock Text="Password" HorizontalAlignment="Center" FontSize="8" Foreground="Gray" Height="20" Margin="0,-5" VerticalAlignment="Center"/>
+                        </StackPanel>
                     </Controls:Tile>
-                    <PasswordBox x:Name="UserPasswordValue" Grid.Column="1" Background="White" VerticalAlignment="Top" Width="240" Height="50" HorizontalAlignment="Left" 
-                                 Margin="50,0,0,0" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyDown="UserPasswordValue_KeyDown"/>
+                    <PasswordBox x:Name="UserPasswordValue" Background="White" VerticalAlignment="Top" Width="240" Height="50" HorizontalAlignment="Left" 
+                                                            BorderBrush="LightGray" BorderThickness="0,1,1,1" Margin="50,0,0,0" FontSize="20" 
+                                                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                                                            KeyDown="UserPasswordValue_KeyDown"/>
                 </Grid>
                 <!--BUTTONS-->
-                <Grid HorizontalAlignment="Center" Margin="20,20,20,0" VerticalAlignment="Top" Width="200" Height="40">
-                    <Controls:Tile x:Name="LoginOK_Tile" Width="90" Height="30" Title="{x:Static p:Resources.LoginOk}" TitleFontSize="10" Margin="-100,0,0,0"
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20">
+                    <Controls:Tile x:Name="LoginOK_Tile" Width="90" Height="30" Title="{x:Static p:Resources.LoginOk}" TitleFontSize="10" Margin="0,0,0,0"
                                        VerticalAlignment="Top" Background="#CC3DA254" HorizontalTitleAlignment="Right" Foreground="Black" 
                                        Click="ButtonLogin_Click">
                         <Image Source="/images/login/login_ok.png" Margin="30,0,0,0"/>
                     </Controls:Tile>
-                    <Controls:Tile x:Name="LoginCancel_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Close}" TitleFontSize="10" Margin="100,0,0,0"
+                    <Controls:Tile x:Name="LoginCancel_Tile" Width="90" Height="30" Title="{x:Static p:Resources.Close}" TitleFontSize="10" Margin="10,0,0,0"
                                        VerticalAlignment="Top" Background="#FFC94C46" Click="ButtonCancel_Click" HorizontalTitleAlignment="Right"
                                        Foreground="Black">
                         <Image Source="/images/login/login_cancel.png" Margin="30,0,0,0"/>
                     </Controls:Tile>
-                </Grid>
+                </StackPanel>
                 <!--Language-->
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <StackPanel.Resources>

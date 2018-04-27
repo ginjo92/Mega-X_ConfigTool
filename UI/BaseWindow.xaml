@@ -319,8 +319,8 @@
                                                Foreground="Black">
                     <Controls:Tile.Content>
                         <StackPanel Orientation="Horizontal">
-                            <Image x:Name="TopBar_User_Image" Source="/images/topbaricons/user_admin.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <TextBlock x:Name="TopBar_User_Name" Text="Admin" VerticalAlignment="Center" Margin="5,0,5,0" />
+                            <Image x:Name="TopBar_User_Image" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="TopBar_User_Name" VerticalAlignment="Center" Margin="5,0"/>
                         </StackPanel>
                     </Controls:Tile.Content>
                     <Controls:Tile.Style>

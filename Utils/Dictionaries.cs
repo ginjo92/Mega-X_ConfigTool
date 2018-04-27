@@ -151,7 +151,9 @@ namespace ProdigyConfigToolWPF
         public static Dictionary<int, string> GetUserLogin()
         {
             Dictionary<int, string> UserLogins = new Dictionary<int, string>();
-            UserLogins.Add(0, "Admin");
+            UserLogins.Add(0, "User");
+            UserLogins.Add(1, "Manufacturer");
+            UserLogins.Add(2, "Installer");
             return UserLogins;
         }
 

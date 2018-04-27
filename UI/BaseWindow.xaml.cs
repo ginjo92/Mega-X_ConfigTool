@@ -298,9 +298,12 @@ namespace ProdigyConfigToolWPF
             CreateTreeviewItemsfor(TreeviewPhones, Constants.KP_MAX_PHONES, Properties.Resources.Phone);
             #endregion
 
-            //If not manufacturer
-            if (AppRole != 3)
+            //USER
+            if (AppRole == 0)
             {
+                TopBar_User_Name.Text = "User";
+                TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/0_user.png", UriKind.Relative));
+
                 TreeviewDebug.Visibility = Visibility.Collapsed;
                 TreeviewFwUpdate.Visibility = Visibility.Collapsed;
                 ReadFWUpdateData.Visibility = Visibility.Collapsed;
@@ -308,6 +311,23 @@ namespace ProdigyConfigToolWPF
                 Open_Debug.Visibility = Visibility.Collapsed;
                 User_Code_Column.Visibility = Visibility.Collapsed;
                 User_UserCode_Button.Visibility = Visibility.Collapsed;
+            }
+            //MANUFACTURER
+            else if (AppRole == 1)
+            {
+                TopBar_User_Name.Text = "Manufacturer";
+                TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/1_manufacturer.png", UriKind.Relative));
+                
+            }
+            //MANUFACTURER
+            else if (AppRole == 2)
+            {
+                TopBar_User_Name.Text = "Installer";
+                TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/2_installer.png", UriKind.Relative));
+
+                TreeviewDebug.Visibility = Visibility.Collapsed;
+                Open_Debug.Visibility = Visibility.Collapsed;
+               
             }
 
             //Force 'Home' tree view item to be selected on loaded
@@ -394,8 +414,6 @@ namespace ProdigyConfigToolWPF
                 //AUDIO
                 string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\";
-
-                //AUDIO DEFAULT
 
 
                 //databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
@@ -10386,7 +10404,7 @@ namespace ProdigyConfigToolWPF
         {
             //Get all needed information from Form
             var applogin = new AppLogin();
-            string user_login = applogin.UserLoginValue.Text;
+            string user_login = "User";
 
             //sanitize locale
             string locale = AppLocale;
@@ -12507,7 +12525,7 @@ namespace ProdigyConfigToolWPF
             User_Type_Column.Visibility = User_Type_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             User_Active_Column.Visibility = User_Active_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
-            if (AppRole==3) User_Code_Column.Visibility = User_Code_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            if (AppRole!=0) User_Code_Column.Visibility = User_Code_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
             User_CanChangeClock.Visibility = User_CanChangeClock.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             User_ValidateCalendar.Visibility = User_ValidateCalendar.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
