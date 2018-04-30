@@ -12177,735 +12177,274 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #region Shortcuts
-        //ZONES
+
+        private void Shortcuts_SingleFilter(DataGridTemplateColumn a)
+        {
+            a.Visibility = a.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+        }
+        private void Shortcuts_MinusToPlus(DataGridTemplateColumn minus, DataGridTemplateColumn plus)
+        {
+            if (minus.Visibility == Visibility.Visible)
+                minus.Visibility = Visibility.Hidden;
+            else
+                plus.Visibility = plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+        }
+        private void Shortcuts_Disabling(Tile enabled, Tile disabled)
+        {
+            if (enabled.Visibility == Visibility.Visible)
+            {
+                enabled.Visibility = Visibility.Collapsed;
+                disabled.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                enabled.Visibility = Visibility.Visible;
+                disabled.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        #region Zones
         private void ZoneShortcuts_GeneralSettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            zone_activeColumn.Visibility = zone_activeColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            soak_testColumn.Visibility = soak_testColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            always_reportColumn.Visibility = always_reportColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            arm_if_not_readyColumn.Visibility = arm_if_not_readyColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(zone_activeColumn);
+            Shortcuts_SingleFilter(soak_testColumn);
+            Shortcuts_SingleFilter(always_reportColumn);
+            Shortcuts_SingleFilter(arm_if_not_readyColumn);
+           
+            Shortcuts_MinusToPlus(EntryTimes_minus, EntryTimes_plus);
+            Shortcuts_MinusToPlus(_24H_Config_minus, _24H_Config_plus);
+            Shortcuts_MinusToPlus(Keyswitch_Config_minus, Keyswitch_Config_plus);
+            Shortcuts_MinusToPlus(Bypass_Config_minus, Bypass_Config_plus);
+            Shortcuts_MinusToPlus(Zone_Type_minus, Zone_Type_plus);
+            Shortcuts_MinusToPlus(Chime_Config_minus, Chime_Config_plus);
 
-            if (EntryTimes_minus.Visibility == Visibility.Visible)
-                EntryTimes_minus.Visibility = Visibility.Hidden;
-            else
-                EntryTimes_plus.Visibility = EntryTimes_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (_24H_Config_minus.Visibility == Visibility.Visible)
-                _24H_Config_minus.Visibility = Visibility.Hidden;
-            else
-                _24H_Config_plus.Visibility = _24H_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Keyswitch_Config_minus.Visibility == Visibility.Visible)
-                Keyswitch_Config_minus.Visibility = Visibility.Hidden;
-            else
-                Keyswitch_Config_plus.Visibility = Keyswitch_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Bypass_Config_minus.Visibility == Visibility.Visible)
-                Bypass_Config_minus.Visibility = Visibility.Hidden;
-            else
-                Bypass_Config_plus.Visibility = Bypass_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Zone_Type_minus.Visibility == Visibility.Visible)
-                Zone_Type_minus.Visibility = Visibility.Hidden;
-            else
-                Zone_Type_plus.Visibility = Zone_Type_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Chime_Config_plus.Visibility == Visibility.Visible)
-                Chime_Config_plus.Visibility = Visibility.Hidden;
-            else
-                Chime_Config_plus.Visibility = Chime_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (ZoneShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                ZoneShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                ZoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ZoneShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                ZoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
-
+            Shortcuts_Disabling(ZoneShortcuts_SettingsTile, ZoneShortcuts_SettingsTileDISABLED);
+            
         }
         private void ZoneShortcuts_AreasKeypadsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Zones_Areas_Away_minus.Visibility == Visibility.Visible)
-                Zones_Areas_Away_minus.Visibility = Visibility.Hidden;
-            else
-                Zones_Areas_Away_plus.Visibility = Zones_Areas_Away_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Zones_Areas_Stay_minus.Visibility == Visibility.Visible)
-                Zones_Areas_Stay_minus.Visibility = Visibility.Hidden;
-            else
-                Zones_Areas_Stay_plus.Visibility = Zones_Areas_Stay_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
+            Shortcuts_MinusToPlus(Zones_Areas_Away_minus, Zones_Areas_Away_plus);
+            Shortcuts_MinusToPlus(Zones_Areas_Stay_minus, Zones_Areas_Stay_plus);
+            Shortcuts_MinusToPlus(Zones_ShowKeypad_minus, Zones_ShowKeypad_plus);
+            
             Zones_KeypadBypass.Visibility = Zones_KeypadBypass.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
-            if (Zones_ShowKeypad_minus.Visibility == Visibility.Visible)
-                Zones_ShowKeypad_minus.Visibility = Visibility.Hidden;
-            else
-                Zones_ShowKeypad_plus.Visibility = Zones_ShowKeypad_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-
-            //Disable button
-            if (ZoneShortcuts_AreasKeypadsTile.Visibility == Visibility.Visible)
-            {
-                ZoneShortcuts_AreasKeypadsTile.Visibility = Visibility.Collapsed;
-                ZoneShortcuts_AreasKeypadsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ZoneShortcuts_AreasKeypadsTile.Visibility = Visibility.Visible;
-                ZoneShortcuts_AreasKeypadsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
-
+            Shortcuts_Disabling(ZoneShortcuts_AreasKeypadsTile, ZoneShortcuts_AreasKeypadsTileDISABLED);
+           
         }
         private void ZoneShortcuts_TerminalsButton_Click(object sender, RoutedEventArgs e)
         {
-            terminal_circuit_typeColumn.Visibility = terminal_circuit_typeColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(terminal_circuit_typeColumn);
+           
+            Shortcuts_MinusToPlus(R1_Config_minus, R1_Config_plus);
+            Shortcuts_MinusToPlus(R2_Config_minus, R2_Config_plus);
+            Shortcuts_MinusToPlus(R3_Config_minus, R3_Config_plus);
 
-            if (R1_Config_minus.Visibility == Visibility.Visible)
-                R1_Config_minus.Visibility = Visibility.Hidden;
-            else
-                R1_Config_plus.Visibility = R1_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (R2_Config_minus.Visibility == Visibility.Visible)
-                R2_Config_minus.Visibility = Visibility.Hidden;
-            else
-                R2_Config_plus.Visibility = R2_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (R3_Config_minus.Visibility == Visibility.Visible)
-                R3_Config_minus.Visibility = Visibility.Hidden;
-            else
-                R3_Config_plus.Visibility = R3_Config_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            
-            //Disable button
-            if (ZoneShortcuts_TerminalsTile.Visibility == Visibility.Visible)
-            {
-                ZoneShortcuts_TerminalsTile.Visibility = Visibility.Collapsed;
-                ZoneShortcuts_TerminalsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ZoneShortcuts_TerminalsTile.Visibility = Visibility.Visible;
-                ZoneShortcuts_TerminalsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
-
+            Shortcuts_Disabling(ZoneShortcuts_TerminalsTile, ZoneShortcuts_TerminalsTileDISABLED);
         }
         private void ZoneShortcuts_OutputsButton_Click(object sender, RoutedEventArgs e)
         {
-            //Zone Alarm
-            if (Zone_Alarm_Output_minus.Visibility == Visibility.Visible)
-                Zone_Alarm_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Zone_Alarm_Output_plus.Visibility = Zone_Alarm_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Chime
-            if (Chime_Output_minus.Visibility == Visibility.Visible)
-                Chime_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Chime_Output_plus.Visibility = Chime_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Sensor Watch
-            if (Sensor_Watch_Output_minus.Visibility == Visibility.Visible)
-                Sensor_Watch_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Sensor_Watch_Output_plus.Visibility = Sensor_Watch_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Entry Time
-            if (Entry_Time_Output_minus.Visibility == Visibility.Visible)
-                Entry_Time_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Entry_Time_Output_plus.Visibility = Entry_Time_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Anti-Mask
-            if (Anti_Mask_Output_minus.Visibility == Visibility.Visible)
-                Anti_Mask_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Anti_Mask_Output_plus.Visibility = Anti_Mask_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //24H Alarm
-            if (_24H_Alarm_Output_minus.Visibility == Visibility.Visible)
-                _24H_Alarm_Output_minus.Visibility = Visibility.Hidden;
-            else
-                _24H_Alarm_Output_plus.Visibility = _24H_Alarm_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Fire Alarm
-            if (Fire_Alarm_Output_minus.Visibility == Visibility.Visible)
-                Fire_Alarm_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Fire_Alarm_Output_plus.Visibility = Fire_Alarm_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            //Tamper Alarm
-            if (Tamper_Alarm_Output_minus.Visibility == Visibility.Visible)
-                Tamper_Alarm_Output_minus.Visibility = Visibility.Hidden;
-            else
-                Tamper_Alarm_Output_plus.Visibility = Tamper_Alarm_Output_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Zone_Alarm_Output_minus, Zone_Alarm_Output_plus);
+            Shortcuts_MinusToPlus(Chime_Output_minus, Chime_Output_plus);
+            Shortcuts_MinusToPlus(Sensor_Watch_Output_minus, Sensor_Watch_Output_plus);
+            Shortcuts_MinusToPlus(Entry_Time_Output_minus, Entry_Time_Output_plus);
+            Shortcuts_MinusToPlus(Anti_Mask_Output_minus, Anti_Mask_Output_plus);
+            Shortcuts_MinusToPlus(_24H_Alarm_Output_minus, _24H_Alarm_Output_plus);
+            Shortcuts_MinusToPlus(Fire_Alarm_Output_minus, Fire_Alarm_Output_plus);
+            Shortcuts_MinusToPlus(Tamper_Alarm_Output_minus, Tamper_Alarm_Output_plus);
 
-            //Disable button
-            if (ZoneShortcuts_OutputsTile.Visibility == Visibility.Visible)
-            {
-                ZoneShortcuts_OutputsTile.Visibility = Visibility.Collapsed;
-                ZoneShortcuts_OutputsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ZoneShortcuts_OutputsTile.Visibility = Visibility.Visible;
-                ZoneShortcuts_OutputsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(ZoneShortcuts_OutputsTile, ZoneShortcuts_OutputsTileDISABLED);
         }
         private void ZoneShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Zone_Audio_minus.Visibility == Visibility.Visible)
-                Zone_Audio_minus.Visibility = Visibility.Hidden;
-            else
-                Zone_Audio_plus.Visibility = Zone_Audio_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Zone_Audio_minus, Zone_Audio_plus);
 
-            //Disable button
-            if (ZoneShortcuts_AudioTile.Visibility == Visibility.Visible)
-            {
-                ZoneShortcuts_AudioTile.Visibility = Visibility.Collapsed;
-                ZoneShortcuts_AudioTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                ZoneShortcuts_AudioTile.Visibility = Visibility.Visible;
-                ZoneShortcuts_AudioTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(ZoneShortcuts_AudioTile, ZoneShortcuts_AudioTileDISABLED);
         }
+        #endregion
 
-        //AREAS
+        #region Areas
         private void AreasShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            Shortcuts_SingleFilter(not_arm_if_zones_open_after_exit_delayColumn);
             dRCV_account_numberColumn.Visibility = dRCV_account_numberColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             voice_call_codeColumn.Visibility = voice_call_codeColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            not_arm_if_zones_open_after_exit_delayColumn.Visibility = not_arm_if_zones_open_after_exit_delayColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            
-            if (Area_Code_Required_minus.Visibility == Visibility.Visible)
-                Area_Code_Required_minus.Visibility = Visibility.Hidden;
-            else
-                Area_Code_Required_plus.Visibility = Area_Code_Required_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
-            if (Exit_Times_minus.Visibility == Visibility.Visible)
-                Exit_Times_minus.Visibility = Visibility.Hidden;
-            else
-                Exit_Times_plus.Visibility = Exit_Times_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            
+            Shortcuts_MinusToPlus(Area_Code_Required_minus, Area_Code_Required_plus);
+            Shortcuts_MinusToPlus(Exit_Times_minus, Exit_Times_plus);
 
-            //Disable button
-            if (AreasShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                AreasShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                AreasShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                AreasShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                AreasShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(AreasShortcuts_SettingsTile, AreasShortcuts_SettingsTileDISABLED);
         }
         private void AreasShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Timezones_Start_Arm_minus.Visibility == Visibility.Visible)
-                Timezones_Start_Arm_minus.Visibility = Visibility.Hidden;
-            else
-                Timezones_Start_Arm_plus.Visibility = Timezones_Start_Arm_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Timezones_Start_Arm_minus, Timezones_Start_Arm_plus);
+            Shortcuts_MinusToPlus(Timezones_End_Disarm_minus, Timezones_End_Disarm_plus);
 
-            if (Timezones_End_Disarm_minus.Visibility == Visibility.Visible)
-                Timezones_End_Disarm_minus.Visibility = Visibility.Hidden;
-            else
-                Timezones_End_Disarm_plus.Visibility = Timezones_End_Disarm_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (AreasShortcuts_TimezonesTile.Visibility == Visibility.Visible)
-            {
-                AreasShortcuts_TimezonesTile.Visibility = Visibility.Collapsed;
-                AreasShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                AreasShortcuts_TimezonesTile.Visibility = Visibility.Visible;
-                AreasShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(AreasShortcuts_TimezonesTile, AreasShortcuts_TimezonesTileDISABLED);
         }
         private void AreasShortcuts_OutputsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Arm_Away_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Away_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Away_Outputs_plus.Visibility = Arm_Away_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Arm_Away_Outputs_minus, Arm_Away_Outputs_plus);
+            Shortcuts_MinusToPlus(Arm_Stay_Outputs_minus, Arm_Stay_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Away_Outputs_minus, Disarm_Away_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Stay_Outputs_minus, Disarm_Stay_Outputs_plus);
+            Shortcuts_MinusToPlus(Arm_Away_Pulsed_Outputs_minus, Arm_Away_Pulsed_Outputs_plus);
+            Shortcuts_MinusToPlus(Arm_Stay_Pulsed_Outputs_minus, Arm_Stay_Pulsed_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Away_Pulsed_Outputs_minus, Disarm_Away_Pulsed_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Stay_Pulsed_Outputs_minus, Disarm_Stay_Pulsed_Outputs_plus);
+            Shortcuts_MinusToPlus(Arm_Away_Beeps_Outputs_minus, Arm_Away_Beeps_Outputs_plus);
+            Shortcuts_MinusToPlus(Arm_Stay_Beeps_Outputs_minus, Arm_Stay_Beeps_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Away_Beeps_Outputs_minus, Disarm_Away_Beeps_Outputs_plus);
+            Shortcuts_MinusToPlus(Disarm_Stay_Beeps_Outputs_minus, Disarm_Stay_Beeps_Outputs_plus);
 
-            if (Arm_Stay_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Stay_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Stay_Outputs_plus.Visibility = Arm_Stay_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Away_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Away_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Away_Outputs_plus.Visibility = Disarm_Away_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Stay_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Stay_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Stay_Outputs_plus.Visibility = Disarm_Stay_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Arm_Away_Pulsed_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Away_Pulsed_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Away_Pulsed_Outputs_plus.Visibility = Arm_Away_Pulsed_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Arm_Stay_Pulsed_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Stay_Pulsed_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Stay_Pulsed_Outputs_plus.Visibility = Arm_Stay_Pulsed_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Away_Pulsed_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Away_Pulsed_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Away_Pulsed_Outputs_plus.Visibility = Disarm_Away_Pulsed_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Stay_Pulsed_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Stay_Pulsed_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Stay_Pulsed_Outputs_plus.Visibility = Disarm_Stay_Pulsed_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Arm_Away_Beeps_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Away_Beeps_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Away_Beeps_Outputs_plus.Visibility = Arm_Away_Beeps_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Arm_Stay_Beeps_Outputs_minus.Visibility == Visibility.Visible)
-                Arm_Stay_Beeps_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Arm_Stay_Beeps_Outputs_plus.Visibility = Arm_Stay_Beeps_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Away_Beeps_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Away_Beeps_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Away_Beeps_Outputs_plus.Visibility = Disarm_Away_Beeps_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Disarm_Stay_Beeps_Outputs_minus.Visibility == Visibility.Visible)
-                Disarm_Stay_Beeps_Outputs_minus.Visibility = Visibility.Hidden;
-            else
-                Disarm_Stay_Beeps_Outputs_plus.Visibility = Disarm_Stay_Beeps_Outputs_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (AreasShortcuts_OutputsTile.Visibility == Visibility.Visible)
-            {
-                AreasShortcuts_OutputsTile.Visibility = Visibility.Collapsed;
-                AreasShortcuts_OutputsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                AreasShortcuts_OutputsTile.Visibility = Visibility.Visible;
-                AreasShortcuts_OutputsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(AreasShortcuts_OutputsTile, AreasShortcuts_OutputsTileDISABLED);
         }
         private void AreasShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Area_Audio_minus.Visibility == Visibility.Visible)
-                Area_Audio_minus.Visibility = Visibility.Hidden;
-            else
-                Area_Audio_plus.Visibility = Area_Audio_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Area_Audio_minus, Area_Audio_plus);
 
-            //Disable button
-            if (AreasShortcuts_AudioTile.Visibility == Visibility.Visible)
-            {
-                AreasShortcuts_AudioTile.Visibility = Visibility.Collapsed;
-                AreasShortcuts_AudioTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                AreasShortcuts_AudioTile.Visibility = Visibility.Visible;
-                AreasShortcuts_AudioTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(AreasShortcuts_AudioTile, AreasShortcuts_AudioTileDISABLED);
         }
+        #endregion
 
-        //USERS
+        #region Users
         private void UserShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            User_Type_Column.Visibility = User_Type_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            User_Active_Column.Visibility = User_Active_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(User_Type_Column);
+            Shortcuts_SingleFilter(User_Active_Column);
+            if (AppRole != 0) Shortcuts_SingleFilter(User_Code_Column);
+            Shortcuts_SingleFilter(User_CanChangeClock);
+            Shortcuts_SingleFilter(User_ValidateCalendar);
+            Shortcuts_SingleFilter(User_InitialDate);
+            Shortcuts_SingleFilter(User_FinalDate);
 
-            if (AppRole!=0) User_Code_Column.Visibility = User_Code_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            User_CanChangeClock.Visibility = User_CanChangeClock.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            User_ValidateCalendar.Visibility = User_ValidateCalendar.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            User_InitialDate.Visibility = User_InitialDate.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            User_FinalDate.Visibility = User_FinalDate.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (UserShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                UserShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                UserShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                UserShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                UserShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(UserShortcuts_SettingsTile, UserShortcuts_SettingsTileDISABLED);
         }
         private void UserShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (User_Timezone_Permissions_minus.Visibility == Visibility.Visible)
-                User_Timezone_Permissions_minus.Visibility = Visibility.Hidden;
-            else
-                User_Timezone_Permissions_plus.Visibility = User_Timezone_Permissions_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(User_Timezone_Permissions_minus, User_Timezone_Permissions_plus);
 
-            //Disable button
-            if (UserShortcuts_TimezonesTile.Visibility == Visibility.Visible)
-            {
-                UserShortcuts_TimezonesTile.Visibility = Visibility.Collapsed;
-                UserShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                UserShortcuts_TimezonesTile.Visibility = Visibility.Visible;
-                UserShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(UserShortcuts_TimezonesTile, UserShortcuts_TimezonesTileDISABLED);
         }
         private void UserShortcuts_PermissionsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (User_ArmDisarm_Permissions_minus.Visibility == Visibility.Visible)
-                User_ArmDisarm_Permissions_minus.Visibility = Visibility.Hidden;
-            else
-                User_ArmDisarm_Permissions_plus.Visibility = User_ArmDisarm_Permissions_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(User_ArmDisarm_Permissions_minus, User_ArmDisarm_Permissions_plus);
+            Shortcuts_MinusToPlus(User_Area_Permissions_minus, User_Area_Permissions_plus);
+            Shortcuts_MinusToPlus(User_Output_Permissions_minus, User_Output_Permissions_plus);
 
-            if (User_Area_Permissions_minus.Visibility == Visibility.Visible)
-                User_Area_Permissions_minus.Visibility = Visibility.Hidden;
-            else
-                User_Area_Permissions_plus.Visibility = User_Area_Permissions_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (User_Output_Permissions_minus.Visibility == Visibility.Visible)
-                User_Output_Permissions_minus.Visibility = Visibility.Hidden;
-            else
-                User_Output_Permissions_plus.Visibility = User_Output_Permissions_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-           
-            //Disable button
-            if (UserShortcuts_PermissionsTile.Visibility == Visibility.Visible)
-            {
-                UserShortcuts_PermissionsTile.Visibility = Visibility.Collapsed;
-                UserShortcuts_PermissionsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                UserShortcuts_PermissionsTile.Visibility = Visibility.Visible;
-                UserShortcuts_PermissionsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(UserShortcuts_PermissionsTile, UserShortcuts_PermissionsTileDISABLED);
         }
         private void UserShortcuts_ButtonsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Button_A_AreaAway_minus.Visibility == Visibility.Visible)
-                Button_A_AreaAway_minus.Visibility = Visibility.Hidden;
-            else
-                Button_A_AreaAway_plus.Visibility = Button_A_AreaAway_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Button_A_AreaAway_minus, Button_A_AreaAway_plus);
+            Shortcuts_MinusToPlus(Button_A_AreaStay_minus, Button_A_AreaStay_plus);
+            Shortcuts_MinusToPlus(Button_B_AreaAway_minus, Button_B_AreaAway_plus);
+            Shortcuts_MinusToPlus(Button_B_AreaStay_minus, Button_B_AreaStay_plus);
+            Shortcuts_MinusToPlus(Button_C_AreaAway_minus, Button_C_AreaAway_plus);
+            Shortcuts_MinusToPlus(Button_C_AreaStay_minus, Button_C_AreaStay_plus);
+            Shortcuts_MinusToPlus(Button_D_AreaAway_minus, Button_D_AreaAway_plus);
+            Shortcuts_MinusToPlus(Button_D_AreaStay_minus, Button_D_AreaStay_plus);
 
-            if (Button_A_AreaStay_minus.Visibility == Visibility.Visible)
-                Button_A_AreaStay_minus.Visibility = Visibility.Hidden;
-            else
-                Button_A_AreaStay_plus.Visibility = Button_A_AreaStay_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_B_AreaAway_minus.Visibility == Visibility.Visible)
-                Button_B_AreaAway_minus.Visibility = Visibility.Hidden;
-            else
-                Button_B_AreaAway_plus.Visibility = Button_B_AreaAway_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_B_AreaStay_minus.Visibility == Visibility.Visible)
-                Button_B_AreaStay_minus.Visibility = Visibility.Hidden;
-            else
-                Button_B_AreaStay_plus.Visibility = Button_B_AreaStay_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_C_AreaAway_minus.Visibility == Visibility.Visible)
-                Button_C_AreaAway_minus.Visibility = Visibility.Hidden;
-            else
-                Button_C_AreaAway_plus.Visibility = Button_C_AreaAway_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_C_AreaStay_minus.Visibility == Visibility.Visible)
-                Button_C_AreaStay_minus.Visibility = Visibility.Hidden;
-            else
-                Button_C_AreaStay_plus.Visibility = Button_C_AreaStay_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_D_AreaAway_minus.Visibility == Visibility.Visible)
-                Button_D_AreaAway_minus.Visibility = Visibility.Hidden;
-            else
-                Button_D_AreaAway_plus.Visibility = Button_D_AreaAway_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Button_D_AreaStay_minus.Visibility == Visibility.Visible)
-                Button_D_AreaStay_minus.Visibility = Visibility.Hidden;
-            else
-                Button_D_AreaStay_plus.Visibility = Button_D_AreaStay_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (UserShortcuts_ButtonsTile.Visibility == Visibility.Visible)
-            {
-                UserShortcuts_ButtonsTile.Visibility = Visibility.Collapsed;
-                UserShortcuts_ButtonsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                UserShortcuts_ButtonsTile.Visibility = Visibility.Visible;
-                UserShortcuts_ButtonsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(UserShortcuts_ButtonsTile, UserShortcuts_ButtonsTileDISABLED);
         }
         private void UserShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
-            if (User_Audio_minus.Visibility == Visibility.Visible)
-                User_Audio_minus.Visibility = Visibility.Hidden;
-            else
-                User_Audio_plus.Visibility = User_Audio_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(User_Audio_minus, User_Audio_plus);
 
-            //Disable button
-            if (UserShortcuts_AudioTile.Visibility == Visibility.Visible)
-            {
-                UserShortcuts_AudioTile.Visibility = Visibility.Collapsed;
-                UserShortcuts_AudioTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                UserShortcuts_AudioTile.Visibility = Visibility.Visible;
-                UserShortcuts_AudioTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(UserShortcuts_AudioTile, UserShortcuts_AudioTileDISABLED);
         }
+        #endregion
 
-        //KEYPADS
+        #region Keypads
         private void KeypadShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            Keypad_Active_Column.Visibility = Keypad_Active_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(Keypad_Active_Column);
+            Shortcuts_SingleFilter(Backlight_OFF_230V_Column);
+            Shortcuts_SingleFilter(Keypad_Enable_Tamper_Column);
+            Shortcuts_SingleFilter(NoIndicationsWhileArmed_Column);
+            Shortcuts_SingleFilter(SilentDuring_EntryTime_Column);
+            Shortcuts_SingleFilter(SilentDuring_ExitTime_Column);
+            Shortcuts_SingleFilter(Keypad_HourFormat_Column);
+            Shortcuts_SingleFilter(Keypad_DateFormat_Column);
             Backlight_Time_Column.Visibility = Backlight_Time_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Backlight_OFF_230V_Column.Visibility = Backlight_OFF_230V_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Keypad_Enable_Tamper_Column.Visibility = Keypad_Enable_Tamper_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            NoIndicationsWhileArmed_Column.Visibility = NoIndicationsWhileArmed_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            SilentDuring_EntryTime_Column.Visibility = SilentDuring_EntryTime_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            SilentDuring_ExitTime_Column.Visibility = SilentDuring_ExitTime_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Keypad_HourFormat_Column.Visibility = Keypad_HourFormat_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Keypad_DateFormat_Column.Visibility = Keypad_DateFormat_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
-            //Disable button
-            if (KeypadShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_SettingsTile, KeypadShortcuts_SettingsTileDISABLED);
         }
         private void KeypadShortcuts_AreasButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Keypad_Areas_minus.Visibility == Visibility.Visible)
-                Keypad_Areas_minus.Visibility = Visibility.Hidden;
-            else
-                Keypad_Areas_plus.Visibility = Keypad_Areas_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Keypad_Areas_minus, Keypad_Areas_plus);
 
-            //Disable button
-            if (KeypadShortcuts_AreasTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_AreasTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_AreasTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_AreasTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_AreasTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_AreasTile, KeypadShortcuts_AreasTileDISABLED);
         }
         private void KeypadShortcuts_BeepsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Keypad_Beeps_minus.Visibility == Visibility.Visible)
-                Keypad_Beeps_minus.Visibility = Visibility.Hidden;
-            else
-                Keypad_Beeps_plus.Visibility = Keypad_Beeps_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Keypad_Beeps_minus, Keypad_Beeps_plus);
 
-            //Disable button
-            if (KeypadShortcuts_BeepsTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_BeepsTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_BeepsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_BeepsTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_BeepsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_BeepsTile, KeypadShortcuts_BeepsTileDISABLED);
         }
         private void KeypadShortcuts_ArmDisarmButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Keypad_ArmDisarm_Permissions_minus.Visibility == Visibility.Visible)
-                Keypad_ArmDisarm_Permissions_minus.Visibility = Visibility.Hidden;
-            else
-                Keypad_ArmDisarm_Permissions_plus.Visibility = Keypad_ArmDisarm_Permissions_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Keypad_ArmDisarm_Permissions_minus, Keypad_ArmDisarm_Permissions_plus);
 
-            //Disable button
-            if (KeypadShortcuts_ArmDisarmTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_ArmDisarmTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_ArmDisarmTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_ArmDisarmTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_ArmDisarmTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_ArmDisarmTile, KeypadShortcuts_ArmDisarmTileDISABLED);
         }
         private void KeypadShortcuts_FbuttonsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Fbuttons_minus.Visibility == Visibility.Visible)
-                Fbuttons_minus.Visibility = Visibility.Hidden;
-            else
-                Fbuttons_plus.Visibility = Fbuttons_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Fbuttons_minus, Fbuttons_plus);
 
-            //Disable button
-            if (KeypadShortcuts_FbuttonsTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_FbuttonsTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_FbuttonsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_FbuttonsTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_FbuttonsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_FbuttonsTile, KeypadShortcuts_FbuttonsTileDISABLED);
         }
         private void KeypadShortcuts_AudioButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Keypad_Audio_minus.Visibility == Visibility.Visible)
-                Keypad_Audio_minus.Visibility = Visibility.Hidden;
-            else
-                Keypad_Audio_plus.Visibility = Keypad_Audio_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Keypad_Audio_minus, Keypad_Audio_plus);
 
-            //Disable button
-            if (KeypadShortcuts_AudioTile.Visibility == Visibility.Visible)
-            {
-                KeypadShortcuts_AudioTile.Visibility = Visibility.Collapsed;
-                KeypadShortcuts_AudioTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                KeypadShortcuts_AudioTile.Visibility = Visibility.Visible;
-                KeypadShortcuts_AudioTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(KeypadShortcuts_AudioTile, KeypadShortcuts_AudioTileDISABLED);
         }
+        #endregion
 
-        //OUTPUTS
+        #region Outputs
         private void OutputShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            cleanassociationsColumn.Visibility = cleanassociationsColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            invertedColumn.Visibility = invertedColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(cleanassociationsColumn);
+            Shortcuts_SingleFilter(invertedColumn);
 
-            if (TimeConfig_minus.Visibility == Visibility.Visible)
-                TimeConfig_minus.Visibility = Visibility.Hidden;
-            else
-                TimeConfig_plus.Visibility = TimeConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(TimeConfig_minus, TimeConfig_plus);
+            Shortcuts_MinusToPlus(Output_ChimeConfig_minus, Output_ChimeConfig_plus);
+            Shortcuts_MinusToPlus(Output_PulseConfig_minus, Output_PulseConfig_plus);
+            Shortcuts_MinusToPlus(Output_Beeps_minus, Output_Beeps_plus);
 
-            if (Output_ChimeConfig_minus.Visibility == Visibility.Visible)
-                Output_ChimeConfig_minus.Visibility = Visibility.Hidden;
-            else
-                Output_ChimeConfig_plus.Visibility = Output_ChimeConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Output_PulseConfig_minus.Visibility == Visibility.Visible)
-                Output_PulseConfig_minus.Visibility = Visibility.Hidden;
-            else
-                Output_PulseConfig_plus.Visibility = Output_PulseConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Output_Beeps_minus.Visibility == Visibility.Visible)
-                Output_Beeps_minus.Visibility = Visibility.Hidden;
-            else
-                Output_Beeps_plus.Visibility = Output_Beeps_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            
-            //Disable button
-            if (OutputShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                OutputShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                OutputShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                OutputShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                OutputShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(OutputShortcuts_SettingsTile, OutputShortcuts_SettingsTileDISABLED);
         }
         private void OutputShortcuts_TimezonesButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Output_Timezones_minus.Visibility == Visibility.Visible)
-                Output_Timezones_minus.Visibility = Visibility.Hidden;
-            else
-                Output_Timezones_plus.Visibility = Output_Timezones_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Output_Timezones_minus, Output_Timezones_plus);
 
-            //Disable button
-            if (OutputShortcuts_TimezonesTile.Visibility == Visibility.Visible)
-            {
-                OutputShortcuts_TimezonesTile.Visibility = Visibility.Collapsed;
-                OutputShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                OutputShortcuts_TimezonesTile.Visibility = Visibility.Visible;
-                OutputShortcuts_TimezonesTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(OutputShortcuts_TimezonesTile, OutputShortcuts_TimezonesTileDISABLED);
         }
+        #endregion
 
-        //TIMEZONES
+        #region Timezones
         private void TimezoneShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            Timezone_InitialHour.Visibility = Timezone_InitialHour.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Timezone_FinalHour.Visibility = Timezone_FinalHour.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(Timezone_InitialHour);
+            Shortcuts_SingleFilter(Timezone_FinalHour);
 
-            if (Timezone_Weekdays_minus.Visibility == Visibility.Visible)
-                Timezone_Weekdays_minus.Visibility = Visibility.Hidden;
-            else
-                Timezone_Weekdays_plus.Visibility = Timezone_Weekdays_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Timezone_Weekdays_minus, Timezone_Weekdays_plus);
 
-            //Disable button
-            if (TimezoneShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                TimezoneShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                TimezoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                TimezoneShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                TimezoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(TimezoneShortcuts_SettingsTile, TimezoneShortcuts_SettingsTileDISABLED);
         }
         private void TimezoneShortcuts_ExceptionsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Timezone_Exception_1_minus.Visibility == Visibility.Visible)
-                Timezone_Exception_1_minus.Visibility = Visibility.Hidden;
-            else
-                Timezone_Exception_1_plus.Visibility = Timezone_Exception_1_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Timezone_Exception_1_minus, Timezone_Exception_1_plus);
+            Shortcuts_MinusToPlus(Timezone_Exception_2_minus, Timezone_Exception_2_plus);
+            Shortcuts_MinusToPlus(Timezone_Exception_3_minus, Timezone_Exception_3_plus);
+            Shortcuts_MinusToPlus(Timezone_Exception_4_minus, Timezone_Exception_4_plus);
 
-            if (Timezone_Exception_2_minus.Visibility == Visibility.Visible)
-                Timezone_Exception_2_minus.Visibility = Visibility.Hidden;
-            else
-                Timezone_Exception_2_plus.Visibility = Timezone_Exception_2_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Timezone_Exception_3_minus.Visibility == Visibility.Visible)
-                Timezone_Exception_3_minus.Visibility = Visibility.Hidden;
-            else
-                Timezone_Exception_3_plus.Visibility = Timezone_Exception_3_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            if (Timezone_Exception_4_minus.Visibility == Visibility.Visible)
-                Timezone_Exception_4_minus.Visibility = Visibility.Hidden;
-            else
-                Timezone_Exception_4_plus.Visibility = Timezone_Exception_4_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (TimezoneShortcuts_ExceptionsTile.Visibility == Visibility.Visible)
-            {
-                TimezoneShortcuts_ExceptionsTile.Visibility = Visibility.Collapsed;
-                TimezoneShortcuts_ExceptionsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                TimezoneShortcuts_ExceptionsTile.Visibility = Visibility.Visible;
-                TimezoneShortcuts_ExceptionsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(TimezoneShortcuts_ExceptionsTile, TimezoneShortcuts_ExceptionsTileDISABLED);
         }
+        #endregion
 
-        //PHONES
+        #region Phones
         private void PhoneShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             Phones_ActiveColumn.Visibility = Phones_ActiveColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
@@ -12913,72 +12452,29 @@ namespace ProdigyConfigToolWPF
             phone_numberColumn.Visibility = phone_numberColumn.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             ComAttempts_Column.Visibility = ComAttempts_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
-            if (Phones_Area_minus.Visibility == Visibility.Visible)
-                Phones_Area_minus.Visibility = Visibility.Hidden;
-            else
-                Phones_Area_plus.Visibility = Phones_Area_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Phones_Area_minus, Phones_Area_plus);
+            Shortcuts_MinusToPlus(Phone_KissOff_minus, Phone_KissOff_plus);
 
-            if (Phone_KissOff_minus.Visibility == Visibility.Visible)
-                Phone_KissOff_minus.Visibility = Visibility.Hidden;
-            else
-                Phone_KissOff_plus.Visibility = Phone_KissOff_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-
-            //Disable button
-            if (PhoneShortcuts_SettingsTile.Visibility == Visibility.Visible)
-            {
-                PhoneShortcuts_SettingsTile.Visibility = Visibility.Collapsed;
-                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneShortcuts_SettingsTile.Visibility = Visibility.Visible;
-                PhoneShortcuts_SettingsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(PhoneShortcuts_SettingsTile, PhoneShortcuts_SettingsTileDISABLED);
         }
         private void PhoneShortcuts_ReportsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Phone_Reports_minus.Visibility == Visibility.Visible)
-                Phone_Reports_minus.Visibility = Visibility.Hidden;
-            else
-                Phone_Reports_plus.Visibility = Phone_Reports_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Phone_Reports_minus, Phone_Reports_plus);
 
-            //Disable button
-            if (PhoneShortcuts_ReportsTile.Visibility == Visibility.Visible)
-            {
-                PhoneShortcuts_ReportsTile.Visibility = Visibility.Collapsed;
-                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneShortcuts_ReportsTile.Visibility = Visibility.Visible;
-                PhoneShortcuts_ReportsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(PhoneShortcuts_ReportsTile, PhoneShortcuts_ReportsTileDISABLED);
         }
         private void PhoneShortcuts_TestsButton_Click(object sender, RoutedEventArgs e)
         {
-            Phone_TestCalls.Visibility = Phone_TestCalls.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
-            Phone_VoiceCallType.Visibility = Phone_VoiceCallType.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_SingleFilter(Phone_TestCalls);
+            Shortcuts_SingleFilter(Phone_VoiceCallType);
 
-            if (Phone_TestConfig_minus.Visibility == Visibility.Visible)
-                Phone_TestConfig_minus.Visibility = Visibility.Hidden;
-            else
-                Phone_TestConfig_plus.Visibility = Phone_TestConfig_plus.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
+            Shortcuts_MinusToPlus(Phone_TestConfig_minus, Phone_TestConfig_plus);
 
-            //Disable button
-            if (PhoneShortcuts_TestsTile.Visibility == Visibility.Visible)
-            {
-                PhoneShortcuts_TestsTile.Visibility = Visibility.Collapsed;
-                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                PhoneShortcuts_TestsTile.Visibility = Visibility.Visible;
-                PhoneShortcuts_TestsTileDISABLED.Visibility = Visibility.Collapsed;
-            }
+            Shortcuts_Disabling(PhoneShortcuts_TestsTile, PhoneShortcuts_TestsTileDISABLED);
         }
+        #endregion
 
-        
-        
+
         #endregion
 
         #region HeaderConfigure Clicks
