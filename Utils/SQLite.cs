@@ -146,36 +146,46 @@ namespace SQLite
 
 		public bool StoreDateTimeAsTicks { get; private set; }
 
-		/// <summary>
-		/// Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
-		/// </summary>
-		/// <param name="databasePath">
-		/// Specifies the path to the database file.
-		/// </param>
-		/// <param name="storeDateTimeAsTicks">
-		/// Specifies whether to store DateTime properties as ticks (true) or strings (false). You
-		/// absolutely do want to store them as Ticks in all new projects. The default of false is
-		/// only here for backwards compatibility. There is a *significant* speed advantage, with no
-		/// down sides, when setting storeDateTimeAsTicks = true.
-		/// </param>
-		public SQLiteConnection (string databasePath, bool storeDateTimeAsTicks = false)
+        internal void Open()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
+        /// </summary>
+        /// <param name="databasePath">
+        /// Specifies the path to the database file.
+        /// </param>
+        /// <param name="storeDateTimeAsTicks">
+        /// Specifies whether to store DateTime properties as ticks (true) or strings (false). You
+        /// absolutely do want to store them as Ticks in all new projects. The default of false is
+        /// only here for backwards compatibility. There is a *significant* speed advantage, with no
+        /// down sides, when setting storeDateTimeAsTicks = true.
+        /// </param>
+        public SQLiteConnection (string databasePath, bool storeDateTimeAsTicks = false)
 			: this (databasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create, storeDateTimeAsTicks)
 		{
 		}
 
-		/// <summary>
-		/// Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
-		/// </summary>
-		/// <param name="databasePath">
-		/// Specifies the path to the database file.
-		/// </param>
-		/// <param name="storeDateTimeAsTicks">
-		/// Specifies whether to store DateTime properties as ticks (true) or strings (false). You
-		/// absolutely do want to store them as Ticks in all new projects. The default of false is
-		/// only here for backwards compatibility. There is a *significant* speed advantage, with no
-		/// down sides, when setting storeDateTimeAsTicks = true.
-		/// </param>
-		public SQLiteConnection (string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = false)
+        internal SQLiteCommand CreateCommand()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Constructs a new SQLiteConnection and opens a SQLite database specified by databasePath.
+        /// </summary>
+        /// <param name="databasePath">
+        /// Specifies the path to the database file.
+        /// </param>
+        /// <param name="storeDateTimeAsTicks">
+        /// Specifies whether to store DateTime properties as ticks (true) or strings (false). You
+        /// absolutely do want to store them as Ticks in all new projects. The default of false is
+        /// only here for backwards compatibility. There is a *significant* speed advantage, with no
+        /// down sides, when setting storeDateTimeAsTicks = true.
+        /// </param>
+        public SQLiteConnection (string databasePath, SQLiteOpenFlags openFlags, bool storeDateTimeAsTicks = false)
 		{
 			if (string.IsNullOrEmpty (databasePath))
 				throw new ArgumentException ("Must be specified", "databasePath");

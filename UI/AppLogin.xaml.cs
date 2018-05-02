@@ -26,6 +26,7 @@ namespace ProdigyConfigToolWPF
     
     public partial class AppLogin : MetroWindow
     {
+        private int language = 0;
         private bool loginsuccessfull = false;
         public AppLogin()
         {
@@ -39,28 +40,27 @@ namespace ProdigyConfigToolWPF
 
             this.Language = XmlLanguage.GetLanguage(
                         Properties.Settings.Default.DefaultCulture);
-            
-            //switch (Properties.Settings.Default.DefaultCulture)
-            //{
-            //    case "pt-PT":
-            //        InitializeComponent();
-            //        RadioLocaleEN_Active.Visibility = Visibility.Collapsed;
-            //        RadioLocalePT_Active.Visibility = Visibility.Visible;
-            //        break;
 
-            //    case "en-US":
-            //        InitializeComponent();
-            //        RadioLocaleEN_Active.Visibility = Visibility.Visible;
-            //        RadioLocalePT_Active.Visibility = Visibility.Collapsed;
-            //        break;
+            switch (Properties.Settings.Default.DefaultCulture)
+            {
+                case "EN-US":
+                    InitializeComponent();
+                    language = 0;
+                    ChoseLanguageToChangeFlags(language);
+                    break;
 
-            //    default:
-            //        InitializeComponent();
-            //        RadioLocaleEN_Active.Visibility = Visibility.Visible;
-            //        RadioLocalePT_Active.Visibility = Visibility.Collapsed;
-            //        break;
-            //}
+                case "PT-PT":
+                    InitializeComponent();
+                    language = 1;
+                    ChoseLanguageToChangeFlags(language);
+                    break;
 
+                default:
+                    InitializeComponent();
+                    language = 0;
+                    ChoseLanguageToChangeFlags(language);
+                    break;
+            }
 
             if (args.Length == 2)
             {
@@ -94,6 +94,31 @@ namespace ProdigyConfigToolWPF
                     this.Close();
                 }
             }
+        }
+
+        private void ChoseLanguageToChangeFlags(int culture)
+        {
+            if (culture == 0) //EN-US
+            {
+                FlagPT.Source = new BitmapImage(new Uri("/images/flags/off/pt.png", UriKind.Relative));
+                RadioLocalePT.IsEnabled = true;
+                FlagPT.Opacity = 0.75;
+
+                FlagEN.Source = new BitmapImage(new Uri("/images/flags/uk.png", UriKind.Relative));
+                RadioLocaleEN.IsEnabled = false;
+                FlagEN.Opacity = 1;
+            }
+            if (culture == 1) //PT-PT
+            { 
+                FlagPT.Source = new BitmapImage(new Uri("/images/flags/pt.png", UriKind.Relative));
+                RadioLocalePT.IsEnabled = false;
+                FlagPT.Opacity = 1;
+
+                FlagEN.Source = new BitmapImage(new Uri("/images/flags/off/uk.png", UriKind.Relative));
+                RadioLocaleEN.IsEnabled = true;
+                FlagEN.Opacity = 0.75;
+            }
+           
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
@@ -130,74 +155,48 @@ namespace ProdigyConfigToolWPF
 
         private string sanitize_locale(AppLogin appLogin)
         {
-            if (appLogin.RadioLocaleEN.IsChecked.Equals(true))
-            {
-                appLogin.RadioLocaleEN.BorderThickness.Equals(1);
-                appLogin.RadioLocalePT.BorderThickness.Equals(0);
-                return "EN-US";
-            }
-            if (appLogin.RadioLocalePT.IsChecked.Equals(true))
-            {
-                appLogin.RadioLocalePT.BorderThickness.Equals(1);
-                appLogin.RadioLocaleEN.BorderThickness.Equals(0);
-                return "PT-PT";
-            }
+            string languageculture = "PT-PT";
 
-            return "PT-PT";
+            if (appLogin.language == 0) //EN-US
+                languageculture = "EN-US";
+            else if (appLogin.language == 1) //PT-PT
+                languageculture = "PT-PT";
+           
+            return languageculture;
+        }
+
+        private void ChangeLanguage(string culture)
+        {
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(culture);
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(culture);
+
+            var oldWindow = Application.Current.MainWindow;
+
+            Properties.Settings.Default.DefaultCulture = culture;
+            Properties.Settings.Default.Save();
+
+            Application.Current.MainWindow = new AppLogin();
+            Application.Current.MainWindow.Show();
+
+            oldWindow.Close();
         }
 
         private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("PT-PT");
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("PT-PT");
-            
-            var oldWindow = Application.Current.MainWindow;
-
-            Properties.Settings.Default.DefaultCulture = "pt-PT";
-            Properties.Settings.Default.Save();
-
-            Application.Current.MainWindow = new AppLogin();
-            Application.Current.MainWindow.Show();
-
-            oldWindow.Close();
+            ChangeLanguage("PT-PT");
         }
 
         private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
         {
-            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("EN-US");
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("EN-US");
-
-           
-            var oldWindow = Application.Current.MainWindow;
-
-
-            Properties.Settings.Default.DefaultCulture = "en-US";
-            Properties.Settings.Default.Save();
-
-            Application.Current.MainWindow = new AppLogin();
-            Application.Current.MainWindow.Show();
-
-
-            oldWindow.Close();
-
+            ChangeLanguage("EN-US");
         }
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Thread.CurrentThread.CurrentCulture.Name.Equals("en-US"))
-            {
-                RadioLocaleEN.IsChecked = true;
-                RadioLocalePT.IsChecked = false;
-                
-
-            }
-            else if (Thread.CurrentThread.CurrentCulture.Name.Equals("pt-PT"))
-            {
-                RadioLocaleEN.IsChecked = false;
-                RadioLocalePT.IsChecked = true;
-
-                
-            }
+            if (Thread.CurrentThread.CurrentCulture.Name.Equals("PT-PT"))
+                language = 0;
+            else if (Thread.CurrentThread.CurrentCulture.Name.Equals("EN-US"))
+                language = 1;
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -205,16 +204,14 @@ namespace ProdigyConfigToolWPF
             this.Close();
         }
 
-        private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (HelpFlyout.IsOpen)
-                HelpFlyout.IsOpen = false;
-            else
-                HelpFlyout.IsOpen = true;
-        }
-        
-        
-
+        //private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (HelpFlyout.IsOpen)
+        //        HelpFlyout.IsOpen = false;
+        //    else
+        //        HelpFlyout.IsOpen = true;
+        //}
+                
         public void QueriesTableAdapter(string connectionString)
         {
             Properties.Settings.Default["SqliteLoginConnectionString"] = connectionString + ";password = idsancoprodigy2017";

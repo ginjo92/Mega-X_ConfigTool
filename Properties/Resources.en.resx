@@ -2811,4 +2811,7 @@
   <data name="SureToDeleteFile" xml:space="preserve">
     <value>Are you sure to delete this file?</value>
   </data>
+  <data name="DefaultConfigRestored" xml:space="preserve">
+    <value>Default configuration restored sucessfully</value>
+  </data>
 </root>

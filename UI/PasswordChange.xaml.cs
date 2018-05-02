@@ -23,14 +23,15 @@ namespace ProdigyConfigToolWPF
     /// </summary>
     public partial class PasswordChange : MetroWindow
     {
-        private string UserName;
-        private MainWindow PageParent;
+        //private string UserName;
+        private int Role = 0;
+        private MainWindow mainWindow;
         private Boolean loginsuccessfull;
-        public PasswordChange(string locale, string user, MainWindow parent)
+        public PasswordChange(string locale, int role, MainWindow main)
         {
-            PageParent = parent;
-            UserName = user;
-            PageParent.IsEnabled = false;
+            mainWindow = main;
+            Role = role;
+            mainWindow.IsEnabled = false;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(locale);
             QueriesTableAdapter("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Database\\Login\\SqliteLogin.prgy");
 
@@ -39,12 +40,12 @@ namespace ProdigyConfigToolWPF
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            UserLoginValue.Text = UserName;
+            //UserLoginValue.Text = UserName;
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            PageParent.IsEnabled = true;
+            mainWindow.IsEnabled = true;
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
@@ -55,7 +56,6 @@ namespace ProdigyConfigToolWPF
         private void ButtonChange_Click(object sender, RoutedEventArgs e)
         {
             //Get all needed information from Form
-            string user_login = this.UserLoginValue.Text;
             string user_password = this.UserPasswordValue.Password;
             string new_user_password = this.UserNewPasswordValue.Password;
             string confirm_new_user_password = this.UserRepeatNewPasswordValue.Password;
@@ -66,7 +66,7 @@ namespace ProdigyConfigToolWPF
 
             foreach (DataRow dr in login_dataset.UserLogin.Rows)
             {
-                if (dr["UserName"].ToString() == user_login)
+                if (Convert.ToInt32(dr["Role"]) == Role)
                 {
                     if (dr["Password"].ToString() == user_password)
                     {
@@ -93,10 +93,10 @@ namespace ProdigyConfigToolWPF
             }
             else
             {
-                this.Close();    
-                PageParent.Close();
-                AppLogin window1 = new AppLogin();
-                window1.Show();
+                this.Close();
+                mainWindow.Close();
+                AppLogin newapplogin = new AppLogin();
+                newapplogin.Show();
             }
         }
 
@@ -117,7 +117,7 @@ namespace ProdigyConfigToolWPF
         {
             if (e.Key == Key.Enter)
             {
-                string user_login = this.UserLoginValue.Text;
+                //string user_login = this.UserLoginValue.Text;
                 string user_password = this.UserPasswordValue.Password;
                 string new_user_password = this.UserNewPasswordValue.Password;
                 string confirm_new_user_password = this.UserRepeatNewPasswordValue.Password;
@@ -128,7 +128,7 @@ namespace ProdigyConfigToolWPF
 
                 foreach (DataRow dr in login_dataset.UserLogin.Rows)
                 {
-                    if (dr["UserName"].ToString() == user_login)
+                    if (Convert.ToInt32(dr["Role"]) == Role)
                     {
                         if (dr["Password"].ToString() == user_password)
                         {
@@ -157,9 +157,9 @@ namespace ProdigyConfigToolWPF
                 else
                 {
                     this.Close();
-                    PageParent.Close();
-                    AppLogin window1 = new AppLogin();
-                    window1.Show();
+                    mainWindow.Close();
+                    AppLogin newapplogin = new AppLogin();
+                    newapplogin.Show();
                 }
             }
         }

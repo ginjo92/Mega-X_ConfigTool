@@ -18,7 +18,7 @@
         <ImageBrush ImageSource="/ProdigyConfigToolWPF;component/images/pcb.png" />
     </Controls:MetroWindow.Background>
     <!--Title bar Right content-->
-    <Controls:MetroWindow.RightWindowCommands>
+    <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button x:Name="TitleBarHelpButton" Click="TitleBarHelpButton_Click">
                 <StackPanel Orientation="Horizontal">
@@ -26,7 +26,7 @@
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
-    </Controls:MetroWindow.RightWindowCommands>
+    </Controls:MetroWindow.RightWindowCommands>-->
     <Grid>
         <!--FLYOUT-->
         
@@ -50,7 +50,7 @@
                               SelectedValuePath="Value" DisplayMemberPath="Value" SelectedIndex="0" />
                 </Grid>-->
                 <!--USER PSWD-->
-                <Label Content="Login" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
+                <Label Content="{x:Static p:Resources.Login}" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Margin="0,20,0,5"/>
                 
                 <Grid   HorizontalAlignment="Left" Margin="20,0,20,0" VerticalAlignment="Top" Background="White" Width="330" Height="50" >
                     <Controls:Tile x:Name="UserPassword" Width="50" Height="Auto" TitleFontSize="10" HorizontalTitleAlignment="Stretch" Background="WhiteSmoke" Margin="0" 
@@ -80,66 +80,26 @@
                     </Controls:Tile>
                 </StackPanel>
                 <!--Language-->
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <StackPanel.Resources>
-                        <Style x:Key="Flag" TargetType="RadioButton">
-                            <Style.Triggers>
-                                <Trigger Property="IsChecked" Value="False">
-                                    <Setter Property="Opacity" Value="0.5"/>
-                                </Trigger>
-                            </Style.Triggers>
-
-                            <Setter Property="BorderThickness" Value="2"/>
-
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="RadioButton">
-                                        <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                Background="Transparent"
-                                CornerRadius="20">
-                                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}"/>
-                                        </Border>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </StackPanel.Resources>
-
-                    <ItemsControl>
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <StackPanel x:Name="RadioLocalePT_Active" Orientation="Horizontal">
-                                <RadioButton x:Name="RadioLocalePT" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocalePT_Click">
-                                    <RadioButton.Template>
-                                        <ControlTemplate>
-                                            <Image x:Name="RadioLocalePT_flag" Source="/images/portugal.png" />
+                <StackPanel >
+                    <ItemsControl Margin="0,30">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
+                            <StackPanel x:Name="RadioLocalePT_Flag" Orientation="Horizontal">
+                                <Button x:Name="RadioLocalePT" HorizontalAlignment="Center" Margin="2" Click="RadioLocalePT_Click">
+                                    <Image x:Name="FlagPT" Width="25" />
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
                                         </ControlTemplate>
-                                    </RadioButton.Template>
-                                </RadioButton>
-                                <RadioButton x:Name="RadioLocaleEN_off" IsChecked="True" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="0,0,10,0" Click="RadioLocaleEN_Click">
-                                    <RadioButton.Template>
-                                        <ControlTemplate>
-                                            <Image Source="/images/united_kingdom_off.png" Opacity="0.5"/>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="RadioLocaleEN" HorizontalAlignment="Center" Margin="2" Click="RadioLocaleEN_Click">
+                                    <Image x:Name="FlagEN" Width="25" />
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
                                         </ControlTemplate>
-                                    </RadioButton.Template>
-                                </RadioButton>
-                            </StackPanel>
-                            <StackPanel x:Name="RadioLocaleEN_Active" Orientation="Horizontal">
-                                <RadioButton x:Name="RadioLocalePT_off" IsChecked="True" BorderBrush="Green" Width="40" Height="40" HorizontalAlignment="Center" Click="RadioLocalePT_Click">
-                                        <RadioButton.Template>
-                                            <ControlTemplate>
-                                                <Image Source="/images/portugal_off.png" Opacity="0.5"/>
-                                            </ControlTemplate>
-                                        </RadioButton.Template>
-                                    </RadioButton>
-                                <RadioButton x:Name="RadioLocaleEN" BorderBrush="Red" Width="40" Height="40" HorizontalAlignment="Center" Margin="10,0,0,0" Click="RadioLocaleEN_Click">
-                                    <RadioButton.Template>
-                                        <ControlTemplate>
-                                            <Image x:Name="RadioLocaleEN_flag" Source="/images/united_kingdom.png"/>
-                                        </ControlTemplate>
-                                    </RadioButton.Template>
-                                </RadioButton>
-                                
+                                    </Button.Template>
+                                </Button>
                             </StackPanel>
                         </StackPanel>
                     </ItemsControl>
@@ -147,7 +107,7 @@
             </StackPanel>
         </Border>
         <!--HELP FLYOUT-->
-        <Controls:Flyout x:Name="HelpFlyout" 
+        <!--<Controls:Flyout x:Name="HelpFlyout" 
                          HorizontalContentAlignment="Right" Background="#FF6E6A6A" 
                          Opacity="0.85" 
                          Header="{x:Static p:Resources.Help}" 
@@ -166,6 +126,6 @@
                     </FlowDocument>
                 </RichTextBox>
             </StackPanel>
-        </Controls:Flyout>
+        </Controls:Flyout>-->
     </Grid>
 </Controls:MetroWindow>

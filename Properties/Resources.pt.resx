@@ -2841,4 +2841,7 @@
   <data name="SureToDeleteFile" xml:space="preserve">
     <value>Pretende eliminar este ficheiro?</value>
   </data>
+  <data name="DefaultConfigRestored" xml:space="preserve">
+    <value>Configurações pré-definidas restauradas com sucesso!</value>
+  </data>
 </root>

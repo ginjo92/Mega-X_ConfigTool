@@ -48,8 +48,6 @@ namespace ProdigyConfigToolWPF
         private bool EventFilterFaults = false;
         private bool EventFilterAreas = false;
 
-
-
         public SerialPort serialPort = new SerialPort();
         public byte[] cp_id = { 0x0, 00 };
         public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00 };
@@ -130,23 +128,23 @@ namespace ProdigyConfigToolWPF
                 MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); //TODO: delete/improve
             }
 
-            switch (Properties.Settings.Default.DefaultCulture)
-            {
-                case "pt-PT":
-                    EN_Active.Visibility = Visibility.Collapsed;
-                    PT_Active.Visibility = Visibility.Visible;
-                    break;
+            //switch (Properties.Settings.Default.DefaultCulture)
+            //{
+            //    case "pt-PT":
+            //        EN_Active.Visibility = Visibility.Collapsed;
+            //        PT_Active.Visibility = Visibility.Visible;
+            //        break;
 
-                case "en-US":
-                    EN_Active.Visibility = Visibility.Visible;
-                    PT_Active.Visibility = Visibility.Collapsed;
-                    break;
+            //    case "en-US":
+            //        EN_Active.Visibility = Visibility.Visible;
+            //        PT_Active.Visibility = Visibility.Collapsed;
+            //        break;
 
-                default:
-                    EN_Active.Visibility = Visibility.Visible;
-                    PT_Active.Visibility = Visibility.Collapsed;
-                    break;
-            }
+            //    default:
+            //        EN_Active.Visibility = Visibility.Visible;
+            //        PT_Active.Visibility = Visibility.Collapsed;
+            //        break;
+            //}
         }
 
         //void IfFilePathIsNull()
@@ -317,7 +315,7 @@ namespace ProdigyConfigToolWPF
             {
                 TopBar_User_Name.Text = "Manufacturer";
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/1_manufacturer.png", UriKind.Relative));
-                
+
             }
             //MANUFACTURER
             else if (AppRole == 2)
@@ -327,7 +325,7 @@ namespace ProdigyConfigToolWPF
 
                 TreeviewDebug.Visibility = Visibility.Collapsed;
                 Open_Debug.Visibility = Visibility.Collapsed;
-               
+
             }
 
             //Force 'Home' tree view item to be selected on loaded
@@ -644,7 +642,7 @@ namespace ProdigyConfigToolWPF
                 this.FlyCom.IsOpen = true;
             }
         }
-        
+
         internal async void RequestDataFromProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
             Protocol.Zones zones = new Protocol.Zones();
@@ -8649,21 +8647,21 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
-        {
-            Preferences_ContextMenu.IsOpen = false;
-            Close();
-            MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null, null);
-            window1.Show();
-        }
+        //private void RadioLocalePT_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Preferences_ContextMenu.IsOpen = false;
+        //    Close();
+        //    MainWindow window1 = new MainWindow("pt-PT", AppRole, AppDbFile, null, null, null, null, null);
+        //    window1.Show();
+        //}
 
-        private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
-        {
-            Preferences_ContextMenu.IsOpen = false;
-            Close();
-            MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null, null);
-            window1.Show();
-        }
+        //private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Preferences_ContextMenu.IsOpen = false;
+        //    Close();
+        //    MainWindow window1 = new MainWindow("en-US", AppRole, AppDbFile, null, null, null, null, null);
+        //    window1.Show();
+        //}
 
         public void BaseWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -8707,7 +8705,7 @@ namespace ProdigyConfigToolWPF
             MenuItemSave.IsEnabled = databaseDataSet.HasChanges();
         }
 
-      
+
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
             Help helpWindow = new Help();
@@ -9215,8 +9213,8 @@ namespace ProdigyConfigToolWPF
         }
 
         #endregion
-       
-        private void RestoreDefaultMenuItem_Click(object sender, RoutedEventArgs e)
+
+        private void RestoreDefaultMenuItem()
         {
             var messageBox = MessageBox.Show(Properties.Resources.QuestionRestoreDefaultsExtended, "", MessageBoxButton.YesNo);
             if (messageBox == MessageBoxResult.Yes)
@@ -9636,7 +9634,7 @@ namespace ProdigyConfigToolWPF
         {
             isDownloadORUploadClick(true, String.Empty);
         }
-        
+
         private void ZonesDownloadTile_Click(object sender, RoutedEventArgs e)
         {
             isDownloadORUploadClick(false, "zones");
@@ -9654,7 +9652,7 @@ namespace ProdigyConfigToolWPF
         {
             isDownloadORUploadClick(true, "areas");
         }
-               
+
         private void KeypadsDownloadTile_Click(object sender, RoutedEventArgs e)
         {
             isDownloadORUploadClick(false, "keypads");
@@ -9690,7 +9688,7 @@ namespace ProdigyConfigToolWPF
         {
             isDownloadORUploadClick(true, "timezones");
         }
-                
+
         private void PhonesDownloadTile_Click(object sender, RoutedEventArgs e)
         {
             isDownloadORUploadClick(false, "phones");
@@ -9843,7 +9841,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
-                
+
             }
 
         }
@@ -10048,7 +10046,7 @@ namespace ProdigyConfigToolWPF
                 //MessageBox.Show("Please select a connection first!", "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
             }
         }
-        
+
         private void AudioReservedDataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             InitializeComponent();
@@ -10125,7 +10123,7 @@ namespace ProdigyConfigToolWPF
                         Button play_button = single_row.FindChild<Button>("ButtonPlayReserved");
                         Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                         Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
-                        
+
                         play_button.IsEnabled = false;
                         play_pause.IsEnabled = true;
                         play_stop.IsEnabled = true;
@@ -10170,7 +10168,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 waveOut.Play();
-            }    
+            }
         }
 
         private void AudioReservedStopButton_Click(object sender, RoutedEventArgs e)
@@ -10182,7 +10180,7 @@ namespace ProdigyConfigToolWPF
                 Button play_pause = single_row.FindChild<Button>("ButtonPauseReserved");
                 Button play_stop = single_row.FindChild<Button>("ButtonStopReserved");
 
-               
+
                 if (single_row.IsSelected == true)
                 {
                     play_button.IsEnabled = true;
@@ -10209,7 +10207,7 @@ namespace ProdigyConfigToolWPF
                     play_button.IsEnabled = true;
                     play_pause.IsEnabled = false;
                     play_stop.IsEnabled = true;
-                   
+
                     AudioReservedDataGrid.UpdateLayout();
                 }
             }
@@ -10233,7 +10231,7 @@ namespace ProdigyConfigToolWPF
                         play_button.IsEnabled = false;
                         play_pause.IsEnabled = true;
                         play_stop.IsEnabled = true;
-                        
+
                         AudioCustomizedDataGrid.UpdateLayout();
                     }
                 }
@@ -10304,7 +10302,7 @@ namespace ProdigyConfigToolWPF
                         AudioCustomizedDataGrid.UpdateLayout();
                     }
                 }
-                
+
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
                 current_audio_row = row;
                 var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
@@ -10373,7 +10371,7 @@ namespace ProdigyConfigToolWPF
                 Button play_button = single_row.FindChild<Button>("ButtonPlayCustomized");
                 Button play_pause = single_row.FindChild<Button>("ButtonPauseCustomized");
                 Button play_stop = single_row.FindChild<Button>("ButtonStopCustomized");
-                
+
                 if (single_row.IsSelected == true)
                 {
                     load_wav_button.IsEnabled = true;
@@ -10404,12 +10402,12 @@ namespace ProdigyConfigToolWPF
         {
             //Get all needed information from Form
             var applogin = new AppLogin();
-            string user_login = "User";
+            int role = AppRole;
 
             //sanitize locale
             string locale = AppLocale;
 
-            var password_change_window = new PasswordChange(locale, user_login, this);
+            var password_change_window = new PasswordChange(locale, role, this);
             password_change_window.Show();
 
         }
@@ -10420,11 +10418,11 @@ namespace ProdigyConfigToolWPF
             try
             {
                 var row_list = GetDataGridRows(AudioCustomizedDataGrid);
-                
+
                 foreach (DataGridRow single_row in row_list)
                 {
                     DataRowView row_view = single_row.Item as DataRowView;
-                    
+
 
                     string audiofolder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
                     Debug.WriteLine(audiofolder + row_view["Description"] + ".raw");
@@ -10490,9 +10488,9 @@ namespace ProdigyConfigToolWPF
         {
 
             DataRowView a = (DataRowView)e.Row.Item;
-            
+
             databaseDataSet.Audio.TypeColumn.DefaultValue = 1;
-            
+
             if (a.IsNew)
             {
                 set_button_UI_for_costumized_audio();
@@ -10557,9 +10555,9 @@ namespace ProdigyConfigToolWPF
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         #endregion
-        
+
         #region STATUS
         private void StatusPartitionsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -10576,7 +10574,7 @@ namespace ProdigyConfigToolWPF
                 Status_Partitions_minus.Visibility = Visibility.Visible;
             }
 
-            
+
         }
 
         private void StatusZonesButton_Click(object sender, RoutedEventArgs e)
@@ -11278,33 +11276,33 @@ namespace ProdigyConfigToolWPF
                 ckBypass8.IsChecked = false;
             }
         }
-        
+
         #region Index MouseDoubleClick
 
         private void SelectPVT_onMouseDoubleClick(DataGrid dg, TabItem ti, TabItem ti_not, string vs_string, TreeViewItem tvi)
         {
             int row = dg.SelectedIndex;
             System.Windows.Data.CollectionViewSource vs = ((System.Windows.Data.CollectionViewSource)(this.FindResource(vs_string)));
-           
-                int column = dg.CurrentColumn.DisplayIndex;
 
-                if (column.Equals(0))
-                {
-                    MainTabControl.SelectedItem = ti;
-                    vs.View.MoveCurrentToPosition(dg.SelectedIndex);
+            int column = dg.CurrentColumn.DisplayIndex;
 
-                    tvi.IsExpanded = true;
-                    (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = true;
-                }
-                else
-                {
-                    MainTabControl.SelectedItem = ti_not;
-                    vs.View.MoveCurrentToPosition(dg.SelectedIndex);
+            if (column.Equals(0))
+            {
+                MainTabControl.SelectedItem = ti;
+                vs.View.MoveCurrentToPosition(dg.SelectedIndex);
 
-                    tvi.IsExpanded = false;
-                    (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = false;
-                }
-           
+                tvi.IsExpanded = true;
+                (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = true;
+            }
+            else
+            {
+                MainTabControl.SelectedItem = ti_not;
+                vs.View.MoveCurrentToPosition(dg.SelectedIndex);
+
+                tvi.IsExpanded = false;
+                (tvi.Items[dg.SelectedIndex] as TreeViewItem).IsSelected = false;
+            }
+
         }
 
         private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -11324,7 +11322,7 @@ namespace ProdigyConfigToolWPF
 
             System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
 
-            if (column==0 && row<=200)
+            if (column == 0 && row <= 200)
             {
                 MainTabControl.SelectedItem = MainUsersPVTTab;
                 userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
@@ -11363,7 +11361,7 @@ namespace ProdigyConfigToolWPF
         }
 
         #endregion
-             
+
         #region HomeWindow
 
         private void Open_Home_Click(object sender, RoutedEventArgs e)
@@ -11448,7 +11446,7 @@ namespace ProdigyConfigToolWPF
 
 
         #endregion
-        
+
         private void MainTabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -12210,7 +12208,7 @@ namespace ProdigyConfigToolWPF
             Shortcuts_SingleFilter(soak_testColumn);
             Shortcuts_SingleFilter(always_reportColumn);
             Shortcuts_SingleFilter(arm_if_not_readyColumn);
-           
+
             Shortcuts_MinusToPlus(EntryTimes_minus, EntryTimes_plus);
             Shortcuts_MinusToPlus(_24H_Config_minus, _24H_Config_plus);
             Shortcuts_MinusToPlus(Keyswitch_Config_minus, Keyswitch_Config_plus);
@@ -12219,23 +12217,23 @@ namespace ProdigyConfigToolWPF
             Shortcuts_MinusToPlus(Chime_Config_minus, Chime_Config_plus);
 
             Shortcuts_Disabling(ZoneShortcuts_SettingsTile, ZoneShortcuts_SettingsTileDISABLED);
-            
+
         }
         private void ZoneShortcuts_AreasKeypadsButton_Click(object sender, RoutedEventArgs e)
         {
             Shortcuts_MinusToPlus(Zones_Areas_Away_minus, Zones_Areas_Away_plus);
             Shortcuts_MinusToPlus(Zones_Areas_Stay_minus, Zones_Areas_Stay_plus);
             Shortcuts_MinusToPlus(Zones_ShowKeypad_minus, Zones_ShowKeypad_plus);
-            
+
             Zones_KeypadBypass.Visibility = Zones_KeypadBypass.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
             Shortcuts_Disabling(ZoneShortcuts_AreasKeypadsTile, ZoneShortcuts_AreasKeypadsTileDISABLED);
-           
+
         }
         private void ZoneShortcuts_TerminalsButton_Click(object sender, RoutedEventArgs e)
         {
             Shortcuts_SingleFilter(terminal_circuit_typeColumn);
-           
+
             Shortcuts_MinusToPlus(R1_Config_minus, R1_Config_plus);
             Shortcuts_MinusToPlus(R2_Config_minus, R2_Config_plus);
             Shortcuts_MinusToPlus(R3_Config_minus, R3_Config_plus);
@@ -13088,7 +13086,7 @@ namespace ProdigyConfigToolWPF
             Button_A_AreaStay_minus.Visibility = Visibility.Visible;
             Button_A_AreaStay_plus.Visibility = Visibility.Hidden;
         }
-        
+
         private void Button_B_AreaAway_minus_Click(object sender, RoutedEventArgs e)
         {
             Button_B_AreaAway_minus.Visibility = Visibility.Hidden;
@@ -13110,7 +13108,7 @@ namespace ProdigyConfigToolWPF
             Button_B_AreaStay_minus.Visibility = Visibility.Visible;
             Button_B_AreaStay_plus.Visibility = Visibility.Hidden;
         }
-        
+
         private void Button_C_AreaAway_minus_Click(object sender, RoutedEventArgs e)
         {
             Button_C_AreaAway_minus.Visibility = Visibility.Hidden;
@@ -13180,7 +13178,7 @@ namespace ProdigyConfigToolWPF
             Timezone_Weekdays_minus.Visibility = Visibility.Visible;
             Timezone_Weekdays_plus.Visibility = Visibility.Hidden;
         }
-        
+
         private void Timezone_Exception_1_minus_Click(object sender, RoutedEventArgs e)
         {
             Timezone_Exception_1_minus.Visibility = Visibility.Hidden;
@@ -13275,7 +13273,7 @@ namespace ProdigyConfigToolWPF
         #endregion
 
         #region Audio
-       
+
         #endregion
 
         #endregion
@@ -13333,9 +13331,9 @@ namespace ProdigyConfigToolWPF
                 default:
                     break;
             }
-            
+
         }
-  
+
         private void HelpFlyoutImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //HelpFlyout.IsOpen = false;
@@ -13397,10 +13395,76 @@ namespace ProdigyConfigToolWPF
 
         private void CloseFile_Click(object sender, RoutedEventArgs e)
         {
-            
             var filemanagerwindow = new FileManager(AppLocale, AppRole, this);
             this.Close();
             filemanagerwindow.Show();
+        }
+
+        private void SettingsTile_Click(object sender, RoutedEventArgs e)
+        {
+            var preferences_window = new Settings(AppLocale, this, AppDbFile, default_restore_is_set);
+            preferences_window.Show();
+        }
+
+        private void Open_Areas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Areas_Click(sender, e);
+        }
+        private void Open_Zones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Zones_Click(sender, e);
+        }
+        private void Open_Keypads_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Keypads_Click(sender, e);
+        }
+        private void Open_Outputs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Outputs_Click(sender, e);
+        }
+        private void Open_Timezones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Timezones_Click(sender, e);
+        }
+        private void Open_Users_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Users_Click(sender, e);
+        }
+        private void Open_Phones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Phones_Click(sender, e);
+        }
+        private void Open_Dialer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Dialer_Click(sender, e);
+        }
+        private void Open_ClientInfo_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_ClientInfo_Click(sender, e);
+        }
+        private void Open_Events_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Events_Click(sender, e);
+        }
+        private void Open_Audio_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Audio_Click(sender, e);
+        }
+        private void Open_Status_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Status_Click(sender, e);
+        }
+        private void Open_Debug_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Debug_Click(sender, e);
+        }
+        private void Open_FWUpdate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_FWUpdate_Click(sender, e);
+        }
+        private void Open_GlobalConfig_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_GlobalConfig_Click(sender, e);
         }
     }
 }

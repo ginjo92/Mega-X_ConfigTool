@@ -1573,6 +1573,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Default configuration restored sucessfully.
+        /// </summary>
+        public static string DefaultConfigRestored {
+            get {
+                return ResourceManager.GetString("DefaultConfigRestored", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Delay.
         /// </summary>
         public static string Delay {

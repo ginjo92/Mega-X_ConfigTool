@@ -47,7 +47,6 @@ namespace ProdigyConfigToolWPF
         {
             InitializeComponent();
             MainHomeTab.IsSelected = true;
-
             
             System.Diagnostics.Debug.WriteLine("GINJO - Home: " + PathPDF_Home);
 

@@ -1,0 +1,90 @@
+﻿<Controls:MetroWindow x:Class="ProdigyConfigToolWPF.Preferences"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+        xmlns:local="clr-namespace:ProdigyConfigToolWPF"
+        mc:Ignorable="d"
+        Title="Mega-X Configurator" Height="300" Width="300"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" ResizeMode="NoResize" ShowTitleBar="False" IsWindowDraggable="True" 
+                      ShowMaxRestoreButton="False"  Loaded="MetroWindow_Loaded" 
+                      Closing="MetroWindow_Closing" WindowStyle="None" AllowsTransparency="True" BorderThickness="1" BorderBrush="LightGray">
+
+    <Grid>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300" Background="#FFF7F7F7" BorderBrush="Black" >
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+
+            <StackPanel Background="WhiteSmoke">
+                <DockPanel>
+                    <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" Margin="5,0"
+                                               VerticalAlignment="Top" VerticalContentAlignment="Top" Background="WhiteSmoke" HorizontalTitleAlignment="Right"
+                                               Foreground="Gray" BorderThickness="0,0,0,1" BorderBrush="LightGray">
+                        <Controls:Tile.Content>
+                            <StackPanel Orientation="Horizontal" Height="Auto">
+                                <Image Source="/images/topbaricons/preferences.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{x:Static p:Resources.Settings}" VerticalAlignment="Center" Margin="5,0,5,0" />
+                            </StackPanel>
+                        </Controls:Tile.Content>
+                    </Controls:Tile>
+                </DockPanel>
+                <StackPanel Width="270" Margin="5">
+                    <Controls:Tile x:Name="RestoreTile" Width="Auto" Height="30" TitleFontSize="8" HorizontalContentAlignment="Left" HorizontalAlignment="Center"
+                                       VerticalAlignment="Top" VerticalContentAlignment="Top" Background="WhiteSmoke" HorizontalTitleAlignment="Right"
+                                       Foreground="Gray" Click="RestoreTile_Click">
+                        <Controls:Tile.Content>
+                            <StackPanel Orientation="Horizontal" Height="Auto" >
+                                <Image Source="/images/topbaricons/restore.png" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <TextBlock Text="{x:Static p:Resources.Restore_default_configuration}" VerticalAlignment="Center" Margin="5" Foreground="Black" FontSize="9"/>
+                            </StackPanel>
+                        </Controls:Tile.Content>
+                    </Controls:Tile>
+                    <Separator Foreground="LightGray" Margin="20,5"/>
+                    <StackPanel x:Name="Header_Language" Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Image Source="/images/topbaricons/language.png" Width="15"/>
+                        <Label Content="{x:Static p:Resources.Language}" FontSize="8" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="Auto" Height="Auto">
+                        <StackPanel x:Name="LanguageSelection" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Visible">
+                            <Button x:Name="RadioLocalePT" HorizontalAlignment="Center" Margin="5" Click="RadioLocalePT_Click">
+                                <Image x:Name="FlagPT" Width="35" />
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button x:Name="RadioLocaleEN" HorizontalAlignment="Center" Margin="5" Click="RadioLocaleEN_Click">
+                                <Image x:Name="FlagEN" Width="35" />
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <Separator Foreground="LightGray" Margin="20,5"/>
+                    <StackPanel x:Name="Header_About" Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                        <Image Source="/images/topbaricons/about.png" Width="15"/>
+                        <Label Content="{x:Static p:Resources.About}" FontSize="8" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <StackPanel HorizontalAlignment="Left" Margin="10,0">
+                            <Label x:Name="SoftwareVersionDescription" Content="{x:Static p:Resources.MegaX_Version}" FontWeight="Bold" FontSize="8" />
+                            <Label x:Name="SoftwareVersion2" FontSize="8"  Margin="0,-10"/>
+                        </StackPanel>
+                        <StackPanel Width="100" Margin="10">
+                            <Image Source="/images/maxalarm.png" Width="Auto"/>
+                            <Image Source="/images/mega-x.png" Width="Auto" Margin="10,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    
+    </Grid>
+</Controls:MetroWindow>

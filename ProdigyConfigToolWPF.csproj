@@ -218,6 +218,12 @@
     <Compile Include="UI\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Preferences.xaml.cs">
+      <DependentUpon>Preferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utils\AutoRefreshViewSource.cs" />
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="UI\CreateNewFile.xaml.cs">
@@ -309,6 +315,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\Preferences.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\RealTimeActions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -326,6 +336,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Settings.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1209,10 +1223,6 @@
     <Resource Include="images\pcb.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\portugal.png" />
-    <Resource Include="images\united_kingdom.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\board.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1267,52 +1277,6 @@
     <Resource Include="images\audio\record.png" />
     <Resource Include="images\audio\stop.png" />
     <Resource Include="images\audio\stop_record.png" />
-    <Resource Include="images\old\001-multimedia-1 copy.png" />
-    <Resource Include="images\old\002-earth.png" />
-    <Resource Include="images\old\003-sign-out-option_greenBW.png" />
-    <Resource Include="images\old\005-checked.png" />
-    <Resource Include="images\old\006-error-1.png" />
-    <Resource Include="images\old\007-construction.png" />
-    <Resource Include="images\old\008-settings-gears.png" />
-    <Resource Include="images\old\009-files.png" />
-    <Resource Include="images\old\017-fwupdate.png" />
-    <Resource Include="images\old\020-lifeline-hand-drawn-status-line copy.png" />
-    <Resource Include="images\old\021-updatetime.png" />
-    <Resource Include="images\old\025-businessman copy.png" />
-    <Resource Include="images\old\026-telephone copy.png" />
-    <Resource Include="images\old\034-upload copy.png" />
-    <Resource Include="images\old\areaskeypads.png" />
-    <Resource Include="images\old\areaskeypadsBW.png" />
-    <Resource Include="images\old\beep.png" />
-    <Resource Include="images\old\beepBW.png" />
-    <Resource Include="images\old\earth-globe copy.png" />
-    <Resource Include="images\old\earth-globeBW.png" />
-    <Resource Include="images\old\exception.png" />
-    <Resource Include="images\old\exceptionBW.png" />
-    <Resource Include="images\old\hand-gesture.png" />
-    <Resource Include="images\old\hand-gestureBW.png" />
-    <Resource Include="images\old\interior-design.png" />
-    <Resource Include="images\old\interior-designBW.png" />
-    <Resource Include="images\old\keypad_01.png" />
-    <Resource Include="images\old\keypad_black.png" />
-    <Resource Include="images\old\keypad_white.png" />
-    <Resource Include="images\old\keyword.png" />
-    <Resource Include="images\old\keywordBW.png" />
-    <Resource Include="images\old\kpad1 copy.png" />
-    <Resource Include="images\old\kpad1.png" />
-    <Resource Include="images\old\kpad2 copy.png" />
-    <Resource Include="images\old\kpad2.png" />
-    <Resource Include="images\old\musica-searcher.png" />
-    <Resource Include="images\old\NC.png" />
-    <Resource Include="images\old\NO.png" />
-    <Resource Include="images\old\resistance_icon.png" />
-    <Resource Include="images\old\resistance_iconBW.png" />
-    <Resource Include="images\old\speaker.png" />
-    <Resource Include="images\old\speaker1.png" />
-    <Resource Include="images\old\speakerBW.png" />
-    <Resource Include="images\old\sweep.png" />
-    <Resource Include="images\old\user2.png" />
-    <Resource Include="images\old\user_permissions.png" />
     <Resource Include="images\shortcuts\areas.png" />
     <Resource Include="images\shortcuts\areaskeypads.png" />
     <Resource Include="images\shortcuts\audio.png" />
@@ -1409,10 +1373,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\lock_admin.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\old\portugal.png" />
-    <Resource Include="images\old\united_kingdom.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\pvtshortcuts\armdisarm_permission.png" />
@@ -1513,14 +1473,6 @@
     <Resource Include="images\buttons\filters.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\portugal_off.png" />
-    <Resource Include="images\united_kingdom_off.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="images\otherUI\changepw.png" />
-    <Resource Include="images\otherUI\confirmnewpassword.png" />
-    <Resource Include="images\otherUI\newpassword.png" />
-    <Resource Include="images\otherUI\password.png" />
     <Resource Include="images\topbaricons\about.png" />
     <Resource Include="images\topbaricons\files.png" />
     <Resource Include="images\topbaricons\help.png" />
@@ -1679,6 +1631,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\mega-x2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\login\changepw.png" />
+    <Resource Include="images\login\confirmpassword.png" />
+    <Resource Include="images\login\newpassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\flags\pt.png" />
+    <Resource Include="images\flags\uk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\flags\off\pt.png" />
+    <Resource Include="images\flags\off\uk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

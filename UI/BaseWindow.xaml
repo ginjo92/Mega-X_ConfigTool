@@ -192,14 +192,14 @@
                 <GridSplitter Width="1" Background="LightGray" Height="14" VerticalAlignment="Center" Margin="0,0,5,0" />
                 <Controls:Tile x:Name="SettingsTile" Width="Auto" Height="30" TitleFontSize="10" HorizontalContentAlignment="Left" 
                                                VerticalAlignment="Top" VerticalContentAlignment="Top" Background="White" HorizontalTitleAlignment="Right"
-                                               Foreground="Gray">
+                                               Foreground="Gray" Click="SettingsTile_Click">
                     <Controls:Tile.Content>
                         <StackPanel Orientation="Horizontal" Height="Auto">
                             <Image Source="/images/topbaricons/preferences.png" Width="22" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                             <TextBlock Text="{x:Static p:Resources.Settings}" VerticalAlignment="Center" Margin="5,0,5,0" />
                         </StackPanel>
                     </Controls:Tile.Content>
-                    <Controls:Tile.Style>
+                    <!--<Controls:Tile.Style>
                         <Style TargetType="{x:Type Button}">
                             <Style.Triggers>
                                 <EventTrigger RoutedEvent="Click">
@@ -288,7 +288,7 @@
                                 </StackPanel>
                             </StackPanel>
                         </ContextMenu>
-                    </Controls:Tile.ContextMenu>
+                    </Controls:Tile.ContextMenu>-->
                 </Controls:Tile>
             </StackPanel>
         </DockPanel>
@@ -423,91 +423,91 @@
                                 <!--<<-  1 AREAS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Areas}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Areas" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="300" Click="Open_Areas_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="300" Click="Open_Areas_Click" MouseDoubleClick="Open_Areas_MouseDoubleClick">
                                     <Image Source="/images/new/areas.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  2 ZONES-->
                                 <Controls:Tile Title="{x:Static p:Resources.Zones}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Zones" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="300" Click="Open_Zones_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="300" Click="Open_Zones_Click" MouseDoubleClick="Open_Zones_MouseDoubleClick">
                                     <Image Source="/images/new/zones2.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  3 KEYPADS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Keypads}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Keypads" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Keypads_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Keypads_Click" MouseDoubleClick="Open_Keypads_MouseDoubleClick">
                                     <Image Source="/images/new/keypad2.png" Width="80" Height="80"/>
                                 </Controls:Tile>
                                 <!--<<-  4 OUTPUTS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Outputs}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Outputs" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Outputs_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Outputs_Click" MouseDoubleClick="Open_Outputs_MouseDoubleClick">
                                     <Image Source="/images/new/outputs.png" Width="80" Height="80" Margin="20,0,0,0"/>
                                 </Controls:Tile>
                                 <!--<<-  5 TIMEZONES-->
                                 <Controls:Tile Title="{x:Static p:Resources.Timezones}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Timezones" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Timezones_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Timezones_Click" MouseDoubleClick="Open_Timezones_MouseDoubleClick">
                                     <Image Source="/images/new/timezone.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  6 USERS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Users}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Users" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Users_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Users_Click" MouseDoubleClick="Open_Users_MouseDoubleClick">
                                     <Image Source="/images/new/user.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  7 PHONES-->
                                 <Controls:Tile Title="{x:Static p:Resources.Phones}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Phones" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Phones_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Phones_Click" MouseDoubleClick="Open_Phones_MouseDoubleClick">
                                     <Image Source="/images/new/phone.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  8 DIALER-->
                                 <Controls:Tile Title="{x:Static p:Resources.Dialer}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Dialer" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Dialer_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Dialer_Click" MouseDoubleClick="Open_Dialer_MouseDoubleClick">
                                     <Image Source="/images/new/dialer.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  9 GLOBAL SYSTEM-->
                                 <Controls:Tile Title="{x:Static p:Resources.GlobalSystemConfiguration}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_GlobalConfig" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_GlobalConfig_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_GlobalConfig_Click" MouseDoubleClick="Open_GlobalConfig_MouseDoubleClick">
                                     <Image Source="/images/new/settings.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  10 CLIENT-->
                                 <Controls:Tile Title="{x:Static p:Resources.ClientInfo}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_ClientInfo" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_ClientInfo_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_ClientInfo_Click" MouseDoubleClick="Open_ClientInfo_MouseDoubleClick">
                                     <Image Source="/images/new/clientinfo.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  11 EVENTS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Events}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Expansors" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Events_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Events_Click" MouseDoubleClick="Open_Events_MouseDoubleClick">
                                     <Image Source="/images/new/events2.png" Width="80" Height="80" Margin="10,0,0,0"/>
                                 </Controls:Tile>
                                 <!--<<-  12 AUDIO-->
                                 <Controls:Tile Title="{x:Static p:Resources.descriptionAudio}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Audio" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Audio_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Audio_Click" MouseDoubleClick="Open_Audio_MouseDoubleClick">
                                     <Image Source="/images/new/audio.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  13 STATUS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Status}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                x:Name="Open_Status" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Status_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Status_Click" MouseDoubleClick="Open_Status_MouseDoubleClick">
                                     <Image Source="/images/new/status.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  14 DEBUG (Only Admin) -->
                                 <Controls:Tile Title="Debug"
                                                x:Name="Open_Debug" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Debug_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Debug_Click" MouseDoubleClick="Open_Debug_MouseDoubleClick">
                                     <Image Source="/images/new/debug.png" Width="80" Height="80" />
                                 </Controls:Tile>
                                 <!--<<-  15 FW UPDATE(Only Admin) -->
                                 <Controls:Tile Title="{x:Static p:Resources.FirmwareUpdate}"
                                                x:Name="Open_FirmwareUpdate" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
-                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_FWUpdate_Click">
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_FWUpdate_Click" MouseDoubleClick="Open_FWUpdate_MouseDoubleClick">
                                     <Image Source="/images/new/update.png" Width="80" Height="80" />
                                 </Controls:Tile>
                             </WrapPanel>
