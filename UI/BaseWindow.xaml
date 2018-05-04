@@ -93,12 +93,17 @@
 
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="zoneViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="ZoneActiveViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="areaViewSource" Source="{Binding Area, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="AreaActiveViewSource" Source="{Binding Area, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="userViewSource" Source="{Binding User, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="UserActiveViewSource" Source="{Binding User, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="keypadViewSource" Source="{Binding Keypad, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="KeypadActiveViewSource" Source="{Binding Keypad, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="outputViewSource" Source="{Binding Output, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="timezoneViewSource" Source="{Binding Timezone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="phoneViewSource" Source="{Binding Phone, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="PhoneActiveViewSource" Source="{Binding Phone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
@@ -532,6 +537,13 @@
                             <TextBlock Margin="40,-4,0,0"  FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                    Text="{ x:Static p:Resources.Zones }"/>
                         </Grid>
+                        <!--OnlyActive-->
+                        <Controls:Tile x:Name="ZoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="ZoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
+                            <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <GridSplitter Width="1" Background="LightGray" Height="26" VerticalAlignment="Center" Margin="0,-10,212,0" />
                         <!--DOWNLOAD-->
                         <Controls:Tile x:Name="ZonesDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="ZonesDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -607,7 +619,7 @@
                         <DataGrid x:Name="zoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="3"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="zoneDataGrid_MouseDoubleClick" DataContext="{StaticResource zoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="zoneDataGrid_MouseDoubleClick" DataContext="{StaticResource zoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" CanUserResize="False" IsReadOnly="True" Width="30">
                                     <DataGridTextColumn.HeaderStyle>
@@ -717,7 +729,7 @@
 
                                     <DataGridTemplateColumn.CellTemplate >
                                         <DataTemplate>
-                                            <CheckBox IsChecked="{Binding Zone active, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                                            <CheckBox x:Name="zoneActive_checkbox" IsChecked="{Binding Zone active, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4083,7 +4095,7 @@
                         <!--DATAGRID-->
                         <DataGrid x:Name="areaDataGrid" Grid.Column="0" Grid.Row="2" ColumnHeaderHeight="75" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False"  
                                   EnableRowVirtualization="True" CanUserReorderColumns="False" ItemsSource="{Binding Source={StaticResource areaViewSource}}" Margin="0" Height="Auto" Background="WhiteSmoke" CanUserDeleteRows="False"
-                                  MouseDoubleClick="areaDataGrid_MouseDoubleClick" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+                                  MouseDoubleClick="areaDataGrid_MouseDoubleClick" CanUserSortColumns="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
                                 <DataGrid.Columns>
                                 <!--GENERAL SETTINGS-->
                                 <DataGridTemplateColumn x:Name="idColumn1" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="30" CanUserResize="False">
@@ -6682,6 +6694,13 @@
                             <TextBlock Margin="45,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                    Text="{ x:Static p:Resources.Users }"/>
                         </Grid>
+                        <!--OnlyActive-->
+                        <Controls:Tile x:Name="UserOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="UserOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
+                            <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <GridSplitter Width="1" Background="LightGray" Height="26" VerticalAlignment="Center" Margin="0,-10,212,0" />
                         <!--DOWNLOAD-->
                         <Controls:Tile x:Name="UsersDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="UsersDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -6757,7 +6776,7 @@
                         <DataGrid x:Name="userDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" ColumnHeaderHeight="75"  Height="Auto" MouseDoubleClick="userDataGrid_MouseDoubleClick" DataContext="{StaticResource userViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" CanUserReorderColumns="False" ColumnHeaderHeight="75"  Height="Auto" MouseDoubleClick="userDataGrid_MouseDoubleClick" DataContext="{StaticResource userViewSource}">
                             <DataGrid.Columns>
                                 <!--ID-->
                                 <DataGridTextColumn x:Name="User_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -9924,6 +9943,13 @@
                             <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                    Text="{ x:Static p:Resources.Keypads }"/>
                         </Grid>
+                        <!--OnlyActive-->
+                        <Controls:Tile x:Name="KeypadOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="KeypadOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
+                            <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <GridSplitter Width="1" Background="LightGray" Height="26" VerticalAlignment="Center" Margin="0,-10,212,0" />
                         <!--DOWNLOAD-->
                         <Controls:Tile x:Name="KeypadsDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="KeypadsDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -10010,7 +10036,7 @@
                         <DataGrid x:Name="keypadDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" MouseDoubleClick="keypadDataGrid_MouseDoubleClick" DataContext="{StaticResource keypadViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" MouseDoubleClick="keypadDataGrid_MouseDoubleClick" DataContext="{StaticResource keypadViewSource}">
                             <DataGrid.Columns>
                                 <!--ID/NAME-->
                                 <DataGridTextColumn x:Name="Keypad_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -11360,7 +11386,7 @@
                         <DataGrid x:Name="outputDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="outputDataGrid_MouseDoubleClick" DataContext="{StaticResource outputViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="outputDataGrid_MouseDoubleClick" DataContext="{StaticResource outputViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="idColumn3" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -12223,7 +12249,7 @@
                         <DataGrid x:Name="timezoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="timezoneDataGrid_MouseDoubleClick" DataContext="{StaticResource timezoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="timezoneDataGrid_MouseDoubleClick" DataContext="{StaticResource timezoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="TimezoneID_Column" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -13051,6 +13077,13 @@
                             <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
                                    Text="{ x:Static p:Resources.Phones }"/>
                         </Grid>
+                        <!--OnlyActive-->
+                        <Controls:Tile x:Name="PhoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="PhoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
+                            <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <GridSplitter Width="1" Background="LightGray" Height="26" VerticalAlignment="Center" Margin="0,-10,212,0" />
                         <!--DOWNLOAD-->
                         <Controls:Tile x:Name="PhonesDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="PhonesDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
@@ -13104,7 +13137,7 @@
                         <DataGrid x:Name="phoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="phoneDataGrid_MouseDoubleClick" DataContext="{StaticResource phoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="phoneDataGrid_MouseDoubleClick" DataContext="{StaticResource phoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="Phones_ID" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>

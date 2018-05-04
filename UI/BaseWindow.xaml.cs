@@ -37,6 +37,7 @@ namespace ProdigyConfigToolWPF
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\\";
 
         private string AppLocale;
         public int AppRole;
@@ -55,6 +56,11 @@ namespace ProdigyConfigToolWPF
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
 
+        int zone_onlyActive = 0;
+        int keypad_onlyActive = 0;
+        int user_onlyActive = 0;
+        int phone_onlyActive = 0;
+        
         byte[] combined_file_data_bytes = new byte[0];
         public uint event_code;
         WaveIn waveSource;
@@ -72,7 +78,6 @@ namespace ProdigyConfigToolWPF
 
         AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
         AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
-
         FileStream audio_stream;
 
         private bool default_restore_is_set = false;
@@ -95,7 +100,9 @@ namespace ProdigyConfigToolWPF
             WizardPhonesSetup = PhonesConfig;
             WizardUsersSetup = UsersConfig;
 
-            //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
+           
+
+        //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
@@ -274,7 +281,7 @@ namespace ProdigyConfigToolWPF
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             //Serial number, FW Version and HW Version labels
             PanelLabels.Visibility = Visibility.Collapsed;
-
+            
             // Serial Port
             string[] com_ports = SerialPort.GetPortNames();
             ushort i = 0;
@@ -352,7 +359,7 @@ namespace ProdigyConfigToolWPF
                 databaseDataSetAreaTableAdapter.Fill(databaseDataSet.Area);
                 CollectionViewSource AreaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
                 AreaViewSource.View.MoveCurrentToFirst();
-
+                
                 // USER
                 UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
                 databaseDataSetUserTableAdapter.Fill(databaseDataSet.User);
@@ -364,16 +371,17 @@ namespace ProdigyConfigToolWPF
                 databaseDataSetKeypadTableAdapter.Fill(databaseDataSet.Keypad);
                 CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
                 keypadViewSource.View.MoveCurrentToFirst();
-
+                                
                 // OUTPUT
                 OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
                 databaseDataSetOutputTableAdapter.Fill(databaseDataSet.Output);
                 CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
                 outputViewSource.View.MoveCurrentToFirst();
-
+                
                 // TIMEZONE
                 TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
                 databaseDataSetTimezoneTableAdapter.Fill(databaseDataSet.Timezone);
+
                 CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
                 timezoneViewSource.View.MoveCurrentToFirst();
 
@@ -400,20 +408,8 @@ namespace ProdigyConfigToolWPF
                 databaseDataSetMainInfoTableAdapter.Fill(databaseDataSet.MainInfo);
                 System.Windows.Data.CollectionViewSource mainInfoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("clientInfoViewSource")));
                 mainInfoViewSource.View.MoveCurrentToFirst();
-
-                // AUDIO
-                //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
-                //databaseDataSetAudioTableAdapter.Fill(databaseDataSet.Audio);
-                //System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
-                //AudioViewSource.View.MoveCurrentToFirst();
-
-                //System.Windows.Data.CollectionViewSource AudioDefaultViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
-
+                                
                 //AUDIO
-                string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-                string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\";
-
-
                 //databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
@@ -452,85 +448,33 @@ namespace ProdigyConfigToolWPF
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
 
                 //databaseDataSetAudioCustomizedTableAdapter.Fill(audio_customized_table);
-                DebugTable(audio_customized_table);
+                //DebugTable(audio_customized_table);
                 AudioCustomizedViewSource.View.MoveCurrentToFirst();
                 AudioCustomizedViewSource.Source = audio_customized_table;
-
-
+                
                 databaseDataSet.Audio.AcceptChanges();
 
                 AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
                 AudioViewSource.View.MoveCurrentToFirst();
-
-                //databaseDataSetAudioDefaultTableAdapter.Update(databaseDataSet.Audio);
-                //databaseDataSetAudioCustomizedTableAdapter.Update(databaseDataSet.Audio);
-
-                //defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
-                //SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
-                //con.Open();
-                //SQLiteCommand cmd = con.CreateCommand();
-                //cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 0");
-                //SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
-                //SQLiteCommandBuilder builder = new SQLiteCommandBuilder(adapter);
-                //adapter.Fill(audio_table);
-                //con.Close();
-
-                //defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
-                //con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
-                //con.Open();
-                //cmd = con.CreateCommand();
-                //cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
-                //adapter = new SQLiteDataAdapter(cmd);
-                //builder = new SQLiteCommandBuilder(adapter);
-                //adapter.Fill(audio_customized_table);
-                //con.Close();
-
-
-
-
+                
                 //AUDIO SYSTEM
                 AudioSystemConfigurationTableAdapter databaseDataSetAudioSystemConfigurationTableAdapter = new defaultDataSetTableAdapters.AudioSystemConfigurationTableAdapter();
                 databaseDataSetAudioSystemConfigurationTableAdapter.Fill(databaseDataSet.AudioSystemConfiguration);
                 System.Windows.Data.CollectionViewSource AudioSystemConfigurationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioSystemConfigurationViewSource")));
                 AudioSystemConfigurationViewSource.View.MoveCurrentToFirst();
-
-
-
-                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioSystemConfiguration.Rows.Count + 1;
-                //databaseDataSet.AudioSystemConfiguration.Columns["Id"].AutoIncrementStep = 1;
-
-                //// Load data into the table Audio Customized. You can modify this code as needed.
-                //AudioCustomizedTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioCustomizedTableAdapter();
-
-                //System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrement = true;
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementSeed = databaseDataSet.AudioDefault.Rows.Count;
-                //databaseDataSet.AudioCustomized.Columns["Id"].AutoIncrementStep = 1;
-                //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.AudioCustomized);
-                //AudioCustomizedViewSource.View.MoveCurrentToFirst();
-
+                
                 //force update of the table after edit one cell
                 audio_customized_table.RowDeleted += new DataRowChangeEventHandler(Update_table_after_edit);
                 audio_customized_table.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
 
-                //// Load data into the table Event. You can modify this code as needed.
-                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-                //CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
-                //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
-                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
-                //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-                //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-                //eventViewSource.View.MoveCurrentToFirst();
             }
             catch (Exception ex)
             {
                 await DialogManager.ShowMessageAsync(this, ex.Message, "");
             }
 
-
-
+            
             if (WizardKeypadSetup != null)
                 SetKeypadConfigurationFromWizard(WizardKeypadSetup);
 
@@ -11307,57 +11251,66 @@ namespace ProdigyConfigToolWPF
 
         private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(zoneDataGrid, MainZonePVTTab, MainZonesTab, "zoneViewSource", TreeviewZones);
+            if(zoneDataGrid.SelectedIndex!=-1)
+                SelectPVT_onMouseDoubleClick(zoneDataGrid, MainZonePVTTab, MainZonesTab, "zoneViewSource", TreeviewZones);
         }
 
         private void areaDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(areaDataGrid, MainAreaPVTTab, MainAreasTab, "areaViewSource", TreeviewAreas);
+            if (areaDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(areaDataGrid, MainAreaPVTTab, MainAreasTab, "areaViewSource", TreeviewAreas);
         }
 
         private void userDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int row = userDataGrid.SelectedIndex;
-            int column = userDataGrid.CurrentColumn.DisplayIndex;
-
-            System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
-
-            if (column == 0 && row <= 200)
+            if (userDataGrid.SelectedIndex != -1)
             {
-                MainTabControl.SelectedItem = MainUsersPVTTab;
-                userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+                int row = userDataGrid.SelectedIndex;
+                int column = userDataGrid.CurrentColumn.DisplayIndex;
 
-                TreeviewUsers.IsExpanded = true;
-                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
-            }
-            else
-            {
-                MainTabControl.SelectedItem = MainUsersTab;
-                userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+                System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
 
-                TreeviewUsers.IsExpanded = false;
-                (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = false;
+                if (column == 0 && row <= 200)
+                {
+                    MainTabControl.SelectedItem = MainUsersPVTTab;
+                    userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+
+                    TreeviewUsers.IsExpanded = true;
+                    (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = true;
+                }
+                else
+                {
+                    MainTabControl.SelectedItem = MainUsersTab;
+                    userViewSource.View.MoveCurrentToPosition(userDataGrid.SelectedIndex);
+
+                    TreeviewUsers.IsExpanded = false;
+                    (TreeviewUsers.Items[userDataGrid.SelectedIndex] as TreeViewItem).IsSelected = false;
+                }
             }
         }
 
         private void keypadDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(keypadDataGrid, MainKeypadsPVTTab, MainKeypadsTab, "keypadViewSource", TreeviewKeypads);
+            if (keypadDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(keypadDataGrid, MainKeypadsPVTTab, MainKeypadsTab, "keypadViewSource", TreeviewKeypads);
         }
 
         private void outputDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(outputDataGrid, MainOutputsPVTTab, MainOutputsTab, "outputViewSource", TreeviewOutputs);
+            if (outputDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(outputDataGrid, MainOutputsPVTTab, MainOutputsTab, "outputViewSource", TreeviewOutputs);
         }
 
         private void timezoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(timezoneDataGrid, MainTimezonesPVTTab, MainTimezonesTab, "timezoneViewSource", TreeviewTimezones);
+            if (timezoneDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(timezoneDataGrid, MainTimezonesPVTTab, MainTimezonesTab, "timezoneViewSource", TreeviewTimezones);
         }
 
         private void phoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            SelectPVT_onMouseDoubleClick(phoneDataGrid, MainPhonesPVTTab, MainPhonesTab, "phoneViewSource", TreeviewPhones);
+            if (phoneDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(phoneDataGrid, MainPhonesPVTTab, MainPhonesTab, "phoneViewSource", TreeviewPhones);
         }
 
         #endregion
@@ -13276,6 +13229,70 @@ namespace ProdigyConfigToolWPF
 
         #endregion
 
+        #region DoubleClick to avoid Bugs
+
+        private void Open_Areas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Areas_Click(sender, e);
+        }
+        private void Open_Zones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Zones_Click(sender, e);
+        }
+        private void Open_Keypads_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Keypads_Click(sender, e);
+        }
+        private void Open_Outputs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Outputs_Click(sender, e);
+        }
+        private void Open_Timezones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Timezones_Click(sender, e);
+        }
+        private void Open_Users_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Users_Click(sender, e);
+        }
+        private void Open_Phones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Phones_Click(sender, e);
+        }
+        private void Open_Dialer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Dialer_Click(sender, e);
+        }
+        private void Open_ClientInfo_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_ClientInfo_Click(sender, e);
+        }
+        private void Open_Events_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Events_Click(sender, e);
+        }
+        private void Open_Audio_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Audio_Click(sender, e);
+        }
+        private void Open_Status_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Status_Click(sender, e);
+        }
+        private void Open_Debug_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Debug_Click(sender, e);
+        }
+        private void Open_FWUpdate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_FWUpdate_Click(sender, e);
+        }
+        private void Open_GlobalConfig_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_GlobalConfig_Click(sender, e);
+        }
+        #endregion
+
         #endregion
 
         private void dialerDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -13406,65 +13423,88 @@ namespace ProdigyConfigToolWPF
             preferences_window.Show();
         }
 
-        private void Open_Areas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        //private DataTable OnlyActiveFilter(DataTable DT, string ColumnName)
+        //{
+        //    DT = DT.AsEnumerable().Where(row => row.Field<bool>(ColumnName) == true).CopyToDataTable();
+        //    return DT;
+        //}
+
+        private void OnlyActiveClick(DataTable DataSet, string ColumnName, DataGrid DG, Tile OnlyActiveTile, int ToggleActive)
         {
-            Open_Areas_Click(sender, e);
+            DataView DV = new DataView();
+
+            if (ToggleActive == 0)
+            {
+                DV = DataSet.AsEnumerable().Where(row => row.Field<bool>(ColumnName) == true).CopyToDataTable().DefaultView;
+                DG.ItemsSource = DV;
+
+                DataSet.AcceptChanges();
+                OnlyActiveTile.Background = Brushes.DarkSeaGreen;
+            }
+            else if (ToggleActive == 1)
+            {
+                DV = DataSet.DefaultView;
+                DG.ItemsSource = DV;
+
+                OnlyActiveTile.Background = Brushes.IndianRed;
+                DataSet.AcceptChanges();
+            }
         }
-        private void Open_Zones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        
+        private void ZoneOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            Open_Zones_Click(sender, e);
+            if (zone_onlyActive == 0)
+            {
+                OnlyActiveClick(databaseDataSet.Zone, "Zone active", zoneDataGrid, ZoneOnlyActive, zone_onlyActive);
+                zone_onlyActive = 1;
+            }
+            else if (zone_onlyActive == 1)
+            {
+                OnlyActiveClick(databaseDataSet.Zone, "Zone active", zoneDataGrid, ZoneOnlyActive, zone_onlyActive);
+                zone_onlyActive = 0;
+            }
         }
-        private void Open_Keypads_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+        private void UserOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            Open_Keypads_Click(sender, e);
+            if (user_onlyActive == 0)
+            {
+                OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+                user_onlyActive = 1;
+            }
+            else if (user_onlyActive == 1)
+            {
+                OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+                user_onlyActive = 0;
+            }
         }
-        private void Open_Outputs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+
+        private void KeypadOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            Open_Outputs_Click(sender, e);
+            if (keypad_onlyActive == 0)
+            {
+                OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
+                keypad_onlyActive = 1;
+            }
+            else if (keypad_onlyActive == 1)
+            {
+                OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
+                keypad_onlyActive = 0;
+            }
         }
-        private void Open_Timezones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        
+        private void PhoneOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            Open_Timezones_Click(sender, e);
-        }
-        private void Open_Users_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Users_Click(sender, e);
-        }
-        private void Open_Phones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Phones_Click(sender, e);
-        }
-        private void Open_Dialer_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Dialer_Click(sender, e);
-        }
-        private void Open_ClientInfo_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_ClientInfo_Click(sender, e);
-        }
-        private void Open_Events_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Events_Click(sender, e);
-        }
-        private void Open_Audio_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Audio_Click(sender, e);
-        }
-        private void Open_Status_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Status_Click(sender, e);
-        }
-        private void Open_Debug_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_Debug_Click(sender, e);
-        }
-        private void Open_FWUpdate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_FWUpdate_Click(sender, e);
-        }
-        private void Open_GlobalConfig_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            Open_GlobalConfig_Click(sender, e);
+            if (phone_onlyActive == 0)
+            {
+                OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
+                phone_onlyActive = 1;
+            }
+            else if (phone_onlyActive == 1)
+            {
+                OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
+                phone_onlyActive = 0;
+            }
         }
     }
 }

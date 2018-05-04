@@ -30,6 +30,9 @@ namespace ProdigyConfigToolWPF.Protocol
             foreach (byte a in code)
                 byte_array[i++] = a;
 
+            string StringByte = BitConverter.ToString(byte_array);
+            System.Diagnostics.Debug.WriteLine("RealTime: " + StringByte);
+
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is neededs
         }

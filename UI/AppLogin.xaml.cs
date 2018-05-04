@@ -91,7 +91,7 @@ namespace ProdigyConfigToolWPF
                 if (loginsuccessfull == false)
                 {
                     MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                    this.Close();
+                    //this.Close();
                 }
             }
         }
@@ -149,7 +149,7 @@ namespace ProdigyConfigToolWPF
             if (loginsuccessfull == false)
             {
                 MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                this.Close();
+                //this.Close();
             }
         }
 
@@ -248,7 +248,7 @@ namespace ProdigyConfigToolWPF
                 if (loginsuccessfull == false)
                 {
                     MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                    this.Close();
+                    //this.Close();
                 }
             }
         }
