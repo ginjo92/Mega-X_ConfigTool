@@ -26,7 +26,7 @@ namespace ProdigyConfigToolWPF
     
     public partial class AppLogin : MetroWindow
     {
-        private int language = 0;
+        private int language = 1;
         private bool loginsuccessfull = false;
         public AppLogin()
         {
@@ -57,7 +57,7 @@ namespace ProdigyConfigToolWPF
 
                 default:
                     InitializeComponent();
-                    language = 0;
+                    language = 1;
                     ChoseLanguageToChangeFlags(language);
                     break;
             }
@@ -85,7 +85,7 @@ namespace ProdigyConfigToolWPF
                         var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
                         prodigy_configtool_window.Show();
                         this.Close();
-
+                        Console.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
                     }
                 }
                 if (loginsuccessfull == false)
@@ -252,5 +252,7 @@ namespace ProdigyConfigToolWPF
                 }
             }
         }
+
+
     }
 }

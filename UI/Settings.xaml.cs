@@ -32,7 +32,7 @@ namespace ProdigyConfigToolWPF
         private string locale;
         private MainWindow mainWindow;
         private string version;
-        private int language = 0;
+        private int language = 1;
         Boolean restore = false;
 
         public Settings(string ChoosenLocale, MainWindow main, string ChoosenDbFile, Boolean default_restore_is_set)

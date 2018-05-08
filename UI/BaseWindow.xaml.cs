@@ -37,7 +37,8 @@ namespace ProdigyConfigToolWPF
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + "\\";
+        string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
+        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\";
 
         private string AppLocale;
         public int AppRole;
@@ -56,10 +57,10 @@ namespace ProdigyConfigToolWPF
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
 
-        int zone_onlyActive = 0;
-        int keypad_onlyActive = 0;
-        int user_onlyActive = 0;
-        int phone_onlyActive = 0;
+        bool zone_onlyActive = false;
+        bool keypad_onlyActive = false;
+        bool user_onlyActive = false;
+        bool phone_onlyActive = false;
         
         byte[] combined_file_data_bytes = new byte[0];
         public uint event_code;
@@ -100,11 +101,11 @@ namespace ProdigyConfigToolWPF
             WizardPhonesSetup = PhonesConfig;
             WizardUsersSetup = UsersConfig;
 
-           
+            Console.WriteLine("MainWindow: " + AppRole);
 
         //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
 
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
@@ -3182,6 +3183,8 @@ namespace ProdigyConfigToolWPF
                 int zone_to_read = ((addr - Constants.KP_ZONES_INIC_ADDR) / (int)Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH);
 
                 Protocol.Zones zone = new Protocol.Zones();
+
+
                 byte[] description = (byte[])zone.attributes["description"]["value"];
                 //TODO: Extract this for to a function
                 for (int i = (7 + (int)zone.attributes["description"]["address"]), j = 0; i < (7 + (int)zone.attributes["description"]["address"] + description.Length); i++, j++)
@@ -8176,7 +8179,7 @@ namespace ProdigyConfigToolWPF
         {
             SaveFileDialog dlg = new SaveFileDialog();
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
             string filename = "MegaXConfig";
             dlg.FileName = filename; // Default file name
             dlg.DefaultExt = ".prgy"; // Default file extension
@@ -13423,89 +13426,83 @@ namespace ProdigyConfigToolWPF
             preferences_window.Show();
         }
 
-        //private DataTable OnlyActiveFilter(DataTable DT, string ColumnName)
-        //{
-        //    DT = DT.AsEnumerable().Where(row => row.Field<bool>(ColumnName) == true).CopyToDataTable();
-        //    return DT;
-        //}
+       
 
-        private void OnlyActiveClick(DataTable DataSet, string ColumnName, DataGrid DG, Tile OnlyActiveTile, int ToggleActive)
+        private DataTable OnlyActiveClick(DataTable dt, DataGrid dg)
         {
-            DataView DV = new DataView();
+            dg.ItemsSource = new DataView(dt);
+            dt.AcceptChanges();
 
-            if (ToggleActive == 0)
-            {
-                DV = DataSet.AsEnumerable().Where(row => row.Field<bool>(ColumnName) == true).CopyToDataTable().DefaultView;
-                DG.ItemsSource = DV;
-
-                DataSet.AcceptChanges();
-                OnlyActiveTile.Background = Brushes.DarkSeaGreen;
-            }
-            else if (ToggleActive == 1)
-            {
-                DV = DataSet.DefaultView;
-                DG.ItemsSource = DV;
-
-                OnlyActiveTile.Background = Brushes.IndianRed;
-                DataSet.AcceptChanges();
-            }
+            return dt;
         }
         
         private void ZoneOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            if (zone_onlyActive == 0)
+            DataTable dtfiltered = databaseDataSet.Zone.AsEnumerable().Where(row => row.Field<bool>("Zone active") == true).CopyToDataTable();
+
+            if (zone_onlyActive)
             {
-                OnlyActiveClick(databaseDataSet.Zone, "Zone active", zoneDataGrid, ZoneOnlyActive, zone_onlyActive);
-                zone_onlyActive = 1;
+                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
+                //dt = OnlyActiveClick(databaseDataSet.Zone, zoneDataGrid) as defaultDataSet.ZoneDataTable;
+                zoneDataGrid.ItemsSource = new DataView(databaseDataSet.Zone);
+                databaseDataSet.Zone.AcceptChanges();
+                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
+                ZoneOnlyActive.Background = Brushes.GreenYellow;
+                zone_onlyActive = false;
             }
-            else if (zone_onlyActive == 1)
+            else
             {
-                OnlyActiveClick(databaseDataSet.Zone, "Zone active", zoneDataGrid, ZoneOnlyActive, zone_onlyActive);
-                zone_onlyActive = 0;
+                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
+                zoneDataGrid.ItemsSource = new DataView(dtfiltered);
+                dtfiltered.AcceptChanges();
+                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
+                ZoneOnlyActive.Background = Brushes.OrangeRed;
+                zone_onlyActive = true;
             }
         }
 
         private void UserOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            if (user_onlyActive == 0)
-            {
-                OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-                user_onlyActive = 1;
-            }
-            else if (user_onlyActive == 1)
-            {
-                OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-                user_onlyActive = 0;
-            }
+            //    if (user_onlyActive == 0)
+            //    {
+            //        OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+            //        user_onlyActive = 1;
+            //    }
+            //    else if (user_onlyActive == 1)
+            //    {
+            //        OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+            //        user_onlyActive = 0;
+            //    }
         }
 
         private void KeypadOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            if (keypad_onlyActive == 0)
-            {
-                OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
-                keypad_onlyActive = 1;
-            }
-            else if (keypad_onlyActive == 1)
-            {
-                OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
-                keypad_onlyActive = 0;
-            }
+            //if (keypad_onlyActive == 0)
+            //{
+            //    OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
+            //    keypad_onlyActive = 1;
+            //}
+            //else if (keypad_onlyActive == 1)
+            //{
+            //    OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
+            //    keypad_onlyActive = 0;
+            //}
         }
         
         private void PhoneOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            if (phone_onlyActive == 0)
-            {
-                OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
-                phone_onlyActive = 1;
-            }
-            else if (phone_onlyActive == 1)
-            {
-                OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
-                phone_onlyActive = 0;
-            }
+            //if (phone_onlyActive == 0)
+            //{
+            //    OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
+            //    phone_onlyActive = 1;
+            //}
+            //else if (phone_onlyActive == 1)
+            //{
+            //    OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
+            //    phone_onlyActive = 0;
+            //}
         }
+
     }
 }
 

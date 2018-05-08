@@ -27,10 +27,12 @@ namespace ProdigyConfigToolWPF
             this.mainWindow = mainWindow;
             InitializeComponent();
 
+            string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
-            string old_configs_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\old\\";
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string old_configs_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\old\\";
 
+            Console.WriteLine("File Manager: " + role);
 
             if (!Directory.Exists(configurations_folder))
             {
@@ -124,7 +126,9 @@ namespace ProdigyConfigToolWPF
             File DbFile = (File)DBListBox.SelectedItem;
 
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
+
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + DbFile.Name + "; data source = " + configurations_folder + DbFile.Name);
 
             
@@ -160,7 +164,7 @@ namespace ProdigyConfigToolWPF
 
         private void NewConfigTile_Click(object sender, RoutedEventArgs e)
         {
-            var CreateNewFileWindow = new CreateNewFile(DBListBox.Items, locale, 1, this);
+            var CreateNewFileWindow = new CreateNewFile(DBListBox.Items, locale, role, this);
 
             CreateNewFileWindow.ShowDialog();
         }
