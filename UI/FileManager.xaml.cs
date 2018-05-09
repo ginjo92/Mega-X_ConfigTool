@@ -223,7 +223,8 @@ namespace ProdigyConfigToolWPF
         {
             DBListBox.SelectedItem = DBListBox.Items[0];
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
 
             string sourcePath = configurations_folder + DbFile.Name;
             
@@ -251,8 +252,6 @@ namespace ProdigyConfigToolWPF
             DBListBox.InvalidateArrange();
             DBListBox.UpdateLayout();
         }
-
-       
     }
 
 }

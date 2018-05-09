@@ -35,6 +35,7 @@ namespace ProdigyConfigToolWPF
     public partial class MainWindow : MetroWindow
     {
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
+        private Help helpWindow;
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
@@ -307,7 +308,7 @@ namespace ProdigyConfigToolWPF
             //USER
             if (AppRole == 0)
             {
-                TopBar_User_Name.Text = "User";
+                TopBar_User_Name.Text = Properties.Resources.User_role_normal_user;
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/0_user.png", UriKind.Relative));
 
                 TreeviewDebug.Visibility = Visibility.Collapsed;
@@ -321,14 +322,14 @@ namespace ProdigyConfigToolWPF
             //MANUFACTURER
             else if (AppRole == 1)
             {
-                TopBar_User_Name.Text = "Manufacturer";
+                TopBar_User_Name.Text = Properties.Resources.User_role_manufacturer;
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/1_manufacturer.png", UriKind.Relative));
 
             }
-            //MANUFACTURER
+            //INSTALLER
             else if (AppRole == 2)
             {
-                TopBar_User_Name.Text = "Installer";
+                TopBar_User_Name.Text = Properties.Resources.User_role_installer;
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/2_installer.png", UriKind.Relative));
 
                 TreeviewDebug.Visibility = Visibility.Collapsed;
@@ -8214,7 +8215,6 @@ namespace ProdigyConfigToolWPF
         {
             this.Close();
         }
-
         private void NewFile_Click(object sender, RoutedEventArgs e)
         {
             FileManager file_manager = new FileManager(AppLocale, AppRole, this);
@@ -8612,7 +8612,6 @@ namespace ProdigyConfigToolWPF
 
         public void BaseWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
             if (databaseDataSet.HasChanges())
             {
                 var messageBox = MessageBox.Show(Properties.Resources.QuestionSaveChangesExtended + "\n" + "\n" + Properties.Resources.InfoDataWillBeLost, Properties.Resources.QuestionSaveChanges, MessageBoxButton.YesNoCancel);
@@ -8623,7 +8622,6 @@ namespace ProdigyConfigToolWPF
                 else if (messageBox == MessageBoxResult.Yes)
                 {
                     Save_Database_data();
-
                 }
             }
 
@@ -8631,10 +8629,12 @@ namespace ProdigyConfigToolWPF
             {
                 //Close();
             }
-
-
+            
             if (serialPort.IsOpen)
                 serialPort.Close();
+
+            //if(helpWindow.IsActive)
+            //    Environment.Exit(1);
         }
 
         private void BaseFileMenu_Initialized(object sender, EventArgs e)
@@ -8651,8 +8651,7 @@ namespace ProdigyConfigToolWPF
         {
             MenuItemSave.IsEnabled = databaseDataSet.HasChanges();
         }
-
-
+        
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
             Help helpWindow = new Help();
@@ -11422,7 +11421,6 @@ namespace ProdigyConfigToolWPF
             TreeviewTimezones.IsExpanded = false;
             TreeviewPhones.IsExpanded = false;
         }
-
         private void Button_Next_Click(TreeViewItem tvi)
         {
             int index = 0;
@@ -11436,8 +11434,7 @@ namespace ProdigyConfigToolWPF
             }
             ((tvi).Items[(index + 1) % (tvi as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
         }
-
-        private void Button_Back_Click(TreeViewItem tvi)
+        private void Button_Back_Click(TreeViewItem tvi, int maxitems)
         {
             int index = 0;
             foreach (TreeViewItem i in tvi.Items)
@@ -11451,7 +11448,7 @@ namespace ProdigyConfigToolWPF
             if (index > 0)
                 ((tvi).Items[index - 1] as TreeViewItem).IsSelected = true;
             else if (index == 0)
-                ((tvi).Items[(Constants.KP_MAX_AREAS - 1) % (tvi as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
+                ((tvi).Items[(maxitems - 1) % (tvi as TreeViewItem).Items.Count] as TreeViewItem).IsSelected = true;
 
         }
 
@@ -11462,7 +11459,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainArea_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewAreas);
+            Button_Back_Click(TreeviewAreas, Constants.KP_MAX_AREAS);
         }
         private void MainArea_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11479,7 +11476,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainZone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewZones);
+            Button_Back_Click(TreeviewZones, Constants.KP_MAX_ZONES);
         }
         private void MainZone_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11496,7 +11493,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainKeypad_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewKeypads);
+            Button_Back_Click(TreeviewKeypads, Constants.KP_MAX_KEYPADS);
         }
         private void MainKeypad_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11513,7 +11510,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainOutput_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewOutputs);
+            Button_Back_Click(TreeviewOutputs, Constants.KP_MAX_OUTPUTS);
         }
         private void MainOutput_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11530,7 +11527,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainUser_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewUsers);
+            Button_Back_Click(TreeviewUsers, Constants.KP_MAX_USERS - 5);
         }
         private void MainUser_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11547,7 +11544,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainTimezone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewTimezones);
+            Button_Back_Click(TreeviewTimezones, Constants.KP_MAX_TIMEZONES);
         }
         private void MainTimezone_button_undo_Click(object sender, RoutedEventArgs e)
         {
@@ -11564,7 +11561,7 @@ namespace ProdigyConfigToolWPF
         }
         private void MainPhone_button_back_Click(object sender, RoutedEventArgs e)
         {
-            Button_Back_Click(TreeviewPhones);
+            Button_Back_Click(TreeviewPhones, Constants.KP_MAX_PHONES);
         }
         private void MainPhone_button_undo_Click(object sender, RoutedEventArgs e)
         {

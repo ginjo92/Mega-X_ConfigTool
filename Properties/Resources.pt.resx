@@ -2844,4 +2844,7 @@
   <data name="DefaultConfigRestored" xml:space="preserve">
     <value>Configurações pré-definidas restauradas com sucesso!</value>
   </data>
+  <data name="LoggedInAs" xml:space="preserve">
+    <value>Autenticando como</value>
+  </data>
 </root>

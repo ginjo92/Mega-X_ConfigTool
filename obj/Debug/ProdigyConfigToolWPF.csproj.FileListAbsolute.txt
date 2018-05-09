@@ -1888,3 +1888,5 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Preferences.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Settings.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Preferences.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\Settings.baml
+C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\PopupRole.g.cs
+C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Debug\UI\PopupRole.baml

@@ -17,6 +17,7 @@
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
     </Controls:MetroWindow.Resources>
 
+    
     <!--Title bar Right content-->
     <!--<Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
@@ -51,6 +52,7 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>-->
     <Grid>
+        
         <!--TILES Shortcuts-->
         <DockPanel Margin="0,0,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
             <!--Utilities menu-->
@@ -229,5 +231,6 @@
         <DockPanel Height="34" VerticalAlignment="Bottom" Background="WhiteSmoke">
             <Image Source="/images/maxalarm.png" Width="Auto" Height="30" HorizontalAlignment="Right" Margin="10,0"/>
         </DockPanel>
+        
     </Grid>
 </Controls:MetroWindow>

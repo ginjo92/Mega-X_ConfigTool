@@ -2838,4 +2838,7 @@
   <data name="DefaultConfigRestored" xml:space="preserve">
     <value>Default configuration restored sucessfully</value>
   </data>
+  <data name="LoggedInAs" xml:space="preserve">
+    <value>Login in as</value>
+  </data>
 </root>

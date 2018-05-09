@@ -82,8 +82,8 @@ namespace ProdigyConfigToolWPF
                         //sanitize locale
                         string locale = sanitize_locale(this);
 
-                        var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
-                        prodigy_configtool_window.Show();
+                        PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
+                        popuplogin.Show();
                         this.Close();
                         Console.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
                     }
@@ -141,8 +141,8 @@ namespace ProdigyConfigToolWPF
                         //sanitize locale
                         string locale = sanitize_locale(this);
 
-                        var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
-                        prodigy_configtool_window.Show();
+                        PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
+                        popuplogin.Show();
                         this.Close();
                     }
             }
@@ -239,8 +239,8 @@ namespace ProdigyConfigToolWPF
                         //sanitize locale
                         string locale = sanitize_locale(this);
 
-                        var prodigy_configtool_window = new FileManager(locale, Convert.ToInt32(dr["Role"]), null);
-                        prodigy_configtool_window.Show();
+                        PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
+                        popuplogin.Show();
                         this.Close();
 
                     }

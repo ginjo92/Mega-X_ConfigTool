@@ -3589,6 +3589,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login in as.
+        /// </summary>
+        public static string LoggedInAs {
+            get {
+                return ResourceManager.GetString("LoggedInAs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {

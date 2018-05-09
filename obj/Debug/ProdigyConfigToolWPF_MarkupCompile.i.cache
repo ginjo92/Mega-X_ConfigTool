@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\App.xaml
-17-1682903377
+181568390568
 
-47-1467283692
+471422233435
 40363819176
-Controls\UserControlClient.xaml;Resources\Datasets.xaml;UI\BaseWindow.xaml;UI\AppLogin.xaml;UI\CreateNewFile.xaml;UI\DataChoose.xaml;UI\FileManager.xaml;UI\Help.xaml;UI\PasswordChange.xaml;UI\Preferences.xaml;UI\RealTimeActions.xaml;UI\RealTimeUserCodeInput.xaml;Resources\BureauBlue.xaml;Resources\custom.xaml;Resources\Icons.xaml;UI\Settings.xaml;UI\WizardSystemArchitecture.xaml;
+Controls\UserControlClient.xaml;Resources\Datasets.xaml;UI\BaseWindow.xaml;UI\AppLogin.xaml;UI\CreateNewFile.xaml;UI\DataChoose.xaml;UI\FileManager.xaml;UI\Help.xaml;UI\PasswordChange.xaml;UI\PopupRole.xaml;UI\Preferences.xaml;UI\RealTimeActions.xaml;UI\RealTimeUserCodeInput.xaml;Resources\BureauBlue.xaml;Resources\custom.xaml;Resources\Icons.xaml;UI\Settings.xaml;UI\WizardSystemArchitecture.xaml;
 
-False
+True
 

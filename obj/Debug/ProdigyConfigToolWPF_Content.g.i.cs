@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bin/release/pt/prodigyconfigtoolwpf.resources.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/click.png")]
 
 

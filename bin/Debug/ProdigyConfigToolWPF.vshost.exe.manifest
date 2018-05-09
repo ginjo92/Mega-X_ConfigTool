@@ -207,26 +207,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8918016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="8942080">
       <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lM5WXhjwRnBWZ9E+K7mChrnDQ7mUmLHUJHuNMxpkOIg=</dsig:DigestValue>
+        <dsig:DigestValue>diDhBO7MLwlfN9GwrV6jlxmEg3nRpRmFVOl1MF1P9g0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\ProdigyConfigToolWPF.resources.dll" size="65536">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\ProdigyConfigToolWPF.resources.dll" size="66048">
       <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.0" language="en" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hSlasByAvk8ZDJuHHyblLqrioQLaZoU3Ddrl+Tj5Iy8=</dsig:DigestValue>
+        <dsig:DigestValue>3ssNU+FBg4X39TrXKdppTrO0X1mPccvXYj14XRTVGJ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -238,7 +238,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Q7WajleHLUbTzE7u0MCQvXpi0TbhvnAREdq5tjJS0ic=</dsig:DigestValue>
+        <dsig:DigestValue>rW4OQ+j1MHLM1TS3ikJ0y4KRr1mLJx+UuD1xZYSVqcA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
