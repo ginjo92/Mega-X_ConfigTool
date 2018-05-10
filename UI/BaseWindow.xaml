@@ -901,11 +901,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1035,11 +1032,9 @@
 
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
+ 
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
 
@@ -1149,11 +1144,9 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
+                                               
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1279,11 +1272,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1511,11 +1501,7 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                              <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1621,11 +1607,7 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -1853,11 +1835,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2084,11 +2063,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" 
-                                                           Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2331,10 +2307,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2497,10 +2471,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2637,10 +2609,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2777,10 +2747,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -2921,10 +2889,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3061,10 +3027,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3203,10 +3167,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3345,10 +3307,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3487,10 +3447,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3629,10 +3587,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3771,10 +3727,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -3913,10 +3867,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4075,10 +4027,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4382,10 +4332,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4489,10 +4437,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4718,10 +4664,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -4945,10 +4889,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5088,10 +5030,7 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5227,10 +5166,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5366,10 +5303,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5506,10 +5441,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5645,10 +5578,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5785,10 +5716,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -5925,10 +5854,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6065,10 +5992,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6205,10 +6130,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6346,10 +6269,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6486,10 +6407,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6626,10 +6545,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -6788,10 +6705,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -7385,10 +7300,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -7533,10 +7446,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -7761,10 +7672,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -8088,10 +7997,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -8318,10 +8225,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -8546,10 +8451,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -8774,10 +8677,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -9002,10 +8903,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -9230,10 +9129,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -9458,10 +9355,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -9686,10 +9581,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -9914,10 +9807,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -10076,10 +9967,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -10652,10 +10541,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -10981,10 +10868,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -11169,10 +11054,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -11309,10 +11192,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -11471,10 +11352,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -11776,10 +11655,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -11885,10 +11762,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12033,10 +11908,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12141,10 +12014,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12370,10 +12241,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12733,10 +12602,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12865,10 +12732,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -12995,10 +12860,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -13125,10 +12988,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -13255,10 +13116,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -13685,10 +13544,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -13814,10 +13671,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -14284,10 +14139,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -14561,10 +14414,8 @@
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellEditingTemplate>
                                         <DataTemplate>
-                                            <StackPanel Orientation="Horizontal" Margin="3,0,0,0">
-                                                <Image Source="/images/click.png" Width="18" Opacity="0.5"/>
-                                                <TextBlock Text="{x:Static p:Resources.ClickHeaderToConfigure}" Margin="2" FontSize="8" Foreground="Gray" Width="80" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Left"/>
-                                            </StackPanel>
+                                             
+                                                <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellEditingTemplate>
                                 </DataGridTemplateColumn>
