@@ -678,7 +678,6 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\ro\Xceed.Wpf.AvalonDock.re
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\ProdigyConfigToolWPF.csprojResolveAssemblyReference.cache
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\Resources\BureauBlue.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\Resources\custom.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\Resources\Icons.baml
@@ -729,3 +728,4 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Settings.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Settings.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\PopupRole.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\PopupRole.baml
+C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\ProdigyConfigToolWPF.csprojResolveAssemblyReference.cache

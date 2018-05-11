@@ -187,10 +187,10 @@ namespace ProdigyConfigToolWPF
 
         public static Dictionary<long, string> GetAudioMessages()
         {
+            Dictionary<long, string> Audio = new Dictionary<long, string>();
             defaultDataSet.AudioDataTable a = new defaultDataSet.AudioDataTable();
             AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
             databaseDataSetAudioTableAdapter.Fill(a);
-            Dictionary<long, string> Audio = new Dictionary<long, string>();
             Audio.Add(0xffff, "");
             foreach (defaultDataSet.AudioRow row in a.Rows)
             {

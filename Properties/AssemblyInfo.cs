@@ -11,8 +11,8 @@ using System.Windows;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Sanco S.A.")]
-[assembly: AssemblyProduct("ProdigyConfigToolWPF")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyProduct("Mega-X Config Tool")]
+[assembly: AssemblyCopyright("Copyright © 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -53,3 +53,5 @@ using System.Windows;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("0.9.0.0")]
 [assembly: AssemblyFileVersion("0.9.0.0")]
+[assembly: NeutralResourcesLanguage("")]
+
