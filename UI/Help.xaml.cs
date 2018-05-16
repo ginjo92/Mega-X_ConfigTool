@@ -27,7 +27,7 @@ namespace ProdigyConfigToolWPF
 
         private static string PathPDF = System.AppDomain.CurrentDomain.BaseDirectory + "manuals\\";
 
-        private static string PathPDF_Home =           PathPDF + "home_01.pdf";
+        private static string PathPDF_Home =           PathPDF + "menu_home.pdf";
         private static string PathPDF_Area =           PathPDF + "TutorialFlavioVeloso.pdf";
         private static string PathPDF_Zone =           PathPDF + "TutorialFlavioVeloso.pdf";
         private static string PathPDF_Keypad =         PathPDF + "TutorialFlavioVeloso.pdf";

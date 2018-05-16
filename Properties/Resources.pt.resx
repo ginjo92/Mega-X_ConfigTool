@@ -2847,4 +2847,7 @@
   <data name="LoggedInAs" xml:space="preserve">
     <value>Autenticando como</value>
   </data>
+  <data name="ArmDisarm" xml:space="preserve">
+    <value>Armar/Desarmar</value>
+  </data>
 </root>

@@ -813,7 +813,10 @@
                                                         <ColumnDefinition Width="70" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1" >
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_entry_times_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.EntryTime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                             
@@ -896,12 +899,14 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_entry_times_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.EntryTime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                             
                                                 <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -923,7 +928,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=_24h_firezone, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Content="{x:Static p:Resources._24h_config_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Zone_24h}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="_24hConfigDataGrid" Grid.Row="1" 
@@ -1026,7 +1034,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources._24h_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Zone_24h}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
 
@@ -1055,7 +1066,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=KeyswitchType, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1" >
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_keyswitch_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Keyswitch}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
 
@@ -1139,7 +1153,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_keyswitch_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Keyswitch}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -1167,7 +1184,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=BypassAuto, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1" >
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_bypass_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Bypass}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
 
                                                 </Grid>
@@ -1267,7 +1287,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_bypass_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Bypass}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -1300,7 +1323,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ExitTerminatorCounter, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_type_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Type}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
 
                                                 </Grid>
@@ -1496,7 +1522,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_type_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Type}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -1521,7 +1550,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ChimeDisarm, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_chime_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Zone_chime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
 
                                                 </Grid>
@@ -1602,7 +1634,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_chime_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Zone_chime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -1636,7 +1671,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=AreaAway8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_areas_away_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AreasAway}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" 
@@ -1830,7 +1868,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_areas_away_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AreasAway}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -1863,7 +1904,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=AreaStay8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_areas_stay_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AreasStay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" 
@@ -2058,7 +2102,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_areas_stay_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.AreasStay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2107,7 +2154,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ShowKeypad8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_bypass_keypads_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Zone_Keypad_visible}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" 
@@ -2302,7 +2352,10 @@
                                     
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_bypass_keypads_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Zone_Keypad_visible}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2355,7 +2408,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=R1ContactType, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_r1_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="R1" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -2466,7 +2522,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_r1_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="R1" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2493,7 +2552,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=R2ContactType, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_r2_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="R2" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -2604,7 +2666,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_r2_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="R2" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2631,7 +2696,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=R3ContactType, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_r3_config_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="R3" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -2742,7 +2810,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_r3_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="R3" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2771,7 +2842,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ZoneAlarmOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_zone_alarm_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_Zone}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -2884,7 +2958,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_zone_alarm_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_Zone}"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -2911,7 +2988,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ChimeOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_chime_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_Chime}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3022,7 +3102,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_chime_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_Chime}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3049,7 +3132,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=SensorWatchOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_chime_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_SensorWatch}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3162,7 +3248,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_sensor_watch_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_SensorWatch}"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3189,7 +3278,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=EntryTimeOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_chime_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_EntryTime}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3302,7 +3394,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_entry_time_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_EntryTime}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3329,7 +3424,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=AntiMaskOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_anti_mask_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_AntiMask}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3442,7 +3540,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_anti_mask_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_AntiMask}"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3469,7 +3570,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=24hAlarmOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_24h_alarm_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_24h}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3582,7 +3686,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_24h_alarm_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_24h}"  Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3609,7 +3716,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=FireAlarmOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_fire_alarm_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_Fire}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3722,7 +3832,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_fire_alarm_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_Fire}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3749,7 +3862,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=TamperAlarmOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Zone_tamper_alarm_output_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.AlarmOutput_Tamper}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -3862,7 +3978,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_tamper_alarm_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.AlarmOutput_Tamper}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -3891,7 +4010,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Zone_audio_4, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_audio_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -4022,7 +4144,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_audio_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -4228,7 +4353,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Disarm, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1" >
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_code_required_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Area_code_required}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
 
                                                 </Grid>
@@ -4327,7 +4455,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_code_required_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Area_code_required}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -4353,7 +4484,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ExitTimeAway, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_exit_times_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ExitTime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -4432,7 +4566,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_exit_times_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.ExitTime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -4466,7 +4603,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=TimezonesArmStart8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Area_timezones_arm_start}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -4659,7 +4799,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_timezones_arm_start_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Area_timezones_arm_start}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -4691,7 +4834,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=TimezonesDisarmEnd8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Area_timezones_disarm_end}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -4884,7 +5030,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_timezones_disarm_end_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Area_timezones_disarm_end}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -4913,7 +5062,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ArmAwayOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_arm_away_output_minus}" Foreground="White"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -5025,7 +5177,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_arm_away_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" />
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5051,7 +5206,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ArmStayOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_arm_stay_output_minus}" Foreground="White" />
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5161,7 +5319,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_arm_stay_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5188,7 +5349,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmAwayOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White" Content="{x:Static p:Resources.Area_disarm_away_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5298,7 +5462,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_disarm_away_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5325,8 +5492,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmStayOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" 
-                                                               Content="{x:Static p:Resources.Area_disarm_stay_output_minus}" Foreground="White"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5436,7 +5605,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_disarm_stay_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5463,8 +5635,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ArmAwayPulsedOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_arm_away_pulsed_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5573,7 +5750,11 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_arm_away_pulsed_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5583,7 +5764,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <!--ARM AWAY PULSED OUTPUTS-->
+                                <!--ARM STAY PULSED OUTPUTS-->
                                 <DataGridTemplateColumn x:Name="Arm_Stay_Pulsed_Outputs_minus" CanUserResize="False" Visibility="Hidden" Width="300">
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
@@ -5600,8 +5781,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ArmStayPulsedOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_arm_stay_pulsed_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5711,7 +5897,11 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_arm_stay_pulsed_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                    <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5738,8 +5928,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmAwayPulsedOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_disarm_away_pulsed_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5849,7 +6044,11 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_disarm_away_pulsed_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                    <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -5876,8 +6075,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmStayPulsedOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_disarm_away_pulsed_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -5987,7 +6191,12 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_disarm_stay_pulsed_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                    <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byPulses}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6014,8 +6223,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=AwayArmBeepsOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_away_arm_beeps_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -6125,7 +6339,12 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_away_arm_beeps_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                    <TextBlock Text="{x:Static p:Resources.ArmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                               
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6152,8 +6371,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=StayArmBeepsOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_stay_arm_beeps_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -6264,7 +6488,12 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_stay_arm_beeps_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                    <TextBlock Text="{x:Static p:Resources.ArmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6291,8 +6520,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=AwayDisarmBeepsOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_away_disarm_beeps_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -6402,7 +6636,12 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_away_disarm_beeps_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                    <TextBlock Text="{x:Static p:Resources.DisarmAway}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6429,8 +6668,13 @@
                                                         <ColumnDefinition Width="{Binding ElementName=StayDisarmBeepsOption3, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Foreground="White"
-                                                               Content="{x:Static p:Resources.Area_stay_disarm_beeps_output_minus}" />
+                                                        <StackPanel Height="30">
+                                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                                <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                            </StackPanel>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -6540,7 +6784,12 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Area_stay_disarm_beeps_output_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.DisarmStay}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{x:Static p:Resources.byBeeps}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Margin="3,0,0,0"/>
+                                                
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6569,7 +6818,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Area_audio_4, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_audio_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -6700,7 +6952,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_audio_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -6862,7 +7117,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -6887,7 +7142,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -6909,7 +7164,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -6966,7 +7221,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -6987,7 +7242,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -7008,7 +7263,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -7035,7 +7290,7 @@
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
                                             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                                            <Setter Property="Background" Value="LightGray" />
+                                            <Setter Property="Background" Value="#BDBDBD" />
                                             <Setter Property="BorderBrush" Value="Gray"/>
                                             <Setter Property="BorderThickness" Value="1,1,1,1"/>
                                         </Style>
@@ -7082,7 +7337,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Timezone8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.TimezoneAssignments_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.TimezoneAssignments}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -7295,7 +7553,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.TimezoneAssignments_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.TimezoneAssignments}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -7325,7 +7586,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmStay, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_arm_disarm_permissions_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ArmDisarm}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False"
@@ -7441,7 +7705,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_arm_disarm_permissions_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.ArmDisarm}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -7474,7 +7741,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Area8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_areas_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -7667,7 +7937,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_areas_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -7704,7 +7977,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Permissions13, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Output_Permissions_Call_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Outputs}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" 
@@ -7992,7 +8268,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Output_Permissions_Call_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Outputs}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -8026,7 +8305,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonAAreaAway8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_a_areas_away_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_A_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -8220,7 +8502,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_a_areas_away_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_A_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -8252,8 +8537,11 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonAAreaStay8, Path=ActualWidth}" />
                                                 </Grid.ColumnDefinitions>
                                                 <Border BorderBrush="Gray" BorderThickness="1">
-                                                    <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_a_areas_stay_minus}"/>
-                                                </Border>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_A_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
+                                                    </Border>
                                             </Grid>
                                             <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
                                                           Grid.IsSharedSizeScope="True" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" VerticalScrollBarVisibility="Disabled"
@@ -8446,7 +8734,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_a_areas_stay_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_A_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -8478,7 +8769,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonBAreaAway8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_b_areas_away_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_B_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -8672,7 +8966,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_b_areas_away_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_B_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -8704,7 +9001,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonBAreaStay8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_b_areas_stay_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_B_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -8898,7 +9198,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_b_areas_stay_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_B_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -8930,7 +9233,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonCAreaAway8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_c_areas_away_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_C_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -9124,7 +9430,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_c_areas_away_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_C_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -9134,7 +9443,7 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <!--Button C Arm Stay GINJO-->
+                                <!--Button C Arm Stay-->
                                 <DataGridTemplateColumn x:Name="Button_C_AreaStay_minus" CanUserResize="False" Visibility="Hidden" Width="400">
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
@@ -9156,7 +9465,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonCAreaStay8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_c_areas_stay_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_C_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -9350,7 +9662,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_c_areas_stay_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_C_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -9382,7 +9697,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonDAreaAway8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_d_areas_away_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_D_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -9576,7 +9894,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_d_areas_away_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_D_Away}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -9608,7 +9929,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ButtonDAreaStay8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.User_button_d_areas_stay_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.User_Button_D_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -9802,7 +10126,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.User_button_d_areas_stay_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.User_Button_D_Stay}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -9831,7 +10158,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=User_audio_4, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_audio_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="UserDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -9962,7 +10292,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_audio_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -10343,7 +10676,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Area8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Areas_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -10536,7 +10872,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Areas_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -10575,7 +10914,10 @@
 
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Keypads_beeps_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Keypad_beeps}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
@@ -10863,7 +11205,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Keypads_beeps_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Keypad_beeps}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -10894,7 +11239,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=DisarmStayDuringExitTime, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Arm_disarm_permissions_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ArmDisarmPermissions}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" 
@@ -11049,7 +11397,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Arm_disarm_permissions_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.ArmDisarmPermissions}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11077,7 +11428,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=f4_buttonColumn, Path=ActualWidth }" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.F_Buttons_config_minus}"  Foreground="White" />
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.FButtons}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Top" 
@@ -11187,7 +11541,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.F_Buttons_config_plus}" Foreground="White" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.FButtons}" Foreground="White"  TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11216,7 +11573,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Keypad_audio_4, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Zone_audio_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -11347,7 +11707,10 @@
 
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Zone_audio_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.descriptionAudio}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11551,7 +11914,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Reset, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Output_time_configuration}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -11650,7 +12016,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Output_time_configuration_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Output_time_configuration}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11676,7 +12045,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=ChimeDelay, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Zone_chime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -11757,7 +12129,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Output_chime_configuration_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Zone_chime}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11785,7 +12160,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Timeoff, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.byPulses}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -11903,7 +12281,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Output_pulses_configuration_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.byPulses}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -11929,7 +12310,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=NumberDisarm, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Area_timezones_arm_start_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.byBeeps}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12009,7 +12393,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Output_beeps_configuration_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.byBeeps}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -12042,7 +12429,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Timezones8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Timezones_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezones}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12236,7 +12626,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Timezones_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Timezones}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -12422,7 +12815,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=TimezoneSunday, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Timezone_week_days_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezone_weekdays}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12597,7 +12993,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Timezone_week_days_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Timezone_weekdays}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -12627,7 +13026,10 @@
 
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Exception_1_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezone_exception1}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12727,7 +13129,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Exception_1_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Timezone_exception1}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -12755,7 +13160,10 @@
 
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Exception_2_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezone_exception2}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12855,7 +13263,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Exception_2_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Timezone_exception2}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -12883,7 +13294,10 @@
 
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Exception_3_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezone_exception3}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -12983,7 +13397,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Exception_3_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Timezone_exception3}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -13011,7 +13428,10 @@
 
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Exception_4_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Timezone_exception4}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -13111,7 +13531,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Exception_4_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Timezone_exception4}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -13345,7 +13768,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Area8, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Areas_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -13539,7 +13965,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Areas_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Areas}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -13566,7 +13995,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=IgnoreKissOff, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Phone_kissof_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Phone_kissoff}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -13666,7 +14098,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Phone_kissof_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Phone_kissoff}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -13678,7 +14113,6 @@
                                 </DataGridTemplateColumn>
 
                                 <!--REPORT CONFIGURATION-->
-                                <!--Beeps-->
                                 <DataGridTemplateColumn x:Name="Phone_Reports_minus" Header="{x:Static p:Resources.Phone_report_minus}" CanUserResize="False" Visibility="Hidden" Width="1400" >
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
@@ -13712,7 +14146,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=SystemProblems, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Phone_report_minus}"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Reports}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -14134,7 +14571,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Phone_report_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel>
+                                                <TextBlock Text="{x:Static p:Resources.Reports}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
@@ -14216,7 +14656,10 @@
                                                         <ColumnDefinition Width="{Binding ElementName=Sunday, Path=ActualWidth}" />
                                                     </Grid.ColumnDefinitions>
                                                     <Border BorderBrush="Gray" BorderThickness="1">
-                                                        <Label HorizontalAlignment="Center" VerticalContentAlignment="Center"  Content="{x:Static p:Resources.Test_config_minus}" Foreground="White"/>
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.Test_config}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
                                                     </Border>
                                                 </Grid>
                                                 <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="45" HorizontalContentAlignment="Center" 
@@ -14409,7 +14852,10 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <TextBlock Text="{x:Static p:Resources.Test_config_plus}" Width="100" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.Test_config}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellEditingTemplate>

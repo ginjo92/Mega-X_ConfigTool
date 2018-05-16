@@ -1069,6 +1069,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arm/Disarm.
+        /// </summary>
+        public static string ArmDisarm {
+            get {
+                return ResourceManager.GetString("ArmDisarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arm/Disarm away.
         /// </summary>
         public static string ArmDisarmAway {

@@ -18,7 +18,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\TestRelease\</PublishUrl>
+    <PublishUrl>C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\PublishInstaller\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -33,7 +33,7 @@
     <SuiteName>Mega-X Configuration Tool</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>0.9.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -1170,7 +1170,9 @@
       <DependentUpon>defaultDataSet.xsd</DependentUpon>
     </None>
     <None Include="images\wizard\call copy.psd" />
+    <None Include="manuals\filemanager_newfile_wizard.pdf" />
     <None Include="manuals\home_01.ott" />
+    <None Include="manuals\menu_home.pdf" />
     <None Include="manuals\TutorialFlavioVeloso.pdf" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
@@ -1655,6 +1657,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrow_down.png" />
+    <Resource Include="images\arrow_up.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
