@@ -488,7 +488,7 @@
                                 </Controls:Tile>
                                 <!--<<-  11 EVENTS-->
                                 <Controls:Tile Title="{x:Static p:Resources.Events}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
-                                               x:Name="Open_Expansors" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                               x:Name="Open_Events" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
                                                TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Events_Click" MouseDoubleClick="Open_Events_MouseDoubleClick">
                                     <Image Source="/images/new/events2.png" Width="80" Height="80" Margin="10,0,0,0"/>
                                 </Controls:Tile>
@@ -10606,7 +10606,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 
-                                <DataGridTemplateColumn x:Name="Keypad_HourFormat_Column" Width="120" CanUserResize="False">
+                                <DataGridTemplateColumn x:Name="Keypad_HourFormat_Column" Width="120" CanUserResize="False" Visibility="Hidden">
                                     <DataGridTemplateColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>

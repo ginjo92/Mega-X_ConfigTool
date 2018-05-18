@@ -3,6 +3,7 @@ using ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -81,11 +82,11 @@ namespace ProdigyConfigToolWPF
 
                         //sanitize locale
                         string locale = sanitize_locale(this);
-
+                        
                         PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
                         popuplogin.Show();
                         this.Close();
-                        Console.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
+                        Debug.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
                     }
                 }
                 if (loginsuccessfull == false)
@@ -142,6 +143,7 @@ namespace ProdigyConfigToolWPF
                         string locale = sanitize_locale(this);
 
                         PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
+                        Debug.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
                         popuplogin.Show();
                         this.Close();
                     }
@@ -235,7 +237,7 @@ namespace ProdigyConfigToolWPF
                     if (dr["Password"].ToString() == user_password)
                     {
                         loginsuccessfull = true;
-
+                        Debug.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
                         //sanitize locale
                         string locale = sanitize_locale(this);
 

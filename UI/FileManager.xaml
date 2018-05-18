@@ -229,6 +229,7 @@
             </Grid>
         </DockPanel>
         <DockPanel Height="34" VerticalAlignment="Bottom" Background="WhiteSmoke">
+            <Label x:Name="show_version" Margin="5" FontWeight="Bold" Foreground="Gray" FontSize="10"/>
             <Image Source="/images/maxalarm.png" Width="Auto" Height="30" HorizontalAlignment="Right" Margin="10,0"/>
         </DockPanel>
         

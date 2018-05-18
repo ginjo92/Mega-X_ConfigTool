@@ -457,10 +457,10 @@
     <value>Month/Day</value>
   </data>
   <data name="Keypad_date_hour_format_12h" xml:space="preserve">
-    <value>12h format</value>
+    <value>12h </value>
   </data>
   <data name="Keypad_date_hour_format_24h" xml:space="preserve">
-    <value>24h format</value>
+    <value>24h </value>
   </data>
   <data name="Area" xml:space="preserve">
     <value>Partition</value>
@@ -769,7 +769,7 @@
     <value>Outputs code (in call)</value>
   </data>
   <data name="Phone_alway_report" xml:space="preserve">
-    <value>Ignore kiss off acknowledge</value>
+    <value>Ignore acknowledge</value>
   </data>
   <data name="Phone_report_active" xml:space="preserve">
     <value>Report - Active</value>
@@ -1468,10 +1468,10 @@
     <value>Kiss off configuration (+)</value>
   </data>
   <data name="Phone_kiss_off_CID" xml:space="preserve">
-    <value>Stop dialling if kissed off CID</value>
+    <value>Stop if CID</value>
   </data>
   <data name="Phone_kiss_off_voice" xml:space="preserve">
-    <value>Stop dialling if kissed off voice</value>
+    <value>Stop if voice</value>
   </data>
   <data name="Phone_report_minus" xml:space="preserve">
     <value>Report Configurations (-)</value>
@@ -1525,7 +1525,7 @@
     <value>Timezone assignments (+)</value>
   </data>
   <data name="Test_config" xml:space="preserve">
-    <value>Hour/days test configuration</value>
+    <value>Hour/days test</value>
   </data>
   <data name="Test_config_minus" xml:space="preserve">
     <value>Hour/days test configuration (-)</value>
@@ -1771,7 +1771,7 @@
     <value>Login</value>
   </data>
   <data name="Audio" xml:space="preserve">
-    <value>Voice messages</value>
+    <value>Audio</value>
   </data>
   <data name="ComConnected" xml:space="preserve">
     <value>Connected</value>
@@ -2074,7 +2074,7 @@
     <value>24h zone active</value>
   </data>
   <data name="_24h_auto_reset" xml:space="preserve">
-    <value>auto reset</value>
+    <value>Auto reset</value>
   </data>
   <data name="_24h_config_minus" xml:space="preserve">
     <value>24h zone configuration (-)</value>
@@ -2083,7 +2083,7 @@
     <value>24h zone configuration (+)</value>
   </data>
   <data name="_24h_firezone" xml:space="preserve">
-    <value>firezone</value>
+    <value>Firezone</value>
   </data>
   <data name="Installer_minus" xml:space="preserve">
     <value>Installer (-)</value>
@@ -2446,7 +2446,7 @@
     <value>Output permissions (+)</value>
   </data>
   <data name="Bypass" xml:space="preserve">
-    <value>Bypass: </value>
+    <value>Bypass</value>
   </data>
   <data name="Connected" xml:space="preserve">
     <value>Connected</value>
@@ -2843,5 +2843,8 @@
   </data>
   <data name="ArmDisarm" xml:space="preserve">
     <value>Arm/Disarm</value>
+  </data>
+  <data name="FileManager" xml:space="preserve">
+    <value>File Manager</value>
   </data>
 </root>

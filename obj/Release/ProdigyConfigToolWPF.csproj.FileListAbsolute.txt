@@ -722,8 +722,6 @@ C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Help.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Help.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\bin\Release\Microsoft.SqlServer.Management.Collector.dll
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Preferences.g.cs
-C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Preferences.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Settings.g.cs
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\Settings.baml
 C:\Mega-X_ConfigTool\ProdigyConfigToolWPF\obj\Release\UI\PopupRole.g.cs

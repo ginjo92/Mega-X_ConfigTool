@@ -88,7 +88,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to auto reset.
+        ///   Looks up a localized string similar to Auto reset.
         /// </summary>
         public static string _24h_auto_reset {
             get {
@@ -115,7 +115,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to firezone.
+        ///   Looks up a localized string similar to Firezone.
         /// </summary>
         public static string _24h_firezone {
             get {
@@ -1114,7 +1114,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Voice messages.
+        ///   Looks up a localized string similar to Audio.
         /// </summary>
         public static string Audio {
             get {
@@ -1213,7 +1213,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bypass: .
+        ///   Looks up a localized string similar to Bypass.
         /// </summary>
         public static string Bypass {
             get {
@@ -2527,6 +2527,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File Manager.
+        /// </summary>
+        public static string FileManager {
+            get {
+                return ResourceManager.GetString("FileManager", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuration name can&apos;t be empty.
         /// </summary>
         public static string FileNameCantBeEmpty {
@@ -3238,7 +3247,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 12h format.
+        ///   Looks up a localized string similar to 12h .
         /// </summary>
         public static string Keypad_date_hour_format_12h {
             get {
@@ -3247,7 +3256,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 24h format.
+        ///   Looks up a localized string similar to 24h .
         /// </summary>
         public static string Keypad_date_hour_format_24h {
             get {
@@ -4660,7 +4669,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ignore kiss off acknowledge.
+        ///   Looks up a localized string similar to Ignore acknowledge.
         /// </summary>
         public static string Phone_alway_report {
             get {
@@ -4669,7 +4678,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop dialling if kissed off CID.
+        ///   Looks up a localized string similar to Stop if CID.
         /// </summary>
         public static string Phone_kiss_off_CID {
             get {
@@ -4678,7 +4687,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Stop dialling if kissed off voice.
+        ///   Looks up a localized string similar to Stop if voice.
         /// </summary>
         public static string Phone_kiss_off_voice {
             get {
@@ -5380,7 +5389,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hour/days test configuration.
+        ///   Looks up a localized string similar to Hour/days test.
         /// </summary>
         public static string Test_config {
             get {

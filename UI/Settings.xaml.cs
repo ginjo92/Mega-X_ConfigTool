@@ -32,7 +32,8 @@ namespace ProdigyConfigToolWPF
         private string locale;
         private MainWindow mainWindow;
         private string version;
-        private int language = 1;
+        private int language = 0;
+           
         Boolean restore = false;
 
         public Settings(string ChoosenLocale, MainWindow main, string ChoosenDbFile, Boolean default_restore_is_set)
@@ -63,9 +64,7 @@ namespace ProdigyConfigToolWPF
             
             this.Language = XmlLanguage.GetLanguage(
                        Properties.Settings.Default.DefaultCulture);
-
             
-
             switch (Properties.Settings.Default.DefaultCulture)
             {
                 case "EN-US":
@@ -79,22 +78,16 @@ namespace ProdigyConfigToolWPF
                     language = 1;
                     ChoseLanguageToChangeFlags(language);
                     break;
-
-                default:
-                    InitializeComponent();
-                    language = 0;
-                    ChoseLanguageToChangeFlags(language);
-                    break;
             }
         }
         
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Thread.CurrentThread.CurrentCulture.Name.Equals("PT-PT"))
-                language = 0;
-            else if (Thread.CurrentThread.CurrentCulture.Name.Equals("EN-US"))
-                language = 1;
+            //if (Thread.CurrentThread.CurrentCulture.Name.Equals("PT-PT"))
+            //    language = 1;
+            //else if (Thread.CurrentThread.CurrentCulture.Name.Equals("EN-US"))
+            //    language = 0;
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -167,21 +160,15 @@ namespace ProdigyConfigToolWPF
                 else if (messageBox == MessageBoxResult.No)
                 {
                     mainWindow.Closing -= mainWindow.BaseWindow_Closing;
-
                 }
-                    
             }
-
             
-
             mainWindow.Close();
             mainWindow.Closing += mainWindow.BaseWindow_Closing;
             MainWindow window1 = new MainWindow("pt-PT", mainWindow.AppRole, mainWindow.AppDbFile, null, null, null, null, null);
             window1.Show();
             
             this.Close();
-
-
         }
         private void RadioLocaleEN_Click(object sender, RoutedEventArgs e)
         {

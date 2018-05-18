@@ -12,8 +12,10 @@ namespace ProdigyConfigToolWPF
     {
         public MainWindow WindowParent;
         public bool ActionType;
-        public DataChoose(MainWindow window_parent, bool action_type, string pre_selected_structure)
+        public int role;
+        public DataChoose(MainWindow window_parent, bool action_type, string pre_selected_structure, int AppRole)
         {
+            role = AppRole;
             WindowParent = window_parent;
             ActionType = action_type;
             InitializeComponent();
@@ -30,6 +32,17 @@ namespace ProdigyConfigToolWPF
                 ButtonRead.Visibility = Visibility.Visible;
                 ButtonWrite.Visibility = Visibility.Collapsed;
                 DataChooseDialog.Text = Properties.Resources.DataChooseDialogRead;
+            }
+
+            if(role==0)
+            {
+                CheckBoxAreas.Visibility = Visibility.Collapsed;
+                CheckBoxZones.Visibility = Visibility.Collapsed;
+                CheckBoxKeypads.Visibility = Visibility.Collapsed;
+                CheckBoxOutputs.Visibility = Visibility.Collapsed;
+                CheckBoxSystem.Visibility = Visibility.Collapsed;
+                CheckBoxDialer.Visibility = Visibility.Collapsed;
+                CheckBoxAudioSystemConfiguration.Visibility = Visibility.Collapsed;
             }
 
             if (!pre_selected_structure.Equals(String.Empty))

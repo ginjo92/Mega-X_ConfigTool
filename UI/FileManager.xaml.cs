@@ -27,6 +27,8 @@ namespace ProdigyConfigToolWPF
             this.mainWindow = mainWindow;
             InitializeComponent();
 
+            
+
             string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
@@ -78,7 +80,7 @@ namespace ProdigyConfigToolWPF
 
         private void FileManagerWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            show_version.Content = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         public class File

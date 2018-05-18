@@ -308,14 +308,38 @@ namespace ProdigyConfigToolWPF
             //USER
             if (AppRole == 0)
             {
-                TopBar_User_Name.Text = Properties.Resources.User_role_normal_user;
+                TopBar_User_Name.Text = Properties.Resources.User_role_admin_user;
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/0_user.png", UriKind.Relative));
 
-                TreeviewDebug.Visibility = Visibility.Collapsed;
-                TreeviewFwUpdate.Visibility = Visibility.Collapsed;
-                ReadFWUpdateData.Visibility = Visibility.Collapsed;
+                Open_Areas.Visibility = Visibility.Collapsed;
+                Open_Zones.Visibility = Visibility.Collapsed;
+                Open_Keypads.Visibility = Visibility.Collapsed;
+                Open_Outputs.Visibility = Visibility.Collapsed;
+                Open_Dialer.Visibility = Visibility.Collapsed;
+                Open_GlobalConfig.Visibility = Visibility.Collapsed;
+                Open_ClientInfo.Visibility = Visibility.Collapsed;
                 Open_FirmwareUpdate.Visibility = Visibility.Collapsed;
                 Open_Debug.Visibility = Visibility.Collapsed;
+                Open_Audio.Visibility = Visibility.Collapsed;
+                Open_Status.Visibility = Visibility.Collapsed;
+                Open_Events.Visibility = Visibility.Collapsed;
+
+                TreeviewAreas.Visibility = Visibility.Collapsed;
+                TreeviewZones.Visibility = Visibility.Collapsed;
+                TreeviewKeypads.Visibility = Visibility.Collapsed;
+                TreeviewOutputs.Visibility = Visibility.Collapsed;
+                TreeviewDialer.Visibility = Visibility.Collapsed;
+                TreeviewGlobalSystem.Visibility = Visibility.Collapsed;
+                TreeviewClient.Visibility = Visibility.Collapsed;
+                TreeviewFwUpdate.Visibility = Visibility.Collapsed;
+                TreeviewDebug.Visibility = Visibility.Collapsed;
+                TreeviewAudioMessages.Visibility = Visibility.Collapsed;
+                TreeviewStatus.Visibility = Visibility.Collapsed;
+                TreeviewEvents.Visibility = Visibility.Collapsed;
+
+                ReadFWUpdateData.Visibility = Visibility.Collapsed;
+                UpdateDateHour.Visibility = Visibility.Collapsed;
+
                 User_Code_Column.Visibility = Visibility.Collapsed;
                 User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
@@ -8658,77 +8682,77 @@ namespace ProdigyConfigToolWPF
 
             if (MainHomeTab.IsSelected)
             {
-                helpWindow.MainHomeTab.IsSelected = true;
+                helpWindow.manual.Source =  new BitmapImage(new Uri(@"/manuals/images/home.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainAreasTab.IsSelected)
             {
-                helpWindow.MainAreasTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/areas.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainZonesTab.IsSelected)
             {
-                helpWindow.MainZonesTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/zones.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainKeypadsTab.IsSelected)
             {
-                helpWindow.MainKeypadsTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/keypads.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainOutputsTab.IsSelected)
             {
-                helpWindow.MainOutputsTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/outputs.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainUsersTab.IsSelected)
             {
-                helpWindow.MainUsersTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/users.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainTimezonesTab.IsSelected)
             {
-                helpWindow.MainTimezonesTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/timezones.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainPhonesTab.IsSelected)
             {
-                helpWindow.MainPhonesTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/phones.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainDialerTab.IsSelected)
             {
-                helpWindow.MainDialerTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/dialer.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainglobalSystemPVTTab.IsSelected)
             {
-                helpWindow.MainGlobalSystemTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/system.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (ClientConfigTab.IsSelected)
             {
-                helpWindow.MainClientTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/clientinfo.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (AudioMessagesTab.IsSelected)
             {
-                helpWindow.MainAudioTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/audios.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (EventsTab.IsSelected)
             {
-                helpWindow.MainEventsTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/events.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (StatusTab.IsSelected)
             {
-                helpWindow.MainStatusTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/status.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainUpdateFirmwareTab.IsSelected)
             {
-                helpWindow.MainFWUpdateTab.IsSelected = true;
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/fwupdate.png", UriKind.Relative));
                 helpWindow.Show();
             }
         }
@@ -9562,7 +9586,7 @@ namespace ProdigyConfigToolWPF
         {
             if (this.serialPort.IsOpen)
             {
-                DataChoose data_choose = new DataChoose(this, isUpload, structure);
+                DataChoose data_choose = new DataChoose(this, isUpload, structure, AppRole);
                 data_choose.Show();
                 this.IsEnabled = false;
             }
@@ -10466,7 +10490,7 @@ namespace ProdigyConfigToolWPF
             {
                 if (this.serialPort.IsOpen)
                 {
-                    DataChoose data_choose = new DataChoose(this, true, "audio_system_configuration");
+                    DataChoose data_choose = new DataChoose(this, true, "audio_system_configuration", AppRole);
                     data_choose.Show();
                     this.IsEnabled = false;
                 }
@@ -10487,7 +10511,7 @@ namespace ProdigyConfigToolWPF
             {
                 if (this.serialPort.IsOpen)
                 {
-                    DataChoose data_choose = new DataChoose(this, false, "audio_system_configuration");
+                    DataChoose data_choose = new DataChoose(this, false, "audio_system_configuration", AppRole);
                     data_choose.Show();
                     this.IsEnabled = false;
                 }
@@ -12315,7 +12339,7 @@ namespace ProdigyConfigToolWPF
             Shortcuts_SingleFilter(NoIndicationsWhileArmed_Column);
             Shortcuts_SingleFilter(SilentDuring_EntryTime_Column);
             Shortcuts_SingleFilter(SilentDuring_ExitTime_Column);
-            Shortcuts_SingleFilter(Keypad_HourFormat_Column);
+            //Shortcuts_SingleFilter(Keypad_HourFormat_Column);
             Shortcuts_SingleFilter(Keypad_DateFormat_Column);
             Backlight_Time_Column.Visibility = Backlight_Time_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
 
@@ -13423,8 +13447,7 @@ namespace ProdigyConfigToolWPF
             preferences_window.Show();
         }
 
-       
-
+        #region Only Active Filter
         private DataTable OnlyActiveClick(DataTable dt, DataGrid dg)
         {
             dg.ItemsSource = new DataView(dt);
@@ -13499,7 +13522,7 @@ namespace ProdigyConfigToolWPF
             //    phone_onlyActive = 0;
             //}
         }
-
+        #endregion
     }
 }
 

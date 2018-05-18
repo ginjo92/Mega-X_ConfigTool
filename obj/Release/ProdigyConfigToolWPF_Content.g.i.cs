@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/mega-x2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("manuals/images/audios.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("manuals/images/clientinfo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("manuals/images/dialer.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("manuals/images/events.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("manuals/images/phones.png")]
 
 

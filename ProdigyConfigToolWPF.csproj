@@ -222,9 +222,6 @@
     <Compile Include="UI\PopupRole.xaml.cs">
       <DependentUpon>PopupRole.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Preferences.xaml.cs">
-      <DependentUpon>Preferences.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -320,10 +317,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\PopupRole.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UI\Preferences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -1170,10 +1163,13 @@
       <DependentUpon>defaultDataSet.xsd</DependentUpon>
     </None>
     <None Include="images\wizard\call copy.psd" />
-    <None Include="manuals\filemanager_newfile_wizard.pdf" />
-    <None Include="manuals\home_01.ott" />
+    <None Include="manuals\filemanager.pdf" />
+    <None Include="manuals\menu_areas.pdf" />
     <None Include="manuals\menu_home.pdf" />
-    <None Include="manuals\TutorialFlavioVeloso.pdf" />
+    <None Include="manuals\menu_keypads.pdf" />
+    <None Include="manuals\menu_timezones.pdf" />
+    <None Include="manuals\menu_users.pdf" />
+    <None Include="manuals\menu_zones.pdf" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -1667,6 +1663,33 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\mega-x_configtool_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icon2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="manuals\images\areas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="manuals\images\filemanager.png" />
+    <Resource Include="manuals\images\home.png" />
+    <Resource Include="manuals\images\keypads.png" />
+    <Resource Include="manuals\images\outputs.png" />
+    <Resource Include="manuals\images\timezones.png" />
+    <Resource Include="manuals\images\zones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="manuals\images\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="manuals\images\audios.png" />
+    <Resource Include="manuals\images\clientinfo.png" />
+    <Resource Include="manuals\images\dialer.png" />
+    <Resource Include="manuals\images\events.png" />
+    <Resource Include="manuals\images\phones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

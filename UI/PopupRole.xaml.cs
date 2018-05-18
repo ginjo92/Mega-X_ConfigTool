@@ -31,6 +31,12 @@ namespace ProdigyConfigToolWPF
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            //ADMIN
+            if (role == 0)
+            {
+                UserRoleName.Text = Properties.Resources.User_role_admin_user;
+                UserImage.Source = new BitmapImage(new Uri("/images/login/0_user.png", UriKind.Relative));
+            }
             //MANUFACTURER
             if (role == 1)
             {
