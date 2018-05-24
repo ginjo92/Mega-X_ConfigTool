@@ -10,13 +10,29 @@
                       mc:Ignorable="d"
                       Title="Mega-X Config Tool" Height="510" Width="650" Icon="/images/icon.ico"
                                                  Loaded="FileManagerWindow_Loaded" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None" 
-                                                 AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" ResizeMode="NoResize" >
+                                                 AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" ResizeMode="NoResize" WindowCloseButtonStyle="{DynamicResource ButtonStyle}">
 
     <Controls:MetroWindow.Resources>
         <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
+
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroWindowButtonStyle}">
+            
+            <Style.Triggers>
+                
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{x:Null}" />
+                    <Setter Property="Foreground" Value="WhiteSmoke" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Opacity" Value="1" />
+                </Trigger>
+
+            </Style.Triggers>
+        </Style>
     </Controls:MetroWindow.Resources>
 
+    
     
     <!--Title bar Right content-->
     <!--<Controls:MetroWindow.RightWindowCommands>
@@ -54,7 +70,7 @@
     <Grid>
         
         <!--TILES Shortcuts-->
-        <DockPanel Margin="0,0,0,0" Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
+        <DockPanel Background="#FF444444" VerticalAlignment="Top" Height="40" Opacity="0.9">
             <!--Utilities menu-->
             <Controls:Tile x:Name="NewTile"  Width="200" Height="34" Title="{x:Static p:Resources.NewConfigFile}" TitleFontSize="12" HorizontalTitleAlignment="Right" 
                            VerticalAlignment="Center" Background="LightGray" Click="NewConfigTile_Click" HorizontalAlignment="Left" Foreground="Black" FontWeight="Bold">
@@ -84,6 +100,13 @@
                 </Rectangle>
             </Controls:Tile>-->
 
+            <Controls:Tile x:Name="HelpTile" Width="32" Height="32" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="30,0"  Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                               Background="{x:Null}" Click="HelpTile_Click" Foreground="Black" Cursor="Hand" Style="{DynamicResource ButtonStyle}">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/images/topbaricons/help.png" Width="16" Height="16" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                </StackPanel>
+                
+            </Controls:Tile>
         </DockPanel>
         <!--CONTENT-->
         <DockPanel x:Name="BaseFrame" Margin="0,40,0,35" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Disabled" Background="Gray">
@@ -110,10 +133,7 @@
             </ListView>
             <Grid Background="LightGray" DataContext="{StaticResource clientInfoViewSource}" Margin="-10,0,0,0">
                 <StackPanel>
-                    <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                        <TextBlock Text="{x:Static p:Resources.Project}" Margin="15,10" FontSize="12" FontWeight="Bold"/>
-                        
-                    </StackPanel>-->
+                    
                     <Label Content="{x:Static p:Resources.InfoClient}" Margin="10,10" FontSize="22"/>
                     <TextBlock x:Name="ProjectName" FontSize="10" Foreground="Gray" Margin="15,-15,0,0"/>
                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Height="Auto" Width="Auto" Margin="0,0,30,0" >

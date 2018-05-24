@@ -2853,4 +2853,16 @@
   <data name="FileManager" xml:space="preserve">
     <value>Sistema de Ficheiros</value>
   </data>
+  <data name="Armed" xml:space="preserve">
+    <value>Armado</value>
+  </data>
+  <data name="NotActive" xml:space="preserve">
+    <value>Desativada</value>
+  </data>
+  <data name="NotArmed" xml:space="preserve">
+    <value>Não armado</value>
+  </data>
+  <data name="OnAlarm" xml:space="preserve">
+    <value>Em alarme</value>
+  </data>
 </root>

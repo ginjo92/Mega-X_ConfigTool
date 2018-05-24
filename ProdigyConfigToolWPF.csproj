@@ -28,16 +28,19 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <ProductName>Mega-X Configuration Tool</ProductName>
+    <ProductName>Mega-X Config Tool</ProductName>
     <PublisherName>Sanco S.A.</PublisherName>
-    <SuiteName>Mega-X Configuration Tool</SuiteName>
+    <SuiteName>Mega-X Config Tool Setup</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>0.9.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>C:\Mega-X_ConfigTool\packages</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -74,11 +77,12 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
@@ -134,8 +138,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=AMD64">
+      <HintPath>..\packages\System.Data.SQLite.x64.1.0.108.0\lib\net46\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -378,6 +382,144 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="audio\Aberta.raw" />
+    <None Include="audio\Acesso.raw" />
+    <None Include="audio\ACPower.raw" />
+    <None Include="audio\Alarme.raw" />
+    <None Include="audio\Alerta.raw" />
+    <None Include="audio\Andar.raw" />
+    <None Include="audio\AntiMascara.raw" />
+    <None Include="audio\Armada.raw" />
+    <None Include="audio\Ativado.raw" />
+    <None Include="audio\Ativo.raw" />
+    <None Include="audio\Bateria.raw" />
+    <None Include="audio\BemVindo.raw" />
+    <None Include="audio\Bypass.raw" />
+    <None Include="audio\Cancelada.raw" />
+    <None Include="audio\Cancelar.raw" />
+    <None Include="audio\Catorze.raw" />
+    <None Include="audio\Cem.raw" />
+    <None Include="audio\Cento_e.raw" />
+    <None Include="audio\Centro.raw" />
+    <None Include="audio\Chamada.raw" />
+    <None Include="audio\Chave.raw" />
+    <None Include="audio\Cheio.raw" />
+    <None Include="audio\Cinco.raw" />
+    <None Include="audio\Cinquenta.raw" />
+    <None Include="audio\Cinquenta_e.raw" />
+    <None Include="audio\Coacao.raw" />
+    <None Include="audio\Codigo.raw" />
+    <None Include="audio\Com.raw" />
+    <None Include="audio\Custom1.raw" />
+    <None Include="audio\Desactivado.raw" />
+    <None Include="audio\Desactivo.raw" />
+    <None Include="audio\Desarmada.raw" />
+    <None Include="audio\Desarmado.raw" />
+    <None Include="audio\Desarmou.raw" />
+    <None Include="audio\Desligada.raw" />
+    <None Include="audio\Detectado.raw" />
+    <None Include="audio\Detector.raw" />
+    <None Include="audio\Dez.raw" />
+    <None Include="audio\Dezanove.raw" />
+    <None Include="audio\Dezasseis.raw" />
+    <None Include="audio\Dezassete.raw" />
+    <None Include="audio\Dezoito.raw" />
+    <None Include="audio\Dois.raw" />
+    <None Include="audio\Doze.raw" />
+    <None Include="audio\E.raw" />
+    <None Include="audio\Em.raw" />
+    <None Include="audio\Emergencia.raw" />
+    <None Include="audio\EmFalta.raw" />
+    <None Include="audio\EmLinha.raw" />
+    <None Include="audio\Energia.raw" />
+    <None Include="audio\Enviar.raw" />
+    <None Include="audio\Errado.raw" />
+    <None Include="audio\Erro.raw" />
+    <None Include="audio\EstaAberto.raw" />
+    <None Include="audio\EstaArmado.raw" />
+    <None Include="audio\EstaAtivo.raw" />
+    <None Include="audio\EstaCancelado.raw" />
+    <None Include="audio\EstaDesarmado.raw" />
+    <None Include="audio\Estado.raw" />
+    <None Include="audio\EstaFechado.raw" />
+    <None Include="audio\EstaOk.raw" />
+    <None Include="audio\Ethernet.raw" />
+    <None Include="audio\Evacuar.raw" />
+    <None Include="audio\Eventos.raw" />
+    <None Include="audio\Expansor.raw" />
+    <None Include="audio\Expirou.raw" />
+    <None Include="audio\Falha.raw" />
+    <None Include="audio\Falhou.raw" />
+    <None Include="audio\Fechada.raw" />
+    <None Include="audio\Fechado.raw" />
+    <None Include="audio\Fim.raw" />
+    <None Include="audio\Fraca.raw" />
+    <None Include="audio\grav2.raw" />
+    <None Include="audio\gravacao.raw" />
+    <None Include="audio\Horas.raw" />
+    <None Include="audio\Incendio.raw" />
+    <None Include="audio\Iniciado.raw" />
+    <None Include="audio\Instalador.raw" />
+    <None Include="audio\Intrusao.raw" />
+    <None Include="audio\Invalido.raw" />
+    <None Include="audio\Ligada.raw" />
+    <None Include="audio\Linha.raw" />
+    <None Include="audio\Medico.raw" />
+    <None Include="audio\Menu.raw" />
+    <None Include="audio\Nao.raw" />
+    <None Include="audio\Nove.raw" />
+    <None Include="audio\Noventa.raw" />
+    <None Include="audio\Noventa_e.raw" />
+    <None Include="audio\Off.raw" />
+    <None Include="audio\Oitenta.raw" />
+    <None Include="audio\Oitenta_e.raw" />
+    <None Include="audio\Oito.raw" />
+    <None Include="audio\Ok.raw" />
+    <None Include="audio\On.raw" />
+    <None Include="audio\Onze.raw" />
+    <None Include="audio\Painel.raw" />
+    <None Include="audio\Panico.raw" />
+    <None Include="audio\Particao.raw" />
+    <None Include="audio\Power.raw" />
+    <None Include="audio\Programacao.raw" />
+    <None Include="audio\Quarenta.raw" />
+    <None Include="audio\Quarenta_e.raw" />
+    <None Include="audio\Quatro.raw" />
+    <None Include="audio\Quinze.raw" />
+    <None Include="audio\Reset.raw" />
+    <None Include="audio\Restauro.raw" />
+    <None Include="audio\Saida.raw" />
+    <None Include="audio\Segundo.raw" />
+    <None Include="audio\Seis.raw" />
+    <None Include="audio\Sessenta.raw" />
+    <None Include="audio\Sessenta_e.raw" />
+    <None Include="audio\Sete.raw" />
+    <None Include="audio\Setenta.raw" />
+    <None Include="audio\Setenta_e.raw" />
+    <None Include="audio\Sim.raw" />
+    <None Include="audio\Sirene.raw" />
+    <None Include="audio\Sistema.raw" />
+    <None Include="audio\Stay.raw" />
+    <None Include="audio\Supervisao.raw" />
+    <None Include="audio\Tamper.raw" />
+    <None Include="audio\Teclado.raw" />
+    <None Include="audio\Telefone.raw" />
+    <None Include="audio\Terminado.raw" />
+    <None Include="audio\Teste.raw" />
+    <None Include="audio\Tipo.raw" />
+    <None Include="audio\Todos.raw" />
+    <None Include="audio\Tres.raw" />
+    <None Include="audio\Treze.raw" />
+    <None Include="audio\Trinta.raw" />
+    <None Include="audio\Trinta_e.raw" />
+    <None Include="audio\Um.raw" />
+    <None Include="audio\Utilizador.raw" />
+    <None Include="audio\Vinte.raw" />
+    <None Include="audio\Vinte_e.raw" />
+    <None Include="audio\Voz.raw" />
+    <None Include="audio\Zero.raw" />
+    <None Include="audio\Zona.raw" />
+    <None Include="audio\Zonas.raw" />
     <None Include="configuration\setup\default\default.prgy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1167,6 +1309,7 @@
     <None Include="manuals\menu_areas.pdf" />
     <None Include="manuals\menu_home.pdf" />
     <None Include="manuals\menu_keypads.pdf" />
+    <None Include="manuals\menu_phones.pdf" />
     <None Include="manuals\menu_timezones.pdf" />
     <None Include="manuals\menu_users.pdf" />
     <None Include="manuals\menu_zones.pdf" />
@@ -1190,6 +1333,9 @@
     <None Include="SqliteLoginDataSet.xss">
       <DependentUpon>SqliteLoginDataSet.xsd</DependentUpon>
     </None>
+    <None Include="WindowsInstaller4_5\Windows6.0-KB942288-v2-ia64.msu" />
+    <None Include="WindowsInstaller4_5\Windows6.0-KB942288-v2-x64.msu" />
+    <None Include="WindowsInstaller4_5\Windows6.0-KB942288-v2-x86.msu" />
     <Resource Include="images\mega-x2.png" />
     <Resource Include="images\mega-x_configtool.png" />
     <Resource Include="Resources\Entypo.ttf" />
@@ -1203,25 +1349,20 @@
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.Express.11.0">
-      <Visible>False</Visible>
-      <ProductName>SQL Server 2012 Express</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.11.1">
-      <Visible>False</Visible>
-      <ProductName>SQL Server 2012 Express LocalDB</ProductName>
-      <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
@@ -1690,6 +1831,75 @@
     <Resource Include="manuals\images\dialer.png" />
     <Resource Include="manuals\images\events.png" />
     <Resource Include="manuals\images\phones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DotNetFX46\NDP46-KB3045557-x86-x64-AllOS-ENU.exe" />
+    <Content Include="x64\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="WindowsInstaller4_5\en\eula.txt" />
+    <Resource Include="WindowsInstaller4_5\en\package.xml" />
+    <Resource Include="WindowsInstaller4_5\product.xml" />
+    <Resource Include="WindowsInstaller4_5\redist.txt" />
+    <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-ia64.exe" />
+    <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-x64.exe" />
+    <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-x86.exe" />
+    <Content Include="WindowsInstaller4_5\WindowsXP-KB942288-v3-x86.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.SqlServer.ConnectionInfo">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Diagnostics.STrace">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.Collector">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.Sdk.Sfc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.SqlClrProvider">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

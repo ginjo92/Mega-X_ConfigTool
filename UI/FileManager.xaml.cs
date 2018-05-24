@@ -8,6 +8,8 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Data.SQLite;
 
 namespace ProdigyConfigToolWPF
 {
@@ -81,6 +83,9 @@ namespace ProdigyConfigToolWPF
         private void FileManagerWindow_Loaded(object sender, RoutedEventArgs e)
         {
             show_version.Content = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            if (role == 0)
+                DeleteTile.Visibility = Visibility.Hidden;
         }
 
         public class File
@@ -254,6 +259,13 @@ namespace ProdigyConfigToolWPF
             DBListBox.InvalidateArrange();
             DBListBox.UpdateLayout();
         }
-    }
 
+        private void HelpTile_Click(object sender, RoutedEventArgs e)
+        {
+            Help helpWindow = new Help(role);
+
+            helpWindow.manual.Source =  new BitmapImage(new Uri(@"/manuals/images/filemanager.png", UriKind.Relative));
+            helpWindow.Show();
+        }
+    }
 }

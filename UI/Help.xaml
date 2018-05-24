@@ -27,11 +27,7 @@
         <DockPanel x:Name="TopMenus" Height="100" Background="Gray" VerticalAlignment="Top">
             <StackPanel Margin="4">
                 <StackPanel Orientation="Horizontal">
-                    <Controls:Tile Title="{x:Static p:Resources.FileManager}" Background="LightGray" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
-                                                           x:Name="Open_FileManager" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_FileManager_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
-                        <Image Source="/images/buttons/homemenu.png" Width="25" Height="25" Margin="5"/>
-                    </Controls:Tile>
+                    
                     <Controls:Tile Title="{x:Static p:Resources.Home}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
                                                            x:Name="Open_Home" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
                                                            TitleFontSize="9" Height="40" Width="110" Click="Open_Home_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
@@ -67,16 +63,16 @@
                                                            TitleFontSize="9" Height="40" Width="110" Click="Open_Users_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
                         <Image Source="/images/new/user.png" Width="25" Height="25" Margin="5"/>
                     </Controls:Tile>
-                    <Controls:Tile Title="{x:Static p:Resources.Phones}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
-                                                           x:Name="Open_Phones" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_Phones_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
-                        <Image Source="/images/new/phone.png" Width="25" Height="25" Margin="5"/>
-                    </Controls:Tile> 
+                    <Controls:Tile Title="{x:Static p:Resources.FirmwareUpdate}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
+                                                           x:Name="Open_FWUpdate" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_FWUpdate_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
+                        <Image Source="/images/new/update.png" Width="25" Height="25" Margin="5"/>
+                    </Controls:Tile>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,1">
-                    <Controls:Tile Title="{x:Static p:Resources.Login}" Background="LightGray" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
-                                                           x:Name="Open_Login" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_Login_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
+                    <Controls:Tile Title="{x:Static p:Resources.FileManager}" Background="LightGray" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
+                                                           x:Name="Open_FileManager" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_FileManager_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
                         <Image Source="/images/buttons/homemenu.png" Width="25" Height="25" Margin="5"/>
                     </Controls:Tile>
                     <Controls:Tile Title="{x:Static p:Resources.Dialer}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
@@ -114,10 +110,11 @@
                                                            TitleFontSize="9" Height="40" Width="110" Click="Open_Debug_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
                         <Image Source="/images/new/debug.png" Width="25" Height="25" Margin="5"/>
                     </Controls:Tile>
-                    <Controls:Tile Title="{x:Static p:Resources.FirmwareUpdate}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
-                                                           x:Name="Open_FWUpdate" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
-                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_FWUpdate_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
-                        <Image Source="/images/new/update.png" Width="25" Height="25" Margin="5"/>
+                    
+                    <Controls:Tile Title="{x:Static p:Resources.Phones}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1" Style="{StaticResource TileIsSelected}"
+                                                           x:Name="Open_Phones" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                                           TitleFontSize="9" Height="40" Width="110" Click="Open_Phones_Click" HorizontalTitleAlignment ="Right" HorizontalContentAlignment="Left" VerticalTitleAlignment="Center" VerticalContentAlignment="Center">
+                        <Image Source="/images/new/phone.png" Width="25" Height="25" Margin="5"/>
                     </Controls:Tile>
                 </StackPanel>
             </StackPanel>

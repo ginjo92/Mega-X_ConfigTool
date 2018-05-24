@@ -33,13 +33,15 @@ namespace ProdigyConfigToolWPF
         private MainWindow mainWindow;
         private string version;
         private int language = 0;
+        int role;
            
         Boolean restore = false;
 
-        public Settings(string ChoosenLocale, MainWindow main, string ChoosenDbFile, Boolean default_restore_is_set)
+        public Settings(string ChoosenLocale, MainWindow main, string ChoosenDbFile, Boolean default_restore_is_set, int AppRole)
         {
             InitializeComponent();
 
+            role = AppRole;
             this.Loaded += MetroWindow_Loaded;
             restore = default_restore_is_set;
             locale = ChoosenLocale;
@@ -84,6 +86,12 @@ namespace ProdigyConfigToolWPF
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            if (role == 0)
+            {
+                RestoreTile.Visibility = Visibility.Collapsed;
+                Sep1.Visibility = Visibility.Collapsed;
+            }
+
             //if (Thread.CurrentThread.CurrentCulture.Name.Equals("PT-PT"))
             //    language = 1;
             //else if (Thread.CurrentThread.CurrentCulture.Name.Equals("EN-US"))

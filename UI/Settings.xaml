@@ -19,7 +19,7 @@
 
 
     <Grid>
-        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300" Background="#FFF7F7F7" BorderBrush="Black" >
+        <Border x:Name="GeneralGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Height="300" Width="300" Background="#FFF7F7F7" BorderBrush="Black" >
             <Border.Effect>
                 <DropShadowEffect/>
             </Border.Effect>
@@ -48,14 +48,14 @@
                             </StackPanel>
                         </Controls:Tile.Content>
                     </Controls:Tile>
-                    <Separator Foreground="LightGray" Margin="20,5"/>
+                    <Separator x:Name="Sep1" Foreground="LightGray" Margin="20,5"/>
                     <StackPanel x:Name="Header_Language" Orientation="Horizontal" HorizontalAlignment="Left">
                         <Image Source="/images/topbaricons/language.png" Width="15"/>
                         <Label Content="{x:Static p:Resources.Language}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="Auto" Height="Auto">
                         <StackPanel x:Name="LanguageSelection" Orientation="Horizontal" HorizontalAlignment="Center" Visibility="Visible">
-                            <Button x:Name="RadioLocalePT" HorizontalAlignment="Center" Margin="5" Click="RadioLocalePT_Click">
+                            <Button x:Name="RadioLocalePT" HorizontalAlignment="Center" Margin="5" Click="RadioLocalePT_Click" Cursor="Hand">
                                 <Image x:Name="FlagPT" Width="35" />
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
@@ -63,7 +63,7 @@
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>
-                            <Button x:Name="RadioLocaleEN" HorizontalAlignment="Center" Margin="5" Click="RadioLocaleEN_Click">
+                            <Button x:Name="RadioLocaleEN" HorizontalAlignment="Center" Margin="5" Click="RadioLocaleEN_Click" Cursor="Hand">
                                 <Image x:Name="FlagEN" Width="35" />
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">

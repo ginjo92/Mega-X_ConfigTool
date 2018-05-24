@@ -24,16 +24,36 @@ namespace ProdigyConfigToolWPF
     public partial class Help : MetroWindow
     {
         private MainWindow mainWindow;
-        
-        public Help()
+        int role;
+        public Help(int AppRole)
         {
+            role = AppRole;
+
             InitializeComponent();
             this.Loaded += HelpWindow_Loaded;
         }
             
         private void HelpWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            
+            if(role == 0)
+            {
+                Open_Areas.Visibility = Visibility.Collapsed;
+                Open_Zones.Visibility = Visibility.Collapsed;
+                Open_Keypads.Visibility = Visibility.Collapsed;
+                Open_Outputs.Visibility = Visibility.Collapsed;
+                Open_Dialer.Visibility = Visibility.Collapsed;
+                Open_GlobalSystem.Visibility = Visibility.Collapsed;
+                Open_Client.Visibility = Visibility.Collapsed;
+                Open_Audio.Visibility = Visibility.Collapsed;
+                Open_Events.Visibility = Visibility.Collapsed;
+                Open_Debug.Visibility = Visibility.Collapsed;
+                Open_FWUpdate.Visibility = Visibility.Collapsed;
+            }
+
+            else if (role == 2)
+            {
+                Open_Debug.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void Open_Login_Click(object sender, RoutedEventArgs e)

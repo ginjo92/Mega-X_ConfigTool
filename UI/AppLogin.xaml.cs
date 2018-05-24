@@ -18,6 +18,7 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SQLite;
 
 namespace ProdigyConfigToolWPF
 {
@@ -71,8 +72,8 @@ namespace ProdigyConfigToolWPF
 
                 //TODO: Create DB and process it - return and pass to mainWindow - role, and username
                 SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
-                UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
-                user_login_table_adapter.Fill(login_dataset.UserLogin);
+                UserLoginTableAdapter LoginTableAdapter = new UserLoginTableAdapter();
+                LoginTableAdapter.Fill(login_dataset.UserLogin);
 
                 foreach (DataRow dr in login_dataset.UserLogin.Rows)
                 {
@@ -125,7 +126,8 @@ namespace ProdigyConfigToolWPF
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             //Get all needed information from Form
-            //string user_login = this.UserLoginValue.Text;          
+            //string user_login = this.UserLoginValue.Text;         
+            
             string user_password = this.UserPasswordValue.Password;
 
             //TODO: Create DB and process it - return and pass to mainWindow - role, and username
@@ -144,7 +146,7 @@ namespace ProdigyConfigToolWPF
 
                         PopupRole popuplogin = new PopupRole(locale, Convert.ToInt32(dr["Role"]));
                         Debug.WriteLine("AppLogin: " + Convert.ToInt32(dr["Role"]));
-                        popuplogin.Show();
+                        popuplogin.Show(); 
                         this.Close();
                     }
             }

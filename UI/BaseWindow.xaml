@@ -394,13 +394,13 @@
             <!--TOP RIGHT INFO-->
             <StackPanel x:Name="PanelLabels" Orientation="Horizontal" HorizontalAlignment="Right" Height="30" VerticalAlignment="Center" >
                 <Label x:Name="SerialNumberLabel" Content="MXN:" FontSize="12" FontWeight="Bold" Foreground="LightGray"/>
-                <Label x:Name="SerialNumberValueLabel" FontSize="12" Foreground="White" Width="60" Margin="0,0,5,0"/>
+                <Label x:Name="SerialNumberValueLabel" FontSize="12" Foreground="White" Margin="0,0,5,0"/>
 
                 <Label x:Name="HWNumberLabel" Content="HW:" FontSize="12" FontWeight="Bold" Foreground="LightGray"/>
-                <Label x:Name="HWNumberValueLabel" FontSize="12" Foreground="White" Width="30" Margin="0,0,5,0"/>
+                <Label x:Name="HWNumberValueLabel" FontSize="12" Foreground="White" Margin="0,0,5,0"/>
 
                 <Label x:Name="FWNumberLabel" Content="FW:" FontSize="12" FontWeight="Bold" Foreground="LightGray"/>
-                <Label x:Name="FWNumberValueLabel" FontSize="12" Foreground="White" Width="30" Margin="0,0,5,0"/>
+                <Label x:Name="FWNumberValueLabel" FontSize="12" Foreground="White" Margin="0,0,5,0"/>
             </StackPanel>
             
         </DockPanel>
@@ -539,7 +539,7 @@
                                    Text="{ x:Static p:Resources.Zones }"/>
                         </Grid>
                         <!--OnlyActive-->
-                        <Controls:Tile x:Name="ZoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                        <Controls:Tile x:Name="ZoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" Visibility="Hidden"
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="ZoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
@@ -6988,7 +6988,7 @@
                                    Text="{ x:Static p:Resources.Users }"/>
                         </Grid>
                         <!--OnlyActive-->
-                        <Controls:Tile x:Name="UserOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                        <Controls:Tile x:Name="UserOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="UserOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
@@ -10328,7 +10328,7 @@
                                    Text="{ x:Static p:Resources.Keypads }"/>
                         </Grid>
                         <!--OnlyActive-->
-                        <Controls:Tile x:Name="KeypadOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                        <Controls:Tile x:Name="KeypadOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="KeypadOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
@@ -13567,7 +13567,7 @@
                                    Text="{ x:Static p:Resources.Phones }"/>
                         </Grid>
                         <!--OnlyActive-->
-                        <Controls:Tile x:Name="PhoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" 
+                        <Controls:Tile x:Name="PhoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
                                        VerticalAlignment="Top" Background="WhiteSmoke" Click="PhoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
@@ -14854,7 +14854,7 @@
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <StackPanel >
-                                                <TextBlock Text="{x:Static p:Resources.Test_config}" Foreground="White" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <TextBlock Text="{x:Static p:Resources.Test_config}" Foreground="White" TextWrapping="Wrap" Width="100"  TextAlignment="Center" HorizontalAlignment="Center"/>
                                                 <Image Source="/images/arrow_down copy.png" Width="14"/>
                                             </StackPanel>
                                         </DataTemplate>
@@ -15961,7 +15961,7 @@
                                                         </DataGridTemplateColumn.CellTemplate>
                                                     </DataGridTemplateColumn>
                                                     <!--Actions-->
-                                                    <DataGridTemplateColumn x:Name="AudioConfigActions_Column" IsReadOnly="True" Header="" Width="30" CanUserResize="False">
+                                                    <DataGridTemplateColumn x:Name="AudioConfigActions_Column" IsReadOnly="True" Header="" Width="30" CanUserResize="False" Visibility="Collapsed">
                                                         <DataGridTemplateColumn.HeaderStyle>
                                                             <Style TargetType="{x:Type DataGridColumnHeader}">
                                                                 <Setter Property="Width" Value="30"/>
@@ -16023,109 +16023,133 @@
                                    Text="{x:Static p:Resources.Status}"/>
                             </Grid>
                             <!--PARTITIONS-->
-                            <Grid Margin="20,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Areas}" FontSize="16" FontWeight="Bold"></TextBlock>
-
-                                <Button x:Name="Status_Partitions_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusPartitionsButton_Click" Margin="5,0,0,0" Visibility="Visible">
-                                    <Image  Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button x:Name="Status_Partitions_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusPartitionsButton_Click" Margin="5,0,0,0" Visibility="Hidden">
-                                    <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                
-                            </Grid>
-                            <Grid x:Name="Status_Partitions" Margin="20,0,0,20" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke">
+                            <StackPanel Margin="20,0,0,0">
                                 <StackPanel Orientation="Horizontal">
-                                    <Controls:Tile x:Name="StatusPartition1" Width="80" Height="80" Title="{x:Static p:Resources.Area_1}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
-                                               Click="StatusPartition1_Click" Tag="0">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition2" Width="80" Height="80" Title="{x:Static p:Resources.Area_2}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="1">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition3" Width="80" Height="80" Title="{x:Static p:Resources.Area_3}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="2">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition4" Width="80" Height="80" Title="{x:Static p:Resources.Area_4}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="3">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition5" Width="80" Height="80" Title="{x:Static p:Resources.Area_5}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="4">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition6" Width="80" Height="80" Title="{x:Static p:Resources.Area_6}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="5">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition7" Width="80" Height="80" Title="{x:Static p:Resources.Area_7}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="6">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusPartition8" Width="80" Height="80" Title="{x:Static p:Resources.Area_8}" TitleFontSize="10" 
-                                               HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
-                                               Click="StatusPartition1_Click" Tag="6">
-                                        <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
+                                    <TextBlock Text="{x:Static p:Resources.Areas}" FontSize="16" FontWeight="Bold"></TextBlock>
+
+                                    <Button x:Name="Status_Partitions_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusPartitionsButton_Click" Margin="5,0,0,0" Visibility="Visible">
+                                        <Image  Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="Status_Partitions_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusPartitionsButton_Click" Margin="5,0,0,0" Visibility="Collapsed">
+                                        <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
+                            <Grid x:Name="Status_Partitions" Margin="20,0,0,20" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
+                                            <Label Content="{x:Static p:Resources.Armed}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="IndianRed" />
+                                            <Label Content="{x:Static p:Resources.OnAlarm}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Gray" />
+                                            <Label Content="{x:Static p:Resources.NotArmed}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusPartition1" Width="80" Height="80" Title="{x:Static p:Resources.Area_1}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusPartition1_Click" Tag="0">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition2" Width="80" Height="80" Title="{x:Static p:Resources.Area_2}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="1">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition3" Width="80" Height="80" Title="{x:Static p:Resources.Area_3}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="2">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition4" Width="80" Height="80" Title="{x:Static p:Resources.Area_4}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="3">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition5" Width="80" Height="80" Title="{x:Static p:Resources.Area_5}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="4">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition6" Width="80" Height="80" Title="{x:Static p:Resources.Area_6}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="5">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition7" Width="80" Height="80" Title="{x:Static p:Resources.Area_7}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="6">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusPartition8" Width="80" Height="80" Title="{x:Static p:Resources.Area_8}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3"
+                                                   Click="StatusPartition1_Click" Tag="6">
+                                            <Image Source="/images/new/areas.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
                             <!--ZONES-->
-                            <Grid Margin="20,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Zones}" FontSize="16" FontWeight="Bold"></TextBlock>
+                            <StackPanel Margin="20,0,0,0" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Zones}" FontSize="16" FontWeight="Bold"></TextBlock>
 
-                                <Button x:Name="Status_Zones_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusZonesButton_Click" Margin="5,0,0,0" Visibility="Visible">
-                                    <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button x:Name="Status_Zones_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusZonesButton_Click" Margin="5,0,0,0" Visibility="Hidden">
-                                    <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-
-                            </Grid>
+                                    <Button x:Name="Status_Zones_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusZonesButton_Click" Margin="5,0,0,0" Visibility="Visible">
+                                        <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="Status_Zones_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusZonesButton_Click" Margin="5,0,0,0" Visibility="Collapsed">
+                                        <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
                             <Grid x:Name="Status_Zones" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
                                 <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
+                                            <Label Content="{x:Static p:Resources.Ok}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Khaki" />
+                                            <Label Content="{x:Static p:Resources.Open}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="IndianRed" />
+                                            <Label Content="{x:Static p:Resources.OnAlarm}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="10" Background="BurlyWood" />
+                                            <Label Content="{x:Static p:Resources.BypassOn}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <Controls:Tile x:Name="StatusZone1" Width="80" Height="80" Title="{x:Static p:Resources.Zone_1}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
@@ -16297,36 +16321,45 @@
                                 </StackPanel>
                             </Grid>
                             <!--OUTPUTS-->
-                            <Grid Margin="20,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Outputs}" FontSize="16" FontWeight="Bold"></TextBlock>
+                            <StackPanel Margin="20,0,0,0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Outputs}" FontSize="16" FontWeight="Bold"></TextBlock>
 
-                                <Button x:Name="Status_Outputs_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusOutputsButton_Click" Margin="5,0,0,0" Visibility="Visible">
-                                    <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button x:Name="Status_Outputs_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusOutputsButton_Click" Margin="5,0,0,0" Visibility="Hidden">
-                                    <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-
-                            </Grid>
+                                    <Button x:Name="Status_Outputs_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusOutputsButton_Click" Margin="5,0,0,0" Visibility="Visible">
+                                        <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="Status_Outputs_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusOutputsButton_Click" Margin="5,0,0,0" Visibility="Collapsed">
+                                        <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
                             <Grid x:Name="StatusOutputsGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
                                 <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
+                                            <Label Content="{x:Static p:Resources.Ok}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="IndianRed" />
+                                            <Label Content="{x:Static p:Resources.OnAlarm}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Gray" />
+                                            <Label Content="{x:Static p:Resources.NotActive}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
                                     <StackPanel Orientation="Horizontal">
                                         <Controls:Tile x:Name="StatusOutput1" Width="80" Height="80" Title="{x:Static p:Resources.Output_1}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
@@ -16399,107 +16432,128 @@
                                 </StackPanel>
                             </Grid>
                             <!--DIALER-->
-                            <Grid Margin="20,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Dialer}" FontSize="16" FontWeight="Bold"></TextBlock>
-
-                                <Button x:Name="Status_Dialer_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusDialerButton_Click" Margin="5,0,0,0" Visibility="Visible">
-                                    <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button x:Name="Status_Dialer_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusDialerButton_Click" Margin="5,0,0,0" Visibility="Hidden">
-                                    <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </Grid>
-                            <Grid x:Name="StatusDialerGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
+                            <StackPanel Margin="20,0,0,0">
                                 <StackPanel Orientation="Horizontal">
-                                    <Controls:Tile x:Name="StatusPSTN" Width="80" Height="80" Title="{x:Static p:Resources.Dialer}" TitleFontSize="10" 
+
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Dialer}" FontSize="16" FontWeight="Bold"></TextBlock>
+
+                                    <Button x:Name="Status_Dialer_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusDialerButton_Click" Margin="5,0,0,0" Visibility="Visible">
+                                        <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="Status_Dialer_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusDialerButton_Click" Margin="5,0,0,0" Visibility="Collapsed">
+                                        <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
+                            <Grid x:Name="StatusDialerGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
+                                            <Label Content="{x:Static p:Resources.Active}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Gray" />
+                                            <Label Content="{x:Static p:Resources.NotActive}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusPSTN" Width="80" Height="80" Title="{x:Static p:Resources.Dialer}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/dialer.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusCall" Width="80" Height="80" Title="{x:Static p:Resources.Calling}" TitleFontSize="10" 
+                                            <Image Source="/images/new/dialer.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusCall" Width="80" Height="80" Title="{x:Static p:Resources.Calling}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/call.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
+                                            <Image Source="/images/new/call.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
                             <!--TIMEZONES-->
-                            <Grid Margin="20,0,0,0">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Timezones}" FontSize="16" FontWeight="Bold"></TextBlock>
-
-                                <Button x:Name="Status_Timezones_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusTimezonesButton_Click" Margin="5,0,0,0" Visibility="Visible">
-                                    <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                                <Button x:Name="Status_Timezones_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusTimezonesButton_Click" Margin="5,0,0,0" Visibility="Hidden">
-                                    <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
-                                    <Button.Template>
-                                        <ControlTemplate TargetType="Button">
-                                            <ContentPresenter Content="{TemplateBinding Content}"/>
-                                        </ControlTemplate>
-                                    </Button.Template>
-                                </Button>
-                            </Grid>
-                            <Grid x:Name="StatusTimezonesGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
+                            <StackPanel Margin="20,0,0,0">
                                 <StackPanel Orientation="Horizontal">
-                                    <Controls:Tile x:Name="StatusTimezone1" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_1}" TitleFontSize="10" 
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="{x:Static p:Resources.Timezones}" FontSize="16" FontWeight="Bold"></TextBlock>
+
+                                    <Button x:Name="Status_Timezones_minus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusTimezonesButton_Click" Margin="5,0,0,0" Visibility="Visible">
+                                        <Image Source="/images/buttons/close.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <Button x:Name="Status_Timezones_plus" Grid.Column="1" Grid.Row="0" Background="Black" Click="StatusTimezonesButton_Click" Margin="5,0,0,0" Visibility="Collapsed">
+                                        <Image  Source="/images/buttons/open.png" Width="20" Stretch="Uniform" Cursor="Hand"/>
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <ContentPresenter Content="{TemplateBinding Content}"/>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                </StackPanel>
+                                
+                            </StackPanel>
+                            <Grid x:Name="StatusTimezonesGrid" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" Background="WhiteSmoke" Margin="20,0,0,20">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0">
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
+                                            <Label Content="{x:Static p:Resources.Active}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Gray" />
+                                            <Label Content="{x:Static p:Resources.NotActive}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusTimezone1" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_1}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone2" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_2}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone2" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_2}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone3" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_3}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone3" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_3}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone4" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_4}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone4" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_4}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="35" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone5" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_5}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="35" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone5" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_5}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone6" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_6}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone6" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_6}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone7" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_7}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone7" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_7}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
-                                    <Controls:Tile x:Name="StatusTimezone8" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_8}" TitleFontSize="10" 
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusTimezone8" Width="80" Height="80" Title="{x:Static p:Resources.Timezone_8}" TitleFontSize="10" 
                                                HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3">
-                                        <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
-                                    </Controls:Tile>
+                                            <Image Source="/images/new/timezone.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>

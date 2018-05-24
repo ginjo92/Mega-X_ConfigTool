@@ -8,6 +8,7 @@
     <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
     <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="zoneViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
+    <CollectionViewSource x:Key="ZoneActiveViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="areaViewSource" Source="{Binding Area, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="userViewSource" Source="{Binding User, Source={StaticResource databaseDataSet}}"/>
     <CollectionViewSource x:Key="keypadViewSource" Source="{Binding Keypad, Source={StaticResource databaseDataSet}}"/>

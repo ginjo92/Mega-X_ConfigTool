@@ -190,23 +190,30 @@ namespace ProdigyConfigToolWPF.Protocol
                     mainform.serial_number[1] = data_rx[4];
                     mainform.serial_number[2] = data_rx[5];
                     mainform.serial_number[3] = data_rx[6];
+                    mainform.serial_number[4] = data_rx[7];
+                    mainform.serial_number[5] = data_rx[8];
+                    mainform.serial_number[6] = data_rx[9];
+                    mainform.serial_number[7] = data_rx[10];
+                    mainform.serial_number[8] = data_rx[11];
+                    mainform.serial_number[9] = data_rx[12];
 
-                    mainform.hw_version[0] = data_rx[7];
-                    mainform.hw_version[1] = data_rx[8];
-                    mainform.hw_version[2] = data_rx[9];
+                    mainform.hw_version[0] = data_rx[13];
+                    mainform.hw_version[1] = data_rx[14];
+                    mainform.hw_version[2] = data_rx[15];
 
-                    mainform.sw_version[0] = data_rx[10];
-                    mainform.sw_version[1] = data_rx[11];
-                    mainform.sw_version[2] = data_rx[12];
+                    mainform.sw_version[0] = data_rx[16];
+                    mainform.sw_version[1] = data_rx[17];
+                    mainform.sw_version[2] = data_rx[18];
 
                     byte[] event_code = new byte[2];
-                    event_code[0] = data_rx[13];
-                    event_code[1] = data_rx[14];
+                    event_code[0] = data_rx[19];
+                    event_code[1] = data_rx[20];
                     //event_code[0] = data_rx[12];
                     //event_code[1] = data_rx[14];
 
 
-                    uint serial_number = (uint)((data_rx[3] << 24) + (data_rx[4] << 16) + (data_rx[5] << 8) + data_rx[6]);
+                    //uint serial_number = (uint)((data_rx[3] << 24) + (data_rx[4] << 16) + (data_rx[5] << 8) + data_rx[6]);
+                    string serial_number = Encoding.UTF8.GetString(mainform.serial_number);
                     mainform.event_code = (uint)(event_code[0] << 8) + event_code[1];
                     string hardware_version = Encoding.UTF8.GetString(mainform.hw_version);
                     string software_version = Encoding.UTF8.GetString(mainform.sw_version);

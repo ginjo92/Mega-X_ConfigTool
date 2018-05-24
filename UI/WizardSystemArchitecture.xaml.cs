@@ -38,6 +38,20 @@ namespace ProdigyConfigToolWPF
             Console.WriteLine("Wizard: " + AppRole);
         }
 
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (AppRole == 0)
+            {
+                DragZones.Visibility = Visibility.Collapsed;
+                DragKeypads.Visibility = Visibility.Collapsed;
+                DragDialer.Visibility = Visibility.Collapsed;
+
+                SelectedZones.Visibility = Visibility.Collapsed;
+                SelectedKeypads.Visibility = Visibility.Collapsed;
+                SelectedDialer.Visibility = Visibility.Collapsed;
+            }
+        }
+        
         private void ButtonSkip_Click(object sender, RoutedEventArgs e)
         {
             var prodigy_configtool_window = new MainWindow(AppLocale, AppRole, config_file_name, null, null, null, null, null);
@@ -901,5 +915,7 @@ namespace ProdigyConfigToolWPF
         }
 
         #endregion
+
+       
     }
 }

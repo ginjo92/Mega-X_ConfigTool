@@ -3,6 +3,8 @@ using ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SQLite;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,20 +29,27 @@ namespace ProdigyConfigToolWPF
         private int Role = 0;
         private MainWindow mainWindow;
         private Boolean loginsuccessfull;
+
+        SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
+        UserLoginTableAdapter LoginTableAdapter = new UserLoginTableAdapter();
+
         public PasswordChange(string locale, int role, MainWindow main)
         {
+            
             mainWindow = main;
             Role = role;
             mainWindow.IsEnabled = false;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(locale);
-            QueriesTableAdapter("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Database\\Login\\SqliteLogin.prgy");
-
+            QueriesTableAdapter("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Database\\Login\\SqliteLogin.prgy;Password=idsancoprodigy2017");
+            
             InitializeComponent();
         }
 
+      
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            //UserLoginValue.Text = UserName;
+            
+            LoginTableAdapter.Fill(login_dataset.UserLogin);
         }
 
         private void MetroWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -59,11 +68,7 @@ namespace ProdigyConfigToolWPF
             string user_password = this.UserPasswordValue.Password;
             string new_user_password = this.UserNewPasswordValue.Password;
             string confirm_new_user_password = this.UserRepeatNewPasswordValue.Password;
-
-            SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
-            UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
-            user_login_table_adapter.Fill(login_dataset.UserLogin);
-
+                        
             foreach (DataRow dr in login_dataset.UserLogin.Rows)
             {
                 if (Convert.ToInt32(dr["Role"]) == Role)
@@ -75,8 +80,10 @@ namespace ProdigyConfigToolWPF
                         if(new_user_password.Equals(confirm_new_user_password))
                         {
                             dr["Password"] = new_user_password;
-                            user_login_table_adapter.Update(dr);
                             MessageBox.Show(Properties.Resources.PasswordChanged, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve
+                           
+                            LoginTableAdapter.Update(login_dataset.UserLogin);
+                            DebugTable(login_dataset.UserLogin);
                             this.Close();
                         }else
                         {
@@ -85,6 +92,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
             }
+            
 
             if (!loginsuccessfull)
             {
@@ -93,6 +101,7 @@ namespace ProdigyConfigToolWPF
             }
             else
             {
+                
                 this.Close();
                 mainWindow.Close();
                 AppLogin newapplogin = new AppLogin();
@@ -117,14 +126,11 @@ namespace ProdigyConfigToolWPF
         {
             if (e.Key == Key.Enter)
             {
-                //string user_login = this.UserLoginValue.Text;
+                //Get all needed information from Form
+                //Get all needed information from Form
                 string user_password = this.UserPasswordValue.Password;
                 string new_user_password = this.UserNewPasswordValue.Password;
                 string confirm_new_user_password = this.UserRepeatNewPasswordValue.Password;
-
-                SqliteLoginDataSet login_dataset = new SqliteLoginDataSet();
-                UserLoginTableAdapter user_login_table_adapter = new UserLoginTableAdapter();
-                user_login_table_adapter.Fill(login_dataset.UserLogin);
 
                 foreach (DataRow dr in login_dataset.UserLogin.Rows)
                 {
@@ -137,8 +143,10 @@ namespace ProdigyConfigToolWPF
                             if (new_user_password.Equals(confirm_new_user_password))
                             {
                                 dr["Password"] = new_user_password;
-                                user_login_table_adapter.Update(dr);
                                 MessageBox.Show(Properties.Resources.PasswordChanged, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve
+
+                                LoginTableAdapter.Update(login_dataset.UserLogin);
+                                DebugTable(login_dataset.UserLogin);
                                 this.Close();
                             }
                             else
@@ -149,19 +157,60 @@ namespace ProdigyConfigToolWPF
                     }
                 }
 
+
                 if (!loginsuccessfull)
                 {
                     MessageBox.Show(Properties.Resources.PasswordUserNotMatch, "", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
-                    this.Close();
+
                 }
                 else
                 {
+
                     this.Close();
                     mainWindow.Close();
                     AppLogin newapplogin = new AppLogin();
                     newapplogin.Show();
                 }
             }
+        }
+
+        public void DebugTable(DataTable table)
+        {
+            Debug.WriteLine("--- DebugTable(" + table.TableName + ") ---");
+            int zeilen = table.Rows.Count;
+            int spalten = table.Columns.Count;
+
+            // Header
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                string s = table.Columns[i].ToString();
+                Debug.Write(String.Format("{0,-20} | ", s));
+            }
+            Debug.Write(Environment.NewLine);
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                Debug.Write("---------------------|-");
+            }
+            Debug.Write(Environment.NewLine);
+
+            // Data
+            for (int i = 0; i < zeilen; i++)
+            {
+                DataRow row = table.Rows[i];
+                //Debug.WriteLine("{0} {1} ", row[0], row[1]);
+                for (int j = 0; j < spalten; j++)
+                {
+                    string s = row[j].ToString();
+                    if (s.Length > 20) s = s.Substring(0, 17) + "...";
+                    Debug.Write(String.Format("{0,-20} | ", s));
+                }
+                Debug.Write(Environment.NewLine);
+            }
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                Debug.Write("---------------------|-");
+            }
+            Debug.Write(Environment.NewLine);
         }
     }
 }

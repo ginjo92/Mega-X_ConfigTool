@@ -2847,4 +2847,16 @@
   <data name="FileManager" xml:space="preserve">
     <value>File Manager</value>
   </data>
+  <data name="Armed" xml:space="preserve">
+    <value>Armed</value>
+  </data>
+  <data name="NotActive" xml:space="preserve">
+    <value>Not active</value>
+  </data>
+  <data name="NotArmed" xml:space="preserve">
+    <value>Not armed</value>
+  </data>
+  <data name="OnAlarm" xml:space="preserve">
+    <value>On alarm</value>
+  </data>
 </root>

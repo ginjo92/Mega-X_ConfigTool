@@ -1105,6 +1105,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Armed.
+        /// </summary>
+        public static string Armed {
+            get {
+                return ResourceManager.GetString("Armed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arm Stay.
         /// </summary>
         public static string ArmStay {
@@ -3832,6 +3841,24 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Not active.
+        /// </summary>
+        public static string NotActive {
+            get {
+                return ResourceManager.GetString("NotActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not armed.
+        /// </summary>
+        public static string NotArmed {
+            get {
+                return ResourceManager.GetString("NotArmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not arm if zones open after exit delay.
         /// </summary>
         public static string NotArmIfZonesOpen {
@@ -3846,6 +3873,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to On alarm.
+        /// </summary>
+        public static string OnAlarm {
+            get {
+                return ResourceManager.GetString("OnAlarm", resourceCulture);
             }
         }
         

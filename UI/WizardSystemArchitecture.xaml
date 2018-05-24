@@ -9,7 +9,7 @@
         Title="" Height="500" Width="800"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
                       MinWidth="800" MinHeight="500" ShowTitleBar="false" IsWindowDraggable="False" ShowMaxRestoreButton="False" ResizeMode="NoResize" IsMinButtonEnabled="False" 
-                      IsMaxRestoreButtonEnabled="False" IsCloseButtonEnabled="False" BorderBrush="Black" >
+                      IsMaxRestoreButtonEnabled="False" IsCloseButtonEnabled="False" BorderBrush="Black" Loaded="MetroWindow_Loaded">
     <Controls:MetroWindow.Resources>
         <ObjectDataProvider x:Key="UserLogins_dict"
         MethodName="GetUserLogin" ObjectType="{x:Type local:Dictionaries}"/>

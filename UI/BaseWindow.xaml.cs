@@ -40,7 +40,7 @@ namespace ProdigyConfigToolWPF
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
         string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\";
-
+        
         private string AppLocale;
         public int AppRole;
         public string AppDbFile;
@@ -53,7 +53,7 @@ namespace ProdigyConfigToolWPF
 
         public SerialPort serialPort = new SerialPort();
         public byte[] cp_id = { 0x0, 00 };
-        public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00 };
+        public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00 , 0x00 , 0x00 , 0x00 , 0x00 , 0x00 , 0x00 };
         public byte[] hw_version = { 0x00, 0x00, 0x00 };
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
@@ -321,7 +321,6 @@ namespace ProdigyConfigToolWPF
                 Open_FirmwareUpdate.Visibility = Visibility.Collapsed;
                 Open_Debug.Visibility = Visibility.Collapsed;
                 Open_Audio.Visibility = Visibility.Collapsed;
-                Open_Status.Visibility = Visibility.Collapsed;
                 Open_Events.Visibility = Visibility.Collapsed;
 
                 TreeviewAreas.Visibility = Visibility.Collapsed;
@@ -334,7 +333,6 @@ namespace ProdigyConfigToolWPF
                 TreeviewFwUpdate.Visibility = Visibility.Collapsed;
                 TreeviewDebug.Visibility = Visibility.Collapsed;
                 TreeviewAudioMessages.Visibility = Visibility.Collapsed;
-                TreeviewStatus.Visibility = Visibility.Collapsed;
                 TreeviewEvents.Visibility = Visibility.Collapsed;
 
                 ReadFWUpdateData.Visibility = Visibility.Collapsed;
@@ -390,6 +388,7 @@ namespace ProdigyConfigToolWPF
                 UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
                 databaseDataSetUserTableAdapter.Fill(databaseDataSet.User);
                 CollectionViewSource userViewSource = ((CollectionViewSource)(this.FindResource("userViewSource")));
+                
                 userViewSource.View.MoveCurrentToFirst();
 
                 // KEYPAD
@@ -1018,7 +1017,7 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        internal void write_control_panel_id_label(int control_panel_id, string hardware_version, string software_version, uint serial_number)
+        internal void write_control_panel_id_label(int control_panel_id, string hardware_version, string software_version, string serial_number)
         {
             this.Dispatcher.Invoke((Action)(() =>
             {
@@ -1028,7 +1027,7 @@ namespace ProdigyConfigToolWPF
                 //SwVersion.Text = software_version;
 
                 //ControlPanelIDLabel.Text = control_panel_id.ToString();
-                SerialNumberValueLabel.Content = serial_number.ToString();
+                SerialNumberValueLabel.Content = serial_number;
                 HWNumberValueLabel.Content = hardware_version;
                 FWNumberValueLabel.Content = software_version;
 
@@ -8678,7 +8677,7 @@ namespace ProdigyConfigToolWPF
         
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
-            Help helpWindow = new Help();
+            Help helpWindow = new Help(AppRole);
 
             if (MainHomeTab.IsSelected)
             {
@@ -10535,78 +10534,74 @@ namespace ProdigyConfigToolWPF
             {
                 Status_Partitions.Visibility = Visibility.Collapsed;
                 Status_Partitions_plus.Visibility = Visibility.Visible;
-                Status_Partitions_minus.Visibility = Visibility.Hidden;
+                Status_Partitions_minus.Visibility = Visibility.Collapsed;
             }
             else
             {
                 Status_Partitions.Visibility = Visibility.Visible;
-                Status_Partitions_plus.Visibility = Visibility.Hidden;
+                Status_Partitions_plus.Visibility = Visibility.Collapsed;
                 Status_Partitions_minus.Visibility = Visibility.Visible;
             }
 
 
         }
-
         private void StatusZonesButton_Click(object sender, RoutedEventArgs e)
         {
             if (Status_Zones.Visibility.Equals(Visibility.Visible))
             {
                 Status_Zones.Visibility = Visibility.Collapsed;
                 Status_Zones_plus.Visibility = Visibility.Visible;
-                Status_Zones_minus.Visibility = Visibility.Hidden;
+                Status_Zones_minus.Visibility = Visibility.Collapsed;
             }
             else
             {
                 Status_Zones.Visibility = Visibility.Visible;
-                Status_Zones_plus.Visibility = Visibility.Hidden;
+                Status_Zones_plus.Visibility = Visibility.Collapsed;
                 Status_Zones_minus.Visibility = Visibility.Visible;
             }
         }
-
         private void StatusOutputsButton_Click(object sender, RoutedEventArgs e)
         {
             if (StatusOutputsGrid.Visibility.Equals(Visibility.Visible))
             {
                 StatusOutputsGrid.Visibility = Visibility.Collapsed;
                 Status_Outputs_plus.Visibility = Visibility.Visible;
-                Status_Outputs_minus.Visibility = Visibility.Hidden;
+                Status_Outputs_minus.Visibility = Visibility.Collapsed;
             }
             else
             {
                 StatusOutputsGrid.Visibility = Visibility.Visible;
-                Status_Outputs_plus.Visibility = Visibility.Hidden;
+                Status_Outputs_plus.Visibility = Visibility.Collapsed;
                 Status_Outputs_minus.Visibility = Visibility.Visible;
             }
         }
-
         private void StatusDialerButton_Click(object sender, RoutedEventArgs e)
         {
             if (StatusDialerGrid.Visibility.Equals(Visibility.Visible))
             {
                 StatusDialerGrid.Visibility = Visibility.Collapsed;
                 Status_Dialer_plus.Visibility = Visibility.Visible;
-                Status_Dialer_minus.Visibility = Visibility.Hidden;
+                Status_Dialer_minus.Visibility = Visibility.Collapsed;
             }
             else
             {
                 StatusDialerGrid.Visibility = Visibility.Visible;
-                Status_Dialer_plus.Visibility = Visibility.Hidden;
+                Status_Dialer_plus.Visibility = Visibility.Collapsed;
                 Status_Dialer_minus.Visibility = Visibility.Visible;
             }
         }
-
         private void StatusTimezonesButton_Click(object sender, RoutedEventArgs e)
         {
             if (StatusTimezonesGrid.Visibility.Equals(Visibility.Visible))
             {
                 StatusTimezonesGrid.Visibility = Visibility.Collapsed;
                 Status_Timezones_plus.Visibility = Visibility.Visible;
-                Status_Timezones_minus.Visibility = Visibility.Hidden;
+                Status_Timezones_minus.Visibility = Visibility.Collapsed;
             }
             else
             {
                 StatusTimezonesGrid.Visibility = Visibility.Visible;
-                Status_Timezones_plus.Visibility = Visibility.Hidden;
+                Status_Timezones_plus.Visibility = Visibility.Collapsed;
                 Status_Timezones_minus.Visibility = Visibility.Visible;
             }
         }
@@ -10678,24 +10673,27 @@ namespace ProdigyConfigToolWPF
             if ((dialer & Constants.MASK_PSTN_LINE_PRESENT) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Connected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightSeaGreen));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.BorderBrush = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => StatusPSTN.ToolTip = Properties.Resources.PSTN + Properties.Resources.Disconnected));
-                this.Dispatcher.Invoke((Action)(() => StatusPSTN.Background = Brushes.LightGray));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => StatusPSTN.BorderBrush = Brushes.Gray));
             }
 
 
             if ((dialer & Constants.MASK_PSTN_CALL_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightSeaGreen));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.BorderBrush = Brushes.LightSeaGreen));
             }
             else
             {
-                this.Dispatcher.Invoke((Action)(() => StatusCall.ToolTip = Properties.Resources.InCall + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => StatusCall.Background = Brushes.LightGray));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => StatusCall.BorderBrush = Brushes.Gray));
             }
 
             #endregion
@@ -10716,12 +10714,14 @@ namespace ProdigyConfigToolWPF
             if ((partition & Constants.MASK_PARTITION_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.IndianRed));
+                this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
+                this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
             }
 
 
@@ -10729,23 +10729,31 @@ namespace ProdigyConfigToolWPF
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Away));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
+                {
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
+                }
             }
             else if ((partition & Constants.MASK_PARTITION_ARMED_STAY) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Stay));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSeaGreen));
+                {
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
+                }
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.No));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
-                    this.Dispatcher.Invoke((Action)(() => partition_object.Background = Brushes.LightSteelBlue));
+                {
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.Gray));
+                }
             }
 
         }
-
         private void UpdateZonesRealTimeObjects(byte zone, Tile zone_object)
         {
             if ((zone & Constants.MASK_ZONA_ACTIVE) > 0)
@@ -10754,39 +10762,44 @@ namespace ProdigyConfigToolWPF
                 if ((zone & Constants.MASK_ZONA_ALARM) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Alarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Foreground = Brushes.White));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.IndianRed));
                 }
                 else if ((zone & Constants.MASK_ZONA_OPEN) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Open));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSteelBlue));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.Khaki));
                 }
                 else if ((zone & Constants.MASK_ZONA_TAMPER) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.TamperAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.IndianRed));
                 }
                 else if ((zone & Constants.MASK_ZONA_MASK) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.MaskAlarm));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.IndianRed));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.IndianRed));
                 }
                 else
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Ok));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightSeaGreen));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.LightSeaGreen));
                 }
 
 
                 if ((zone & Constants.MASK_ZONA_BYPASS) > 0)
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip += "\r\n " + Properties.Resources.Bypass + Properties.Resources.Yes));
-                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.Khaki));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.BurlyWood));
                 }
                 else
                 {
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip += "\r\n " + Properties.Resources.Bypass + Properties.Resources.No));
+                    this.Dispatcher.Invoke((Action)(() => zone_object.Background = Brushes.LightGray));
                 }
             }
             else
@@ -10796,44 +10809,49 @@ namespace ProdigyConfigToolWPF
 
 
         }
-
         private void UpdateOutputsRealTimeObjects(byte output, Tile output_object)
         {
             if ((output & Constants.MASK_OUTPUT_ALARM) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.IndianRed));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderBrush = Brushes.IndianRed));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightGray));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderBrush = Brushes.Gray));
             }
 
 
             if ((output & Constants.MASK_OUTPUT_ACTIVE) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip += "\r\n " + Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => output_object.Background = Brushes.LightSeaGreen));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderBrush = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => output_object.ToolTip += "\r\n " + Properties.Resources.RTActive + Properties.Resources.No));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => output_object.BorderBrush = Brushes.Gray));
             }
 
         }
-
         private void UpdateTimezonesRealTimeObjects(byte timezone, Tile timezone_object)
         {
             if ((timezone & Constants.TIMEZONE_IN_PERIOD) > 0)
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.Yes));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightSeaGreen));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.BorderBrush = Brushes.LightSeaGreen));
             }
             else
             {
                 this.Dispatcher.Invoke((Action)(() => timezone_object.ToolTip = Properties.Resources.RTActive + Properties.Resources.No));
-                this.Dispatcher.Invoke((Action)(() => timezone_object.Background = Brushes.LightGray));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.BorderThickness = new Thickness(2)));
+                this.Dispatcher.Invoke((Action)(() => timezone_object.BorderBrush = Brushes.Gray));
             }
 
         }
@@ -10844,14 +10862,12 @@ namespace ProdigyConfigToolWPF
 
             RealTimeActionsWindow.Show();
         }
-
         private void StatusZone_Click(object sender, RoutedEventArgs e)
         {
             var RealTimeActionsWindow = new RealTimeActions(this, sender as Tile, 0xD2);
 
             RealTimeActionsWindow.Show();
         }
-
         private void StatusOutputs_Click(object sender, RoutedEventArgs e)
         {
             var RealTimeActionsWindow = new RealTimeActions(this, sender as Tile, 0xD3);
@@ -13443,56 +13459,83 @@ namespace ProdigyConfigToolWPF
 
         private void SettingsTile_Click(object sender, RoutedEventArgs e)
         {
-            var preferences_window = new Settings(AppLocale, this, AppDbFile, default_restore_is_set);
+            var preferences_window = new Settings(AppLocale, this, AppDbFile, default_restore_is_set, AppRole);
             preferences_window.Show();
         }
 
         #region Only Active Filter
-        private DataTable OnlyActiveClick(DataTable dt, DataGrid dg)
-        {
-            dg.ItemsSource = new DataView(dt);
-            dt.AcceptChanges();
 
-            return dt;
+        private void OnlyActiveClick(bool active, DataGrid dg, DataTable dt, Tile tile, string columnActiveName)
+        {
+            if (active)
+            {
+                dg.ItemsSource = new DataView(dt);
+                DebugTable(dt);
+
+                tile.Background = Brushes.WhiteSmoke;
+                active = false;
+            }
+            else
+            {
+                dg.ItemsSource = new DataView(dt.AsEnumerable().Where(row => row.Field<bool>(columnActiveName) == true).CopyToDataTable());
+                DebugTable(dt.AsEnumerable().Where(row => row.Field<bool>(columnActiveName) == true).CopyToDataTable());
+                
+                tile.Background = Brushes.DarkSeaGreen;
+                active = true;
+            }
         }
-        
+
         private void ZoneOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dtfiltered = databaseDataSet.Zone.AsEnumerable().Where(row => row.Field<bool>("Zone active") == true).CopyToDataTable();
+            foreach (DataRow row in databaseDataSet.Zone.Rows)
+            {
+                zone_activeCheckBox.IsChecked = (bool)row["Zone active"];
+            }
+
+            DataTable dt = databaseDataSet.Zone.Select("'Zone active' = true").CopyToDataTable();
+
+            databaseDataSetZoneTableAdapter.ClearBeforeFill = true;
 
             if (zone_onlyActive)
             {
-                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-                //dt = OnlyActiveClick(databaseDataSet.Zone, zoneDataGrid) as defaultDataSet.ZoneDataTable;
                 zoneDataGrid.ItemsSource = new DataView(databaseDataSet.Zone);
-                databaseDataSet.Zone.AcceptChanges();
-                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
-                ZoneOnlyActive.Background = Brushes.GreenYellow;
+
+                DebugTable(databaseDataSet.Zone);
+
+                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
+                
+                ZoneOnlyActive.Background = Brushes.WhiteSmoke;
                 zone_onlyActive = false;
             }
             else
             {
+                zoneDataGrid.ItemsSource = new DataView(dt);
+
+                DebugTable(databaseDataSet.Zone.AsEnumerable().Where(row => row.Field<bool>("Zone active") == true).CopyToDataTable());
+
                 databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-                zoneDataGrid.ItemsSource = new DataView(dtfiltered);
-                dtfiltered.AcceptChanges();
-                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
-                ZoneOnlyActive.Background = Brushes.OrangeRed;
+
+                ZoneOnlyActive.Background = Brushes.DarkSeaGreen;
                 zone_onlyActive = true;
             }
+
+            //OnlyActiveClick(zone_onlyActive, zoneDataGrid, databaseDataSet.Zone, ZoneOnlyActive, "Zone active", ZoneTableAdapter);
+            //databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
+
         }
 
         private void UserOnlyActive_Click(object sender, RoutedEventArgs e)
         {
-            //    if (user_onlyActive == 0)
-            //    {
-            //        OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-            //        user_onlyActive = 1;
-            //    }
-            //    else if (user_onlyActive == 1)
-            //    {
-            //        OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-            //        user_onlyActive = 0;
-            //    }
+            //if (user_onlyActive == 0)
+            //{
+            //    OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+            //    user_onlyActive = 1;
+            //}
+            //else if (user_onlyActive == 1)
+            //{
+            //    OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
+            //    user_onlyActive = 0;
+            //}
         }
 
         private void KeypadOnlyActive_Click(object sender, RoutedEventArgs e)
