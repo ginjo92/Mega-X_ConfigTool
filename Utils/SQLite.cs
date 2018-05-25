@@ -250,7 +250,6 @@ namespace SQLite
 		/// </summary>
 		static bool _preserveDuringLinkMagic;
 
-		/// <summary>
 		/// Sets a busy handler to sleep the specified amount of time when a table is locked.
 		/// The handler will sleep multiple times until a total time of <see cref="BusyTimeout"/> has accumulated.
 		/// </summary>

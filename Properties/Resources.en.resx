@@ -2218,7 +2218,7 @@
     <value>Restore default configuration?</value>
   </data>
   <data name="MegaX_Version" xml:space="preserve">
-    <value>Mega-X Configurator version: </value>
+    <value>Mega-X Config Tool version: </value>
   </data>
   <data name="Ring_counter" xml:space="preserve">
     <value>Number of rings</value>
@@ -2611,7 +2611,7 @@
     <value>Read System Settings</value>
   </data>
   <data name="ProdigyConfigurator" xml:space="preserve">
-    <value>Mega-X Configurator</value>
+    <value>Mega-X Config Tool</value>
   </data>
   <data name="AudioSystemConfigurationSpace" xml:space="preserve">
     <value>Audio file space has reached the limit</value>

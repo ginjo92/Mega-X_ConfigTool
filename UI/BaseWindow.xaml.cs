@@ -39,7 +39,7 @@ namespace ProdigyConfigToolWPF
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
-        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\";
+        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\";
         
         private string AppLocale;
         public int AppRole;
@@ -106,7 +106,7 @@ namespace ProdigyConfigToolWPF
 
         //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
 
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
@@ -8203,7 +8203,7 @@ namespace ProdigyConfigToolWPF
         {
             SaveFileDialog dlg = new SaveFileDialog();
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             string filename = "MegaXConfig";
             dlg.FileName = filename; // Default file name
             dlg.DefaultExt = ".prgy"; // Default file extension
@@ -8211,7 +8211,7 @@ namespace ProdigyConfigToolWPF
             dlg.InitialDirectory = configurations_folder;
 
             //QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
-            dlg.Filter = "Mega-X Configurator files (.prgy)|*.prgy"; // Filter files by extension
+            dlg.Filter = "Mega-X Config Tool files (.prgy)|*.prgy"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();
@@ -8270,7 +8270,7 @@ namespace ProdigyConfigToolWPF
             dlg.FileName = "ProdigyConfig"; // Default file name
             dlg.DefaultExt = ".prgy"; // Default file extension
             dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
-            dlg.Filter = "Mega-X Configurator files (.prgy)|*.prgy"; // Filter files by extension
+            dlg.Filter = "Mega-X Config Tool files (.prgy)|*.prgy"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();

@@ -56,7 +56,7 @@ namespace ProdigyConfigToolWPF
             //string folder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
             string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             
             string filter = "*.prgy";
             string[] files = Directory.GetFiles(configurations_folder, filter);

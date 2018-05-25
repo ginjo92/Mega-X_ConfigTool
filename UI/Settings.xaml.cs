@@ -61,7 +61,7 @@ namespace ProdigyConfigToolWPF
             XmlLanguage c2 = (XmlLanguage)c.ConvertFrom(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString());
             this.Resources.Add("GetSystemCulture", c2);
 
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version + "\\"; //My documents folder
             mainWindow.QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
             
             this.Language = XmlLanguage.GetLanguage(

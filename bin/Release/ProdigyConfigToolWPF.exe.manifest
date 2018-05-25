@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ProdigyConfigToolWPF.exe" version="0.9.1.9" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ProdigyConfigToolWPF.exe" version="0.9.1.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="x86" />
     <commandLine file="ProdigyConfigToolWPF.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -56,6 +56,42 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>Vcrgr4UXrC14eyEKxvecmqx/WANbafqvYgqQ8z4mdvw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Devart.Data.dll" size="287912">
+      <assemblyIdentity name="Devart.Data" version="5.0.1878.0" publicKeyToken="09AF7300EEC23701" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1mm00POZkS6r/J3MlThIVZBesB3WNiZNc+S7c5bWy3Y=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Devart.Data.SQLite.dll" size="500904">
+      <assemblyIdentity name="Devart.Data.SQLite" version="5.10.1086.0" publicKeyToken="09AF7300EEC23701" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>7jYYjfKJfHeVy6sTep8thC+GTWUm85TCXgNXSBS/8+M=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Devart.Data.SQLite.Entity.EF6.dll" size="519848">
+      <assemblyIdentity name="Devart.Data.SQLite.Entity.EF6" version="5.10.1086.0" publicKeyToken="09AF7300EEC23701" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tcygw2RNni2C/cclop+cX4zwVubhStni7sHXPZafbUA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -168,50 +204,50 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="10676224">
-      <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="10675712">
+      <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>F/onry0lHnwHAQZuo7BWV/ndFn54CdAwY7o4vn5iMvo=</dsig:DigestValue>
+        <dsig:DigestValue>rwJhLsuW9l6i8hyOK5W14g3acjH49fJ+F6JbX7GsSzI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\ProdigyConfigToolWPF.resources.dll" size="66048">
-      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="en" processorArchitecture="msil" />
+      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="en" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>y908jwv6kcPb+n3XX9MN2H/7XovlMJSqTyRhMhxMWFU=</dsig:DigestValue>
+        <dsig:DigestValue>1yUUefx6tJmwru/0JYWzbKBjVfQQG1fr8yOPbuKnmp4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\ProdigyConfigToolWPF.resources.dll" size="69632">
-      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="pt" processorArchitecture="msil" />
+      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="pt" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bH/yR8NwQ3yLJFbyaclIFp6yP25fx2Ex8jW/eRqFSJg=</dsig:DigestValue>
+        <dsig:DigestValue>/GE0HgIxR+ejo3I0LHHlTdakqoG3gfpe8qYKJfjqZ2I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="1666560">
-      <assemblyIdentity name="System.Data.SQLite" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Data.SQLite.dll" size="1229312">
+      <assemblyIdentity name="System.Data.SQLite" version="1.0.108.0" publicKeyToken="DB937BC2D44FF139" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QFaMFjazJ4qgGoe0zirXSAoT8YdCH5d1y7WHHBw3lsY=</dsig:DigestValue>
+        <dsig:DigestValue>y8pRKzih3MeN40f68Jh+oV5juGZeqi8n/xyOe+UGbCM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -461,13 +497,13 @@
       <dsig:DigestValue>Iiggy2P8Vl/0VtkEsX5fWHkGHrEdmU1rQFjQvj+mVa8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ProdigyConfigToolWPF.exe.config" size="3265">
+  <file name="ProdigyConfigToolWPF.exe.config" size="3344">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>PZ8fN3GdVB/4vawxD0V4VTbdcuiNh55MUe4XEzakq1k=</dsig:DigestValue>
+      <dsig:DigestValue>ofDmKOLpOHaVOqEI4E1FIN18P/+bszCCjHxH7+l4i0k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-ia64.exe" size="25824792">
@@ -504,24 +540,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>rNWJtX7RBLXgSnzijcFmZUwJBgycMa6OLJMB+gmLv6U=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="x64\SQLite.Interop.dll" size="1543168">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OYCa01jzIRjl7gwG2xl4xMK9Hz+/hM2Wmh+bvMbODIM=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="x86\SQLite.Interop.dll" size="1209856">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L2Keocl5DKH/3PeQqEWtWgvEe2a09dPOCfvibOsZ4+I=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

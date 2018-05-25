@@ -3697,7 +3697,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mega-X Configurator version: .
+        ///   Looks up a localized string similar to Mega-X Config Tool version: .
         /// </summary>
         public static string MegaX_Version {
             get {
@@ -4885,7 +4885,7 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mega-X Configurator.
+        ///   Looks up a localized string similar to Mega-X Config Tool.
         /// </summary>
         public static string ProdigyConfigurator {
             get {

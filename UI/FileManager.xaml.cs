@@ -33,8 +33,8 @@ namespace ProdigyConfigToolWPF
 
             string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
-            string old_configs_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\old\\";
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
+            string old_configs_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\old\\";
 
             Console.WriteLine("File Manager: " + role);
 
@@ -135,7 +135,7 @@ namespace ProdigyConfigToolWPF
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
 
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + DbFile.Name + "; data source = " + configurations_folder + DbFile.Name);
 
             
@@ -231,7 +231,7 @@ namespace ProdigyConfigToolWPF
             DBListBox.SelectedItem = DBListBox.Items[0];
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
-            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + version_part + "\\"; //My documents folder
+            string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
 
             string sourcePath = configurations_folder + DbFile.Name;
             

@@ -7,7 +7,7 @@
         xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
         xmlns:local="clr-namespace:ProdigyConfigToolWPF"
         mc:Ignorable="d"
-        Title="Mega-X Configurator" Height="300" Width="300"
+        Title="Mega-X Config Tool" Height="300" Width="300"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
                       ScrollViewer.HorizontalScrollBarVisibility="Visible" ResizeMode="NoResize" ShowTitleBar="False" IsWindowDraggable="True" 
                       ShowMaxRestoreButton="False"  Loaded="MetroWindow_Loaded" 

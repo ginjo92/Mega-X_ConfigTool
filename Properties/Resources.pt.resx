@@ -1141,7 +1141,7 @@
     <value>Segunda</value>
   </data>
   <data name="MegaX_Version" xml:space="preserve">
-    <value>Versão do Mega-X Configurator: </value>
+    <value>Versão do Mega-X Config Tool: </value>
   </data>
   <data name="Output_beeps_configuration_minus" xml:space="preserve">
     <value>Número de beeps (-)</value>
@@ -2641,7 +2641,7 @@
     <value>Ler Configurações de Sistema</value>
   </data>
   <data name="ProdigyConfigurator" xml:space="preserve">
-    <value>Mega-X Configurator</value>
+    <value>Mega-X Config Tool</value>
   </data>
   <data name="AudioSystemConfigurationSpace" xml:space="preserve">
     <value>O espaço para ficheiros audio atingiu o limite</value>

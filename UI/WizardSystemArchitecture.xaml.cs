@@ -26,7 +26,7 @@ namespace ProdigyConfigToolWPF
         private string config_file_name;
         private MainWindow mainWindow;
         
-        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Configurator\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\"; //My documents folder
+        string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\"; //My documents folder
 
         public WizardSystemArchitecture(string locale, int role, string config_file_name)
         {
