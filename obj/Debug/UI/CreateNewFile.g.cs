@@ -104,7 +104,7 @@ namespace ProdigyConfigToolWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProdigyConfigToolWPF;component/ui/createnewfile.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MegaXConfigTool;component/ui/createnewfile.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\CreateNewFile.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

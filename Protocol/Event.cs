@@ -296,8 +296,7 @@ namespace ProdigyConfigToolWPF.Protocol
             byte_array[i++] = (byte)((events_address >> 8) & 0xff);
             byte_array[i++] = (byte)((events_address) & 0xff);
             byte_array[i++] = size;
-
-
+            
             string StringByte = BitConverter.ToString(byte_array);
 
             General protocol = new General();

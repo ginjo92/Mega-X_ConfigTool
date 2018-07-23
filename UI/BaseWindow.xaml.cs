@@ -28,14 +28,18 @@ using ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters;
 using System.Data.SQLite;
 using System.Collections;
 using System.Windows.Markup;
+using System.Text.RegularExpressions;
 
 
 namespace ProdigyConfigToolWPF
 {
     public partial class MainWindow : MetroWindow
     {
+        
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
         private Help helpWindow;
+
+        public string user_code_password;
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
@@ -109,13 +113,14 @@ namespace ProdigyConfigToolWPF
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
 
+ 
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
 
 
             XmlLanguageConverter c = new XmlLanguageConverter();
             XmlLanguage c2 = (XmlLanguage)c.ConvertFrom(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString());
             this.Resources.Add("GetSystemCulture", c2);
-
+            
             try
             {
                 InitializeComponent();
@@ -155,45 +160,7 @@ namespace ProdigyConfigToolWPF
             //        break;
             //}
         }
-
-        //void IfFilePathIsNull()
-        //{
-        //    var row_list = GetDataGridRows(AudioCustomizedDataGrid);
-
-        //    Button loadwav_button_custom = new Button();
-        //    Button record_button_custom = new Button();
-        //    Button stoprecord_button_custom = new Button();
-        //    Button delete_button_custom = new Button();
-
-        //    Button play_button_custom = new Button();
-        //    Button play_pause_custom = new Button();
-        //    Button play_stop_custom = new Button();
-
-        //    foreach (DataGridRow single_row in row_list)
-        //    {
-
-        //        if (AudioCustomizedDataGrid.Columns[2] != null) //If FilePath is empty
-        //        {
-        //            loadwav_button_custom = single_row.FindChild<Button>("buttonLoadWav");
-        //            loadwav_button_custom.IsEnabled = false;
-        //            record_button_custom = single_row.FindChild<Button>("buttonRecordWav");
-        //            record_button_custom.IsEnabled = false;
-        //            stoprecord_button_custom = single_row.FindChild<Button>("buttonStopRecordWav");
-        //            stoprecord_button_custom.IsEnabled = false;
-        //            delete_button_custom = single_row.FindChild<Button>("buttonDeleteRecordWav");
-        //            delete_button_custom.IsEnabled = true;
-
-        //            play_button_custom = single_row.FindChild<Button>("ButtonPlayCustomized");
-        //            play_button_custom.IsEnabled = true;
-        //            play_pause_custom = single_row.FindChild<Button>("ButtonPauseCustomized");
-        //            play_pause_custom.IsEnabled = false;
-        //            play_stop_custom = single_row.FindChild<Button>("ButtonStopCustomized");
-        //            play_stop_custom.IsEnabled = false;
-        //        }
-        //        AudioCustomizedDataGrid.UpdateLayout();
-        //    }
-        //}
-
+        
         void OnTimedEvent(object source, EventArgs e)
         {
             long value = GetFolderSize();
@@ -338,8 +305,8 @@ namespace ProdigyConfigToolWPF
                 ReadFWUpdateData.Visibility = Visibility.Collapsed;
                 UpdateDateHour.Visibility = Visibility.Collapsed;
 
-                User_Code_Column.Visibility = Visibility.Collapsed;
-                User_UserCode_Button.Visibility = Visibility.Collapsed;
+               // User_Code_Column.Visibility = Visibility.Collapsed;
+               // User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
             //MANUFACTURER
             else if (AppRole == 1)
@@ -4123,34 +4090,40 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.User.Rows[user_to_read]["Output13Permissions"] = (outputs_permissions[1] & 0x10) > 0;
 
                     #region User Code
+                    
+                    //databaseDataSet.User.Rows[user_to_read]["Code 1"] = user_code[0];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 2"] = user_code[1];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 3"] = user_code[2];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 4"] = user_code[3];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 5"] = user_code[4];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 6"] = user_code[5];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 7"] = user_code[6];
+                    //databaseDataSet.User.Rows[user_to_read]["Code 8"] = user_code[7];
 
-                    databaseDataSet.User.Rows[user_to_read]["Code 1"] = user_code[0];
-                    databaseDataSet.User.Rows[user_to_read]["Code 2"] = user_code[1];
-                    databaseDataSet.User.Rows[user_to_read]["Code 3"] = user_code[2];
-                    databaseDataSet.User.Rows[user_to_read]["Code 4"] = user_code[3];
-                    databaseDataSet.User.Rows[user_to_read]["Code 5"] = user_code[4];
-                    databaseDataSet.User.Rows[user_to_read]["Code 6"] = user_code[5];
-                    databaseDataSet.User.Rows[user_to_read]["Code 7"] = user_code[6];
-                    databaseDataSet.User.Rows[user_to_read]["Code 8"] = user_code[7];
+                    //int codecounter = 0;
+                    //ulong user_code_tmp = 0;
 
-                    int codecounter = 0;
-                    ulong user_code_tmp = 0;
+                    //String usercode_full = new String(' ',8);
 
-                    for (int i = 0; i < user_code.Length; i++)
-                    {
-                        if (user_code[i] != 0xFF)
-                            codecounter++;
-                    }
+                    //for (int i = 0; i < 8; i++)
+                    //{
+                    //    if (user_code[i] != 0xFF)
+                    //        user_code_password += user_code[i].ToString();
+                    //}
 
-                    if (codecounter >= 4 && codecounter <= 8)
-                    {
-                        for (int i = 0; i < codecounter; i++)
-                            user_code_tmp += (ulong)(user_code[i] * Math.Pow(10, codecounter - 1 - i));
-                    }
-                    else user_code_tmp += 0;
+                    //Debug.Write(user_code_password);
+                    //for (int i = 0; i < user_code.Length; i++)
+                    //{
+                    //    if (user_code[i] != 0xFF)
+                    //        codecounter++;
+                    //}
 
-
-                    databaseDataSet.User.Rows[user_to_read]["UserCode"] = user_code_tmp;
+                    //if (codecounter >= 4 && codecounter <= 8)
+                    //{
+                    //    for (int i = 0; i < codecounter; i++)
+                    //        user_code_tmp += (ulong)(user_code[i] * Math.Pow(10, codecounter - 1 - i));
+                    //}
+                    //else user_code_tmp += 0;
 
 
                     #endregion
@@ -6155,10 +6128,21 @@ namespace ProdigyConfigToolWPF
                 }
 
                 int event_cra_account_number = (cra_account_number[1] << 8) + cra_account_number[0];
+
                 int type = (event_type[1] << 8) + event_type[0];
-                int area = (event_area[1] << 8) + event_area[0];
+
+                int? area = 0;
+                if (event_area[1] < 8)
+                    area = (event_area[1] << 8) + event_area[0];
+                else area = null;
+
                 int user = (event_user[1] << 8) + event_user[0];
-                int zone = (event_zone[1] << 8) + event_zone[0];
+
+                int? zone;
+                if (event_zone[1] < 128)
+                    zone = (event_zone[1] << 8) + event_zone[0];
+                else zone = null;
+                
 
                 int start_or_end = event_start_or_end[0];
 
@@ -6169,9 +6153,7 @@ namespace ProdigyConfigToolWPF
                 int month = event_month[0];
                 int day = event_day[0];
                 int year = event_year[0] + 1792;
-
-
-
+                
                 try
                 {
                     DataRow new_event = databaseDataSet.Event.NewRow();
@@ -6214,9 +6196,7 @@ namespace ProdigyConfigToolWPF
                     new_event["DateTime"] = event_date_time.ToString();
 
                     databaseDataSet.Event.Rows.Add(new_event);
-
-
-
+                    
                     if (addr == (Constants.KP_EVENTS_FINAL_ADDR - Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH))
                         AddEventItemToDatagrid();
 
@@ -8767,31 +8747,36 @@ namespace ProdigyConfigToolWPF
                 EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
                 databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
 
+                int last_event_number = 0;
+                int i = 0;
+
                 Event events = new Event();
 
-                var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
-                controller.Maximum = 100.0;
-                controller.Minimum = 0.0;
+                //var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
+                //controller.Maximum = 100.0;
+                //controller.Minimum = 0.0;
 
-                await Task.Run(() =>
-                {
-                    controller.SetMessage(Properties.Resources.ReadingEvents);
-
-                    for (uint i = 0; i < 500; i++) //(Constants.KP_MAX_EVENTS) -> Number of events to read
+                    await Task.Run(() =>
                     {
-                        this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)i)));
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(500.0 + 1.0)))));
-                        System.Threading.Thread.Sleep(20);
-                    }
+                        while (last_event_number <= Constants.KP_MAX_EVENTS)
+                        { 
+                            //controller.SetMessage(Properties.Resources.ReadingEvents);
+                            for (i = last_event_number; i < (last_event_number + 200); i++)
+                            {
+                                this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)i)));
+                                //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(5000.0 + 1.0)))));
+                                //System.Threading.Thread.Sleep(50);
+                            }
+                            this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
+                            this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                            
+                            last_event_number = i + 1;
+                        // controller.CloseAsync();
+                        }
 
-                    controller.CloseAsync();
-
-                });
-                await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
-                eventDataGrid.Items.Refresh();
-                eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending));
-                eventDataGrid.Visibility = Visibility.Visible;
-
+                    });
+                    // await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
+               
             }
             else
             {
@@ -11272,7 +11257,7 @@ namespace ProdigyConfigToolWPF
 
             int column = dg.CurrentColumn.DisplayIndex;
 
-            if (column.Equals(0))
+            if (column == 0 && row != -1)
             {
                 MainTabControl.SelectedItem = ti;
                 vs.View.MoveCurrentToPosition(dg.SelectedIndex);
@@ -11293,12 +11278,12 @@ namespace ProdigyConfigToolWPF
 
         private void zoneDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            if(zoneDataGrid.SelectedIndex!=-1)
+            if (zoneDataGrid.SelectedIndex != -1)
                 SelectPVT_onMouseDoubleClick(zoneDataGrid, MainZonePVTTab, MainZonesTab, "zoneViewSource", TreeviewZones);
         }
 
         private void areaDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
+        {                        
             if (areaDataGrid.SelectedIndex != -1)
                 SelectPVT_onMouseDoubleClick(areaDataGrid, MainAreaPVTTab, MainAreasTab, "areaViewSource", TreeviewAreas);
         }
@@ -13565,7 +13550,143 @@ namespace ProdigyConfigToolWPF
             //    phone_onlyActive = 0;
             //}
         }
+
+
+
+
         #endregion
+
+        public void ValidatePassword(string password)
+        {
+            string patternPassword = @"^(?=.*\d).{4,8}$";
+            if (!string.IsNullOrEmpty(password))
+            {
+                if (!Regex.IsMatch(password, patternPassword))
+                {
+                    MessageBox.Show(" Password must be at least 4 characters and no more than 8 characters");
+                }
+            }
+        }
+
+        private void UserCodePasswordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            PasswordBox pw = (PasswordBox)sender;
+            //@"\d{4}$"
+            Regex regex = new Regex(@"^([0-9]){4,8}$");
+            //Regex regex = new Regex(@"^(?=.*[0-9]).{4,8}$");
+            if (regex.IsMatch(pw.Password))
+                e.Handled = true;
+            else
+            {
+                e.Handled = false;
+                MessageBox.Show("Password must be at least 4 characters and no more than 8 characters");
+                pw.Password = "\0";
+            }
+        }
+        
+    }
+
+    public static class PasswordBoxAssistant
+    {
+        public static readonly DependencyProperty BoundPassword =
+            DependencyProperty.RegisterAttached("BoundPassword", typeof(string), typeof(PasswordBoxAssistant), new PropertyMetadata(string.Empty, OnBoundPasswordChanged));
+
+        public static readonly DependencyProperty BindPassword = DependencyProperty.RegisterAttached(
+            "BindPassword", typeof(bool), typeof(PasswordBoxAssistant), new PropertyMetadata(false, OnBindPasswordChanged));
+
+        private static readonly DependencyProperty UpdatingPassword =
+            DependencyProperty.RegisterAttached("UpdatingPassword", typeof(bool), typeof(PasswordBoxAssistant), new PropertyMetadata(false));
+
+        private static void OnBoundPasswordChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            PasswordBox box = d as PasswordBox;
+
+            // only handle this event when the property is attached to a PasswordBox
+            // and when the BindPassword attached property has been set to true
+            if (d == null || !GetBindPassword(d))
+            {
+                return;
+            }
+
+            // avoid recursive updating by ignoring the box's changed event
+            box.PasswordChanged -= HandlePasswordChanged;
+
+            string newPassword = (string)e.NewValue;
+
+            if (!GetUpdatingPassword(box))
+            {
+                box.Password = newPassword;
+            }
+
+            box.PasswordChanged += HandlePasswordChanged;
+        }
+
+        private static void OnBindPasswordChanged(DependencyObject dp, DependencyPropertyChangedEventArgs e)
+        {
+            // when the BindPassword attached property is set on a PasswordBox,
+            // start listening to its PasswordChanged event
+
+            PasswordBox box = dp as PasswordBox;
+
+            if (box == null)
+            {
+                return;
+            }
+
+            bool wasBound = (bool)(e.OldValue);
+            bool needToBind = (bool)(e.NewValue);
+
+            if (wasBound)
+            {
+                box.PasswordChanged -= HandlePasswordChanged;
+            }
+
+            if (needToBind)
+            {
+                box.PasswordChanged += HandlePasswordChanged;
+            }
+        }
+
+        private static void HandlePasswordChanged(object sender, RoutedEventArgs e)
+        {
+            PasswordBox box = sender as PasswordBox;
+
+            // set a flag to indicate that we're updating the password
+            SetUpdatingPassword(box, true);
+            // push the new password into the BoundPassword property
+            SetBoundPassword(box, box.Password);
+            SetUpdatingPassword(box, false);
+        }
+
+        public static void SetBindPassword(DependencyObject dp, bool value)
+        {
+            dp.SetValue(BindPassword, value);
+        }
+
+        public static bool GetBindPassword(DependencyObject dp)
+        {
+            return (bool)dp.GetValue(BindPassword);
+        }
+
+        public static string GetBoundPassword(DependencyObject dp)
+        {
+            return (string)dp.GetValue(BoundPassword);
+        }
+
+        public static void SetBoundPassword(DependencyObject dp, string value)
+        {
+            dp.SetValue(BoundPassword, value);
+        }
+
+        private static bool GetUpdatingPassword(DependencyObject dp)
+        {
+            return (bool)dp.GetValue(UpdatingPassword);
+        }
+
+        private static void SetUpdatingPassword(DependencyObject dp, bool value)
+        {
+            dp.SetValue(UpdatingPassword, value);
+        }
     }
 }
 

@@ -9,6 +9,7 @@
                       xmlns:Behaviors="clr-namespace:ProdigyConfigToolWPF.Controls"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                      xmlns:ff="clr-namespace:ProdigyConfigToolWPF"
                       mc:Ignorable="d"
                       xmlns:controls="clr-namespace:ProdigyConfigToolWPF.Controls"
                       xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
@@ -620,7 +621,7 @@
                         <DataGrid x:Name="zoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="3"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="zoneDataGrid_MouseDoubleClick" DataContext="{StaticResource zoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserReorderColumns="False" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" DataContext="{StaticResource zoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" CanUserResize="False" IsReadOnly="True" Width="30">
                                     <DataGridTextColumn.HeaderStyle>
@@ -635,6 +636,11 @@
                                             <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="35" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="zoneDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
                                 <DataGridTemplateColumn Header="{x:Static p:Resources.Location}" x:Name="ImageHardwarePositionColumn" CanUserResize="False" MinWidth="70" MaxWidth="70">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -2780,17 +2786,17 @@
 
                                                 <ComboBox Grid.Column="0" x:Name="r3_ValueColumn" ItemsSource="{Binding Source={StaticResource ResistorValues_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                                                       DisplayMemberPath="Value" 
-                                                      SelectedValuePath ="{Binding R2 Value, Source={StaticResource zoneViewSource}}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto" SelectedIndex="{Binding R2 Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                      SelectedValuePath ="{Binding R3 Value, Source={StaticResource zoneViewSource}}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto" SelectedIndex="{Binding R3 Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                                                 <ComboBox Grid.Column="1" x:Name="r3_FunctionColumn" ItemsSource="{Binding Source={StaticResource CircuitFunctionWOZone_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding R2 Function, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto" />
+                                                      SelectedValue ="{Binding R3 Function, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto" />
 
                                                 <ComboBox Grid.Column="2" x:Name="r3_Contact_typeColumn" ItemsSource="{Binding Source={StaticResource ResistorContactType_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding R2 Contact type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto"/>
+                                                      SelectedValue ="{Binding R3 Contact type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="Auto" Height="Auto"/>
 
                                             </Grid>
                                         </DataTemplate>
@@ -4242,7 +4248,7 @@
                         <!--DATAGRID-->
                         <DataGrid x:Name="areaDataGrid" Grid.Column="0" Grid.Row="2" ColumnHeaderHeight="75" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False"  
                                   EnableRowVirtualization="True" CanUserReorderColumns="False" ItemsSource="{Binding Source={StaticResource areaViewSource}}" Margin="0" Height="Auto" Background="WhiteSmoke" CanUserDeleteRows="False"
-                                  MouseDoubleClick="areaDataGrid_MouseDoubleClick" CanUserSortColumns="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
+                                  CanUserSortColumns="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" >
                                 <DataGrid.Columns>
                                 <!--GENERAL SETTINGS-->
                                 <DataGridTemplateColumn x:Name="idColumn1" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="30" CanUserResize="False">
@@ -4260,6 +4266,11 @@
                                             <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="35" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="areaDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTemplateColumn.CellStyle>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
                                             <Label Content="{Binding Id}"/>
@@ -7069,7 +7080,7 @@
                         <DataGrid x:Name="userDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserSortColumns="False" CanUserReorderColumns="False" ColumnHeaderHeight="75"  Height="Auto" MouseDoubleClick="userDataGrid_MouseDoubleClick" DataContext="{StaticResource userViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" CanUserReorderColumns="False" ColumnHeaderHeight="75"  Height="Auto" DataContext="{StaticResource userViewSource}">
                             <DataGrid.Columns>
                                 <!--ID-->
                                 <DataGridTextColumn x:Name="User_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -7087,6 +7098,11 @@
                                             <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="userDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
                                 <!--Name-->
                                 <DataGridTextColumn x:Name="User_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="140" CanUserResize="False">
@@ -7160,7 +7176,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <!--User Code-->
-                                <DataGridTemplateColumn x:Name="User_Code_Column" IsReadOnly="False" Header="{x:Static p:Resources.User_user_code}" Width="110" CanUserResize="False">
+                                <DataGridTemplateColumn x:Name="User_Code_Column" IsReadOnly="False" Header="{x:Static p:Resources.User_user_code}" Width="70" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -7172,22 +7188,19 @@
                                     </DataGridTemplateColumn.HeaderStyle>
                                     <DataGridTemplateColumn.HeaderTemplate>
                                         <DataTemplate>
-                                            <StackPanel>
-                                            <TextBlock Text="{x:Static p:Resources.User_user_code}" Width="110" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                                            <Image Source="/images/lock_admin.png" Width="10" Opacity="0.2"/>
-                                            </StackPanel>
+                                            <TextBlock Text="{x:Static p:Resources.User_user_code}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.HeaderTemplate>
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate x:Name="UserCodeTemplate">
-                                            <StackPanel x:Name ="UserCodeStack" Orientation="Horizontal" HorizontalAlignment="Left">
+                                            <StackPanel x:Name ="UserCodeStack" Orientation="Horizontal" HorizontalAlignment="Center">
 
-                                                <ToggleButton x:Name="UserCodeButton" Content="{x:Static p:Resources.ChangeUserCode}" FontWeight="Bold" FontSize="9" >
+                                                <!--<ToggleButton x:Name="UserCodeButton" Content="{x:Static p:Resources.ChangeUserCode}" FontWeight="Bold" FontSize="9" >
                                                     <ToggleButton.Triggers>
                                                         <EventTrigger RoutedEvent="ToggleButton.Checked">
                                                             <BeginStoryboard Name="MakeItVisible">
                                                                 <Storyboard>
-                                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference UserCodeTextBox}" 
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference UserCodePasswordBox}" 
                                                                                                    Storyboard.TargetProperty="Visibility">
                                                                         <DiscreteObjectKeyFrame KeyTime="0:0:0" 
                                                                                                 Value="{x:Static Visibility.Visible}"/>
@@ -7198,7 +7211,7 @@
                                                         <EventTrigger RoutedEvent="ToggleButton.Unchecked">
                                                             <BeginStoryboard Name="MakeItInvisible">
                                                                 <Storyboard>
-                                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference UserCodeTextBox}" 
+                                                                    <ObjectAnimationUsingKeyFrames Storyboard.Target="{x:Reference UserCodePasswordBox}" 
                                                                                                    Storyboard.TargetProperty="Visibility">
                                                                         <DiscreteObjectKeyFrame KeyTime="0:0:0" 
                                                                                                 Value="{x:Static Visibility.Hidden}"/>
@@ -7207,11 +7220,19 @@
                                                             </BeginStoryboard>
                                                         </EventTrigger>
                                                     </ToggleButton.Triggers>
-                                                </ToggleButton>
+                                                </ToggleButton>-->
+                                                <!--<xctk:MaskedTextBox 
+                                                    x:Name="UserCodeTextBox" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                    Mask="****" FontWeight="Bold" FontSize="10" Visibility="Hidden" ValueDataType="{x:Type xctk:MaskedTextBox}" >
+                                                </xctk:MaskedTextBox>-->
+
+                                                <PasswordBox x:Name="UserCodePasswordBox" MaxLength="8" Width="68" FontSize="8" HorizontalAlignment="Center" 
+                                                             ff:PasswordBoxAssistant.BoundPassword="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                             ff:PasswordBoxAssistant.BindPassword="true" LostFocus="UserCodePasswordBox_LostFocus"/>
                                                 
-                                                <TextBox x:Name="UserCodeTextBox" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
-                                                         FontWeight="Bold" FontSize="10"
-                                                         Visibility="Hidden" />
+                                                <!--<TextBox x:Name="UserCodeTextBo2x" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                         FontWeight="Bold" FontSize="10" >
+                                                </TextBox>-->
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
@@ -10420,7 +10441,7 @@
                         <DataGrid x:Name="keypadDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" MouseDoubleClick="keypadDataGrid_MouseDoubleClick" DataContext="{StaticResource keypadViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" DataContext="{StaticResource keypadViewSource}">
                             <DataGrid.Columns>
                                 <!--ID/NAME-->
                                 <DataGridTextColumn x:Name="Keypad_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
@@ -10459,6 +10480,11 @@
                                             <TextBlock Text="{x:Static p:Resources.Description}" Width="140" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="keypadDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
 
                                 <!--GENERAL SETTINGS-->
@@ -11805,7 +11831,7 @@
                         <DataGrid x:Name="outputDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2" CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="outputDataGrid_MouseDoubleClick" DataContext="{StaticResource outputViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" DataContext="{StaticResource outputViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="idColumn3" Header="{x:Static p:Resources.Zone_Id}" IsReadOnly="True" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -11848,6 +11874,11 @@
                                             <Setter Property="MaxLength" Value="20"/>
                                         </Style>
                                     </DataGridTextColumn.EditingElementStyle>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="outputDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
                     
                                 <!--GENERAL SETTINGS-->
@@ -12703,7 +12734,7 @@
                         <DataGrid x:Name="timezoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="timezoneDataGrid_MouseDoubleClick" DataContext="{StaticResource timezoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" DataContext="{StaticResource timezoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="TimezoneID_Column" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -12746,6 +12777,11 @@
                                             <Setter Property="MaxLength" Value="20"/>
                                         </Style>
                                     </DataGridTextColumn.EditingElementStyle>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="timezoneDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
 
                                 <!--GENERAL SETTINGS-->
@@ -13626,7 +13662,7 @@
                         <DataGrid x:Name="phoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" CanUserReorderColumns="False" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
-                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" MouseDoubleClick="phoneDataGrid_MouseDoubleClick" DataContext="{StaticResource phoneViewSource}">
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" Height="Auto" DataContext="{StaticResource phoneViewSource}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn x:Name="Phones_ID" Header="{x:Static p:Resources.Zone_Id}" Width="30" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -13669,6 +13705,11 @@
                                             <Setter Property="MaxLength" Value="20"/>
                                         </Style>
                                     </DataGridTextColumn.EditingElementStyle>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="phoneDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
                                 <!--GENERAL SETTINGS-->
                                 <DataGridCheckBoxColumn x:Name="Phones_ActiveColumn" Binding="{Binding Report on}" Width="70" CanUserResize="False">

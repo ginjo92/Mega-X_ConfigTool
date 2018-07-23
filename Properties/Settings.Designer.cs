@@ -38,22 +38,22 @@ namespace ProdigyConfigToolWPF.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\configuration\\setup\\default\\default.prgy;data so" +
-            "urce=configuration\\setup\\default\\default.prgy")]
-        public string defaultConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Data" +
+            "base\\Login\\SqliteLogin.prgy")]
+        public string SqliteLoginConnectionString {
             get {
-                return ((string)(this["defaultConnectionString"]));
+                return ((string)(this["SqliteLoginConnectionString"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Data" +
-            "base\\Login\\SqliteLogin.prgy")]
-        public string SqliteLoginConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\configuration\\setup\\default\\default.prgy;data so" +
+            "urce=configuration\\setup\\default\\default.prgy")]
+        public string defaultConnectionString {
             get {
-                return ((string)(this["SqliteLoginConnectionString"]));
+                return ((string)(this["defaultConnectionString"]));
             }
         }
     }

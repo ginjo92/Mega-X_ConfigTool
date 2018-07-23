@@ -120,7 +120,7 @@ namespace ProdigyConfigToolWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProdigyConfigToolWPF;component/ui/realtimeactions.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MegaXConfigTool;component/ui/realtimeactions.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\RealTimeActions.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

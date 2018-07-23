@@ -66,8 +66,8 @@ namespace ProdigyConfigToolWPF
         public static Dictionary<int, string> GetCircuitFunctionWithoutZone()
         {
             Dictionary<int, string> CircuitFunctions = new Dictionary<int, string>();
-            CircuitFunctions.Add(16, Properties.Resources.Circuit_function_mask);
-            CircuitFunctions.Add(32, Properties.Resources.Circuit_function_tamper);
+            CircuitFunctions.Add(32, Properties.Resources.Circuit_function_mask);
+            CircuitFunctions.Add(48, Properties.Resources.Circuit_function_tamper);
             return CircuitFunctions;
         }
 

@@ -2059,6 +2059,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date restored.
+        /// </summary>
+        public static string EventMessage_KP_EVT_CODE_TIMEDATE_RESET {
+            get {
+                return ResourceManager.GetString("EventMessage_KP_EVT_CODE_TIMEDATE_RESET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 24h zone alarm.
         /// </summary>
         public static string EventMessage_Start_KP_EVT_CODE_24_HOUR_SAFE {

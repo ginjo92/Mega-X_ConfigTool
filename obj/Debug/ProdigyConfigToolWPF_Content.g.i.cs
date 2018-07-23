@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/click.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dotnetfx46/ndp46-kb3045557-x86-x64-allos-enu.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windowsinstaller4_5/windowsserver2003-kb942288-v4-ia64.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windowsinstaller4_5/windowsserver2003-kb942288-v4-x64.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windowsinstaller4_5/windowsserver2003-kb942288-v4-x86.exe")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windowsinstaller4_5/windowsxp-kb942288-v3-x86.exe")]
 
 

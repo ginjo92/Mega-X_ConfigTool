@@ -2865,4 +2865,7 @@
   <data name="OnAlarm" xml:space="preserve">
     <value>Em alarme</value>
   </data>
+  <data name="EventMessage_KP_EVT_CODE_TIMEDATE_RESET" xml:space="preserve">
+    <value>Data restaurada</value>
+  </data>
 </root>

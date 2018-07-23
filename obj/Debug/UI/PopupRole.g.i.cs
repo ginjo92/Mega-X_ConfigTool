@@ -81,7 +81,7 @@ namespace ProdigyConfigToolWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProdigyConfigToolWPF;component/ui/popuprole.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ProdigyConfigTool;component/ui/popuprole.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\PopupRole.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

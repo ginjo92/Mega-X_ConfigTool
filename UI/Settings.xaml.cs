@@ -514,38 +514,38 @@ namespace ProdigyConfigToolWPF
                 #endregion
 
                 #region AUDIO CUSTOMIZED
-                defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
-                con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
-                adapter = new SQLiteDataAdapter(cmd);
-                builder = new SQLiteCommandBuilder(adapter);
-                adapter.Fill(audio_customized_table);
-                con.Close();
-                mainWindow.databaseDataSet.Audio.Clear();
+                //defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
+                //con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
+                //con.Open();
+                //cmd = con.CreateCommand();
+                //cmd.CommandText = string.Format("SELECT * FROM Audio WHERE Type = 1");
+                //adapter = new SQLiteDataAdapter(cmd);
+                //builder = new SQLiteCommandBuilder(adapter);
+                //adapter.Fill(audio_customized_table);
+                //con.Close();
+                //mainWindow.databaseDataSet.Audio.Clear();
 
-                DataTable audio_full_table = new DataTable();
-                audio_full_table = audio_table.Copy();
-                audio_full_table.Merge(audio_customized_table);
+                //DataTable audio_full_table = new DataTable();
+                //audio_full_table = audio_table.Copy();
+                //audio_full_table.Merge(audio_customized_table);
 
 
 
-                AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
-                databaseDatasetTableAdapter.Fill(audio_table);
-                databaseDatasetTableAdapter.Update(mainWindow.databaseDataSet.Audio);
+                //AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
+                //databaseDatasetTableAdapter.Fill(audio_table);
+                //databaseDatasetTableAdapter.Update(mainWindow.databaseDataSet.Audio);
 
-                //delete table
-                foreach (defaultDataSet.AudioRow row in (mainWindow.databaseDataSet.Audio.Select("Id <> null")))
-                {
-                    row.Delete();
-                }
+                ////delete table
+                //foreach (defaultDataSet.AudioRow row in (mainWindow.databaseDataSet.Audio.Select("Id <> null")))
+                //{
+                //    row.Delete();
+                //}
 
-                foreach (defaultDataSet.AudioRow row in audio_customized_table)
-                {
-                    mainWindow.databaseDataSet.Audio.Rows.Add(row.ItemArray);
-                }
-                
+                //foreach (defaultDataSet.AudioRow row in audio_customized_table)
+                //{
+                //    mainWindow.databaseDataSet.Audio.Rows.Add(row.ItemArray);
+                //}
+
                 #endregion
 
                 #region AUDIO SYSTEM CONFIG

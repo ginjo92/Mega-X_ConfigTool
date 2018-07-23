@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Devart.Data.SQLite.Entity.EF6</name>
+    </assembly>
+    <members>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSchemaConfig.DeleteDatabaseBehaviour">
+            <summary>
+            Determines the behavior of the DeleteDatabase() function.
+            Default value is DeleteDatabaseBehaviour.ModelObjectsOnly.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderColumnConfig.StringColumnCollation">
+            <summary>
+            Default value is SQLiteCollation.Default.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderForeignKeyConfig.Enabled">
+            <summary>
+            When set to false, this property makes the provider turn off the generation of foreign keys.
+            This option affects the CreateDatabase() and Code-First Migrations behavior.
+            The default value is true.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderForeignKeyConfig.IndexCreation">
+            <summary>
+            When set to true, an index is created to the reference table columns.
+            This option affects the CreateDatabase() behavior.
+            The default value is true.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.DeleteDatabaseBehaviour">
+            <summary>
+            Determines the behavior of the DeleteDatabase() functionality.
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.DeleteDatabaseBehaviour.ModelObjectsOnly">
+            <summary>
+            Only the tables that model objects are mapped to are deleted.
+            This is the default value.
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.DeleteDatabaseBehaviour.AllSchemaObjects">
+            <summary>
+            All tables will be deleted from schemas or databases that model objects were mapped to.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig">
+            <summary>
+            Devart dotConnect for SQLite Entity Framework provider configuration.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.SqlFormatting">
+            <summary>
+            SQL formatting configuration.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.QueryOptions">
+            <summary>
+            Query behavior options.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.DmlOptions">
+            <summary>
+            DML options influence only the INSERT/UPDATE/DELETE commands and Stored Procedure calls.
+            SELECT commands are not affected by these options.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.DatabaseScript">
+            <summary>
+            Dynamic database generation/dropping configuration.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.Workarounds">
+            <summary>
+            Common workarounds.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderConfig.CodeFirstOptions">
+            <summary>
+            Code-First and Code-First Migrations options.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSqlFormattingConfig">
+            <summary>
+            SQL formatting configuration.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSqlFormattingConfig.ExtraSpaces">
+            <summary>
+            Determines whether to insert spaces between operators and operands and after commas.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSqlFormattingConfig.MultilineStatements">
+            <summary>
+            Determines whether to split statements to several lines.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSqlFormattingConfig.Indenting">
+            <summary>
+            Determines whether to indent keywords in multi-line queries.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderSqlFormattingConfig.ColumnListStacking">
+            <summary>
+            Disables inserting new lines in the SELECT list.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderQueryConfig">
+            <summary>
+            Query behaviour options.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderQueryConfig.NoEscapeLike">
+            <summary>
+            The possibility to turn off ESCAPE in LIKE expression.
+            The default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderQueryConfig.CaseInsensitiveLike">
+            <summary>
+            The possibility to turn on the case insensitive comparison mode, when using Linq to Entities extension methods .Contains(), .EndsWith(), .StartsWith().
+            The default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderQueryConfig.CaseInsensitiveComparison">
+            <summary>
+            The possibility to turn on the case insensitive comparison mode, when using LINQ to Entities comparison expression such as "a == b".
+            The default value is false.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.InsertNullBehaviour">
+            <summary>
+            Determines how the NULL values are inserted.
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.InsertNullBehaviour.InsertNull">
+            <summary>
+            In this case nulls are inserted explicitly 
+            (for each column that do not have a non-NULL value specified).
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.InsertNullBehaviour.InsertDefaultOrNull">
+            <summary>
+            In this case provider determines if there is a default value specified
+            in the SSDL part of the model, and if it is available,
+            this value is persisted to database.
+            If there is no default value specified,
+            the behaviour is identical to the InsertNull one.
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.InsertNullBehaviour.InsertDefaultOrOmit">
+            <summary>
+            In this case provider determines if there is a default value specified
+            in the SSDL part of the model as well.
+            However, if there is no default value specified
+            for a column, it is omitted from the INSERT command completely.
+            </summary>
+        </member>
+        <member name="F:Devart.Data.SQLite.Entity.Configuration.InsertNullBehaviour.Omit">
+            <summary>
+            In this case provider simply omits all columns
+            that do not have non-NULL values.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderDmlConfig">
+            <summary>
+            DML options influence only the INSERT/UPDATE/DELETE commands and Stored Procedure calls.
+            SELECT commands are not affected by these options.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderDmlConfig.ParametersAsLiterals">
+            <summary>
+            Determines if parameter values are inserted into SQL statements
+            as literals instead of parameters.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderDmlConfig.InsertNullBehaviour">
+            <summary>
+            Determines how the NULL values are inserted.
+            Default value is InsertNullBehaviour.InsertNull.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderDmlConfig.ReuseParameters">
+            <summary>
+            Enables reusing existing parameters instead of creating a new ones.
+            Set this property to true only in case if a large number
+            of the same values is sent to the database.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderDmlConfig.BatchUpdates">
+            <summary>
+            Batch Updates functionality configuration.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderBatchUpdateConfig">
+            <summary>
+            Batch Updates functionality configuration.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderBatchUpdateConfig.Enabled">
+            <summary>
+            Enables or disables Batch Updates functionality.
+            If set to false, other BatchUpdates settings are ignored.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderBatchUpdateConfig.BatchSize">
+            <summary>
+            Specifies the maximal number of commands in a batch.
+            Default value is 30.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderBatchUpdateConfig.AsynchronousBatch">
+            <summary>
+            Specifies whether batches are executed asynchronously
+            (false by default), or new batch will be created and executed
+            only after the successful execution of the previous batch. 
+            Default value is false.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderWorkaroundConfig">
+            <summary>
+            Common workarounds.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderWorkaroundConfig.IgnoreSchemaName">
+            <summary>
+            When set to true, this property makes provider
+            to remove the schema (database) name from all commands and queries,
+            no matter whether Schema specified in the model or not.
+            Command will be using the schema from the connection.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderWorkaroundConfig.IgnoreDboSchemaName">
+            <summary>
+            When set to true, this property makes provider
+            to remove the "dbo" schema (database) name from all commands and queries.
+            Command will be using the schema from the connection.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderWorkaroundConfig.DisableQuoting">
+            <summary>
+            Disables quoting all identifiers in all queries and commands.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderWorkaroundConfig.UseInvariantProviderManifestToken">
+            <summary>
+            If set to true, the invariant string literal is always returned as the provider manifest token.
+            Default value is false.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderCodeFirstConfig">
+            <summary>
+            Code-First and Code-First Migrations options.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderCodeFirstConfig.RemoveSchemaFromDefaultConstraintName">
+            <summary>
+            When set to true, the schema (database) name prefix is removed from default constraint names (primary keys, foreign keys) generated by Code-First Migrations.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Configuration.SQLiteEntityProviderCodeFirstConfig.AddTableNameInDefaultIndexName">
+            <summary>
+            When set to true, the table name is added to default index name generated by Code-First Migrations (like 'IX_TableName_ColumnName').
+            When set to false, then default index names will be like 'IX_ColumnName'.
+            Default value is true.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.SQLiteTextFunctions">
+            <summary>
+            SQLite full-text search functions.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Migrations.SQLiteAddColumnConfiguration">
+            <summary>
+            AddColumn operation can be customized with the SQLiteAddColumnConfiguration class.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Migrations.SQLiteAddColumnConfiguration.Collation">
+            <summary>
+            The name of the standard column collation.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Migrations.SQLiteAddColumnConfiguration.CustomCollationName">
+            <summary>
+            The name of the custom user-defined column collation.
+            </summary>
+        </member>
+        <member name="T:Devart.Data.SQLite.Entity.Migrations.SQLiteCreateTableConfiguration">
+            <summary>
+            CreateTable operation can be customized with the CreateTableConfiguration class.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Migrations.SQLiteCreateTableConfiguration.TableType">
+            <summary>
+            Determines whether to use Fts3 or Fts4 table types.
+            </summary>
+        </member>
+        <member name="P:Devart.Data.SQLite.Entity.Migrations.SQLiteCreateTableConfiguration.FtsTokenizer">
+            <summary>
+            Specifies the FTS tokenizer.
+            </summary>
+        </member>
+        <member name="M:Devart.Data.SQLite.Entity.Migrations.SQLiteMigrationConverter.CombineAddForeignKeyAndCreateTableActions">
+            <summary>
+            Combine AddForeignKeyAction and CreateTableActions
+            (SQLite does not support adding a constraint).
+            </summary>
+        </member>
+        <member name="M:Devart.Data.SQLite.Entity.Migrations.SQLiteMigrationConverter.CombineAddForeignKeyAndAddColumnActions">
+            <summary>
+            Combine AddForeignKeyAction and AddColumnActions
+            (SQLite does not support adding a constraint).
+            </summary>
+        </member>
+        <member name="M:Devart.Data.SQLite.Entity.Migrations.SQLiteMigrationConverter.OptimizeDropForeignKeyActions">
+            <summary>
+            Remove DropForeignKeyActions if DropTableAction exists
+            (SQLite does not support dropping a constraint).
+            </summary>
+        </member>
+        <member name="M:Devart.Data.SQLite.Entity.Migrations.SQLiteMigrationConverter.TransformMigrationHistoryTableOperations">
+            <summary>
+            Transform dropping CreatedOn column in __MigrationHistory table for
+            upgrading from EF v4.3 to EF 5.0.
+            (SQLite does not support dropping a column).
+            Transform dropping and creating primary key in __MigrationHistory table for
+            upgrading from EF 5.0 to EF 6.0.
+            </summary>
+        </member>
+    </members>
+</doc>

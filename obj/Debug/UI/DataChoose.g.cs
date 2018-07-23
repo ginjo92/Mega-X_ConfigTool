@@ -200,7 +200,7 @@ namespace ProdigyConfigToolWPF {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ProdigyConfigToolWPF;component/ui/datachoose.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MegaXConfigTool;component/ui/datachoose.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\UI\DataChoose.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

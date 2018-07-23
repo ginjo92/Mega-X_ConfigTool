@@ -40,8 +40,11 @@ namespace ProdigyConfigToolWPF
             Role = role;
             mainWindow.IsEnabled = false;
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(locale);
-            QueriesTableAdapter("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Database\\Login\\SqliteLogin.prgy;Password=idsancoprodigy2017");
-            
+            //QueriesTableAdapter("attachdbfilename=|DataDirectory|\\Database\\Login\\SqliteLogin.prgy;data source=Database\\Login\\SqliteLogin.prgy;Password=idsancoprodigy2017");
+
+            string sancoDBfolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\db\\";
+            QueriesTableAdapter("attachdbfilename =" + sancoDBfolder + "SqliteLogin.prgy" + "; data source = " + sancoDBfolder + "SqliteLogin.prgy");
+
             InitializeComponent();
         }
 

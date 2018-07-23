@@ -4,7 +4,7 @@
   <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="ProdigyConfigToolWPF" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="ProdigyConfigToolWPF.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -204,38 +204,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="10675712">
-      <assemblyIdentity name="ProdigyConfigToolWPF" version="0.9.0.5" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProdigyConfigToolWPF.exe" size="10677248">
+      <assemblyIdentity name="ProdigyConfigToolWPF" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rwJhLsuW9l6i8hyOK5W14g3acjH49fJ+F6JbX7GsSzI=</dsig:DigestValue>
+        <dsig:DigestValue>eIT01qwH2LE5W/J5QKD4ClZrBbglEuhYV3XMHy9IhrI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="en\ProdigyConfigToolWPF.resources.dll" size="66048">
-      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="en" processorArchitecture="x86" />
+      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="1.0.0.0" language="en" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1yUUefx6tJmwru/0JYWzbKBjVfQQG1fr8yOPbuKnmp4=</dsig:DigestValue>
+        <dsig:DigestValue>6olD3TcpSea5C+Id+s1YWAaVH0VT/bTVSMEo1oaxO28=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\ProdigyConfigToolWPF.resources.dll" size="69632">
-      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="0.9.0.5" language="pt" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="pt\ProdigyConfigToolWPF.resources.dll" size="70144">
+      <assemblyIdentity name="ProdigyConfigToolWPF.resources" version="1.0.0.0" language="pt" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/GE0HgIxR+ejo3I0LHHlTdakqoG3gfpe8qYKJfjqZ2I=</dsig:DigestValue>
+        <dsig:DigestValue>MabuopLnYsS571dDmt7omgjiCe+LzwPR41MUpoPpig0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -497,13 +497,13 @@
       <dsig:DigestValue>Iiggy2P8Vl/0VtkEsX5fWHkGHrEdmU1rQFjQvj+mVa8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ProdigyConfigToolWPF.exe.config" size="3344">
+  <file name="ProdigyConfigToolWPF.exe.config" size="3372">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ofDmKOLpOHaVOqEI4E1FIN18P/+bszCCjHxH7+l4i0k=</dsig:DigestValue>
+      <dsig:DigestValue>tUxcc9HmxhnGGyklQaho5cxWW3yIRyvQcz7Wawt9m6I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-ia64.exe" size="25824792">
