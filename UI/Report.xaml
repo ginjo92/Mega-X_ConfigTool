@@ -1,0 +1,54 @@
+﻿<Controls:MetroWindow x:Class="MegaXConfigTool.Report"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MegaXConfigTool"
+        xmlns:p="clr-namespace:MegaXConfigTool.Properties"
+        mc:Ignorable="d"          
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen"
+        Title="{x:Static p:Resources.Reports}" Height="400" Width="350" ResizeMode="NoResize" IsMinButtonEnabled="False" ShowMinButton="False" 
+                      Topmost="True" ShowMaxRestoreButton="False" IsMaxRestoreButtonEnabled="False" ShowTitleBar="False" ShowCloseButton="True" IsWindowDraggable="False" 
+                      WindowStyle="None" Background="WhiteSmoke" AllowsTransparency="True" BorderBrush="LightGray" BorderThickness="1">
+
+    <StackPanel Background="WhiteSmoke" HorizontalAlignment="Center" Width="350 " Margin="10">
+        <Label Content="{x:Static p:Resources.DataSentToMegaX}" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="5,0,0,0"/>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Width="150" Margin="10" >
+                <Label x:Name="ReportZones_name" Content="{x:Static p:Resources.Zones}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportAreas_name" Content="{x:Static p:Resources.Areas}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportUsers_name" Content="{x:Static p:Resources.Users}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportKeypads_name" Content="{x:Static p:Resources.Keypads}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportOutputs_name" Content="{x:Static p:Resources.Outputs}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportTimezones_name" Content="{x:Static p:Resources.Timezones}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportPhones_name" Content="{x:Static p:Resources.Phones}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportGlobalSystemConfig_name" Content="{x:Static p:Resources.GlobalSystemConfig}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportDialer_name" Content="{x:Static p:Resources.Dialer}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportAudioConfig_name" Content="{x:Static p:Resources.AudioConfigurations}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportExpanders_name" Content="{x:Static p:Resources.Expansors}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel Width="150" Margin="10" >
+                <Label x:Name="ReportZones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportAreas" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportUsers" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportKeypads" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportOutputs" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportTimezones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportPhones" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportGlobalSystemConfig" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportDialer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportAudioConfig" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+                <Label x:Name="ReportExpanders" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" Width="80" >
+            <Controls:Tile x:Name="CloseButton" Width="80" Height="30" Title="{x:Static p:Resources.Close}" TitleFontSize="10"
+                                       VerticalAlignment="Top" Background="#FFC94C46" Click="CloseButton_Click" HorizontalTitleAlignment="Right"
+                                       Foreground="Black" IsCancel="True">
+                <Image Source="/images/login/login_cancel.png" Margin="40,0,0,0"/>
+            </Controls:Tile>
+        </StackPanel>
+    </StackPanel>
+
+</Controls:MetroWindow>

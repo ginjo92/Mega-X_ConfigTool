@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class GlobalSystem
     {
@@ -274,28 +274,28 @@ namespace ProdigyConfigToolWPF.Protocol
 
         };
 
-        internal void read(MainWindow mainWindow, uint global_system_number)
+        internal void read(MainWindow mainWindow, uint globalsystem_number)
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint zone_1_address = 0x00 + (3072 * (global_system_number - 1));
-            byte size = 240;
+            uint globalsystem_address = Constants.KP_GLOBAL_SYSTEM_INIC_ADDR;// + ((Constants.KP_FLASH_TAMANHO_DADOS_GLOBALSYSTEM_FLASH/Constants.KP_GLOBAL_SYSTEM_DIV) * (globalsystem_number - 1));
+            byte size = 210;
 
             // Create first 5 bytes of the request
             byte_array[i++] = 0x20;
-            byte_array[i++] = (byte)((zone_1_address >> 16) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address >> 8) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address) & 0xff);
+            byte_array[i++] = (byte)((globalsystem_address >> 16) & 0xff);
+            byte_array[i++] = (byte)((globalsystem_address >> 8) & 0xff);
+            byte_array[i++] = (byte)((globalsystem_address) & 0xff);
             byte_array[i++] = size;
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow);
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainWindow, uint global_system_index)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-
             //Output call code
             ulong output_call_code = ulong.Parse(mainWindow.databaseDataSet.GlobalSystem.Rows[(int)global_system_index]["Outputs code"].ToString());
 
@@ -502,7 +502,7 @@ namespace ProdigyConfigToolWPF.Protocol
             {
                 siren_tamper_config_bytes[0] += (byte)(0xFF & (byte)((uint[])this.attributes["siren_tamper_config"]["KP_TAMPER_CONFIG_ATIVO"])[0]);
             }
-            if (mainWindow.databaseDataSet.GlobalSystem.Rows[(int)(global_system_index)]["Siren tamper type"].Equals(0x02))
+            if (mainWindow.databaseDataSet.GlobalSystem.Rows[(int)(global_system_index)]["Siren tamper type"].Equals(0x01))
             {
                 siren_tamper_config_bytes[0] += (byte)(0xFF & (byte)((uint[])this.attributes["siren_tamper_config"]["KP_TAMPER_CONFIG_NORMAL_CLOSE"])[0]);
             }
@@ -520,7 +520,7 @@ namespace ProdigyConfigToolWPF.Protocol
             {
                 panel_tamper_config_bytes[0] += (byte)(0xFF & (byte)((uint[])this.attributes["panel_tamper_config"]["KP_TAMPER_CONFIG_ATIVO"])[0]);
             }
-            if (mainWindow.databaseDataSet.GlobalSystem.Rows[(int)(global_system_index)]["Panel tamper type"].Equals(0x02))
+            if (mainWindow.databaseDataSet.GlobalSystem.Rows[(int)(global_system_index)]["Panel tamper type"].Equals(0x01))
             {
                 panel_tamper_config_bytes[0] += (byte)(0xFF & (byte)((uint[])this.attributes["panel_tamper_config"]["KP_TAMPER_CONFIG_NORMAL_CLOSE"])[0]);
             }
@@ -651,14 +651,14 @@ namespace ProdigyConfigToolWPF.Protocol
             maintenance_date_bytes[3] = (BitConverter.GetBytes(maintenance_date.Year))[1];
             byte[] outputs_permissions_bytes = BitConverter.GetBytes(outputs_permissions);
 
-
             int i = 0;
             uint j = 0;
-            uint user_address = 0x00;
+            uint global_syste_addr = Constants.KP_GLOBAL_SYSTEM_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_GLOBALSYSTEM_FLASH * (global_system_index));
+
             byte_array[i++] = 0x40;
-            byte_array[i++] = (byte)((user_address >> 16) & 0xFF);
-            byte_array[i++] = (byte)((user_address >> 8) & 0xFF);
-            byte_array[i++] = (byte)(user_address & 0xFF);
+            byte_array[i++] = (byte)((global_syste_addr >> 16) & 0xFF);
+            byte_array[i++] = (byte)((global_syste_addr >> 8) & 0xFF);
+            byte_array[i++] = (byte)(global_syste_addr & 0xFF);
             byte_array[i++] = 240;
             int temp = i;
 
@@ -850,6 +850,8 @@ namespace ProdigyConfigToolWPF.Protocol
             byte_array[4] = (byte)(i - temp);
             General protocol = new General();
             protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow);
+
+            System.Threading.Thread.Sleep(250);
         }
 
         byte[] GetIntArray(ulong num)

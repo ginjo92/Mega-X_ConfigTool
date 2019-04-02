@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProdigyConfigToolWPF.Properties {
+namespace MegaXConfigTool.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace ProdigyConfigToolWPF.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ProdigyConfigToolWPF.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MegaXConfigTool.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -1114,6 +1114,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arming.
+        /// </summary>
+        public static string Arming {
+            get {
+                return ResourceManager.GetString("Arming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Arm Stay.
         /// </summary>
         public static string ArmStay {
@@ -1447,6 +1456,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Remotely connected.
+        /// </summary>
+        public static string ComConnectedRemote {
+            get {
+                return ResourceManager.GetString("ComConnectedRemote", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disconnected.
         /// </summary>
         public static string ComDisconnected {
@@ -1479,6 +1497,24 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string ConfigArea {
             get {
                 return ResourceManager.GetString("ConfigArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I/O Pins Configuration.
+        /// </summary>
+        public static string ConfigPins {
+            get {
+                return ResourceManager.GetString("ConfigPins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamper configurations.
+        /// </summary>
+        public static string ConfigTamper {
+            get {
+                return ResourceManager.GetString("ConfigTamper", resourceCulture);
             }
         }
         
@@ -1551,6 +1587,24 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string DataChooseDialogWrite {
             get {
                 return ResourceManager.GetString("DataChooseDialogWrite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data received from Mega-X.
+        /// </summary>
+        public static string DataReceivedFromMegaX {
+            get {
+                return ResourceManager.GetString("DataReceivedFromMegaX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data sent to Mega-X.
+        /// </summary>
+        public static string DataSentToMegaX {
+            get {
+                return ResourceManager.GetString("DataSentToMegaX", resourceCulture);
             }
         }
         
@@ -1767,6 +1821,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string Error {
             get {
                 return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error while writting data.
+        /// </summary>
+        public static string ErrorWhileWritting {
+            get {
+                return ResourceManager.GetString("ErrorWhileWritting", resourceCulture);
             }
         }
         
@@ -2424,6 +2487,24 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string ExitTime {
             get {
                 return ResourceManager.GetString("ExitTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tamper type.
+        /// </summary>
+        public static string Expander_config_tamper {
+            get {
+                return ResourceManager.GetString("Expander_config_tamper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable tamper.
+        /// </summary>
+        public static string Expander_enable_tamper {
+            get {
+                return ResourceManager.GetString("Expander_enable_tamper", resourceCulture);
             }
         }
         
@@ -4048,11 +4129,155 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output 14.
+        /// </summary>
+        public static string Output_14 {
+            get {
+                return ResourceManager.GetString("Output_14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 15.
+        /// </summary>
+        public static string Output_15 {
+            get {
+                return ResourceManager.GetString("Output_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 16.
+        /// </summary>
+        public static string Output_16 {
+            get {
+                return ResourceManager.GetString("Output_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 17.
+        /// </summary>
+        public static string Output_17 {
+            get {
+                return ResourceManager.GetString("Output_17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 18.
+        /// </summary>
+        public static string Output_18 {
+            get {
+                return ResourceManager.GetString("Output_18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 19.
+        /// </summary>
+        public static string Output_19 {
+            get {
+                return ResourceManager.GetString("Output_19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output 2.
         /// </summary>
         public static string Output_2 {
             get {
                 return ResourceManager.GetString("Output_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 20.
+        /// </summary>
+        public static string Output_20 {
+            get {
+                return ResourceManager.GetString("Output_20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 21.
+        /// </summary>
+        public static string Output_21 {
+            get {
+                return ResourceManager.GetString("Output_21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 22.
+        /// </summary>
+        public static string Output_22 {
+            get {
+                return ResourceManager.GetString("Output_22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 23.
+        /// </summary>
+        public static string Output_23 {
+            get {
+                return ResourceManager.GetString("Output_23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 24.
+        /// </summary>
+        public static string Output_24 {
+            get {
+                return ResourceManager.GetString("Output_24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 25.
+        /// </summary>
+        public static string Output_25 {
+            get {
+                return ResourceManager.GetString("Output_25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 26.
+        /// </summary>
+        public static string Output_26 {
+            get {
+                return ResourceManager.GetString("Output_26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 27.
+        /// </summary>
+        public static string Output_27 {
+            get {
+                return ResourceManager.GetString("Output_27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 28.
+        /// </summary>
+        public static string Output_28 {
+            get {
+                return ResourceManager.GetString("Output_28", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 29.
+        /// </summary>
+        public static string Output_29 {
+            get {
+                return ResourceManager.GetString("Output_29", resourceCulture);
             }
         }
         
@@ -4066,11 +4291,155 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output 30.
+        /// </summary>
+        public static string Output_30 {
+            get {
+                return ResourceManager.GetString("Output_30", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 31.
+        /// </summary>
+        public static string Output_31 {
+            get {
+                return ResourceManager.GetString("Output_31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 32.
+        /// </summary>
+        public static string Output_32 {
+            get {
+                return ResourceManager.GetString("Output_32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 33.
+        /// </summary>
+        public static string Output_33 {
+            get {
+                return ResourceManager.GetString("Output_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 34.
+        /// </summary>
+        public static string Output_34 {
+            get {
+                return ResourceManager.GetString("Output_34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 35.
+        /// </summary>
+        public static string Output_35 {
+            get {
+                return ResourceManager.GetString("Output_35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 36.
+        /// </summary>
+        public static string Output_36 {
+            get {
+                return ResourceManager.GetString("Output_36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 37.
+        /// </summary>
+        public static string Output_37 {
+            get {
+                return ResourceManager.GetString("Output_37", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 38.
+        /// </summary>
+        public static string Output_38 {
+            get {
+                return ResourceManager.GetString("Output_38", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 39.
+        /// </summary>
+        public static string Output_39 {
+            get {
+                return ResourceManager.GetString("Output_39", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output 4.
         /// </summary>
         public static string Output_4 {
             get {
                 return ResourceManager.GetString("Output_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 40.
+        /// </summary>
+        public static string Output_40 {
+            get {
+                return ResourceManager.GetString("Output_40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 41.
+        /// </summary>
+        public static string Output_41 {
+            get {
+                return ResourceManager.GetString("Output_41", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 42.
+        /// </summary>
+        public static string Output_42 {
+            get {
+                return ResourceManager.GetString("Output_42", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 43.
+        /// </summary>
+        public static string Output_43 {
+            get {
+                return ResourceManager.GetString("Output_43", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 44.
+        /// </summary>
+        public static string Output_44 {
+            get {
+                return ResourceManager.GetString("Output_44", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 45.
+        /// </summary>
+        public static string Output_45 {
+            get {
+                return ResourceManager.GetString("Output_45", resourceCulture);
             }
         }
         
@@ -4219,11 +4588,155 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output 14.
+        /// </summary>
+        public static string Output_number_14 {
+            get {
+                return ResourceManager.GetString("Output_number_14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 15.
+        /// </summary>
+        public static string Output_number_15 {
+            get {
+                return ResourceManager.GetString("Output_number_15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 16.
+        /// </summary>
+        public static string Output_number_16 {
+            get {
+                return ResourceManager.GetString("Output_number_16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 17.
+        /// </summary>
+        public static string Output_number_17 {
+            get {
+                return ResourceManager.GetString("Output_number_17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 18.
+        /// </summary>
+        public static string Output_number_18 {
+            get {
+                return ResourceManager.GetString("Output_number_18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 19.
+        /// </summary>
+        public static string Output_number_19 {
+            get {
+                return ResourceManager.GetString("Output_number_19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output 2.
         /// </summary>
         public static string Output_number_2 {
             get {
                 return ResourceManager.GetString("Output_number_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 20.
+        /// </summary>
+        public static string Output_number_20 {
+            get {
+                return ResourceManager.GetString("Output_number_20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 21.
+        /// </summary>
+        public static string Output_number_21 {
+            get {
+                return ResourceManager.GetString("Output_number_21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 22.
+        /// </summary>
+        public static string Output_number_22 {
+            get {
+                return ResourceManager.GetString("Output_number_22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 23.
+        /// </summary>
+        public static string Output_number_23 {
+            get {
+                return ResourceManager.GetString("Output_number_23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 24.
+        /// </summary>
+        public static string Output_number_24 {
+            get {
+                return ResourceManager.GetString("Output_number_24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 25.
+        /// </summary>
+        public static string Output_number_25 {
+            get {
+                return ResourceManager.GetString("Output_number_25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 26.
+        /// </summary>
+        public static string Output_number_26 {
+            get {
+                return ResourceManager.GetString("Output_number_26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 27.
+        /// </summary>
+        public static string Output_number_27 {
+            get {
+                return ResourceManager.GetString("Output_number_27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 28.
+        /// </summary>
+        public static string Output_number_28 {
+            get {
+                return ResourceManager.GetString("Output_number_28", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 29.
+        /// </summary>
+        public static string Output_number_29 {
+            get {
+                return ResourceManager.GetString("Output_number_29", resourceCulture);
             }
         }
         
@@ -4237,11 +4750,155 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Output 30.
+        /// </summary>
+        public static string Output_number_30 {
+            get {
+                return ResourceManager.GetString("Output_number_30", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 31.
+        /// </summary>
+        public static string Output_number_31 {
+            get {
+                return ResourceManager.GetString("Output_number_31", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 32.
+        /// </summary>
+        public static string Output_number_32 {
+            get {
+                return ResourceManager.GetString("Output_number_32", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 33.
+        /// </summary>
+        public static string Output_number_33 {
+            get {
+                return ResourceManager.GetString("Output_number_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 34.
+        /// </summary>
+        public static string Output_number_34 {
+            get {
+                return ResourceManager.GetString("Output_number_34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 35.
+        /// </summary>
+        public static string Output_number_35 {
+            get {
+                return ResourceManager.GetString("Output_number_35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 36.
+        /// </summary>
+        public static string Output_number_36 {
+            get {
+                return ResourceManager.GetString("Output_number_36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 37.
+        /// </summary>
+        public static string Output_number_37 {
+            get {
+                return ResourceManager.GetString("Output_number_37", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 38.
+        /// </summary>
+        public static string Output_number_38 {
+            get {
+                return ResourceManager.GetString("Output_number_38", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 39.
+        /// </summary>
+        public static string Output_number_39 {
+            get {
+                return ResourceManager.GetString("Output_number_39", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Output 4.
         /// </summary>
         public static string Output_number_4 {
             get {
                 return ResourceManager.GetString("Output_number_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 40.
+        /// </summary>
+        public static string Output_number_40 {
+            get {
+                return ResourceManager.GetString("Output_number_40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 41.
+        /// </summary>
+        public static string Output_number_41 {
+            get {
+                return ResourceManager.GetString("Output_number_41", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 42.
+        /// </summary>
+        public static string Output_number_42 {
+            get {
+                return ResourceManager.GetString("Output_number_42", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 43.
+        /// </summary>
+        public static string Output_number_43 {
+            get {
+                return ResourceManager.GetString("Output_number_43", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 44.
+        /// </summary>
+        public static string Output_number_44 {
+            get {
+                return ResourceManager.GetString("Output_number_44", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Output 45.
+        /// </summary>
+        public static string Output_number_45 {
+            get {
+                return ResourceManager.GetString("Output_number_45", resourceCulture);
             }
         }
         
@@ -4849,6 +5506,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I/O Pins.
+        /// </summary>
+        public static string Pins {
+            get {
+                return ResourceManager.GetString("Pins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please select a connection first!.
         /// </summary>
         public static string PleaseConnectFirst {
@@ -5020,6 +5686,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reading expanders configurations.
+        /// </summary>
+        public static string ReadingExpanders {
+            get {
+                return ResourceManager.GetString("ReadingExpanders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reading system configurations.
         /// </summary>
         public static string ReadingGlobal {
@@ -5092,6 +5767,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Read more events.
+        /// </summary>
+        public static string ReadMoreEvents {
+            get {
+                return ResourceManager.GetString("ReadMoreEvents", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Read with success!.
         /// </summary>
         public static string ReadWithSuccess {
@@ -5106,6 +5790,15 @@ namespace ProdigyConfigToolWPF.Properties {
         public static string ReceiverFail {
             get {
                 return ResourceManager.GetString("ReceiverFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remote connection.
+        /// </summary>
+        public static string RemoteConnection {
+            get {
+                return ResourceManager.GetString("RemoteConnection", resourceCulture);
             }
         }
         
@@ -6640,6 +7333,15 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Writing expanders configurations.
+        /// </summary>
+        public static string WritingExpanders {
+            get {
+                return ResourceManager.GetString("WritingExpanders", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Writing system configurations.
         /// </summary>
         public static string WritingGlobal {
@@ -7018,11 +7720,164 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zone 33.
+        /// </summary>
+        public static string Zone_33 {
+            get {
+                return ResourceManager.GetString("Zone_33", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 34.
+        /// </summary>
+        public static string Zone_34 {
+            get {
+                return ResourceManager.GetString("Zone_34", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 35.
+        /// </summary>
+        public static string Zone_35 {
+            get {
+                return ResourceManager.GetString("Zone_35", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 36.
+        /// </summary>
+        public static string Zone_36 {
+            get {
+                return ResourceManager.GetString("Zone_36", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 37.
+        /// </summary>
+        public static string Zone_37 {
+            get {
+                return ResourceManager.GetString("Zone_37", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 38.
+        /// </summary>
+        public static string Zone_38 {
+            get {
+                return ResourceManager.GetString("Zone_38", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 39.
+        /// </summary>
+        public static string Zone_39 {
+            get {
+                return ResourceManager.GetString("Zone_39", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zone 4.
         /// </summary>
         public static string Zone_4 {
             get {
                 return ResourceManager.GetString("Zone_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 40.
+        /// </summary>
+        public static string Zone_40 {
+            get {
+                return ResourceManager.GetString("Zone_40", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 41.
+        /// </summary>
+        public static string Zone_41 {
+            get {
+                return ResourceManager.GetString("Zone_41", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 42.
+        /// </summary>
+        public static string Zone_42 {
+            get {
+                return ResourceManager.GetString("Zone_42", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 43.
+        /// </summary>
+        public static string Zone_43 {
+            get {
+                return ResourceManager.GetString("Zone_43", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 44.
+        /// </summary>
+        public static string Zone_44 {
+            get {
+                return ResourceManager.GetString("Zone_44", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 45.
+        /// </summary>
+        public static string Zone_45 {
+            get {
+                return ResourceManager.GetString("Zone_45", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 46.
+        /// </summary>
+        public static string Zone_46 {
+            get {
+                return ResourceManager.GetString("Zone_46", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 47.
+        /// </summary>
+        public static string Zone_47 {
+            get {
+                return ResourceManager.GetString("Zone_47", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 48.
+        /// </summary>
+        public static string Zone_48 {
+            get {
+                return ResourceManager.GetString("Zone_48", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 49.
+        /// </summary>
+        public static string Zone_49 {
+            get {
+                return ResourceManager.GetString("Zone_49", resourceCulture);
             }
         }
         
@@ -7036,11 +7891,191 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zone 50.
+        /// </summary>
+        public static string Zone_50 {
+            get {
+                return ResourceManager.GetString("Zone_50", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 51.
+        /// </summary>
+        public static string Zone_51 {
+            get {
+                return ResourceManager.GetString("Zone_51", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 52.
+        /// </summary>
+        public static string Zone_52 {
+            get {
+                return ResourceManager.GetString("Zone_52", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 53.
+        /// </summary>
+        public static string Zone_53 {
+            get {
+                return ResourceManager.GetString("Zone_53", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 54.
+        /// </summary>
+        public static string Zone_54 {
+            get {
+                return ResourceManager.GetString("Zone_54", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 55.
+        /// </summary>
+        public static string Zone_55 {
+            get {
+                return ResourceManager.GetString("Zone_55", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 56.
+        /// </summary>
+        public static string Zone_56 {
+            get {
+                return ResourceManager.GetString("Zone_56", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 57.
+        /// </summary>
+        public static string Zone_57 {
+            get {
+                return ResourceManager.GetString("Zone_57", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 58.
+        /// </summary>
+        public static string Zone_58 {
+            get {
+                return ResourceManager.GetString("Zone_58", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 59.
+        /// </summary>
+        public static string Zone_59 {
+            get {
+                return ResourceManager.GetString("Zone_59", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zone 6.
         /// </summary>
         public static string Zone_6 {
             get {
                 return ResourceManager.GetString("Zone_6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 60.
+        /// </summary>
+        public static string Zone_60 {
+            get {
+                return ResourceManager.GetString("Zone_60", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 61.
+        /// </summary>
+        public static string Zone_61 {
+            get {
+                return ResourceManager.GetString("Zone_61", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 62.
+        /// </summary>
+        public static string Zone_62 {
+            get {
+                return ResourceManager.GetString("Zone_62", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 63.
+        /// </summary>
+        public static string Zone_63 {
+            get {
+                return ResourceManager.GetString("Zone_63", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 64.
+        /// </summary>
+        public static string Zone_64 {
+            get {
+                return ResourceManager.GetString("Zone_64", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 65.
+        /// </summary>
+        public static string Zone_65 {
+            get {
+                return ResourceManager.GetString("Zone_65", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 66.
+        /// </summary>
+        public static string Zone_66 {
+            get {
+                return ResourceManager.GetString("Zone_66", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 67.
+        /// </summary>
+        public static string Zone_67 {
+            get {
+                return ResourceManager.GetString("Zone_67", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 68.
+        /// </summary>
+        public static string Zone_68 {
+            get {
+                return ResourceManager.GetString("Zone_68", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 69.
+        /// </summary>
+        public static string Zone_69 {
+            get {
+                return ResourceManager.GetString("Zone_69", resourceCulture);
             }
         }
         
@@ -7054,6 +8089,96 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zone 70.
+        /// </summary>
+        public static string Zone_70 {
+            get {
+                return ResourceManager.GetString("Zone_70", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 71.
+        /// </summary>
+        public static string Zone_71 {
+            get {
+                return ResourceManager.GetString("Zone_71", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 72.
+        /// </summary>
+        public static string Zone_72 {
+            get {
+                return ResourceManager.GetString("Zone_72", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 73.
+        /// </summary>
+        public static string Zone_73 {
+            get {
+                return ResourceManager.GetString("Zone_73", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 74.
+        /// </summary>
+        public static string Zone_74 {
+            get {
+                return ResourceManager.GetString("Zone_74", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 75.
+        /// </summary>
+        public static string Zone_75 {
+            get {
+                return ResourceManager.GetString("Zone_75", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 76.
+        /// </summary>
+        public static string Zone_76 {
+            get {
+                return ResourceManager.GetString("Zone_76", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 77.
+        /// </summary>
+        public static string Zone_77 {
+            get {
+                return ResourceManager.GetString("Zone_77", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 78.
+        /// </summary>
+        public static string Zone_78 {
+            get {
+                return ResourceManager.GetString("Zone_78", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 79.
+        /// </summary>
+        public static string Zone_79 {
+            get {
+                return ResourceManager.GetString("Zone_79", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zone 8.
         /// </summary>
         public static string Zone_8 {
@@ -7063,11 +8188,164 @@ namespace ProdigyConfigToolWPF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Zone 80.
+        /// </summary>
+        public static string Zone_80 {
+            get {
+                return ResourceManager.GetString("Zone_80", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 81.
+        /// </summary>
+        public static string Zone_81 {
+            get {
+                return ResourceManager.GetString("Zone_81", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 82.
+        /// </summary>
+        public static string Zone_82 {
+            get {
+                return ResourceManager.GetString("Zone_82", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 83.
+        /// </summary>
+        public static string Zone_83 {
+            get {
+                return ResourceManager.GetString("Zone_83", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 84.
+        /// </summary>
+        public static string Zone_84 {
+            get {
+                return ResourceManager.GetString("Zone_84", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 85.
+        /// </summary>
+        public static string Zone_85 {
+            get {
+                return ResourceManager.GetString("Zone_85", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 86.
+        /// </summary>
+        public static string Zone_86 {
+            get {
+                return ResourceManager.GetString("Zone_86", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 87.
+        /// </summary>
+        public static string Zone_87 {
+            get {
+                return ResourceManager.GetString("Zone_87", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 88.
+        /// </summary>
+        public static string Zone_88 {
+            get {
+                return ResourceManager.GetString("Zone_88", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 89.
+        /// </summary>
+        public static string Zone_89 {
+            get {
+                return ResourceManager.GetString("Zone_89", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zone 9.
         /// </summary>
         public static string Zone_9 {
             get {
                 return ResourceManager.GetString("Zone_9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 90.
+        /// </summary>
+        public static string Zone_90 {
+            get {
+                return ResourceManager.GetString("Zone_90", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 91.
+        /// </summary>
+        public static string Zone_91 {
+            get {
+                return ResourceManager.GetString("Zone_91", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 92.
+        /// </summary>
+        public static string Zone_92 {
+            get {
+                return ResourceManager.GetString("Zone_92", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 93.
+        /// </summary>
+        public static string Zone_93 {
+            get {
+                return ResourceManager.GetString("Zone_93", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 94.
+        /// </summary>
+        public static string Zone_94 {
+            get {
+                return ResourceManager.GetString("Zone_94", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 95.
+        /// </summary>
+        public static string Zone_95 {
+            get {
+                return ResourceManager.GetString("Zone_95", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zone 96.
+        /// </summary>
+        public static string Zone_96 {
+            get {
+                return ResourceManager.GetString("Zone_96", resourceCulture);
             }
         }
         

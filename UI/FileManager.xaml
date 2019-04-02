@@ -3,17 +3,17 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:ProdigyConfigToolWPF"
-                      xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
-                      xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
-                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.FileManager"
+                      xmlns:local="clr-namespace:MegaXConfigTool"
+                      xmlns:p="clr-namespace:MegaXConfigTool.Properties"
+                      xmlns:MegaXConfigTool="clr-namespace:MegaXConfigTool"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="MegaXConfigTool.FileManager"
                       mc:Ignorable="d"
                       Title="Mega-X Config Tool" Height="510" Width="650" Icon="/images/icon.ico"
                                                  Loaded="FileManagerWindow_Loaded" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" WindowStyle="None" 
                                                  AllowsTransparency="True" ShowTitleBar="False" IsWindowDraggable="True" ResizeMode="NoResize" WindowCloseButtonStyle="{DynamicResource ButtonStyle}">
 
     <Controls:MetroWindow.Resources>
-        <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+        <MegaXConfigTool:defaultDataSet x:Key="databaseDataSet"/>
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
 
         <Style x:Key="ButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MetroWindowButtonStyle}">

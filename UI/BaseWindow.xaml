@@ -1,18 +1,18 @@
-﻿<Controls:MetroWindow x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.MainWindow"
+﻿<Controls:MetroWindow x:Name="BaseWindow" x:Class="MegaXConfigTool.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"                      
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:ProdigyConfigToolWPF"
-                      xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
+                      xmlns:local="clr-namespace:MegaXConfigTool"
+                      xmlns:p="clr-namespace:MegaXConfigTool.Properties"
                       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-                      xmlns:Behaviors="clr-namespace:ProdigyConfigToolWPF.Controls"
+                      xmlns:Behaviors="clr-namespace:MegaXConfigTool.Controls"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
                       xmlns:sys="clr-namespace:System;assembly=mscorlib"
-                      xmlns:ff="clr-namespace:ProdigyConfigToolWPF"
+                      xmlns:ff="clr-namespace:MegaXConfigTool"
                       mc:Ignorable="d"
-                      xmlns:controls="clr-namespace:ProdigyConfigToolWPF.Controls"
-                      xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
+                      xmlns:controls="clr-namespace:MegaXConfigTool.Controls"
+                      xmlns:MegaXConfigTool="clr-namespace:MegaXConfigTool"
                       Title="Mega-X Config Tool" Height="768" Width="1024" Icon="/images/icon.ico"
                       xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Maximized" Loaded="BaseWindow_Loaded" WindowStartupLocation="CenterScreen" 
@@ -55,6 +55,8 @@
             <Setter Property="Width" Value="147" />
         </Style>
 
+        <MegaXConfigTool:defaultDataSet x:Key="databaseDataSet"/>
+
         <ObjectDataProvider x:Key="VoiceCallType_dict"
                             MethodName="GetVoiceCallType" ObjectType="{x:Type local:Dictionaries}"/>
         <ObjectDataProvider x:Key="ResistorContactType_dict"
@@ -89,29 +91,30 @@
                             MethodName="GetKeypadDateType" ObjectType="{x:Type local:Dictionaries}"/>
         <ObjectDataProvider x:Key="TamperType_dict"
                             MethodName="GetTamperType" ObjectType="{x:Type local:Dictionaries}"/>
+        <ObjectDataProvider x:Key="ExpanderConfigPins_dict"
+                            MethodName="GetConfigPins" ObjectType="{x:Type local:Dictionaries}"/>
+        <ObjectDataProvider x:Key="ASCII_HEX_dict"
+                            MethodName="GetASCIIHEX" ObjectType="{x:Type local:Dictionaries}"/>
 
-        <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+
+       
 
         <CollectionViewSource x:Key="clientInfoViewSource" Source="{Binding MainInfo, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="zoneViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="ZoneActiveViewSource" Source="{Binding Zone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="areaViewSource" Source="{Binding Area, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="AreaActiveViewSource" Source="{Binding Area, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="userViewSource" Source="{Binding User, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="UserActiveViewSource" Source="{Binding User, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="keypadViewSource" Source="{Binding Keypad, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="KeypadActiveViewSource" Source="{Binding Keypad, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="expanderViewSource" Source="{Binding Expander, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="outputViewSource" Source="{Binding Output, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="timezoneViewSource" Source="{Binding Timezone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="phoneViewSource" Source="{Binding Phone, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="PhoneActiveViewSource" Source="{Binding Phone, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="dialerViewSource" Source="{Binding Dialer, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="globalSystemViewSource" Source="{Binding GlobalSystem, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="eventViewSource" Source="{Binding Event, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioSystemConfigurationViewSource" Source="{Binding AudioSystemConfiguration, Source={StaticResource databaseDataSet}}"/>
         <CollectionViewSource x:Key="AudioDefaultViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
-        <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding Audio, Source={StaticResource databaseDataSet}}"/>
+        <CollectionViewSource x:Key="AudioCustomizedViewSource" Source="{Binding AudioCustomized, Source={StaticResource databaseDataSet}}"/>
     </Controls:MetroWindow.Resources>
 
     <Window.CommandBindings>
@@ -174,7 +177,7 @@
                                     <Image Source="/images/topbaricons/save.png" Height="22" Width="22" />
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Command="ApplicationCommands.SaveAs" Visibility="Visible" >
+                            <MenuItem Header="Save As" Command="ApplicationCommands.SaveAs" Visibility="Visible" >
                                 <MenuItem.Icon>
                                     <Image Source="/images/topbaricons/save_as.png" Height="22" Width="22" />
                                 </MenuItem.Icon>
@@ -511,11 +514,24 @@
                                                TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Debug_Click" MouseDoubleClick="Open_Debug_MouseDoubleClick">
                                     <Image Source="/images/new/debug.png" Width="80" Height="80" />
                                 </Controls:Tile>
+                                
                                 <!--<<-  15 FW UPDATE(Only Admin) -->
                                 <Controls:Tile Title="{x:Static p:Resources.FirmwareUpdate}"
                                                x:Name="Open_FirmwareUpdate" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
                                                TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_FWUpdate_Click" MouseDoubleClick="Open_FWUpdate_MouseDoubleClick">
                                     <Image Source="/images/new/update.png" Width="80" Height="80" />
+                                </Controls:Tile>
+                                <!--<<-  16 EXPANDERS-->
+                                <Controls:Tile Title="{x:Static p:Resources.Expansors}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
+                                               x:Name="Open_Expanders" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" 
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Expanders_Click" MouseDoubleClick="Open_Expanders_MouseDoubleClick">
+                                    <Image Source="/images/new/expander.png" Width="80" Height="80"/>
+                                </Controls:Tile>
+                                <!--<<-  14 MEMORY (Only Admin) -->
+                                <Controls:Tile Title="Memory"
+                                               x:Name="Open_Memory" Controls:ControlsHelper.MouseOverBorderBrush="{DynamicResource BlackBrush}" Background="WhiteSmoke" Foreground="Black" BorderBrush="LightGray" BorderThickness="1"
+                                               TitleFontSize="10" Margin="3" Height="147" Width="147" Click="Open_Debug_Click" MouseDoubleClick="Open_Memory_MouseDoubleClick">
+                                    <Image Source="/images/new/debug.png" Width="80" Height="80" />
                                 </Controls:Tile>
                             </WrapPanel>
                         </Grid>
@@ -541,7 +557,7 @@
                         </Grid>
                         <!--OnlyActive-->
                         <Controls:Tile x:Name="ZoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9" Visibility="Hidden"
-                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="ZoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
@@ -617,7 +633,7 @@
                                 <Image Source="/images/pvtshortcuts/off/audio.png" Opacity="0.5" VerticalAlignment="Center" HorizontalAlignment="Left" />
                             </Controls:Tile>
                         </StackPanel>
-                        <!--DATAGRID-->
+                        <!--DATAGRID-->                        
                         <DataGrid x:Name="zoneDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="3"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
                                   ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
                                   HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
@@ -642,7 +658,7 @@
                                         </Style>
                                     </DataGridTextColumn.CellStyle>
                                 </DataGridTextColumn>
-                                <DataGridTemplateColumn Header="{x:Static p:Resources.Location}" x:Name="ImageHardwarePositionColumn" CanUserResize="False" MinWidth="70" MaxWidth="70">
+                                <DataGridTemplateColumn Header="{x:Static p:Resources.Location}" x:Name="ImageHardwarePositionColumn" CanUserResize="False" MinWidth="70" MaxWidth="70" Visibility="Hidden">
                                     <DataGridTemplateColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="Background" Value="White" />
@@ -3075,15 +3091,17 @@
                                                     <ColumnDefinition Width="100" />
                                                     <ColumnDefinition Width="100" />
                                                 </Grid.ColumnDefinitions>
-
-                                                <ComboBox Grid.Column="0" x:Name="chime_alarm_output_1Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                              
+                                                <ComboBox Grid.Column="0" x:Name="chime_alarm_output_1Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding Chime alarm output 1, Source={StaticResource zoneViewSource}}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" SelectedIndex="{Binding Chime alarm output 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                      SelectedValue ="{Binding Chime alarm output 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto"/>
+                                               
                                                 <ComboBox Grid.Column="1" x:Name="chime_alarm_output_2Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
                                                       SelectedValue ="{Binding Chime alarm output 2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" />
+                                               
                                                 <ComboBox Grid.Column="2" x:Name="chime_alarm_output_3Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
@@ -3220,15 +3238,15 @@
                                                     <ColumnDefinition Width="100" />
                                                 </Grid.ColumnDefinitions>
 
-                                                <ComboBox Grid.Column="0" x:Name="sensor_watch_alarm_output_1Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                                <ComboBox Grid.Column="0" x:Name="sensor_watch_alarm_output_1Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding Sensor watch alarm output 1, Source={StaticResource zoneViewSource}}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" SelectedIndex="{Binding Sensor watch alarm output 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                                      SelectedValue ="{Binding Sensor watch alarm output 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto"/>
 
                                                 <ComboBox Grid.Column="1" x:Name="sensor_watch_alarm_output_2Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
                                                       SelectedValuePath="Key"
-                                                      SelectedValue ="{Binding Sensor watch alarm output 2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto" />
+                                                      SelectedValue ="{Binding Sensor watch alarm output 2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="10,0,0,0" Padding="5" Grid.IsSharedSizeScope="True" Width="100" Height="Auto"/>
 
                                                 <ComboBox Grid.Column="2" x:Name="sensor_watch_alarm_output_3Column" ItemsSource="{Binding Source={StaticResource OutputNumber_dict}}"
                                                       DisplayMemberPath="Value" 
@@ -7000,7 +7018,7 @@
                         </Grid>
                         <!--OnlyActive-->
                         <Controls:Tile x:Name="UserOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
-                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="UserOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
@@ -7176,7 +7194,38 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 <!--User Code-->
-                                <DataGridTemplateColumn x:Name="User_Code_Column" IsReadOnly="False" Header="{x:Static p:Resources.User_user_code}" Width="70" CanUserResize="False">
+                                <DataGridTextColumn x:Name="User_Code_Column" Header="{x:Static p:Resources.User_user_code}" Binding="{Binding UserCode}" Width="70" CanUserResize="False" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="#BDBDBD" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.User_user_code}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                    <!--<DataGridTextColumn.CellTemplate>
+                                        <DataTemplate x:Name="UserCodeTemplate">
+                                            <StackPanel x:Name ="UserCodeStack" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                                                <PasswordBox x:Name="UserCodePasswordBox" MaxLength="8" Width="68" FontSize="8" HorizontalAlignment="Center" 
+                                                             ff:PasswordBoxAssistant.BoundPassword="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                             ff:PasswordBoxAssistant.BindPassword="true" LostFocus="UserCodePasswordBox_LostFocus" />
+
+                                                --><!--<TextBox x:Name="UserCodeTextBo2x" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                         FontWeight="Bold" FontSize="10" >
+                                                </TextBox>--><!--
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.CellTemplate>-->
+                                </DataGridTextColumn>
+                                <!--User Code-->
+                                <!--<DataGridTemplateColumn x:Name="User_Code_Column" Header="{x:Static p:Resources.User_user_code}" Width="70" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
                                         <Style TargetType="{x:Type DataGridColumnHeader}">
                                             <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -7195,7 +7244,7 @@
                                         <DataTemplate x:Name="UserCodeTemplate">
                                             <StackPanel x:Name ="UserCodeStack" Orientation="Horizontal" HorizontalAlignment="Center">
 
-                                                <!--<ToggleButton x:Name="UserCodeButton" Content="{x:Static p:Resources.ChangeUserCode}" FontWeight="Bold" FontSize="9" >
+                                                --><!--<ToggleButton x:Name="UserCodeButton" Content="{x:Static p:Resources.ChangeUserCode}" FontWeight="Bold" FontSize="9" >
                                                     <ToggleButton.Triggers>
                                                         <EventTrigger RoutedEvent="ToggleButton.Checked">
                                                             <BeginStoryboard Name="MakeItVisible">
@@ -7224,19 +7273,19 @@
                                                 <!--<xctk:MaskedTextBox 
                                                     x:Name="UserCodeTextBox" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                                     Mask="****" FontWeight="Bold" FontSize="10" Visibility="Hidden" ValueDataType="{x:Type xctk:MaskedTextBox}" >
-                                                </xctk:MaskedTextBox>-->
+                                                </xctk:MaskedTextBox>--><!--
 
                                                 <PasswordBox x:Name="UserCodePasswordBox" MaxLength="8" Width="68" FontSize="8" HorizontalAlignment="Center" 
                                                              ff:PasswordBoxAssistant.BoundPassword="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
-                                                             ff:PasswordBoxAssistant.BindPassword="true" LostFocus="UserCodePasswordBox_LostFocus"/>
+                                                             ff:PasswordBoxAssistant.BindPassword="true" LostFocus="UserCodePasswordBox_LostFocus" />
                                                 
-                                                <!--<TextBox x:Name="UserCodeTextBo2x" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                                --><!--<TextBox x:Name="UserCodeTextBo2x" MaxLength="8" MinHeight="4" Text="{Binding UserCode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
                                                          FontWeight="Bold" FontSize="10" >
-                                                </TextBox>-->
+                                                </TextBox>--><!--
                                             </StackPanel>
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
+                                </DataGridTemplateColumn>-->
                                 <!--Others-->
                                 <DataGridTemplateColumn x:Name="User_CanChangeClock" Width="70" CanUserResize="False">
                                     <DataGridTemplateColumn.HeaderStyle>
@@ -10350,7 +10399,7 @@
                         </Grid>
                         <!--OnlyActive-->
                         <Controls:Tile x:Name="KeypadOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
-                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="KeypadOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
@@ -13604,7 +13653,7 @@
                         </Grid>
                         <!--OnlyActive-->
                         <Controls:Tile x:Name="PhoneOnlyActive" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Active}" TitleFontSize="9"  Visibility="Hidden"
-                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="PhoneOnlyActive_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       VerticalAlignment="Top" Background="WhiteSmoke" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
                                        Margin="0,30,218,3" Foreground="Black" BorderBrush="LightGray" BorderThickness="1">
                             <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
                         </Controls:Tile>
@@ -15071,6 +15120,8 @@
                                 </RichTextBox>
                             </TabItem>
                         </TabControl>
+
+                        <StackPanel></StackPanel>
                     </StackPanel>
                 </TabItem>
                 <!--Client Info -->
@@ -15397,7 +15448,11 @@
                                 </DataGrid.Columns>
 
                             </DataGrid>
-
+                            
+                            <Controls:Tile x:Name="LoadMoreEvents_button" Width="100" Height="28" Title="{x:Static p:Resources.ReadMoreEvents}" TitleFontSize="8" 
+                                               VerticalAlignment="Center" Background="LightGray" Click="Reab_Events_Button_click" HorizontalTitleAlignment="Center" 
+                                               VerticalContentAlignment="Center" Foreground="Black" BorderThickness="1" BorderBrush="Gray" Visibility="Hidden">
+                            </Controls:Tile>
                         </Grid>
                     </StackPanel>
                 </TabItem>
@@ -15423,7 +15478,7 @@
                                 </Grid>
                                 <!--PROGRESS BAR-->
                                 <ProgressBar Name="progressBarAudioMeasure" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,18,320,0" Width="100" 
-                                                                 Style="{ DynamicResource ProgressBarStyle}" Foreground="{DynamicResource ProgressBarForeground}" Background="{DynamicResource ProgressBarBackground}"
+                                                                 Style="{DynamicResource ProgressBarStyle}" Foreground="{DynamicResource ProgressBarForeground}" Background="{DynamicResource ProgressBarBackground}"
                                                                  Height="15" Minimum="0" Maximum="4181216" Value="0"/>
                                 <Label Name="lblBarAudioMeasure" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,43,316,0" Content="{x:Static p:Resources.FreeSpace }" FontSize="8" Foreground="Gray"/>
                                 <!--UPLOAD AUDIO-->
@@ -15668,7 +15723,6 @@
                                                             </DataTemplate>
                                                         </DataGridTextColumn.HeaderTemplate>
                                                     </DataGridTextColumn>
-
                                                     <!--Actions-->
                                                     <DataGridTemplateColumn x:Name="AudioCustomizedActionsColumn" IsReadOnly="True" CanUserResize="False" CanUserReorder="False" Width="140">
                                                         <DataGridTemplateColumn.HeaderStyle>
@@ -15689,7 +15743,7 @@
                                                         <DataGridTemplateColumn.CellTemplate>
                                                             <DataTemplate>
                                                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                                                                    <Button x:Name="buttonLoadWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Load_WAV_File_Click" Margin="2,2" IsEnabled="False">
+                                                                    <Button x:Name="buttonLoadWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Load_WAV_File_Click" Margin="2,2" IsEnabled="True">
                                                                         <Image Source="/images/audio/search.png" Width="22" Height="22" Cursor="Hand" />
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
@@ -15709,7 +15763,7 @@
                                                                             </Style>
                                                                         </Button.Style>
                                                                     </Button>
-                                                                    <Button x:Name="buttonRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonRecordWav_Click" Margin="2,2" IsEnabled="False">
+                                                                    <Button x:Name="buttonRecordWav" HorizontalAlignment="Center" VerticalAlignment="Center" Click="buttonRecordWav_Click" Margin="2,2" IsEnabled="True">
                                                                         <Image Source="/images/audio/record.png" Width="22" Height="22" Cursor="Hand"/>
                                                                         <Button.Template>
                                                                             <ControlTemplate TargetType="Button">
@@ -16055,8 +16109,8 @@
                     </Grid>
                 </TabItem>
                 <!--STATUS-->
-                <TabItem x:Name="StatusTab" Header="{x:Static p:Resources.Status}" Visibility="Hidden">
-                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
+                <TabItem x:Name="StatusTab" Header="{x:Static p:Resources.Status}" Visibility="Hidden" ScrollViewer.CanContentScroll="True">
+                    <ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
                         <StackPanel CanVerticallyScroll="True">
                             <Grid x:Name="StatusHeader" Grid.Column="0" Grid.Row="0" Margin="20,10,0,10" VerticalAlignment="Center">
                                 <Image Source="/images/new/status.png" Width="45" Height="45" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
@@ -16093,6 +16147,10 @@
                                         <StackPanel Orientation="Horizontal" Margin="5,0">
                                             <Controls:Tile Width="20" Height="3" Background="LightSeaGreen" />
                                             <Label Content="{x:Static p:Resources.Armed}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal" Margin="5,0">
+                                            <Controls:Tile Width="20" Height="3" Background="Khaki" />
+                                            <Label Content="{x:Static p:Resources.Arming}" FontSize="10" VerticalAlignment="Center" Margin="-3,-2,0,0"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="5,0">
                                             <Controls:Tile Width="20" Height="3" Background="IndianRed" />
@@ -16350,14 +16408,347 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Controls:Tile x:Name="StatusZone31" Width="80" Height="80" Title="{x:Static p:Resources.Zone_31}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
-                                                   Click="StatusZone_Click" Tag="30">
+                                                   Click="StatusZone_Click" Tag="1" >
                                             <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
                                         </Controls:Tile>
                                         <Controls:Tile x:Name="StatusZone32" Width="80" Height="80" Title="{x:Static p:Resources.Zone_32}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
-                                                   Click="StatusZone_Click" Tag="31">
+                                                   Click="StatusZone_Click" Tag="2">
                                             <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
                                         </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone33" Width="80" Height="80" Title="{x:Static p:Resources.Zone_33}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="3">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone34" Width="80" Height="80" Title="{x:Static p:Resources.Zone_34}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="4">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone35" Width="80" Height="80" Title="{x:Static p:Resources.Zone_35}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="5">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone36" Width="80" Height="80" Title="{x:Static p:Resources.Zone_36}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="6">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone37" Width="80" Height="80" Title="{x:Static p:Resources.Zone_37}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="7">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone38" Width="80" Height="80" Title="{x:Static p:Resources.Zone_38}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="8">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone39" Width="80" Height="80" Title="{x:Static p:Resources.Zone_39}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="9">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone40" Width="80" Height="80" Title="{x:Static p:Resources.Zone_40}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="0" >
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone41" Width="80" Height="80" Title="{x:Static p:Resources.Zone_41}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="10">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone42" Width="80" Height="80" Title="{x:Static p:Resources.Zone_42}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="11">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone43" Width="80" Height="80" Title="{x:Static p:Resources.Zone_43}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="12">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone44" Width="80" Height="80" Title="{x:Static p:Resources.Zone_44}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="13">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone45" Width="80" Height="80" Title="{x:Static p:Resources.Zone_45}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="14">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone46" Width="80" Height="80" Title="{x:Static p:Resources.Zone_46}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="15">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone47" Width="80" Height="80" Title="{x:Static p:Resources.Zone_47}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="16">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone48" Width="80" Height="80" Title="{x:Static p:Resources.Zone_48}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="17">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone49" Width="80" Height="80" Title="{x:Static p:Resources.Zone_49}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="18">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone50" Width="80" Height="80" Title="{x:Static p:Resources.Zone_50}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="19">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone51" Width="80" Height="80" Title="{x:Static p:Resources.Zone_51}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="20">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone52" Width="80" Height="80" Title="{x:Static p:Resources.Zone_52}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="21">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone53" Width="80" Height="80" Title="{x:Static p:Resources.Zone_53}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="22">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone54" Width="80" Height="80" Title="{x:Static p:Resources.Zone_54}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="23">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone55" Width="80" Height="80" Title="{x:Static p:Resources.Zone_55}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="24">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone56" Width="80" Height="80" Title="{x:Static p:Resources.Zone_56}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="25">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone57" Width="80" Height="80" Title="{x:Static p:Resources.Zone_57}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="26">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone58" Width="80" Height="80" Title="{x:Static p:Resources.Zone_58}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="27">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone59" Width="80" Height="80" Title="{x:Static p:Resources.Zone_59}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="28">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone60" Width="80" Height="80" Title="{x:Static p:Resources.Zone_60}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="29">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone61" Width="80" Height="80" Title="{x:Static p:Resources.Zone_61}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="0" >
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone62" Width="80" Height="80" Title="{x:Static p:Resources.Zone_62}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="1" >
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone63" Width="80" Height="80" Title="{x:Static p:Resources.Zone_63}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="2">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone64" Width="80" Height="80" Title="{x:Static p:Resources.Zone_64}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="3">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone65" Width="80" Height="80" Title="{x:Static p:Resources.Zone_65}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="4">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone66" Width="80" Height="80" Title="{x:Static p:Resources.Zone_66}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="5">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone67" Width="80" Height="80" Title="{x:Static p:Resources.Zone_67}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="6">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone68" Width="80" Height="80" Title="{x:Static p:Resources.Zone_68}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="7">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone69" Width="80" Height="80" Title="{x:Static p:Resources.Zone_69}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="8">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone70" Width="80" Height="80" Title="{x:Static p:Resources.Zone_70}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="9">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone71" Width="80" Height="80" Title="{x:Static p:Resources.Zone_71}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="10">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone72" Width="80" Height="80" Title="{x:Static p:Resources.Zone_72}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="11">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone73" Width="80" Height="80" Title="{x:Static p:Resources.Zone_73}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="12">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone74" Width="80" Height="80" Title="{x:Static p:Resources.Zone_74}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="13">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone75" Width="80" Height="80" Title="{x:Static p:Resources.Zone_75}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="14">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone76" Width="80" Height="80" Title="{x:Static p:Resources.Zone_76}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="15">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone77" Width="80" Height="80" Title="{x:Static p:Resources.Zone_77}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="16">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone78" Width="80" Height="80" Title="{x:Static p:Resources.Zone_78}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="17">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone79" Width="80" Height="80" Title="{x:Static p:Resources.Zone_79}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="18">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone80" Width="80" Height="80" Title="{x:Static p:Resources.Zone_80}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="19">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone81" Width="80" Height="80" Title="{x:Static p:Resources.Zone_81}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="20">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone82" Width="80" Height="80" Title="{x:Static p:Resources.Zone_82}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="21">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone83" Width="80" Height="80" Title="{x:Static p:Resources.Zone_83}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="22">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone84" Width="80" Height="80" Title="{x:Static p:Resources.Zone_84}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="23">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone85" Width="80" Height="80" Title="{x:Static p:Resources.Zone_85}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="24">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone86" Width="80" Height="80" Title="{x:Static p:Resources.Zone_86}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="25">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone87" Width="80" Height="80" Title="{x:Static p:Resources.Zone_87}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="26">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone88" Width="80" Height="80" Title="{x:Static p:Resources.Zone_88}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="27">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone89" Width="80" Height="80" Title="{x:Static p:Resources.Zone_89}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="28">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone90" Width="80" Height="80" Title="{x:Static p:Resources.Zone_90}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="29">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusZone91" Width="80" Height="80" Title="{x:Static p:Resources.Zone_91}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="20">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone92" Width="80" Height="80" Title="{x:Static p:Resources.Zone_92}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="21">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone93" Width="80" Height="80" Title="{x:Static p:Resources.Zone_93}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="22">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone94" Width="80" Height="80" Title="{x:Static p:Resources.Zone_94}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="23">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone95" Width="80" Height="80" Title="{x:Static p:Resources.Zone_95}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="24">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusZone96" Width="80" Height="80" Title="{x:Static p:Resources.Zone_96}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusZone_Click" Tag="25">
+                                            <Image Source="/images/new/zones2.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        
                                     </StackPanel>
                                 </StackPanel>
                             </Grid>
@@ -16456,15 +16847,181 @@
                                     <StackPanel Orientation="Horizontal">
                                         <Controls:Tile x:Name="StatusOutput11" Width="80" Height="80" Title="{x:Static p:Resources.Output_11}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
-                                                   Click="StatusOutputs_Click" Tag="10">
+                                                   Click="StatusOutputs_Click" Tag="0">
                                             <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
                                         </Controls:Tile>
                                         <Controls:Tile x:Name="StatusOutput12" Width="80" Height="80" Title="{x:Static p:Resources.Output_12}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
-                                                   Click="StatusOutputs_Click" Tag="11">
+                                                   Click="StatusOutputs_Click" Tag="1">
                                             <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
                                         </Controls:Tile>
                                         <Controls:Tile x:Name="StatusOutput13" Width="80" Height="80" Title="{x:Static p:Resources.Output_13}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="2">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput14" Width="80" Height="80" Title="{x:Static p:Resources.Output_14}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="3">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput15" Width="80" Height="80" Title="{x:Static p:Resources.Output_15}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="4">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput16" Width="80" Height="80" Title="{x:Static p:Resources.Output_16}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="5">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput17" Width="80" Height="80" Title="{x:Static p:Resources.Output_17}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="6">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput18" Width="80" Height="80" Title="{x:Static p:Resources.Output_18}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="7">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput19" Width="80" Height="80" Title="{x:Static p:Resources.Output_19}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="8">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput20" Width="80" Height="80" Title="{x:Static p:Resources.Output_20}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="9">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusOutput21" Width="80" Height="80" Title="{x:Static p:Resources.Output_21}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="0">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput22" Width="80" Height="80" Title="{x:Static p:Resources.Output_22}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="1">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput23" Width="80" Height="80" Title="{x:Static p:Resources.Output_23}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="2">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput24" Width="80" Height="80" Title="{x:Static p:Resources.Output_24}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="3">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput25" Width="80" Height="80" Title="{x:Static p:Resources.Output_25}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="4">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput26" Width="80" Height="80" Title="{x:Static p:Resources.Output_26}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="5">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput27" Width="80" Height="80" Title="{x:Static p:Resources.Output_27}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="6">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput28" Width="80" Height="80" Title="{x:Static p:Resources.Output_28}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="7">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput29" Width="80" Height="80" Title="{x:Static p:Resources.Output_29}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="8">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput30" Width="80" Height="80" Title="{x:Static p:Resources.Output_30}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="9">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusOutput31" Width="80" Height="80" Title="{x:Static p:Resources.Output_31}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="0">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput32" Width="80" Height="80" Title="{x:Static p:Resources.Output_32}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="1">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput33" Width="80" Height="80" Title="{x:Static p:Resources.Output_33}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="2">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput34" Width="80" Height="80" Title="{x:Static p:Resources.Output_34}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="3">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput35" Width="80" Height="80" Title="{x:Static p:Resources.Output_35}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="4">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput36" Width="80" Height="80" Title="{x:Static p:Resources.Output_36}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="5">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput37" Width="80" Height="80" Title="{x:Static p:Resources.Output_37}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="6">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput38" Width="80" Height="80" Title="{x:Static p:Resources.Output_38}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="7">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput39" Width="80" Height="80" Title="{x:Static p:Resources.Output_39}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="8">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput40" Width="80" Height="80" Title="{x:Static p:Resources.Output_40}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="9">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Controls:Tile x:Name="StatusOutput41" Width="80" Height="80" Title="{x:Static p:Resources.Output_41}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="10">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput42" Width="80" Height="80" Title="{x:Static p:Resources.Output_42}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="11">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput43" Width="80" Height="80" Title="{x:Static p:Resources.Output_43}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="12">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput44" Width="80" Height="80" Title="{x:Static p:Resources.Output_44}" TitleFontSize="10" 
+                                                   HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
+                                                   Click="StatusOutputs_Click" Tag="11">
+                                            <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
+                                        </Controls:Tile>
+                                        <Controls:Tile x:Name="StatusOutput45" Width="80" Height="80" Title="{x:Static p:Resources.Output_45}" TitleFontSize="10" 
                                                    HorizontalTitleAlignment="Center" VerticalAlignment="Top" Background="LightGray" Foreground="Black" HorizontalAlignment="Right" Margin="3" 
                                                    Click="StatusOutputs_Click" Tag="12">
                                             <Image Source="/images/new/outputs.png" Width="40" Height="40" Margin="0,-15,0,0" HorizontalAlignment="Center"/>
@@ -16601,7 +17158,475 @@
                     </ScrollViewer>
                     <!--</StackPanel>-->
                 </TabItem>
-              
+                <!--EXPANDERS-->
+                <TabItem x:Name="MainExpandersTab" Header="Expanders" Visibility="Hidden">
+                    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="800*"/>
+                        </Grid.RowDefinitions>
+                        <!--HEADER-->
+                        <Grid x:Name="ExpanderHeader" Grid.Column="0" Grid.Row="0" Margin="20,10,0,10" VerticalAlignment="Center">
+                            <Image Source="/images/new/expander.png" Width="40" Height="40" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
+                            <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
+                                   Text="{ x:Static p:Resources.Expansors }"/>
+                        </Grid>
+                        <!--DOWNLOAD-->
+                        <Controls:Tile x:Name="ExpanderDownloadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Download}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="ExpanderDownloadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,107,0"  Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Source="/images/new/download.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <!--UPLOAD-->
+                        <Controls:Tile x:Name="ExpanderUploadTile" Grid.Column="0" Grid.Row="0" Width="100" Height="28" Title="{x:Static p:Resources.Upload}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="WhiteSmoke" Click="ExpanderUploadTile_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,30,3,3" Foreground="Black" BorderThickness="1" BorderBrush="LightGray">
+                            <Image Source="/images/new/upload.png" Width="26" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-46,0,0,0"/>
+                        </Controls:Tile>
+                        <!--SHORTCUTS-->
+                        <StackPanel Grid.Column="0" Grid.Row="0" Margin="0,62,3,10" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Label Content="{x:Static p:Resources.Filters}" FontSize="7" Foreground="Gray" Margin="0,-14,-23,0"/>
+                            <!--GENERAL SETTINGS-->
+                            <Controls:Tile x:Name="ExpanderShortcuts_SettingsTile" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="#BDBDBD" Click="ExpanderShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,0,0,0" Foreground="Black">
+                                <Image Source="/images/pvtshortcuts/settings.png" />
+                            </Controls:Tile>
+                            <Controls:Tile x:Name="ExpanderShortcuts_SettingsTileDISABLED" Width="120" Height="28" Title="{x:Static p:Resources.General_Settings}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Click="ExpanderShortcuts_SettingsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="0,0,0,0" Foreground="Gray" Background="WhiteSmoke" Visibility="Collapsed" BorderThickness="1" BorderBrush="LightGray" >
+                                <Image Source="/images/pvtshortcuts/off/settings.png" Opacity="0.5"/>
+                            </Controls:Tile>
+
+                            <!--CONFIG PINS-->
+                            <Controls:Tile x:Name="ExpanderShortcuts_ConfigPinsTile" Width="120" Height="28" Title="{x:Static p:Resources.Pins}" TitleFontSize="9" 
+                                       VerticalAlignment="Top" Background="Khaki" Click="ExpanderShortcuts_ConfigPinsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="3,0,0,0" Foreground="Black">
+                                <Image Source="/images/pvtshortcuts/config_io.png"/>
+                            </Controls:Tile>
+                            <Controls:Tile x:Name="ExpanderShortcuts_ConfigPinsTileDISABLED" Width="120" Height="28" Title="{x:Static p:Resources.Pins}" TitleFontSize="9" 
+                                       VerticalAlignment="Top"  Click="ExpanderShortcuts_ConfigPinsButton_Click" HorizontalAlignment="Right" HorizontalTitleAlignment="Right"
+                                       Margin="3,0,0,0" Foreground="Gray" Background="WhiteSmoke" Visibility="Collapsed" BorderThickness="1" BorderBrush="LightGray" >
+                                <Image Source="/images/pvtshortcuts/off/config_io.png" Opacity="0.5"/>
+                            </Controls:Tile>
+
+                        </StackPanel>
+                        <!--DATAGRID-->
+                        <DataGrid x:Name="expanderDataGrid" Grid.Column="0" Grid.Row="1" FrozenColumnCount ="2"  CanUserAddRows="False" AutoGenerateColumns="False" EnableRowVirtualization="True" 
+                                  ItemsSource="{Binding}" RowDetailsVisibilityMode="VisibleWhenSelected" EnableColumnVirtualization="True" HorizontalAlignment="Left" CanUserDeleteRows="False"
+                                  HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" Margin="0" HorizontalScrollBarVisibility="Visible" VerticalAlignment="Top" Background="WhiteSmoke"
+                                  VerticalContentAlignment="Center" CanUserSortColumns="False" ColumnHeaderHeight="75" CanUserReorderColumns="False" Height="Auto" DataContext="{StaticResource expanderViewSource}">
+                            <DataGrid.Columns>
+                                <!--ID/NAME-->
+                                <DataGridTextColumn x:Name="Expander_ID_Column" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="40" CanUserResize="False">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="White" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.Zone_Id}" Width="40" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn x:Name="Expander_Name_Column" Binding="{Binding Description}" Header="{x:Static p:Resources.Description}" Width="140" CanUserResize="False">
+                                    <DataGridTextColumn.EditingElementStyle>
+                                        <Style TargetType="TextBox">
+                                            <Setter Property="MaxLength" Value="20"/>
+                                        </Style>
+                                    </DataGridTextColumn.EditingElementStyle>
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="White" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.Description}" Width="140" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                    <DataGridTextColumn.CellStyle>
+                                        <Style TargetType="{x:Type DataGridCell}">
+                                            <EventSetter Event="MouseDoubleClick" Handler="expanderDataGrid_MouseDoubleClick" />
+                                        </Style>
+                                    </DataGridTextColumn.CellStyle>
+                                </DataGridTextColumn>
+
+                                <!--GENERAL SETTINGS-->
+                                <DataGridTemplateColumn x:Name="Expander_Active_Column" CanUserResize="False" Width="70">
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="#BDBDBD" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.Active}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding Active, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn x:Name="Expander_Enable_Tamper_Column" CanUserResize="False" Width="70">
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="#BDBDBD" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.Expander_enable_tamper}" Width="70" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding  Enable tamper, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn x:Name="Expander_Config_Tamper_Column" Width="120" CanUserResize="False" Visibility="Hidden">
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="#BDBDBD" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{x:Static p:Resources.Expander_config_tamper}" Width="120" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ComboBox x:Name="Expander_config_tamper_comboBox" ItemsSource="{Binding Source={StaticResource TamperType_dict}}" Width="110"
+                                                      DisplayMemberPath="Value" 
+                                                      SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config tamper, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <!--CONFIG PINS-->
+                                <DataGridTemplateColumn x:Name="Expander_ConfigPins_minus"  CanUserResize="False" Visibility="Hidden" Width="800">
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <Grid Background="Khaki" Margin="-5,-15,-5,-15" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="50"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="800" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin1, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin2, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin3, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin4, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin5, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin6, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin7, Path=ActualWidth}" />
+                                                        <ColumnDefinition Width="{Binding ElementName=ConfigPin8, Path=ActualWidth}" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border BorderBrush="Gray" BorderThickness="1">
+                                                        <StackPanel Height="30">
+                                                            <TextBlock Text="{x:Static p:Resources.ConfigPins}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <Image Source="/images/arrow_up.png" Width="14"/>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </Grid>
+                                                <DataGrid AutoGenerateColumns="False" Name="AreaDatagrid" Grid.Row="1" RowHeaderWidth="20" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                                                          Grid.IsSharedSizeScope="True" HorizontalScrollBarVisibility="Disabled" ScrollViewer.CanContentScroll="False" VerticalScrollBarVisibility="Disabled"
+                                                          CanUserResizeColumns="False">
+                                                    <DataGrid.Columns>
+                                                        <DataGridTextColumn Header=" 1 " x:Name="ConfigPin1">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="1" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 2 " x:Name="ConfigPin2">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="2" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 3 " x:Name="ConfigPin3">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="3" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 4 " x:Name="ConfigPin4">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="4" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 5 " x:Name="ConfigPin5">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="5" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 6 " x:Name="ConfigPin6">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="6" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 7 " x:Name="ConfigPin7">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="7" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                        <DataGridTextColumn Header=" 8 " x:Name="ConfigPin8">
+                                                            <DataGridTextColumn.HeaderStyle>
+                                                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                                    <Setter Property="Width" Value="100"/>
+                                                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                                    <Setter Property="Background" Value="White" />
+                                                                    <Setter Property="BorderBrush" Value="Gray"/>
+                                                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                                                </Style>
+                                                            </DataGridTextColumn.HeaderStyle>
+                                                            <DataGridTextColumn.HeaderTemplate>
+                                                                <DataTemplate>
+                                                                    <TextBlock Text="8" Width="50" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </DataTemplate>
+                                                            </DataGridTextColumn.HeaderTemplate>
+                                                        </DataGridTextColumn>
+                                                    </DataGrid.Columns>
+                                                </DataGrid>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <EventSetter Event="Click" Handler="Expander_ConfigPins_minus_Click" />
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.IsSharedSizeScope="True" >
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                    <ColumnDefinition Width="100" />
+                                                </Grid.ColumnDefinitions>
+                                                <ComboBox x:Name="Expander_configPin1_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="0"/>
+                                                <ComboBox x:Name="Expander_configPin2_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1"/>
+                                                <ComboBox x:Name="Expander_configPin3_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2"/>
+                                                <ComboBox x:Name="Expander_configPin4_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="3"/>
+                                                <ComboBox x:Name="Expander_configPin5_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="4"/>
+                                                <ComboBox x:Name="Expander_configPin6_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="5"/>
+                                                <ComboBox x:Name="Expander_configPin7_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 7, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="6"/>
+                                                <ComboBox x:Name="Expander_configPin8_column" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                      SelectedValue ="{Binding Config pin 8, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="7"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTemplateColumn x:Name="Expander_ConfigPins_plus" IsReadOnly="True" Width="100" CanUserResize="False" Visibility="Visible">
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <EventSetter Event="Click" Handler="Expander_ConfigPins_plus_Click" />
+                                            <Setter Property="Width" Value="100"/>
+                                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Background" Value="Khaki" />
+                                            <Setter Property="BorderBrush" Value="Gray"/>
+                                            <Setter Property="BorderThickness" Value="1"/>
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+
+                                    <DataGridTemplateColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <StackPanel >
+                                                <TextBlock Text="{x:Static p:Resources.ConfigPins}" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                                <Image Source="/images/arrow_down.png" Width="14"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.HeaderTemplate>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+
+                                            <Image Source="/images/click.png" Width="22" Opacity="0.15" HorizontalAlignment="Center"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </TabItem>
+                <!--Memory-->
+                <TabItem x:Name="MainMemoryTab" Header="Memory" Visibility="Hidden">
+                    <StackPanel ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.CanContentScroll="True" Margin="0,-60,0,0">
+                        <Grid x:Name="MemoryHeader" Grid.Column="0" Grid.Row="0" Margin="20,10,0,10" VerticalAlignment="Center">
+                            <Image Source="/images/new/debug.png" Width="40" Height="40" Margin="-10,0,0,0" HorizontalAlignment="Left"/>
+                            <TextBlock Margin="40,-4,0,0" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"
+                                   Text="Memory"/>
+                        </Grid>
+
+                        <Grid HorizontalAlignment="Center" Margin="20" Grid.Column="0" Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Label Content="Address initial" Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left"/>
+                            <Label Content="Address final" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left"/>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1">
+                                <Label Content="0x" HorizontalAlignment="Left"/>
+                                <TextBox x:Name="Address1_textbox" Width="100" Height="25" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                                <Label Content="0x" HorizontalAlignment="Left"/>
+                                <TextBox x:Name="Address2_textbox" Width="100" Height="25" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left"/>
+                            </StackPanel>
+                            <ComboBox x:Name="ASCII_HEX_ComboBox" Grid.Column="2" Grid.Row="1" ItemsSource="{Binding Source={StaticResource ASCII_HEX_dict}}" 
+                                                                              Width="100" Height="30" />
+                            <Button x:Name="ReadMemory_button" HorizontalAlignment="Left" VerticalAlignment="Center" Click="ReadMemory_button_Click" Grid.Column="3" Grid.Row="1">
+                                <Image Source="/images/buttons/backmenu.png" Width="30" Height="30" Cursor="Hand"/>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                        <StackPanel HorizontalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <Label x:Name="DataRX_info"  Content="Data saved on: " Grid.Row ="0" Grid.Column="0" Visibility="Hidden"/>
+                                <Label x:Name="DataRX_savedfile" Visibility="Hidden"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <TextBlock x:Name="MemoryContentRX" Width="700" TextWrapping="WrapWithOverflow" TextAlignment="Justify" ScrollViewer.CanContentScroll="True" Foreground="Gray"/>
+                    </StackPanel>
+                </TabItem>
                 <!--PRIVATES-->
 
                 <!--AREA PRIVATE-->
@@ -20253,7 +21278,217 @@
                             </TabItem>
                         </TabControl>
                     </Grid>
-                </TabItem>  
+                </TabItem>
+                <!--EXPANDER PRIVATE-->
+                <TabItem x:Name="MainExpandersPVTTab" Header="Expanders" Visibility="Hidden" DataContext="{StaticResource expanderViewSource}" >
+                    <Grid Margin="0,-60,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <!--HEADER-->
+                        <StackPanel Grid.Row="0" Orientation="Horizontal" x:Name="ExpandersPVTHeader" VerticalAlignment="Center" Margin="20,26,0,10">
+                            <Image Source="/images/new/expander.png" Width="40" Height="40" Margin="-10,3,0,0" HorizontalAlignment="Left"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,-2,0,0">
+                                <TextBlock Text="{ x:Static p:Resources.Expansor }" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}" />
+                                <TextBlock Text="{Binding Id}" FontFamily="Segoe UI" FontSize="35" FontWeight="Light" Foreground="{DynamicResource BlackBrush}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="15,5,0,0">
+                                <Button x:Name="MainExpander_button_back" HorizontalAlignment="Left" VerticalAlignment="Center" Click="MainExpander_button_back_Click" Margin="0,0,0,0">
+                                    <Image Source="/images/buttons/back.png" Width="42" Height="42" Cursor="Hand"/>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="MainExpander_button_next" HorizontalAlignment="Left" VerticalAlignment="Center" Click="MainExpander_button_next_Click" Margin="5,0,0,0">
+                                    <Image Source="/images/buttons/next.png" Width="42" Height="42" Cursor="Hand"/>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="MainExpander_button_undo" HorizontalAlignment="Right" VerticalAlignment="Center" Click="MainExpander_button_undo_Click" Margin="5,0,0,0" >
+                                    <Image Source="/images/buttons/backmenu.png" Width="42" Height="42" Cursor="Hand"/>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                                <Button x:Name="MainExpander_button_home" HorizontalAlignment="Right" VerticalAlignment="Center" Click="Button_GoHome_Click" Margin="5,0,0,0" >
+                                    <Image Source="/images/buttons/homemenu.png" Width="42" Height="42" Cursor="Hand"/>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                        <TabControl Grid.Row="1" TabStripPlacement="Top" HorizontalContentAlignment="Center" DataContext="{StaticResource expanderViewSource}" Margin="0,15,0,0" Background="WhiteSmoke" >
+                            <TabItem x:Name="MainExpandersTab_Config">
+                                <TabItem.Style>
+                                    <Style TargetType="{x:Type TabItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                                    <Grid>
+                                                        <Border  Name="Border" Margin="2,0,0,-1" BorderThickness="1,1,1,0" BorderBrush="Gray">
+                                                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,0,12,0" RecognizesAccessKey="True" />
+                                                        </Border>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsSelected" Value="True">
+                                                            <Setter TargetName="Border" Property="Background" Value="#BDBDBD" />
+                                                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsSelected" Value="False">
+                                                            <Setter TargetName="Border" Property="Background" Value="White"/>
+                                                            <Setter TargetName="Border" Property="Margin" Value="2,0,0,0"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TabItem.Style>
+                                <TabItem.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Image Source="/images/pvtshortcuts/settings.png" Height="30" Margin="-12,-1,0,0"/>
+                                            <TextBlock Text="{x:Static p:Resources.General_Settings}" FontSize="18" Margin="-60,0,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </TabItem.HeaderTemplate>
+                                <Grid Margin="-8,-10,0,0">
+                                    <ScrollViewer>
+                                        <StackPanel>
+                                            <GroupBox  x:Name="ExpandersDescription_GroupBox" Header="{x:Static p:Resources.Event_Description}"  Background="#BDBDBD" BorderBrush="Gray">
+                                                <Grid  x:Name="ExpandersDescription_Grid" DataContext="{StaticResource expanderViewSource}" VerticalAlignment="Center" >
+                                                    <Grid Margin="0,10">
+                                                        <Grid Margin="0,0,0,5" VerticalAlignment="Top">
+                                                            <TextBox  x:Name="ExpandersDescription_TextBox" Controls:TextBoxHelper.UseFloatingWatermark="True" Margin="-100,0,0,0"   
+                                                          Controls:TextBoxHelper.Watermark="{x:Static p:Resources.Zone_Description}" Grid.Column="0" HorizontalAlignment="Center" 
+                                                          Grid.Row="1" Width="250" Height="35" Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" />
+                                                            <CheckBox Name="ExpandersActive_CheckBox" IsChecked="{Binding Active, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"
+                                                          Content="{x:Static p:Resources.Active}" FlowDirection="LeftToRight" HorizontalAlignment="Center" Margin="250,0,0,0"/>
+                                                        </Grid>
+                                                        
+                                                        
+                                                    </Grid>
+                                                </Grid>
+                                            </GroupBox>
+                                            <GroupBox  x:Name="ExpandersTamper_GroupBox" Header="{x:Static p:Resources.ConfigTamper}"  Background="#BDBDBD" BorderBrush="Gray">
+                                                <Grid Margin="0,10,0,10" VerticalAlignment="Top" HorizontalAlignment="Center">
+                                                    <StackPanel Orientation="Horizontal" >
+                                                        <CheckBox Name="ExpandersEnableTamber_CheckBox" IsChecked="{Binding Enable tamper, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"
+                                                            Content="{x:Static p:Resources.Keypad_use_tamper}" FlowDirection="LeftToRight" HorizontalAlignment="Left"  />
+
+                                                        <Label Margin="50,0,0,0" Content="{x:Static p:Resources.Type}" FontSize="12" VerticalAlignment="Center" />
+                                                        <ComboBox x:Name="ExpanderTamperType_ComboBox"  ItemsSource="{Binding Source={StaticResource TamperType_dict}}"
+				                                                        DisplayMemberPath="Value" SelectedValuePath="Key" Width="100" Height="25" 
+				                                                        SelectedValue="{Binding Config tamper}" />
+                                                    </StackPanel>
+
+                                                </Grid>
+                                            </GroupBox>
+                                        </StackPanel>
+                                    </ScrollViewer>
+                                </Grid>
+                            </TabItem>
+                            <TabItem x:Name="MainExpanderTab_IOPins">
+                                <TabItem.Style>
+                                    <Style TargetType="{x:Type TabItem}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type TabItem}">
+                                                    <Grid>
+                                                        <Border  Name="Border" Margin="2,0,0,-1" BorderThickness="1,1,1,0" BorderBrush="Gray">
+                                                            <ContentPresenter x:Name="ContentSite" VerticalAlignment="Center" HorizontalAlignment="Center" ContentSource="Header" Margin="12,0,12,0" RecognizesAccessKey="True" />
+                                                        </Border>
+                                                    </Grid>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsSelected" Value="True">
+                                                            <Setter TargetName="Border" Property="Background" Value="Khaki" />
+                                                            <Setter TargetName="Border" Property="BorderThickness" Value="1,1,1,0" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsSelected" Value="False">
+                                                            <Setter TargetName="Border" Property="Background" Value="White"/>
+                                                            <Setter TargetName="Border" Property="Margin" Value="2,0,0,0"/>
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TabItem.Style>
+                                <TabItem.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" >
+                                            <Image Source="/images/pvtshortcuts/config_io.png" Height="30" Margin="-12,-1,0,0"/>
+                                            <TextBlock Text="{x:Static p:Resources.Pins}" FontSize="18" Margin="-60,0,0,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </TabItem.HeaderTemplate>
+                                <Grid Margin="-8,-10,0,0">
+                                    <StackPanel>
+                                        <GroupBox  x:Name="ExpanderIOPins_GroupBox" Header="{x:Static p:Resources.ConfigPins}" Background="Khaki" BorderBrush="Gray">
+                                            <Grid  x:Name="ExpanderIOPins_Grid" DataContext="{StaticResource expanderViewSource}" VerticalAlignment="Center">
+                                                <Grid>
+                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                        <StackPanel Orientation="Vertical" >
+                                                            <Label Content="1" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin1_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding Config pin 1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="2" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin2_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding Config pin 2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="3" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin3_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding Config pin 3, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="4" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin4_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                            SelectedValue ="{Binding Config pin 4, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="5" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin5_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                              SelectedValue ="{Binding Config pin 5, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="6" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin6_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                            SelectedValue ="{Binding Config pin 6, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="7" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin7_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                            SelectedValue ="{Binding Config pin 7, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Vertical">
+                                                            <Label Content="8" FontSize="12" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            <ComboBox x:Name="Expander_configPin8_columnPVT" ItemsSource="{Binding Source={StaticResource ExpanderConfigPins_dict}}" Width="90" DisplayMemberPath="Value" SelectedValuePath="Key"
+                                                            SelectedValue ="{Binding Config pin 8, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,-5, 5, 10"/>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                </Grid>
+                                            </Grid>
+                                        </GroupBox>
+                                    </StackPanel>
+                                </Grid>
+                            </TabItem>
+                        </TabControl>
+                    </Grid>
+                </TabItem>
             </TabControl>
         </DockPanel>
         <!--STATUS BAR-->
@@ -20287,16 +21522,17 @@
                          Position="Top" HorizontalAlignment="Right" VerticalAlignment="Top"
                          IsOpen="False" Width="250" Height="150">
             <StackPanel DataContext="{StaticResource eventViewSource}">
-                <StackPanel Orientation="Horizontal" Margin="10,0,0,0" >
-                    <Image x:Name="FlyComImage" Source="/images/buttons/next.png" Width="20" Height="20" MouseLeftButtonDown="FlyComImage_MouseLeftButtonDown" Margin="0,28,0,0">
+                <StackPanel Orientation="Horizontal" Margin="10,0,0,0" Height="40">
+                    <Image x:Name="FlyComImage" Source="/images/buttons/back.png" Width="20" Height="20" Margin="20,0,0,0" MouseLeftButtonDown="FlyComImage_MouseLeftButtonDown" VerticalAlignment="Stretch">
                         <Image.RenderTransform>
-                            <RotateTransform Angle="-90" />
+                            <RotateTransform Angle="90" />
                         </Image.RenderTransform>
                     </Image>
-                    <TextBlock Text="{x:Static p:Resources.Communications}" Margin="10,10" Foreground="Black"/>
+                    <TextBlock Text="{x:Static p:Resources.Communications}" Margin="-15,10" Foreground="Black"/>
                 </StackPanel>
-                <ComboBox x:Name="ComPortComboBox" Width="120" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-                <Button x:Name="SerialConnectButton" Content="{x:Static p:Resources.Button_Connect}" Width="76" HorizontalAlignment="Center" Click="SerialConnectButton_Click" Margin="71,10,71,0"/>
+                <ComboBox x:Name="ComPortComboBox" Width="120" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+                <CheckBox x:Name="ComPortIsRemote" Content="{x:Static p:Resources.RemoteConnection}" IsChecked="False" Margin="10" HorizontalAlignment="Center" Foreground="Black"/>
+                <Button x:Name="SerialConnectButton" Content="{x:Static p:Resources.Button_Connect}" Width="76" HorizontalAlignment="Center" Click="SerialConnectButton_Click" Margin="71,0"/>
             </StackPanel>
         </Controls:Flyout>
         <!--TREEVIEW-->
@@ -20320,6 +21556,7 @@
             <!--3 Keypads-->
             <TreeViewItem  x:Name="TreeviewKeypads" Header="{x:Static p:Resources.Keypads}" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
             </TreeViewItem>
+            
             <!--4 Outputs-->
             <TreeViewItem  x:Name="TreeviewOutputs" Header="{x:Static p:Resources.Outputs}" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
             </TreeViewItem>
@@ -20356,6 +21593,13 @@
             <!--15 FW Update-->
             <TreeViewItem x:Name="TreeviewFwUpdate" Header="{x:Static p:Resources.FirmwareUpdate}" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
             </TreeViewItem>
+            <!--16 Expanders-->
+            <TreeViewItem  x:Name="TreeviewExpanders" Header="{x:Static p:Resources.Expansors}" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
+            </TreeViewItem>
+            <!--17 Memory-->
+            <TreeViewItem  x:Name="TreeviewMemory" Header="Memory" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
+            </TreeViewItem>
+            
             <!--16 17 18 Not used-->
             <!--<TreeViewItem  x:Name="TreeviewExpanders" Visibility="Collapsed" Header="Expanders" Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,5">
                 <TreeViewItem Header="Zones .." Background="#FF444444" Foreground="#FFFFFBFB" Margin="0,0,0,10"></TreeViewItem>

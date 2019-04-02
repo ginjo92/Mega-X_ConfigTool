@@ -1,11 +1,11 @@
-﻿<Controls:MetroWindow x:Class="ProdigyConfigToolWPF.Settings"
+﻿<Controls:MetroWindow x:Class="MegaXConfigTool.Settings"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"            
-        xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
-        xmlns:local="clr-namespace:ProdigyConfigToolWPF"
+        xmlns:p="clr-namespace:MegaXConfigTool.Properties"            
+        xmlns:MegaXConfigTool="clr-namespace:MegaXConfigTool"
+        xmlns:local="clr-namespace:MegaXConfigTool"
         mc:Ignorable="d"
         Title="Mega-X Config Tool" Height="300" Width="300"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" WindowState="Normal" WindowStartupLocation="CenterScreen" 
@@ -14,7 +14,7 @@
                       Closing="MetroWindow_Closing" WindowStyle="None" AllowsTransparency="True" BorderThickness="1" BorderBrush="LightGray">
 
     <Controls:MetroWindow.Resources>
-        <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+        <MegaXConfigTool:defaultDataSet x:Key="databaseDataSet"/>
     </Controls:MetroWindow.Resources>
 
 

@@ -1,10 +1,11 @@
-﻿using ProdigyConfigToolWPF;
+﻿using MegaXConfigTool;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Areas
     {
@@ -209,24 +210,24 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint partition_mem_pos = Constants.KP_AREAS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_PARTICOES_FLASH * (area_number - 1));
+            uint area_address = Constants.KP_AREAS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_PARTICOES_FLASH * area_number);
             byte size = 240;
 
             // Create first 5 bytes of the request
             byte_array[i++] = Constants.READ_CODE;
-            byte_array[i++] = (byte)((partition_mem_pos >> 16) & 0xff);
-            byte_array[i++] = (byte)((partition_mem_pos >> 8) & 0xff);
-            byte_array[i++] = (byte)((partition_mem_pos) & 0xff);
+            byte_array[i++] = (byte)((area_address >> 16) & 0xff);
+            byte_array[i++] = (byte)((area_address >> 8) & 0xff);
+            byte_array[i++] = (byte)((area_address) & 0xff);
             byte_array[i++] = size;
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is neededs
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainForm, uint area_number)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-            area_number = area_number - 1;
             string description = ((string)mainForm.databaseDataSet.Area.Rows[(int)area_number]["Description"]).ToUpper();
 
             #region Area options read from dataset
@@ -578,8 +579,8 @@ namespace ProdigyConfigToolWPF.Protocol
 
             int i = 0;
             uint j = 0;
-            uint area_address = 0x003000 + (512 * (area_number));
-            byte_array[i++] = 0x40;
+            uint area_address = Constants.KP_AREAS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_PARTICOES_FLASH * area_number);
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START;//0x40;
             byte_array[i++] = (byte)((area_address >> 16) & 0xFF);
             byte_array[i++] = (byte)((area_address >> 8) & 0xFF);
             byte_array[i++] = (byte)(area_address & 0xFF);
@@ -721,7 +722,10 @@ namespace ProdigyConfigToolWPF.Protocol
             byte_array[4] = (byte)(i-temp);
 
             General protocol = new General();
-            protocol.send_msg((uint)(i), byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is needed
+            //protocol.send_msg((uint)(i), byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is needed
+
+            protocol.send_msg_block((uint)i, byte_array, area_address, mainForm.cp_id, mainForm, Constants.KP_FLASH_TAMANHO_DADOS_PARTICOES_FLASH); // TODO: Check if cp_id is needed
+            System.Threading.Thread.Sleep(mainForm.intervalsleeptime);
 
         }
 

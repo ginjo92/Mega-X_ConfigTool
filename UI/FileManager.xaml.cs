@@ -1,5 +1,5 @@
 ﻿using MahApps.Metro.Controls;
-using ProdigyConfigToolWPF.defaultDataSetTableAdapters;
+using MegaXConfigTool.defaultDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,7 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Data.SQLite;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for FileManager.xaml
@@ -137,9 +137,7 @@ namespace ProdigyConfigToolWPF
 
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + DbFile.Name + "; data source = " + configurations_folder + DbFile.Name);
-
             
-
             //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + DbFile.Name + "; data source = Database\\" + DbFile.Name);
 
             // Opens an unencrypted database
@@ -235,7 +233,7 @@ namespace ProdigyConfigToolWPF
 
             string sourcePath = configurations_folder + DbFile.Name;
             
-            string targetPath = configurations_folder + "\\old\\" + DbFile.Name;
+            string targetPath = configurations_folder + "old\\" + DbFile.Name;
 
             GC.Collect();
             GC.WaitForPendingFinalizers();

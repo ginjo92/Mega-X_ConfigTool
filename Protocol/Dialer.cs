@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Dialer
     {
@@ -137,18 +137,19 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint zone_1_address = 0x69000 + (4096 * (dialer_number - 1));
-            byte size = 240;
+            uint dialer_adress = Constants.KP_DIALERS_INIC_ADDR;// + ((Constants.KP_FLASH_TAMANHO_DADOS_DIALER_FLASH/Constants.KP_GLOBAL_SYSTEM_DIV) * (dialer_number - 1));
+            byte size = 146;
 
             // Create first 5 bytes of the request
             byte_array[i++] = 0x20;
-            byte_array[i++] = (byte)((zone_1_address >> 16) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address >> 8) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address) & 0xff);
+            byte_array[i++] = (byte)((dialer_adress >> 16) & 0xff);
+            byte_array[i++] = (byte)((dialer_adress >> 8) & 0xff);
+            byte_array[i++] = (byte)((dialer_adress) & 0xff);
             byte_array[i++] = size;
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow);
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainWindow, uint dialer_index)

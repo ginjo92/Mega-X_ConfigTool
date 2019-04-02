@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for RealTimeUserCodeInput.xaml
@@ -25,6 +25,8 @@ namespace ProdigyConfigToolWPF
         int previous_menu_action;
         RealTimeActions previous_menu;
         byte MessageType;
+        string full_code;
+
         public RealTimeUserCodeInput(RealTimeActions previous_menu, int object_id, MainWindow mainWindow, Button button_clicked, byte MessageType)
         {
             InitializeComponent();
@@ -50,10 +52,24 @@ namespace ProdigyConfigToolWPF
                 {
                     complementary_code[i] = 0xFF;
                 }
+
+                full_code = Encoding.UTF8.GetString(code, 0, code.Length);
+
                 Array.Resize<byte>(ref code, 8);
-                Array.Copy(complementary_code, 0, code, (8-complementary_code.Length), complementary_code.Length);
+                Array.Copy(complementary_code, 0, code, (8 - complementary_code.Length), complementary_code.Length);
+
+
+                while (!mainWindow.arming_code_accepted)
+                for (int i = 0; i < Constants.KP_MAX_USERS; i++)
+                    if (mainWindow.databaseDataSet.User.Rows[i]["UserCode"].ToString() == full_code)
+                    {
+                        System.Diagnostics.Debug.WriteLine("REALTIME - UserCode: " + mainWindow.databaseDataSet.User.Rows[i]["UserCode"].ToString());
+                        mainWindow.arming_code_accepted = true;
+                    }
             }
+            
             real_time.send_action(id, action, code, mainWindow, MessageType);
+            
             this.Close();
         }
 

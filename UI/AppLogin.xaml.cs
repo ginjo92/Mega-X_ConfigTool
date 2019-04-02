@@ -1,5 +1,5 @@
 ﻿using MahApps.Metro.Controls;
-using ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters;
+using MegaXConfigTool.SqliteLoginDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SQLite;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for AppLogin.xaml

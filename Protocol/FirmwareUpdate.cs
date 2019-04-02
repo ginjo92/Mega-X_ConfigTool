@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class FirmwareUpdate
     {
@@ -22,18 +22,39 @@ namespace ProdigyConfigToolWPF.Protocol
             },
        };
 
-        public void Write(MainWindow mainForm, byte[] fragment_update_array, uint data_fragment_number)
+        public void WriteReadyToUpdateByte(MainWindow mainForm)
         {
-            byte[] byte_array = new byte[256]; // verificar este tamanho
+            General protocol = new General();
+            byte[] byte_array = new byte[240];
+            int i = 0;
+
+            uint address = Constants.KP_FLASH_FIRMWARE_UPDATE_INICIO;
+
+            byte_array[i++] = Constants.WRITE_CODE; 
+            byte_array[i++] = (byte)((address >> 16) & 0xFF);
+            byte_array[i++] = (byte)((address >> 8) & 0xFF);
+            byte_array[i++] = (byte)(address & 0xFF);
+            byte_array[i++] = (byte)(0x01);
+            byte_array[i++] = (byte)(0xCA);
+
+            byte_array[4] = (byte)(0x01);
+
+            protocol.send_msg((uint)(i), byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is needed
+        }
+
+        public void Write(MainWindow mainForm, byte[] fragment_update_array, uint address, uint data_fragment_number)
+        {
+            byte[] byte_array = new byte[240]; // verificar este tamanho
             int i = 0;
             uint j = 0;
-            uint address = 0x600000 + (data_fragment_number*235);
-            byte_array[i++] = 0x40;
+            General protocol = new General();
+
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START; ;
             byte_array[i++] = (byte)((address >> 16) & 0xFF);
             byte_array[i++] = (byte)((address >> 8) & 0xFF);
             byte_array[i++] = (byte)(address & 0xFF);
 
-            byte_array[i++] = (byte)fragment_update_array.Length;
+            byte_array[i++] = (byte)(fragment_update_array.Length & 0xFF);
             int temp = i;
             //TODO: Create a function for this for 
 
@@ -43,20 +64,38 @@ namespace ProdigyConfigToolWPF.Protocol
             {
                 byte_array[i] = fragment_update_array[j];
             }
-          
-            byte_array[4] = (byte)fragment_update_array.Length;
-            General protocol = new General();
-            protocol.send_msg((uint)(i), byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is needed
 
+            byte_array[4] = (byte)(i - temp);
+
+            protocol.send_msg((uint)(i), byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is needed
+            
         }
+
+        internal void write_block(MainWindow mainWindow, uint address, uint block_size)
+        {
+            byte[] byte_array = new byte[235]; // verificar este tamanho
+            int i = 0;
+            General protocol = new General();
+            
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE;
+            byte_array[i++] = (byte)((address >> 16) & 0xFF);
+            byte_array[i++] = (byte)((address >> 8) & 0xFF);
+            byte_array[i++] = (byte)(address & 0xFF);
+            byte_array[i++] = (byte)((block_size >> 8) & 0xFF);
+            byte_array[i++] = (byte)(block_size & 0xFF);
+
+            protocol.send_msg((uint)i, byte_array, mainWindow.cp_id, mainWindow);
+                        
+        }
+
 
         public void Read(MainWindow mainForm, uint request_fragment)
         {
             byte[] byte_array = new byte[63];
 
                 uint i = 0;
-                int keypad_address = 0x600000 + ((int)request_fragment * 240);
-                byte size = 240;
+                uint address = Constants.KP_FLASH_FIRMWARE_UPDATE_INICIO + (request_fragment * 240);
+                byte size = 235;
                 if(request_fragment == 4368)
                 {
                     size = 16;
@@ -64,14 +103,14 @@ namespace ProdigyConfigToolWPF.Protocol
 
                 // Create first 5 bytes of the request
                 byte_array[i++] = 0x20;
-                byte_array[i++] = (byte)((keypad_address >> 16) & 0xff);
-                byte_array[i++] = (byte)((keypad_address >> 8) & 0xff);
-                byte_array[i++] = (byte)((keypad_address) & 0xff);
+                byte_array[i++] = (byte)((address >> 16) & 0xff);
+                byte_array[i++] = (byte)((address >> 8) & 0xff);
+                byte_array[i++] = (byte)((address) & 0xff);
                 byte_array[i++] = size;
 
                 General protocol = new General();
                 protocol.send_msg(i, byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is neededs
-                System.Threading.Thread.Sleep(20);
+                System.Threading.Thread.Sleep(250);
 
         }
 
@@ -82,6 +121,9 @@ namespace ProdigyConfigToolWPF.Protocol
             trama_a_enviar[i++] = Constants.UPDATE_DONE_CODE;
             General protocol = new General();
             protocol.send_msg((uint)trama_a_enviar.Length, trama_a_enviar, mainForm.cp_id, mainForm);
+            System.Threading.Thread.Sleep(250);
         }
+
+        
     }
 }

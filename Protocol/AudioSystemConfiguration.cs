@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class AudioSystemConfiguration
     {
@@ -283,45 +283,47 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint zone_1_address = 0x200000 + (8 * (audio_system_number - 1));
+            uint audio_config_address = Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO + (8 * audio_system_number);
             byte size = 240;
 
             // Create first 5 bytes of the request            
             byte_array[i++] = 0x20;
-            byte_array[i++] = (byte)((zone_1_address >> 16) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address >> 8) & 0xff);
-            byte_array[i++] = (byte)((zone_1_address) & 0xff);
+            byte_array[i++] = (byte)((audio_config_address >> 16) & 0xff);
+            byte_array[i++] = (byte)((audio_config_address >> 8) & 0xff);
+            byte_array[i++] = (byte)((audio_config_address) & 0xff);
             byte_array[i++] = size;
 
             General protocol = new General();
-            protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow);            
+            protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow);
+            //System.Threading.Thread.Sleep(250);
         }
 
-        internal void write(MainWindow mainform, uint audio_system_configuration_id)
+        internal void write(MainWindow mainform, uint audio_system_number)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-            audio_system_configuration_id = audio_system_configuration_id - 1;
-
+            General protocol = new General();
+            uint audio_config_address = Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO + (Constants.KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH_SINGLE * audio_system_number);
+            
             int i = 0;
             uint j = 0;
-            uint audio_system_configuration_address = 0x200000 + (8 * (audio_system_configuration_id));
-            byte_array[i++] = 0x40;
-            byte_array[i++] = (byte)((audio_system_configuration_address >> 16) & 0xFF);
-            byte_array[i++] = (byte)((audio_system_configuration_address >> 8) & 0xFF);
-            byte_array[i++] = (byte)(audio_system_configuration_address & 0xFF);
+            
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START;
+            byte_array[i++] = (byte)((audio_config_address >> 16) & 0xFF);
+            byte_array[i++] = (byte)((audio_config_address >> 8) & 0xFF);
+            byte_array[i++] = (byte)(audio_config_address & 0xFF);
             byte_array[i++] = 240;
             int temp = i;
 
             #region AUDIO TRACKS
             byte[] audio_tracks = new byte[8];
-            audio_tracks[0] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO1"].ToString())) & 0xFF);
-            audio_tracks[1] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO1"].ToString()) - 1) >> 8);
-            audio_tracks[2] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO2"].ToString())) & 0xFF);
-            audio_tracks[3] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO2"].ToString()) - 1) >> 8);
-            audio_tracks[4] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO3"].ToString())) & 0xFF);
-            audio_tracks[5] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO3"].ToString()) - 1) >> 8);
-            audio_tracks[6] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO4"].ToString())) & 0xFF);
-            audio_tracks[7] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_configuration_id]["AUDIO4"].ToString()) - 1) >> 8);
+            audio_tracks[0] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO1"].ToString())) & 0xFF);
+            audio_tracks[1] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO1"].ToString()) - 1) >> 8);
+            audio_tracks[2] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO2"].ToString())) & 0xFF);
+            audio_tracks[3] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO2"].ToString()) - 1) >> 8);
+            audio_tracks[4] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO3"].ToString())) & 0xFF);
+            audio_tracks[5] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO3"].ToString()) - 1) >> 8);
+            audio_tracks[6] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO4"].ToString())) & 0xFF);
+            audio_tracks[7] = (byte)((int.Parse(mainform.databaseDataSet.AudioSystemConfiguration.Rows[(int)audio_system_number]["AUDIO4"].ToString()) - 1) >> 8);
             #endregion
             
             for (i = temp, j = 0; i <  temp + audio_tracks.Length; i++, j++)
@@ -330,8 +332,15 @@ namespace ProdigyConfigToolWPF.Protocol
             }
 
             byte_array[4] = (byte)(i - temp);
-            General protocol = new General();
-            protocol.send_msg((uint)i, byte_array, mainform.cp_id, mainform); // TODO: Check if cp_id is needed
+            //protocol.send_msg((uint)i, byte_array, mainform.cp_id, mainform); // TODO: Check if cp_id is needed
+            protocol.send_msg_block((uint)i, byte_array, audio_config_address, mainform.cp_id, mainform, Constants.KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH_SINGLE); // TODO: Check if cp_id is needed
+            System.Threading.Thread.Sleep(mainform.intervalsleeptime);
+
+            //if(audio_system_number == 30 - 1)
+            //{
+            //    protocol.send_command_save_block_big(800, Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO, mainform.cp_id, mainform);
+            //}
+
         }
     }
 }

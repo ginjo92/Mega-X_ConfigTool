@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ProdigyConfigToolWPF {
+namespace MegaXConfigTool {
     
     
     /// <summary>
@@ -671,7 +671,7 @@ namespace ProdigyConfigToolWPF {
         }
     }
 }
-namespace ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters {
+namespace MegaXConfigTool.SqliteLoginDataSetTableAdapters {
     
     
     /// <summary>
@@ -917,7 +917,7 @@ namespace ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SQLite.SQLiteConnection();
-            this._connection.ConnectionString = global::ProdigyConfigToolWPF.Properties.Settings.Default.SqliteLoginConnectionString;
+            this._connection.ConnectionString = global::MegaXConfigTool.Properties.Settings.Default.SqliteLoginConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

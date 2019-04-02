@@ -1,6 +1,6 @@
 ﻿
 using MahApps.Metro.Controls.Dialogs;
-using ProdigyConfigToolWPF;
+using MegaXConfigTool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class StateMachine
     {
@@ -20,7 +20,7 @@ namespace ProdigyConfigToolWPF.Protocol
         byte[] checksum = new byte[4];
         byte[] received_data_no_checksum;
         uint received_data_no_checksum_counter;
-        public byte[] data_rx = new byte[300]; //TODO: Confirm this buffer's size 
+        public byte[] data_rx = new byte[512]; //TODO: Confirm this buffer's size 
 
         // Checksum table
         public uint[] checksum_table = {
@@ -90,66 +90,116 @@ namespace ProdigyConfigToolWPF.Protocol
             0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D  };
 
         // Validate data from protocol
-        public bool ValidateData(byte data)
+        public bool ValidateData(byte[] data)
         {
-            switch (state_machine_state)
+            int read_byte = 0;
+
+            if (data[0] == Constants.HEADER_1 && state_machine_state == 1)
+                state_machine_state++;
+            else return false;
+
+            if (data[1] == Constants.HEADER_2 && state_machine_state == 2)
+                state_machine_state++;
+            else return false;
+
+            if (state_machine_state == 3)
             {
+                state_machine_data_lenght_temp = data[2] + Constants.CHECKSUM_SIZE;
+                state_machine_data_lenght = data[2] + Constants.CHECKSUM_SIZE;
+                received_data_no_checksum_counter = 0;
+                received_data_no_checksum = new byte[state_machine_data_lenght_temp - Constants.CHECKSUM_SIZE];
 
-                case 1:
-                    if (data == Constants.HEADER_1)
-                    {
-                        state_machine_state++;
-                    }
-                    else
-                    {
-                        state_machine_state = 1;
-                    }
-                    break;
+                read_byte = state_machine_state;
 
-                case 2:
-                    if (data == Constants.HEADER_2)
-                    {
-                        state_machine_state++;
-                    }
-                    else { state_machine_state = 1; }
-
-                    break;
-
-                case 3:
-                    state_machine_data_lenght_temp = data + Constants.CHECKSUM_SIZE;
-                    state_machine_data_lenght = data + Constants.CHECKSUM_SIZE;
-                    received_data_no_checksum_counter = 0;
-                    received_data_no_checksum = new byte[state_machine_data_lenght_temp - Constants.CHECKSUM_SIZE];
-                    
-                    state_machine_state++;
-                    break;
-
-                case 4:
-                    state_machine_data_lenght--;
-
-                    if(state_machine_data_lenght > 3)
-                        received_data_no_checksum[received_data_no_checksum_counter++] = data;
-
-                    data_rx[state_machine_data_counter++] = data;
-
-                    if (state_machine_data_lenght == 0)
-                    {
-                        state_machine_state = 1;
-
-                        for (int j = 1; j <= Constants.CHECKSUM_SIZE; j++)
-                        {
-                            checksum[Constants.CHECKSUM_SIZE - j] = data_rx[state_machine_data_counter - j];
-                        }
-
-                        state_machine_data_counter = 0;
-                        state_machine_data_lenght = 0;
-                        received_data_no_checksum_counter = 0;
-
-                        return ValidateReceivedChecksum(checksum);
-                    }
-                    break;
+                state_machine_state++;
             }
-            return false;
+            else return false;
+
+            while(state_machine_state == 4)
+            {
+                state_machine_data_lenght--;
+
+                if (state_machine_data_lenght > 3)
+                    received_data_no_checksum[received_data_no_checksum_counter++] = data[read_byte];
+                
+                data_rx[state_machine_data_counter++] = data[read_byte];
+
+                if (state_machine_data_lenght == 0)
+                {
+                    for (int j = 1; j <= Constants.CHECKSUM_SIZE; j++)
+                    {
+                        checksum[Constants.CHECKSUM_SIZE - j] = data_rx[state_machine_data_counter - j];
+                    }
+
+                    state_machine_data_counter = 0;
+                    state_machine_data_lenght = 0;
+                    received_data_no_checksum_counter = 0;
+                    state_machine_state++;
+                }
+                read_byte++;
+            }
+
+            if (state_machine_state == 5)
+                return ValidateReceivedChecksum(checksum);
+            else return false;
+
+            //switch (state_machine_state)
+            //{
+
+            //    case 1:
+            //        if (data == Constants.HEADER_1)
+            //        {
+            //            state_machine_state++;
+            //        }
+            //        else
+            //        {
+            //            state_machine_state = 1;
+            //        }
+            //        break;
+
+            //    case 2:
+            //        if (data == Constants.HEADER_2)
+            //        {
+            //            state_machine_state++;
+            //        }
+            //        else { state_machine_state = 1; }
+
+            //        break;
+
+            //    case 3:
+
+            //        break;
+
+            //    case 4:
+            //        state_machine_data_lenght--;
+
+            //        if(state_machine_data_lenght > 3)
+            //            received_data_no_checksum[received_data_no_checksum_counter++] = data;
+
+            //        data_rx[state_machine_data_counter++] = data;
+
+            //        if (state_machine_data_lenght == 0)
+            //        {
+            //            state_machine_state = 1;
+
+            //            for (int j = 1; j <= Constants.CHECKSUM_SIZE; j++)
+            //            {
+            //                checksum[Constants.CHECKSUM_SIZE - j] = data_rx[state_machine_data_counter - j];
+            //            }
+
+            //            state_machine_data_counter = 0;
+            //            state_machine_data_lenght = 0;
+            //            received_data_no_checksum_counter = 0;
+
+            //            return ValidateReceivedChecksum(checksum);
+            //        }
+
+            //        //string DataRX = BitConverter.ToString(data_rx);
+            //        //System.Diagnostics.Debug.WriteLine("DATA RX: " + DataRX);
+
+            //        break;
+
+            //}
         }
 
         private bool ValidateReceivedChecksum(byte[] checksum)
@@ -219,16 +269,11 @@ namespace ProdigyConfigToolWPF.Protocol
                     string software_version = Encoding.UTF8.GetString(mainform.sw_version);
                     mainform.write_control_panel_id_label(control_panel_id, hardware_version, software_version, serial_number);
 
-                    //string EventCode = BitConverter.ToString(event_code);
-                    //System.Diagnostics.Debug.WriteLine("EVENT CODE: ");
-                    //System.Diagnostics.Debug.WriteLine(EventCode);
-                    string DataRX = BitConverter.ToString(data_rx);
-                    System.Diagnostics.Debug.WriteLine("DATA RX: " + DataRX);
-
+                    //string DataRX = BitConverter.ToString(data_rx);
+                    //System.Diagnostics.Debug.WriteLine("DATA RX: " + DataRX);
 
                     mainform.serial_port_connection_timer.Stop();
                     
-
                     // UI changes if connected to a Mega-X central
                     mainform.Dispatcher.Invoke((Action)(() => mainform.TextBoxConnectedDisconnected.Text = Properties.Resources.ComConnected));
                     mainform.Dispatcher.Invoke((Action)(() => mainform.TextBoxConnectedDisconnected.Foreground = Brushes.Green));
@@ -241,7 +286,6 @@ namespace ProdigyConfigToolWPF.Protocol
                 case Constants.READ_CODE: // Create an enum or something like that
                     mainform.UpdateDataGridViews(data_rx, 251);
                     break;
-
 
                 case 0xC0: // Create an enum or something like that
                 case 0xC1:

@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for WizardSystemArchitecture.xaml
@@ -24,7 +24,6 @@ namespace ProdigyConfigToolWPF
         private string AppLocale;
         private int AppRole;
         private string config_file_name;
-        private MainWindow mainWindow;
         
         string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\"; //My documents folder
 

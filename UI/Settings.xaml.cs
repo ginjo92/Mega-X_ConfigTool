@@ -1,5 +1,5 @@
 ﻿using MahApps.Metro.Controls;
-using ProdigyConfigToolWPF.defaultDataSetTableAdapters;
+using MegaXConfigTool.defaultDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ using System.Data.SQLite;
 using System.Data;
 using MahApps.Metro.Controls.Dialogs;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for Settings.xaml

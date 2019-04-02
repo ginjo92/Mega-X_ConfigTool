@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using MahApps.Metro.Controls;
 using System.IO.Ports;
-using ProdigyConfigToolWPF.Protocol;
+using MegaXConfigTool.Protocol;
 using System.Globalization;
 using System.IO;
 using Microsoft.Win32;
@@ -23,32 +23,67 @@ using System.Diagnostics;
 using NAudio.Wave;
 using System.Threading;
 using System.ComponentModel;
-using ProdigyConfigToolWPF.defaultDataSetTableAdapters;
-using ProdigyConfigToolWPF.SqliteLoginDataSetTableAdapters;
+using MegaXConfigTool.defaultDataSetTableAdapters;
+using MegaXConfigTool.SqliteLoginDataSetTableAdapters;
 using System.Data.SQLite;
 using System.Collections;
 using System.Windows.Markup;
 using System.Text.RegularExpressions;
+using System.Security.Principal;
+using System.Security.AccessControl;
+using System.Data.SqlClient;
 
-
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     public partial class MainWindow : MetroWindow
     {
-        
+        public bool onlyDebug = false;
         private delegate void UpdateProgressBarDelegate(System.Windows.DependencyProperty dp, Object value);
-        private Help helpWindow;
 
+        public int times_to_fail = 5;
+        public int event_clicks = 0;
+
+        public byte[] rx_buffer = new byte[500];
+
+        public int last_event_number = 0;
+        public bool RX_ACK = true;
+        public uint counter_blocks = 0;
+        public uint bytes_left = 0;
+        public uint block_complete = 0;
+        public uint bytes_end_of_block = 0;
+        public uint blocks_written = 0;
+        public uint block_incomplete = 0;
+        
         public string user_code_password;
+        public int ArmMode;
 
         string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
         string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
         string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X\\";
-        
+
         private string AppLocale;
         public int AppRole;
         public string AppDbFile;
         private long FirmwareUpdateSize;
+
+        ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
+        AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
+        AudioSystemConfigurationTableAdapter databaseDataSetAudioSystemConfigurationTableAdapter = new AudioSystemConfigurationTableAdapter();
+        DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
+        EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+        ExpanderTableAdapter databaseDataSetExpanderTableAdapter = new ExpanderTableAdapter();
+        GlobalSystemTableAdapter databaseDataSetGlobalSystemTableAdapter = new GlobalSystemTableAdapter();
+        KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
+        MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
+        OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
+        PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
+        TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
+        UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+
+        public int intervalsleeptime = 0;
+        public int delay_savingtime = 200;
+        public short partitionIsArming;
+        public bool arming_code_accepted;
 
         private bool EventFilterArmDisarm = false;
         private bool EventFilterAlarms = false;
@@ -56,17 +91,14 @@ namespace ProdigyConfigToolWPF
         private bool EventFilterAreas = false;
 
         public SerialPort serialPort = new SerialPort();
-        public byte[] cp_id = { 0x0, 00 };
-        public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00 , 0x00 , 0x00 , 0x00 , 0x00 , 0x00 , 0x00 };
+        public byte[] cp_id = { 0x00, 0x00 };
+        public byte[] serial_number = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
         public byte[] hw_version = { 0x00, 0x00, 0x00 };
         public byte[] sw_version = { 0x00, 0x00, 0x00 };
         public defaultDataSet databaseDataSet { get; set; }
 
-        bool zone_onlyActive = false;
-        bool keypad_onlyActive = false;
-        bool user_onlyActive = false;
-        bool phone_onlyActive = false;
-        
+        public int FLAG_PARTITION_IS_ARMING = 0;
+
         byte[] combined_file_data_bytes = new byte[0];
         public uint event_code;
         WaveIn waveSource;
@@ -80,20 +112,21 @@ namespace ProdigyConfigToolWPF
         Dictionary<int, bool> WizardUsersSetup;
         System.Windows.Threading.DispatcherTimer real_time_timer = new System.Windows.Threading.DispatcherTimer();
 
+        System.Windows.Threading.DispatcherTimer timer_arming = new System.Windows.Threading.DispatcherTimer();
+
         public System.Windows.Threading.DispatcherTimer serial_port_connection_timer = new System.Windows.Threading.DispatcherTimer();
 
         AudioTableAdapter databaseDataSetAudioDefaultTableAdapter = new AudioTableAdapter();
         AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
         FileStream audio_stream;
-
+        
         private bool default_restore_is_set = false;
-
-        ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
 
         string mai_file = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
         System.Windows.Forms.Timer timer = null;
         bool audio_system_momory_isfull = false;
         bool audio_system_momory_istrigger = false;
+
         public MainWindow(string locale, int role, string ChoosenDbFile, Dictionary<int, bool> KeypadConfig, Dictionary<int, bool> DialerConfig, Dictionary<int, bool> ZonesConfig, Dictionary<int, bool> PhonesConfig, Dictionary<int, bool> UsersConfig)
         {
             AppLocale = locale;
@@ -105,22 +138,31 @@ namespace ProdigyConfigToolWPF
             WizardZonesSetup = ZonesConfig;
             WizardPhonesSetup = PhonesConfig;
             WizardUsersSetup = UsersConfig;
-
+            
             Console.WriteLine("MainWindow: " + AppRole);
 
-        //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
+            //QueriesTableAdapter("attachdbfilename =| DataDirectory |\\Database\\" + ChoosenDbFile + "; data source = Database\\" + ChoosenDbFile);
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            string version_part = (System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()).Substring(0, 4) + "X";
             string configurations_folder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\V" + version_part + "\\"; //My documents folder
             QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
 
- 
+            if(event_clicks != 0)
+                LoadMoreEvents_button.Visibility = Visibility.Visible;
+
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(AppLocale);
 
 
             XmlLanguageConverter c = new XmlLanguageConverter();
             XmlLanguage c2 = (XmlLanguage)c.ConvertFrom(System.Threading.Thread.CurrentThread.CurrentUICulture.ToString());
             this.Resources.Add("GetSystemCulture", c2);
-            
+
+            string audio_path_documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
+            if (!Directory.Exists(audio_path_documents))
+                Directory.CreateDirectory(audio_path_documents);
+
+            //SetFullAccessPermissionsForEveryone(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName));
+
             try
             {
                 InitializeComponent();
@@ -136,6 +178,8 @@ namespace ProdigyConfigToolWPF
                 System.Diagnostics.Debug.WriteLine("Mega-X Configuration Tool v." + version);
 
                 ConfigFileName.Content = AppDbFile;
+
+
             }
             catch (Exception ex)
             {
@@ -160,7 +204,27 @@ namespace ProdigyConfigToolWPF
             //        break;
             //}
         }
-        
+
+        public IEnumerable<DataGridRow> GetDataGridRows(DataGrid grid)
+        {
+            var itemsSource = grid.ItemsSource as IEnumerable;
+
+            if (null == itemsSource)
+            {
+                yield return null;
+            }
+
+            foreach (var item in itemsSource)
+            {
+                var row = grid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
+
+                if (null != row)
+                {
+                    yield return row;
+                }
+            }
+        }
+
         void OnTimedEvent(object source, EventArgs e)
         {
             long value = GetFolderSize();
@@ -207,7 +271,7 @@ namespace ProdigyConfigToolWPF
             //    StatusPartitionsGrid.Visibility = Visibility.Visible;
 
             RealTime real_time = new RealTime();
-            real_time_timer.Interval = new TimeSpan(0, 0, 2);
+            real_time_timer.Interval = new TimeSpan(0, 0, 3);
 
             if (serialPort.IsOpen)
             {
@@ -238,8 +302,10 @@ namespace ProdigyConfigToolWPF
 
         private async void BaseWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            
             real_time_timer.Tick += new EventHandler(Real_time_Timer_Tick);
             real_time_timer.Interval = new TimeSpan(0, 0, 2);
+
             serial_port_connection_timer.Tick += new EventHandler(Serial_ConnectionFailed);
             serial_port_connection_timer.Interval = new TimeSpan(0, 0, 2);
 
@@ -250,7 +316,7 @@ namespace ProdigyConfigToolWPF
             StatusBarConnectedIcon.Visibility = Visibility.Collapsed;
             //Serial number, FW Version and HW Version labels
             PanelLabels.Visibility = Visibility.Collapsed;
-            
+
             // Serial Port
             string[] com_ports = SerialPort.GetPortNames();
             ushort i = 0;
@@ -270,6 +336,7 @@ namespace ProdigyConfigToolWPF
             CreateTreeviewItemsfor(TreeviewUsers, Constants.KP_MAX_USERS - 5, Properties.Resources.User); //Do not show last 5 [reserved] users
             CreateTreeviewItemsfor(TreeviewTimezones, Constants.KP_MAX_TIMEZONES, Properties.Resources.Timezone);
             CreateTreeviewItemsfor(TreeviewPhones, Constants.KP_MAX_PHONES, Properties.Resources.Phone);
+            CreateTreeviewItemsfor(TreeviewExpanders, Constants.KP_MAX_EXPANDERS, Properties.Resources.Expansor);
             #endregion
 
             //USER
@@ -278,6 +345,7 @@ namespace ProdigyConfigToolWPF
                 TopBar_User_Name.Text = Properties.Resources.User_role_admin_user;
                 TopBar_User_Image.Source = new BitmapImage(new Uri("/images/login/0_user.png", UriKind.Relative));
 
+                Open_Expanders.Visibility = Visibility.Collapsed;
                 Open_Areas.Visibility = Visibility.Collapsed;
                 Open_Zones.Visibility = Visibility.Collapsed;
                 Open_Keypads.Visibility = Visibility.Collapsed;
@@ -289,7 +357,9 @@ namespace ProdigyConfigToolWPF
                 Open_Debug.Visibility = Visibility.Collapsed;
                 Open_Audio.Visibility = Visibility.Collapsed;
                 Open_Events.Visibility = Visibility.Collapsed;
+                Open_Memory.Visibility = Visibility.Collapsed;
 
+                TreeviewExpanders.Visibility = Visibility.Collapsed;
                 TreeviewAreas.Visibility = Visibility.Collapsed;
                 TreeviewZones.Visibility = Visibility.Collapsed;
                 TreeviewKeypads.Visibility = Visibility.Collapsed;
@@ -301,12 +371,13 @@ namespace ProdigyConfigToolWPF
                 TreeviewDebug.Visibility = Visibility.Collapsed;
                 TreeviewAudioMessages.Visibility = Visibility.Collapsed;
                 TreeviewEvents.Visibility = Visibility.Collapsed;
+                TreeviewMemory.Visibility = Visibility.Collapsed;
 
                 ReadFWUpdateData.Visibility = Visibility.Collapsed;
                 UpdateDateHour.Visibility = Visibility.Collapsed;
 
-               // User_Code_Column.Visibility = Visibility.Collapsed;
-               // User_UserCode_Button.Visibility = Visibility.Collapsed;
+                // User_Code_Column.Visibility = Visibility.Collapsed;
+                // User_UserCode_Button.Visibility = Visibility.Collapsed;
             }
             //MANUFACTURER
             else if (AppRole == 1)
@@ -323,6 +394,8 @@ namespace ProdigyConfigToolWPF
 
                 TreeviewDebug.Visibility = Visibility.Collapsed;
                 Open_Debug.Visibility = Visibility.Collapsed;
+                TreeviewMemory.Visibility = Visibility.Collapsed;
+                Open_Memory.Visibility = Visibility.Collapsed;
 
             }
 
@@ -340,69 +413,72 @@ namespace ProdigyConfigToolWPF
                 this.databaseDataSet = databaseDataSet;
 
                 // ZONE
-                ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
                 databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-                CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                 zoneViewSource.View.MoveCurrentToFirst();
 
                 // AREA
-                AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
+               // AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
                 databaseDataSetAreaTableAdapter.Fill(databaseDataSet.Area);
-                CollectionViewSource AreaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
+                System.Windows.Data.CollectionViewSource AreaViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("areaViewSource")));
                 AreaViewSource.View.MoveCurrentToFirst();
-                
+
                 // USER
-                UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+               // UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
                 databaseDataSetUserTableAdapter.Fill(databaseDataSet.User);
-                CollectionViewSource userViewSource = ((CollectionViewSource)(this.FindResource("userViewSource")));
-                
+                System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                 userViewSource.View.MoveCurrentToFirst();
 
                 // KEYPAD
-                KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
+               // KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
                 databaseDataSetKeypadTableAdapter.Fill(databaseDataSet.Keypad);
-                CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
+                System.Windows.Data.CollectionViewSource keypadViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("keypadViewSource")));
                 keypadViewSource.View.MoveCurrentToFirst();
-                                
-                // OUTPUT
-                OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
-                databaseDataSetOutputTableAdapter.Fill(databaseDataSet.Output);
-                CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
-                outputViewSource.View.MoveCurrentToFirst();
-                
-                // TIMEZONE
-                TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
-                databaseDataSetTimezoneTableAdapter.Fill(databaseDataSet.Timezone);
 
-                CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
+                // OUTPUT
+                //OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
+                databaseDataSetOutputTableAdapter.Fill(databaseDataSet.Output);
+                System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                outputViewSource.View.MoveCurrentToFirst();
+
+                // TIMEZONE
+               // TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
+                databaseDataSetTimezoneTableAdapter.Fill(databaseDataSet.Timezone);
+                System.Windows.Data.CollectionViewSource timezoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("timezoneViewSource")));
                 timezoneViewSource.View.MoveCurrentToFirst();
 
                 // PHONE
-                PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
+                //PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
                 databaseDataSetPhoneTableAdapter.Fill(databaseDataSet.Phone);
-                CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
+                System.Windows.Data.CollectionViewSource phoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("phoneViewSource")));
                 phoneViewSource.View.MoveCurrentToFirst();
 
                 // DIALER
-                DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
+                //DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
                 databaseDataSetDialerTableAdapter.Fill(databaseDataSet.Dialer);
-                CollectionViewSource dialerViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("dialerViewSource")));
+                System.Windows.Data.CollectionViewSource dialerViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("dialerViewSource")));
                 dialerViewSource.View.MoveCurrentToFirst();
 
                 // GLOBAL SYSTEM
-                GlobalSystemTableAdapter databaseDataSetGlobalSystemTableAdapter = new GlobalSystemTableAdapter();
+               // GlobalSystemTableAdapter databaseDataSetGlobalSystemTableAdapter = new GlobalSystemTableAdapter();
                 databaseDataSetGlobalSystemTableAdapter.Fill(databaseDataSet.GlobalSystem);
-                CollectionViewSource globalSystemViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("globalSystemViewSource")));
+                System.Windows.Data.CollectionViewSource globalSystemViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("globalSystemViewSource")));
                 globalSystemViewSource.View.MoveCurrentToFirst();
 
                 // CLIENT INFO
-                MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
+                //MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
                 databaseDataSetMainInfoTableAdapter.Fill(databaseDataSet.MainInfo);
                 System.Windows.Data.CollectionViewSource mainInfoViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("clientInfoViewSource")));
                 mainInfoViewSource.View.MoveCurrentToFirst();
-                                
+
+                // EXPANDER
+                // ExpanderTableAdapter databaseDataSetExpanderTableAdapter = new ExpanderTableAdapter();
+                databaseDataSetExpanderTableAdapter.Fill(databaseDataSet.Expander);
+                CollectionViewSource expanderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("expanderViewSource")));
+                keypadViewSource.View.MoveCurrentToFirst();
+
                 //AUDIO
-                //databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
+                databaseDataSetAudioDefaultTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
                 {
@@ -421,8 +497,7 @@ namespace ProdigyConfigToolWPF
                 AudioDefaultViewSource.View.MoveCurrentToFirst();
 
                 //AUDIO CUSTOMIZED
-                //AudioTableAdapter databaseDataSetAudioCustomizedTableAdapter = new AudioTableAdapter();
-                //databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
+                databaseDataSetAudioCustomizedTableAdapter.Fill(databaseDataSet.Audio);
                 defaultDataSet.AudioDataTable audio_customized_table = new defaultDataSet.AudioDataTable();
                 using (SQLiteConnection con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017"))
                 {
@@ -437,28 +512,38 @@ namespace ProdigyConfigToolWPF
                 }
                 audio_customized_table.TypeColumn.DefaultValue = 1;
                 audio_customized_table.VisibleColumn.DefaultValue = 1;
+
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
-
-                //databaseDataSetAudioCustomizedTableAdapter.Fill(audio_customized_table);
-                //DebugTable(audio_customized_table);
-                AudioCustomizedViewSource.View.MoveCurrentToFirst();
                 AudioCustomizedViewSource.Source = audio_customized_table;
-                
-                databaseDataSet.Audio.AcceptChanges();
+                AudioCustomizedViewSource.View.MoveCurrentToFirst();
+               // databaseDataSetAudioCustomizedTableAdapter.Fill(audio_customized_table);
 
-                AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
+                DebugTable(audio_customized_table);
+                //databaseDataSet.Audio.AcceptChanges();
+
+                //AudioTableAdapter databaseDataSetAudioTableAdapter = new defaultDataSetTableAdapters.AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioViewSource")));
                 AudioViewSource.View.MoveCurrentToFirst();
-                
+
                 //AUDIO SYSTEM
-                AudioSystemConfigurationTableAdapter databaseDataSetAudioSystemConfigurationTableAdapter = new defaultDataSetTableAdapters.AudioSystemConfigurationTableAdapter();
+                //AudioSystemConfigurationTableAdapter databaseDataSetAudioSystemConfigurationTableAdapter = new defaultDataSetTableAdapters.AudioSystemConfigurationTableAdapter();
                 databaseDataSetAudioSystemConfigurationTableAdapter.Fill(databaseDataSet.AudioSystemConfiguration);
                 System.Windows.Data.CollectionViewSource AudioSystemConfigurationViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioSystemConfigurationViewSource")));
                 AudioSystemConfigurationViewSource.View.MoveCurrentToFirst();
-                
+
                 //force update of the table after edit one cell
                 audio_customized_table.RowDeleted += new DataRowChangeEventHandler(Update_table_after_edit);
                 audio_customized_table.RowChanged += new DataRowChangeEventHandler(Update_table_after_edit);
+
+                // Load data into the table Event. You can modify this code as needed.
+                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+                CollectionViewSource eventViewSource = ((CollectionViewSource)(this.FindResource("eventViewSource")));
+                ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+                this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+                this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+                eventViewSource.View.MoveCurrentToFirst();
 
             }
             catch (Exception ex)
@@ -466,7 +551,7 @@ namespace ProdigyConfigToolWPF
                 await DialogManager.ShowMessageAsync(this, ex.Message, "");
             }
 
-            
+
             if (WizardKeypadSetup != null)
                 SetKeypadConfigurationFromWizard(WizardKeypadSetup);
 
@@ -481,13 +566,14 @@ namespace ProdigyConfigToolWPF
 
             if (WizardUsersSetup != null)
                 SetUsersConfigurationFromWizard(WizardUsersSetup);
+
         }
 
         #region WIZARD
         private void SetDialerConfigurationFromWizard(Dictionary<int, bool> wizardDialerSetup)
         {
             databaseDataSet.Dialer.Rows[0]["Active"] = wizardDialerSetup[0];
-            DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
+            //DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
             databaseDataSetDialerTableAdapter.Update(databaseDataSet.Dialer);
         }
 
@@ -497,7 +583,7 @@ namespace ProdigyConfigToolWPF
             {
                 databaseDataSet.Keypad.Rows[i]["Active"] = keypadConfig[i];
             }
-            KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
+           // KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
             databaseDataSetKeypadTableAdapter.Update(databaseDataSet.Keypad);
         }
 
@@ -507,7 +593,7 @@ namespace ProdigyConfigToolWPF
             {
                 databaseDataSet.Phone.Rows[i]["Report on"] = wizardPhonesSetup[i];
             }
-            PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
+            //PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
             databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Phone);
         }
 
@@ -517,7 +603,7 @@ namespace ProdigyConfigToolWPF
             {
                 databaseDataSet.Zone.Rows[i]["Zone Active"] = wizardZonesSetup[i];
             }
-            ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
+            //ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
             databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
         }
 
@@ -527,7 +613,7 @@ namespace ProdigyConfigToolWPF
             {
                 databaseDataSet.User.Rows[i]["User active"] = wizardUsersSetup[i];
             }
-            UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+            //UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
             databaseDataSetUserTableAdapter.Update(databaseDataSet.User);
         }
         #endregion
@@ -581,10 +667,12 @@ namespace ProdigyConfigToolWPF
 
         internal async void RequestDataFromProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
+
             Protocol.Zones zones = new Protocol.Zones();
             Protocol.Areas areas = new Protocol.Areas();
             Protocol.Users users = new Protocol.Users();
             Protocol.Keypads keypads = new Protocol.Keypads();
+            Protocol.Expanders expanders = new Protocol.Expanders();
             Protocol.Outputs outputs = new Protocol.Outputs();
             Protocol.Timezones timezones = new Protocol.Timezones();
             Protocol.Phones phones = new Protocol.Phones();
@@ -603,36 +691,83 @@ namespace ProdigyConfigToolWPF
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Zones").Value.Equals(true)))
                 {
                     controller.SetMessage(Properties.Resources.ReadingZones);
-                    for (int i = 1; i < (Constants.KP_MAX_ZONES + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_ZONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => zones.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => zones.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => zones.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => zones.read(this, (uint)(i - 1))));
+                        }
+
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_ZONES + 1.0)))));
-                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_ZONES + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_ZONES)));
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
 
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Areas").Value.Equals(true)))
                 {
                     controller.SetMessage(Properties.Resources.ReadingPartitions);
-                    for (int i = 1; i < (Constants.KP_MAX_AREAS + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_AREAS; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => areas.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => areas.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => areas.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => areas.read(this, (uint)(i - 1))));
+                        }
+                        //msgflag = Constants.MSG_RX_READY;
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_AREAS + 1.0)))));
-                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_AREAS + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_AREAS)));
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Users").Value.Equals(true)))
                 {
                     //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingUsers);
-                    for (int i = 1; i < (Constants.KP_MAX_USERS + 1); i++) //TODO: Chyeck and define number of users
+                    for (int i = 0; i < Constants.KP_MAX_USERS; i++) //TODO: Chyeck and define number of users
                     {
-                        this.Dispatcher.Invoke((Action)(() => users.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => users.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => users.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => users.read(this, (uint)(i - 1))));
+                        }
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_USERS + 1)))));
-                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_USERS + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_USERS)));
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
 
@@ -640,25 +775,57 @@ namespace ProdigyConfigToolWPF
                 {
                     //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingKeypads);
-                    for (int i = 1; i < (Constants.KP_MAX_KEYPADS + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_KEYPADS; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => keypads.read(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_KEYPADS + 1.0)))));
-                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_KEYPADS + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => keypads.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => keypads.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => keypads.read(this, (uint)(i - 1))));
+                        }
+
+                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_KEYPADS)));
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
+
+
 
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Outputs").Value.Equals(true)))
                 {
                     //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingOutputs);
-                    for (int i = 1; i < (Constants.KP_MAX_OUTPUTS + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_OUTPUTS; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => outputs.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => outputs.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => outputs.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => outputs.read(this, (uint)(i - 1))));
+                        }
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (Constants.KP_MAX_OUTPUTS + 1.0)))));
-                        controller.SetProgress(i * (float)(100.0 / (Constants.KP_MAX_OUTPUTS + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        controller.SetProgress(i * (float)(100.0 / (Constants.KP_MAX_OUTPUTS)));
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
 
@@ -666,12 +833,27 @@ namespace ProdigyConfigToolWPF
                 {
                     //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingTimezones);
-                    for (int i = 1; i < (Constants.KP_MAX_TIMEZONES + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_TIMEZONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => timezones.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => timezones.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => timezones.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => timezones.read(this, (uint)(i - 1))));
+                        }
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_TIMEZONES + 1.0)))));
                         controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_TIMEZONES + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
 
@@ -679,47 +861,133 @@ namespace ProdigyConfigToolWPF
                 {
                     //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingPhones);
-                    for (int i = 1; i < (Constants.KP_MAX_PHONES + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_PHONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => phones.read(this, (uint)i)));
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => phones.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => phones.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => phones.read(this, (uint)(i - 1))));
+                        }
                         //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_PHONES + 1.0)))));
                         controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_PHONES + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
+
                     }
                 }
 
                 if ((CheckboxesValues.First(kvp => kvp.Key == "System").Value.Equals(true)))
                 {
-                    //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
                     controller.SetMessage(Properties.Resources.ReadingGlobal);
-                    //GLOBAL SYSTEM
-                    this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                    this.Dispatcher.Invoke((Action)(() => global_system.read(this, 1)));
-                    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));
+                    if (RX_ACK)
+                        this.Dispatcher.Invoke((Action)(() => global_system.read(this, 0)));
+                    else
+                    {
+                        int count = 0;
+                        while (!RX_ACK)
+                        {
+                            count++;
+                            if (count == 10)
+                                RX_ACK = true;
+                        }
+                        this.Dispatcher.Invoke((Action)(() => global_system.read(this, 0)));
+                    }
                     controller.SetProgress(100);
-                    controller.SetMessage(Properties.Resources.ReadingDialer);
+                    //System.Threading.Thread.Sleep(intervalsleeptime);
+                    //for (int i = 1; i < (Constants.KP_GLOBAL_SYSTEM_DIV + 1); i++)
+                    //{
+                    //    this.Dispatcher.Invoke((Action)(() => global_system.read(this, (uint)i)));
+                    //    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_KEYPADS + 1.0)))));
+                    //    controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_GLOBAL_SYSTEM_DIV + 1.0)));
+                    //    System.Threading.Thread.Sleep(intervalsleeptime);
+                    //}
                 }
 
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Dialer").Value.Equals(true)))
                 {
-                    //DIALER
+
                     controller.SetMessage(Properties.Resources.ReadingDialer);
-                    this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                    this.Dispatcher.Invoke((Action)(() => dialer.read(this, 1)));
-                    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));
+                    if (RX_ACK)
+                        this.Dispatcher.Invoke((Action)(() => dialer.read(this, 0)));
+                    else
+                    {
+                        int count = 0;
+                        while (!RX_ACK)
+                        {
+                            count++;
+                            if (count == 10)
+                                RX_ACK = true;
+                        }
+                        this.Dispatcher.Invoke((Action)(() => dialer.read(this, 0)));
+                    }
                     controller.SetProgress(100);
+                    //System.Threading.Thread.Sleep(intervalsleeptime);
+                    //for (int i = 1; i < (Constants.KP_GLOBAL_SYSTEM_DIV + 1); i++)
+                    //{
+                    //    this.Dispatcher.Invoke((Action)(() => dialer.read(this, (uint)i)));
+                    //    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_KEYPADS + 1.0)))));
+                    //    controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_GLOBAL_SYSTEM_DIV + 1.0)));
+                    //    System.Threading.Thread.Sleep(intervalsleeptime);
+                    //}
                 }
 
                 if ((CheckboxesValues.First(kvp => kvp.Key == "AudioSystemConfiguration").Value.Equals(true)))
                 {
                     controller.SetMessage(Properties.Resources.ReadingAudioSystemConfigurations);
-                    for (uint i = 1; i < (Constants.KP_MAX_AUDIO_SYSTEM_CONFIGURATION + 1); i++)
+                    if (RX_ACK)
+                        this.Dispatcher.Invoke((Action)(() => audio_system_configuration.read(this, 0)));
+                    else
                     {
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                        this.Dispatcher.Invoke((Action)(() => audio_system_configuration.read(this, i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));                        
-                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_AUDIO_SYSTEM_CONFIGURATION + 1.0)));
-                        System.Threading.Thread.Sleep(20);
+                        int count = 0;
+                        while (!RX_ACK)
+                        {
+                            count++;
+                            if (count == 10)
+                                RX_ACK = true;
+                        }
+                        this.Dispatcher.Invoke((Action)(() => audio_system_configuration.read(this, 0)));
+                    }
+                    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));                        
+                    controller.SetProgress(100);
+                        //System.Threading.Thread.Sleep(intervalsleeptime);
+                    
+                }
+
+                if ((CheckboxesValues.First(kvp => kvp.Key == "Expanders").Value.Equals(true)))
+                {
+                    //this.Dispatcher.Invoke((Action)(() => BaseProgressBar.Value = 100));
+                    controller.SetMessage(Properties.Resources.ReadingExpanders);
+                    for (int i = 0; i < Constants.KP_MAX_EXPANDERS; i++)
+                    {
+                        if (RX_ACK)
+                            this.Dispatcher.Invoke((Action)(() => expanders.read(this, (uint)i)));
+                        else
+                        {
+                            int count = 0;
+                            while (!RX_ACK)
+                            {
+                                count++;
+                                if (count == 10)
+                                    RX_ACK = true;
+                            }
+                            if (i == 1)
+                                this.Dispatcher.Invoke((Action)(() => expanders.read(this, 1)));
+                            else
+                                this.Dispatcher.Invoke((Action)(() => expanders.read(this, (uint)(i - 1))));
+                        }
+
+                        controller.SetProgress(i * (float)(100.0 / (float)(Constants.KP_MAX_EXPANDERS + 1.0)));
+                        // System.Threading.Thread.Sleep(intervalsleeptime);
                     }
                 }
 
@@ -739,17 +1007,27 @@ namespace ProdigyConfigToolWPF
 
         internal async void SendDataToProdigy(List<KeyValuePair<string, bool>> CheckboxesValues)
         {
+            double[] data_to_send = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            double[] data_sent = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+
             Protocol.Event events = new Protocol.Event();
             Protocol.Zones zones = new Protocol.Zones();
             Protocol.Areas areas = new Protocol.Areas();
             Protocol.Users users = new Protocol.Users();
             Protocol.Keypads keypads = new Protocol.Keypads();
+            Protocol.Expanders expanders = new Protocol.Expanders();
             Protocol.Outputs outputs = new Protocol.Outputs();
             Protocol.Timezones timezones = new Protocol.Timezones();
             Protocol.Phones phones = new Protocol.Phones();
             Protocol.GlobalSystem global_system = new Protocol.GlobalSystem();
             Protocol.Dialer dialer = new Protocol.Dialer();
             Protocol.AudioSystemConfiguration audio_system_configuration = new AudioSystemConfiguration();
+            Protocol.General protocol = new General();
+
+
+            int send_msg_error = 0;
+            int error_counter = 0;
+
 
             var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
             controller.Maximum = 100.0;
@@ -757,127 +1035,523 @@ namespace ProdigyConfigToolWPF
 
             await Task.Run(() =>
             {
+
                 //ZONES
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Zones").Value.Equals(true)))
                 {
+                    data_to_send[0] = 1;
+                    data_sent[0] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingZones);
-                    for (int i = 1; i < (Constants.KP_MAX_ZONES + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_ZONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => zones.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_ZONES + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_ZONES + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => zones.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => zones.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => zones.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_ZONES));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[0] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
+
                 //AREAS
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Areas").Value.Equals(true)))
                 {
+                    data_to_send[1] = 1;
+                    data_sent[1] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingPartitions);
-                    for (int i = 1; i < (Constants.KP_MAX_AREAS + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_AREAS; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => areas.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_AREAS + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_AREAS + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => areas.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => areas.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => areas.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_AREAS));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[1] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
                 //USERS
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Users").Value.Equals(true)))
                 {
+                    data_to_send[2] = 1;
+                    data_sent[2] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingUsers);
-                    for (int i = 1; i < (Constants.KP_MAX_USERS + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_USERS + 3; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => users.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100.0 / (Constants.KP_MAX_USERS + 1)))));
-                        controller.SetProgress(i * (100.0 / (Constants.KP_MAX_USERS + 1)));
-                        System.Threading.Thread.Sleep(40);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => users.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => users.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => users.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / (Constants.KP_MAX_USERS)));
                     }
+
+                    if (send_msg_error == 0)
+                        data_sent[2] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
                 //KEYPADS
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Keypads").Value.Equals(true)))
                 {
+                    data_to_send[3] = 1;
+                    data_sent[3] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingKeypads);
-                    for (int i = 1; i < (Constants.KP_MAX_KEYPADS + 1); i++)
+                    for (int i = 0; i < Constants.KP_MAX_KEYPADS; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => keypads.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_KEYPADS + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_KEYPADS + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => keypads.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => keypads.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => keypads.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_KEYPADS));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[3] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
+
                 //OUTPUTS
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Outputs").Value.Equals(true)))
                 {
+                    data_to_send[4] = 1;
+                    data_sent[4] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingOutputs);
-                    for (int i = 1; i < (Constants.KP_MAX_OUTPUTS + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_OUTPUTS + 3; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => outputs.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_OUTPUTS + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_OUTPUTS + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => outputs.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => outputs.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => outputs.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_OUTPUTS));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[4] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
+
                 }
                 //TIMEZONES
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Timezones").Value.Equals(true)))
                 {
+                    data_to_send[5] = 1;
+                    data_sent[5] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingTimezones);
-                    for (int i = 1; i < (Constants.KP_MAX_TIMEZONES + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_TIMEZONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => timezones.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_TIMEZONES + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_TIMEZONES + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => timezones.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => timezones.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => timezones.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_TIMEZONES));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[5] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
                 //PHONES
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Phones").Value.Equals(true)))
                 {
+                    data_to_send[6] = 1;
+                    data_sent[6] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingPhones);
-                    for (int i = 1; i < (Constants.KP_MAX_PHONES + 1); i++)
+
+                    for (int i = 0; i < Constants.KP_MAX_PHONES; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => phones.Write(this, (uint)i)));
-                        //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_PHONES + 1)))));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_PHONES + 1)));
-                        System.Threading.Thread.Sleep(20);
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => phones.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => phones.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => phones.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_PHONES));
                     }
+                    if (send_msg_error == 0)
+                        data_sent[6] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
                 //GLOBAL SYSTEM
                 if ((CheckboxesValues.First(kvp => kvp.Key == "System").Value.Equals(true)))
                 {
+                    data_to_send[7] = 1;
+                    data_sent[7] = 0;
+                    send_msg_error = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingGlobal);
-                    this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                    this.Dispatcher.Invoke((Action)(() => global_system.Write(this, 0)));
-                    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));
-                    controller.SetProgress(100);
+
+                    if (RX_ACK)
+                    {
+                        error_counter = 0;
+                        this.Dispatcher.Invoke((Action)(() => global_system.Write(this, 0)));
+                    }
+                    else
+                    {
+                        error_counter++;
+                        RX_ACK = true;
+                        this.Dispatcher.Invoke((Action)(() => global_system.Write(this, 0)));
+                        counter_blocks--;
+
+                    }
+                    if (error_counter == times_to_fail)
+                    {
+                        send_msg_error = 1;
+                    }
+                    else
+                        controller.SetProgress(100);
+
+                    if (send_msg_error == 0)
+                        data_sent[7] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
+                    //System.Threading.Thread.Sleep(intervalsleeptime);
+                    //for (int i = 1; i < (Constants.KP_GLOBAL_SYSTEM_DIV + 1); i++)
+                    //{
+                    //    this.Dispatcher.Invoke((Action)(() => global_system.Write(this, (uint)i)));
+                    //    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (100 / (Constants.KP_MAX_ZONES + 1)))));
+                    //    controller.SetProgress(i * (100 / (Constants.KP_GLOBAL_SYSTEM_DIV + 1)));
+                    //    System.Threading.Thread.Sleep(intervalsleeptime);
+                    //}
                 }
                 //Dialer
                 if ((CheckboxesValues.First(kvp => kvp.Key == "Dialer").Value.Equals(true)))
                 {
+                    data_to_send[8] = 1;
+                    data_sent[8] = 0;
+                    send_msg_error = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingDialer);
-                    this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                    this.Dispatcher.Invoke((Action)(() => dialer.Write(this, 0)));
-                    //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(100)));
-                    controller.SetProgress(100);
+
+                    if (RX_ACK)
+                    {
+                        error_counter = 0;
+                        this.Dispatcher.Invoke((Action)(() => dialer.Write(this, 0)));
+                    }
+                    else
+                    {
+                        counter_blocks--;
+                        error_counter++;
+                        this.Dispatcher.Invoke((Action)(() => dialer.Write(this, 0)));
+                    }
+                    if (error_counter == times_to_fail)
+                    {
+                        send_msg_error = 1;
+                    }
+                    else
+                        controller.SetProgress(100);
+
+                    if (send_msg_error == 0)
+                        data_sent[8] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
+
                 }
 
+
+                //AUDIO SYSTEM CONFIG
                 if ((CheckboxesValues.First(kvp => kvp.Key == "AudioSystemConfiguration").Value.Equals(true)))
                 {
+                    data_to_send[9] = 1;
+                    data_sent[9] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
                     controller.SetMessage(Properties.Resources.WritingAudioConfig);
-                    for (int i = 1; i < (Constants.KP_MAX_AUDIO_SYSTEM_CONFIGURATION + 1); i++)
+
+                    int audio_configs_count = AudioConfigDataGrid.Items.Count - 1;
+
+                    for (int i = 0; i < audio_configs_count; i++)
                     {
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(0)));
-                        this.Dispatcher.Invoke((Action)(() => audio_system_configuration.write(this, (uint)i)));
-                        controller.SetProgress(i * (100 / (Constants.KP_MAX_AUDIO_SYSTEM_CONFIGURATION + 1)));
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => audio_system_configuration.write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => audio_system_configuration.write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => audio_system_configuration.write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / audio_configs_count));// Constants.KP_MAX_AUDIO_SYSTEM_CONFIGURATION));
                     }
+                    Audio audio = new Protocol.Audio();
+                    uint size = Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_FIM - Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO;
+
+                    audio.write_block(this, Constants.KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO, size);
+
+                    if (send_msg_error == 0)
+                        data_sent[9] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
                 }
+
+                //EXPANDERS
+                if ((CheckboxesValues.First(kvp => kvp.Key == "Expanders").Value.Equals(true)))
+                {
+                    data_to_send[10] = 1;
+                    data_sent[10] = 0;
+                    send_msg_error = 0;
+                    error_counter = 0;
+                    counter_blocks = 0;
+                    controller.SetMessage(Properties.Resources.WritingExpanders);
+
+                    for (int i = 0; i < Constants.KP_MAX_EXPANDERS; i++)
+                    {
+                        if (RX_ACK)
+                        {
+                            error_counter = 0;
+                            this.Dispatcher.Invoke((Action)(() => expanders.Write(this, (uint)i)));
+                        }
+                        else
+                        {
+                            error_counter++;
+                            counter_blocks--;
+
+                            if (i == 0)
+                                this.Dispatcher.Invoke((Action)(() => expanders.Write(this, 0)));
+                            else
+                            {
+                                i--;
+                                this.Dispatcher.Invoke((Action)(() => expanders.Write(this, (uint)(i))));
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
+                        }
+                        else
+                            controller.SetProgress(i * (100 / Constants.KP_MAX_EXPANDERS));
+                    }
+                    if (send_msg_error == 0)
+                        data_sent[10] = 1;
+
+                    System.Threading.Thread.Sleep(1000);
+                }
+
                 controller.CloseAsync();
             });
 
-            await DialogManager.ShowMessageAsync(this, Properties.Resources.WriteWithSuccess, "");
+            if (send_msg_error == 1)
+                await DialogManager.ShowMessageAsync(this, Properties.Resources.ErrorWhileWritting, "");
+            else
+                await DialogManager.ShowMessageAsync(this, Properties.Resources.WriteWithSuccess, "");
+
+            System.Threading.Thread.Sleep(500);
+
+            Report report = new Report(this, data_sent, data_to_send);
+            report.Show();
         }
 
         private async void SerialConnectButton_Click(object sender, RoutedEventArgs e)
         {
+            if (ComPortIsRemote.IsChecked == true)
+            {
+                delay_savingtime = 1500;
+                intervalsleeptime = 500;
+                times_to_fail = 10;
+            }
+            else
+            {
+                delay_savingtime = 200;
+                intervalsleeptime = 100;
+                times_to_fail = 3;
+            }
+
+            //msgflag = Constants.MSG_TX_READY;
+
             // Connect to Serial Port
             try
             {
@@ -889,6 +1563,7 @@ namespace ProdigyConfigToolWPF
                     serialPort.DataBits = 8;
                     serialPort.StopBits = StopBits.One;
                     serialPort.Handshake = Handshake.None;
+
                     try
                     {
                         serialPort.DataReceived += new SerialDataReceivedEventHandler(SerialPort_DataReceived);
@@ -904,7 +1579,6 @@ namespace ProdigyConfigToolWPF
                         serial_port_connection_timer.Start();
 
                         PanelLabels.Visibility = Visibility.Visible;
-
                         //TextBoxConnectedDisconnected.Text = Properties.Resources.ComConnected;
                         //TextBoxConnectedDisconnected.Foreground = Brushes.Green;
                         //StatusBarDisconnectedIcon.Visibility = Visibility.Collapsed;
@@ -951,17 +1625,32 @@ namespace ProdigyConfigToolWPF
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            byte[] rx_buffer = new byte[1];
+            
             Protocol.StateMachine state_machine = new Protocol.StateMachine(); // Create state machine to handle with received data
 
             // State machine
             while (serialPort.BytesToRead > 0)
             {
-                serialPort.Read(rx_buffer, 0, 1);
-                if (state_machine.ValidateData(rx_buffer[0]))
+                serialPort.Read(rx_buffer, 0, rx_buffer.Length);
+                string DataRX = BitConverter.ToString(rx_buffer);
+                System.Diagnostics.Debug.WriteLine("DATA RX: " + DataRX);
+                if (state_machine.ValidateData(rx_buffer))
                 {
-                    state_machine.Operations(state_machine.data_rx[2], this, state_machine.state_machine_data_lenght_temp);
+                    RX_ACK = true;
+                    if(!onlyDebug)
+                        state_machine.Operations(state_machine.data_rx[2], this, state_machine.state_machine_data_lenght_temp);
+                    System.Diagnostics.Debug.WriteLine(" RX ACK: " + RX_ACK);
+                    System.Diagnostics.Debug.WriteLine("");
                 }
+                else
+                {
+                    RX_ACK = false;
+                    System.Diagnostics.Debug.WriteLine("RX ACK: " + RX_ACK);
+                    System.Diagnostics.Debug.WriteLine("");
+                }
+            
+                System.Threading.Thread.Sleep(50);
+
             }
         }
 
@@ -972,6 +1661,8 @@ namespace ProdigyConfigToolWPF
                 if (serialPort.IsOpen)
                 {
                     serialPort.Write(tx_buffer, offset, count);
+                    string DataTX = BitConverter.ToString(tx_buffer);
+                    System.Diagnostics.Debug.WriteLine("DATA TX: " + DataTX);
                     //updateDebugTextBox(tx_buffer, count, 1); //test purposes only
                 }
                 else
@@ -1009,8 +1700,8 @@ namespace ProdigyConfigToolWPF
             {
                 #region HomePage
                 //Home page
-                var a = MainTreeView.ItemContainerGenerator.Items[0] as TreeViewItem;
-                if (e.NewValue == a)
+                var var_main = MainTreeView.ItemContainerGenerator.Items[0] as TreeViewItem;
+                if (e.NewValue == var_main)
                 {
                     MainTabControl.SelectedItem = MainHomeTab;
                 }
@@ -1018,7 +1709,7 @@ namespace ProdigyConfigToolWPF
 
                 #region Areas
                 // Areas                
-                a = MainTreeView.ItemContainerGenerator.Items[1] as TreeViewItem;
+                var a = MainTreeView.ItemContainerGenerator.Items[1] as TreeViewItem;
                 if (e.NewValue == a)
                 {
                     MainTabControl.SelectedItem = MainAreasTab;
@@ -1076,1412 +1767,1797 @@ namespace ProdigyConfigToolWPF
 
                 #region Zones
                 // Zones
-                a = MainTreeView.ItemContainerGenerator.Items[2] as TreeViewItem;
-                if (e.NewValue == a)
+                var var_zone = MainTreeView.ItemContainerGenerator.Items[2] as TreeViewItem;
+                if (e.NewValue == var_zone)
                 {
                     MainTabControl.SelectedItem = MainZonesTab;
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[0]) // Zone 1
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[0]) // Zone 1
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(0);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[1]) // Zone 2
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[1]) // Zone 2
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(1);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[2]) // Zone 3
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[2]) // Zone 3
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(2);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[3]) // Zone 4
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[3]) // Zone 4
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(3);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[4]) // Zone 5
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[4]) // Zone 5
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(4);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[5]) // Zone 6
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[5]) // Zone 6
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(5);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[6]) // Zone 7
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[6]) // Zone 7
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(6);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[7]) // Zone 8
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[7]) // Zone 8
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(7);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[8]) // Zone 9
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[8]) // Zone 9
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(8);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[9]) // Zone 10
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[9]) // Zone 10
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(9);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[10]) // Zone 11
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[10]) // Zone 11
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(10);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[11]) // Zone 12
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[11]) // Zone 12
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(11);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[12]) // Zone 13
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[12]) // Zone 13
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(12);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[13]) // Zone 14
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[13]) // Zone 14
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(13);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[14]) // Zone 15
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[14]) // Zone 15
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(14);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[15]) // Zone 16
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[15]) // Zone 16
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(15);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[16]) // Zone 17
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[16]) // Zone 17
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(16);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[17]) // Zone 18
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[17]) // Zone 18
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(17);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[18]) // Zone 19
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[18]) // Zone 19
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(18);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[19]) // Zone 20
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[19]) // Zone 20
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(19);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[20]) // Zone 21
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[20]) // Zone 21
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(20);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[21]) // Zone 22
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[21]) // Zone 22
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(21);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[22]) // Zone 23
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[22]) // Zone 23
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(22);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[23]) // Zone 24
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[23]) // Zone 24
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(23);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[24]) // Zone 25
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[24]) // Zone 25
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(24);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[25]) // Zone 26
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[25]) // Zone 26
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(25);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[26]) // Zone 27
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[26]) // Zone 27
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(26);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[27]) // Zone 28
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[27]) // Zone 28
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(27);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[28]) // Zone 29
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[28]) // Zone 29
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(28);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[29]) // Zone 30
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[29]) // Zone 30
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(29);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[30]) // Zone 31
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[30]) // Zone 31
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(30);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[31]) // Zone 32
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[31]) // Zone 32
                 {
                     MainTabControl.SelectedItem = MainZonePVTTab;
                     System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
                     zoneViewSource.View.MoveCurrentToPosition(31);
                 }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[32]) // Zone 1
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(32);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[33]) // Zone 2
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(33);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[34]) // Zone 3
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(34);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[35]) // Zone 4
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(35);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[36]) // Zone 5
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(36);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[37]) // Zone 6
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(37);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[38]) // Zone 7
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(38);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[39]) // Zone 8
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(39);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[40]) // Zone 9
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(40);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[41]) // Zone 10
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(41);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[42]) // Zone 11
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(42);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[43]) // Zone 12
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(43);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[44]) // Zone 13
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(44);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[45]) // Zone 14
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(45);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[46]) // Zone 15
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(46);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[47]) // Zone 16
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(47);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[48]) // Zone 17
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(48);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[49]) // Zone 18
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(49);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[50]) // Zone 19
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(50);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[51]) // Zone 20
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(51);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[52]) // Zone 21
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(52);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[53]) // Zone 22
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(53);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[54]) // Zone 23
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(54);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[55]) // Zone 24
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(55);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[56]) // Zone 25
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(56);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[57]) // Zone 26
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(57);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[58]) // Zone 27
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(58);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[59]) // Zone 28
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(59);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[60]) // Zone 29
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(60);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[61]) // Zone 30
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(61);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[62]) // Zone 31
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(62);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[63]) // Zone 32
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(63);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[64]) // Zone 1
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(64);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[65]) // Zone 2
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(65);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[66]) // Zone 3
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(66);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[67]) // Zone 4
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(67);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[68]) // Zone 5
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(68);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[69]) // Zone 6
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(69);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[70]) // Zone 7
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(70);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[71]) // Zone 8
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(71);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[72]) // Zone 9
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(72);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[73]) // Zone 10
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(73);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[74]) // Zone 11
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(74);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[75]) // Zone 12
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(75);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[76]) // Zone 13
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(76);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[77]) // Zone 14
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(77);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[78]) // Zone 15
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(78);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[79]) // Zone 16
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(79);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[80]) // Zone 17
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(80);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[81]) // Zone 18
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(81);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[82]) // Zone 19
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(82);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[83]) // Zone 20
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(83);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[84]) // Zone 21
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(84);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[85]) // Zone 22
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(85);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[86]) // Zone 23
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(86);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[87]) // Zone 24
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(87);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[88]) // Zone 25
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(8);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[89]) // Zone 26
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(89);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[90]) // Zone 27
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(90);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[91]) // Zone 28
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(91);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[92]) // Zone 29
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(92);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[93]) // Zone 30
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(93);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[94]) // Zone 31
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(94);
+                }
+                else if (e.NewValue == var_zone.ItemContainerGenerator.Items[95]) // Zone 32
+                {
+                    MainTabControl.SelectedItem = MainZonePVTTab;
+                    System.Windows.Data.CollectionViewSource zoneViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("zoneViewSource")));
+                    zoneViewSource.View.MoveCurrentToPosition(95);
+                }
+
                 #endregion
 
                 #region Users
                 // Users
-                a = MainTreeView.ItemContainerGenerator.Items[6] as TreeViewItem;
+                var var_user = MainTreeView.ItemContainerGenerator.Items[6] as TreeViewItem;
 
-                if (e.NewValue == a)
+                if (e.NewValue == var_user)
                 {
                     MainTabControl.SelectedItem = MainUsersTab;
                 }
 
-                else if (e.NewValue == a.ItemContainerGenerator.Items[0]) // User 1
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[0]) // User 1
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(0);
                 }
 
-                else if (e.NewValue == a.ItemContainerGenerator.Items[1]) // User 1
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[1]) // User 1
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(1);
                 }
 
-                else if (e.NewValue == a.ItemContainerGenerator.Items[2]) // User 2
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[2]) // User 2
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(2);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[3]) // User 3
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[3]) // User 3
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(3);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[4]) // User 4
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[4]) // User 4
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(4);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[5]) // User 5
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[5]) // User 5
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(5);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[6]) // User 6
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[6]) // User 6
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(6);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[7]) // User 7
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[7]) // User 7
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(7);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[8]) // User 8
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[8]) // User 8
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(8);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[9]) // User 9
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[9]) // User 9
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(9);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[10]) // User 10
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[10]) // User 10
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(10);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[11]) // User 11
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[11]) // User 11
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(11);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[12]) // User 12
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[12]) // User 12
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(12);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[13]) // User 13
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[13]) // User 13
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(13);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[14]) // User 14
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[14]) // User 14
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(14);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[15]) // User 15
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[15]) // User 15
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(15);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[16]) // User 16
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[16]) // User 16
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(16);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[17]) // User 17
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[17]) // User 17
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(17);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[18]) // User 18
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[18]) // User 18
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(18);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[19]) // User 19
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[19]) // User 19
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(19);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[20]) // User 20
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[20]) // User 20
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(20);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[21]) // User 21
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[21]) // User 21
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(21);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[22]) // User 22
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[22]) // User 22
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(22);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[23]) // User 23
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[23]) // User 23
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(23);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[24]) // User 24
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[24]) // User 24
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(24);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[25]) // User 25
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[25]) // User 25
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(25);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[26]) // User 26
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[26]) // User 26
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(26);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[27]) // User 27
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[27]) // User 27
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(27);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[28]) // User 28
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[28]) // User 28
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(28);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[29]) // User 29
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[29]) // User 29
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(29);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[30]) // User 30
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[30]) // User 30
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(30);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[31]) // User 31
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[31]) // User 31
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(31);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[32]) // User 32
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[32]) // User 32
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(32);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[33]) // User 33
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[33]) // User 33
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(33);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[34]) // User 34
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[34]) // User 34
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(34);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[35]) // User 35
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[35]) // User 35
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(35);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[36]) // User 36
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[36]) // User 36
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(36);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[37]) // User 37
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[37]) // User 37
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(37);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[38]) // User 38
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[38]) // User 38
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(38);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[39]) // User 39
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[39]) // User 39
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(39);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[40]) // User 40
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[40]) // User 40
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(40);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[41]) // User 41
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[41]) // User 41
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(41);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[42]) // User 42
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[42]) // User 42
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(42);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[43]) // User 43
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[43]) // User 43
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(43);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[44]) // User 44
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[44]) // User 44
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(44);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[45]) // User45
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[45]) // User45
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(45);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[46]) // User 46
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[46]) // User 46
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(46);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[47]) // User 47
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[47]) // User 47
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(47);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[48]) // User 48
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[48]) // User 48
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(48);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[49]) // User 49
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[49]) // User 49
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(49);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[50]) // User 50
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[50]) // User 50
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(50);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[51]) // User 51
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[51]) // User 51
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(51);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[52]) // User 52
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[52]) // User 52
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(52);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[53]) // User 53
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[53]) // User 53
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(53);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[54]) // User 54
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[54]) // User 54
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(54);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[55]) // User 55
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[55]) // User 55
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(55);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[56]) // User 56
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[56]) // User 56
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(56);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[57]) // User 57
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[57]) // User 57
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(57);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[58]) // User 58
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[58]) // User 58
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(58);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[59]) // User 59
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[59]) // User 59
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(59);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[60]) // User 60
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[60]) // User 60
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(60);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[61]) // User 61
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[61]) // User 61
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(61);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[62]) // User 62
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[62]) // User 62
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(62);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[63]) // User 63
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[63]) // User 63
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(63);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[64]) // User 64
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[64]) // User 64
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(64);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[65]) // User 65
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[65]) // User 65
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(65);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[66]) // User 66
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[66]) // User 66
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(66);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[67]) // User 67
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[67]) // User 67
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(67);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[68]) // User 68
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[68]) // User 68
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(68);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[69]) // User 69
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[69]) // User 69
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(69);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[70]) // User 70
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[70]) // User 70
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(70);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[71]) // User 71
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[71]) // User 71
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(71);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[72]) // User 72
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[72]) // User 72
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(72);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[73]) // User 73
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[73]) // User 73
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(73);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[74]) // User 74
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[74]) // User 74
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(74);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[75]) // User 75
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[75]) // User 75
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(75);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[76]) // User 76
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[76]) // User 76
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(76);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[77]) // User 77
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[77]) // User 77
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(77);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[78]) // User 78
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[78]) // User 78
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(78);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[79]) // User 79
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[79]) // User 79
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(79);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[80]) // User 80
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[80]) // User 80
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(80);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[81]) // User 81
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[81]) // User 81
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(81);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[82]) // User 82
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[82]) // User 82
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(82);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[83]) // User 83
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[83]) // User 83
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(83);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[84]) // User 84
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[84]) // User 84
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(84);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[85]) // User 85
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[85]) // User 85
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(85);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[86]) // User 86
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[86]) // User 86
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(86);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[87]) // User 87
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[87]) // User 87
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(87);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[88]) // User 88
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[88]) // User 88
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(88);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[89]) // User 89
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[89]) // User 89
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(89);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[90]) // User 90
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[90]) // User 90
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(90);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[91]) // User 91
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[91]) // User 91
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(91);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[92]) // User 92
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[92]) // User 92
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(92);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[93]) // User 93
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[93]) // User 93
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(93);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[94]) // User 94
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[94]) // User 94
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(94);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[95]) // User 95
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[95]) // User 95
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(95);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[96]) // User 96
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[96]) // User 96
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(96);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[97]) // User 97
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[97]) // User 97
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(97);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[98]) // User 98
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[98]) // User 98
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(98);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[99]) // User 99
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[99]) // User 99
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(99);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[100]) // User 100
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[100]) // User 100
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(100);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[101]) // User 101
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[101]) // User 101
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(101);
                 }
 
-                else if (e.NewValue == a.ItemContainerGenerator.Items[102]) // User 102
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[102]) // User 102
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(102);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[103]) // User 103
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[103]) // User 103
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(103);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[104]) // User 104
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[104]) // User 104
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(104);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[105]) // User 105
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[105]) // User 105
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(105);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[106]) // User 106
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[106]) // User 106
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(106);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[107]) // User 107
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[107]) // User 107
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(107);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[108]) // User 108
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[108]) // User 108
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(108);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[109]) // User 109
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[109]) // User 109
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(109);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[110]) // User 110
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[110]) // User 110
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(110);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[111]) // User 111
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[111]) // User 111
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(111);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[112]) // User 112
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[112]) // User 112
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(112);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[113]) // User 113
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[113]) // User 113
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(113);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[114]) // User 114
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[114]) // User 114
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(114);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[115]) // User 115
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[115]) // User 115
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(115);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[116]) // User 116
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[116]) // User 116
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(116);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[117]) // User 117
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[117]) // User 117
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(117);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[118]) // User 118
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[118]) // User 118
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(118);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[119]) // User 119
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[119]) // User 119
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(119);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[120]) // User 120
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[120]) // User 120
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(120);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[121]) // User 121
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[121]) // User 121
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(121);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[122]) // User 122
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[122]) // User 122
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(122);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[123]) // User 123
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[123]) // User 123
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(123);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[124]) // User 124
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[124]) // User 124
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(124);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[125]) // User 125
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[125]) // User 125
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(125);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[126]) // User 126
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[126]) // User 126
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(126);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[127]) // User 127
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[127]) // User 127
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(127);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[128]) // User 128
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[128]) // User 128
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(128);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[129]) // User 129
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[129]) // User 129
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(129);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[130]) // User 130
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[130]) // User 130
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(130);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[131]) // User 131
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[131]) // User 131
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(131);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[132]) // User 132
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[132]) // User 132
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(132);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[133]) // User 133
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[133]) // User 133
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(133);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[134]) // User 134
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[134]) // User 134
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(134);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[135]) // User 135
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[135]) // User 135
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(135);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[136]) // User 136
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[136]) // User 136
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(136);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[137]) // User 137
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[137]) // User 137
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(137);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[138]) // User 138
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[138]) // User 138
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(138);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[139]) // User 139
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[139]) // User 139
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(139);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[140]) // User 140
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[140]) // User 140
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(140);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[141]) // User 141
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[141]) // User 141
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(141);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[142]) // User 142
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[142]) // User 142
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(142);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[143]) // User 143
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[143]) // User 143
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(143);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[144]) // User 144
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[144]) // User 144
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(144);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[145]) // User145
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[145]) // User145
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(145);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[146]) // User 146
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[146]) // User 146
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(146);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[147]) // User 147
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[147]) // User 147
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(147);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[148]) // User 148
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[148]) // User 148
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(148);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[149]) // User 149
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[149]) // User 149
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(149);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[150]) // User 150
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[150]) // User 150
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(150);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[151]) // User 151
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[151]) // User 151
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(151);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[152]) // User 152
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[152]) // User 152
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(152);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[153]) // User 153
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[153]) // User 153
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(153);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[154]) // User 154
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[154]) // User 154
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(154);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[155]) // User 155
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[155]) // User 155
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(155);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[156]) // User 156
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[156]) // User 156
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(156);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[157]) // User 157
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[157]) // User 157
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(157);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[158]) // User 158
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[158]) // User 158
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(158);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[159]) // User 159
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[159]) // User 159
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(159);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[160]) // User 160
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[160]) // User 160
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(160);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[161]) // User 161
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[161]) // User 161
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(161);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[162]) // User 162
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[162]) // User 162
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(162);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[163]) // User 163
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[163]) // User 163
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(163);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[164]) // User 164
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[164]) // User 164
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(164);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[165]) // User 165
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[165]) // User 165
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(165);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[166]) // User 166
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[166]) // User 166
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(166);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[167]) // User 167
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[167]) // User 167
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(167);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[168]) // User 168
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[168]) // User 168
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(168);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[169]) // User 169
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[169]) // User 169
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(169);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[170]) // User 170
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[170]) // User 170
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(170);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[171]) // User 171
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[171]) // User 171
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(171);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[172]) // User 172
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[172]) // User 172
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(172);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[173]) // User 173
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[173]) // User 173
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(173);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[174]) // User 174
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[174]) // User 174
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(174);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[175]) // User 175
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[175]) // User 175
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(175);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[176]) // User 176
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[176]) // User 176
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(176);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[177]) // User 177
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[177]) // User 177
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(177);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[178]) // User 178
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[178]) // User 178
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(178);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[179]) // User 179
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[179]) // User 179
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(179);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[180]) // User 180
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[180]) // User 180
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(180);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[181]) // User 181
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[181]) // User 181
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(181);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[182]) // User 182
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[182]) // User 182
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(182);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[183]) // User 183
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[183]) // User 183
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(183);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[184]) // User 184
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[184]) // User 184
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(184);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[185]) // User 185
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[185]) // User 185
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(185);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[186]) // User 186
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[186]) // User 186
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(186);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[187]) // User 187
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[187]) // User 187
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(187);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[188]) // User 188
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[188]) // User 188
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(188);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[189]) // User 189
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[189]) // User 189
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(189);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[190]) // User 190
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[190]) // User 190
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(190);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[191]) // User 191
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[191]) // User 191
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(191);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[192]) // User 192
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[192]) // User 192
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(192);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[193]) // User 193
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[193]) // User 193
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(193);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[194]) // User 194
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[194]) // User 194
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(194);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[195]) // User 195
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[195]) // User 195
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(195);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[196]) // User 196
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[196]) // User 196
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(196);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[197]) // User 197
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[197]) // User 197
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(197);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[198]) // User 198
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[198]) // User 198
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
                     userViewSource.View.MoveCurrentToPosition(198);
                 }
-                else if (e.NewValue == a.ItemContainerGenerator.Items[199]) // User 199
+                else if (e.NewValue == var_user.ItemContainerGenerator.Items[199]) // User 199
                 {
                     MainTabControl.SelectedItem = MainUsersPVTTab;
                     System.Windows.Data.CollectionViewSource userViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("userViewSource")));
@@ -2631,6 +3707,85 @@ namespace ProdigyConfigToolWPF
                     System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
                     outputViewSource.View.MoveCurrentToPosition(12);
                 }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[13]) // Output 1
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(13);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[14]) // Output 2
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(14);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[15]) // Output 3
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(15);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[16]) // Output 4
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(16);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[17]) // Output 5
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(17);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[18]) // Output 6
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(18);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[19]) // Output 7
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(19);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[20]) // Output 8
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(20);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[21]) // Output 9
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(21);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[22]) // Output 10
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(22);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[23]) // Output 11
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(23);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[24]) // Output 12
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(24);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[25]) // Output 13
+                {
+                    MainTabControl.SelectedItem = MainOutputsPVTTab;
+                    System.Windows.Data.CollectionViewSource outputViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("outputViewSource")));
+                    outputViewSource.View.MoveCurrentToPosition(25);
+                }
+
                 #endregion
 
                 #region Timezones
@@ -2876,6 +4031,49 @@ namespace ProdigyConfigToolWPF
 
 
                 #endregion
+
+                #region Expanders
+                // Expanders
+                a = MainTreeView.ItemContainerGenerator.Items[16] as TreeViewItem;
+                if (e.NewValue == a)
+                {
+                    MainTabControl.SelectedItem = MainExpandersTab;
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[0]) // Expander 1
+                {
+                    MainTabControl.SelectedItem = MainExpandersPVTTab;
+                    System.Windows.Data.CollectionViewSource expanderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("expanderViewSource")));
+                    expanderViewSource.View.MoveCurrentToPosition(0);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[1]) // Expander 2
+                {
+                    MainTabControl.SelectedItem = MainExpandersPVTTab;
+                    System.Windows.Data.CollectionViewSource expanderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("expanderViewSource")));
+                    expanderViewSource.View.MoveCurrentToPosition(1);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[2]) // Expander 3
+                {
+                    MainTabControl.SelectedItem = MainExpandersPVTTab;
+                    System.Windows.Data.CollectionViewSource expanderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("expanderViewSource")));
+                    expanderViewSource.View.MoveCurrentToPosition(2);
+                }
+                else if (e.NewValue == a.ItemContainerGenerator.Items[3]) // Expander 4
+                {
+                    MainTabControl.SelectedItem = MainExpandersPVTTab;
+                    System.Windows.Data.CollectionViewSource expanderViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("expanderViewSource")));
+                    expanderViewSource.View.MoveCurrentToPosition(3);
+                }
+
+                #endregion
+
+                #region Memory
+                // Memory
+                a = MainTreeView.ItemContainerGenerator.Items[17] as TreeViewItem;
+                if (e.NewValue == a)
+                {
+                    MainTabControl.SelectedItem = MainMemoryTab;
+                }
+                #endregion
             }
         }
 
@@ -2899,6 +4097,11 @@ namespace ProdigyConfigToolWPF
         private void KeypadsTile_Click(object sender, RoutedEventArgs e)
         {
             ((TreeViewItem)MainTreeView.Items[3]).IsSelected = true;
+        }
+
+        private void ExpandersTile_Click(object sender, RoutedEventArgs e)
+        {
+            ((TreeViewItem)MainTreeView.Items[16]).IsSelected = true;
         }
 
         private void FirmwareUpdate_Click(object sender, RoutedEventArgs e)
@@ -3578,6 +4781,9 @@ namespace ProdigyConfigToolWPF
                     {
                         databaseDataSet.Zone.Rows[zone_to_read]["Audio track 4"] = (audio_tracks[7] << 8) + audio_tracks[6] + 1;
                     }
+
+                    databaseDataSet.Zone.AcceptChanges();
+                    databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
                 }
                 catch (Exception ex)
                 {
@@ -3881,6 +5087,8 @@ namespace ProdigyConfigToolWPF
 
                     databaseDataSet.Area.Rows[area_to_read]["Voice call code"] = datagrid_call_code;//call_code[0] * 10000000 + call_code[1] * 1000000 + call_code[2] * 100000 + call_code[3] * 10000 + call_code[4] * 1000 + call_code[5] * 100 + call_code[6] * 10 + call_code[7];
 
+                    databaseDataSet.Area.AcceptChanges();
+
                 }
                 catch (Exception ex)
                 {
@@ -3908,6 +5116,10 @@ namespace ProdigyConfigToolWPF
                 byte[] options = (byte[])user.attributes["options"]["value"];
                 for (int i = (7 + (int)user.attributes["options"]["address"]), j = 0; i < (7 + (int)user.attributes["options"]["address"] + options.Length); i++, j++)
                 { options[j] = buf[i]; }
+
+                byte[] user_code = (byte[])user.attributes["user_code"]["value"];
+                for (int i = (7 + (int)user.attributes["user_code"]["address"]), j = 0; i < (7 + (int)user.attributes["user_code"]["address"] + user_code.Length); i++, j++)
+                { user_code[j] = buf[i]; }
 
                 byte[] user_type = (byte[])user.attributes["user_type"]["value"];
                 for (int i = (7 + (int)user.attributes["user_type"]["address"]), j = 0; i < (7 + (int)user.attributes["user_type"]["address"] + user_type.Length); i++, j++)
@@ -3957,17 +5169,12 @@ namespace ProdigyConfigToolWPF
                     group_id[j] = buf[i];
                 }
                 //USER CODE
-                byte[] user_code = (byte[])user.attributes["user_code"]["value"];
-                for (int i = (7 + (int)user.attributes["user_code"]["address"]), j = 0; i < (7 + (int)user.attributes["user_code"]["address"] + user_code.Length); i++, j++)
-                {
-                    user_code[j] = buf[i];
-                }
 
-                byte[] full_user_code = (byte[])user.attributes["full_user_code"]["value"];
-                for (int i = (7 + (int)user.attributes["full_user_code"]["address"]), j = 0; i < (7 + (int)user.attributes["full_user_code"]["address"] + full_user_code.Length); i++, j++)
-                {
-                    full_user_code[j] = buf[i];
-                }
+                //byte[] full_user_code = (byte[])user.attributes["full_user_code"]["value"];
+                //for (int i = (7 + (int)user.attributes["full_user_code"]["address"]), j = 0; i < (7 + (int)user.attributes["full_user_code"]["address"] + full_user_code.Length); i++, j++)
+                //{
+                //    full_user_code[j] = buf[i];
+                //}
 
                 #endregion
 
@@ -4037,6 +5244,33 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.User.Rows[user_to_read]["Check timezones"] = (user_check_timezones > 0);
                     databaseDataSet.User.Rows[user_to_read]["Check date"] = (user_check_date > 0);
 
+                    //USER CODE
+                    int codecounter = 0;
+                    String usercode = new String('0', codecounter);
+
+                    for (int i = 0; i < 8; i++)
+                    {
+                        if (user_code[i] != 0xFF)
+                        {
+                            if (user_code[i] == 0)
+                                usercode += '0';
+                            else
+                                usercode += user_code[i].ToString();
+
+                            codecounter++;
+                        }
+                    }
+
+                    //ValidatePassword(usercode);
+
+                    databaseDataSet.User.Rows[user_to_read]["UserCode"] = usercode.PadLeft(codecounter, '0');
+
+                    //usercode.PadRight(codecounter);
+
+                    System.Diagnostics.Debug.WriteLine("\nUserCode: " + databaseDataSet.User.Rows[user_to_read]["UserCode"]);
+                    //usercode = user_code_password;
+
+
                     //USER TYPE
                     databaseDataSet.User.Rows[user_to_read]["User type"] = user_type[0];
 
@@ -4090,7 +5324,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.User.Rows[user_to_read]["Output13Permissions"] = (outputs_permissions[1] & 0x10) > 0;
 
                     #region User Code
-                    
+
                     //databaseDataSet.User.Rows[user_to_read]["Code 1"] = user_code[0];
                     //databaseDataSet.User.Rows[user_to_read]["Code 2"] = user_code[1];
                     //databaseDataSet.User.Rows[user_to_read]["Code 3"] = user_code[2];
@@ -4267,10 +5501,10 @@ namespace ProdigyConfigToolWPF
                     {
                         databaseDataSet.User.Rows[user_to_read]["Audio track 4"] = (audio_tracks[7] << 8) + audio_tracks[6] + 1;
                     }
-
-
+                    
                     databaseDataSet.User.Rows[user_to_read]["Reserved"] = (int)reserved[0];
 
+                    databaseDataSet.User.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
@@ -4551,6 +5785,7 @@ namespace ProdigyConfigToolWPF
                         databaseDataSet.Keypad.Rows[keypad_to_read]["Audio track 4"] = (audio_tracks[7] << 8) + audio_tracks[6] + 1;
                     }
 
+                    databaseDataSet.Keypad.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
@@ -4667,6 +5902,9 @@ namespace ProdigyConfigToolWPF
                 try
                 {
 
+                    if (output_to_read > Constants.KP_MAX_OUTPUTS)
+                        output_to_read = Constants.KP_MAX_OUTPUTS;
+
                     //Device Id
                     databaseDataSet.Output.Rows[output_to_read]["Device Id"] = output_device_id;
 
@@ -4721,6 +5959,7 @@ namespace ProdigyConfigToolWPF
                     //Description
                     databaseDataSet.Output.Rows[output_to_read]["Description"] = Encoding.ASCII.GetString(description).Trim('\0'); ;
 
+                    databaseDataSet.Output.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
@@ -5000,6 +6239,8 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Timezone.Rows[timezone_to_read]["Exception 3 final date"] = date_excluded_final_month_3;
                     //4
                     databaseDataSet.Timezone.Rows[timezone_to_read]["Exception 4 final date"] = date_excluded_final_month_4;
+
+                    databaseDataSet.Timezone.AcceptChanges();
 
                 }
                 catch (Exception ex)
@@ -5297,6 +6538,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.Phone.Rows[phone_to_read]["Reserved 2"] = reserved_2;
                     #endregion
 
+                    databaseDataSet.Phone.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
@@ -5308,7 +6550,7 @@ namespace ProdigyConfigToolWPF
             else if (addr >= Constants.KP_DIALERS_INIC_ADDR && addr < Constants.KP_DIALERS_FINAL_ADDR) //TODO: Change to areas and improve this process
             {
                 #region Dialers
-                int dialer_index = 0;
+                int dialer_index = ((addr - Constants.KP_DIALERS_INIC_ADDR) / (int)Constants.KP_FLASH_TAMANHO_DADOS_DIALER_FLASH);
 
                 Protocol.Dialer dialer = new Protocol.Dialer();
 
@@ -5469,23 +6711,20 @@ namespace ProdigyConfigToolWPF
                     //Ring number max
                     databaseDataSet.Dialer.Rows[dialer_index]["RingCounter"] = ring_counter_max[0].ToString();
 
+                    databaseDataSet.Dialer.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
                     await DialogManager.ShowMessageAsync(this, ex.Message, "");
                     //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
                 }
-
-
-
-
-
                 #endregion
             }
             else if (addr >= Constants.KP_GLOBAL_SYSTEM_INIC_ADDR && addr < Constants.KP_GLOBAL_SYSTEM_FINAL_ADDR) //TODO: Change to areas and improve this process
             {
                 #region GlobalSystem
-                int global_system_index = 0;
+                int global_system_index = ((addr - Constants.KP_GLOBAL_SYSTEM_INIC_ADDR) / (int)Constants.KP_FLASH_TAMANHO_DADOS_GLOBALSYSTEM_FLASH);
+
 
                 Protocol.GlobalSystem global_system = new Protocol.GlobalSystem();
 
@@ -5997,6 +7236,7 @@ namespace ProdigyConfigToolWPF
                     databaseDataSet.GlobalSystem.Rows[global_system_index]["Output12Permissions"] = (outputs_permissions[1] & 0x08) > 0;
                     databaseDataSet.GlobalSystem.Rows[global_system_index]["Output13Permissions"] = (outputs_permissions[1] & 0x10) > 0;
 
+                    databaseDataSet.GlobalSystem.AcceptChanges();
                 }
                 catch (Exception ex)
                 {
@@ -6142,7 +7382,7 @@ namespace ProdigyConfigToolWPF
                 if (event_zone[1] < 128)
                     zone = (event_zone[1] << 8) + event_zone[0];
                 else zone = null;
-                
+
 
                 int start_or_end = event_start_or_end[0];
 
@@ -6153,7 +7393,7 @@ namespace ProdigyConfigToolWPF
                 int month = event_month[0];
                 int day = event_day[0];
                 int year = event_year[0] + 1792;
-                
+
                 try
                 {
                     DataRow new_event = databaseDataSet.Event.NewRow();
@@ -6196,12 +7436,15 @@ namespace ProdigyConfigToolWPF
                     new_event["DateTime"] = event_date_time.ToString();
 
                     databaseDataSet.Event.Rows.Add(new_event);
-                    
+
                     if (addr == (Constants.KP_EVENTS_FINAL_ADDR - Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH))
                         AddEventItemToDatagrid();
 
-                    //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                    //databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+                    databaseDataSet.Event.AcceptChanges();
+
+                    EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                    databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+
                 }
                 catch (Exception ex)
                 {
@@ -7818,6 +9061,152 @@ namespace ProdigyConfigToolWPF
                     catch (Exception ex)
                     { await DialogManager.ShowMessageAsync(this, ex.Message, ""); }
                 }
+
+                databaseDataSet.AudioSystemConfiguration.AcceptChanges();
+
+               // EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                //databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+                #endregion
+            }
+            else if (addr >= Constants.KP_EXPANDERS_INIC_ADDR && addr < Constants.KP_EXPANDERS_FINAL_ADDR) //TODO: Change to areas and improve this process
+            {
+                #region Expanders
+                int expander_to_read = ((addr - Constants.KP_EXPANDERS_INIC_ADDR) / (int)Constants.KP_FLASH_TAMANHO_DADOS_EXPANDER_FLASH);
+
+                Protocol.Expanders expander = new Protocol.Expanders();
+                byte[] description = (byte[])expander.attributes["description"]["value"];
+                for (int i = (7 + (int)expander.attributes["description"]["address"]), j = 0; i < (7 + (int)expander.attributes["description"]["address"] + description.Length); i++, j++)
+                {
+                    description[j] = buf[i];
+                }
+
+                byte[] expander_config_pins = (byte[])expander.attributes["config_pins"]["value"];
+                for (int i = (7 + (int)expander.attributes["config_pins"]["address"]), j = 0; i < (7 + (int)expander.attributes["config_pins"]["address"] + expander_config_pins.Length); i++, j++)
+                {
+                    expander_config_pins[j] = buf[i];
+                }
+
+                byte[] expander_active_outputs = (byte[])expander.attributes["active_outputs"]["value"];
+                for (int i = (7 + (int)expander.attributes["active_outputs"]["address"]), j = 0; i < (7 + (int)expander.attributes["active_outputs"]["address"] + expander_active_outputs.Length); i++, j++)
+                {
+                    expander_active_outputs[j] = buf[i];
+                }
+
+
+                byte[] options = (byte[])expander.attributes["options"]["value"];
+                for (int i = (7 + (int)expander.attributes["options"]["address"]), j = 0; i < (7 + (int)expander.attributes["options"]["address"] + options.Length); i++, j++)
+                {
+                    options[j] = buf[i];
+                }
+
+                //byte[] expander_reserved_1 = (byte[])expander.attributes["reserved_1"]["value"];
+                //for (int i = (7 + (int)expander.attributes["reserved_1"]["address"]), j = 0; i < (7 + (int)expander.attributes["reserved_1"]["address"] + expander_reserved_1.Length); i++, j++)
+                //{
+                //    expander_reserved_1[j] = buf[i];
+                //}
+
+                //byte[] expander_reserved_2 = (byte[])expander.attributes["reserved_2"]["value"];
+                //for (int i = (7 + (int)expander.attributes["reserved_2"]["address"]), j = 0; i < (7 + (int)expander.attributes["reserved_2"]["address"] + expander_reserved_2.Length); i++, j++)
+                //{
+                //    expander_reserved_2[j] = buf[i];
+                //}
+
+                //byte[] expander_reserved_3 = (byte[])expander.attributes["reserved_3"]["value"];
+                //for (int i = (7 + (int)expander.attributes["reserved_3"]["address"]), j = 0; i < (7 + (int)expander.attributes["reserved_3"]["address"] + expander_reserved_3.Length); i++, j++)
+                //{
+                //    expander_reserved_3[j] = buf[i];
+                //}
+
+                //byte[] expander_reserved_4 = (byte[])expander.attributes["reserved_4"]["value"];
+                //for (int i = (7 + (int)expander.attributes["reserved_4"]["address"]), j = 0; i < (7 + (int)expander.attributes["reserved_4"]["address"] + expander_reserved_4.Length); i++, j++)
+                //{
+                //    expander_reserved_4[j] = buf[i];
+                //}
+
+                byte[] expander_circuit_type = (byte[])expander.attributes["circuit_type"]["value"];
+                for (int i = (7 + (int)expander.attributes["circuit_type"]["address"]), j = 0; i < (7 + (int)expander.attributes["circuit_type"]["address"] + expander_circuit_type.Length); i++, j++)
+                {
+                    expander_circuit_type[j] = (byte)buf[i];
+                }
+
+                byte[] expander_configs_r1 = (byte[])expander.attributes["configs_r1"]["value"];
+                for (int i = (7 + (int)expander.attributes["configs_r1"]["address"]), j = 0; i < (7 + (int)expander.attributes["configs_r1"]["address"] + expander_configs_r1.Length); i++, j++)
+                {
+                    expander_configs_r1[j] = (byte)buf[i];
+                }
+
+                byte[] expander_type_r1 = (byte[])expander.attributes["type_r1"]["value"];
+                for (int i = (7 + (int)expander.attributes["type_r1"]["address"]), j = 0; i < (7 + (int)expander.attributes["type_r1"]["address"] + expander_type_r1.Length); i++, j++)
+                {
+                    expander_configs_r1[j] = (byte)buf[i];
+                }
+
+                byte[] expander_configs_r2 = (byte[])expander.attributes["configs_r2"]["value"];
+                for (int i = (7 + (int)expander.attributes["configs_r2"]["address"]), j = 0; i < (7 + (int)expander.attributes["configs_r2"]["address"] + expander_configs_r2.Length); i++, j++)
+                {
+                    expander_configs_r2[j] = (byte)buf[i];
+                }
+
+                byte[] expander_type_r2 = (byte[])expander.attributes["type_r2"]["value"];
+                for (int i = (7 + (int)expander.attributes["type_r2"]["address"]), j = 0; i < (7 + (int)expander.attributes["type_r2"]["address"] + expander_type_r2.Length); i++, j++)
+                {
+                    expander_configs_r2[j] = (byte)buf[i];
+                }
+                byte[] expander_configs_r3 = (byte[])expander.attributes["configs_r3"]["value"];
+                for (int i = (7 + (int)expander.attributes["configs_r3"]["address"]), j = 0; i < (7 + (int)expander.attributes["configs_r3"]["address"] + expander_configs_r3.Length); i++, j++)
+                {
+                    expander_configs_r3[j] = (byte)buf[i];
+                }
+
+                byte[] expander_type_r3 = (byte[])expander.attributes["type_r3"]["value"];
+                for (int i = (7 + (int)expander.attributes["type_r3"]["address"]), j = 0; i < (7 + (int)expander.attributes["type_r3"]["address"] + expander_type_r3.Length); i++, j++)
+                {
+                    expander_configs_r3[j] = (byte)buf[i];
+                }
+
+                uint expander_options = (uint)(options[3] << 2) + (uint)(options[2] << 1) + (uint)(options[0]);
+
+                uint expander_active = expander_options & ((uint[])expander.attributes["options"]["KP_EXPANDER_RS485_ATIVO"])[0];
+                uint expander_enable_tamper = expander_options & ((uint[])expander.attributes["options"]["KP_EXPANDER_ENABLE_TAMPER"])[0];
+                uint expander_tamper_type = expander_options & ((uint[])expander.attributes["options"]["KP_EXPANDER_CONFIG_TAMPER_NO_NC"])[0];
+
+                try
+                {
+                    //String
+                    databaseDataSet.Expander.Rows[expander_to_read]["Description"] = Encoding.ASCII.GetString(description).Trim('\0'); ;
+
+                    //Reserved  1-4
+                    //databaseDataSet.Expander.Rows[expander_to_read]["Reserved 1"] = expander_reserved_1;
+                    //databaseDataSet.Expander.Rows[expander_to_read]["Reserved 2"] = expander_reserved_2;
+                    //databaseDataSet.Expander.Rows[expander_to_read]["Reserved 3"] = expander_reserved_3;
+                    //databaseDataSet.Expander.Rows[expander_to_read]["Reserved 4"] = expander_reserved_4;
+
+                    ////ConfigPinos
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 1"] = (expander_config_pins[0] & 0x01) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 2"] = (expander_config_pins[0] & 0x02) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 3"] = (expander_config_pins[0] & 0x04) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 4"] = (expander_config_pins[0] & 0x08) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 5"] = (expander_config_pins[0] & 0x10) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 6"] = (expander_config_pins[0] & 0x20) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 7"] = (expander_config_pins[0] & 0x40) > 0;
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config pin 8"] = (expander_config_pins[0] & 0x80) > 0;
+
+                    //////OPTIONS
+                    databaseDataSet.Expander.Rows[expander_to_read]["Active"] = (expander_active > 0);
+                    databaseDataSet.Expander.Rows[expander_to_read]["Enable tamper"] = (expander_enable_tamper > 0);
+                    databaseDataSet.Expander.Rows[expander_to_read]["Config tamper"] = (expander_tamper_type > 0);
+
+                }
+                catch (Exception ex)
+                {
+                    await DialogManager.ShowMessageAsync(this, ex.Message, "");
+                    //MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+                }
+
+                databaseDataSet.Expander.AcceptChanges();
+
+               // EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+               // databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
                 #endregion
             }
             else if (addr >= 0x600000 && addr < 0x700000) //TODO: Change to areas and improve this process
@@ -7883,29 +9272,28 @@ namespace ProdigyConfigToolWPF
                 //}
                 #endregion
             }
-
         }
 
         void AddEventItemToDatagrid()
         {
-            //this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
-            //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
-            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
-            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-            //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-
-            EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-            databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
-
             this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
-            DataTable dtEvent = (DataTable)eventDataGrid.ItemsSource;
             ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
             this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
             this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
             this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
-            this.Dispatcher.Invoke((Action)(() => dtEvent.DefaultView.ToTable()));
 
-            databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+            //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+            //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
+
+            //this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
+            //DataTable dtEvent = (DataTable)eventDataGrid.ItemsSource;
+            //ICollectionView dataView = CollectionViewSource.GetDefaultView(eventDataGrid.ItemsSource);
+            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Clear()));
+            //this.Dispatcher.Invoke((Action)(() => dataView.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+            //this.Dispatcher.Invoke((Action)(() => dataView.Refresh()));
+            //this.Dispatcher.Invoke((Action)(() => dtEvent.DefaultView.ToTable()));
+
+            //databaseDataSetEventTableAdapter.Fill(databaseDataSet.Event);
         }
 
         private async void UpdateDateHourTile_Click(object sender, RoutedEventArgs e)
@@ -7926,14 +9314,6 @@ namespace ProdigyConfigToolWPF
            new System.Globalization.CultureInfo("en");
         }
 
-        private void test_update_Click(object sender, RoutedEventArgs e)
-        {
-            Protocol.FirmwareUpdate update = new Protocol.FirmwareUpdate();
-            byte[] test = new byte[1];
-            test[0] = 0x00;
-            update.Write(this, test, 0);
-        }
-
         private async void read_update_Click(object sender, RoutedEventArgs e)
         {
             Protocol.FirmwareUpdate update = new Protocol.FirmwareUpdate();
@@ -7949,6 +9329,23 @@ namespace ProdigyConfigToolWPF
             });
         }
 
+        public static void SetFullAccessPermissionsForEveryone(string directoryPath)
+        {
+            //Everyone Identity
+            IdentityReference everyoneIdentity = new SecurityIdentifier(WellKnownSidType.WorldSid,
+                                                       null);
+
+            DirectorySecurity dir_security = Directory.GetAccessControl(directoryPath);
+
+            FileSystemAccessRule full_access_rule = new FileSystemAccessRule(everyoneIdentity,
+                            FileSystemRights.FullControl, InheritanceFlags.ContainerInherit |
+                             InheritanceFlags.ObjectInherit, PropagationFlags.None,
+                             AccessControlType.Allow);
+            dir_security.AddAccessRule(full_access_rule);
+
+            Directory.SetAccessControl(directoryPath, dir_security);
+        }
+
         private async void ChooseFileButton_Click(object sender, RoutedEventArgs e)
         {
             combined_file_data_bytes = new byte[0];
@@ -7957,6 +9354,9 @@ namespace ProdigyConfigToolWPF
 
             string app_directory = Environment.GetCommandLineArgs()[0];
             string directory = System.IO.Path.GetDirectoryName(app_directory);
+
+            
+
             //ofd.InitialDirectory = directory;
             ofd.Filter = "Mega-X FW files (*.hex)|*.hex";
             ofd.FilterIndex = 2;
@@ -8047,6 +9447,19 @@ namespace ProdigyConfigToolWPF
 
                         });
                         upload_update_file_button.IsEnabled = true;
+                        string path_fw = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\fw";
+                        string path_fw_file = path_fw + "\\firmware_" + DateTime.Now.ToString("yyMMdd-HHmm") + ".txt";
+
+                        if (!Directory.Exists(path_fw))
+                            Directory.CreateDirectory(path_fw);
+
+                        //if (!File.Exists(path_fw_file))
+                        //    File.Create(path_fw_file);
+
+                        
+                        string combined_file_string = ByteArrayToString(combined_file_data_bytes, combined_file_data_bytes.Length, 1);
+                        File.WriteAllText(path_fw_file, combined_file_string);
+
                     }
                 }
                 catch (Exception ex)
@@ -8060,28 +9473,47 @@ namespace ProdigyConfigToolWPF
         {
             if (this.serialPort.IsOpen)
             {
+                FirmwareUpdate update_firmware = new FirmwareUpdate();
 
-                string app_directory = Environment.GetCommandLineArgs()[0];
-                string directory = System.IO.Path.GetDirectoryName(app_directory);
                 var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
                 controller.Maximum = 100.0;
                 controller.Minimum = 0.0;
-
-                int number_of_messages = 0;
+                                
                 await Task.Run(() =>
                 {
-                    controller.SetMessage(Properties.Resources.UpdatingFirmware);
+                    int send_msg_error = 0;
+                    int error_counter = 0;
+                    int msg_size = 235;
+                    int bytes_to_send = 0;
+                    int bytes_aux_msg = 0;
+                    int bytes_aux_block = 0;
+                    int msg_complete = 0;
+                    int msg_counter = 0;
+                    int block_complete = 0;
+                    int block_incomplete = 0;
+                    int block_counter = 0;
+                    int block_counter_aux = 0;
+                    int max_block_size = 4096;
+                    int block_size = 0;
+                    uint address = 0x600000;
+                    uint block_address_live = 0;
+                    int bytes_left = 0;
+                    int max_msg = 0;
+                    int savingTime = 200;
+                    int max_blocks = 0;
 
-                    FirmwareUpdate update_firmware = new FirmwareUpdate();
 
+                    string app_directory = Environment.GetCommandLineArgs()[0];
+                    string directory = System.IO.Path.GetDirectoryName(app_directory);
+                    
                     //Add first five bytes to the array
                     byte[] hex_file_bytes_number = new byte[4];
                     //Get size of file in bytes
                     hex_file_bytes_number = BitConverter.GetBytes(combined_file_data_bytes.Length);
-
                     //prepare last byte array before send
                     byte[] update_firmware_header = new byte[5];
-                    update_firmware_header[0] = 0xCA;
+                    update_firmware_header[0] = 0x00;
+
                     for (int i = 1; i < update_firmware_header.Length; i++)
                     {
                         update_firmware_header[i] = hex_file_bytes_number[i - 1];
@@ -8089,33 +9521,249 @@ namespace ProdigyConfigToolWPF
                     // Add header and address to the byte array
                     combined_file_data_bytes = AppendTwoByteArrays(update_firmware_header, combined_file_data_bytes);
 
-                    number_of_messages = (combined_file_data_bytes.Length / 235) + 1;
-                    //send each message
-                    int fragment_message_id = 0;
-                    for (fragment_message_id = 0; fragment_message_id < (number_of_messages); fragment_message_id++)
+                    max_blocks = (combined_file_data_bytes.Length / max_block_size) + 1;
+
+                    controller.SetMessage(Properties.Resources.UpdatingFirmware);
+
+                    for (bytes_to_send = 0, bytes_aux_msg = 0, bytes_aux_block = 0; bytes_to_send <= combined_file_data_bytes.Length; bytes_to_send++, bytes_aux_msg++, bytes_aux_block++)
                     {
-                        byte[] fragment_data_bytes = new byte[235];
-                        if (fragment_message_id == (number_of_messages - 1))
+                        block_address_live = 0x600000 + ((uint)max_block_size * (uint)block_counter);
+
+                        if (msg_counter == 0)
+                            address = block_address_live;
+
+                        if (bytes_to_send == combined_file_data_bytes.Length)
+                            msg_complete = 1;
+
+                        // if(block_counter == max_blocks && )
+
+                        //if (combined_file_data_bytes.Length - bytes_to_send < msg_size && bytes_aux_msg == msg_size)
+                        //    msg_size = combined_file_data_bytes.Length - bytes_to_send;
+                        msg_size = 235;
+
+                        byte[] fragment_data_bytes = new byte[msg_size];
+
+                        block_size = max_block_size;
+
+                        block_counter_aux = block_counter;
+
+                        //MSG COMPLETE
+                        if (bytes_aux_msg == msg_size)
                         {
-                            fragment_data_bytes = (combined_file_data_bytes.Skip((0 + (fragment_message_id * 235))).Take(combined_file_data_bytes.Length - (235 * fragment_message_id) - 1)).ToArray();
+                            msg_complete = 1;
+                            bytes_aux_msg = 0;
+                        }
+
+                        if (msg_complete == 1)
+                        {
+                            msg_complete = 0;
+                            msg_counter++;
+
+                            if (!RX_ACK)
+                            {
+                                if (bytes_to_send < msg_size) //primeira mensagem
+                                {
+                                    bytes_to_send = 0;
+                                    bytes_aux_msg = 0;
+                                    bytes_aux_block = 0;
+                                }
+                                else
+                                {
+                                    msg_counter--;
+                                    bytes_to_send -= msg_size;
+                                    bytes_aux_block -= msg_size;
+                                }
+
+                                fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+
+                                System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+
+                            }
+                            else
+                            {
+                                if (bytes_to_send == msg_size) //primeira mensagem
+                                {
+                                    fragment_data_bytes = (combined_file_data_bytes.Skip(0).Take(msg_size)).ToArray();
+                                }
+                                else
+                                {
+                                    if (bytes_to_send == combined_file_data_bytes.Length) //ultima mensagem
+                                    {
+                                        //msg_size = combined_file_data_bytes.Length - bytes_to_send;
+                                        
+                                        fragment_data_bytes = (combined_file_data_bytes.Skip(combined_file_data_bytes.Length - bytes_aux_msg).Take(bytes_aux_msg)).ToArray();
+                                        block_complete = 1;
+                                        block_size = bytes_aux_block;
+                                    }
+                                    else
+                                    {
+                                        fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+                                    }
+
+                                }
+                                    
+
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} ", block_address_live, address, address + msg_size);
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+
+                                if (!RX_ACK)
+                                {
+                                    fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+
+                                    System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+
+                                    this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                    System.Threading.Thread.Sleep(intervalsleeptime);
+                                }
+                                address += (uint)msg_size;
+                            }
+                        }
+
+
+
+                        //BLOCK WITH BYTES LEFT - BLOCK INCOMPLETE    
+                        msg_size = 235;
+                        max_msg = block_size / msg_size;
+                        bytes_left = block_size - (max_msg * msg_size);
+
+                        if (bytes_aux_block == block_size - bytes_left && msg_complete == 0)//bytes_aux_msg == bytes_left && bytes_aux_block == block_size)
+                        {
+                            block_incomplete = 1;
+                            bytes_aux_msg = 0;
+                        }
+
+                        if (block_incomplete == 1)
+                        {
+                            block_incomplete = 0;
+                            msg_counter++;
+
+                            if (!RX_ACK)
+                            {
+                                error_counter++;
+                                msg_counter--;
+                                bytes_to_send -= msg_size * error_counter;
+                                bytes_aux_block -= msg_size * error_counter;
+                                address -= (uint)(msg_size * error_counter);
+
+                                fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + (msg_counter - error_counter) + "       ({0})", bytes_to_send);
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+                            }
+                            else
+                            {
+                                error_counter = 0;
+                                //address -= (uint)bytes_left;
+                                msg_size = bytes_left;
+
+                                fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} *", block_address_live, address, address + msg_size);
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+                            }
+                        }
+                        
+                        
+
+                        //BLOCK COMPLETE
+                        if (bytes_aux_block == block_size && block_counter != max_blocks - 1) //ready to start a new block
+                        {
+                            block_complete = 1;
+                            if (!RX_ACK)
+                            {
+                                //address -= (uint)bytes_left;
+
+                                fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send - bytes_left).Take(bytes_left)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} *", block_address_live, address, address + bytes_left);
+
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)bytes_left)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+                            }
+
+                        }
+
+                        //if (bytes_to_send == combined_file_data_bytes.Length)
+                        //{
+                        //    block_size = bytes_aux_block;
+                        //    msg_size = bytes_aux_msg;
+                        //    fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+                        //    this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                        //    block_complete = 1;
+                        //}
+
+
+
+                        if (block_complete == 1)
+                        {
+                            block_complete = 0;
+                            if (!RX_ACK)
+                            {
+                                bytes_to_send -= msg_size;
+                                bytes_aux_block -= msg_size;
+                                block_incomplete = 1;
+
+                                fragment_data_bytes = (combined_file_data_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(intervalsleeptime);
+                            }
+                            else
+                            { 
+                                System.Diagnostics.Debug.WriteLine("######## SAVING BLOCK #" + block_counter + " @ 0x{0:X} ########", block_address_live);
+                                
+                                this.Dispatcher.Invoke((Action)(() => update_firmware.write_block(this, (uint)block_address_live, (uint)block_size)));
+                                System.Threading.Thread.Sleep(savingTime + intervalsleeptime);
+                                                                
+                                block_counter++;
+
+                                if (block_counter == max_blocks - 1)
+                                    block_counter = max_blocks - 1;
+
+                                bytes_aux_msg = 0;
+                                bytes_aux_block = 0;
+                                msg_counter = 0;
+
+                                address += (uint)bytes_left;
+                                //block_address = address;
+                                msg_size = 235;
+                            }
+                        }
+
+                        if (error_counter == times_to_fail)
+                        {
+                            send_msg_error = 1;
+                            break;
                         }
                         else
-                        {
-                            fragment_data_bytes = (combined_file_data_bytes.Skip((0 + (fragment_message_id * 235))).Take((235 + (fragment_message_id * 235) - (0 + (fragment_message_id * 235))))).ToArray();
-                        }
-
-                        this.Dispatcher.Invoke((Action)(() => update_firmware.Write(this, fragment_data_bytes, (uint)fragment_message_id)));
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(fragment_message_id * (float)(100.0 / (number_of_messages)))));
-                        System.Threading.Thread.Sleep(10);
+                            this.Dispatcher.Invoke((Action)(() => controller.SetProgress(block_counter * (100 / (combined_file_data_bytes.Length / 4096)))));
+                        
                     }
 
-                    System.Threading.Thread.Sleep(3000);
-                    this.Dispatcher.Invoke((Action)(() => update_firmware.WriteUpdateDone(this)));
+                   // update_firmware_header[0] = 0xCA;
+
+                    this.Dispatcher.Invoke((Action)(() => update_firmware.write_block(this, (uint)block_address_live, (uint)bytes_aux_block)));
+                    System.Threading.Thread.Sleep(savingTime + intervalsleeptime);
+
+                    if (send_msg_error == 1)
+                        MessageBox.Show(Properties.Resources.ErrorWhileWritting, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve 
+                    else
+                    {
+                        MessageBox.Show(Properties.Resources.UpdateFirmwareDone, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve 
+                        this.Dispatcher.Invoke((Action)(() => update_firmware.WriteReadyToUpdateByte(this)));
+                        System.Threading.Thread.Sleep(500);
+                        this.Dispatcher.Invoke((Action)(() => update_firmware.WriteUpdateDone(this)));
+                        System.Threading.Thread.Sleep(500);
+                    }
+
                     //serialPort.Close();
-                    MessageBox.Show(Properties.Resources.UpdateFirmwareDone, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve 
                     controller.CloseAsync();
 
                 });
+
             }
             else
             {
@@ -8168,7 +9816,6 @@ namespace ProdigyConfigToolWPF
         }
         private async void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-
             if (databaseDataSet.HasChanges())
             {
                 var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
@@ -8177,9 +9824,10 @@ namespace ProdigyConfigToolWPF
                     Save_Database_data();
                     controller.CloseAsync();
                 });
+                
             }
         }
-        private void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+        private async void SaveAsCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             SaveFileDialog dlg = new SaveFileDialog();
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -8189,34 +9837,90 @@ namespace ProdigyConfigToolWPF
             dlg.DefaultExt = ".prgy"; // Default file extension
             //dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
             dlg.InitialDirectory = configurations_folder;
-
+            
             //QueriesTableAdapter("attachdbfilename =" + configurations_folder + ChoosenDbFile + "; data source = " + configurations_folder + ChoosenDbFile);
             dlg.Filter = "Mega-X Config Tool files (.prgy)|*.prgy"; // Filter files by extension
 
             // Show save file dialog box
             Nullable<bool> result = dlg.ShowDialog();
 
-            System.Console.WriteLine("***SAVE AS***\n" +
-                "FROM: " + configurations_folder + AppDbFile + "\n" +
-                "TO:   " + dlg.FileName);
+            string old_file_path = configurations_folder + AppDbFile;
+            string temp_file_path = configurations_folder + "temp_" + AppDbFile;
+            string backup_file_path = configurations_folder + "backup\\" + AppDbFile;
+            string new_file_path = dlg.FileName;
+
+            string old_file_name = Path.GetFileName(old_file_path);
+            string temp_file_name = Path.GetFileName(temp_file_path);
+            string new_file_name = Path.GetFileName(new_file_path);
+
 
             // Process save file dialog box results
             if (result == true)
             {
-                System.IO.File.Copy(configurations_folder + AppDbFile, dlg.FileName);
-                AppDbFile = dlg.FileName;
-                Save_Database_data();
-                Close();
-                MainWindow window1 = new MainWindow(AppLocale, AppRole, AppDbFile, null, null, null, null, null);
-                window1.Show();
+                if (File.Exists(temp_file_path))
+                    File.Delete(temp_file_path);
+
+                System.IO.File.Copy(old_file_path, temp_file_path);
+
+
+                //AppDbFile = Path.GetFileName(temp_file_name);
+
+                if (databaseDataSet.HasChanges())
+                {
+                    var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
+                    await Task.Run(() =>
+                    {
+                        Save_Database_data();
+                        controller.CloseAsync();
+                    });
+                    await DialogManager.ShowMessageAsync(this, Properties.Resources.SaveWithSuccess, "");
+                }
+
+
+                if (System.IO.File.Exists(new_file_path))
+                {
+                    System.IO.File.Delete(new_file_path);
+                    System.IO.File.Move(old_file_path, new_file_path);
+                    System.Console.WriteLine("File already exists. Deleting " + new_file_name + " and changing name from  " + old_file_name + " to " + new_file_name);
+                }
+                else
+                {
+                    //System.IO.File.Create(new_file_path);
+                    System.IO.File.Move(old_file_path, new_file_path);
+                    //System.IO.File.Move(old_file_path, new_file_path);
+                    System.Console.WriteLine("File doesn't exists. Creating a copy from " + old_file_name + " to " + new_file_name);
+                }
+
+                AppDbFile = Path.GetFileName(new_file_path);
+                System.Console.WriteLine("AppDBFile is now " + new_file_name);
+                ConfigFileName.Content = AppDbFile;
+
+                
+                //File.Replace(temp_file_path, old_file_path, backup_file_path);
+                if(File.Exists(old_file_path))
+                    System.IO.File.Delete(old_file_path);
+
+                System.IO.File.Move(temp_file_path, old_file_path);
+                System.IO.File.Delete(temp_file_path);
+                System.Console.WriteLine("Deleting " + temp_file_name);
                 //Não gravar antigo, mesmo que haja alterações
                 //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
                 //Abrir novo ficheiro de config e fechar o antigo
             }
+
+            System.Console.WriteLine("***SAVE AS***\n" +
+                "OLD:  " + old_file_path + "\n" +
+                "TEMP: " + temp_file_path + "\n" +
+                "NEW:  " + new_file_path);
+
+            //this.ShowProgressAsync(Properties.Resources.SaveWithSuccess, "");
+
+            //MessageBox.Show(Properties.Resources.SaveWithSuccess, "", MessageBoxButton.OK);
         }
         private void CloseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
         {
             this.Close();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
         private void NewFile_Click(object sender, RoutedEventArgs e)
         {
@@ -8231,52 +9935,43 @@ namespace ProdigyConfigToolWPF
             prodigy_configtool_window.WindowState = WindowState.Normal;
             prodigy_configtool_window.ShowDialog();
         }
-        private async void SaveFile_Click(object sender, RoutedEventArgs e)
-        {
-            if (databaseDataSet.HasChanges())
-            {
-                var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
-                await Task.Run(() =>
-                {
-                    Save_Database_data();
-                    controller.CloseAsync();
-                    this.ShowProgressAsync(Properties.Resources.SaveWithSuccess, "");
-                });
-            }
-        }
-        private void SaveAsFile_Click(object sender, RoutedEventArgs e)
-        {
-            SaveFileDialog dlg = new SaveFileDialog();
-            dlg.FileName = "ProdigyConfig"; // Default file name
-            dlg.DefaultExt = ".prgy"; // Default file extension
-            dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
-            dlg.Filter = "Mega-X Config Tool files (.prgy)|*.prgy"; // Filter files by extension
+   
+        //private void SaveAsFile_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SaveFileDialog dlg = new SaveFileDialog();
+        //    dlg.FileName = "ProdigyConfig"; // Default file name
+        //    dlg.DefaultExt = ".prgy"; // Default file extension
+        //    dlg.InitialDirectory = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\database\";
+        //    dlg.Filter = "Mega-X Config Tool files (.prgy)|*.prgy"; // Filter files by extension
 
-            // Show save file dialog box
-            Nullable<bool> result = dlg.ShowDialog();
+        //    // Show save file dialog box
+        //    Nullable<bool> result = dlg.ShowDialog();
 
-            // Process save file dialog box results
-            if (result == true)
-            {
-                //System.IO.File.Copy(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + AppDbFile,
-                //                    dlg.InitialDirectory + dlg.FileName);
+        //    // Process save file dialog box results
+        //    if (result == true)
+        //    {
+        //        System.IO.File.Copy(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + AppDbFile,
+        //                            dlg.InitialDirectory + dlg.FileName);
 
-                //Não gravar antigo, mesmo que haja alterações
-                //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
-                //Abrir novo ficheiro de config e fechar o antigo
-            }
-        }
+        //        //Não gravar antigo, mesmo que haja alterações
+        //        //Gravar novo ficheiro com alterações actuais (mesmo que não gravadas)
+        //        //Abrir novo ficheiro de config e fechar o antigo
+        //    }
+        //}
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
         #endregion
-
+        
         public void Save_Database_data()
         {
             #region Zones
             try
             {
+                
+                
                 if (default_restore_is_set)
                 {
                     using (SQLiteConnection sqlConn = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Database\" + AppDbFile + ";Password=idsancoprodigy2017"))
@@ -8288,9 +9983,82 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
-                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
 
+                //databaseDataSet.Zone.AcceptChanges();
+
+                //string update_syntax = "UPDATE Zone SET [Id] = @Id, [Description] = @Description, [Entry time away] = @Entry_time_away, " +
+                //"[Entry time stay] = @Entry_time_stay, [Zone active] = @Zone_active, [Keyswitch zone]= @keyswitch_zone, " +
+                //"[Keyswitch type]= @keyswitch_type , [Always bypass]= @Always_bypass, [Manual bypass]= @Manual_bypass, " +
+                //"[Auto bypass] = @Auto_bypass, [Soak test]= @Soak_test, [Send report]= @Send_report, [Always report]= @Always_report, " +
+                //"[Arm if not ready]= @Arm_if_not_ready, [Silent zone]= @Silent_zone, [Handover]= @Handover, [Two trigger]= @Two_trigger, " +
+                //"[Trigger Time]= @Trigger_time, [Chime - arm]= @param1, [Chime - disarm]= @param2, [Exit terminator]= @Exit_terminator, " +
+                //"[Terminator count]= @Terminator_count, [Sensor watch]= @Sensor_watch, [Sensor watch time]= @Sensor_watch_time, " +
+                //"[Keypad visible]= @Keypad_visible, [Area away 1]= @Area_away_1, [Area away 2]= @Area_away_2, [Area away 3]= @Area_away_3, " +
+                //"[Area away 4]= @Area_away_4, [Area away 5]= @Area_away_5, [Area away 6]= @Area_away_6, [Area away 7]= @Area_away_1, " +
+                //"[Area away 8]= @Area_away_8, [Area stay 1]= @Area_stay_1, [Area stay 2]= @Area_stay_2, [Area stay 3]= @Area_stay_3, " +
+                //"[Area stay 4]= @Area_stay_4, [Area stay 5]= @Area_stay_5, [Area stay 6]= @Area_stay_6, [Area stay 7]= @Area_stay_7, " +
+                //"[Area stay 8]= @Area_stay_8, [Show keypad 1]= @Show_keypad_1, [Show keypad 2]= @Show_keypad_2, [Show keypad 3]= @Show_keypad_3, " +
+                //"[Show keypad 4]= @Show_keypad_4, [Show keypad 5]= @Show_keypad_5, [Show keypad 6] = @Show_keypad_6, [Show keypad 7] = @Show_keypad_7, " +
+                //"[Show keypad 8] = @Show_keypad_8, [Terminal circuit type] = @Terminal_circuit_type, [R1 Value] = @R1_Value, " +
+                //"[R1 Function] = @R1_Function, [R1 Contact type] = @R1_Contact_type, [R2 Value] = @R2_Value, [R2 Function] = @R2_Function, " +
+                //"[R2 Contact type] = @R2_Contact_type, [R3 Value] = @R3_Value, [R3 Function] = @R3_Function, [R3 Contact type] = @R3_Contact_type, " +
+                //"[Chime alarm output 1] = @Chime_alarm_output_1, [Chime alarm output 2] = @Chime_alarm_output_2, " +
+                //"[Chime alarm output 3] = @Chime_alarm_output_3, [Sensor watch alarm output 1] = @Sensor_watch_alarm_output_1, " +
+                //"[Sensor watch alarm output 2] = @Sensor_watch_alarm_output_2, [Sensor watch alarm output 3] =@Sensor_watch_alarm_output_3, " +
+                //"[Entry time alarm output 1] = @Entry_time_alarm_output_1, [Entry time alarm output 2] = @Entry_time_alarm_output_2, " +
+                //"[Entry time alarm output 3] = @Entry_time_alarm_output_3, [Anti mask alarm output 1] = @Anti_mask_alarm_output_1, " +
+                //"[Anti mask alarm output 2] =  @Anti_mask_alarm_output_2, [Anti mask alarm output 3] =  @Anti_mask_alarm_output_3, " +
+                //"[24 hour alarm output 1] =  @param7, [24 hour alarm output 2] = @param10, [24 hour alarm output 3] = @param13, " +
+                //"[Fire alarm output 1] = @Fire_alarm_output_1, [Fire alarm output 2] = @Fire_alarm_output_2, " +
+                //"[Fire alarm output 3] = @Fire_alarm_output_3, [Zone alarm output 1] = @Zone_alarm_output_1, " +
+                //"[Zone alarm output 2] = @Zone_alarm_output_2, [Zone alarm output 3] = @Zone_alarm_output_3, " +
+                //"[Tamper alarm output 1] = @Tamper_alarm_output_1, [Tamper alarm output 2] = @Tamper_alarm_output_2, " +
+                //"[Tamper alarm output 3] = @Tamper_alarm_output_3, [Reserved 1] = @Reserved_1, [Radio zone] = @Radio_zone, " +
+                //"[24h zone] = @param16, [24h zone - auto-reset] = @param19, [24h zone - firezone] = @param22, " +
+                //"[Send multiple reports to dialer] = @Send_multiple_reports_to_dialer, [Report to account] = @Report_to_account, " +
+                //"[Dont report 24h zone] = @Dont_report_24h_zone, [Reserved 2] = @Reserved_2, [Reserved 3] =@Reserved_3, " +
+                //"[Temperature normal low] = @Temperature_normal_low, [Temperature normal high] = @Temperature_normal_high, " +
+                //"[Temperature alarm low] = @Temperature_alarm_low, [Temperature alarm high] = @Temperature_alarm_high, " +
+                //"[Reserved 4] = @Reserved_4, [Report code] = @Report_code, [Reserved 5] = @Reserved_5, " +
+                //"[Arm away by timezone - output 1] = @param25, [Arm away by timezone - output 2] = @param28, " +
+                //"[Arm away by timezone - output 3] = @param31, [Arm away with code - output 1] = @param34, " +
+                //"[Arm away with code - output 2] = @param37, [Arm away with code - output 3] = @param40, " +
+                //"[Arm away with command - output 1] = @param43, [Arm away with command - output 2] = @param46, " +
+                //"[Arm away with command - output 3] = @param49, [Arm away with keyswtich - output 1] = @param52, " +
+                //"[Arm away with keyswtich - output 2] = @param55, [Arm away with keyswtich - output 3] = @param58, " +
+                //"[Arm away remotely - output 1] = @param61, [Arm away remotely - output 2] = @param64, " +
+                //"[Arm away remotely - output 3] = @param67, [Arm stay by timezone - output 1] = @param70, " +
+                //"[Arm stay by timezone - output 2] = @param73, [Arm stay by timezone - output 3] = @param76, " +
+                //"[Arm stay with code - output 1] = @param79, [Arm stay with code - output 2] = @param82, " +
+                //"[Arm stay with code - output 3] = @param85, [Arm stay with command - output 1] = @param88, " +
+                //"[Arm stay with command - output 2] = @param91, [Arm stay with command - output 3] = @param94, " +
+                //"[Arm stay with keyswtich - output 1] = @param97, [Arm stay with keyswtich - output 2] = @param100, " +
+                //"[Arm stay with keyswtich - output 3] = @param103, [Arm stay remotely - output 1] = @param106, " +
+                //"[Arm stay remotely - output 2] = @param109, [Arm stay remotely - output 3] = @param112, " +
+                //"[Disarm away by timezone - output 1] = @param115, [Disarm away by timezone - output 2] = @param118, " +
+                //"[Disarm away by timezone - output 3] = @param121, [Disarm away with code - output 1] = @param124, " +
+                //"[Disarm away with code - output 2] = @param127, [Disarm away with code - output 3] = @param130, " +
+                //"[Disarm away with command - output 1] = @param133, [Disarm away with command - output 2] = @param136, " +
+                //"[Disarm away with command - output 3] = @param139, [Disarm away with keyswtich - output 1] = @param142, " +
+                //"[Disarm away with keyswtich - output 2] = @param145, [Disarm away with keyswtich - output 3] = @param148, " +
+                //"[Disarm away remotely - output 1] = @param151, [Disarm away remotely - output 2] = @param154, " +
+                //"[Disarm away remotely - output 3] = @param157, [Disarm stay by timezone - output 1] = @param160, " +
+                //"[Disarm stay by timezone - output 2] = @param163, [Disarm stay by timezone - output 3] = @param166, " +
+                //"[Disarm stay with code - output 1] = @param169, [Disarm stay with code - output 2] = @param172, " +
+                //"[Disarm stay with code - output 3] = @param175, [Disarm stay with command - output 1] = @param178, " +
+                //"[Disarm stay with command - output 2] = @param181, [Disarm stay with command - output 3] = @param184, " +
+                //"[Disarm stay with keyswtich - output 1] = @param187, [Disarm stay with keyswtich - output 2] = @param190, " +
+                //"[Disarm stay with keyswtich - output 3] = @param193, [Disarm stay remotely - output 1] = @param196, " +
+                //"[Disarm stay remotely - output 2] = @param199, [Disarm stay remotely - output 3] = @param202, " +
+                //"[Audio track 1] = @Audio_track_1, [Audio track 2] = @Audio_track_2, [Audio track 3] = @Audio_track_3, " +
+                //"[Audio track 4] = @Audio_track_4, [HardwarePosition] = @HardwarePosition";
+
+                //SQLiteConnection sql_con = new SQLiteConnection("Data Source=" + configurations_folder + AppDbFile + ";Password=idsancoprodigy2017");
+
+                //databaseDataSetZoneTableAdapter.Adapter.UpdateCommand = new SQLiteCommand(update_syntax, sql_con);
+                
+                databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
+                //DebugTable(databaseDataSet.Zone);
             }
             catch (Exception ex)
             {
@@ -8312,7 +10080,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                AreaTableAdapter databaseDataSetAreaTableAdapter = new AreaTableAdapter();
+
                 databaseDataSetAreaTableAdapter.Update(databaseDataSet.Area);
 
             }
@@ -8321,7 +10089,7 @@ namespace ProdigyConfigToolWPF
                 MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
             }
             #endregion
-
+            
             #region MAININFO
             try
             {
@@ -8335,7 +10103,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                MainInfoTableAdapter databaseDataSetMainInfoTableAdapter = new MainInfoTableAdapter();
+
                 databaseDataSetMainInfoTableAdapter.Update(databaseDataSet.MainInfo);
 
             }
@@ -8358,7 +10126,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                GlobalSystemTableAdapter databaseDataSetGlobalSystemTableAdapter = new GlobalSystemTableAdapter();
+
                 databaseDataSetGlobalSystemTableAdapter.Update(databaseDataSet.GlobalSystem);
 
             }
@@ -8381,7 +10149,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                DialerTableAdapter databaseDataSetDialerTableAdapter = new DialerTableAdapter();
+
                 databaseDataSetDialerTableAdapter.Update(databaseDataSet.Dialer);
 
             }
@@ -8404,7 +10172,7 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                PhoneTableAdapter databaseDataSetPhoneTableAdapter = new PhoneTableAdapter();
+
                 databaseDataSetPhoneTableAdapter.Update(databaseDataSet.Phone);
 
             }
@@ -8428,6 +10196,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 TimezoneTableAdapter databaseDataSetTimezoneTableAdapter = new TimezoneTableAdapter();
+                //databaseDataSet.Timezone.AcceptChanges();
                 databaseDataSetTimezoneTableAdapter.Update(databaseDataSet.Timezone);
             }
             catch (Exception ex)
@@ -8450,6 +10219,7 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 OutputTableAdapter databaseDataSetOutputTableAdapter = new OutputTableAdapter();
+                //databaseDataSet.Output.AcceptChanges();
                 databaseDataSetOutputTableAdapter.Update(databaseDataSet.Output);
 
             }
@@ -8473,7 +10243,32 @@ namespace ProdigyConfigToolWPF
                     }
                 }
                 KeypadTableAdapter databaseDataSetKeypadTableAdapter = new KeypadTableAdapter();
+                //databaseDataSet.Keypad.AcceptChanges();
                 databaseDataSetKeypadTableAdapter.Update(databaseDataSet.Keypad);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButton.OK, MessageBoxImage.Error); // TODO: delete/improve
+            }
+            #endregion
+
+            #region EXPANDERS
+            try
+            {
+                if (default_restore_is_set)
+                {
+                    using (SQLiteConnection sqlConn = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\Database\" + AppDbFile + ";Password=idsancoprodigy2017"))
+                    {
+                        sqlConn.Open();
+                        SQLiteCommand sqlCommand = sqlConn.CreateCommand();
+                        sqlCommand.CommandText = "DELETE FROM Expander WHERE Id <> 0";
+                        sqlCommand.ExecuteNonQuery();
+                    }
+                }
+                //ExpanderTableAdapter databaseDataSetExpanderTableAdapter = new ExpanderTableAdapter();
+               // databaseDataSet.Expander.AcceptChanges();
+                databaseDataSetExpanderTableAdapter.Update(databaseDataSet.Expander);
 
             }
             catch (Exception ex)
@@ -8495,7 +10290,8 @@ namespace ProdigyConfigToolWPF
                         sqlCommand.ExecuteNonQuery();
                     }
                 }
-                UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+               // UserTableAdapter databaseDataSetUserTableAdapter = new UserTableAdapter();
+                //databaseDataSet.User.AcceptChanges();
                 databaseDataSetUserTableAdapter.Update(databaseDataSet.User);
 
             }
@@ -8520,7 +10316,8 @@ namespace ProdigyConfigToolWPF
 
                 }
 
-                EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+                //EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
+               // databaseDataSet.Event.AcceptChanges();
                 databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
 
             }
@@ -8545,9 +10342,9 @@ namespace ProdigyConfigToolWPF
                     }
                 }
 
-                AudioSystemConfigurationTableAdapter databaseDatasetTableAdapter = new AudioSystemConfigurationTableAdapter();
-
-                databaseDatasetTableAdapter.Update(databaseDataSet.AudioSystemConfiguration);
+                //AudioSystemConfigurationTableAdapter databaseDatasetTableAdapter = new AudioSystemConfigurationTableAdapter();
+                //databaseDataSet.AudioSystemConfiguration.AcceptChanges();
+                databaseDataSetAudioSystemConfigurationTableAdapter.Update(databaseDataSet.AudioSystemConfiguration);
 
 
             }
@@ -8577,7 +10374,7 @@ namespace ProdigyConfigToolWPF
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
                 System.Windows.Data.CollectionViewSource AudioCustomizedViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("AudioCustomizedViewSource")));
 
-
+                //databaseDataSet.Audio.AcceptChanges();
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
                 //AudioCustomizedViewSource.View.MoveCurrentToFirst();
                 //AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
@@ -8613,10 +10410,11 @@ namespace ProdigyConfigToolWPF
         //    window1.Show();
         //}
 
-        public void BaseWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        public async void BaseWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (databaseDataSet.HasChanges())
+            if (databaseDataSet.HasChanges() == true)
             {
+
                 var messageBox = MessageBox.Show(Properties.Resources.QuestionSaveChangesExtended + "\n" + "\n" + Properties.Resources.InfoDataWillBeLost, Properties.Resources.QuestionSaveChanges, MessageBoxButton.YesNoCancel);
                 if (messageBox == MessageBoxResult.Cancel)
                 {
@@ -8624,17 +10422,21 @@ namespace ProdigyConfigToolWPF
                 }
                 else if (messageBox == MessageBoxResult.Yes)
                 {
-                    Save_Database_data();
+                    var controller = await this.ShowProgressAsync(Properties.Resources.Saving, "");
+                    await Task.Run(() =>
+                    {
+                        Save_Database_data();
+                        controller.CloseAsync();
+                        this.ShowProgressAsync(Properties.Resources.SaveWithSuccess, "");
+                    });
                 }
             }
-
             else
             {
-                //Close();
+                if (serialPort.IsOpen)
+                    serialPort.Close();
             }
-            
-            if (serialPort.IsOpen)
-                serialPort.Close();
+
 
             //if(helpWindow.IsActive)
             //    Environment.Exit(1);
@@ -8654,14 +10456,14 @@ namespace ProdigyConfigToolWPF
         {
             MenuItemSave.IsEnabled = databaseDataSet.HasChanges();
         }
-        
+
         private void TitleBarHelpButton_Click(object sender, RoutedEventArgs e)
         {
             Help helpWindow = new Help(AppRole);
 
             if (MainHomeTab.IsSelected)
             {
-                helpWindow.manual.Source =  new BitmapImage(new Uri(@"/manuals/images/home.png", UriKind.Relative));
+                helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/home.png", UriKind.Relative));
                 helpWindow.Show();
             }
             else if (MainAreasTab.IsSelected)
@@ -8679,6 +10481,11 @@ namespace ProdigyConfigToolWPF
                 helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/keypads.png", UriKind.Relative));
                 helpWindow.Show();
             }
+            //else if (MainExpandersTab.IsSelected)
+            //{
+            //    helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/expanders.png", UriKind.Relative));
+            //    helpWindow.Show();
+            //}
             else if (MainOutputsTab.IsSelected)
             {
                 helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/outputs.png", UriKind.Relative));
@@ -8734,6 +10541,11 @@ namespace ProdigyConfigToolWPF
                 helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/fwupdate.png", UriKind.Relative));
                 helpWindow.Show();
             }
+            //else if (MainUpdateExpanderTab.IsSelected)
+            //{
+            //    helpWindow.manual.Source = new BitmapImage(new Uri(@"/manuals/images/expander.png", UriKind.Relative));
+            //    helpWindow.Show();
+            //}
         }
 
         #region *** Event Events and Filters ***
@@ -8742,41 +10554,74 @@ namespace ProdigyConfigToolWPF
         {
             if (this.serialPort.IsOpen)
             {
-                //Clear all existing events 
-                databaseDataSet.Event.Clear();
                 EventTableAdapter databaseDataSetEventTableAdapter = new EventTableAdapter();
-                databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+                
+                if (event_clicks == 0)
+                {
+                    //Clear all existing events 
+                    databaseDataSet.Event.Clear();
+                    databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+                }
 
-                int last_event_number = 0;
-                int i = 0;
+                event_clicks++;
 
                 Event events = new Event();
 
-                //var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
-                //controller.Maximum = 100.0;
-                //controller.Minimum = 0.0;
+                var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
+                controller.Maximum = 100.0;
+                controller.Minimum = 0.0;
 
-                    await Task.Run(() =>
+                int events_to_read = 200;
+                int i = 0;
+
+                int temp = last_event_number; 
+
+                await Task.Run(() =>
+                {
+                    while (last_event_number < temp + events_to_read)
                     {
-                        while (last_event_number <= Constants.KP_MAX_EVENTS)
-                        { 
-                            //controller.SetMessage(Properties.Resources.ReadingEvents);
-                            for (i = last_event_number; i < (last_event_number + 200); i++)
-                            {
+                        controller.SetMessage(Properties.Resources.ReadingEvents);
+                        for (i = temp; i <= temp + events_to_read; i++)
+                        {
+                            if (RX_ACK)
                                 this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)i)));
-                                //this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(5000.0 + 1.0)))));
-                                //System.Threading.Thread.Sleep(50);
+                            else
+                            {
+                                int count = 0;
+                                while (!RX_ACK)
+                                {
+                                    count++;
+                                    if (count == 10)
+                                        RX_ACK = true;
+                                }
+                                if (i == 1)
+                                    this.Dispatcher.Invoke((Action)(() => events.read(this, 1)));
+                                else
+                                    this.Dispatcher.Invoke((Action)(() => events.read(this, (uint)(i - 1))));
                             }
-                            this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
-                            this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
-                            
-                            last_event_number = i + 1;
-                        // controller.CloseAsync();
+                            if (i == temp + events_to_read)
+                            { 
+                                last_event_number += events_to_read;
+                                
+                            }
+                            this.Dispatcher.Invoke((Action)(() => controller.SetProgress(i * (float)(100.0 / (float)(temp + events_to_read)))));
                         }
+                    }
+                    this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.Refresh()));
+                    this.Dispatcher.Invoke((Action)(() => eventDataGrid.Items.SortDescriptions.Add(new SortDescription("EventId", ListSortDirection.Descending))));
+                    databaseDataSetEventTableAdapter.Update(databaseDataSet.Event);
+                    
 
-                    });
-                    // await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
-               
+                    controller.CloseAsync();
+                });
+
+                eventDataGrid.Visibility = Visibility.Visible;
+
+                if(databaseDataSet.Event.Rows.Count - temp == events_to_read)
+                    LoadMoreEvents_button.Visibility = Visibility.Visible;
+
+                await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
+
             }
             else
             {
@@ -9270,6 +11115,30 @@ namespace ProdigyConfigToolWPF
                 }
                 #endregion
 
+                #region EXPANDERS
+                defaultDataSet.ExpanderDataTable expander_table = new defaultDataSet.ExpanderDataTable();
+                con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
+                con.Open();
+                cmd = con.CreateCommand();
+                cmd.CommandText = string.Format("SELECT * FROM Expander");
+                adapter = new SQLiteDataAdapter(cmd);
+                builder = new SQLiteCommandBuilder(adapter);
+                adapter.Fill(expander_table);
+                con.Close();
+                databaseDataSet.Expander.Clear();
+
+                //delete table
+                foreach (defaultDataSet.ExpanderRow row in (databaseDataSet.Expander.Select("Id <> null")))
+                {
+                    row.Delete();
+                }
+
+                foreach (defaultDataSet.ExpanderRow row in expander_table)
+                {
+                    databaseDataSet.Expander.Rows.Add(row.ItemArray);
+                }
+                #endregion
+
                 #region OUTPUTS
                 defaultDataSet.OutputDataTable output_table = new defaultDataSet.OutputDataTable();
                 con = new SQLiteConnection("Data Source=" + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\configuration\setup\default\default.prgy;Password=idsancoprodigy2017");
@@ -9482,7 +11351,6 @@ namespace ProdigyConfigToolWPF
                 audio_full_table.Merge(audio_customized_table);
 
 
-
                 AudioTableAdapter databaseDatasetTableAdapter = new AudioTableAdapter();
                 databaseDatasetTableAdapter.Fill(audio_table);
                 databaseDatasetTableAdapter.Update(databaseDataSet.Audio);
@@ -9553,10 +11421,12 @@ namespace ProdigyConfigToolWPF
             {
                 try
                 {
-
                     AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
                     databaseDataSetAudioTableAdapter.Update((defaultDataSet.AudioDataTable)e.Row.Table);
-
+                    //((defaultDataSet.AudioDataTable)e.Row.Table).AcceptChanges();
+                    //databaseDataSetAudioTableAdapter.Fill((defaultDataSet.AudioDataTable)e.Row.Table);
+                    ZoneTableAdapter databaseDataSetZoneTableAdapter = new ZoneTableAdapter();
+                    databaseDataSetZoneTableAdapter.Update((defaultDataSet.ZoneDataTable)e.Row.Table);
                 }
                 catch (Exception ex)
                 {
@@ -9572,6 +11442,7 @@ namespace ProdigyConfigToolWPF
             {
                 DataChoose data_choose = new DataChoose(this, isUpload, structure, AppRole);
                 data_choose.Show();
+                //msgflag = Constants.MSG_TX_READY;
                 this.IsEnabled = false;
             }
             else
@@ -9614,6 +11485,15 @@ namespace ProdigyConfigToolWPF
         private void KeypadsUploadTile_Click(object sender, RoutedEventArgs e)
         {
             isDownloadORUploadClick(true, "keypads");
+        }
+
+        private void ExpanderDownloadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(false, "expanders");
+        }
+        private void ExpanderUploadTile_Click(object sender, RoutedEventArgs e)
+        {
+            isDownloadORUploadClick(true, "expanders");
         }
 
         private void OutputsDownloadTile_Click(object sender, RoutedEventArgs e)
@@ -9728,42 +11608,50 @@ namespace ProdigyConfigToolWPF
         private void Load_WAV_File_Click(object sender, RoutedEventArgs e)
         {
             GetDataGridRows(AudioCustomizedDataGrid);
-            DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
-            current_audio_row = row;
-
             defaultDataSet.AudioDataTable AudioDT = new defaultDataSet.AudioDataTable();
             databaseDataSetAudioCustomizedTableAdapter.Fill(AudioDT);
             DebugTable(AudioDT);
 
+            
+            
             // Create OpenFileDialog 
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
             // Set filter for file extension and default file extension 
             dlg.DefaultExt = ".wav";
+            string path_audio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
+
+
+            DataRowView row = (DataRowView)AudioCustomizedDataGrid.Items.CurrentItem;
+            current_audio_row = row;
 
             if (dlg.ShowDialog() == true)
             {
                 string[] selectedFiles = dlg.SafeFileNames;
                 string[] filePaths = dlg.FileNames;
 
+                if(row["Description"] == System.DBNull.Value)
+                    row["Description"] = (dlg.SafeFileName).Substring(0, dlg.SafeFileName.Length - 4);
+
                 for (int i = 0; i < dlg.FileNames.Count(); i++)
                 {
                     WaveFormat target = new WaveFormat(8000, 8, 1);
                     WaveStream stream = new WaveFileReader(filePaths[i]);
+                    
                     WaveFormatConversionStream str = new WaveFormatConversionStream(target, stream);
-                    System.Diagnostics.Debug.WriteLine("New Customized Audio: " + System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav");
-                    WaveFileWriter.CreateWaveFile(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav", str); //or the path of .wav file
+                    System.Diagnostics.Debug.WriteLine("New Customized Audio: " + path_audio + row["Description"].ToString() + "_8bit.wav");
+                    WaveFileWriter.CreateWaveFile(path_audio + row["Description"].ToString() + "_8bit.wav", str); //or the path of .wav file
 
-                    WaveFileReader temporary_file = new WaveFileReader(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + "_8bit.wav");
+                    WaveFileReader temporary_file = new WaveFileReader(path_audio + row["Description"] + "_8bit.wav");
                     byte[] audio_wav_file_bytes = new byte[(int)(8000 * ((double)temporary_file.TotalTime.TotalSeconds))];
 
                     temporary_file.Read(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length);
 
-                    using (audio_stream = new FileStream(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw", FileMode.Create))
+                    using (audio_stream = new FileStream(path_audio + row["Description"].ToString() + ".raw", FileMode.Create))
                     {
                         audio_stream.Write(audio_wav_file_bytes, 0, audio_wav_file_bytes.Length); // Requires System.IO
 
                         temporary_file.Close();
-                        File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + "_8bit.wav"));
+                        File.Delete(path_audio + row["Description"].ToString() + "_8bit.wav");
                         ;
                     }
 
@@ -9788,13 +11676,16 @@ namespace ProdigyConfigToolWPF
                         delete_button.IsEnabled = true;
 
                         play_button.IsEnabled = true;
-                        play_pause.IsEnabled = false;
-                        play_stop.IsEnabled = false;
-
-                        AudioCustomizedDataGrid.UpdateLayout();
                     }
+
+                    row["FilePath"] = path_audio + row["Description"].ToString() + ".raw";
+
+                    if (row["Filepath"] != System.DBNull.Value)
+                        delete_button.IsEnabled = true;
+
+                    AudioCustomizedDataGrid.UpdateLayout();
                 }
-                row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
+                
 
             }
 
@@ -9805,6 +11696,7 @@ namespace ProdigyConfigToolWPF
             int waveInDevices = WaveIn.DeviceCount;
             if (waveInDevices != 0)
             {
+                string path_audio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
 
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
 
@@ -9814,7 +11706,7 @@ namespace ProdigyConfigToolWPF
                 waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
                 waveSource.RecordingStopped += new EventHandler<StoppedEventArgs>(waveSource_RecordingStopped);
 
-                waveFile = new WaveFileWriter((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".wav"), waveSource.WaveFormat);
+                waveFile = new WaveFileWriter((path_audio + row["Description"] + ".wav"), waveSource.WaveFormat);
 
                 var row_list = GetDataGridRows(AudioCustomizedDataGrid);
                 foreach (DataGridRow single_row in row_list)
@@ -9841,11 +11733,13 @@ namespace ProdigyConfigToolWPF
 
                         start_record_button.Visibility = Visibility.Collapsed;
                         stop_record_button.Visibility = Visibility.Visible;
-                        AudioCustomizedDataGrid.UpdateLayout();
+                        
                     }
                 }
                 waveSource.StartRecording();
-                row["FilePath"] = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw";
+                row["FilePath"] = path_audio + row["Description"].ToString() + ".raw";
+
+                AudioCustomizedDataGrid.UpdateLayout();
             }
             else
             {
@@ -9923,26 +11817,7 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        public IEnumerable<DataGridRow> GetDataGridRows(DataGrid grid)
-        {
-            var itemsSource = grid.ItemsSource as IEnumerable;
-
-            if (null == itemsSource)
-            {
-                yield return null;
-            }
-
-            foreach (var item in itemsSource)
-            {
-                var row = grid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
-
-                if (null != row)
-                {
-                    yield return row;
-                }
-            }
-        }
-
+        
         private async void Send_Audio_messages(object sender, RoutedEventArgs e)
         {
             if (this.serialPort.IsOpen)
@@ -9952,7 +11827,7 @@ namespace ProdigyConfigToolWPF
 
                 Protocol.Audio audio = new Protocol.Audio();
                 // Make a new unified file
-                audio.CreateUnifiedFile(AudioReservedDataGrid, AudioCustomizedDataGrid);
+                audio.CreateUnifiedFile(this,AudioReservedDataGrid, AudioCustomizedDataGrid);
 
                 // Write to Mega-X Unit
                 var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
@@ -9961,34 +11836,293 @@ namespace ProdigyConfigToolWPF
 
                 await Task.Run(() =>
                 {
-                    //Audio Files
-                    controller.SetMessage("A escrever faixas de aúdio");
-                    int audio_number_of_msgs = 0;
+                    int msg_size = 235;
+                    int bytes_to_send = 0;
+                    int bytes_aux_msg = 0;
+                    int bytes_aux_block = 0;
+                    int msg_complete = 0;
+                    int msg_counter = 0;
+                    int block_complete = 0;
+                    int block_incomplete = 0;
+                    int block_counter = 0;
+                    int block_counter_aux = 0;
+                    int max_block_size = 4096;
+                    int block_size = 0;
+                    uint address = 0x200320;
+                    uint block_address = 0x200320;
+                    int bytes_left = 0;
+                    int max_msg = 0;
+                    int delayTime = 20;
+                    int savingTime = 200;
+                    int max_blocks = 0;
+                    int error_counter = 0;
 
-                    byte[] audio_file_bytes = File.ReadAllBytes(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\new_audio_files_unified.mai");
+                    string path_audio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
+                    string filename = AppDbFile.Substring(0, AppDbFile.Length - 5);
+                    var file = new FileInfo(path_audio + "unified_" + filename + ".mai");
 
-                    audio_number_of_msgs = (audio_file_bytes.Length / 235) + 1;
-                    //send each message
-                    int fragment_message_id = 0;
-                    for (fragment_message_id = 0; fragment_message_id < (audio_number_of_msgs); fragment_message_id++)
+                    byte[] audio_file_bytes = File.ReadAllBytes(file.ToString());
+                    System.Diagnostics.Debug.WriteLine("READ ALL BYTES from " + file.ToString());
+
+                    max_blocks = (audio_file_bytes.Length / max_block_size) + 1;
+
+                    //audio_number_of_msgs = (audio_file_bytes.Length / msg_size) + 1; // + 1
+
+                    //int error_counter = 0;
+                    //int fragment_message_id = 0;
+
+                    controller.SetMessage("A escrever faixas de audio");
+
+                    for (bytes_to_send = 0, bytes_aux_msg = 0, bytes_aux_block = 0; bytes_to_send < audio_file_bytes.Length; bytes_to_send++, bytes_aux_msg++, bytes_aux_block++)
                     {
-                        byte[] fragment_data_bytes = new byte[235];
-                        if (fragment_message_id == (audio_number_of_msgs - 1))
+                        msg_size = 235;
+                        byte[] fragment_data_bytes = new byte[msg_size];
+
+
+                        if (block_counter < 1)
                         {
-                            fragment_data_bytes = (audio_file_bytes.Skip((0 + (fragment_message_id * 235))).Take(audio_file_bytes.Length - (235 * fragment_message_id) - 1)).ToArray();
+                            block_size = max_block_size - (int)Constants.KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH;
+                            block_address = 0x200320;
                         }
                         else
                         {
-                            fragment_data_bytes = (audio_file_bytes.Skip((0 + (fragment_message_id * 235))).Take((235 + (fragment_message_id * 235) - (0 + (fragment_message_id * 235))))).ToArray();
+                            block_size = max_block_size;
+                            block_address = 0x200000 + (uint)(block_counter * block_size);
                         }
 
-                        this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)fragment_message_id)));
-                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(fragment_message_id * (100.0 / (audio_number_of_msgs)))));
-                        System.Threading.Thread.Sleep(10);
+                        block_counter_aux = block_counter;
+
+                        //if (block_complete == 1)
+                        //{
+                        //    if (!RX_ACK)
+                        //    {
+                        //        System.Diagnostics.Debug.WriteLine("ERROR: Cant save BLOCK #" + "{0}. Trying again...", block_counter);
+                        //       // if (block_counter > 1)
+                        //       //     this.Dispatcher.Invoke((Action)(() => audio.write_full_block(this, (uint)block_address, (uint)block_size)));
+                        //       // else
+                        //        this.Dispatcher.Invoke((Action)(() => audio.write_block(this, (uint)block_address, (uint)block_size)));
+                        //        System.Threading.Thread.Sleep(savingTime);
+                        //    }
+                        //    else
+                        //    {
+                        //        block_complete = 0;
+                        //    }
+                        //}
+
+                        //MSG COMPLETE
+                        if (bytes_aux_msg == msg_size)
+                        {
+                            msg_complete = 1;
+                            bytes_aux_msg = 0;
+                        }
+
+                        if (msg_complete == 1)
+                        {
+                            msg_complete = 0;
+                            msg_counter++;
+
+                            if (!RX_ACK)
+                            {
+                                if (bytes_to_send < msg_size)
+                                {
+                                    bytes_to_send = 0;
+                                    bytes_aux_msg = 0;
+                                    bytes_aux_block = 0;
+
+                                    fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+                                    System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                    this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                    System.Threading.Thread.Sleep(delayTime);
+                                }
+                                else
+                                {
+                                    msg_counter--;
+                                    bytes_to_send -= msg_size;
+                                    bytes_aux_block -= msg_size;
+
+                                    fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                    System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                    this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                    System.Threading.Thread.Sleep(delayTime);
+                                }
+                            }
+                            else
+                            {
+                                if (bytes_to_send == msg_size)
+                                {
+                                    fragment_data_bytes = (audio_file_bytes.Skip(0).Take(msg_size)).ToArray();
+                                }
+                                else if (audio_file_bytes.Length - bytes_to_send < msg_size)
+                                {
+                                    msg_size = audio_file_bytes.Length - bytes_to_send;
+                                    fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+                                    block_complete = 1;
+                                }
+                                else
+                                    fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} ", block_address, address, address + msg_size);
+                                this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(delayTime);
+
+                                if (!RX_ACK)
+                                {
+                                    fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send - msg_size).Take(msg_size)).ToArray();
+                                    System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                    this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                    System.Threading.Thread.Sleep(delayTime);
+                                }
+                                address += (uint)msg_size;
+                            }
+                        }
+
+                        //BLOCK WITH BYTES LEFT - BLOCK INCOMPLETE    
+                        max_msg = block_size / msg_size;
+                        bytes_left = block_size - (max_msg * msg_size);
+
+                        if (bytes_aux_block == block_size - bytes_left && msg_complete == 0)//bytes_aux_msg == bytes_left && bytes_aux_block == block_size)
+                        {
+                            block_incomplete = 1;
+                            bytes_aux_msg = 0;
+                        }
+
+                        if (block_incomplete == 1)
+                        {
+                            block_incomplete = 0;
+                            msg_counter++;
+
+                            if (!RX_ACK)
+                            {
+                                error_counter++;
+                                msg_counter--;
+                                bytes_to_send -= msg_size * error_counter;
+                                bytes_aux_block -= msg_size * error_counter;
+                                address -= (uint)(msg_size * error_counter);
+
+                                fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + (msg_counter - error_counter) + "       ({0})", bytes_to_send);
+                                this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(delayTime);
+                            }
+                            else
+                            {
+                                error_counter = 0;
+                                msg_size = bytes_left;
+
+                                fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} *", block_address, address, address + msg_size);
+                                this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(delayTime);
+
+
+                            }
+                        }
+
+                        //BLOCK COMPLETE
+                        if (bytes_aux_block == block_size) //(bytes_aux_block + bytes_left == block_size)
+                        {
+                            block_complete = 1;
+
+                            if (!RX_ACK)
+                            {
+                                //address -= (uint)bytes_left;
+
+                                fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send - bytes_left).Take(bytes_left)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("* MSG #" + msg_counter + " | BLOCK ADDRESS: 0x{0:X}  |  0x{1:X} - 0x{2:X} *", block_address, address, address + bytes_left);
+                                this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)bytes_left)));
+                                System.Threading.Thread.Sleep(delayTime);
+                            }
+
+                        }
+                        if (block_complete == 1)
+                        {
+                            block_complete = 0;
+                            if (!RX_ACK)
+                            {
+                                bytes_to_send -= msg_size;
+                                bytes_aux_block -= msg_size;
+                                block_incomplete = 1;
+
+                                fragment_data_bytes = (audio_file_bytes.Skip(bytes_to_send).Take(msg_size)).ToArray();
+                                System.Diagnostics.Debug.WriteLine("ERROR: Resending MSG #" + msg_counter + "       ({0})", bytes_to_send);
+                                this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)address, (uint)msg_size)));
+                                System.Threading.Thread.Sleep(delayTime);
+                            }
+                            else
+                            {
+
+
+                                System.Diagnostics.Debug.WriteLine("######## SAVING BLOCK #" + block_counter + " @ 0x{0:X} ########", block_address);
+                                //if (block_counter > 1)
+                                //    this.Dispatcher.Invoke((Action)(() => audio.write_full_block(this, (uint)block_address, (uint)msg_size)));
+                                //else
+                                this.Dispatcher.Invoke((Action)(() => audio.write_block(this, (uint)block_address, (uint)block_size)));
+                                System.Threading.Thread.Sleep(savingTime);
+
+                                block_counter++;
+
+                                bytes_aux_msg = 0;
+                                bytes_aux_block = 0;
+                                msg_counter = 0;
+
+                                address += (uint)bytes_left;
+                                msg_size = 235;
+                            }
+                        }
+
+
+                        //if (!RX_ACK)
+                        //{
+                        //    bytes_to_send--;
+                        //    bytes_aux_msg--;
+                        //    bytes_aux_block--;
+                        //}
+
+                        this.Dispatcher.Invoke((Action)(() => controller.SetProgress(bytes_to_send * (100.0 / audio_file_bytes.Length))));
                     }
 
-                    controller.CloseAsync();
+                    //for (fragment_message_id = 0; fragment_message_id < (audio_number_of_msgs); fragment_message_id++)
+                    //{                        
+                    //    if (block_complete == 1)
+                    //        fragment_message_id--;
 
+                    //    byte[] fragment_data_bytes = new byte[msg_size];
+                    //    if (fragment_message_id == (audio_number_of_msgs - 1))
+                    //    {
+                    //        fragment_data_bytes = (audio_file_bytes.Skip((0 + (fragment_message_id * msg_size))).Take(audio_file_bytes.Length - (msg_size * fragment_message_id) - 1)).ToArray();
+                    //    }
+                    //    else
+                    //    {
+                    //        fragment_data_bytes = (audio_file_bytes.Skip((0 + (fragment_message_id * msg_size))).Take((msg_size + (fragment_message_id * msg_size) - (0 + (fragment_message_id * msg_size))))).ToArray();
+                    //    }
+
+                    //    if (RX_ACK)
+                    //    {
+                    //        error_counter = 0;
+                    //        this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)fragment_message_id)));
+                    //    }
+                    //    else
+                    //    {
+                    //        error_counter++;
+                    //        counter_blocks--;
+                    //        if (fragment_message_id == 0)
+                    //            fragment_message_id = 0;
+                    //        else fragment_message_id--;
+
+                    //        fragment_data_bytes = (audio_file_bytes.Skip((0 + (fragment_message_id * msg_size))).Take((msg_size + (fragment_message_id * msg_size) - (0 + (fragment_message_id * msg_size))))).ToArray();
+                    //        if (fragment_message_id == 0)
+                    //            this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, 0)));
+                    //        else
+                    //        { 
+                    //            this.Dispatcher.Invoke((Action)(() => audio.write(this, fragment_data_bytes, (uint)(fragment_message_id - error_counter))));
+                    //            //fragment_message_id--;
+                    //        }
+                    //}
+
+                    //    this.Dispatcher.Invoke((Action)(() => controller.SetProgress(fragment_message_id * (100.0 / (audio_number_of_msgs)))));
+                    //    System.Threading.Thread.Sleep(10);
+                    //}
+                    controller.CloseAsync();
                     //MessageBox.Show(Properties.Resources.WriteWithSuccess, "", MessageBoxButton.OK, MessageBoxImage.Information); // TODO: delete/improve 
                 });
 
@@ -10036,7 +12170,7 @@ namespace ProdigyConfigToolWPF
 
             DataRowView row = (DataRowView)AudioReservedDataGrid.CurrentItem;
             current_audio_row = row;
-            var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+            var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["FilePath"].ToString());
 
             audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
 
@@ -10192,7 +12326,10 @@ namespace ProdigyConfigToolWPF
 
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
                 current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+                string path_audio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
+                var file = new FileInfo(path_audio + row["Description"].ToString() + ".raw");
+
+                row["FilePath"] = file.ToString();
 
                 audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
 
@@ -10259,7 +12396,7 @@ namespace ProdigyConfigToolWPF
 
                 DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
                 current_audio_row = row;
-                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"].ToString() + ".raw");
+                var file = new FileInfo(System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["FilePath"].ToString());
 
                 audio_stream = file.Open(FileMode.Open, FileAccess.Read, FileShare.Read);
 
@@ -10336,15 +12473,18 @@ namespace ProdigyConfigToolWPF
                     play_button.IsEnabled = false;
                     play_pause.IsEnabled = false;
                     play_stop.IsEnabled = false;
-
-                    AudioCustomizedDataGrid.UpdateLayout();
                 }
             }
             DataRowView row = (DataRowView)AudioCustomizedDataGrid.CurrentItem;
             System.GC.Collect();
             System.GC.WaitForPendingFinalizers();
-            File.Delete((System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\" + row["Description"] + ".raw"));
+            string path_audio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
+            if(row["Description"] != System.DBNull.Value)
+                if (File.Exists(path_audio + row["Description"].ToString() + ".raw"))
+                    File.Delete((path_audio + row["Description"].ToString() + ".raw"));
             row.Delete();
+            
+            AudioCustomizedDataGrid.UpdateLayout();
         }
 
         private void AudioCustomizedDataGrid_Loaded(object sender, RoutedEventArgs e)
@@ -10371,6 +12511,10 @@ namespace ProdigyConfigToolWPF
             InitializeComponent();
             try
             {
+                defaultDataSet.AudioDataTable AudioDT = new defaultDataSet.AudioDataTable();
+                databaseDataSetAudioCustomizedTableAdapter.Fill(AudioDT);
+                DebugTable(AudioDT);
+
                 var row_list = GetDataGridRows(AudioCustomizedDataGrid);
 
                 foreach (DataGridRow single_row in row_list)
@@ -10378,10 +12522,10 @@ namespace ProdigyConfigToolWPF
                     DataRowView row_view = single_row.Item as DataRowView;
 
 
-                    string audiofolder = System.IO.Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\audio\";
+                    string audiofolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\audio\\";
                     Debug.WriteLine(audiofolder + row_view["Description"] + ".raw");
 
-                    if (File.Exists(audiofolder + row_view["Description"] + ".raw"))
+                    if (File.Exists(audiofolder + row_view["Description"] + ".raw") || row_view["FilePath"] == System.DBNull.Value)
                     {
                         Button load_wav_button = single_row.FindChild<Button>("buttonLoadWav");
                         Button start_record_button = single_row.FindChild<Button>("buttonRecordWav");
@@ -10423,8 +12567,11 @@ namespace ProdigyConfigToolWPF
                         play_pause.IsEnabled = false;
                         play_stop.IsEnabled = false;
 
+
                         AudioCustomizedDataGrid.UpdateLayout();
                     }
+
+
                 }
             }
             catch
@@ -10594,14 +12741,14 @@ namespace ProdigyConfigToolWPF
         public void UpdateRealTimeView(byte[] buf, int size)
         {
             #region PARTITIONS
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_1], StatusPartition1);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_2], StatusPartition2);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_3], StatusPartition3);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_4], StatusPartition4);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_5], StatusPartition5);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_6], StatusPartition6);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_7], StatusPartition7);
-            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_8], StatusPartition8);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_1], StatusPartition1, Constants.PARTITION_1);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_2], StatusPartition2, Constants.PARTITION_2);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_3], StatusPartition3, Constants.PARTITION_3);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_4], StatusPartition4, Constants.PARTITION_4);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_5], StatusPartition5, Constants.PARTITION_5);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_6], StatusPartition6, Constants.PARTITION_6);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_7], StatusPartition7, Constants.PARTITION_7);
+            UpdatePartitionsRealTimeObjects(buf[Constants.PARTITION_8], StatusPartition8, Constants.PARTITION_8);
             #endregion
             #region ZONES
             UpdateZonesRealTimeObjects(buf[Constants.ZONA_1], StatusZone1);
@@ -10636,7 +12783,70 @@ namespace ProdigyConfigToolWPF
             UpdateZonesRealTimeObjects(buf[Constants.ZONA_30], StatusZone30);
             UpdateZonesRealTimeObjects(buf[Constants.ZONA_31], StatusZone31);
             UpdateZonesRealTimeObjects(buf[Constants.ZONA_32], StatusZone32);
-
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_33], StatusZone33);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_34], StatusZone34);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_35], StatusZone35);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_36], StatusZone36);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_37], StatusZone37);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_38], StatusZone38);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_39], StatusZone39);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_40], StatusZone40);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_41], StatusZone41);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_42], StatusZone42);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_43], StatusZone43);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_44], StatusZone44);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_45], StatusZone45);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_46], StatusZone46);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_47], StatusZone47);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_48], StatusZone48);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_49], StatusZone49);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_50], StatusZone50);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_51], StatusZone51);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_52], StatusZone52);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_53], StatusZone53);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_54], StatusZone54);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_55], StatusZone55);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_56], StatusZone56);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_57], StatusZone57);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_58], StatusZone58);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_59], StatusZone59);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_60], StatusZone60);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_61], StatusZone61);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_62], StatusZone62);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_63], StatusZone63);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_64], StatusZone64);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_65], StatusZone65);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_66], StatusZone66);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_67], StatusZone67);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_68], StatusZone68);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_69], StatusZone69);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_70], StatusZone70);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_71], StatusZone71);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_72], StatusZone72);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_73], StatusZone73);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_74], StatusZone74);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_75], StatusZone75);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_76], StatusZone76);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_77], StatusZone77);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_78], StatusZone78);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_79], StatusZone79);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_80], StatusZone80);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_81], StatusZone81);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_82], StatusZone82);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_83], StatusZone83);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_84], StatusZone84);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_85], StatusZone85);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_86], StatusZone86);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_87], StatusZone87);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_88], StatusZone88);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_89], StatusZone89);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_90], StatusZone90);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_91], StatusZone91);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_92], StatusZone92);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_93], StatusZone93);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_94], StatusZone94);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_95], StatusZone95);
+            UpdateZonesRealTimeObjects(buf[Constants.ZONA_96], StatusZone96);
             #endregion
             #region OUTPUTS
             UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_1], StatusOutput1);
@@ -10652,6 +12862,38 @@ namespace ProdigyConfigToolWPF
             UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_11], StatusOutput11);
             UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_12], StatusOutput12);
             UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_13], StatusOutput13);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_14], StatusOutput14);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_15], StatusOutput15);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_16], StatusOutput16);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_17], StatusOutput17);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_18], StatusOutput18);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_19], StatusOutput19);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_20], StatusOutput20);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_21], StatusOutput21);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_22], StatusOutput22);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_23], StatusOutput23);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_24], StatusOutput24);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_25], StatusOutput25);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_26], StatusOutput26);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_27], StatusOutput27);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_28], StatusOutput28);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_29], StatusOutput29);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_30], StatusOutput30);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_31], StatusOutput31);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_32], StatusOutput32);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_33], StatusOutput33);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_34], StatusOutput34);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_35], StatusOutput35);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_36], StatusOutput36);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_37], StatusOutput37);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_38], StatusOutput38);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_39], StatusOutput39);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_40], StatusOutput40);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_41], StatusOutput41);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_42], StatusOutput42);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_43], StatusOutput43);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_44], StatusOutput44);
+            UpdateOutputsRealTimeObjects(buf[Constants.OUTPUT_45], StatusOutput45);
             #endregion
             #region DIALER
             byte dialer = buf[Constants.PSTN_POS];
@@ -10694,45 +12936,85 @@ namespace ProdigyConfigToolWPF
             #endregion
         }
 
-        private void UpdatePartitionsRealTimeObjects(byte partition, Tile partition_object)
+        private async void UpdatePartitionsRealTimeObjects(byte partition, Tile partition_object, short arming_partition)
         {
+            if ((FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming) && arming_code_accepted)
+            {
+                this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.Khaki));
+                this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.Arming));
+                if (ArmMode == 0)
+                   await Task.Delay(Convert.ToInt32(databaseDataSet.Area.Rows[arming_partition - 100]["Exit timer away"]) * 1000);
+                else if (ArmMode == 1)
+                   await Task.Delay(Convert.ToInt32(databaseDataSet.Area.Rows[arming_partition - 100]["Exit timer stay"]) * 1000);
+            }
+
             if ((partition & Constants.MASK_PARTITION_ALARM) > 0)
             {
+                if (FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming)
+                {
+                    FLAG_PARTITION_IS_ARMING = 0;
+                    partitionIsArming = 0;
+                }
+
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.Yes));
                 this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
                 this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.IndianRed));
             }
             else
             {
+                if (FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming)
+                {
+                    FLAG_PARTITION_IS_ARMING = 0;
+                    partitionIsArming = 0;
+                }
+
                 this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip = Properties.Resources.RTAlarm + Properties.Resources.No));
                 this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
                 this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
             }
 
-
             if ((partition & Constants.MASK_PARTITION_ARMED_AWAY) > 0)
             {
-                this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Away));
+
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
                 {
+                    if (FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming)
+                    {
+                        FLAG_PARTITION_IS_ARMING = 0;
+                        partitionIsArming = 0;
+                    }
+
+                    this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Away));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
                 }
             }
             else if ((partition & Constants.MASK_PARTITION_ARMED_STAY) > 0)
             {
-                this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Stay));
+
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
                 {
+
+                    if (FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming)
+                    {
+                        FLAG_PARTITION_IS_ARMING = 0;
+                        partitionIsArming = 0;
+                    }
+                    this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.Stay));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.LightSeaGreen));
                 }
             }
             else
             {
-                this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.No));
                 if (!((partition & Constants.MASK_PARTITION_ALARM) > 0))
                 {
+                    if (FLAG_PARTITION_IS_ARMING == 1 && arming_partition == partitionIsArming)
+                    {
+                        FLAG_PARTITION_IS_ARMING = 0;
+                        partitionIsArming = 0;
+                    }
+                    this.Dispatcher.Invoke((Action)(() => partition_object.ToolTip += "\r\n " + Properties.Resources.RTArmed + Properties.Resources.No));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderThickness = new Thickness(2)));
                     this.Dispatcher.Invoke((Action)(() => partition_object.BorderBrush = Brushes.Gray));
                 }
@@ -10749,6 +13031,13 @@ namespace ProdigyConfigToolWPF
                     this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Alarm));
                     this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
                     this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.IndianRed));
+
+                    if ((zone & Constants.MASK_ZONA_OPEN) > 0)
+                    {
+                        this.Dispatcher.Invoke((Action)(() => zone_object.ToolTip = Properties.Resources.State + Properties.Resources.Open));
+                        this.Dispatcher.Invoke((Action)(() => zone_object.BorderThickness = new Thickness(2)));
+                        this.Dispatcher.Invoke((Action)(() => zone_object.BorderBrush = Brushes.Khaki));
+                    }
                 }
                 else if ((zone & Constants.MASK_ZONA_OPEN) > 0)
                 {
@@ -11204,11 +13493,11 @@ namespace ProdigyConfigToolWPF
                             databaseDataSet.Zone.Rows[i]["Zone alarm output 3"] = 0xFF;
                         //>chime_alarm
                         if (databaseDataSet.Zone.Rows[i]["Chime alarm output 1"].Equals(selected_output))
-                            databaseDataSet.Zone.Rows[i]["Chime alarm output 1"] = 255;
+                            databaseDataSet.Zone.Rows[i]["Chime alarm output 1"] = 0xFF;
                         if (databaseDataSet.Zone.Rows[i]["Chime alarm output 2"].Equals(selected_output))
-                            databaseDataSet.Zone.Rows[i]["Chime alarm output 2"] = 255;
+                            databaseDataSet.Zone.Rows[i]["Chime alarm output 2"] = 0xFF;
                         if (databaseDataSet.Zone.Rows[i]["Chime alarm output 3"].Equals(selected_output))
-                            databaseDataSet.Zone.Rows[i]["Chime alarm output 3"] = 255;
+                            databaseDataSet.Zone.Rows[i]["Chime alarm output 3"] = 0xFF;
                         //>sensor_watch
                         if (databaseDataSet.Zone.Rows[i]["Sensor watch alarm output 1"].Equals(selected_output))
                             databaseDataSet.Zone.Rows[i]["Sensor watch alarm output 1"] = 0xFF;
@@ -11283,7 +13572,7 @@ namespace ProdigyConfigToolWPF
         }
 
         private void areaDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {                        
+        {
             if (areaDataGrid.SelectedIndex != -1)
                 SelectPVT_onMouseDoubleClick(areaDataGrid, MainAreaPVTTab, MainAreasTab, "areaViewSource", TreeviewAreas);
         }
@@ -11320,6 +13609,12 @@ namespace ProdigyConfigToolWPF
         {
             if (keypadDataGrid.SelectedIndex != -1)
                 SelectPVT_onMouseDoubleClick(keypadDataGrid, MainKeypadsPVTTab, MainKeypadsTab, "keypadViewSource", TreeviewKeypads);
+        }
+
+        private void expanderDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (expanderDataGrid.SelectedIndex != -1)
+                SelectPVT_onMouseDoubleClick(expanderDataGrid, MainExpandersPVTTab, MainExpandersTab, "expanderViewSource", TreeviewExpanders);
         }
 
         private void outputDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -11362,6 +13657,11 @@ namespace ProdigyConfigToolWPF
         private void Open_Keypads_Click(object sender, RoutedEventArgs e)
         {
             ((TreeViewItem)MainTreeView.Items[3]).IsSelected = true;
+        }
+
+        private void Open_Expanders_Click(object sender, RoutedEventArgs e)
+        {
+            ((TreeViewItem)MainTreeView.Items[16]).IsSelected = true;
         }
 
         private void Open_Outputs_Click(object sender, RoutedEventArgs e)
@@ -11423,6 +13723,10 @@ namespace ProdigyConfigToolWPF
         {
             ((TreeViewItem)MainTreeView.Items[15]).IsSelected = true;
         }
+        private void Open_Memory_Click(object sender, RoutedEventArgs e)
+        {
+            ((TreeViewItem)MainTreeView.Items[17]).IsSelected = true;
+        }
 
 
         #endregion
@@ -11441,6 +13745,7 @@ namespace ProdigyConfigToolWPF
             TreeviewAreas.IsExpanded = false;
             TreeviewZones.IsExpanded = false;
             TreeviewKeypads.IsExpanded = false;
+            TreeviewExpanders.IsExpanded = false;
             TreeviewOutputs.IsExpanded = false;
             TreeviewUsers.IsExpanded = false;
             TreeviewTimezones.IsExpanded = false;
@@ -11525,6 +13830,23 @@ namespace ProdigyConfigToolWPF
             MainTabControl.SelectedIndex = 4;
             TreeviewKeypads.IsSelected = true;
             TreeviewKeypads.IsExpanded = false;
+        }
+        #endregion
+
+        #region Expanders
+        private void MainExpander_button_next_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Next_Click(TreeviewExpanders);
+        }
+        private void MainExpander_button_back_Click(object sender, RoutedEventArgs e)
+        {
+            Button_Back_Click(TreeviewExpanders, Constants.KP_MAX_EXPANDERS);
+        }
+        private void MainExpander_button_undo_Click(object sender, RoutedEventArgs e)
+        {
+            MainTabControl.SelectedIndex = 16;
+            TreeviewExpanders.IsSelected = true;
+            TreeviewExpanders.IsExpanded = false;
         }
         #endregion
 
@@ -12288,7 +14610,8 @@ namespace ProdigyConfigToolWPF
         {
             Shortcuts_SingleFilter(User_Type_Column);
             Shortcuts_SingleFilter(User_Active_Column);
-            if (AppRole != 0) Shortcuts_SingleFilter(User_Code_Column);
+            // if (AppRole != 0) Shortcuts_SingleFilter(User_Code_Column);
+            if (AppRole != 0) User_Code_Column.Visibility = User_Code_Column.Visibility == Visibility.Visible ? Visibility.Collapsed : Visibility.Visible;
             Shortcuts_SingleFilter(User_CanChangeClock);
             Shortcuts_SingleFilter(User_ValidateCalendar);
             Shortcuts_SingleFilter(User_InitialDate);
@@ -12376,6 +14699,24 @@ namespace ProdigyConfigToolWPF
 
             Shortcuts_Disabling(KeypadShortcuts_AudioTile, KeypadShortcuts_AudioTileDISABLED);
         }
+        #endregion
+
+        #region Expanders
+        private void ExpanderShortcuts_SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Shortcuts_SingleFilter(Expander_Active_Column);
+            Shortcuts_SingleFilter(Expander_Enable_Tamper_Column);
+            Shortcuts_SingleFilter(Expander_Config_Tamper_Column);
+
+            Shortcuts_Disabling(ExpanderShortcuts_SettingsTile, ExpanderShortcuts_SettingsTileDISABLED);
+        }
+        private void ExpanderShortcuts_ConfigPinsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Shortcuts_MinusToPlus(Expander_ConfigPins_minus, Expander_ConfigPins_plus);
+
+            Shortcuts_Disabling(ExpanderShortcuts_ConfigPinsTile, ExpanderShortcuts_ConfigPinsTileDISABLED);
+        }
+
         #endregion
 
         #region Outputs
@@ -12938,6 +15279,20 @@ namespace ProdigyConfigToolWPF
         }
         #endregion
 
+        #region Expanders
+        private void Expander_ConfigPins_minus_Click(object sender, RoutedEventArgs e)
+        {
+            Expander_ConfigPins_minus.Visibility = Visibility.Hidden;
+            Expander_ConfigPins_plus.Visibility = Visibility.Visible;
+        }
+        private void Expander_ConfigPins_plus_Click(object sender, RoutedEventArgs e)
+        {
+            Expander_ConfigPins_minus.Visibility = Visibility.Visible;
+            Expander_ConfigPins_plus.Visibility = Visibility.Hidden;
+        }
+
+        #endregion
+
         #region Outputs
 
         private void TimeConfig_minus_Click(object sender, RoutedEventArgs e)
@@ -13268,6 +15623,10 @@ namespace ProdigyConfigToolWPF
         {
             Open_Keypads_Click(sender, e);
         }
+        private void Open_Expanders_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Expanders_Click(sender, e);
+        }
         private void Open_Outputs_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Open_Outputs_Click(sender, e);
@@ -13308,6 +15667,13 @@ namespace ProdigyConfigToolWPF
         {
             Open_Debug_Click(sender, e);
         }
+
+        private void Open_Memory_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Open_Memory_Click(sender, e);
+        }
+
+
         private void Open_FWUpdate_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             Open_FWUpdate_Click(sender, e);
@@ -13464,93 +15830,11 @@ namespace ProdigyConfigToolWPF
             {
                 dg.ItemsSource = new DataView(dt.AsEnumerable().Where(row => row.Field<bool>(columnActiveName) == true).CopyToDataTable());
                 DebugTable(dt.AsEnumerable().Where(row => row.Field<bool>(columnActiveName) == true).CopyToDataTable());
-                
+
                 tile.Background = Brushes.DarkSeaGreen;
                 active = true;
             }
         }
-
-        private void ZoneOnlyActive_Click(object sender, RoutedEventArgs e)
-        {
-            foreach (DataRow row in databaseDataSet.Zone.Rows)
-            {
-                zone_activeCheckBox.IsChecked = (bool)row["Zone active"];
-            }
-
-            DataTable dt = databaseDataSet.Zone.Select("'Zone active' = true").CopyToDataTable();
-
-            databaseDataSetZoneTableAdapter.ClearBeforeFill = true;
-
-            if (zone_onlyActive)
-            {
-                zoneDataGrid.ItemsSource = new DataView(databaseDataSet.Zone);
-
-                DebugTable(databaseDataSet.Zone);
-
-                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-                
-                ZoneOnlyActive.Background = Brushes.WhiteSmoke;
-                zone_onlyActive = false;
-            }
-            else
-            {
-                zoneDataGrid.ItemsSource = new DataView(dt);
-
-                DebugTable(databaseDataSet.Zone.AsEnumerable().Where(row => row.Field<bool>("Zone active") == true).CopyToDataTable());
-
-                databaseDataSetZoneTableAdapter.Fill(databaseDataSet.Zone);
-
-                ZoneOnlyActive.Background = Brushes.DarkSeaGreen;
-                zone_onlyActive = true;
-            }
-
-            //OnlyActiveClick(zone_onlyActive, zoneDataGrid, databaseDataSet.Zone, ZoneOnlyActive, "Zone active", ZoneTableAdapter);
-            //databaseDataSetZoneTableAdapter.Update(databaseDataSet.Zone);
-
-        }
-
-        private void UserOnlyActive_Click(object sender, RoutedEventArgs e)
-        {
-            //if (user_onlyActive == 0)
-            //{
-            //    OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-            //    user_onlyActive = 1;
-            //}
-            //else if (user_onlyActive == 1)
-            //{
-            //    OnlyActiveClick(databaseDataSet.User, "User active", userDataGrid, UserOnlyActive, user_onlyActive);
-            //    user_onlyActive = 0;
-            //}
-        }
-
-        private void KeypadOnlyActive_Click(object sender, RoutedEventArgs e)
-        {
-            //if (keypad_onlyActive == 0)
-            //{
-            //    OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
-            //    keypad_onlyActive = 1;
-            //}
-            //else if (keypad_onlyActive == 1)
-            //{
-            //    OnlyActiveClick(databaseDataSet.Keypad, "Active", keypadDataGrid, KeypadOnlyActive, keypad_onlyActive);
-            //    keypad_onlyActive = 0;
-            //}
-        }
-        
-        private void PhoneOnlyActive_Click(object sender, RoutedEventArgs e)
-        {
-            //if (phone_onlyActive == 0)
-            //{
-            //    OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
-            //    phone_onlyActive = 1;
-            //}
-            //else if (phone_onlyActive == 1)
-            //{
-            //    OnlyActiveClick(databaseDataSet.Phone, "Report on", phoneDataGrid, PhoneOnlyActive, phone_onlyActive);
-            //    phone_onlyActive = 0;
-            //}
-        }
-
 
 
 
@@ -13583,7 +15867,107 @@ namespace ProdigyConfigToolWPF
                 pw.Password = "\0";
             }
         }
-        
+
+        public static byte[] StringToByteArray(String hex)
+        {
+            int NumberChars = hex.Length;
+            if (NumberChars % 2 != 0)
+                NumberChars++;
+            byte[] bytes = new byte[NumberChars / 2];
+            for (int i = 0; i < NumberChars; i += 2)
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            return bytes;
+        }
+
+        private async void ReadMemory_button_Click(object sender, RoutedEventArgs e)
+        {
+            Protocol.Memory memory = new Protocol.Memory();
+
+            string path_memory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Sanco S.A\\Mega-X Config Tool\\memory";
+            string path_dataRX_file = path_memory + "\\dataRX_" + DateTime.Now.ToString("yyMMdd-HHmm") + ".txt";
+
+            if (!Directory.Exists(path_memory))
+                Directory.CreateDirectory(path_memory);
+
+            if (!File.Exists(path_dataRX_file))
+                File.Create(path_dataRX_file);
+
+            string addr_init = Address1_textbox.Text;
+            string addr_final = Address2_textbox.Text;
+            string DataRX_HEX;
+
+            byte[] addr1_byte = StringToByteArray(addr_init.ToString().PadLeft(6, '0'));
+            byte[] addr2_byte = StringToByteArray(addr_final.ToString().PadLeft(6, '0'));
+
+            uint addr1 = uint.Parse(addr_init, System.Globalization.NumberStyles.HexNumber);//Convert.ToUInt32(addr1_byte); //
+            uint addr2 = uint.Parse(addr_final, System.Globalization.NumberStyles.HexNumber);//Convert.ToUInt32(addr2_byte); //uint.Parse(addr_final, System.Globalization.NumberStyles.HexNumber);
+
+            int msg_size = 235;
+            int size = (int)addr2 - (int)addr1;
+            int max_msg = size / msg_size;
+            
+            byte[] DataRX = new byte[size];
+
+            var controller = await this.ShowProgressAsync(Properties.Resources.PleaseWait, "");
+            controller.Maximum = 100.0;
+            controller.Minimum = 0.0;
+           
+            await Task.Run(() =>
+            {
+                //int error_cnt = 0;
+                for (int i = 0; i < max_msg; i++)
+                {
+                    onlyDebug = true;
+                    if (!RX_ACK)
+                    { 
+                        if (i == 0)
+                            i = 0;
+                        else i--;
+                    }
+
+                    Dispatcher.Invoke(() => memory.read(this, (uint)i, addr1));
+                    System.Threading.Thread.Sleep(intervalsleeptime);
+                    System.Buffer.BlockCopy(rx_buffer, 10, DataRX, i * msg_size, msg_size);
+                    System.Threading.Thread.Sleep(intervalsleeptime);
+                    controller.SetProgress(i * (100 / size));
+
+                }
+                onlyDebug = false;
+                controller.CloseAsync();
+            });
+
+            if (ASCII_HEX_ComboBox.SelectedIndex == 1) //ASCII
+            {
+                DataRX_HEX = ByteArrayToString(DataRX, size, 1);
+                if(RX_ACK)
+                    File.WriteAllText(path_dataRX_file, DataRX_HEX);
+            }
+            else 
+                if(RX_ACK)
+                    File.WriteAllBytes(path_dataRX_file, DataRX);
+
+            DataRX_info.Visibility = Visibility.Visible;
+            DataRX_savedfile.Content = path_dataRX_file;
+            DataRX_savedfile.Visibility = Visibility.Visible;
+
+            MemoryContentRX.Text = BitConverter.ToString(DataRX);
+            await DialogManager.ShowMessageAsync(this, Properties.Resources.ReadWithSuccess, "");
+        }
+
+        //void ConvertToHEX(byte[] buf, byte[] buf2, int size)
+        //{
+        //    for (int i = 0; i < size; i++)
+        //    {
+        //        if ((buf&0x0f)>9)
+        //        {
+
+        //        }
+        //        else
+
+                    
+        //    }
+        //}
+
     }
 
     public static class PasswordBoxAssistant
@@ -13594,10 +15978,10 @@ namespace ProdigyConfigToolWPF
         public static readonly DependencyProperty BindPassword = DependencyProperty.RegisterAttached(
             "BindPassword", typeof(bool), typeof(PasswordBoxAssistant), new PropertyMetadata(false, OnBindPasswordChanged));
 
-        private static readonly DependencyProperty UpdatingPassword =
+        public static readonly DependencyProperty UpdatingPassword =
             DependencyProperty.RegisterAttached("UpdatingPassword", typeof(bool), typeof(PasswordBoxAssistant), new PropertyMetadata(false));
 
-        private static void OnBoundPasswordChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public static void OnBoundPasswordChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             PasswordBox box = d as PasswordBox;
 
@@ -13621,7 +16005,7 @@ namespace ProdigyConfigToolWPF
             box.PasswordChanged += HandlePasswordChanged;
         }
 
-        private static void OnBindPasswordChanged(DependencyObject dp, DependencyPropertyChangedEventArgs e)
+        public static void OnBindPasswordChanged(DependencyObject dp, DependencyPropertyChangedEventArgs e)
         {
             // when the BindPassword attached property is set on a PasswordBox,
             // start listening to its PasswordChanged event
@@ -13647,7 +16031,7 @@ namespace ProdigyConfigToolWPF
             }
         }
 
-        private static void HandlePasswordChanged(object sender, RoutedEventArgs e)
+        public static void HandlePasswordChanged(object sender, RoutedEventArgs e)
         {
             PasswordBox box = sender as PasswordBox;
 
@@ -13678,12 +16062,12 @@ namespace ProdigyConfigToolWPF
             dp.SetValue(BoundPassword, value);
         }
 
-        private static bool GetUpdatingPassword(DependencyObject dp)
+        public static bool GetUpdatingPassword(DependencyObject dp)
         {
             return (bool)dp.GetValue(UpdatingPassword);
         }
 
-        private static void SetUpdatingPassword(DependencyObject dp, bool value)
+        public static void SetUpdatingPassword(DependencyObject dp, bool value)
         {
             dp.SetValue(UpdatingPassword, value);
         }

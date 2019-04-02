@@ -1,11 +1,12 @@
 ﻿
-using ProdigyConfigToolWPF;
+using MegaXConfigTool;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Zones
     {
@@ -25,16 +26,50 @@ namespace ProdigyConfigToolWPF.Protocol
             O11,
             O12,
             O13,
+            O14,
+            O15,
+            O16,
+            O17,
+            O18,
+            O19,
+            O20,
+            O21,
+            O22,
+            O23,
+            O24,
+            O25,
+            O26,
+            O27,
+            O28,
+            O29,
+            O30,
+            O31,
+            O32,
+            O33,
+            O34,
+            O35,
+            O36,
+            O37,
+            O38,
+            O39,
+            O40,
+            O41,
+            O42,
+            O43,
+            O44,
+            O45,
         }
 
         public List<KeyValuePair<string, int>> list = new List<KeyValuePair<string, int>>()
         {
             new KeyValuePair<string, int>("None", 0),
+            //Central
             new KeyValuePair<string, int>("O1", 1),
             new KeyValuePair<string, int>("O2", 2),
             new KeyValuePair<string, int>("O3", 3),
             new KeyValuePair<string, int>("O4", 4),
             new KeyValuePair<string, int>("O5", 5),
+            //Expander 1
             new KeyValuePair<string, int>("O6", 6),
             new KeyValuePair<string, int>("O7", 7),
             new KeyValuePair<string, int>("O8", 8),
@@ -43,6 +78,49 @@ namespace ProdigyConfigToolWPF.Protocol
             new KeyValuePair<string, int>("O11", 11),
             new KeyValuePair<string, int>("O12", 12),
             new KeyValuePair<string, int>("O13", 13),
+            //Expanders 2
+            new KeyValuePair<string, int>("O14", 14),
+            new KeyValuePair<string, int>("O15", 15),
+            new KeyValuePair<string, int>("O16", 16),
+            new KeyValuePair<string, int>("O17", 17),
+            new KeyValuePair<string, int>("O18", 18),
+            new KeyValuePair<string, int>("O19", 19),
+            new KeyValuePair<string, int>("O20", 20),
+            new KeyValuePair<string, int>("O21", 21),
+            //Expander 3
+            new KeyValuePair<string, int>("O22", 22),
+            new KeyValuePair<string, int>("O23", 23),
+            new KeyValuePair<string, int>("O24", 24),
+            new KeyValuePair<string, int>("O25", 25),
+            new KeyValuePair<string, int>("O26", 26),
+            new KeyValuePair<string, int>("O27", 27),
+            new KeyValuePair<string, int>("O28", 28),
+            new KeyValuePair<string, int>("O29", 29),
+            //Expander 4
+            new KeyValuePair<string, int>("O30", 30),
+            new KeyValuePair<string, int>("O31", 31),
+            new KeyValuePair<string, int>("O32", 32),
+            new KeyValuePair<string, int>("O33", 33),
+            new KeyValuePair<string, int>("O34", 34),
+            new KeyValuePair<string, int>("O35", 35),
+            new KeyValuePair<string, int>("O36", 36),
+            new KeyValuePair<string, int>("O37", 37),
+            //Keypad 1
+            new KeyValuePair<string, int>("O38", 38),
+            //Keypad 2
+            new KeyValuePair<string, int>("O39", 39),
+            //Keypad 3
+            new KeyValuePair<string, int>("O40", 40),
+            //Keypad 4
+            new KeyValuePair<string, int>("O41", 41),
+            //Keypad 5
+            new KeyValuePair<string, int>("O42", 42),
+            //Keypad 6
+            new KeyValuePair<string, int>("O43", 43),
+            //Keypad 7
+            new KeyValuePair<string, int>("O44", 44),
+            //Keypad 8
+            new KeyValuePair<string, int>("O45", 45),
         };
 
 
@@ -330,7 +408,7 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint zone_address = Constants.KP_ZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH * (zone_number - 1));
+            uint zone_address = Constants.KP_ZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH * zone_number);
             byte size = 240;
 
             // Create first 5 bytes of the request
@@ -342,12 +420,13 @@ namespace ProdigyConfigToolWPF.Protocol
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is neededs
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainform, uint zone_number)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-            zone_number = zone_number - 1;
+            //zone_number = zone_number - 1;
             string description = ((string)mainform.databaseDataSet.Zone.Rows[(int)zone_number]["Description"]).ToUpper();
             short away_entry_delay_time = short.Parse(mainform.databaseDataSet.Zone.Rows[(int)zone_number]["Entry time away"].ToString());
             short stay_entry_delay_time = short.Parse(mainform.databaseDataSet.Zone.Rows[(int)zone_number]["Entry time stay"].ToString());
@@ -568,8 +647,7 @@ namespace ProdigyConfigToolWPF.Protocol
 
 
             #endregion
-
-
+            
             #region Circuit configuration
             byte[] zone_terminal_configuration_temp = new byte[10];
             byte[] zone_terminal_configuration = new byte[7];
@@ -801,9 +879,9 @@ namespace ProdigyConfigToolWPF.Protocol
 
             int i = 0;
             uint j = 0;
-            uint zone_address = Constants.KP_ZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH * (zone_number));
+            uint zone_address = Constants.KP_ZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH * zone_number);
 
-            byte_array[i++] = Constants.WRITE_CODE;
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START;
             byte_array[i++] = (byte)((zone_address >> 16) & 0xFF);
             byte_array[i++] = (byte)((zone_address >> 8) & 0xFF);
             byte_array[i++] = (byte)(zone_address & 0xFF);
@@ -818,7 +896,7 @@ namespace ProdigyConfigToolWPF.Protocol
             {
                 byte_array[i] = zone_terminal_configuration[j];
             }
-
+        
 
             for (i = description_addr, j = 0; i < (description_addr + description_bytes.Length); i++, j++)
             {
@@ -943,8 +1021,10 @@ namespace ProdigyConfigToolWPF.Protocol
 
             byte_array[4] = (byte)(i-temp);
             General protocol = new General();
-            protocol.send_msg((uint)i, byte_array, mainform.cp_id, mainform); // TODO: Check if cp_id is needed
-
+            //protocol.send_msg((uint)i, byte_array, mainform.cp_id, mainform); 
+            protocol.send_msg_block((uint)i, byte_array, zone_address, mainform.cp_id, mainform, Constants.KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH); // TODO: Check if cp_id is needed
+            System.Threading.Thread.Sleep(mainform.intervalsleeptime);
+            
         }
     }
 }

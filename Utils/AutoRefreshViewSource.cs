@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using Xceed.Wpf.Toolkit.Core;
 
-namespace ProdigyConfigToolWPF.Utils
+namespace MegaXConfigTool.Utils
 {
     public class AutoRefreshCollectionViewSource : CollectionViewSource
 

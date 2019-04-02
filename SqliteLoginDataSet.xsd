@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SqliteLoginConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SqliteLoginConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProdigyConfigToolWPF.Properties.Settings.GlobalReference.Default.SqliteLoginConnectionString" Provider="System.Data.SQLite.EF6" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SqliteLoginConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SqliteLoginConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MegaXConfigTool.Properties.Settings.GlobalReference.Default.SqliteLoginConnectionString" Provider="System.Data.SQLite.EF6" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserLoginTableAdapter" GeneratorDataComponentClassName="UserLoginTableAdapter" Name="UserLogin" UserDataComponentName="UserLoginTableAdapter">
@@ -71,7 +71,7 @@
   <xs:element name="SqliteLoginDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SqliteLoginDataSet" msprop:Generator_UserDSName="SqliteLoginDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="UserLogin" msprop:Generator_TableClassName="UserLoginDataTable" msprop:Generator_TableVarName="tableUserLogin" msprop:Generator_TablePropName="UserLogin" msprop:Generator_RowDeletingName="UserLoginRowDeleting" msprop:Generator_RowChangingName="UserLoginRowChanging" msprop:Generator_RowEvHandlerName="UserLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="UserLoginRowDeleted" msprop:Generator_UserTableName="UserLogin" msprop:Generator_RowChangedName="UserLoginRowChanged" msprop:Generator_RowEvArgName="UserLoginRowChangeEvent" msprop:Generator_RowClassName="UserLoginRow">
+        <xs:element name="UserLogin" msprop:Generator_TableClassName="UserLoginDataTable" msprop:Generator_TableVarName="tableUserLogin" msprop:Generator_RowChangedName="UserLoginRowChanged" msprop:Generator_TablePropName="UserLogin" msprop:Generator_RowDeletingName="UserLoginRowDeleting" msprop:Generator_RowChangingName="UserLoginRowChanging" msprop:Generator_RowEvHandlerName="UserLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="UserLoginRowDeleted" msprop:Generator_RowClassName="UserLoginRow" msprop:Generator_UserTableName="UserLogin" msprop:Generator_RowEvArgName="UserLoginRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />

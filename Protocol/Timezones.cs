@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Timezones
     {
@@ -126,24 +126,25 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint timezones_address = 0x65000 + (512 * (timezone_number - 1));
+            uint timezone_address = Constants.KP_TIMEZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_TIMEZONES_FLASH * timezone_number);
             byte size = 240;
 
             // Create first 5 bytes of the request
             byte_array[i++] = 0x20;
-            byte_array[i++] = (byte)((timezones_address >> 16) & 0xff);
-            byte_array[i++] = (byte)((timezones_address >> 8) & 0xff);
-            byte_array[i++] = (byte)((timezones_address) & 0xff);
+            byte_array[i++] = (byte)((timezone_address >> 16) & 0xff);
+            byte_array[i++] = (byte)((timezone_address >> 8) & 0xff);
+            byte_array[i++] = (byte)((timezone_address) & 0xff);
             byte_array[i++] = size;
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow); // TODO: Check if cp_id is neededs
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainWindow, uint timezone_number)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-            timezone_number = timezone_number - 1;
+
             string description = ((string)mainWindow.databaseDataSet.Timezone.Rows[(int)(timezone_number)]["Description"]).ToUpper();
 
             byte[] description_bytes = new byte[64];
@@ -264,11 +265,11 @@ namespace ProdigyConfigToolWPF.Protocol
 
             int i = 0;
             uint j = 0;
-            uint user_address = 0x65000 + (512 * (timezone_number));
-            byte_array[i++] = 0x40;
-            byte_array[i++] = (byte)((user_address >> 16) & 0xFF);
-            byte_array[i++] = (byte)((user_address >> 8) & 0xFF);
-            byte_array[i++] = (byte)(user_address & 0xFF);
+            uint timezone_address = Constants.KP_TIMEZONES_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_TIMEZONES_FLASH * timezone_number);
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START;
+            byte_array[i++] = (byte)((timezone_address >> 16) & 0xFF);
+            byte_array[i++] = (byte)((timezone_address >> 8) & 0xFF);
+            byte_array[i++] = (byte)(timezone_address & 0xFF);
             byte_array[i++] = 240;
             int temp = i;
 
@@ -344,7 +345,10 @@ namespace ProdigyConfigToolWPF.Protocol
 
             byte_array[4] = (byte)(i - temp);
             General protocol = new General();
-            protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow);
+            //protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow);
+
+            protocol.send_msg_block((uint)i, byte_array, timezone_address, mainWindow.cp_id, mainWindow, Constants.KP_FLASH_TAMANHO_DADOS_TIMEZONES_FLASH); // TODO: Check if cp_id is needed
+            System.Threading.Thread.Sleep(mainWindow.intervalsleeptime);
         }
     }
 }

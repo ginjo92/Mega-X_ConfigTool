@@ -7,8 +7,8 @@
     <ProjectGuid>{C7B83FDD-FED5-4F77-811A-F73139E2669D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProdigyConfigToolWPF</RootNamespace>
-    <AssemblyName>ProdigyConfigTool</AssemblyName>
+    <RootNamespace>MegaXConfigTool</RootNamespace>
+    <AssemblyName>MegaXConfigTool</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -41,7 +41,7 @@
     <BootstrapperComponentsUrl>C:\Mega-X_ConfigTool\packages</BootstrapperComponentsUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -209,6 +209,8 @@
       <DependentUpon>defaultDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Protocol\AudioSystemConfiguration.cs" />
+    <Compile Include="Protocol\Memory.cs" />
+    <Compile Include="Protocol\Expanders.cs" />
     <Compile Include="SqliteLoginDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +221,9 @@
     </Compile>
     <Compile Include="UI\AppLogin.xaml.cs">
       <DependentUpon>AppLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Help.xaml.cs">
       <DependentUpon>Help.xaml</DependentUpon>
@@ -300,6 +305,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UI\Report.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UI\CreateNewFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -382,144 +391,144 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="audio\Aberta.raw" />
-    <None Include="audio\Acesso.raw" />
-    <None Include="audio\ACPower.raw" />
-    <None Include="audio\Alarme.raw" />
-    <None Include="audio\Alerta.raw" />
-    <None Include="audio\Andar.raw" />
-    <None Include="audio\AntiMascara.raw" />
-    <None Include="audio\Armada.raw" />
-    <None Include="audio\Ativado.raw" />
-    <None Include="audio\Ativo.raw" />
-    <None Include="audio\Bateria.raw" />
-    <None Include="audio\BemVindo.raw" />
-    <None Include="audio\Bypass.raw" />
-    <None Include="audio\Cancelada.raw" />
-    <None Include="audio\Cancelar.raw" />
-    <None Include="audio\Catorze.raw" />
-    <None Include="audio\Cem.raw" />
-    <None Include="audio\Cento_e.raw" />
-    <None Include="audio\Centro.raw" />
-    <None Include="audio\Chamada.raw" />
-    <None Include="audio\Chave.raw" />
-    <None Include="audio\Cheio.raw" />
-    <None Include="audio\Cinco.raw" />
-    <None Include="audio\Cinquenta.raw" />
-    <None Include="audio\Cinquenta_e.raw" />
-    <None Include="audio\Coacao.raw" />
-    <None Include="audio\Codigo.raw" />
-    <None Include="audio\Com.raw" />
-    <None Include="audio\Custom1.raw" />
-    <None Include="audio\Desactivado.raw" />
-    <None Include="audio\Desactivo.raw" />
-    <None Include="audio\Desarmada.raw" />
-    <None Include="audio\Desarmado.raw" />
-    <None Include="audio\Desarmou.raw" />
-    <None Include="audio\Desligada.raw" />
-    <None Include="audio\Detectado.raw" />
-    <None Include="audio\Detector.raw" />
-    <None Include="audio\Dez.raw" />
-    <None Include="audio\Dezanove.raw" />
-    <None Include="audio\Dezasseis.raw" />
-    <None Include="audio\Dezassete.raw" />
-    <None Include="audio\Dezoito.raw" />
-    <None Include="audio\Dois.raw" />
-    <None Include="audio\Doze.raw" />
-    <None Include="audio\E.raw" />
-    <None Include="audio\Em.raw" />
-    <None Include="audio\Emergencia.raw" />
-    <None Include="audio\EmFalta.raw" />
-    <None Include="audio\EmLinha.raw" />
-    <None Include="audio\Energia.raw" />
-    <None Include="audio\Enviar.raw" />
-    <None Include="audio\Errado.raw" />
-    <None Include="audio\Erro.raw" />
-    <None Include="audio\EstaAberto.raw" />
-    <None Include="audio\EstaArmado.raw" />
-    <None Include="audio\EstaAtivo.raw" />
-    <None Include="audio\EstaCancelado.raw" />
-    <None Include="audio\EstaDesarmado.raw" />
-    <None Include="audio\Estado.raw" />
-    <None Include="audio\EstaFechado.raw" />
-    <None Include="audio\EstaOk.raw" />
-    <None Include="audio\Ethernet.raw" />
-    <None Include="audio\Evacuar.raw" />
-    <None Include="audio\Eventos.raw" />
-    <None Include="audio\Expansor.raw" />
-    <None Include="audio\Expirou.raw" />
-    <None Include="audio\Falha.raw" />
-    <None Include="audio\Falhou.raw" />
-    <None Include="audio\Fechada.raw" />
-    <None Include="audio\Fechado.raw" />
-    <None Include="audio\Fim.raw" />
-    <None Include="audio\Fraca.raw" />
-    <None Include="audio\grav2.raw" />
-    <None Include="audio\gravacao.raw" />
-    <None Include="audio\Horas.raw" />
-    <None Include="audio\Incendio.raw" />
-    <None Include="audio\Iniciado.raw" />
-    <None Include="audio\Instalador.raw" />
-    <None Include="audio\Intrusao.raw" />
-    <None Include="audio\Invalido.raw" />
-    <None Include="audio\Ligada.raw" />
-    <None Include="audio\Linha.raw" />
-    <None Include="audio\Medico.raw" />
-    <None Include="audio\Menu.raw" />
-    <None Include="audio\Nao.raw" />
-    <None Include="audio\Nove.raw" />
-    <None Include="audio\Noventa.raw" />
-    <None Include="audio\Noventa_e.raw" />
-    <None Include="audio\Off.raw" />
-    <None Include="audio\Oitenta.raw" />
-    <None Include="audio\Oitenta_e.raw" />
-    <None Include="audio\Oito.raw" />
-    <None Include="audio\Ok.raw" />
-    <None Include="audio\On.raw" />
-    <None Include="audio\Onze.raw" />
-    <None Include="audio\Painel.raw" />
-    <None Include="audio\Panico.raw" />
-    <None Include="audio\Particao.raw" />
-    <None Include="audio\Power.raw" />
-    <None Include="audio\Programacao.raw" />
-    <None Include="audio\Quarenta.raw" />
-    <None Include="audio\Quarenta_e.raw" />
-    <None Include="audio\Quatro.raw" />
-    <None Include="audio\Quinze.raw" />
-    <None Include="audio\Reset.raw" />
-    <None Include="audio\Restauro.raw" />
-    <None Include="audio\Saida.raw" />
-    <None Include="audio\Segundo.raw" />
-    <None Include="audio\Seis.raw" />
-    <None Include="audio\Sessenta.raw" />
-    <None Include="audio\Sessenta_e.raw" />
-    <None Include="audio\Sete.raw" />
-    <None Include="audio\Setenta.raw" />
-    <None Include="audio\Setenta_e.raw" />
-    <None Include="audio\Sim.raw" />
-    <None Include="audio\Sirene.raw" />
-    <None Include="audio\Sistema.raw" />
-    <None Include="audio\Stay.raw" />
-    <None Include="audio\Supervisao.raw" />
-    <None Include="audio\Tamper.raw" />
-    <None Include="audio\Teclado.raw" />
-    <None Include="audio\Telefone.raw" />
-    <None Include="audio\Terminado.raw" />
-    <None Include="audio\Teste.raw" />
-    <None Include="audio\Tipo.raw" />
-    <None Include="audio\Todos.raw" />
-    <None Include="audio\Tres.raw" />
-    <None Include="audio\Treze.raw" />
-    <None Include="audio\Trinta.raw" />
-    <None Include="audio\Trinta_e.raw" />
-    <None Include="audio\Um.raw" />
-    <None Include="audio\Utilizador.raw" />
-    <None Include="audio\Vinte.raw" />
-    <None Include="audio\Vinte_e.raw" />
-    <None Include="audio\Voz.raw" />
-    <None Include="audio\Zero.raw" />
-    <None Include="audio\Zona.raw" />
-    <None Include="audio\Zonas.raw" />
+    <None Include="audio\000_ACPower.raw" />
+    <None Include="audio\001_Acesso.raw" />
+    <None Include="audio\002_Alarme.raw" />
+    <None Include="audio\003_AntiMascara.raw" />
+    <None Include="audio\004_Armada.raw" />
+    <None Include="audio\005_Bateria.raw" />
+    <None Include="audio\006_Bypass.raw" />
+    <None Include="audio\007_Chamada.raw" />
+    <None Include="audio\008_Coacao.raw" />
+    <None Include="audio\009_Codigo.raw" />
+    <None Include="audio\010_Desarmada.raw" />
+    <None Include="audio\011_Desligada.raw" />
+    <None Include="audio\012_Enviar.raw" />
+    <None Include="audio\013_Errado.raw" />
+    <None Include="audio\014_Eventos.raw" />
+    <None Include="audio\015_Falha.raw" />
+    <None Include="audio\016_Fraca.raw" />
+    <None Include="audio\017_Horas.raw" />
+    <None Include="audio\018_Incendio.raw" />
+    <None Include="audio\019_Iniciado.raw" />
+    <None Include="audio\020_Ligada.raw" />
+    <None Include="audio\021_Linha.raw" />
+    <None Include="audio\022_Medico.raw" />
+    <None Include="audio\023_Ok.raw" />
+    <None Include="audio\024_Particao.raw" />
+    <None Include="audio\025_Programacao.raw" />
+    <None Include="audio\026_Panico.raw" />
+    <None Include="audio\027_Restauro.raw" />
+    <None Include="audio\028_Reset.raw" />
+    <None Include="audio\029_Saida.raw" />
+    <None Include="audio\030_Sistema.raw" />
+    <None Include="audio\031_Sirene.raw" />
+    <None Include="audio\032_Stay.raw" />
+    <None Include="audio\033_Supervisao.raw" />
+    <None Include="audio\034_Tamper.raw" />
+    <None Include="audio\035_Teclado.raw" />
+    <None Include="audio\036_Telefone.raw" />
+    <None Include="audio\037_Teste.raw" />
+    <None Include="audio\038_Terminado.raw" />
+    <None Include="audio\039_Zona.raw" />
+    <None Include="audio\040_Zero.raw" />
+    <None Include="audio\041_Um.raw" />
+    <None Include="audio\042_Dois.raw" />
+    <None Include="audio\043_Tres.raw" />
+    <None Include="audio\044_Quatro.raw" />
+    <None Include="audio\045_Cinco.raw" />
+    <None Include="audio\046_Seis.raw" />
+    <None Include="audio\047_Sete.raw" />
+    <None Include="audio\048_Oito.raw" />
+    <None Include="audio\049_Nove.raw" />
+    <None Include="audio\050_Dez.raw" />
+    <None Include="audio\051_Onze.raw" />
+    <None Include="audio\052_Doze.raw" />
+    <None Include="audio\053_Treze.raw" />
+    <None Include="audio\054_Catorze.raw" />
+    <None Include="audio\055_Quinze.raw" />
+    <None Include="audio\056_Dezasseis.raw" />
+    <None Include="audio\057_Dezassete.raw" />
+    <None Include="audio\058_Dezoito.raw" />
+    <None Include="audio\059_Dezanove.raw" />
+    <None Include="audio\060_Vinte.raw" />
+    <None Include="audio\061_Vinte_e.raw" />
+    <None Include="audio\062_Trinta.raw" />
+    <None Include="audio\063_Trinta_e.raw" />
+    <None Include="audio\064_Quarenta.raw" />
+    <None Include="audio\065_Quarenta_e.raw" />
+    <None Include="audio\066_Cinquenta.raw" />
+    <None Include="audio\067_Cinquenta_e.raw" />
+    <None Include="audio\068_Sessenta.raw" />
+    <None Include="audio\069_Sessenta_e.raw" />
+    <None Include="audio\070_Setenta.raw" />
+    <None Include="audio\071_Setenta_e.raw" />
+    <None Include="audio\072_Oitenta.raw" />
+    <None Include="audio\073_Oitenta_e.raw" />
+    <None Include="audio\074_Noventa.raw" />
+    <None Include="audio\075_Noventa_e.raw" />
+    <None Include="audio\076_Cem.raw" />
+    <None Include="audio\077_Cento_e.raw" />
+    <None Include="audio\078_BemVindo.raw" />
+    <None Include="audio\079_InsiraCodigo.raw" />
+    <None Include="audio\080_Aberta.raw" />
+    <None Include="audio\081_Alerta.raw" />
+    <None Include="audio\082_Andar.raw" />
+    <None Include="audio\083_Ativado.raw" />
+    <None Include="audio\084_Ativo.raw" />
+    <None Include="audio\085_Cancelada.raw" />
+    <None Include="audio\086_Cancelar.raw" />
+    <None Include="audio\087_Centro.raw" />
+    <None Include="audio\088_Chave.raw" />
+    <None Include="audio\089_Com.raw" />
+    <None Include="audio\090_Desactivado.raw" />
+    <None Include="audio\091_Desactivo.raw" />
+    <None Include="audio\092_Desarmado.raw" />
+    <None Include="audio\093_Desarmou.raw" />
+    <None Include="audio\094_Detectado.raw" />
+    <None Include="audio\095_Detector.raw" />
+    <None Include="audio\096_E.raw" />
+    <None Include="audio\097_EmFalta.raw" />
+    <None Include="audio\098_EmLinha.raw" />
+    <None Include="audio\099_Em.raw" />
+    <None Include="audio\100_Emergencia.raw" />
+    <None Include="audio\101_Energia.raw" />
+    <None Include="audio\102_Erro.raw" />
+    <None Include="audio\103_EstaAberto.raw" />
+    <None Include="audio\104_EstaArmado.raw" />
+    <None Include="audio\105_EstaAtivo.raw" />
+    <None Include="audio\106_EstaCancelado.raw" />
+    <None Include="audio\107_EstaDesarmado.raw" />
+    <None Include="audio\108_EstaFechado.raw" />
+    <None Include="audio\109_EstaOk.raw" />
+    <None Include="audio\110_Estado.raw" />
+    <None Include="audio\111_Ethernet.raw" />
+    <None Include="audio\112_Evacuar.raw" />
+    <None Include="audio\113_Expansor.raw" />
+    <None Include="audio\114_Expirou.raw" />
+    <None Include="audio\115_Falhou.raw" />
+    <None Include="audio\116_Fechada.raw" />
+    <None Include="audio\117_Fechado.raw" />
+    <None Include="audio\118_Fim.raw" />
+    <None Include="audio\119_Instalador.raw" />
+    <None Include="audio\120_Intrusao.raw" />
+    <None Include="audio\121_Invalido.raw" />
+    <None Include="audio\122_Menu.raw" />
+    <None Include="audio\123_Modulo.raw" />
+    <None Include="audio\124_Nao.raw" />
+    <None Include="audio\125_Off.raw" />
+    <None Include="audio\126_On.raw" />
+    <None Include="audio\127_Painel.raw" />
+    <None Include="audio\128_Power.raw" />
+    <None Include="audio\129_Segundo.raw" />
+    <None Include="audio\130_Sim.raw" />
+    <None Include="audio\131_Tipo.raw" />
+    <None Include="audio\132_Todos.raw" />
+    <None Include="audio\133_Utilizador.raw" />
+    <None Include="audio\134_Voz.raw" />
+    <None Include="audio\135_Zonas.raw" />
+    <None Include="audio\136_IP.raw" />
+    <None Include="audio\137_GSM.raw" />
     <None Include="configuration\setup\default\default.prgy">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -1373,7 +1382,9 @@
     <Folder Include="Database\old\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FodyWeavers.xml" />
+    <None Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\column_less.png" />
@@ -1833,6 +1844,11 @@
     <Resource Include="WindowsInstaller4_5\en\package.xml" />
     <Resource Include="WindowsInstaller4_5\product.xml" />
     <Resource Include="WindowsInstaller4_5\redist.txt" />
+    <Resource Include="images\shortcuts\expander.png" />
+    <Resource Include="images\new\expander.png" />
+    <Resource Include="images\shortcuts\io_icon.png" />
+    <Resource Include="images\pvtshortcuts\config_io.png" />
+    <Resource Include="images\pvtshortcuts\off\config_io.png" />
     <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-ia64.exe" />
     <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-x64.exe" />
     <Content Include="WindowsInstaller4_5\WindowsServer2003-KB942288-v4-x86.exe" />

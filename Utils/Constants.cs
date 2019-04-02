@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     static class Constants
     {
+       
+
         //Data length
         public const short HEADER_SIZE = 2;
         public const short LENGTH_SIZE = 1;
@@ -24,6 +26,11 @@ namespace ProdigyConfigToolWPF
         public const byte CHECK_ID = 0x10;
         public const byte READ_CODE = 0x20;
         public const byte WRITE_CODE = 0x40;
+
+        public const byte WRITE_BLOCK_CODE_START = 0x42;
+        public const byte WRITE_BLOCK_CODE = 0x48;
+        public const byte WRITE_BLOCK_AUDIO_CODE = 0x49;
+
         public const byte UPDATE_DATE_HOUR_CODE = 0x38;
         public const byte UPDATE_DONE_CODE = 0xB0;
 
@@ -65,40 +72,136 @@ namespace ProdigyConfigToolWPF
         public const short ZONA_30 = 33;
         public const short ZONA_31 = 34;
         public const short ZONA_32 = 35;
+        public const short ZONA_33 = 36;
+        public const short ZONA_34 = 37;
+        public const short ZONA_35 = 38;
+        public const short ZONA_36 = 39;
+        public const short ZONA_37 = 40;
+        public const short ZONA_38 = 41;
+        public const short ZONA_39 = 42;
+        public const short ZONA_40 = 43;
+        public const short ZONA_41 = 44;
+        public const short ZONA_42 = 45;
+        public const short ZONA_43 = 46;
+        public const short ZONA_44 = 47;
+        public const short ZONA_45 = 48;
+        public const short ZONA_46 = 49;
+        public const short ZONA_47 = 50;
+        public const short ZONA_48 = 51;
+        public const short ZONA_49 = 52;
+        public const short ZONA_50 = 53;
+        public const short ZONA_51 = 54;
+        public const short ZONA_52 = 55;
+        public const short ZONA_53 = 56;
+        public const short ZONA_54 = 57;
+        public const short ZONA_55 = 58;
+        public const short ZONA_56 = 59;
+        public const short ZONA_57 = 60;
+        public const short ZONA_58 = 61;
+        public const short ZONA_59 = 62;
+        public const short ZONA_60 = 63;
+        public const short ZONA_61 = 64;
+        public const short ZONA_62 = 65;
+        public const short ZONA_63 = 66;
+        public const short ZONA_64 = 67;
+        public const short ZONA_65 = 68;
+        public const short ZONA_66 = 69;
+        public const short ZONA_67 = 70;
+        public const short ZONA_68 = 71;
+        public const short ZONA_69 = 72;
+        public const short ZONA_70 = 73;
+        public const short ZONA_71 = 74;
+        public const short ZONA_72 = 75;
+        public const short ZONA_73 = 76;
+        public const short ZONA_74 = 77;
+        public const short ZONA_75 = 78;
+        public const short ZONA_76 = 79;
+        public const short ZONA_77 = 80;
+        public const short ZONA_78 = 81;
+        public const short ZONA_79 = 82;
+        public const short ZONA_80 = 83;
+        public const short ZONA_81 = 84;
+        public const short ZONA_82 = 85;
+        public const short ZONA_83 = 86;
+        public const short ZONA_84 = 87;
+        public const short ZONA_85 = 88;
+        public const short ZONA_86 = 89;
+        public const short ZONA_87 = 90;
+        public const short ZONA_88 = 91;
+        public const short ZONA_89 = 92;
+        public const short ZONA_90 = 93;
+        public const short ZONA_91 = 94;
+        public const short ZONA_92 = 95;
+        public const short ZONA_93 = 96;
+        public const short ZONA_94 = 97;
+        public const short ZONA_95 = 98;
+        public const short ZONA_96 = 99;
 
-        public const short PARTITION_1 = 36;
-        public const short PARTITION_2 = 37;
-        public const short PARTITION_3 = 38;
-        public const short PARTITION_4 = 39;
-        public const short PARTITION_5 = 40;
-        public const short PARTITION_6 = 41;
-        public const short PARTITION_7 = 42;
-        public const short PARTITION_8 = 43;
+        public const short PARTITION_1 = 100;//100;//36;
+        public const short PARTITION_2 = 101;
+        public const short PARTITION_3 = 102;
+        public const short PARTITION_4 = 103;
+        public const short PARTITION_5 = 104;
+        public const short PARTITION_6 = 105;
+        public const short PARTITION_7 = 106;
+        public const short PARTITION_8 = 107;
 
-        public const short OUTPUT_1 = 44;
-        public const short OUTPUT_2 = 45;
-        public const short OUTPUT_3 = 46;
-        public const short OUTPUT_4 = 47;
-        public const short OUTPUT_5 = 48;
-        public const short OUTPUT_6 = 49;
-        public const short OUTPUT_7 = 50;
-        public const short OUTPUT_8 = 51;
-        public const short OUTPUT_9 = 52;
-        public const short OUTPUT_10 = 53;
-        public const short OUTPUT_11 = 54;
-        public const short OUTPUT_12 = 55;
-        public const short OUTPUT_13 = 56;
+        public const short OUTPUT_1 = 108;//108;//44;
+        public const short OUTPUT_2 = 109;
+        public const short OUTPUT_3 = 110;
+        public const short OUTPUT_4 = 111;
+        public const short OUTPUT_5 = 112;
+        public const short OUTPUT_6 = 113;
+        public const short OUTPUT_7 = 114;
+        public const short OUTPUT_8 = 115;
+        public const short OUTPUT_9 = 116;
+        public const short OUTPUT_10 = 117;
+        public const short OUTPUT_11 = 118;
+        public const short OUTPUT_12 = 119;
+        public const short OUTPUT_13 = 120;
+        public const short OUTPUT_14 = 121;
+        public const short OUTPUT_15 = 122;
+        public const short OUTPUT_16 = 123;
+        public const short OUTPUT_17 = 124;
+        public const short OUTPUT_18 = 125;
+        public const short OUTPUT_19 = 126;
+        public const short OUTPUT_20 = 127;
+        public const short OUTPUT_21 = 128;
+        public const short OUTPUT_22 = 129;
+        public const short OUTPUT_23 = 130;
+        public const short OUTPUT_24 = 131;
+        public const short OUTPUT_25 = 132;
+        public const short OUTPUT_26 = 133;
+        public const short OUTPUT_27 = 134;
+        public const short OUTPUT_28 = 135;
+        public const short OUTPUT_29 = 136;
+        public const short OUTPUT_30 = 137;
+        public const short OUTPUT_31 = 138;
+        public const short OUTPUT_32 = 139;
+        public const short OUTPUT_33 = 140;
+        public const short OUTPUT_34 = 141;
+        public const short OUTPUT_35 = 142;
+        public const short OUTPUT_36 = 143;
+        public const short OUTPUT_37 = 144;
+        public const short OUTPUT_38 = 145;
+        public const short OUTPUT_39 = 146;
+        public const short OUTPUT_40 = 147;
+        public const short OUTPUT_41 = 148;
+        public const short OUTPUT_42 = 149;
+        public const short OUTPUT_43 = 150;
+        public const short OUTPUT_44 = 151;
+        public const short OUTPUT_45 = 152;
 
-        public const short PSTN_POS = 57;
+        public const short PSTN_POS = 153;//153;//57;
 
-        public const short TIMEZONE_1 = 58;
-        public const short TIMEZONE_2 = 59;
-        public const short TIMEZONE_3 = 60;
-        public const short TIMEZONE_4 = 61;
-        public const short TIMEZONE_5 = 62;
-        public const short TIMEZONE_6 = 63;
-        public const short TIMEZONE_7 = 64;
-        public const short TIMEZONE_8 = 65;
+        public const short TIMEZONE_1 = 154;//154;//58;
+        public const short TIMEZONE_2 = 155;
+        public const short TIMEZONE_3 = 156;
+        public const short TIMEZONE_4 = 157;
+        public const short TIMEZONE_5 = 158;
+        public const short TIMEZONE_6 = 159;
+        public const short TIMEZONE_7 = 160;
+        public const short TIMEZONE_8 = 161;
 
         public const short MASK_ZONA_ALARM = 0x01;
         public const short MASK_ZONA_OPEN = 0x02;
@@ -110,6 +213,7 @@ namespace ProdigyConfigToolWPF
         public const short MASK_PARTITION_ALARM = 0x01;
         public const short MASK_PARTITION_ARMED_AWAY = 0x02;
         public const short MASK_PARTITION_ARMED_STAY = 0x04;
+        
 
         public const short MASK_OUTPUT_ALARM = 0x01;
         public const short MASK_OUTPUT_ACTIVE = 0x02;
@@ -120,47 +224,50 @@ namespace ProdigyConfigToolWPF
         public const short TIMEZONE_IN_PERIOD = 0x01;
 
         // MAX NUMBER
-        public const short KP_MAX_ZONES = 32;
+        public const short KP_MAX_ZONES = 96;
         public const short KP_MAX_AREAS = 8;
         public const short KP_MAX_KEYPADS = 8;
-        public const short KP_MAX_OUTPUTS = 13;
+        public const short KP_MAX_OUTPUTS = 45;
         public const short KP_MAX_USERS = 205;
         public const short KP_MAX_TIMEZONES = 8;
         public const short KP_MAX_PHONES = 16;
-        public const short KP_MAX_EXPANDERS = 8;
-        public const uint KP_MAX_EVENTS = 5120;
-        public const short KP_MAX_AUDIO_SYSTEM_CONFIGURATION = 30;
+        public const short KP_MAX_EXPANDERS = 4;
+        public const uint  KP_MAX_EVENTS = 5120;
+        public const short KP_MAX_AUDIO_SYSTEM_CONFIGURATION = 100;
 
         //ADDR
-        public const int KP_ZONES_INIC_ADDR = 0x005000;
-        public const int KP_ZONES_FINAL_ADDR = 0x045000;
-
-        public const int KP_AREAS_INIC_ADDR = 0x3000;
-        public const int KP_AREAS_FINAL_ADDR = 0x5000;
-
-        public const int KP_USERS_INIC_ADDR = 0x45000;
-        public const int KP_USERS_FINAL_ADDR = 0x65000;
+        public const int KP_GLOBAL_SYSTEM_INIC_ADDR = 0x00;
+        public const int KP_GLOBAL_SYSTEM_FINAL_ADDR = 0x0C00;
 
         public const int KP_KEYPADS_INIC_ADDR = 0x1000;
         public const int KP_KEYPADS_FINAL_ADDR = 0x3000;
 
-        public const int KP_OUTPUTS_INIC_ADDR = 0x72000;
-        public const int KP_OUTPUTS_FINAL_ADDR = 0x82000;
+        public const int KP_AREAS_INIC_ADDR = 0x3000;
+        public const int KP_AREAS_FINAL_ADDR = 0x5000;
+
+        public const int KP_ZONES_INIC_ADDR = 0x005000;
+        public const int KP_ZONES_FINAL_ADDR = 0x045000;
+            
+        public const int KP_USERS_INIC_ADDR = 0x45000;
+        public const int KP_USERS_FINAL_ADDR = 0x65000;
 
         public const int KP_TIMEZONES_INIC_ADDR = 0x65000;
         public const int KP_TIMEZONES_FINAL_ADDR = 0x69000;
 
-        public const int KP_PHONES_INIC_ADDR = 0x6A000;
-        public const int KP_PHONES_FINAL_ADDR = 0x72000;
-
         public const int KP_DIALERS_INIC_ADDR = 0x69000;
         public const int KP_DIALERS_FINAL_ADDR = 0x6A000;
 
-        public const int KP_GLOBAL_SYSTEM_INIC_ADDR = 0x00;
-        public const int KP_GLOBAL_SYSTEM_FINAL_ADDR = 0x0C00;
+        public const int KP_PHONES_INIC_ADDR = 0x6A000;
+        public const int KP_PHONES_FINAL_ADDR = 0x72000;
 
-        public const uint KP_EVENTS_INIC_ADDR = 0x82800;
-        public const uint KP_EVENTS_FINAL_ADDR = 0x1C2800;
+        public const int KP_OUTPUTS_INIC_ADDR = 0x72000;
+        public const int KP_OUTPUTS_FINAL_ADDR = 0x82000;
+
+        public const int KP_EXPANDERS_INIC_ADDR = 0x82200;
+        public const int KP_EXPANDERS_FINAL_ADDR = 0x84200;
+
+        public const uint KP_EVENTS_INIC_ADDR = 0x84600;
+        public const uint KP_EVENTS_FINAL_ADDR = 0x1C4600;
 
         public const uint KP_FLASH_INICIO_ESTRUTURA_AUDIO = 0x200320;
         public const uint KP_FLASH_FIM_FAIXAS_AUDIO = 0x5FFFFF;        
@@ -168,14 +275,24 @@ namespace ProdigyConfigToolWPF
         public const uint KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_INICIO = 0X200000;
         public const uint KP_FLASH_AUDIO_SYSTEM_CONFIGUATION_FIM = 0X200320;
 
+        public const uint KP_FLASH_FIRMWARE_UPDATE_INICIO = 0X600000;
 
 
         //SIZE IN BYTES
         public const uint KP_FLASH_TAMANHO_DADOS_PARTICOES_FLASH = 512;
         public const uint KP_FLASH_TAMANHO_DADOS_ZONAS_FLASH = 2048;
+        public const uint KP_FLASH_TAMANHO_DADOS_EXPANDER_FLASH = 1024;
+        public const uint KP_FLASH_TAMANHO_DADOS_GLOBALSYSTEM_FLASH = 3072;
+        public const uint KP_FLASH_TAMANHO_DADOS_DIALER_FLASH = 4096;
+        public const uint KP_FLASH_TAMANHO_DADOS_USERS_FLASH = 256;
+        public const uint KP_FLASH_TAMANHO_DADOS_KEYPAD_FLASH = 512;
+        public const uint KP_FLASH_TAMANHO_DADOS_TIMEZONES_FLASH = 512;
+        public const uint KP_FLASH_TAMANHO_DADOS_OUTPUTS_FLASH = 256;
+        public const uint KP_FLASH_TAMANHO_DADOS_TELEFONE_FLASH = 256;
+        public const uint KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH_SINGLE = 8;
+        public const uint KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH = (KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH_SINGLE * 100);
+        public const uint KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH = 256; 
 
-        //BYTES NUMBER
-        public const uint KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH = 256; //bytes
         
         public static readonly Dictionary<int, string[]> EventDictionary = new Dictionary<int, string[]>()
         {

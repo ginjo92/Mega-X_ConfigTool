@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Event
     {
@@ -287,11 +287,11 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint events_address = Constants.KP_EVENTS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH * (event_number - 1));
+            uint events_address = Constants.KP_EVENTS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_EVENTOS_FLASH * event_number);
             byte size = 240;
 
             // Create first 5 bytes of the request
-            byte_array[i++] = 0x20;
+            byte_array[i++] = Constants.READ_CODE;
             byte_array[i++] = (byte)((events_address >> 16) & 0xff);
             byte_array[i++] = (byte)((events_address >> 8) & 0xff);
             byte_array[i++] = (byte)((events_address) & 0xff);
@@ -301,7 +301,7 @@ namespace ProdigyConfigToolWPF.Protocol
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainWindow.cp_id, mainWindow); //TODO: Check if cp_id is neededs
-
+            System.Threading.Thread.Sleep(250);
         }
 
         //public void Write(MainWindow mainWindow, uint event_number)

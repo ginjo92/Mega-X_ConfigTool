@@ -2868,4 +2868,430 @@
   <data name="EventMessage_KP_EVT_CODE_TIMEDATE_RESET" xml:space="preserve">
     <value>Data restaurada</value>
   </data>
+  <data name="RemoteConnection" xml:space="preserve">
+    <value>Ligação remota</value>
+  </data>
+  <data name="ComConnectedRemote" xml:space="preserve">
+    <value>Conectado remotamente</value>
+  </data>
+  <data name="Arming" xml:space="preserve">
+    <value>A Armar</value>
+  </data>
+  <data name="ConfigPins" xml:space="preserve">
+    <value>Configuração de pinos I/O</value>
+  </data>
+  <data name="Expander_config_tamper" xml:space="preserve">
+    <value>Tipo de tamper</value>
+  </data>
+  <data name="Expander_enable_tamper" xml:space="preserve">
+    <value>Ativar tamper</value>
+  </data>
+  <data name="Pins" xml:space="preserve">
+    <value>Pinos I/O</value>
+  </data>
+  <data name="ReadingExpanders" xml:space="preserve">
+    <value>A ler configurações dos expansores</value>
+  </data>
+  <data name="WritingExpanders" xml:space="preserve">
+    <value>A escrever configurações dos expansores</value>
+  </data>
+  <data name="ConfigTamper" xml:space="preserve">
+    <value>Configurações de tamper</value>
+  </data>
+  <data name="DataReceivedFromMegaX" xml:space="preserve">
+    <value>Dados recebidos da Mega-X</value>
+  </data>
+  <data name="DataSentToMegaX" xml:space="preserve">
+    <value>Dados enviados para a Mega-X</value>
+  </data>
+  <data name="ErrorWhileWritting" xml:space="preserve">
+    <value>Erro durante a escrita de dados</value>
+  </data>
+  <data name="Output_14" xml:space="preserve">
+    <value>Saída 14</value>
+  </data>
+  <data name="Output_15" xml:space="preserve">
+    <value>Saída 15</value>
+  </data>
+  <data name="Output_16" xml:space="preserve">
+    <value>Saída 16</value>
+  </data>
+  <data name="Output_17" xml:space="preserve">
+    <value>Saída 17</value>
+  </data>
+  <data name="Output_18" xml:space="preserve">
+    <value>Saída 18</value>
+  </data>
+  <data name="Output_19" xml:space="preserve">
+    <value>Saída 19</value>
+  </data>
+  <data name="Output_20" xml:space="preserve">
+    <value>Saída 20</value>
+  </data>
+  <data name="Output_21" xml:space="preserve">
+    <value>Saída 21</value>
+  </data>
+  <data name="Output_22" xml:space="preserve">
+    <value>Saída 22</value>
+  </data>
+  <data name="Output_23" xml:space="preserve">
+    <value>Saída 23</value>
+  </data>
+  <data name="Output_24" xml:space="preserve">
+    <value>Saída 24</value>
+  </data>
+  <data name="Output_25" xml:space="preserve">
+    <value>Saída 25</value>
+  </data>
+  <data name="Output_26" xml:space="preserve">
+    <value>Saída 26</value>
+  </data>
+  <data name="Output_27" xml:space="preserve">
+    <value>Saída 27</value>
+  </data>
+  <data name="Output_28" xml:space="preserve">
+    <value>Saída 28</value>
+  </data>
+  <data name="Output_29" xml:space="preserve">
+    <value>Saída 29</value>
+  </data>
+  <data name="Output_30" xml:space="preserve">
+    <value>Saída 30</value>
+  </data>
+  <data name="Output_31" xml:space="preserve">
+    <value>Saída 31</value>
+  </data>
+  <data name="Output_32" xml:space="preserve">
+    <value>Saída 32</value>
+  </data>
+  <data name="Output_33" xml:space="preserve">
+    <value>Saída 33</value>
+  </data>
+  <data name="Output_34" xml:space="preserve">
+    <value>Saída 34</value>
+  </data>
+  <data name="Output_35" xml:space="preserve">
+    <value>Saída 35</value>
+  </data>
+  <data name="Output_36" xml:space="preserve">
+    <value>Saída 36</value>
+  </data>
+  <data name="Output_37" xml:space="preserve">
+    <value>Saída 37</value>
+  </data>
+  <data name="Output_38" xml:space="preserve">
+    <value>Saída 38</value>
+  </data>
+  <data name="Output_39" xml:space="preserve">
+    <value>Saída 39</value>
+  </data>
+  <data name="Output_40" xml:space="preserve">
+    <value>Saída 40</value>
+  </data>
+  <data name="Output_41" xml:space="preserve">
+    <value>Saída 41</value>
+  </data>
+  <data name="Output_42" xml:space="preserve">
+    <value>Saída 42</value>
+  </data>
+  <data name="Output_43" xml:space="preserve">
+    <value>Saída 43</value>
+  </data>
+  <data name="Output_44" xml:space="preserve">
+    <value>Saída 44</value>
+  </data>
+  <data name="Output_45" xml:space="preserve">
+    <value>Saída 45</value>
+  </data>
+  <data name="Zone_33" xml:space="preserve">
+    <value>Zona 33</value>
+  </data>
+  <data name="Zone_34" xml:space="preserve">
+    <value>Zona 34</value>
+  </data>
+  <data name="Zone_35" xml:space="preserve">
+    <value>Zona 35</value>
+  </data>
+  <data name="Zone_36" xml:space="preserve">
+    <value>Zona 36</value>
+  </data>
+  <data name="Zone_37" xml:space="preserve">
+    <value>Zona 37</value>
+  </data>
+  <data name="Zone_38" xml:space="preserve">
+    <value>Zona 38</value>
+  </data>
+  <data name="Zone_39" xml:space="preserve">
+    <value>Zona 39</value>
+  </data>
+  <data name="Zone_40" xml:space="preserve">
+    <value>Zona 40</value>
+  </data>
+  <data name="Zone_41" xml:space="preserve">
+    <value>Zona 41</value>
+  </data>
+  <data name="Zone_42" xml:space="preserve">
+    <value>Zona 42</value>
+  </data>
+  <data name="Zone_43" xml:space="preserve">
+    <value>Zona 43</value>
+  </data>
+  <data name="Zone_44" xml:space="preserve">
+    <value>Zona 44</value>
+  </data>
+  <data name="Zone_45" xml:space="preserve">
+    <value>Zona 45</value>
+  </data>
+  <data name="Zone_46" xml:space="preserve">
+    <value>Zona 46</value>
+  </data>
+  <data name="Zone_47" xml:space="preserve">
+    <value>Zona 47</value>
+  </data>
+  <data name="Zone_48" xml:space="preserve">
+    <value>Zona 48</value>
+  </data>
+  <data name="Zone_49" xml:space="preserve">
+    <value>Zona 49</value>
+  </data>
+  <data name="Zone_50" xml:space="preserve">
+    <value>Zona 50</value>
+  </data>
+  <data name="Zone_51" xml:space="preserve">
+    <value>Zona 51</value>
+  </data>
+  <data name="Zone_52" xml:space="preserve">
+    <value>Zona 52</value>
+  </data>
+  <data name="Zone_53" xml:space="preserve">
+    <value>Zona 53</value>
+  </data>
+  <data name="Zone_54" xml:space="preserve">
+    <value>Zona 54</value>
+  </data>
+  <data name="Zone_55" xml:space="preserve">
+    <value>Zona 55</value>
+  </data>
+  <data name="Zone_56" xml:space="preserve">
+    <value>Zona 56</value>
+  </data>
+  <data name="Zone_57" xml:space="preserve">
+    <value>Zona 57</value>
+  </data>
+  <data name="Zone_58" xml:space="preserve">
+    <value>Zona 58</value>
+  </data>
+  <data name="Zone_59" xml:space="preserve">
+    <value>Zona 59</value>
+  </data>
+  <data name="Zone_60" xml:space="preserve">
+    <value>Zona 60</value>
+  </data>
+  <data name="Zone_61" xml:space="preserve">
+    <value>Zona 61</value>
+  </data>
+  <data name="Zone_62" xml:space="preserve">
+    <value>Zona 62</value>
+  </data>
+  <data name="Zone_63" xml:space="preserve">
+    <value>Zona 63</value>
+  </data>
+  <data name="Zone_64" xml:space="preserve">
+    <value>Zona 64</value>
+  </data>
+  <data name="Zone_65" xml:space="preserve">
+    <value>Zona 65</value>
+  </data>
+  <data name="Zone_66" xml:space="preserve">
+    <value>Zona 66</value>
+  </data>
+  <data name="Zone_67" xml:space="preserve">
+    <value>Zona 67</value>
+  </data>
+  <data name="Zone_68" xml:space="preserve">
+    <value>Zona 68</value>
+  </data>
+  <data name="Zone_69" xml:space="preserve">
+    <value>Zona 69</value>
+  </data>
+  <data name="Zone_70" xml:space="preserve">
+    <value>Zona 70</value>
+  </data>
+  <data name="Zone_71" xml:space="preserve">
+    <value>Zona 71</value>
+  </data>
+  <data name="Zone_72" xml:space="preserve">
+    <value>Zona 72</value>
+  </data>
+  <data name="Zone_73" xml:space="preserve">
+    <value>Zona 73</value>
+  </data>
+  <data name="Zone_74" xml:space="preserve">
+    <value>Zona 74</value>
+  </data>
+  <data name="Zone_75" xml:space="preserve">
+    <value>Zona 75</value>
+  </data>
+  <data name="Zone_76" xml:space="preserve">
+    <value>Zona 76</value>
+  </data>
+  <data name="Zone_77" xml:space="preserve">
+    <value>Zona 77</value>
+  </data>
+  <data name="Zone_78" xml:space="preserve">
+    <value>Zona 78</value>
+  </data>
+  <data name="Zone_79" xml:space="preserve">
+    <value>Zona 79</value>
+  </data>
+  <data name="Zone_80" xml:space="preserve">
+    <value>Zona 80</value>
+  </data>
+  <data name="Zone_81" xml:space="preserve">
+    <value>Zona 81</value>
+  </data>
+  <data name="Zone_82" xml:space="preserve">
+    <value>Zona 82</value>
+  </data>
+  <data name="Zone_83" xml:space="preserve">
+    <value>Zona 83</value>
+  </data>
+  <data name="Zone_84" xml:space="preserve">
+    <value>Zona 84</value>
+  </data>
+  <data name="Zone_85" xml:space="preserve">
+    <value>Zona 85</value>
+  </data>
+  <data name="Zone_86" xml:space="preserve">
+    <value>Zona 86</value>
+  </data>
+  <data name="Zone_87" xml:space="preserve">
+    <value>Zona 87</value>
+  </data>
+  <data name="Zone_88" xml:space="preserve">
+    <value>Zona 88</value>
+  </data>
+  <data name="Zone_89" xml:space="preserve">
+    <value>Zona 89</value>
+  </data>
+  <data name="Zone_90" xml:space="preserve">
+    <value>Zona 90</value>
+  </data>
+  <data name="Zone_91" xml:space="preserve">
+    <value>Zona 91</value>
+  </data>
+  <data name="Zone_92" xml:space="preserve">
+    <value>Zona 92</value>
+  </data>
+  <data name="Zone_93" xml:space="preserve">
+    <value>Zona 93</value>
+  </data>
+  <data name="Zone_94" xml:space="preserve">
+    <value>Zona 94</value>
+  </data>
+  <data name="Zone_95" xml:space="preserve">
+    <value>Zona 95</value>
+  </data>
+  <data name="Zone_96" xml:space="preserve">
+    <value>Zona 96</value>
+  </data>
+  <data name="Output_number_14" xml:space="preserve">
+    <value>Saída 14</value>
+  </data>
+  <data name="Output_number_15" xml:space="preserve">
+    <value>Saída 15</value>
+  </data>
+  <data name="Output_number_16" xml:space="preserve">
+    <value>Saída 16</value>
+  </data>
+  <data name="Output_number_17" xml:space="preserve">
+    <value>Saída 17</value>
+  </data>
+  <data name="Output_number_18" xml:space="preserve">
+    <value>Saída 18</value>
+  </data>
+  <data name="Output_number_19" xml:space="preserve">
+    <value>Saída 19</value>
+  </data>
+  <data name="Output_number_20" xml:space="preserve">
+    <value>Saída 20</value>
+  </data>
+  <data name="Output_number_21" xml:space="preserve">
+    <value>Saída 21</value>
+  </data>
+  <data name="Output_number_22" xml:space="preserve">
+    <value>Saída 22</value>
+  </data>
+  <data name="Output_number_23" xml:space="preserve">
+    <value>Saída 23</value>
+  </data>
+  <data name="Output_number_24" xml:space="preserve">
+    <value>Saída 24</value>
+  </data>
+  <data name="Output_number_25" xml:space="preserve">
+    <value>Saída 25</value>
+  </data>
+  <data name="Output_number_26" xml:space="preserve">
+    <value>Saída 26</value>
+  </data>
+  <data name="Output_number_27" xml:space="preserve">
+    <value>Saída 27</value>
+  </data>
+  <data name="Output_number_28" xml:space="preserve">
+    <value>Saída 28</value>
+  </data>
+  <data name="Output_number_29" xml:space="preserve">
+    <value>Saída 29</value>
+  </data>
+  <data name="Output_number_30" xml:space="preserve">
+    <value>Saída 30</value>
+  </data>
+  <data name="Output_number_31" xml:space="preserve">
+    <value>Saída 31</value>
+  </data>
+  <data name="Output_number_32" xml:space="preserve">
+    <value>Saída 32</value>
+  </data>
+  <data name="Output_number_33" xml:space="preserve">
+    <value>Saída 33</value>
+  </data>
+  <data name="Output_number_34" xml:space="preserve">
+    <value>Saída 34</value>
+  </data>
+  <data name="Output_number_35" xml:space="preserve">
+    <value>Saída 35</value>
+  </data>
+  <data name="Output_number_36" xml:space="preserve">
+    <value>Saída 36</value>
+  </data>
+  <data name="Output_number_37" xml:space="preserve">
+    <value>Saída 37</value>
+  </data>
+  <data name="Output_number_38" xml:space="preserve">
+    <value>Saída 38</value>
+  </data>
+  <data name="Output_number_39" xml:space="preserve">
+    <value>Saída 39</value>
+  </data>
+  <data name="Output_number_40" xml:space="preserve">
+    <value>Saída 40</value>
+  </data>
+  <data name="Output_number_41" xml:space="preserve">
+    <value>Saída 41</value>
+  </data>
+  <data name="Output_number_42" xml:space="preserve">
+    <value>Saída 42</value>
+  </data>
+  <data name="Output_number_43" xml:space="preserve">
+    <value>Saída 43</value>
+  </data>
+  <data name="Output_number_44" xml:space="preserve">
+    <value>Saída 44</value>
+  </data>
+  <data name="Output_number_45" xml:space="preserve">
+    <value>Saída 45</value>
+  </data>
+  <data name="ReadMoreEvents" xml:space="preserve">
+    <value>Ler mais eventos</value>
+  </data>
 </root>

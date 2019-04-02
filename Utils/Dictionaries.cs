@@ -1,11 +1,11 @@
-﻿using ProdigyConfigToolWPF.defaultDataSetTableAdapters;
+﻿using MegaXConfigTool.defaultDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     class Dictionaries
     {
@@ -95,6 +95,39 @@ namespace ProdigyConfigToolWPF
             OutputNumbers.Add(10, Properties.Resources.Output_number_11);
             OutputNumbers.Add(11, Properties.Resources.Output_number_12);
             OutputNumbers.Add(12, Properties.Resources.Output_number_13);
+            OutputNumbers.Add(13, Properties.Resources.Output_number_14);
+            OutputNumbers.Add(14, Properties.Resources.Output_number_15);
+            OutputNumbers.Add(15, Properties.Resources.Output_number_16);
+            OutputNumbers.Add(16, Properties.Resources.Output_number_17);
+            OutputNumbers.Add(17, Properties.Resources.Output_number_18);
+            OutputNumbers.Add(18, Properties.Resources.Output_number_19);
+            OutputNumbers.Add(19, Properties.Resources.Output_number_20);
+            OutputNumbers.Add(20, Properties.Resources.Output_number_21);
+            OutputNumbers.Add(21, Properties.Resources.Output_number_22);
+            OutputNumbers.Add(22, Properties.Resources.Output_number_23);
+            OutputNumbers.Add(23, Properties.Resources.Output_number_24);
+            OutputNumbers.Add(24, Properties.Resources.Output_number_25);
+            OutputNumbers.Add(25, Properties.Resources.Output_number_26);
+            OutputNumbers.Add(26, Properties.Resources.Output_number_27);
+            OutputNumbers.Add(27, Properties.Resources.Output_number_28);
+            OutputNumbers.Add(28, Properties.Resources.Output_number_29);
+            OutputNumbers.Add(29, Properties.Resources.Output_number_30);
+            OutputNumbers.Add(30, Properties.Resources.Output_number_31);
+            OutputNumbers.Add(31, Properties.Resources.Output_number_32);
+            OutputNumbers.Add(32, Properties.Resources.Output_number_33);
+            OutputNumbers.Add(33, Properties.Resources.Output_number_34);
+            OutputNumbers.Add(34, Properties.Resources.Output_number_35);
+            OutputNumbers.Add(35, Properties.Resources.Output_number_36);
+            OutputNumbers.Add(36, Properties.Resources.Output_number_37);
+            OutputNumbers.Add(37, Properties.Resources.Output_number_38);
+            OutputNumbers.Add(38, Properties.Resources.Output_number_39);
+            OutputNumbers.Add(39, Properties.Resources.Output_number_40);
+            OutputNumbers.Add(40, Properties.Resources.Output_number_41);
+            OutputNumbers.Add(41, Properties.Resources.Output_number_42);
+            OutputNumbers.Add(42, Properties.Resources.Output_number_43);
+            OutputNumbers.Add(43, Properties.Resources.Output_number_44);
+            OutputNumbers.Add(44, Properties.Resources.Output_number_45);
+
             OutputNumbers.Add(255, Properties.Resources.Output_number_none);
             return OutputNumbers;
         }
@@ -138,6 +171,14 @@ namespace ProdigyConfigToolWPF
             TamperTypes.Add(0, "NO");
             TamperTypes.Add(1, "NC");
             return TamperTypes;
+        }
+
+        public static Dictionary<bool, string> GetConfigPins()
+        {
+            Dictionary<bool, string> ConfigPins = new Dictionary<bool, string>();
+            ConfigPins.Add(false, Properties.Resources.Output);
+            ConfigPins.Add(true, Properties.Resources.Zone);
+            return ConfigPins;
         }
 
         public static Dictionary<bool, string> GetVoiceCallType()
@@ -185,13 +226,23 @@ namespace ProdigyConfigToolWPF
             return Time;
         }
 
+        public static Dictionary<short, string> GetASCIIHEX()
+        {
+            Dictionary<short, string> AsciiHex = new Dictionary<short, string>();
+            AsciiHex.Add(0,"ASCII");
+            AsciiHex.Add(1,"HEX");
+            return AsciiHex;
+        }
+
         public static Dictionary<long, string> GetAudioMessages()
         {
-            Dictionary<long, string> Audio = new Dictionary<long, string>();
+            
             defaultDataSet.AudioDataTable a = new defaultDataSet.AudioDataTable();
             AudioTableAdapter databaseDataSetAudioTableAdapter = new AudioTableAdapter();
             databaseDataSetAudioTableAdapter.Fill(a);
-            Audio.Add(0xffff, "");
+
+            Dictionary<long, string> Audio = new Dictionary<long, string>();
+
             foreach (defaultDataSet.AudioRow row in a.Rows)
             {
                 try
@@ -200,7 +251,7 @@ namespace ProdigyConfigToolWPF
                 }
                 catch { }
             }
-           
+            Audio.Add(0xffff, "");
             return Audio;
         }
     }

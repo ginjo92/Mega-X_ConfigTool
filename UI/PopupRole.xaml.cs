@@ -1,5 +1,5 @@
 ﻿using MahApps.Metro.Controls;
-using ProdigyConfigToolWPF.defaultDataSetTableAdapters;
+using MegaXConfigTool.defaultDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Data.SQLite;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     public partial class PopupRole : MetroWindow
     {

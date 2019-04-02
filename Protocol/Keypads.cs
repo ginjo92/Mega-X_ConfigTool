@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class Keypads
     {
@@ -202,7 +203,7 @@ namespace ProdigyConfigToolWPF.Protocol
         {
             byte[] byte_array = new byte[63];
             uint i = 0;
-            uint keypad_address = 0x1000 + (512 * (keypad_number - 1));
+            uint keypad_address = Constants.KP_KEYPADS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_KEYPAD_FLASH * keypad_number);
             byte size = 240;
 
             // Create first 5 bytes of the request
@@ -214,12 +215,12 @@ namespace ProdigyConfigToolWPF.Protocol
 
             General protocol = new General();
             protocol.send_msg(i, byte_array, mainForm.cp_id, mainForm); // TODO: Check if cp_id is neededs
+            System.Threading.Thread.Sleep(250);
         }
 
         public void Write(MainWindow mainWindow, uint keypad_number)
         {
             byte[] byte_array = new byte[240]; // verificar este tamanho
-            keypad_number = keypad_number - 1;
 
             string description = ((string)mainWindow.databaseDataSet.Keypad.Rows[(int)(keypad_number)]["Description"]).ToUpper();
 
@@ -507,11 +508,11 @@ namespace ProdigyConfigToolWPF.Protocol
 
             int i = 0;
             uint j = 0;
-            uint user_address = 0x1000 + (512 * (keypad_number));
-            byte_array[i++] = 0x40;
-            byte_array[i++] = (byte)((user_address >> 16) & 0xFF);
-            byte_array[i++] = (byte)((user_address >> 8) & 0xFF);
-            byte_array[i++] = (byte)(user_address & 0xFF);
+            uint keypad_address = Constants.KP_KEYPADS_INIC_ADDR + (Constants.KP_FLASH_TAMANHO_DADOS_KEYPAD_FLASH * keypad_number);
+            byte_array[i++] = Constants.WRITE_BLOCK_CODE_START;
+            byte_array[i++] = (byte)((keypad_address >> 16) & 0xFF);
+            byte_array[i++] = (byte)((keypad_address >> 8) & 0xFF);
+            byte_array[i++] = (byte)(keypad_address & 0xFF);
 
             byte_array[i++] = 240;
             int temp = i;
@@ -628,8 +629,9 @@ namespace ProdigyConfigToolWPF.Protocol
 
             byte_array[4] = (byte)(i - temp);
             General protocol = new General();
-            protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow); // TODO: Check if cp_id is needed
-
+            //protocol.send_msg((uint)(i), byte_array, mainWindow.cp_id, mainWindow); // TODO: Check if cp_id is needed
+            protocol.send_msg_block((uint)i, byte_array, keypad_address, mainWindow.cp_id, mainWindow, (int)Constants.KP_FLASH_TAMANHO_DADOS_KEYPAD_FLASH); // TODO: Check if cp_id is needed
+            System.Threading.Thread.Sleep(mainWindow.intervalsleeptime);
         }
     }
 }

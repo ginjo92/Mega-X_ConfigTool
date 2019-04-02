@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for DataChoose.xaml
@@ -42,6 +42,7 @@ namespace ProdigyConfigToolWPF
                 CheckBoxOutputs.Visibility = Visibility.Collapsed;
                 CheckBoxSystem.Visibility = Visibility.Collapsed;
                 CheckBoxDialer.Visibility = Visibility.Collapsed;
+                CheckBoxExpanders.Visibility = Visibility.Collapsed;
                 CheckBoxAudioSystemConfiguration.Visibility = Visibility.Collapsed;
             }
 
@@ -57,6 +58,7 @@ namespace ProdigyConfigToolWPF
                 CheckBoxSystem.IsChecked = false;
                 CheckBoxDialer.IsChecked = false;
                 CheckBoxAudioSystemConfiguration.IsChecked = false;
+                CheckBoxExpanders.IsChecked = false;
 
                 switch (pre_selected_structure)
                 {
@@ -98,6 +100,9 @@ namespace ProdigyConfigToolWPF
                     case "audio_system_configuration":
                         CheckBoxAudioSystemConfiguration.IsChecked = true;
                         break;
+                    case "expanders":
+                        CheckBoxExpanders.IsChecked = true;
+                        break;
 
                 }
             }
@@ -116,13 +121,17 @@ namespace ProdigyConfigToolWPF
             CheckboxesValues.Add(new KeyValuePair<string, bool>("System", (bool)CheckBoxSystem.IsChecked));
             CheckboxesValues.Add(new KeyValuePair<string, bool>("Dialer", (bool)CheckBoxDialer.IsChecked));
             CheckboxesValues.Add(new KeyValuePair<string, bool>("AudioSystemConfiguration", (bool)CheckBoxAudioSystemConfiguration.IsChecked));
-
+            CheckboxesValues.Add(new KeyValuePair<string, bool>("Expanders", (bool)CheckBoxExpanders.IsChecked));
             this.Close();
 
-            if (ActionType.Equals(false))
+           if (ActionType.Equals(false))
+            {
                 WindowParent.RequestDataFromProdigy(CheckboxesValues);
+            }
             else
+            {
                 WindowParent.SendDataToProdigy(CheckboxesValues);
+            }
 
             WindowParent.IsEnabled = true;
 
@@ -146,6 +155,7 @@ namespace ProdigyConfigToolWPF
             CheckBoxSystem.IsChecked = true;
             CheckBoxDialer.IsChecked = true;
             CheckBoxAudioSystemConfiguration.IsChecked = true;
+            CheckBoxExpanders.IsChecked = true;
         }
 
         private void ButtonChooseNothing_Click(object sender, RoutedEventArgs e)
@@ -159,6 +169,7 @@ namespace ProdigyConfigToolWPF
             CheckBoxPhones.IsChecked = false;
             CheckBoxSystem.IsChecked = false;
             CheckBoxDialer.IsChecked = false;
+            CheckBoxExpanders.IsChecked = false;
             CheckBoxAudioSystemConfiguration.IsChecked = false;
         }
     }

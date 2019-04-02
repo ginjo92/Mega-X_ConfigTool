@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProdigyConfigToolWPF.Properties {
+namespace MegaXConfigTool.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -49,8 +49,8 @@ namespace ProdigyConfigToolWPF.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("attachdbfilename=|DataDirectory|\\configuration\\setup\\default\\default.prgy;data so" +
-            "urce=configuration\\setup\\default\\default.prgy")]
+        [global::System.Configuration.DefaultSettingValueAttribute("data source=C:\\Mega-X_ConfigTool\\ProdigyConfigToolWPF\\configuration\\setup\\default" +
+            "\\default.prgy")]
         public string defaultConnectionString {
             get {
                 return ((string)(this["defaultConnectionString"]));

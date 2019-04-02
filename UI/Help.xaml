@@ -2,17 +2,17 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:ProdigyConfigToolWPF"
-                      xmlns:p="clr-namespace:ProdigyConfigToolWPF.Properties"
-                      xmlns:ProdigyConfigToolWPF="clr-namespace:ProdigyConfigToolWPF"
-                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="ProdigyConfigToolWPF.Help"
+                      xmlns:local="clr-namespace:MegaXConfigTool"
+                      xmlns:p="clr-namespace:MegaXConfigTool.Properties"
+                      xmlns:MegaXConfigTool="clr-namespace:MegaXConfigTool"
+                      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" xmlns:ControlzEx="clr-namespace:ControlzEx;assembly=MahApps.Metro" x:Name="BaseWindow" x:Class="MegaXConfigTool.Help"
                       mc:Ignorable="d"
                       Title="Help" Height="768" Width="1024" Icon="/images/icon.ico"
                       Loaded="HelpWindow_Loaded" WindowState="Maximized" WindowStartupLocation="CenterScreen" ScrollViewer.HorizontalScrollBarVisibility="Visible" 
                       MinWidth="600" MinHeight="600" Background="WhiteSmoke" >
     
     <Controls:MetroWindow.Resources>
-        <ProdigyConfigToolWPF:defaultDataSet x:Key="databaseDataSet"/>
+        <MegaXConfigTool:defaultDataSet x:Key="databaseDataSet"/>
         <Style x:Key="TileIsSelected" TargetType="{x:Type Controls:Tile}">
             <Style.Triggers>
                 <Trigger Property="IsEnabled" Value="True"> 

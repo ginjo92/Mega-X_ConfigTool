@@ -1,16 +1,17 @@
-﻿using ProdigyConfigToolWPF;
+﻿using MegaXConfigTool;
 using System;
 
-namespace ProdigyConfigToolWPF.Protocol
+namespace MegaXConfigTool.Protocol
 {
     class General
     {
         //public byte[] tx_buffer = new byte[300]; //TODO: Check max length necessary
-        public byte[] cp_id = { 0x00, 0x00 };
-
+        public byte[] cp_id = { 0x00, 00 };
         // MSG Id's list
-        public byte[] ask_watch =  new byte[] { 0x30 };
+        public byte[] ask_watch = new byte[] { 0x30 };
         public byte[] check_id_message = new byte[] { Constants.CHECK_ID };
+
+        public int blocks_written = 0;
 
         // Checksum table
         public uint[] checksum_table = {
@@ -79,7 +80,7 @@ namespace ProdigyConfigToolWPF.Protocol
             0xB3667A2E, 0xC4614AB8, 0x5D681B02, 0x2A6F2B94,
             0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D  };
 
-        internal void check_ID(MainWindow current_form )
+        internal void check_ID(MainWindow current_form)
         {
             send_msg((uint)check_id_message.Length, check_id_message, current_form.cp_id, current_form);
         }
@@ -87,10 +88,10 @@ namespace ProdigyConfigToolWPF.Protocol
         internal void update_hour_and_date(MainWindow current_form)
         {
             byte[] trama_a_enviar = new byte[63];
- 
+
 
             uint i = 0;
-            trama_a_enviar[i++]= Constants.UPDATE_DATE_HOUR_CODE;
+            trama_a_enviar[i++] = Constants.UPDATE_DATE_HOUR_CODE;
             int ano_int = DateTime.Now.Year;//ascii2int(ano_array, ano_array.Length);
             trama_a_enviar[i++] = (byte)(ano_int - 2000);
             int mes_int = DateTime.Now.Month;//ascii2int(mes_array, mes_array.Length);
@@ -112,15 +113,168 @@ namespace ProdigyConfigToolWPF.Protocol
         internal void check_all_events(MainWindow current_form)
         {
             byte[] trama_a_enviar = new byte[63];
-            
+
             uint i = 0;
             trama_a_enviar[i++] = 0x91;
-           
+
             send_msg((uint)trama_a_enviar.Length, trama_a_enviar, current_form.cp_id, current_form);
+
+        }
+
+        public uint send_msg_block(uint size, byte[] buf, uint address, byte[] cp_id, MainWindow current_form, uint block_size)
+        {
+            uint blocks_sent = 0;
+            uint max_blocks = 0;
+            uint block_addr = 0;
+            uint max_size = 4096;
+            int i = 0;
+            uint address_final = address + block_size;
+
+            short message_size = Constants.HEADER_SIZE + Constants.LENGTH_SIZE + Constants.DESTINY_TYPE_SIZE + Constants.DESTINY_ADDRESS_SIZE + Constants.CHECKSUM_SIZE;
+            byte[] tx_buffer = new byte[message_size + size];
+            byte[] temp_buf = new byte[(2 + size)];
+
+            max_blocks = max_size / block_size;
+            
+            check_if_block_complete:
+            if (current_form.counter_blocks == max_blocks)
+            {
+                current_form.RX_ACK = false;
+                System.Diagnostics.Debug.WriteLine("BLOCK COMPLETE" + current_form.RX_ACK);
+
+                buf[i++] = Constants.WRITE_BLOCK_CODE;
+                buf[i++] = (byte)((block_addr >> 16) & 0xFF);
+                buf[i++] = (byte)((block_addr >> 8) & 0xFF);
+                buf[i++] = (byte)(block_addr & 0xFF);
+                buf[i++] = (byte)((max_size >> 8) & 0xFF);
+                buf[i++] = (byte)(max_size & 0xFF);
+
+                temp_buf[0] = cp_id[0];
+                temp_buf[1] = cp_id[1];
+
+                for (i = 0; i < size; i++)
+                    temp_buf[i + 2] = buf[i];
+
+                i = 0;
+                uint checksum = calculate_checksum(temp_buf);
+
+                tx_buffer[i++] = Constants.HEADER_1;
+                tx_buffer[i++] = Constants.HEADER_2;
+
+                tx_buffer[i++] = (byte)(size + 2);
+
+                for (i = 3; (i - 3) < temp_buf.Length; i++)
+                    tx_buffer[i] = temp_buf[i - 3];
+
+                tx_buffer[i++] = (byte)((checksum >> 24) & 0x000000ff);
+                tx_buffer[i++] = (byte)((checksum >> 16) & 0x000000ff);
+                tx_buffer[i++] = (byte)((checksum >> 8) & 0x000000ff);
+                tx_buffer[i++] = (byte)((checksum >> 0) & 0x000000ff);
+
+                System.Diagnostics.Debug.WriteLine("*** SAVING " + current_form.counter_blocks + " elements on flash @ 0x{0:X} ***", block_addr);
+
+                blocks_sent++;
+
+                current_form.counter_blocks = 0;
+                current_form.send_serial_port_data(tx_buffer, 0, i);
+                System.Threading.Thread.Sleep(current_form.delay_savingtime);
+
+            }
+            else
+            {
+                current_form.counter_blocks++;
+                block_addr = address - (current_form.counter_blocks - 1) * block_size;
+                send_msg(size, buf, cp_id, current_form);
+                System.Diagnostics.Debug.WriteLine("* BLOCK #" + current_form.counter_blocks + " --- 0x{0:X} --- 0x{1:X} - 0x{2:X} ---", block_addr, address, address_final);
+                
+
+                if (address_final == block_addr + max_blocks * block_size)
+                    goto check_if_block_complete;
+                
+            }
+                    
+
+            return 0;
+        }
+
+        public uint send_msg_block_audio(uint size, byte[] buf, uint address, byte[] cp_id, MainWindow current_form, uint block_size)
+        {
+            
+            uint block_addr = 0;
+            uint max_size = 0;
+
+            
+
+            if (current_form.blocks_written == 0)
+            {
+                max_size = 4096 - Constants.KP_FLASH_TAMANHO_DADOS_AUDIO_CONFIG_FLASH;
+                block_addr = 0x200320;
+            }
+            else
+            {
+                max_size = 4096;
+                block_addr = 0x200000 + current_form.blocks_written * max_size;
+            }
+
+            uint bytes_left = max_size - current_form.counter_blocks * block_size;
+            current_form.counter_blocks++;
+
+            uint address_final = address + block_size;
+
+            System.Diagnostics.Debug.WriteLine("* BLOCK #" + current_form.counter_blocks + " --- 0x{0:X} --- 0x{1:X} - 0x{2:X} ---", block_addr, address, address_final);
+            send_msg(size, buf, cp_id, current_form);
+
+            if (address_final == block_addr + max_size)
+            {
+                current_form.block_complete = 1;
+                //Sending command 0x48 to write a full block
+                
+            }
+            return 0;
+        }
+
+      
+
+        public void send_command_save_block(uint size, uint block_addr, byte[] cp_id, MainWindow current_form)
+        {
+            byte[] buf = new byte[240];
+
+            uint i = 0;
+            buf[i++] = Constants.WRITE_BLOCK_CODE;
+            buf[i++] = (byte)((block_addr >> 16) & 0xFF);
+            buf[i++] = (byte)((block_addr >> 8) & 0xFF);
+            buf[i++] = (byte)(block_addr & 0xFF);
+            buf[i++] = (byte)size;
+
+            send_msg(i, buf, cp_id, current_form);
+
+            System.Threading.Thread.Sleep(current_form.delay_savingtime);
+            
+        }
+
+        public void send_command_save_block_big(uint size, uint block_addr, byte[] cp_id, MainWindow current_form)
+        {
+            byte[] buf = new byte[240];
+
+            uint i = 0;
+            buf[i++] = Constants.WRITE_BLOCK_CODE;
+            buf[i++] = (byte)((block_addr >> 16) & 0xFF);
+            buf[i++] = (byte)((block_addr >> 8) & 0xFF);
+            buf[i++] = (byte)(block_addr & 0xFF);
+            buf[i++] = (byte)((size >> 8) & 0xFF);
+            buf[i++] = (byte)(size & 0xFF);
+
+            send_msg(i, buf, cp_id, current_form);
+
+            System.Threading.Thread.Sleep(current_form.delay_savingtime);
+
         }
 
         public uint send_msg(uint size, byte[] buf, byte[] cp_id, MainWindow current_form)
         {
+            current_form.RX_ACK = false;
+            //System.Diagnostics.Debug.WriteLine("[SendMsg] RX ACK: " + current_form.RX_ACK);
+
             int i = 0;
             short message_size = Constants.HEADER_SIZE + Constants.LENGTH_SIZE + Constants.DESTINY_TYPE_SIZE + Constants.DESTINY_ADDRESS_SIZE + Constants.CHECKSUM_SIZE;
             byte[] tx_buffer = new byte[message_size + size];
@@ -146,20 +300,60 @@ namespace ProdigyConfigToolWPF.Protocol
 
             for (i = 3; (i - 3) < temp_buf.Length; i++)
                 tx_buffer[i] = temp_buf[i - 3];
-
+            
             tx_buffer[i++] = (byte)((checksum >> 24) & 0x000000ff);
             tx_buffer[i++] = (byte)((checksum >> 16) & 0x000000ff);
             tx_buffer[i++] = (byte)((checksum >> 8) & 0x000000ff);
             tx_buffer[i++] = (byte)((checksum >> 0) & 0x000000ff);
-
+            
             //handle with it on Form class
             current_form.send_serial_port_data(tx_buffer, 0, i);
-
-            string StringByte = BitConverter.ToString(tx_buffer);
-            System.Diagnostics.Debug.WriteLine("DATA TX: " + StringByte);
-
+            
             return 0;
         }
+
+        //public uint send_msg_block(uint size, byte[] buf, byte[] cp_id, MainWindow current_form)
+        //{
+        //    current_form.RX_ACK = false;
+        //    System.Diagnostics.Debug.WriteLine("[SendMsg] RX ACK: " + current_form.RX_ACK);
+
+        //    int i = 0;
+        //    short message_size = Constants.HEADER_SIZE + Constants.LENGTH_SIZE + Constants.DESTINY_TYPE_SIZE + Constants.DESTINY_ADDRESS_SIZE + Constants.CHECKSUM_SIZE;
+        //    byte[] tx_buffer = new byte[message_size + size];
+
+        //    if (size > 4000)
+        //        return 0xFFFFFFFF;
+
+        //    byte[] temp_buf = new byte[(2 + size)];
+
+        //    temp_buf[0] = cp_id[0];
+        //    temp_buf[1] = cp_id[1];
+
+        //    for (i = 0; i < size; i++)
+        //        temp_buf[i + 2] = buf[i];
+
+        //    i = 0;
+        //    uint checksum = calculate_checksum(temp_buf);
+
+        //    tx_buffer[i++] = Constants.HEADER_1;
+        //    tx_buffer[i++] = Constants.HEADER_2;
+
+        //    tx_buffer[i++] = (byte)(size + 2);
+            
+        //    for (i = 3; (i - 3) < temp_buf.Length; i++)
+        //        tx_buffer[i] = temp_buf[i - 3];
+
+        //    tx_buffer[i++] = (byte)((checksum >> 24) & 0x000000ff);
+        //    tx_buffer[i++] = (byte)((checksum >> 16) & 0x000000ff);
+        //    tx_buffer[i++] = (byte)((checksum >> 8) & 0x000000ff);
+        //    tx_buffer[i++] = (byte)((checksum >> 0) & 0x000000ff);
+
+
+        //    //handle with it on Form class
+        //    current_form.send_serial_port_data(tx_buffer, 0, i);
+
+        //    return 0;
+        //}
 
         public uint calculate_checksum(byte[] buf)
         {

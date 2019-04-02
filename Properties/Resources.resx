@@ -2862,4 +2862,430 @@
   <data name="EventMessage_KP_EVT_CODE_TIMEDATE_RESET" xml:space="preserve">
     <value>Date restored</value>
   </data>
+  <data name="RemoteConnection" xml:space="preserve">
+    <value>Remote connection</value>
+  </data>
+  <data name="ComConnectedRemote" xml:space="preserve">
+    <value>Remotely connected</value>
+  </data>
+  <data name="Arming" xml:space="preserve">
+    <value>Arming</value>
+  </data>
+  <data name="ConfigPins" xml:space="preserve">
+    <value>I/O Pins Configuration</value>
+  </data>
+  <data name="Expander_config_tamper" xml:space="preserve">
+    <value>Tamper type</value>
+  </data>
+  <data name="Expander_enable_tamper" xml:space="preserve">
+    <value>Enable tamper</value>
+  </data>
+  <data name="Pins" xml:space="preserve">
+    <value>I/O Pins</value>
+  </data>
+  <data name="ReadingExpanders" xml:space="preserve">
+    <value>Reading expanders configurations</value>
+  </data>
+  <data name="WritingExpanders" xml:space="preserve">
+    <value>Writing expanders configurations</value>
+  </data>
+  <data name="ConfigTamper" xml:space="preserve">
+    <value>Tamper configurations</value>
+  </data>
+  <data name="DataReceivedFromMegaX" xml:space="preserve">
+    <value>Data received from Mega-X</value>
+  </data>
+  <data name="DataSentToMegaX" xml:space="preserve">
+    <value>Data sent to Mega-X</value>
+  </data>
+  <data name="ErrorWhileWritting" xml:space="preserve">
+    <value>Error while writting data</value>
+  </data>
+  <data name="Output_14" xml:space="preserve">
+    <value>Output 14</value>
+  </data>
+  <data name="Output_15" xml:space="preserve">
+    <value>Output 15</value>
+  </data>
+  <data name="Output_16" xml:space="preserve">
+    <value>Output 16</value>
+  </data>
+  <data name="Output_17" xml:space="preserve">
+    <value>Output 17</value>
+  </data>
+  <data name="Output_18" xml:space="preserve">
+    <value>Output 18</value>
+  </data>
+  <data name="Output_19" xml:space="preserve">
+    <value>Output 19</value>
+  </data>
+  <data name="Output_20" xml:space="preserve">
+    <value>Output 20</value>
+  </data>
+  <data name="Output_21" xml:space="preserve">
+    <value>Output 21</value>
+  </data>
+  <data name="Output_22" xml:space="preserve">
+    <value>Output 22</value>
+  </data>
+  <data name="Output_23" xml:space="preserve">
+    <value>Output 23</value>
+  </data>
+  <data name="Output_24" xml:space="preserve">
+    <value>Output 24</value>
+  </data>
+  <data name="Output_25" xml:space="preserve">
+    <value>Output 25</value>
+  </data>
+  <data name="Output_26" xml:space="preserve">
+    <value>Output 26</value>
+  </data>
+  <data name="Output_27" xml:space="preserve">
+    <value>Output 27</value>
+  </data>
+  <data name="Output_28" xml:space="preserve">
+    <value>Output 28</value>
+  </data>
+  <data name="Output_29" xml:space="preserve">
+    <value>Output 29</value>
+  </data>
+  <data name="Output_30" xml:space="preserve">
+    <value>Output 30</value>
+  </data>
+  <data name="Output_31" xml:space="preserve">
+    <value>Output 31</value>
+  </data>
+  <data name="Output_32" xml:space="preserve">
+    <value>Output 32</value>
+  </data>
+  <data name="Output_33" xml:space="preserve">
+    <value>Output 33</value>
+  </data>
+  <data name="Output_34" xml:space="preserve">
+    <value>Output 34</value>
+  </data>
+  <data name="Output_35" xml:space="preserve">
+    <value>Output 35</value>
+  </data>
+  <data name="Output_36" xml:space="preserve">
+    <value>Output 36</value>
+  </data>
+  <data name="Output_37" xml:space="preserve">
+    <value>Output 37</value>
+  </data>
+  <data name="Output_38" xml:space="preserve">
+    <value>Output 38</value>
+  </data>
+  <data name="Output_39" xml:space="preserve">
+    <value>Output 39</value>
+  </data>
+  <data name="Output_40" xml:space="preserve">
+    <value>Output 40</value>
+  </data>
+  <data name="Output_41" xml:space="preserve">
+    <value>Output 41</value>
+  </data>
+  <data name="Output_42" xml:space="preserve">
+    <value>Output 42</value>
+  </data>
+  <data name="Output_43" xml:space="preserve">
+    <value>Output 43</value>
+  </data>
+  <data name="Output_44" xml:space="preserve">
+    <value>Output 44</value>
+  </data>
+  <data name="Output_45" xml:space="preserve">
+    <value>Output 45</value>
+  </data>
+  <data name="Zone_33" xml:space="preserve">
+    <value>Zone 33</value>
+  </data>
+  <data name="Zone_34" xml:space="preserve">
+    <value>Zone 34</value>
+  </data>
+  <data name="Zone_35" xml:space="preserve">
+    <value>Zone 35</value>
+  </data>
+  <data name="Zone_36" xml:space="preserve">
+    <value>Zone 36</value>
+  </data>
+  <data name="Zone_37" xml:space="preserve">
+    <value>Zone 37</value>
+  </data>
+  <data name="Zone_38" xml:space="preserve">
+    <value>Zone 38</value>
+  </data>
+  <data name="Zone_39" xml:space="preserve">
+    <value>Zone 39</value>
+  </data>
+  <data name="Zone_40" xml:space="preserve">
+    <value>Zone 40</value>
+  </data>
+  <data name="Zone_41" xml:space="preserve">
+    <value>Zone 41</value>
+  </data>
+  <data name="Zone_42" xml:space="preserve">
+    <value>Zone 42</value>
+  </data>
+  <data name="Zone_43" xml:space="preserve">
+    <value>Zone 43</value>
+  </data>
+  <data name="Zone_44" xml:space="preserve">
+    <value>Zone 44</value>
+  </data>
+  <data name="Zone_45" xml:space="preserve">
+    <value>Zone 45</value>
+  </data>
+  <data name="Zone_46" xml:space="preserve">
+    <value>Zone 46</value>
+  </data>
+  <data name="Zone_47" xml:space="preserve">
+    <value>Zone 47</value>
+  </data>
+  <data name="Zone_48" xml:space="preserve">
+    <value>Zone 48</value>
+  </data>
+  <data name="Zone_49" xml:space="preserve">
+    <value>Zone 49</value>
+  </data>
+  <data name="Zone_50" xml:space="preserve">
+    <value>Zone 50</value>
+  </data>
+  <data name="Zone_51" xml:space="preserve">
+    <value>Zone 51</value>
+  </data>
+  <data name="Zone_52" xml:space="preserve">
+    <value>Zone 52</value>
+  </data>
+  <data name="Zone_53" xml:space="preserve">
+    <value>Zone 53</value>
+  </data>
+  <data name="Zone_54" xml:space="preserve">
+    <value>Zone 54</value>
+  </data>
+  <data name="Zone_55" xml:space="preserve">
+    <value>Zone 55</value>
+  </data>
+  <data name="Zone_56" xml:space="preserve">
+    <value>Zone 56</value>
+  </data>
+  <data name="Zone_57" xml:space="preserve">
+    <value>Zone 57</value>
+  </data>
+  <data name="Zone_58" xml:space="preserve">
+    <value>Zone 58</value>
+  </data>
+  <data name="Zone_59" xml:space="preserve">
+    <value>Zone 59</value>
+  </data>
+  <data name="Zone_60" xml:space="preserve">
+    <value>Zone 60</value>
+  </data>
+  <data name="Zone_61" xml:space="preserve">
+    <value>Zone 61</value>
+  </data>
+  <data name="Zone_62" xml:space="preserve">
+    <value>Zone 62</value>
+  </data>
+  <data name="Zone_63" xml:space="preserve">
+    <value>Zone 63</value>
+  </data>
+  <data name="Zone_64" xml:space="preserve">
+    <value>Zone 64</value>
+  </data>
+  <data name="Zone_65" xml:space="preserve">
+    <value>Zone 65</value>
+  </data>
+  <data name="Zone_66" xml:space="preserve">
+    <value>Zone 66</value>
+  </data>
+  <data name="Zone_67" xml:space="preserve">
+    <value>Zone 67</value>
+  </data>
+  <data name="Zone_68" xml:space="preserve">
+    <value>Zone 68</value>
+  </data>
+  <data name="Zone_69" xml:space="preserve">
+    <value>Zone 69</value>
+  </data>
+  <data name="Zone_70" xml:space="preserve">
+    <value>Zone 70</value>
+  </data>
+  <data name="Zone_71" xml:space="preserve">
+    <value>Zone 71</value>
+  </data>
+  <data name="Zone_72" xml:space="preserve">
+    <value>Zone 72</value>
+  </data>
+  <data name="Zone_73" xml:space="preserve">
+    <value>Zone 73</value>
+  </data>
+  <data name="Zone_74" xml:space="preserve">
+    <value>Zone 74</value>
+  </data>
+  <data name="Zone_75" xml:space="preserve">
+    <value>Zone 75</value>
+  </data>
+  <data name="Zone_76" xml:space="preserve">
+    <value>Zone 76</value>
+  </data>
+  <data name="Zone_77" xml:space="preserve">
+    <value>Zone 77</value>
+  </data>
+  <data name="Zone_78" xml:space="preserve">
+    <value>Zone 78</value>
+  </data>
+  <data name="Zone_79" xml:space="preserve">
+    <value>Zone 79</value>
+  </data>
+  <data name="Zone_80" xml:space="preserve">
+    <value>Zone 80</value>
+  </data>
+  <data name="Zone_81" xml:space="preserve">
+    <value>Zone 81</value>
+  </data>
+  <data name="Zone_82" xml:space="preserve">
+    <value>Zone 82</value>
+  </data>
+  <data name="Zone_83" xml:space="preserve">
+    <value>Zone 83</value>
+  </data>
+  <data name="Zone_84" xml:space="preserve">
+    <value>Zone 84</value>
+  </data>
+  <data name="Zone_85" xml:space="preserve">
+    <value>Zone 85</value>
+  </data>
+  <data name="Zone_86" xml:space="preserve">
+    <value>Zone 86</value>
+  </data>
+  <data name="Zone_87" xml:space="preserve">
+    <value>Zone 87</value>
+  </data>
+  <data name="Zone_88" xml:space="preserve">
+    <value>Zone 88</value>
+  </data>
+  <data name="Zone_89" xml:space="preserve">
+    <value>Zone 89</value>
+  </data>
+  <data name="Zone_90" xml:space="preserve">
+    <value>Zone 90</value>
+  </data>
+  <data name="Zone_91" xml:space="preserve">
+    <value>Zone 91</value>
+  </data>
+  <data name="Zone_92" xml:space="preserve">
+    <value>Zone 92</value>
+  </data>
+  <data name="Zone_93" xml:space="preserve">
+    <value>Zone 93</value>
+  </data>
+  <data name="Zone_94" xml:space="preserve">
+    <value>Zone 94</value>
+  </data>
+  <data name="Zone_95" xml:space="preserve">
+    <value>Zone 95</value>
+  </data>
+  <data name="Zone_96" xml:space="preserve">
+    <value>Zone 96</value>
+  </data>
+  <data name="Output_number_14" xml:space="preserve">
+    <value>Output 14</value>
+  </data>
+  <data name="Output_number_15" xml:space="preserve">
+    <value>Output 15</value>
+  </data>
+  <data name="Output_number_16" xml:space="preserve">
+    <value>Output 16</value>
+  </data>
+  <data name="Output_number_17" xml:space="preserve">
+    <value>Output 17</value>
+  </data>
+  <data name="Output_number_18" xml:space="preserve">
+    <value>Output 18</value>
+  </data>
+  <data name="Output_number_19" xml:space="preserve">
+    <value>Output 19</value>
+  </data>
+  <data name="Output_number_20" xml:space="preserve">
+    <value>Output 20</value>
+  </data>
+  <data name="Output_number_21" xml:space="preserve">
+    <value>Output 21</value>
+  </data>
+  <data name="Output_number_22" xml:space="preserve">
+    <value>Output 22</value>
+  </data>
+  <data name="Output_number_23" xml:space="preserve">
+    <value>Output 23</value>
+  </data>
+  <data name="Output_number_24" xml:space="preserve">
+    <value>Output 24</value>
+  </data>
+  <data name="Output_number_25" xml:space="preserve">
+    <value>Output 25</value>
+  </data>
+  <data name="Output_number_26" xml:space="preserve">
+    <value>Output 26</value>
+  </data>
+  <data name="Output_number_27" xml:space="preserve">
+    <value>Output 27</value>
+  </data>
+  <data name="Output_number_28" xml:space="preserve">
+    <value>Output 28</value>
+  </data>
+  <data name="Output_number_29" xml:space="preserve">
+    <value>Output 29</value>
+  </data>
+  <data name="Output_number_30" xml:space="preserve">
+    <value>Output 30</value>
+  </data>
+  <data name="Output_number_31" xml:space="preserve">
+    <value>Output 31</value>
+  </data>
+  <data name="Output_number_32" xml:space="preserve">
+    <value>Output 32</value>
+  </data>
+  <data name="Output_number_33" xml:space="preserve">
+    <value>Output 33</value>
+  </data>
+  <data name="Output_number_34" xml:space="preserve">
+    <value>Output 34</value>
+  </data>
+  <data name="Output_number_35" xml:space="preserve">
+    <value>Output 35</value>
+  </data>
+  <data name="Output_number_36" xml:space="preserve">
+    <value>Output 36</value>
+  </data>
+  <data name="Output_number_37" xml:space="preserve">
+    <value>Output 37</value>
+  </data>
+  <data name="Output_number_38" xml:space="preserve">
+    <value>Output 38</value>
+  </data>
+  <data name="Output_number_39" xml:space="preserve">
+    <value>Output 39</value>
+  </data>
+  <data name="Output_number_40" xml:space="preserve">
+    <value>Output 40</value>
+  </data>
+  <data name="Output_number_41" xml:space="preserve">
+    <value>Output 41</value>
+  </data>
+  <data name="Output_number_42" xml:space="preserve">
+    <value>Output 42</value>
+  </data>
+  <data name="Output_number_43" xml:space="preserve">
+    <value>Output 43</value>
+  </data>
+  <data name="Output_number_44" xml:space="preserve">
+    <value>Output 44</value>
+  </data>
+  <data name="Output_number_45" xml:space="preserve">
+    <value>Output 45</value>
+  </data>
+  <data name="ReadMoreEvents" xml:space="preserve">
+    <value>Read more events</value>
+  </data>
 </root>

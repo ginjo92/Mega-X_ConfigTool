@@ -16,14 +16,14 @@ using System.IO;
 using System.Net;
 using System.Windows.Navigation;
 
-namespace ProdigyConfigToolWPF
+namespace MegaXConfigTool
 {
     /// <summary>
     /// Interaction logic for Help.xaml
     /// </summary>
     public partial class Help : MetroWindow
     {
-        private MainWindow mainWindow;
+
         int role;
         public Help(int AppRole)
         {
